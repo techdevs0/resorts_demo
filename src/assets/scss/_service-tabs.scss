@@ -1,0 +1,126 @@
+.service-tabs-wrapper {
+  background-color: #e2e2e220;
+  font-family: "Lora", serif;
+  .MuiBox-root-6{
+    padding: 0;
+  }
+  .MuiTabs-flexContainer {
+    justify-content: space-between;
+  }
+  .PrivateTabIndicator-colorSecondary-4 {
+    background-color: #8d6f30;
+  }
+  button:focus {
+    outline: none !important;
+  }
+  #simple-tabpanel-0 {
+    background-color: #e2e2e220;
+  }
+  .main-title {
+    font-family: "Lora", serif;
+    font-style: italic;
+    // color: $secondary-color;
+    margin-bottom: 2rem;
+  }
+  .tab-slider {
+    overflow: hidden;
+    .slider-image-wrapper-service {
+      position: relative;
+      height: 600px;
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .hotel-title-wrapper {
+        position: absolute;
+        // bottom: 5%;
+        width: 50%;
+        margin:auto;
+        color: $white;
+        font-size: 2rem;
+        text-align: center;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        flex-direction: column;
+        .hotel-tagline {
+          font-weight: bold;
+          color: $white;
+          font-family: "Lora", serif;
+        }
+        .hotel-title {
+          color: $white;
+          width: 75%;
+        }
+      }
+    }
+  }
+  .tab-content {
+    position: relative;
+    h1 {
+      color: $nile-blue;
+      font-style: normal;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      color: $nile-blue;
+      li {
+        font-size: 14px;
+        color: gray;
+        display: block;
+      }
+      li:before {
+        content: "• ";
+      }
+    }
+    button {
+      border: none;
+      background-color: $primary-color;
+      padding: 0.5rem 2rem;
+      bottom: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .service-tabs-wrapper {
+    #simple-tabpanel-0 {
+      background-color: #e2e2e220;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    .tab-slider {
+      overflow: hidden;
+      padding: 0;
+      .slider-image-wrapper-service {
+        position: relative;
+        .hotel-title-wrapper {
+          position: absolute;
+          bottom: 7%;
+          color: $white;
+          font-size: 1rem;
+          text-align: center;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+    .tab-content {
+      padding: 0 !important;
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      ul {
+        font-size: smaller;
+      }
+    }
+  }
+}

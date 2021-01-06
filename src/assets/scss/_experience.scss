@@ -1,0 +1,47 @@
+.experience-wrapper {
+    position: relative;
+    box-sizing: border-box;
+    .experience-item {
+        height: 600px;
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        position: relative;
+        min-width: 25%;
+        max-width: 25%;
+        .background {
+            height: 100%;
+            img {
+                object-fit: cover;
+            }
+        }
+
+        .foreground {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            h3 {
+                color: #fff;
+                bottom: 0;
+                align-self: flex-end;
+                margin-bottom: 2rem;
+                font-weight: bold;
+                text-align: center;
+                margin-left: 2rem;
+            }
+            transition: all 0.4s;
+            &:hover {
+                cursor: pointer;
+                background: rgba(255, 255, 255, 0.3);
+                h3 {
+                    color: #146264;
+                    transition: margin-bottom 0.4s;
+                    margin-bottom: 6rem;
+                }
+            }
+        }
+    }
+}
