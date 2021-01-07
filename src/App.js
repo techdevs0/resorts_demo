@@ -24,7 +24,7 @@ function App() {
       <Router>
         { <Preloader />}
         <Switch>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' component={Hometwo} />
           <Route path='/home-two' component={Hometwo} />
           <Route path='/home-three' component={Homethree} />
           <Route path='/about' component={About} />

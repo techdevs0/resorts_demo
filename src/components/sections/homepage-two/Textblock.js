@@ -10,8 +10,8 @@ class Textblock extends Component {
                     <ReactWOW animation="fadeInLeft" data-wow-delay=".3s">
                         <div className="row align-items-center1 justify-content-space-between">
                             <div className="col-lg-6">
-                                <div className="text-img text-center text-lg-left mb-small">
-                                    <img src="assets/img/text-block/02.jpg" alt="" className="h-100" />
+                                <div className="text-img text-center text-lg-left mb-small image-wrapper">
+                                    <img src={require('../../../assets/img/text-block/hotel.jpg')} alt="" />
                                 </div>
                             </div>
                             <ReactWOW animation="fadeInRight" data-wow-delay=".5s">

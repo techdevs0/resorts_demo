@@ -17,25 +17,26 @@
 			}
 		}
 		.title {
-			font-size: 120px;
+			font-size: 70px;
 			line-height: 1.1;
 			font-weight: 400;
-			letter-spacing: -6px;
+			letter-spacing: 3px;
 			padding-bottom: 26px;
+      font-family: "Lora", serif;
 			@media #{$xl} {
-				font-size: 100px;
+				font-size: 70px;
 			}
 			@media #{$lg} {
-				font-size: 86px;
+				font-size: 60px;
 			}
 			@media #{$lsm} {
-				font-size: 72px;
+				font-size: 48px;
 			}
 			@media #{$xsm} {
-				font-size: 66px;
+				font-size: 48px;
 			}
 			@media #{$tiny} {
-				font-size: 52px;
+				font-size: 32px;
 			}
 		}
 		ul {

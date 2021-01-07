@@ -2,10 +2,10 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import Slider from "react-slick";
 
-const room1 = require('../../../assets/img/blog/01.jpg');
-const room2 = require('../../../assets/img/blog/01.jpg');
-const room3 = require('../../../assets/img/blog/01.jpg');
-const room4 = require('../../../assets/img/blog/01.jpg');
+const room1 = require('../../../assets/img/hotel/01.jpg');
+const room2 = require('../../../assets/img/hotel/02.jpg');
+const room3 = require('../../../assets/img/hotel/03.jpg');
+const room4 = require('../../../assets/img/hotel/04.jpg');
 
 // const settings = {
 //     dots: true,

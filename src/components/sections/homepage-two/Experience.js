@@ -6,19 +6,19 @@ const image = require('../../../assets/img/banner-widget.jpg');
 
 const data = [
     {
-        image: image,
+        image: require('../../../assets/img/experience/overview.jpg'),
         title: "Sustainability"
     },
     {
-        image: image,
+        image: require('../../../assets/img/experience/overview.jpg'),
         title: "Overview of the Resort"
     },
     {
-        image: image,
+        image: require('../../../assets/img/experience/overview.jpg'),
         title: "About Seychelles"
     },
     {
-        image: image,
+        image: require('../../../assets/img/experience/overview.jpg'),
         title: "Contact \n Us"
     },
 ]
@@ -34,10 +34,12 @@ class Experience extends Component {
                             data.map(x => (
                                 <div className="experience-item">
                                     <div className="background">
-                                        <img className="img-fluid w-100 h-100" src={image} alt="" />
+                                        <img className="img-fluid w-100 h-100" src={x.image} alt="" />
                                     </div>
                                     <div className="foreground">
-                                        <h3>Sustainability</h3>
+                                        <h3>
+                                            {x.title}
+                                        </h3>
                                     </div>
                                 </div>
                             ))

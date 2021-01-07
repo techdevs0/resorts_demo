@@ -1,11 +1,10 @@
 /*=======  COMMON CSS  =======*/
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;500;700&display=swap');
-//fonts
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;500;700&family=Lora:ital,wght@400;500;600;700&family=Montserrat:ital,wght@100;200;300;400;500;600;700;800;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-	font-family: $archivo;
+	font-family: 'Montserrat', serif;
 	font-weight: normal;
 	font-style: normal;
 	color: $text-color;
@@ -57,7 +56,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $oldstan;
+	// font-family: $oldstan;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 	margin: 0px;
 	&,
@@ -152,16 +152,16 @@ select {
 	&::after {
 		display: none;
 	}
-	&::before {
-		content: '\f063';
-		font-family: 'Font Awesome 5 Pro';
-		font-weight: 300;
-		position: absolute;
-		left: 30px;
-		top: 50%;
-		color: $primary-color;
-		transform: translateY(-50%);
-	}
+	// &::before {
+	// 	content: '\f063';
+	// 	font-family: 'Font Awesome 5 Pro';
+	// 	font-weight: 300;
+	// 	position: absolute;
+	// 	left: 30px;
+	// 	top: 50%;
+	// 	color: $primary-color;
+	// 	transform: translateY(-50%);
+	// }
 }
 
 .input-group {

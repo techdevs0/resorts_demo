@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import ReactWOW from 'react-wow'
 
-import bannerimg1 from '../../../assets/img/banner/04.jpg';
+import bannerimg1 from '../../../assets/img/banner/home.jpg';
 // import bannerimg2 from '../../../assets/img/banner/05.jpg';
 
 const bannerPosts = [
   {
-      photo: bannerimg1,
+      photo: require('../../../assets/img/banner/home.jpg'),
       tag: '',
       taganimation: '.6s',
       title:"The Perfect \n Destination for you",
@@ -61,7 +61,7 @@ class Banner extends Component {
             </div>
           </div>
           {/* banner bg */}
-          <div className="banner-bg" style={{backgroundImage: 'url(assets/img/banner/05.jpg)'}} />
+          <div className="banner-bg" style={{backgroundImage: `url(${bannerimg1})`}} />
           <div className="banner-overly" />
         </div>
       ))}

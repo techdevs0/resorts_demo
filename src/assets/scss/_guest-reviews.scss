@@ -1,10 +1,10 @@
 .guest-reviews-wrapper {
     background: $secondary-color;
-    font-family: "Lora", serif;
+    font-family: "Montserrat", serif;
     h1,
     h2 {
         color: $primary-color;
-        font-weight: 400;
+        font-weight: 500;
         font-family: "Lora", serif;
     }
     .slide {
@@ -18,13 +18,12 @@
         .gt-name {
             margin-top: 1rem;
             color: $primary-color;
-            font-family: "Lora", serif;
         }
         .gt-title,
         .gt-review {
             color: $white;
             margin-top: 1rem;
-            font-family: "Lora", serif;
+            font-weight: bold;
         }
         .gt-review {
             font-weight: 300;

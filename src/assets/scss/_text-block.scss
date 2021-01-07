@@ -1,5 +1,24 @@
 /*=======  TEXT BLOCK  =======*/
 .text-block {
+	background: rgba($color: $primary-color, $alpha: 0.2);
+	color: $nile-blue;
+	.image-wrapper{
+		height: 600px;
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	h1 {
+		color: $nile-blue;
+		font-family: 'Lora', sans-serif;
+		font-weight: bold;
+	}
+	p{
+		font-weight: 600;
+		font-family: 'Lora', sans-serif;
+	}
 	&.with-bg {
 		background-size: cover;
 		background-position: center;
@@ -11,7 +30,7 @@
 			top: 0;
 			width: 100%;
 			height: 100%;
-			content: '';
+			content: "";
 			background-color: $white;
 			z-index: -1;
 			opacity: 0.94;
@@ -63,7 +82,7 @@
 					height: 100%;
 					z-index: 1;
 					background-image: url(../img/icon/pattern-03.png);
-					content: '';
+					content: "";
 					background-size: cover;
 					background-position: right;
 				}
@@ -110,7 +129,7 @@
 		position: relative;
 		&::before {
 			position: absolute;
-			content: '';
+			content: "";
 			left: 0;
 			top: 0;
 			height: 100%;
@@ -121,7 +140,7 @@
 		}
 		&::after {
 			position: absolute;
-			content: '';
+			content: "";
 			left: 0;
 			top: 0;
 			height: 100%;

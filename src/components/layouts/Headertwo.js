@@ -8,24 +8,25 @@ const navigationmenu = [
   {
       id: 1,
       linkText: 'Home',
-      child: true,
+      child: false,
+      link:"/",
       submenu: [
-          {
-              id: 11,
-              link: '/',
-              linkText: 'Home 1'
-          },
-          {
-              id: 12,
-              new: true,
-              link: '/home-two',
-              linkText: 'Home 2'
-          },
-          {
-              id: 13,
-              link: '/home-three',
-              linkText: 'Home 3'
-          },
+          // {
+          //     id: 11,
+          //     link: '/',
+          //     linkText: 'Home 1'
+          // },
+          // {
+          //     id: 12,
+          //     new: true,
+          //     link: '/home-two',
+          //     linkText: 'Home 2'
+          // },
+          // {
+          //     id: 13,
+          //     link: '/home-three',
+          //     linkText: 'Home 3'
+          // },
       ]
       
       

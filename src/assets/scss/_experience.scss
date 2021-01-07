@@ -1,6 +1,13 @@
 .experience-wrapper {
     position: relative;
     box-sizing: border-box;
+    background: $white;
+    h2{
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 32px;
+        margin-bottom: 2rem;
+    }
     .experience-item {
         height: 600px;
         box-sizing: border-box;
@@ -35,7 +42,7 @@
             transition: all 0.4s;
             &:hover {
                 cursor: pointer;
-                background: rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.7);
                 h3 {
                     color: #146264;
                     transition: margin-bottom 0.4s;
