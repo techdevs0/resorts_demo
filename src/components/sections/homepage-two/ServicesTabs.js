@@ -105,7 +105,6 @@ const ServiceTabs = (props) => {
                         value={value}
                         variant="scrollable"
                         scrollButtons="on"
-                        centered
                         onChange={handleChange}
                         aria-label="scrollable auto tabs example"
                     >
@@ -122,7 +121,7 @@ const ServiceTabs = (props) => {
                         <TabPanel value={value} index={i} className="service-tab-panel">
                             <div className="tab-slider">
                                 <Grid container spacing={0}>
-                                    <Grid item xs={12} sm={12} className="p-0">
+                                    <Grid item xs={12} sm={12} className="px-0 py-0">
                                         <div className="slider-image-wrapper-service">
                                             <img src={x.image} alt={x.title} />
                                             <div className="hotel-title-wrapper">
@@ -141,7 +140,6 @@ const ServiceTabs = (props) => {
                         </TabPanel>
                     ))
                 }
-                
             </div>
         </div>
     );

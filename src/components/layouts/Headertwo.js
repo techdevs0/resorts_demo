@@ -260,14 +260,14 @@ class Headertwo extends Component {
               </form>
             </div>
             {/* About Widget */}
-            <div className="widget about-widget">
+            {/* <div className="widget d-none about-widget">
               <h5 className="widget-title">About us</h5>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia reiciendis illo ipsa asperiores,
                 perspiciatis corrupti veritatis assumenda architecto commodi provident quas necessitatibus
                 consequatur praesentium magnam optio deserunt fugiat repellat culpa.
               </p>
-            </div>
+            </div> */}
             {/* Nav Widget */}
             <div className="widget nav-widget">
               <h5 className="widget-title">Our pages</h5>

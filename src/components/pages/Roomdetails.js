@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import Headerfour from '../layouts/Headerfour';
-import Footer from '../layouts/Footer';
+import Footer from '../layouts/Footertwo';
 import Roomsidebar from '../layouts/Roomsidebar';
 import { Link } from 'react-router-dom';
+import Headertwo from '../layouts/Headertwo';
 
 class Roomdetails extends Component {
   render() {
     return (
       <div>
-        <Headerfour />
+        <Headertwo />
         {/*====== BREADCRUMB PART START ======*/}
         <section className="breadcrumb-area" style={{backgroundImage: 'url(assets/img/bg/04.jpg)'}}>
           <div className="container">

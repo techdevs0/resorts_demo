@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import Headerfour from '../layouts/Headerfour';
-import Footer from '../layouts/Footer';
+import Footer from '../layouts/Footertwo';
 import Breadcrumb from '../sections/places/Breadcrumb';
 import Placesmap from '../sections/places/Placesmap';
 import Placesbox from '../sections/places/Placesbox';
+import Headertwo from '../layouts/Headertwo';
 
 class Places extends Component {
   render() {
     return (
       <div>
-        <Headerfour />
+        <Headertwo />
         {/*====== BREADCRUMB PART START ======*/}
         <Breadcrumb/>
         {/*====== BREADCRUMB PART END ======*/}

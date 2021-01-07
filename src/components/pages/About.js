@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import Headerfour from '../layouts/Headerfour';
-import Footer from '../layouts/Footer';
+import Footer from '../layouts/Footertwo';
 import Breadcrumb from '../sections/about/Breadcrumb';
 import Aboutpage from '../sections/about/About';
 import Corefeature from '../sections/about/Corefeature';
 import Counter from '../sections/about/Counter';
 import News from '../sections/about/News';
+import Headertwo from '../layouts/Headertwo';
 
 class About extends Component {
   render() {
     return (
       <div>
-        <Headerfour />
+        <Headertwo />
         {/*====== BREADCRUMB PART START ======*/}
         <Breadcrumb/>
         {/*====== BREADCRUMB PART END ======*/}

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Headerfour from '../layouts/Headerfour';
-import Footer from '../layouts/Footer';
+import Footer from '../layouts/Footertwo';
 import { Link } from 'react-router-dom';
 import ReactWOW from 'react-wow'
 
@@ -12,6 +11,7 @@ import galleryimg5 from '../../assets/img/gallery/05.jpg';
 import galleryimg6 from '../../assets/img/gallery/06.jpg';
 import galleryimg7 from '../../assets/img/gallery/07.jpg';
 import galleryimg8 from '../../assets/img/gallery/08.jpg';
+import Headertwo from '../layouts/Headertwo';
 
 
 const galleryPosts = [
@@ -52,7 +52,7 @@ class Gallery extends Component {
   render() {
     return (
       <div>
-        <Headerfour />
+        <Headertwo />
         {/*====== BREADCRUMB PART START ======*/}
         <section className="breadcrumb-area" style={{backgroundImage: 'url(assets/img/bg/04.jpg)'}}>
           <div className="container">

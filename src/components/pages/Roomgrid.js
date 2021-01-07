@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Headerfour from '../layouts/Headerfour';
-import Footer from '../layouts/Footer';
+import Footer from '../layouts/Footertwo';
 import { Link } from 'react-router-dom';
 
 import roomimg1 from '../../assets/img/room/01.jpg';
@@ -15,6 +14,7 @@ import roomimg9 from '../../assets/img/room/09.jpg';
 import roomimg10 from '../../assets/img/room/10.jpg';
 import roomimg11 from '../../assets/img/room/11.jpg';
 import roomimg12 from '../../assets/img/room/12.jpg';
+import Headertwo from '../layouts/Headertwo';
 
 const roomgridPosts = [
   {
@@ -119,7 +119,7 @@ class Roomgrid extends Component {
   render() {
     return (
       <div>
-        <Headerfour />
+        <Headertwo />
         {/*====== BREADCRUMB PART START ======*/}
         <section className="breadcrumb-area" style={{backgroundImage: 'url(assets/img/bg/04.jpg)'}}>
           <div className="container">

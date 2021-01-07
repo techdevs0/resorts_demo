@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Headerfour from '../layouts/Headerfour';
-import Footer from '../layouts/Footer';
+import Footer from '../layouts/Footertwo';
 import { Link } from 'react-router-dom';
 
 import roomimg1 from '../../assets/img/room/list-1.jpg';
@@ -9,6 +8,7 @@ import roomimg3 from '../../assets/img/room/list-3.jpg';
 import roomimg4 from '../../assets/img/room/list-4.jpg';
 import roomimg5 from '../../assets/img/room/list-5.jpg';
 import roomimg6 from '../../assets/img/room/list-6.jpg';
+import Headertwo from '../layouts/Headertwo';
 
 
 const roomlistPosts = [
@@ -72,7 +72,7 @@ class Roomlist extends Component {
   render() {
     return (
       <div>
-        <Headerfour />
+        <Headertwo />
         {/*====== BREADCRUMB PART START ======*/}
         <section className="breadcrumb-area" style={{backgroundImage: 'url(assets/img/bg/04.jpg)'}}>
           <div className="container">

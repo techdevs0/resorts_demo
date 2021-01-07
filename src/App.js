@@ -2,9 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Preloader from './components/layouts/Preloader';
-import Home from './components/pages/Home';
 import Hometwo from './components/pages/Hometwo';
-import Homethree from './components/pages/Homethree';
 import About from './components/pages/About';
 import Gallery from './components/pages/Gallery';
 import Menu from './components/pages/Menu';
@@ -26,7 +24,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Hometwo} />
           <Route path='/home-two' component={Hometwo} />
-          <Route path='/home-three' component={Homethree} />
+          <Route path='/home-three' component={Hometwo} />
           <Route path='/about' component={About} />
           <Route path='/gallery' component={Gallery} />
           <Route path='/menu' component={Menu} />

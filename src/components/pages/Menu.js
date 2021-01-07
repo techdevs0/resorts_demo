@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import Headerfour from '../layouts/Headerfour';
-import Footer from '../layouts/Footer';
+import Footer from '../layouts/Footertwo';
 import Breadcrumb from '../sections/menu/Breadcrumb';
 import Menuarea from '../sections/menu/Menu';
 import Roomgallery from '../sections/menu/Roomgallery';
+import Headertwo from '../layouts/Headertwo';
 
 class Menu extends Component {
   render() {
     return (
       <div>
-        <Headerfour />
+        <Headertwo />
         {/*====== BREADCRUMB PART START ======*/}
         <Breadcrumb/>
         {/*====== BREADCRUMB PART END ======*/}

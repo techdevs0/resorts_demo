@@ -7,15 +7,6 @@ const room2 = require('../../../assets/img/hotel/02.jpg');
 const room3 = require('../../../assets/img/hotel/03.jpg');
 const room4 = require('../../../assets/img/hotel/04.jpg');
 
-// const settings = {
-//     dots: true,
-//     infinite: true,
-//     speed: 500,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     centerMode: true,
-//     centerPadding: "70px",
-// };
 const settings = {
     className: "center",
     centerMode: true,
@@ -23,12 +14,6 @@ const settings = {
     centerPadding: "60px",
     slidesToShow: 3,
     speed: 500
-
-    // dots: true,
-    // infinite: true,
-    // speed: 500,
-    // slidesToShow: 3,
-    // slidesToScroll: 3
 };
 
 const rooms = [
@@ -140,8 +125,8 @@ const RoomSlider = () => {
                             <div className="slide-content py-3">
                                 <h1>{x.title}</h1>
                                 <ul>
-                                    {x.additional_details_list.map(li => (
-                                        <li>{li}</li>
+                                    {x.additional_details_list.map((li,index) => (
+                                        <li key={index}>{li}</li>
                                     ))}
                                 </ul>
                                 {/* <p className="rate my-3">
