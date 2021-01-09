@@ -17,26 +17,26 @@
 			}
 		}
 		.title {
-			font-size: 70px;
+			font-size: 60px;
 			line-height: 1.1;
 			font-weight: 400;
 			letter-spacing: 3px;
 			padding-bottom: 26px;
       font-family: "Lora", serif;
 			@media #{$xl} {
-				font-size: 70px;
+				font-size: 60px;
 			}
 			@media #{$lg} {
 				font-size: 60px;
 			}
 			@media #{$lsm} {
-				font-size: 48px;
+				font-size: 38px;
 			}
 			@media #{$xsm} {
-				font-size: 48px;
+				font-size: 28px;
 			}
 			@media #{$tiny} {
-				font-size: 32px;
+				font-size: 12px;
 			}
 		}
 		ul {
@@ -63,11 +63,11 @@
 		.main-btn {
 			@media #{$lsm} {
 				padding: 0 35px;
-				line-height: 55px;
+				line-height: 40px;
 			}
 			@media #{$xsm} {
 				padding: 0 25px;
-				line-height: 50px;
+				line-height: 35px;
 				letter-spacing: 1px;
 			}
 		}
@@ -127,12 +127,12 @@
 	&.banner-style-two,
 	&.banner-style-three {
 		.single-banner {
-			height: 950px;
+			height: 650px;
 			position: relative;
 			z-index: 1;
 			overflow: hidden;
 			@media #{$sm} {
-				height: 700px;
+				height: 350px;
 			}
 			.banner-bg,
 			.banner-overly {
@@ -161,7 +161,7 @@
 			}
 			h1 {
 				@media #{$md} {
-					font-size: 90px;
+					font-size: 60px;
 				}
 			}
 			.main-btn {
@@ -173,7 +173,7 @@
 				&.btn-border {
 					border-color: rgba($color: #fff, $alpha: 1);
 					color: $white;
-					border-width: 0.25rem;
+					border-width: 0.17rem;
 				}
 			}
 		}

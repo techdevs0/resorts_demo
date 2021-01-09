@@ -31,14 +31,14 @@ class Footertwo extends Component {
         </Link>
         {/*====== FOOTER START ======*/}
         <footer className="footer-two">
-          <div className="footer-widget-area pt-100 pb-50">
+          <div className="footer-widget-area pt-60 pb-50">
             <div className="container">
               <div className="row">
                 <div className="col-lg-3 col-sm-6 order-1">
                   {/* Site Info Widget */}
                   <div className="widget site-info-widget mb-50">
-                    <div className="footer-logo mb-50">
-                      <img src="assets/img/footer-logo.png" alt="" />
+                    <div className="footer-logo mb-1">
+                      <img src="assets/img/logo-fisher.png" alt="fishermancove footer logo" />
                     </div>
                     <p>
                       Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed doing eius mod
@@ -60,18 +60,20 @@ class Footertwo extends Component {
                     <div>
                       <h4 className="widget-title">Services.</h4>
                       <ul>
-                        <li><Link to="#">Spa &amp; Fitness</Link></li>
-                        <li><Link to="#">Leisure Activities</Link></li>
-                        <li><Link to="#">Restaurant</Link></li>
+                        <li><Link to="#">Spa & Fitness</Link></li>
+                        <li><Link to="#">Leisure Activities </Link></li>
+                        <li><Link to="#">Restarunts</Link></li>
                         <li><Link to="#">Conference Room</Link></li>
                         <li><Link to="#">About Us</Link></li>
-                        <li><Link to="#">Wedding in Seychelles</Link></li>
+                        <li><Link to="#">Weddings In Sey </Link></li>
                         <li><Link to="#">Reservations</Link></li>
                         <li><Link to="#">Terms of Use</Link></li>
+      
                       </ul>
                     </div>
                   </div>
                 </div>
+                
                 <div className="col-lg-3 col-sm-6 order-2 order-lg-3">
                   {/* Contact Widget */}
                   <div className="widget contact-widget mb-50">

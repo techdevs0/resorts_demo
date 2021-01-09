@@ -75,6 +75,14 @@ footer {
 			z-index: -1;
 		}
 		.widget {
+			.footer-logo{
+				width: 120px;
+			}
+			p{
+				font-size: 13px;
+				color:white;
+				text-align: justify;
+			}
 			&,
 			a,
 			.widget-title,
@@ -83,9 +91,9 @@ footer {
 			}
 
 			h4.widget-title {
-				font-size: 24px;
-				margin-bottom: 4px;
-				margin-bottom: 40px;
+				font-size: 20px;
+				margin-bottom: 25px;
+				font-weight: bold;
 			}
 
 			&.site-info-widget {
@@ -135,11 +143,11 @@ footer {
 					padding-left: 0;
 				}
 				ul li {
-					margin-bottom: 35px;
+					margin-bottom: 5px;
 					width: 50%;
 					float: left;
 					@media #{$tiny} {
-						margin-bottom: 20px;
+						margin-bottom: 5px;
 						width: 100%;
 					}
 					a {
@@ -175,7 +183,7 @@ footer {
 				.contact-lists {
 					.contact-box {
 						margin-bottom: 10px;
-						padding-bottom: 30px;
+						// padding-bottom: 30px;
 						// border-bottom: 1px solid #2e2e2e;
 						display: grid;
 						// grid-template-columns: 40px 1fr;
@@ -191,8 +199,9 @@ footer {
 							border: none;
 						}
 						h6 {
-							font-size: 20px;
-							margin-bottom: 10px;
+							font-size: 13px;
+							font-weight: bold;
+							margin-bottom: 7px;
 						}
 						.icon {
 							font-size: 40px;
@@ -230,6 +239,7 @@ footer {
 				&.contact-widget {
 					.contact-box {
 						border-color: #e1e1e1;
+						
 					}
 				}
 			}

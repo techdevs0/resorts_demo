@@ -40,14 +40,25 @@
       }
       .slide {
           background: #fff;
+          transform: scale(.8);
+          h1{
+              font-size:27px;
+              margin-top:3rem;
+          }
       }
       ul {
           li {
               .slide-content {
                   visibility: hidden;
+                //   ul{
+                //       li{
+                //           font-size:13px;
+                //       }
+                //   }
               }
           }
           .selected {
+            transform: scale(1) !important;
               margin: 0 2rem;
               .slide-content {
                   visibility: visible;
@@ -62,7 +73,7 @@
                       color: $nile-blue;
                       li {
                           display: block;
-                          font-size: 14px;
+                          font-size: 13px;
                           line-height: 30px;
                       }
                       li:before {
@@ -84,12 +95,12 @@
                   }
                   button {
                       border: none;
-                      padding: 1rem;
-                      width: 200px;
+                      padding: .5rem;
+                      width: 150px;
                       background-color: $nile-blue;
                       color: $white;
                       font-weight: 600;
-                      font-size: 20px;
+                      font-size: 14px;
                   }
               }
           }

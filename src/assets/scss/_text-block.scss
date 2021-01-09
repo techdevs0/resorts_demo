@@ -16,7 +16,8 @@
 		font-weight: bold;
 	}
 	p{
-		font-weight: 600;
+		font-weight: 500;
+		font-size: 14px;
 		font-family: 'Lora', sans-serif;
 	}
 	&.with-bg {
@@ -36,16 +37,30 @@
 			opacity: 0.94;
 		}
 	}
+	.section-title h2{
+		font-size: 27px;
+		font-weight: 600;
+		line-height: 32px;
+	}
+	.section-title p{
+		font-size: 14px;
+	}
 	&.bg-black {
 		p,
 		.section-title h2 {
 			color: $white;
+		}
+		.section-title h2{ 
+			font-size:27px;
 		}
 		.section-title .title-tag {
 			color: $primary-color;
 		}
 		.main-btn.btn-filled {
 			box-shadow: none;
+			font-size: 13px;
+			padding: 0 15px;
+    		line-height: 40px;
 			&:hover {
 				color: $white;
 			}

@@ -42,12 +42,12 @@ header {
 
 		.site-logo {
 			img {
-				max-width: 250px;
+				max-width: 120px;
 				@media #{$lg} {
-					max-width: 200px;
+					max-width: 120px;
 				}
 				@media #{$xsm} {
-					max-width: 180px;
+					max-width: 100px;
 				}
 			}
 			.sticky-logo {
@@ -487,9 +487,11 @@ header {
 				img {
 					@media #{$lsm} {
 						max-width: 200px;
+						width: 120px;
 					}
 					@media #{$tiny} {
 						max-width: 150px;
+						width: 120px;
 					}
 				}
 			}
@@ -672,7 +674,8 @@ header {
 			@media #{$md} {
 				padding: 10px 0;
 				.site-logo img {
-					max-width: 200px;
+					max-width: 120px;
+					width:120px;
 				}
 			}
 

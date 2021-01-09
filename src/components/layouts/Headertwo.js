@@ -217,8 +217,8 @@ class Headertwo extends Component {
               </div>
               {/* Site Logo */}
               <div className="site-logo">
-                <Link to="/" className="main-logo"><img src="assets/img/logo-white.png" alt="" /></Link>
-                <Link to="/" className="sticky-logo"><img src="assets/img/logo.png" alt="" /></Link>
+                <Link to="/" className="main-logo"><img src="assets/img/logo-fisher.png" alt="fishermans cove logo" /></Link>
+                <Link to="/" className="sticky-logo"><img src="assets/img/scroll-logo.png" alt="fishermans cove logo" /></Link>
               </div>
               {/* Header Info Pussed To Menu Wrap */}
               <div className={`nav-push-item ${classNamess}`}>
@@ -226,14 +226,14 @@ class Headertwo extends Component {
                 <div className="header-info d-lg-flex flex-column align-items-center">
                   <div className="item d-lg-flex align-items-center">
                     <i className="fas fa-phone mr-2 d-inline-block" />
-                    <Link to="tel:+90898787709">
-                      <h5 className="title">+908 987 877 09</h5>
+                    <Link to="tel:+2484677000">
+                      <h5 className="title">+248 4677000</h5>
                     </Link>
                   </div>
                   <div className="item d-lg-flex align-items-center">
                     <i className="fas fa-envelope mr-2 d-inline-block" />
-                    <Link to="mailto:info@webmail.com">
-                      <h5 className="title">info@webmail.com</h5>
+                    <Link to="mailto:reservations@fishermanscove-resort.com">
+                      <h5 className="title">reservations@fishermanscove-resort.com</h5>
                     </Link>
                   </div>
                 </div>
@@ -273,16 +273,18 @@ class Headertwo extends Component {
               <h5 className="widget-title">Our pages</h5>
               <ul>
                 <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/menu">Food Menu</Link></li>
-                <li><Link to="/restaurant">Restaurant</Link></li>
-                <li>
+                <li><Link to="/menu">Dining</Link></li>
+                <li><Link to="/restaurant">Rooms and Suites</Link></li>
+                {/* <li>
                   <Link to="/places">Places</Link>
                   <ul className="submenu">
                     <li><Link to="/places-details">Places Details</Link></li>
                   </ul>
-                </li>
+                </li> */}
+                <li><Link to="/offers">Weddings</Link></li>
                 <li><Link to="/offers">Offers</Link></li>
-                <li><Link to="/gallery">Our Gallery</Link></li>
+                <li><Link to="/gallery">Sustainability </Link></li>
+                <li><Link to="/gallery">Contact Us </Link></li>
               </ul>
             </div>
             {/* Social Link */}

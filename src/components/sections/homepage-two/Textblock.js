@@ -18,19 +18,17 @@ class Textblock extends Component {
                                 <div className="col-lg-6 col-md-8 col-sm-10">
                                     <div className="block-text h-100 d-flex flex-column justify-content-between align-items-start">
                                         <div className="section-title mb-20">
-                                            {/* <span className="title-tag">Take a tour</span> */}
-                                            <h1>About Fisherman's Cove Resort</h1>
+                                          
+                                            <h2>About Fisherman's <br /> Cove Resort</h2>
                                         </div>
                                         <p className="text-justify my-1">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                                             ut labore et dolore magna aliqua.
-                                        </p>
-                                        <p className="text-justify my-1">
+                                        <br />
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                                             laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
-                                        <p className="text-justify my-1">
+                                            <br />
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                                             laboris nisi ut aliquip ex ea commodo consequat.
