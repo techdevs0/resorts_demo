@@ -273,18 +273,12 @@ class Headertwo extends Component {
               <h5 className="widget-title">Our pages</h5>
               <ul>
                 <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/menu">Dining</Link></li>
-                <li><Link to="/restaurant">Rooms and Suites</Link></li>
-                {/* <li>
-                  <Link to="/places">Places</Link>
-                  <ul className="submenu">
-                    <li><Link to="/places-details">Places Details</Link></li>
-                  </ul>
-                </li> */}
-                <li><Link to="/offers">Weddings</Link></li>
+                <li><Link to="/restaurant">Dining</Link></li>
+                <li><Link to="/palces">Rooms &amp; Suites</Link></li>
+                <li><Link to="/palces">Weddings</Link></li>
                 <li><Link to="/offers">Offers</Link></li>
-                <li><Link to="/gallery">Sustainability </Link></li>
-                <li><Link to="/gallery">Contact Us </Link></li>
+                <li><Link to="/offers">Sustainability</Link></li>
+                <li><Link to="/contact">Contact Us</Link></li>
               </ul>
             </div>
             {/* Social Link */}
