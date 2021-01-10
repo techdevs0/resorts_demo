@@ -2,77 +2,77 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import $ from 'jquery';
-import {findDOMNode } from 'react-dom'
+import { findDOMNode } from 'react-dom'
 
 const navigationmenu = [
   {
-      id: 1,
-      linkText: 'Home',
-      child: false,
-      link:"/",
-      submenu: [
-          // {
-          //     id: 11,
-          //     link: '/',
-          //     linkText: 'Home 1'
-          // },
-          // {
-          //     id: 12,
-          //     new: true,
-          //     link: '/home-two',
-          //     linkText: 'Home 2'
-          // },
-          // {
-          //     id: 13,
-          //     link: '/home-three',
-          //     linkText: 'Home 3'
-          // },
-      ]
-      
-      
+    id: 1,
+    linkText: 'Home',
+    child: false,
+    link: "/",
+    submenu: [
+      // {
+      //     id: 11,
+      //     link: '/',
+      //     linkText: 'Home 1'
+      // },
+      // {
+      //     id: 12,
+      //     new: true,
+      //     link: '/home-two',
+      //     linkText: 'Home 2'
+      // },
+      // {
+      //     id: 13,
+      //     link: '/home-three',
+      //     linkText: 'Home 3'
+      // },
+    ]
+
+
   },
   {
-    
+
     id: 2,
     linkText: 'Rooms',
     child: true,
-    submenu:[
+    submenu: [
       {
         id: 21,
-        link:'/room-grid',
-        linkText:'Room Grid',
+        link: '/room-grid',
+        linkText: 'Room Grid',
       },
       {
         id: 22,
-        link:'/room-list',
-        linkText:'Room List',
+        link: '/room-list',
+        linkText: 'Room List',
       },
       {
         id: 23,
-        link:'/room-details',
-        linkText:'Room Details',
+        link: '/room-details',
+        linkText: 'Room Details',
       },
     ]
-    
-},
-{
-  id: 3,
-  linkText: 'News',
-  child: true,
-  submenu:[
-    {
-      id: 31,
-      link:'/news',
-      linkText:'News',
-    },
-    {
-      id: 32,
-      link:'/news-details',
-      linkText:'News Details',
-    },
-  ]
-  
-},
+
+  },
+  {
+    id: 3,
+    linkText: 'News',
+    child: true,
+    submenu: [
+      {
+        id: 31,
+        link: '/news',
+        linkText: 'News',
+      },
+      {
+        id: 32,
+        link: '/news-details',
+        linkText: 'News Details',
+      },
+    ]
+
+  },
   {
     id: 4,
     link: '/contact',
@@ -86,7 +86,7 @@ class Headertwo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-       redText: false
+      redText: false
     };
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
@@ -94,36 +94,36 @@ class Headertwo extends Component {
   }
   addClass() {
     this.setState({
-      redText:true
+      redText: true
     });
   }
-  
+
   removeClass() {
     this.setState({
-      redText:false
+      redText: false
     });
   }
   removeAll() {
     this.setState({
-      redText:false
+      redText: false
     });
   }
   componentDidMount() {
     window.addEventListener('resize', () => {
-        this.setState({
-            isMobile: window.innerWidth < 1020
-        });
+      this.setState({
+        isMobile: window.innerWidth < 1020
+      });
     }, false);
     window.addEventListener('load', () => {
       this.setState({
-          isMobile: window.innerWidth < 1020
+        isMobile: window.innerWidth < 1020
       });
-  }, false);
+    }, false);
     window.addEventListener('scroll', () => {
       this.setState({
-          isTop: window.scrollY > 150
+        isTop: window.scrollY > 150
       });
-  }, false);
+    }, false);
   }
   navToggle = () => {
     const nv = findDOMNode(this.refs.navmenu);
@@ -141,25 +141,25 @@ class Headertwo extends Component {
 
     // Get the next sibling element
     var sibling = elem.nextElementSibling;
-  
+
     // If there's no selector, return the first sibling
     if (!selector) return sibling;
-  
+
     // If the sibling matches our selector, use it
     // If not, jump to the next sibling and continue the loop
     while (sibling) {
       if (sibling.matches(selector)) return sibling;
       sibling = sibling.nextElementSibling
     }
-  
+
   }
-  
+
   triggerChild = (e) => {
     let subMenu = '';
-  
-    subMenu = ( this.getNextSibling(e.target, '.submenu') !== undefined ) ? this.getNextSibling(e.target, '.submenu') : null;
 
-    if(subMenu !== null && subMenu !== undefined && subMenu !== ''){
+    subMenu = (this.getNextSibling(e.target, '.submenu') !== undefined) ? this.getNextSibling(e.target, '.submenu') : null;
+
+    if (subMenu !== null && subMenu !== undefined && subMenu !== '') {
       subMenu.classList = subMenu.classList.contains('open') ? 'submenu' : 'submenu open';
     }
   }
@@ -167,7 +167,7 @@ class Headertwo extends Component {
     const className = this.state.isMobile ? 'breakpoint-on' : '';
     const classNamess = this.state.isMobile ? 'd-none' : '';
     const classNamesss = this.state.isTop ? 'sticky-active' : '';
-    
+
     return (
       <div>
         {/*====== HEADER START ======*/}
@@ -185,32 +185,16 @@ class Headertwo extends Component {
                   <Link to="#" id="offCanvasBtn"><i className="fal fa-bars" /></Link>
                 </div>
                 {/* Mneu Items */}
-                <div className="menu-items">
-                <ul>
-                  {navigationmenu.length > 0 ? navigationmenu.map((item, i) => (
-                      <li key={i} className={` ${item.child ? 'menu-item-has-children' : ''} `} onClick={this.triggerChild}>
-                      {item.child ? <Link onClick={e => e.preventDefault()} to="/"> {item.linkText} </Link> : <Link to={item.link}> {item.linkText} </Link> }
-                          {item.child ?
-                              <ul className="submenu" role="menu">
-                                  {item.submenu.map((sub_item, i) => (
-                                      <li key={i} className={`${sub_item.child ? 'menu-item-has-child' : ''} `}>
-                                      {sub_item.child ? <Link onClick={e => e.preventDefault()} to="/"> {sub_item.linkText} </Link> : <Link to={sub_item.link}> {sub_item.linkText} </Link> }
-                                          {sub_item.third_menu ?
-                                              <ul className="submenu">
-                                                  {sub_item.third_menu.map((third_item, i) => (
-                                                      <li key={i}><Link
-                                                          to={third_item.link}>{third_item.linkText}</Link>
-                                                      </li>
-                                                  ))}
-                                              </ul> : null}
-                                      </li>
-                                  ))}
-                              </ul>
-                              : null
-                          }
-                      </li>
-                  )) : null}
-                  </ul>
+                <div className="menu-items flags-row">
+                  <div>
+                    <img src={require('./../../assets/img/flags/flag1.png')} alt="flag" />
+                  </div>
+                  <div>
+                    <img src={require('./../../assets/img/flags/flag2.png')} alt="flag" />
+                  </div>
+                  <div>
+                    <img src={require('./../../assets/img/flags/flag3.png')} alt="flag" />
+                  </div>
                 </div>
                 {/* from pushed-item */}
                 <div className="nav-pushed-item" />
@@ -239,7 +223,7 @@ class Headertwo extends Component {
                 </div>
               </div>
               {/* Navbar Toggler */}
-              <div className="navbar-toggler" onClick={this.navToggle}  ref="navbtn">
+              <div className="navbar-toggler" onClick={this.navToggle} ref="navbtn">
                 <span /><span /><span />
               </div>
             </div>
@@ -247,8 +231,8 @@ class Headertwo extends Component {
         </header>
         {/*====== HEADER END ======*/}
         {/*====== OFF CANVAS START ======*/}
-        <div className={classNames("offcanvas-wrapper", {"show-offcanvas":this.state.redText})}>
-        <div className={classNames("offcanvas-overly", {"show-overly":this.state.redText})}  onClick={this.removeAll}/>
+        <div className={classNames("offcanvas-wrapper", { "show-offcanvas": this.state.redText })}>
+          <div className={classNames("offcanvas-overly", { "show-overly": this.state.redText })} onClick={this.removeAll} />
           <div className="offcanvas-widget">
             <Link to="#" className="offcanvas-close" onClick={this.removeClass}><i className="fal fa-times" /></Link>
             {/* Search Widget */}
