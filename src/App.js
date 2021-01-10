@@ -17,6 +17,7 @@ import Roomlist from './components/pages/Roomlist';
 import Roomdetails from './components/pages/Roomdetails';
 import Contact from './components/pages/Contact';
 import RoomSuites from './components/pages/RoomSuites';
+import Dining from './components/pages/Dining';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/' component={Hometwo} />
           <Route path='/home-two' component={Hometwo} />
           <Route path='/room-suites' component={RoomSuites} />
+          <Route path='/dining' component={Dining} />
           <Route path='/about' component={About} />
           <Route path='/gallery' component={Gallery} />
           <Route path='/menu' component={Menu} />
