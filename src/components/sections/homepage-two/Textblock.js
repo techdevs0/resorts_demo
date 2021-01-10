@@ -5,7 +5,7 @@ import ReactWOW from 'react-wow'
 class Textblock extends Component {
     render() {
         return (
-            <section className="text-block pt-115 pb-115">
+            <section className="text-block pt-100">
                 <div className="container">
                     <ReactWOW animation="fadeInLeft" data-wow-delay=".3s">
                         <div className="row align-items-center1 justify-content-space-between">

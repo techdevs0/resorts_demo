@@ -29,7 +29,7 @@ class Experience extends Component {
             <section className="experience-wrapper pt-5">
                 <h2 className="text-capitalize text-center text-muted p-3">Unlock the ultimate experience with us today</h2>
                 <ReactWOW animation="fadeInLeft" data-wow-delay=".3s">
-                    <div className="d-flex flex-row">
+                    <div className="d-flex flex-row flex-wrap flex-sm-nowrap">
                         {
                             data.map(x => (
                                 <div className="experience-item">

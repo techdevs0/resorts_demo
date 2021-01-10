@@ -39,7 +39,7 @@ class Banner extends Component {
         <div key={i} className="single-banner d-flex align-items-center justify-content-center">
           <div className="container">
             <div className="row justify-content-left">
-              <div className="col-lg-8">
+              <div className="col-10 col-lg-8">
                 <div className="banner-content text-left">
                 <ReactWOW animation="fadeInDown" data-delay={item.taganimation}>
                   <span className="promo-tag">{item.tag}</span></ReactWOW>

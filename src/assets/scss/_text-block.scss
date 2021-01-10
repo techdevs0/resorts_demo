@@ -2,8 +2,12 @@
 .text-block {
 	background: rgba($color: $primary-color, $alpha: 0.2);
 	color: $nile-blue;
+	padding: 3rem 0;
 	.image-wrapper{
-		height: 600px;
+		height: 500px;
+		@media #{$sm} {
+			height: 250px;
+		}
 		img{
 			width: 100%;
 			height: 100%;

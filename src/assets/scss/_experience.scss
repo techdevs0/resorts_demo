@@ -52,3 +52,33 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 600px) {
+    .experience-wrapper {
+        h2{
+            font-size: 26px;
+            margin-bottom: 2rem;
+        }
+        .experience-item {
+            height: 250px;
+            min-width: 50%;
+            max-width: 50%;
+            .foreground {
+                h3 {
+                    text-align: left;
+                    font-size: 18px;
+                }
+                &:hover {
+                    cursor: pointer;
+                    background: rgba(255, 255, 255, 0.7);
+                    h3 {
+                        color: #146264;
+                        transition: margin-bottom 0.4s;
+                        margin-bottom: 6rem;
+                    }
+                }
+            }
+        }
+    }
+}

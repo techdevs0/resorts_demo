@@ -31,7 +31,7 @@ const GuestReviews = (props) => {
             >
                 {
                     reviews.map(x => (
-                        <div className="review-wrapper w-50 mx-auto py-5">
+                        <div className="review-wrapper mx-auto py-5">
                             <img className="gt-img rounded-circle" src={x.image} alt={x.name} />
                             <h4 className="gt-name font-weight-bold">{x.name}</h4>
                             <ReactStars classNames="gt-rating" count={5} value={x.rating} edit={false} size={30} />

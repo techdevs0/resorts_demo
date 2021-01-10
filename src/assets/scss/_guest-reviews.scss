@@ -11,6 +11,7 @@
         background-color: transparent !important;
     }
     .review-wrapper {
+        width: 50%;
         img {
             width: 100px !important;
             height: 100px;
@@ -52,15 +53,13 @@
         padding: 1rem 0.5rem !important;
         h1,
         h2 {
-            color: $white;
-            font-family: "Lora", serif;
-            font-weight: 500;
             font-size: 2rem;
         }
         .slide {
             background-color: transparent !important;
         }
         .review-wrapper {
+            width: 75%;
             img {
                 width: 100px !important;
                 height: 100px;
