@@ -1,0 +1,99 @@
+.room-title-block {
+  padding: 3rem 0;
+  text-align: center;
+  h1,
+  h2 {
+    color: #11595c;
+    font-family: "Lora", serif;
+    margin-bottom: 2rem;
+  }
+  p {
+    color: #11595c;
+    font-weight: 500;
+    line-height: 30px;
+  }
+}
+.room-suite-grid-title {
+  text-align: center;
+  color: #11595c;
+  font-family: "Lora", serif;
+}
+
+.room-suite-grid-wrapper {
+  padding-top: 3rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  .room-grid-item-wrapper {
+    padding: 2rem;
+    max-width: 50%;
+    min-width: 50%;
+    display: inline-block;
+    margin: 2rem auto;
+    @media #{$sm} {
+      max-width: 100%;
+      min-width: 100%;
+      padding: 1rem;
+      margin: 1rem auto;
+    }
+    .grid-item {
+      box-shadow: 0 0 8px #dadada;
+      .room-title {
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        h3,
+        h4 {
+          color: $white;
+          font-family: $lora;
+          width: 50%;
+          text-shadow: 0 0 5px #333;
+          @media #{$sm} {
+            width: 75%;
+          }
+        }
+        a {
+          color: $white;
+          margin-top: 2rem;
+          text-decoration: underline;
+        }
+      }
+      .room-description {
+        p {
+          color: #11595c;
+          font-weight: 500;
+          margin: 0.5rem auto;
+        }
+        button {
+          line-height: 30px;
+          padding: 0.25rem 0.75rem;
+          margin: 0.75rem auto;
+          text-transform: capitalize;
+          background-color: #11595c;
+          border-color: #11595c;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+.availability-field {
+  width: 40%;
+  padding: 1rem;
+  margin: auto;
+  .form-control {
+    padding-left: 10px !important;
+  }
+  .input-group-append{
+    button{
+      background-color: #11595c;
+      color: $white;
+    }
+  }
+  @media #{$sm} {
+    width: 90%;
+  }
+}

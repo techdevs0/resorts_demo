@@ -44,7 +44,7 @@ class Banner extends Component {
                 <ReactWOW animation="fadeInDown" data-delay={item.taganimation}>
                   <span className="promo-tag">{item.tag}</span></ReactWOW>
                     <ReactWOW animation="fadeInLeft" data-delay={item.titleanimation}>
-                  <h1 className="title">{item.title}
+                  <h1 className="title">{this.props.title}
                   </h1></ReactWOW>
                   <ul>
                   <ReactWOW animation="fadeInUp" data-delay={item.btn1animation}>
