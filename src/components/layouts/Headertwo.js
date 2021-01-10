@@ -7,7 +7,7 @@ import {findDOMNode } from 'react-dom'
 const navigationmenu = [
   {
       id: 1,
-      linkText: 'Home',
+      linkText: 'UK.png',
       child: false,
       link:"/",
       submenu: [
@@ -34,7 +34,7 @@ const navigationmenu = [
   {
     
     id: 2,
-    linkText: 'Rooms',
+    linkText: 'Germany.png',
     child: true,
     submenu:[
       {
@@ -57,7 +57,7 @@ const navigationmenu = [
 },
 {
   id: 3,
-  linkText: 'News',
+  linkText: 'France.png',
   child: true,
   submenu:[
     {
@@ -194,7 +194,8 @@ class Headertwo extends Component {
                               <ul className="submenu" role="menu">
                                   {item.submenu.map((sub_item, i) => (
                                       <li key={i} className={`${sub_item.child ? 'menu-item-has-child' : ''} `}>
-                                      {sub_item.child ? <Link onClick={e => e.preventDefault()} to="/"> {sub_item.linkText} </Link> : <Link to={sub_item.link}> {sub_item.linkText} </Link> }
+                                      {/* {sub_item.child ? <Link onClick={e => e.preventDefault()} to="/"> {sub_item.linkText} </Link> : <Link to={sub_item.link}> {sub_item.linkText} </Link> } */}
+                                      
                                           {sub_item.third_menu ?
                                               <ul className="submenu">
                                                   {sub_item.third_menu.map((third_item, i) => (
