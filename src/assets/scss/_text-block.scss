@@ -6,7 +6,7 @@
 	.image-wrapper{
 		height: 500px;
 		@media #{$sm} {
-			height: 250px;
+			height: 200px;
 		}
 		img{
 			width: 100%;

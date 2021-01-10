@@ -112,12 +112,12 @@ class Footertwo extends Component {
               </div>
             </div>
             <div className="footer-bottom-wrapper py-3">
-              <div className="container d-flex justify-content-between align-items-center">
-                <div>
+              <div className="container d-flex flex-wrap justify-content-between align-items-center">
+                <div className="py-2">
                   <img src={require('./../../assets/img/logo-white.png')} alt="" />
                   <img className="px-2" src={require('./../../assets/img/logo-white.png')} alt="" />
                 </div>
-                <div className="social-icons">
+                <div className="social-icons py-2">
                   <Link to="#"><i className="fab fa-facebook-f" /></Link>
                   <Link to="#"><i className="fab fa-twitter" /></Link>
                   <Link to="#"><i className="fab fa-instagram" /></Link>

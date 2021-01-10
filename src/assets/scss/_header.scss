@@ -7,6 +7,9 @@ header {
 		z-index: 99;
 		background-color: transparent;
 		top: 35px;
+		@media #{$sm} {
+			top: 25px;
+		}
 	}
 
 	.container.container-custom-one {
@@ -675,7 +678,7 @@ header {
 				padding: 10px 0;
 				.site-logo img {
 					max-width: 120px;
-					width:120px;
+					width: 120px;
 				}
 			}
 
@@ -798,7 +801,7 @@ header {
 					height: 100%;
 					width: 2px;
 					background-color: $primary-color;
-					content: '';
+					content: "";
 				}
 			}
 			/* Search Widget */
@@ -902,7 +905,7 @@ header {
 		width: 100%;
 		z-index: -1;
 		background-color: $heading-color;
-		content: '';
+		content: "";
 		opacity: 0.7;
 	}
 
@@ -969,7 +972,7 @@ header {
 						left: -2px;
 						top: 50%;
 						transform: translateY(-48%);
-						content: '|';
+						content: "|";
 						color: $heading-color;
 					}
 				}

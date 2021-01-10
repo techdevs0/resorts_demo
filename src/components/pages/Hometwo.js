@@ -8,6 +8,7 @@ import RoomSlider from '../sections/homepage-two/RoomSlider';
 import Experience from '../sections/homepage-two/Experience';
 import GuestReviews from '../sections/homepage-two/GuestReviews';
 import ServiceTabs from '../sections/homepage-two/ServicesTabs';
+import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 
 class Hometwo extends Component {
   render() {
@@ -35,6 +36,8 @@ class Hometwo extends Component {
         <Experience/>
         {/*====== EXPERIENCE END ======*/}
         <Footertwo />
+
+        <BottomNavigator/>
       </div>
     );
   }

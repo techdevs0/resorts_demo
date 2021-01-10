@@ -1,0 +1,20 @@
+.bottom-navigator-wrapper {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .bottom-navigator-wrapper {
+      display: block;
+      margin-top: 56px;
+      .MuiBottomNavigation-root {
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+          position: fixed;
+          bottom: 0;
+          a {
+              color: $mine-shaft;
+          }
+      }
+  }
+}

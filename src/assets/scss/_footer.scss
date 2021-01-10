@@ -75,12 +75,12 @@ footer {
 			z-index: -1;
 		}
 		.widget {
-			.footer-logo{
+			.footer-logo {
 				width: 120px;
 			}
-			p{
+			p {
 				font-size: 13px;
-				color:white;
+				color: white;
 				text-align: justify;
 			}
 			&,
@@ -239,7 +239,6 @@ footer {
 				&.contact-widget {
 					.contact-box {
 						border-color: #e1e1e1;
-						
 					}
 				}
 			}
@@ -249,6 +248,9 @@ footer {
 		background-color: #07585c;
 		img {
 			width: 150px;
+			@media #{$sm} {
+				width: 90px;
+			}
 		}
 		.social-icons {
 			a {

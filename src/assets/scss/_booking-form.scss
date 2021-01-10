@@ -3,6 +3,9 @@
 	position: relative;
 	margin-top: -70px;
 	z-index: 2;
+	@media #{$sm}{
+		margin-top: -60px;
+	}
 	.booking-form-inner {
 		background-color: $white;
 		padding: 10px 40px 40px;

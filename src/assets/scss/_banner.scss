@@ -40,6 +40,10 @@
 			}
 		}
 		ul {
+			@media #{$sm}{
+				display: flex;
+				flex-direction: column;
+			}
 			li {
 				display: inline-block;
 				&:last-child {
@@ -51,7 +55,8 @@
 						margin-left: 10px;
 					}
 					@media #{$sm} {
-						margin-left: 5px;
+						margin-left: 0;
+						margin: 0.5rem 0;
 					}
 					@media #{$tiny} {
 						margin-left: 0;
