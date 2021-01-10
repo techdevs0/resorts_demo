@@ -273,9 +273,9 @@ class Headertwo extends Component {
               <h5 className="widget-title">Our pages</h5>
               <ul>
                 <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/restaurant">Dining</Link></li>
-                <li><Link to="/palces">Rooms &amp; Suites</Link></li>
-                <li><Link to="/palces">Weddings</Link></li>
+                <li><Link to="/dining">Dining</Link></li>
+                <li><Link to="/room-suites">Rooms &amp; Suites</Link></li>
+                <li><Link to="/weddings">Weddings</Link></li>
                 <li><Link to="/offers">Offers</Link></li>
                 <li><Link to="/offers">Sustainability</Link></li>
                 <li><Link to="/contact">Contact Us</Link></li>
