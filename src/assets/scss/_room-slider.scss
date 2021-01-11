@@ -42,8 +42,8 @@
           background: #fff;
           transform: scale(.8);
           h1{
-              font-size:27px;
-              margin-top:3rem;
+              font-size:28px;
+              margin-top:0.25rem;
           }
       }
       ul {
@@ -74,7 +74,8 @@
                       li {
                           display: block;
                           font-size: 13px;
-                          line-height: 30px;
+                          line-height: 24px;
+                          font-weight: 500;
                       }
                       li:before {
                           content: "• ";
@@ -134,7 +135,7 @@
               left: 1%;
           }
           .slider-wrapper {
-              height: 75vh;
+              height: 60vh;
               ul.slider{
                   transform: translate3d(-45%, 0px, 0px);
               }

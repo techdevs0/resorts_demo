@@ -3,8 +3,10 @@ import RoomGridItem from './dining-grid-item';
 
 const DiningGrid = (props) => {
   return (
-    <div className='container-fluid'>
-      <h1 className="dining-grid-title">{props.title}</h1>
+    <div className='container'>
+      {
+        props.title && <h1 className="dining-grid-title">{props.title}</h1>
+      }
       <div className='dining-grid-wrapper'>
         {
           props.data?.map(x => (

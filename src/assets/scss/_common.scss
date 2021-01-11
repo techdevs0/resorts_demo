@@ -258,16 +258,36 @@ select {
 	background-color: $heading-color;
 }
 
+.v-space-4{
+	padding: 2rem 0;
+	@media #{$sm}{
+		padding: 1rem 0;
+	}
+}
+.v-space-2{
+	padding: 1rem 0;
+	@media #{$sm}{
+		padding: 0.5rem 0;
+	}
+}
+.h-space-4{
+	padding: 0 2rem;
+	@media #{$sm}{
+		padding: 0 1rem;
+	}
+}
+
+
 .main-btn {
 	display: inline-block;
-	font-weight: 700;
+	font-weight: 600;
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: middle;
 	@include user-select(none);
 	padding: 0 48px;
 	font-size: 14px;
-	line-height: 60px;
+	line-height: 48px;
 	border-radius: 0px;
 	cursor: pointer;
 	@include transition(0.4s);

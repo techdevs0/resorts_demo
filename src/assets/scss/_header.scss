@@ -6,9 +6,9 @@ header {
 		width: 100%;
 		z-index: 99;
 		background-color: transparent;
-		top: 35px;
+		top: 10px;
 		@media #{$sm} {
-			top: 25px;
+			top: 10px;
 		}
 	}
 
@@ -137,8 +137,17 @@ header {
 
 		.flags-row {
 			display: flex;
+			align-items: center;
+			align-self: center;
 			div {
-				margin: 0 0.5rem;
+				margin: 0 0.25rem;
+				width: 32px;
+				img {
+					border-radius: 2px;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
 			}
 		}
 

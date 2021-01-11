@@ -13,13 +13,13 @@ const DiningOfferSlider = (props) => {
     autoplay:true
   };
   return (
-    <div className="dining-offer-slider">
+    <div className="dining-offer-slider container mx-auto">
       <h1 className="dining-grid-title">{props.title}</h1>
       <Slider {...settings}>
         {
           props.data?.map(x => (
             <div>
-              <div className="dining-slider-item" style={{ background: `url(${x.image})` }}>
+              <div className="dining-slider-item" style={{ backgroundImage: `url(${x.image})` }}>
                 <h2>{x.title}</h2>
               </div>
             </div>
