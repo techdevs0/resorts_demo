@@ -29,7 +29,7 @@ function App() {
           <Route path='/home-two' component={Hometwo} />
           <Route path='/room-suites' component={RoomSuites} />
           <Route path='/dining' component={Dining} />
-          <Route path='/wedding' component={Wedding} />
+          <Route path='/weddings' component={Wedding} />
           <Route path='/about' component={About} />
           <Route path='/gallery' component={Gallery} />
           <Route path='/menu' component={Menu} />

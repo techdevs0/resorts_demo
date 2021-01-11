@@ -135,6 +135,13 @@ header {
 			}
 		}
 
+		.flags-row {
+			display: flex;
+			div {
+				margin: 0 0.5rem;
+			}
+		}
+
 		.menu-items {
 			ul li {
 				display: inline-block;
@@ -776,6 +783,7 @@ header {
 		padding: 70px 40px;
 		position: relative;
 		z-index: 99;
+		overflow-y: auto;
 
 		a.offcanvas-close {
 			position: absolute;
