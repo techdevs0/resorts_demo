@@ -4,8 +4,8 @@ const DiningGridItem = (props) => {
   return (
     <div className="dining-grid-item-wrapper">
       <div className="grid-item">
-        <div className="dining-title" style={{ background: `url(${props.image})` }}>
-          <h3>{props.title}</h3>
+        <div className="dining-title" style={{ backgroundImage: `url(${props.image})` }}>
+          <h4>{props.title}</h4>
         </div>
       </div>
     </div>

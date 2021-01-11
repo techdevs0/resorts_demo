@@ -17,7 +17,7 @@ const reviews = [
 
 const GuestReviews = (props) => {
     return (
-        <div className="guest-reviews-wrapper p-5 text-center">
+        <div className="guest-reviews-wrapper py-3 text-center">
             <h2>Guest Reviews</h2>
             <Carousel
                 dynamicHeight={false}
@@ -31,11 +31,11 @@ const GuestReviews = (props) => {
             >
                 {
                     reviews.map(x => (
-                        <div className="review-wrapper mx-auto py-5">
+                        <div className="review-wrapper mx-auto py-3">
                             <img className="gt-img rounded-circle" src={x.image} alt={x.name} />
-                            <h4 className="gt-name font-weight-bold">{x.name}</h4>
-                            <ReactStars classNames="gt-rating" count={5} value={x.rating} edit={false} size={30} />
-                            <h3 className="gt-title">{x.title}</h3>
+                            <h5 className="gt-name font-weight-bold">{x.name}</h5>
+                            <ReactStars classNames="gt-rating" count={5} value={x.rating} edit={false} size={28} />
+                            <h4 className="gt-title">{x.title}</h4>
                             <p className="gt-review">{x.review}</p>
                             <p className="gt-date">Date of Stay: {x.stayDate}</p>
 

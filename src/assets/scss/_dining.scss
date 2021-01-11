@@ -1,11 +1,11 @@
 .dining-title-block {
-  padding: 3rem 0;
+  padding: 1rem 0;
   text-align: center;
   h1,
   h2 {
     color: #11595c;
     font-family: "Lora", serif;
-    margin-bottom: 2rem;
+    margin: 2rem auto;
   }
   p {
     color: #11595c;
@@ -15,9 +15,14 @@
 }
 .dining-grid-title {
   text-align: center;
-  color: #11595c;
+  color: $text-color;
   font-family: "Lora", serif;
   margin: 2rem 0;
+  font-style: italic;
+  font-size: 36px;
+  @media #{$sm} {
+    margin: 1rem 0;
+  }
 }
 
 .dining-grid-wrapper {
@@ -26,31 +31,36 @@
   display: flex;
   flex-wrap: wrap;
   .dining-grid-item-wrapper {
-    padding: 1rem;
+    padding: 0.75rem;
     max-width: 50%;
     min-width: 50%;
     display: inline-block;
+    cursor: pointer;
     // margin: 2rem auto;
     @media #{$sm} {
       max-width: 100%;
       min-width: 100%;
-      padding: 1rem;
+      padding: 0.5rem;
       // margin: 1rem auto;
     }
     .grid-item {
       box-shadow: 0 0 8px #dadada;
       .dining-title {
-        height: 350px;
+        height: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        @media #{$sm}{
+          height: 250px;
+        }
         h3,
         h4 {
           color: $white;
           text-transform: uppercase;
           font-family: $mont;
           line-height: 50px;
+          font-weight: 500;
           width: 50%;
           text-shadow: 0 0 5px #333;
           @media #{$sm} {
@@ -90,8 +100,8 @@
   .form-control {
     padding-left: 10px !important;
   }
-  .input-group-append{
-    button{
+  .input-group-append {
+    button {
       background-color: #11595c;
       color: $white;
     }
@@ -101,24 +111,36 @@
   }
 }
 
-.dining-offer-slider{
+.dining-offer-slider {
   margin: 2rem 0;
-  .dining-slider-item{
+  .dining-slider-item {
     height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    h1,h2,h3{
+    background-size: cover;
+    background-position: center;
+    @media #{$sm}{
+      height: 200px;
+    }
+    h1,
+    h2,
+    h3 {
       color: $white;
       text-shadow: 0 0 5px #333;
       text-align: center;
+      font-weight: 500;
+      padding: 0 3rem;
+      @media #{$sm}{
+        font-size: 24px;
+      }
     }
   }
-  .slick-prev{
+  .slick-prev {
     left: 0;
     z-index: 1;
   }
-  .slick-next{
+  .slick-next {
     right: 0;
     z-index: 1;
   }

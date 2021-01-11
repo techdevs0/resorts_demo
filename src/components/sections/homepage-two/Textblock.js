@@ -19,7 +19,7 @@ class Textblock extends Component {
                                     <div className="block-text h-100 d-flex flex-column justify-content-between align-items-start">
                                         <div className="section-title mb-20">
                                           
-                                            <h2>About Fisherman's <br /> Cove Resort</h2>
+                                            <h1>About Fisherman's <br /> Cove Resort</h1>
                                         </div>
                                         <p className="text-justify my-1">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt

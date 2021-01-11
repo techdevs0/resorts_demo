@@ -23,9 +23,11 @@
   }
   .img-wrapper {
     max-height: 300px;
+    height: 300px;
     @media #{$sm} {
-      max-height: 200px;
-      margin: 0 0 2rem 0;
+      max-height: 175px;
+      height: 175px;
+      margin: 0 0 1rem 0;
     }
     img {
       width: 100%;
@@ -43,12 +45,12 @@
 }
 
 .wedding-grid-wrapper {
-  padding-top: 3rem;
+  padding-top: 1rem;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   .wedding-grid-item-wrapper {
-    padding: 1rem;
+    padding: 0.75rem;
     max-width: 50%;
     min-width: 50%;
     display: inline-block;
@@ -60,7 +62,7 @@
     .grid-item {
       box-shadow: 0 0 8px #dadada;
       .wedding-title {
-        height: 400px;
+        height: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -97,12 +99,12 @@
           font-family: $lora;
         }
         span {
-          text-align: left;
+          // text-align: left;
           font-size: 14px;
         }
         h2,
         h3 {
-          margin: 0.5rem auto;
+          margin: 0.25rem auto;
         }
       }
     }

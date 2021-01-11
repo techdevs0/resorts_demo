@@ -4,7 +4,7 @@
 	color: $nile-blue;
 	padding: 3rem 0;
 	.image-wrapper{
-		height: 500px;
+		height: 400px;
 		@media #{$sm} {
 			height: 200px;
 		}
@@ -14,10 +14,11 @@
 			object-fit: cover;
 		}
 	}
-	h1 {
+	h1,h2 {
 		color: $nile-blue;
 		font-family: 'Lora', sans-serif;
-		font-weight: bold;
+		font-weight: 500;
+		font-size: 32px;
 	}
 	p{
 		font-weight: 500;
