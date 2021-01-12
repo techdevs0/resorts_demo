@@ -6,7 +6,7 @@ const image = require('../../../assets/img/banner-widget.jpg');
 
 const data = [
     {
-        image: require('../../../assets/img/experience/overview.jpg'),
+        image: require('../../../assets/img/experience/sustaniablity.jpg'),
         title: "Sustainability"
     },
     {
@@ -14,11 +14,11 @@ const data = [
         title: "Overview of the Resort"
     },
     {
-        image: require('../../../assets/img/experience/overview.jpg'),
+        image: require('../../../assets/img/experience/seychelles.jpg'),
         title: "About Seychelles"
     },
     {
-        image: require('../../../assets/img/experience/overview.jpg'),
+        image: require('../../../assets/img/experience/contact.jpg'),
         title: "Contact \n Us"
     },
 ]

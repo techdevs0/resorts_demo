@@ -55,6 +55,10 @@ footer {
 				}
 			}
 		}
+		// .footer-logos img{
+		// 	height: 80px;
+		// 	width: auto;
+		// }
 	}
 	/*=======  Widgets  =======*/
 	.footer-widget-area {
@@ -247,10 +251,15 @@ footer {
 	.footer-bottom-wrapper {
 		background-color: #07585c;
 		img {
-			width: 150px;
+			width: 90px;
 			@media #{$sm} {
-				width: 90px;
+				width: 60px;
 			}
+
+		}
+		.hhotel-dubai-footer{
+			height: 128px;
+			width: auto;
 		}
 		.social-icons {
 			a {
