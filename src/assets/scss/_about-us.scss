@@ -1,0 +1,126 @@
+.about-title-block {
+  h2 {
+    color: $eden;
+  }
+  .title-flex {
+    flex-direction: row;
+    @media #{$sm} {
+      flex-direction: column-reverse;
+    }
+  }
+  .about-title-item {
+    width: 50%;
+    @media #{$sm} {
+      width: 100%;
+    }
+  }
+  h1,
+  h2 {
+    font-family: $lora;
+    font-style: italic;
+  }
+  p {
+    color: $eden;
+    font-family: $lora;
+    font-weight: 600;
+  }
+  .img-wrapper {
+    max-height: 300px;
+    height: 300px;
+    @media #{$sm} {
+      max-height: 175px;
+      height: 175px;
+      margin: 0 0 1rem 0;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.about-services-wrapper {
+  padding: 2rem 0;
+  margin: 2rem 0;
+  div.items-wrapper {
+    display: flex;
+    box-sizing: content-box;
+    @media #{$sm} {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+  .about-service-item {
+    width: 25%;
+    @media #{$sm} {
+      width: calc(50% - 1rem);
+      margin: 0.5rem !important;
+    }
+    .icon {
+      color: $primary-color;
+    }
+    span {
+      color: $eden;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 0.5rem;
+      font-size: 14px;
+    }
+  }
+}
+
+.about-offer-slider {
+  margin: 2rem 0;
+  .slick-center {
+    .about-slider-item {
+      margin: 0 1rem;
+      @media #{$sm} {
+        margin: 0;
+      }
+    }
+  }
+  .about-slider-item {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    @media #{$sm} {
+      height: 200px;
+    }
+    h1,
+    h2,
+    h3 {
+      color: $white;
+      text-shadow: 0 0 5px #333;
+      text-align: center;
+      font-weight: 400;
+      padding: 0 3rem;
+      @media #{$sm} {
+        font-size: 24px;
+      }
+    }
+  }
+  .slick-prev {
+    left: 0;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 0;
+    z-index: 1;
+  }
+}
+
+.about-grid-title {
+  text-align: center;
+  color: $text-color;
+  font-family: "Lora", serif;
+  margin: 2rem 0;
+  font-style: italic;
+  font-size: 36px;
+  @media #{$sm} {
+    margin: 1rem 0;
+  }
+}

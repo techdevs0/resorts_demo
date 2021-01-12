@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
 
-const DiningGridItem = (props) => {
+const OtherRecommendations = (props) => {
   return (
-    <div className="dining-grid-item-wrapper">
-      <div className="grid-item">
-        <div className="dining-title" style={{ backgroundImage: `url(${props.image})` }}>
-          <h4>{props.title}</h4>
+    <div className="dining-recommendations-wrapper">
+      <h2 className="recommendations-title">{props.title}</h2>
+      <div className="container-fluid">
+        <div className="row">
+          {
+            props.data?.map((x, i) => (
+              <div className="col-12 col-md-4">
+                <div className="grid-item">
+                  <div className="dining-title" style={{ backgroundImage: `url(${x.image})` }}>
+                    <h4>{x.title}</h4>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
   );
 }
 
-export default DiningGridItem;
+export default OtherRecommendations;

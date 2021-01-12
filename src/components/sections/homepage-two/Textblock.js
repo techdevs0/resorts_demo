@@ -18,7 +18,7 @@ class Textblock extends Component {
                                 <div className="col-lg-6 col-md-8 col-sm-10">
                                     <div className="block-text h-100 d-flex flex-column justify-content-between align-items-start">
                                         <div className="section-title mb-20">
-                                          
+
                                             <h1>About Fisherman's <br /> Cove Resort</h1>
                                         </div>
                                         <p className="text-justify my-1">
@@ -33,7 +33,7 @@ class Textblock extends Component {
                                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                                             laboris nisi ut aliquip ex ea commodo consequat.
                                         </p>
-                                        <Link to="/about" className="main-btn btn-filled mt-40" style={{background:'#183254', borderColor:'#183254'}}>Learn More</Link>
+                                        <Link to="/about" className="main-btn btn-filled mt-40" style={{ background: '#183254', borderColor: '#183254' }}>Learn More</Link>
                                     </div>
                                 </div>
                             </ReactWOW>
