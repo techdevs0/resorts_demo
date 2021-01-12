@@ -29,12 +29,11 @@ const navigationmenu = [
       // },
     ]
 
-
   },
   {
 
     id: 2,
-    linkText: 'Rooms',
+    linkText: 'Germany.png',
     child: true,
     submenu: [
       {
@@ -73,6 +72,7 @@ const navigationmenu = [
     ]
 
   },
+
   {
     id: 4,
     link: '/contact',
@@ -185,6 +185,7 @@ class Headertwo extends Component {
                   <Link to="#" id="offCanvasBtn"><i className="fal fa-bars" /></Link>
                 </div>
                 {/* Mneu Items */}
+
                 <div className="menu-items flags-row">
                   <div>
                     <img src={require('./../../assets/img/flags/flag1.png')} alt="flag" />
@@ -195,6 +196,7 @@ class Headertwo extends Component {
                   <div>
                     <img src={require('./../../assets/img/flags/flag3.png')} alt="flag" />
                   </div>
+
                 </div>
                 {/* from pushed-item */}
                 <div className="nav-pushed-item" />
