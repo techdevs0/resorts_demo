@@ -4,12 +4,10 @@ import Footertwo from '../layouts/Footertwo';
 import Mainbanner from '../sections/homepage-two/Banner';
 import Bookingform from '../sections/homepage-two/Bookingform';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
-import DiningTitleBlock from '../sections/dining/main-text-block';
-import DiningGrid from '../sections/dining/dining-grid';
 import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
 import DiningInnerTitleBlock from '../sections/dining-inner/main-text-block';
 import DiningInnerInfo from '../sections/dining-inner/dining-grid';
-import OtherRecommendations from '../sections/dining/dining-grid-item';
+import OtherRecommendations from '../sections/dining-inner/dining-inner-grid-item';
 
 const roomsData = [
   {

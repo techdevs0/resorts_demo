@@ -111,7 +111,7 @@ class Footertwo extends Component {
                 </div>
               </div>
             </div>
-            <div className="footer-bottom-wrapper py-3">
+            <div className="footer-bottom-wrapper py-1">
               <div className="container d-flex flex-wrap justify-content-between align-items-center">
                 <div className="py-2 footer-logos">
                   <a href="https://www.story-rabat.com/"><img className="px-2" src={require('./../../assets/img/footer/story-rabat-footer.png')} alt="sotry-rabat footer" /></a>
