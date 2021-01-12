@@ -1,0 +1,168 @@
+.dining-inner-title-block {
+  padding: 1rem 0;
+  text-align: left;
+  h1,
+  h2 {
+    color: #11595c;
+    font-family: "Lora", serif;
+    margin: 2rem auto;
+  }
+  p {
+    color: #11595c;
+    font-weight: 500;
+    line-height: 30px;
+  }
+  .title-image-wrapper {
+    height: 300px;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #eee;
+    overflow: hidden;
+    margin: 1rem 0;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.dining-inner-grid-title {
+  text-align: center;
+  color: $text-color;
+  font-family: "Lora", serif;
+  margin: 2rem 0;
+  font-style: italic;
+  font-size: 36px;
+  @media #{$sm} {
+    margin: 1rem 0;
+  }
+}
+
+.recommendations-title {
+  color: $eden;
+  font-family: $lora;
+  margin: 1rem 0;
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.dining-info-wrapper {
+  padding: 2rem 0;
+  .travellers-choice {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // padding: 0 4rem;
+    .image-wrapper {
+      width: 100%;
+      height: 200px;
+      text-align: center;
+      box-shadow: 0 0 4px #dadada;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    p {
+      margin: 0.5rem 0;
+      font-weight: 500;
+    }
+    .info-title {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $black;
+    }
+  }
+  .menu-buttons {
+    display: flex;
+    // align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    button {
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+      box-shadow: none;
+      &:nth-child(2) {
+        margin: 1rem 0;
+      }
+    }
+  }
+}
+
+.dining-inner-offer-slider {
+  margin: 2rem 0;
+  .dining-inner-slider-item {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    @media #{$sm} {
+      height: 200px;
+    }
+    h1,
+    h2,
+    h3 {
+      color: $white;
+      text-shadow: 0 0 5px #333;
+      text-align: center;
+      font-weight: 500;
+      padding: 0 3rem;
+      @media #{$sm} {
+        font-size: 24px;
+      }
+    }
+  }
+  .slick-prev {
+    left: 0;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 0;
+    z-index: 1;
+  }
+}
+
+.dining-recommendations-wrapper {
+  padding: 0.75rem;
+  @media #{$sm} {
+    max-width: 100%;
+    min-width: 100%;
+    padding: 0.5rem;
+    // margin: 1rem auto;
+  }
+  .grid-item {
+    box-shadow: 0 0 8px #dadada;
+    @media #{$sm} {
+      margin: 0.5rem 0;
+    }
+    .dining-title {
+      height: 250px;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      @media #{$sm} {
+        height: 200px;
+      }
+      h3,
+      h4 {
+        color: $white;
+        text-transform: uppercase;
+        font-family: $mont;
+        line-height: 50px;
+        font-weight: 500;
+        width: 50%;
+        text-shadow: 0 0 5px #333;
+        @media #{$sm} {
+          width: 75%;
+        }
+      }
+    }
+  }
+}
