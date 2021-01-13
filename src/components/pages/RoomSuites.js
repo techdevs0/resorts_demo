@@ -6,6 +6,7 @@ import Bookingform from '../sections/homepage-two/Bookingform';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import RoomTitleBlock from '../sections/room-suites/main-text-block';
 import RoomSuiteGrid from '../sections/room-suites/room-suites-grid';
+import Subscribe from '../sections/common/Subscribe';
 
 const roomsData = [
   {
@@ -83,17 +84,8 @@ class RoomSuites extends Component {
         <RoomSuiteGrid title={"Suites"} data={suitesData} />
         {/*====== SUITES GRID END ======*/}
 
-        <div className="availability-field">
-          <p>
-            Be the first to know our newsletter:
-          </p>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">SUBSCRIBE</button>
-            </div>
-          </div>
-        </div>
+        <Subscribe />
+
         <Footertwo />
 
         <BottomNavigator />

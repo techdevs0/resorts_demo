@@ -16,7 +16,7 @@ class Hometwo extends Component {
       <div>
         <Headertwo />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"The Perfect Destination for You"}/>
+        <Mainbanner isMain={true} title={"The Perfect Destination for You"}/>
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform/>

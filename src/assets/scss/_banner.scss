@@ -22,7 +22,7 @@
 			font-weight: 400;
 			letter-spacing: 3px;
 			padding-bottom: 26px;
-      font-family: "Lora", serif;
+			font-family: "Lora", serif;
 			@media #{$xl} {
 				font-size: 60px;
 			}
@@ -40,7 +40,7 @@
 			}
 		}
 		ul {
-			@media #{$sm}{
+			@media #{$sm} {
 				display: flex;
 				flex-direction: column;
 			}
@@ -133,6 +133,12 @@
 	&.banner-style-three {
 		.single-banner {
 			height: 650px;
+			&.sub-banner {
+				height: 450px;
+				@media #{$sm} {
+					height: 350px;
+				}
+			}
 			position: relative;
 			z-index: 1;
 			overflow: hidden;

@@ -7,6 +7,7 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import ContactTitleBlock from '../sections/contact-us/main-text-block';
 import ContactUsForm from '../sections/contact-us/contact-form';
 import ContactOfferSlider from '../sections/contact-us/contact-offer-slider';
+import Subscribe from '../sections/common/Subscribe';
 
 const roomsData = [
   {
@@ -104,17 +105,8 @@ class Wedding extends Component {
         <ContactOfferSlider data={roomsData} title={"Explore Fisherman's Cove Premium Offerings"} />
         {/*====== ABOUT SLIDER END ======*/}
 
-        <div className="availability-field">
-          <p>
-            Be the first to know our newsletter:
-          </p>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">SUBSCRIBE</button>
-            </div>
-          </div>
-        </div>
+        <Subscribe />
+
         <Footertwo />
 
         <BottomNavigator />

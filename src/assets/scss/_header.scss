@@ -98,13 +98,13 @@ header {
 					display: block;
 				}
 				.title {
-					font-size: 14px;
+					font-size: 13px;
 					font-weight: 400;
 					@media #{$xl} {
-						font-size: 14px;
+						font-size: 13px;
 					}
 					@media #{$lg} {
-						font-size: 16px;
+						font-size: 13px;
 					}
 					@media #{$md} {
 						color: $white;
@@ -714,6 +714,13 @@ header {
 				}
 				.sticky-logo {
 					display: block;
+				}
+			}
+			.header-info{
+				.item{
+					i{
+						color: $eden
+					}
 				}
 			}
 		}

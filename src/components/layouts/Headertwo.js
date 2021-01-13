@@ -209,17 +209,17 @@ class Headertwo extends Component {
               {/* Header Info Pussed To Menu Wrap */}
               <div className={`nav-push-item ${classNamess}`}>
                 {/* Header Info */}
-                <div className="header-info d-lg-flex flex-column align-items-center">
+                <div className="header-info d-lg-flex flex-column ">
                   <div className="item d-lg-flex align-items-center">
                     <i className="fas fa-phone mr-2 d-inline-block" />
                     <Link to="tel:+2484677000">
-                      <h5 className="title">+248 4677000</h5>
+                      <span className="title">+248 4677000</span>
                     </Link>
                   </div>
                   <div className="item d-lg-flex align-items-center">
                     <i className="fas fa-envelope mr-2 d-inline-block" />
                     <Link to="mailto:reservations@fishermanscove-resort.com">
-                      <h5 className="title">reservations@fishermanscove-resort.com</h5>
+                      <span className="title">reservations@fishermanscove-resort.com</span>
                     </Link>
                   </div>
                 </div>

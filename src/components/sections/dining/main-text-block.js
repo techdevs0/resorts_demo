@@ -4,7 +4,7 @@ const DiningTitleBlock = (props) => {
   return (
     <div className="dining-title-block">
       <div className="container">
-        <h1>Dining</h1>
+        <h2>Dining</h2>
         <p>
           Offering countless experience with outstanding services. Lorem ipsum doler set amet. 
           Offering countless experience with outstanding services. Lorem ipsum doler set amet.

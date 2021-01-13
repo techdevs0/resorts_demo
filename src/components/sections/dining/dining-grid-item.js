@@ -7,6 +7,7 @@ const DiningGridItem = (props) => {
       <div className="grid-item" onClick={()=> props.history.push('dining-inner')}>
         <div className="dining-title" style={{ backgroundImage: `url(${props.image})` }}>
           <h4>{props.title}</h4>
+          <div className="slide-hover-overlay"></div>
         </div>
       </div>
     </div>

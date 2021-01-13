@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const OtherRecommendations = (props) => {
   return (
     <div className="dining-recommendations-wrapper">
-      <h2 className="recommendations-title">{props.title}</h2>
+      <h2 className="section-heading text-muted">{props.title}</h2>
       <div className="container-fluid">
         <div className="row">
           {
@@ -12,6 +12,7 @@ const OtherRecommendations = (props) => {
                 <div className="grid-item">
                   <div className="dining-title" style={{ backgroundImage: `url(${x.image})` }}>
                     <h4>{x.title}</h4>
+                    <div className="slide-hover-overlay"></div>
                   </div>
                 </div>
               </div>

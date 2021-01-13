@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 const WeddingTitleBlock = (props) => {
   return (
-    <div className="wedding-title-block py-4">
+    <div className="wedding-title-block">
       <div className="container">
-        <h2 className="text-center text-muted my-4">Wedding in Seychelles</h2>
+        <h2 className="text-center text-muted">Wedding in Seychelles</h2>
         <div className="d-flex flex-wrap title-flex">
           <div className="wedding-title-item">
             <p className="text-justify mr-sm-4">

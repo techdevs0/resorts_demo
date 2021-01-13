@@ -1,7 +1,7 @@
 .service-tabs-wrapper {
   background-color: $white;
   font-family: "Lora", serif;
-  padding-top: 2rem;
+  // padding-top: 2rem;
   .service-tab-panel .MuiBox-root {
     padding: 0;
     padding-top: 1rem;
@@ -16,6 +16,10 @@
   }
   .PrivateTabIndicator-colorSecondary-4 {
     background-color: #07585c;
+  }
+  .MuiTabs-indicator{
+    background-color: #07585c !important;
+    padding: 0.125rem;
   }
   button.Mui-selected {
     .MuiTab-wrapper {
@@ -39,7 +43,7 @@
     overflow: hidden;
     .slider-image-wrapper-service {
       position: relative;
-      height: 450px;
+      height: 500px;
       img {
         height: 100%;
         width: 100%;
@@ -62,7 +66,7 @@
         top: 0;
         flex-direction: column;
         .hotel-tagline {
-          font-weight: bold;
+          font-weight: 500;
           color: $white;
           font-family: "Lora", serif;
         }
@@ -70,6 +74,9 @@
           color: $white;
           width: 50%;
           font-family: "Lora", serif;
+        }
+        button{
+          box-shadow: none;
         }
       }
     }

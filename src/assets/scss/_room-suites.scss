@@ -1,11 +1,12 @@
 .room-title-block {
-  padding: 1rem 0;
+  // padding: 1rem 0;
   text-align: center;
   h1,
   h2 {
     color: #11595c;
     font-family: "Lora", serif;
-    margin-bottom: 2rem;
+    padding: 2rem  0;
+    font-weight: 500;
     @media #{$sm} {
       font-size: 40px;
     }
@@ -20,16 +21,9 @@
     }
   }
 }
-.room-suite-grid-title {
-  text-align: center;
-  color: $text-color;
-  font-family: "Lora", serif;
-  font-style: italic;
-  font-size: 36px;
-}
 
 .room-suite-grid-wrapper {
-  padding-top: 2rem;
+  // padding-top: 2rem;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -56,6 +50,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        position: relative;
         @media #{$sm} {
           height: 250px;
         }
@@ -65,6 +60,7 @@
           font-family: $lora;
           width: 50%;
           text-shadow: 0 0 5px #333;
+          z-index: 2;
           @media #{$sm} {
             width: 75%;
           }
@@ -73,6 +69,8 @@
           color: $white;
           margin-top: 2rem;
           text-decoration: underline;
+          z-index: 2;
+          font-size: 18px;
         }
       }
       .room-description {

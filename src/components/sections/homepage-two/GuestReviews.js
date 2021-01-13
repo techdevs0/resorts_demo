@@ -18,6 +18,9 @@ const reviews = [
 const GuestReviews = (props) => {
     return (
         <div className="guest-reviews-wrapper py-3 text-center">
+            <div className="trip-logo-wrapper d-inline-block mx-auto">
+                <img src={require('./../../../assets/img/travellers-choice-white.png')} alt="" />
+            </div>
             <h2>Guest Reviews</h2>
             <Carousel
                 dynamicHeight={false}
