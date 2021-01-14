@@ -1,0 +1,118 @@
+.spa-wrapper {
+  .projects-block {
+    h2,
+    h3 {
+      color: $eden;
+      font-family: $lora;
+      // font-style: italic;
+      margin-bottom: 1rem;
+    }
+    h2.main-title {
+      font-style: normal;
+    }
+    @media #{$sm}{
+      padding: 0.5rem 0 !important;
+    }
+    .title-flex {
+      flex-direction: row;
+      padding-top: 2rem;
+      @media #{$sm} {
+        flex-direction: column-reverse;
+        padding-top: 1rem;
+      }
+    }
+    .projects-item {
+      width: 50%;
+      @media #{$sm} {
+        width: 100%;
+      }
+      h5,
+      h6 {
+        padding: 1rem 0;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $eden;
+      }
+    }
+
+    p {
+      color: $eden;
+      font-family: $lora;
+      font-weight: 500;
+      &.download-para{
+        margin-top: 1rem;
+        margin-bottom: 0rem;
+        color: $mine-shaft;
+        font-weight: 600;
+        font-family: $mont;
+      }
+    }
+    .img-wrapper {
+      height: 600px;
+      @media #{$sm} {
+        height: 175px;
+        margin: 0 0 1rem 0;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    button {
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+      box-shadow: none;
+      margin-top: 2rem;
+      @media #{$sm} {
+        width: 100%;
+      }
+    }
+  }
+
+  
+.spa-recommendations-wrapper {
+  // padding: 0.75rem;
+  @media #{$sm} {
+    max-width: 100%;
+    min-width: 100%;
+    padding: 0.5rem;
+    // margin: 1rem auto;
+  }
+  .grid-item {
+    box-shadow: 0 0 8px #dadada;
+    @media #{$sm} {
+      margin: 0.5rem 0;
+    }
+    .spa-title {
+      height: 250px;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      @media #{$sm} {
+        height: 200px;
+      }
+      h3,
+      h4 {
+        color: $white;
+        text-transform: uppercase;
+        font-family: $mont;
+        line-height: 50px;
+        font-weight: 500;
+        width: 50%;
+        text-shadow: 0 0 5px #333;
+        z-index: 2;
+        @media #{$sm} {
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+
+
+}
