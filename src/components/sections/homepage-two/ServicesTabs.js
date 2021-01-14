@@ -85,6 +85,7 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         width: '100%',
         backgroundColor: theme.palette.background.paper,
+        boxShadow: '0 0 8px #dadada'
     },
 }));
 
@@ -98,9 +99,9 @@ const ServiceTabs = (props) => {
 
     return (
         <div className="service-tabs-wrapper">
-            <h2 className="text-center main-title text-muted p-2">Premium Offerings</h2>
+            <h2 className="text-center section-heading text-muted">Premium Offerings</h2>
             <div className={classes.root}>
-                <Paper square>
+                <Paper square elevation={0}>
                     <Tabs
                         value={value}
                         variant="scrollable"
@@ -128,7 +129,7 @@ const ServiceTabs = (props) => {
                                                 <h4 className="hotel-tagline my-3">
                                                     {x.tagLine}
                                                 </h4>
-                                                <h1 className="hotel-title display-4 my-4">
+                                                <h1 className="hotel-title my-4">
                                                     {x.title}
                                                 </h1>
                                                 <button className="main-btn btn-filled mt-4">KNOW MORE</button>

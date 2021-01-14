@@ -26,8 +26,8 @@ const data = [
 class Experience extends Component {
     render() {
         return (
-            <section className="experience-wrapper pt-5">
-                <h2 className="text-capitalize text-center text-muted p-3">Unlock the ultimate experience with us today</h2>
+            <section className="experience-wrapper">
+                <h2 className="section-heading text-muted">Unlock the ultimate experience with us today</h2>
                 <ReactWOW animation="fadeInLeft" data-wow-delay=".3s">
                     <div className="d-flex flex-row flex-wrap flex-sm-nowrap">
                         {

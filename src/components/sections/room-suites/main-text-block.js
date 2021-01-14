@@ -4,7 +4,7 @@ const RoomTitleBlock = (props) => {
   return (
     <div className="room-title-block">
       <div className="container">
-        <h1>Rooms and Suites</h1>
+        <h2>Rooms and Suites</h2>
         <p>
           Complimented by a peaceful environment. Lorem ipsum doler set amet. Complimented by a peaceful environment. Lorem ipsum doler set amet.
           Complimented by a peaceful environment. Lorem ipsum doler set amet.

@@ -103,7 +103,7 @@ const rooms = [
 const RoomSlider = () => {
     return (
         <div className="room-slider-wrapper py-4">
-            <h2 className="section-title text-muted">Breathtaking Tropical Paradise</h2>
+            <h2 className="section-heading text-muted">Breathtaking Tropical Paradise</h2>
             {/* <p className="w-75 text-center mx-auto">Turn your staycation into a blissful escape with a Suite Stay and 120 minutes of relaxing spa time starting from AED 850. Rejuvenate at the award-winning Mandara Spa and choose from our range of body treatments.</p> */}
             <Carousel
                 dynamicHeight={false}
@@ -114,14 +114,16 @@ const RoomSlider = () => {
                 infiniteLoop={true}
                 autoPlay={false}
                 centerMode
-                centerSlidePercentage={60}
-                className="room-carousel"
+                centerSlidePercentage={50}
+                className="room-carousel center"
             >
             {/* <Slider {...settings}> */}
                 {
                     rooms.map(x => (
                         <div>
-                            <img src={x.image} alt="" />
+                            <div className="room-image-wrapper">
+                                <img src={x.image} alt="" />
+                            </div>
                             <div className="slide-content py-3">
                                 <h1>{x.title}</h1>
                                 <ul>
@@ -129,12 +131,6 @@ const RoomSlider = () => {
                                         <li key={index}>{li}</li>
                                     ))}
                                 </ul>
-                                {/* <p className="rate my-3">
-                                    AED {x.rate}
-                                </p>
-                                <p className="rate-deleted my-3">
-                                    <del style={{ opacity: 0.9 }}>AED {x.original}</del>
-                                </p> */}
                                 <button className="btn-book-now my-4" onClick={() => window.location = "https://be.synxis.com/?_ga=2.102065793.1000121752.1606552834-1702853238.1606552834&adult=1&arrive=2020-11-28&chain=27304&child=0&currency=AED&depart=2020-11-29&hotel=75043&level=hotel&locale=en-US&promo=HSPA&rooms=1"}>BOOK NOW</button>
                             </div>
                         </div>

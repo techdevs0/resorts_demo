@@ -8,6 +8,7 @@ import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
 import DiningInnerTitleBlock from '../sections/dining-inner/main-text-block';
 import DiningInnerInfo from '../sections/dining-inner/dining-grid';
 import OtherRecommendations from '../sections/dining-inner/dining-inner-grid-item';
+import Subscribe from '../sections/common/Subscribe';
 
 const roomsData = [
   {
@@ -94,6 +95,8 @@ class DiningInner extends Component {
         {/*====== OTHERS GRID START ======*/}
         <OtherRecommendations title={"Other Restaurants & Bars"} data={roomsData} />
         {/*====== OTHERS GRID END ======*/}
+        <Subscribe />
+
         <Footertwo />
 
         <BottomNavigator />

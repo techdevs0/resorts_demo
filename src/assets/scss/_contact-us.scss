@@ -1,7 +1,9 @@
 .contact-title-block {
-  h1 {
+  h1,
+  h2 {
     color: $eden;
     font-family: $lora;
+    padding: 2rem 0;
   }
   .title-flex {
     flex-direction: row;
@@ -11,8 +13,23 @@
   }
   .contact-title-item {
     width: 50%;
+    color: $secondary-color;
+    h4 {
+      font-family: $lora;
+      margin-bottom: 2rem;
+      color: $secondary-color;
+      font-weight: 600;
+    }
     @media #{$sm} {
       width: 100%;
+    }
+    .row{
+      p{
+        font-weight: 300;
+      }
+      i{
+        font-size: 18px;
+      }
     }
   }
   p {
@@ -72,14 +89,8 @@
 }
 
 .contact-offer-slider {
-  padding: 2rem 0;
-  h2,
-  h3 {
-    font-family: $lora;
-    font-style: italic;
-    margin: 1rem 0;
-    text-align: center;
-  }
+  // padding: 2rem 0;
+
   .slick-center {
     .contact-slider-item {
       // margin: 0 1rem;
@@ -95,6 +106,7 @@
     justify-content: center;
     background-size: cover;
     background-position: center;
+    position: relative;
     @media #{$sm} {
       height: 200px;
     }
@@ -107,6 +119,7 @@
       padding: 0 3rem;
       font-style: normal;
       font-family: $mont;
+      z-index: 2;
       @media #{$sm} {
         font-size: 24px;
       }

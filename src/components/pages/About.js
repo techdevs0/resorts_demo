@@ -8,6 +8,7 @@ import AboutTitleBlock from '../sections/about-us/main-text-block';
 import AboutServices from '../sections/about-us/about-services';
 import AboutSecondaryTextBlock from '../sections/about-us/secondary-text-block';
 import AboutOfferSlider from '../sections/about-us/about-offer-slider';
+import Subscribe from '../sections/common/Subscribe';
 
 const roomsData = [
   {
@@ -84,17 +85,8 @@ class Wedding extends Component {
         <AboutOfferSlider data={roomsData} title={"Explore Fisherman's Cove Premium Offerings"} />
         {/*====== ABOUT SLIDER END ======*/}
 
-        <div className="availability-field">
-          <p>
-            Be the first to know our newsletter:
-          </p>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">SUBSCRIBE</button>
-            </div>
-          </div>
-        </div>
+        <Subscribe />
+
         <Footertwo />
 
         <BottomNavigator />

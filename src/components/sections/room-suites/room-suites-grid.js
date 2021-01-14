@@ -3,8 +3,8 @@ import RoomGridItem from './room-grid-item';
 
 const RoomSuiteGrid = (props) => {
   return (
-    <div className='container py-3'>
-      <h1 className="room-suite-grid-title">{props.title}</h1>
+    <div className='container'>
+      <h1 className="section-heading text-muted">{props.title}</h1>
       <div className='room-suite-grid-wrapper'>
         {
           props.data?.map(x => (

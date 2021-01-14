@@ -1,6 +1,15 @@
 .guest-reviews-wrapper {
     background: $secondary-color;
     font-family: "Montserrat", serif;
+    .trip-logo-wrapper{
+        height: 75px;
+        height: 75px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
     h1,
     h2 {
         color: $primary-color;
