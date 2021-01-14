@@ -203,8 +203,8 @@ class Headertwo extends Component {
               </div>
               {/* Site Logo */}
               <div className="site-logo">
-                <Link to="/" className="main-logo"><img src="assets/img/logo-fisher.png" alt="fishermans cove logo" /></Link>
-                <Link to="/" className="sticky-logo"><img src="assets/img/scroll-logo.png" alt="fishermans cove logo" /></Link>
+                <Link to="/" className="main-logo"><img src={require('./../../assets/img/logo-fisher.png')} alt="fishermans cove logo" /></Link>
+                <Link to="/" className="sticky-logo"><img src={require('./../../assets/img/scroll-logo.png')} alt="fishermans cove logo" /></Link>
               </div>
               {/* Header Info Pussed To Menu Wrap */}
               <div className={`nav-push-item ${classNamess}`}>
@@ -263,7 +263,7 @@ class Headertwo extends Component {
                 <li><Link to="/room-suites">Rooms &amp; Suites</Link></li>
                 <li><Link to="/weddings">Weddings</Link></li>
                 <li><Link to="/offers">Offers</Link></li>
-                <li><Link to="/offers">Sustainability</Link></li>
+                <li><Link to="/sustainability">Sustainability</Link></li>
                 <li><Link to="/contact">Contact Us</Link></li>
               </ul>
             </div>

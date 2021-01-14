@@ -1,4 +1,4 @@
-.dining-title-block {
+.offer-title-block {
   // padding: 1rem 0;
   text-align: center;
   h1,
@@ -14,7 +14,7 @@
     line-height: 30px;
   }
 }
-.dining-grid-title {
+.offer-grid-title {
   text-align: center;
   color: $text-color;
   font-family: "Lora", serif;
@@ -26,35 +26,36 @@
   }
 }
 
-.dining-grid-wrapper {
+.offer-grid-wrapper {
   padding-top: 1rem;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  .dining-grid-item-wrapper {
+  box-sizing: content-box;
+  .offer-grid-item-wrapper {
     padding: 0.5rem;
-    max-width: 50%;
-    min-width: 50%;
+    max-width: 33.33%;
+    min-width: 33.33%;
     display: inline-block;
     cursor: pointer;
     // margin: 2rem auto;
     @media #{$sm} {
-      max-width: 100%;
-      min-width: 100%;
+      max-width: 50%;
+      min-width: 50%;
       padding: 0.5rem;
       // margin: 1rem auto;
     }
     .grid-item {
       box-shadow: 0 0 8px #dadada;
-      .dining-title {
-        height: 300px;
+      .offer-title {
+        height: 250px;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        @media #{$sm}{
-          height: 250px;
+        @media #{$sm} {
+          height: 150px;
         }
         h3,
         h4 {
@@ -68,6 +69,8 @@
           text-shadow: 0 0 5px #333;
           @media #{$sm} {
             width: 75%;
+            font-size: 16px;
+            line-height: 30px;
           }
         }
         a {
@@ -76,7 +79,7 @@
           text-decoration: underline;
         }
       }
-      .dining-description {
+      .offer-description {
         p {
           color: #11595c;
           font-weight: 500;
@@ -114,20 +117,20 @@
   }
 }
 
-.dining-offer-slider {
+.offer-offer-slider {
   // margin: 2rem 0;
   padding-top: 2rem;
-  @media #{$sm}{
-  padding-top: 2rem;
+  @media #{$sm} {
+    padding-top: 2rem;
   }
-  .dining-slider-item {
+  .offer-slider-item {
     height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
     background-position: center;
-    @media #{$sm}{
+    @media #{$sm} {
       height: 200px;
     }
     h1,
@@ -138,7 +141,7 @@
       text-align: center;
       font-weight: 500;
       padding: 0 3rem;
-      @media #{$sm}{
+      @media #{$sm} {
         font-size: 24px;
       }
     }
@@ -150,5 +153,22 @@
   .slick-next {
     right: 0;
     z-index: 1;
+  }
+}
+
+.offer-categories {
+  margin-bottom: 2rem;
+  box-sizing: content-box;
+  button {
+    border: 1px solid $eden;
+    border-radius: 0;
+    margin: 0.25rem 0.5rem;
+    &:hover {
+      background-color: $eden;
+      color: $white;
+    }
+    @media #{$sm} {
+      width: 100%;
+    }
   }
 }
