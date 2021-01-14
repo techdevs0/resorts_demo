@@ -156,15 +156,19 @@
   }
 }
 
-.offer-categories{
+.offer-categories {
   margin-bottom: 2rem;
-  button{
+  box-sizing: content-box;
+  button {
     border: 1px solid $eden;
     border-radius: 0;
-    margin: 0 0.5rem;
-    &:hover{
+    margin: 0.25rem 0.5rem;
+    &:hover {
       background-color: $eden;
       color: $white;
+    }
+    @media #{$sm} {
+      width: 100%;
     }
   }
 }

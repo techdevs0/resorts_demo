@@ -13,7 +13,7 @@ const OfferCategories = (props) => {
   return (
     <div className="offer-categories">
       <div className="container">
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex flex-wrap justify-content-md-center">
           {
             categories.map(x=>(  
               <button className="btn btn-default">
