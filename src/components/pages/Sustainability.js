@@ -9,6 +9,9 @@ import AboutServices from '../sections/about-us/about-services';
 import AboutSecondaryTextBlock from '../sections/about-us/secondary-text-block';
 import AboutOfferSlider from '../sections/about-us/about-offer-slider';
 import Subscribe from '../sections/common/Subscribe';
+import SustainIntroBlock from '../sections/sustainability/intro-block';
+import SustainPillarsBlock from '../sections/sustainability/pillars-block';
+import SustainProjectsBlock from '../sections/sustainability/projects-block';
 
 const roomsData = [
   {
@@ -61,29 +64,26 @@ const roomsData = [
   },
 ]
 
-class AboutUs extends Component {
+class Sustainability extends Component {
   render() {
     return (
-      <div className="bg-white">
+      <div className="bg-white sustainability-wrapper">
         <Headertwo />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"About Us"} />
+        <Mainbanner title={"Sustainability"} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
-        {/*====== TITLE START ======*/}
-        <AboutTitleBlock />
-        {/*====== TITLE END ======*/}
-        {/*====== SERVICES START ======*/}
-        <AboutServices data={roomsData} />
-        {/*====== SERVICES END ======*/}
-        {/*====== SECONDARY START ======*/}
-        <AboutSecondaryTextBlock/>
-        {/*====== SECONDARY END ======*/}
-        {/*====== ABOUT SLIDER START ======*/}
-        <AboutOfferSlider data={roomsData} title={"Explore Fisherman's Cove Premium Offerings"} />
-        {/*====== ABOUT SLIDER END ======*/}
+        {/*====== INTRO START ======*/}
+        <SustainIntroBlock />
+        {/*====== INTRO END ======*/}
+        {/*====== PILLARS START ======*/}
+        <SustainPillarsBlock/>
+        {/*====== PILLARS END ======*/}
+        {/*====== PROJECTS SLIDER START ======*/}
+        <SustainProjectsBlock />
+        {/*====== PROJECTS SLIDER END ======*/}
 
         <Subscribe />
 
@@ -95,4 +95,4 @@ class AboutUs extends Component {
   }
 }
 
-export default AboutUs;
+export default Sustainability;
