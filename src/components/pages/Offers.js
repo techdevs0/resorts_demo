@@ -67,44 +67,6 @@ const roomsData = [
   },
 ]
 
-const offersData = [
-  {
-    title: "Family Suite Garden View",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
-  },
-  {
-    title: "Family Suite Garden View",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
-  },
-  {
-    title: "Family Suite Garden View",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
-  },
-  {
-    title: "Family Suite Garden View",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
-  },
-  {
-    title: "Family Suite Garden View",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
-  },
-]
-
 class Offers extends Component {
   render() {
     return (
@@ -122,7 +84,6 @@ class Offers extends Component {
         {/*====== ROOM GRID START ======*/}
         <OfferGrid title={null} data={roomsData} />
         {/*====== ROOM GRID END ======*/}
-
         <Subscribe />
 
         <Footertwo />

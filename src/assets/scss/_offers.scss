@@ -155,3 +155,16 @@
     z-index: 1;
   }
 }
+
+.offer-categories{
+  margin-bottom: 2rem;
+  button{
+    border: 1px solid $eden;
+    border-radius: 0;
+    margin: 0 0.5rem;
+    &:hover{
+      background-color: $eden;
+      color: $white;
+    }
+  }
+}
