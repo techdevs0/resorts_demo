@@ -6,13 +6,14 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { Grid, Paper } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const tabsData = [
     {
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/leisure.jpg"),
-        buttonLink:""
+        buttonLink:"/whats-on"
     },
     {
         tagLine: "Wedding In Seychelles",
@@ -24,19 +25,19 @@ const tabsData = [
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/wedding.jpg"),
-        buttonLink:""
+        buttonLink:"/weddings"
     },
     {
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/offer.jpg"),
-        buttonLink:""
+        buttonLink:"/offers"
     },
     {
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/spa.jpg"),
-        buttonLink:""
+        buttonLink:"spa-wellness"
     },
     {
         tagLine: "Wedding In Seychelles",
@@ -132,7 +133,9 @@ const ServiceTabs = (props) => {
                                                 <h1 className="hotel-title my-4">
                                                     {x.title}
                                                 </h1>
-                                                <button className="main-btn btn-filled mt-4">KNOW MORE</button>
+                                                <Link to={x.buttonLink}>
+                                                    <button className="main-btn btn-filled mt-4">KNOW MORE</button>
+                                                </Link>
                                             </div>
                                         </div>
                                     </Grid>

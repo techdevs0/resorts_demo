@@ -263,7 +263,7 @@ class Headertwo extends Component {
                 <li><Link to="/room-suites">Rooms &amp; Suites</Link></li>
                 <li><Link to="/weddings">Weddings</Link></li>
                 <li><Link to="/offers">Offers</Link></li>
-                <li><Link to="/offers">Sustainability</Link></li>
+                <li><Link to="/sustainability">Sustainability</Link></li>
                 <li><Link to="/contact">Contact Us</Link></li>
               </ul>
             </div>
