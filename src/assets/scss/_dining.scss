@@ -1,11 +1,12 @@
 .dining-title-block {
-  padding: 1rem 0;
+  // padding: 1rem 0;
   text-align: center;
   h1,
   h2 {
     color: #11595c;
     font-family: "Lora", serif;
-    margin: 2rem auto;
+    padding: 2rem 0;
+    font-weight: 500;
   }
   p {
     color: #11595c;
@@ -31,7 +32,7 @@
   display: flex;
   flex-wrap: wrap;
   .dining-grid-item-wrapper {
-    padding: 0.75rem;
+    padding: 0.5rem;
     max-width: 50%;
     min-width: 50%;
     display: inline-block;
@@ -47,6 +48,7 @@
       box-shadow: 0 0 8px #dadada;
       .dining-title {
         height: 300px;
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -59,9 +61,10 @@
           color: $white;
           text-transform: uppercase;
           font-family: $mont;
-          line-height: 50px;
+          line-height: 40px;
           font-weight: 500;
           width: 50%;
+          z-index: 2;
           text-shadow: 0 0 5px #333;
           @media #{$sm} {
             width: 75%;
@@ -112,9 +115,13 @@
 }
 
 .dining-offer-slider {
-  margin: 2rem 0;
+  // margin: 2rem 0;
+  padding-top: 2rem;
+  @media #{$sm}{
+  padding-top: 2rem;
+  }
   .dining-slider-item {
-    height: 400px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;

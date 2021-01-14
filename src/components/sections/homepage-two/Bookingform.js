@@ -9,21 +9,21 @@ class Bookingform extends Component {
                         <form action="#">
                             <div className="row align-items-end">
                                 <div className="col-lg-3 col-md-6">
-                                    <div className="inputs-filed mt-30">
+                                    <div className="inputs-filed">
                                         <label htmlFor="arrival-date">Check In</label>
                                         <div className="icon"><i className="fal fa-calendar-alt" /></div>
                                         <input type="text" placeholder="24th march 2020" name="arrival-date" id="arrival-date" />
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-6">
-                                    <div className="inputs-filed mt-30">
+                                    <div className="inputs-filed">
                                         <label htmlFor="departure-date text-theme">Check Out</label>
                                         <div className="icon"><i className="fal fa-calendar-alt" /></div>
                                         <input type="text" placeholder="30th march 2020" name="departure-date" id="departure-date" />
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-6">
-                                    <div className="inputs-filed mt-30">
+                                    <div className="inputs-filed">
                                         <label htmlFor="guests">Rooms</label>
                                         <div className="nice-select">
                                             <select name="guests" id="guests">
@@ -37,7 +37,7 @@ class Bookingform extends Component {
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-md-6">
-                                    <div className="inputs-filed mt-30">
+                                    <div className="inputs-filed">
                                         <button type="submit">Book Now</button>
                                     </div>
                                 </div>

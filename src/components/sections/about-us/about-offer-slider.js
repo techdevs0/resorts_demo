@@ -27,13 +27,14 @@ const AboutOfferSlider = (props) => {
   };
   return (
     <div className="about-offer-slider container mx-auto">
-      <h1 className="about-grid-title">{props.title}</h1>
+      <h1 className="section-heading text-muted">{props.title}</h1>
       <Slider {...settings}>
         {
           props.data?.map(x => (
             <div>
               <div className="about-slider-item" style={{ backgroundImage: `url(${x.image})` }}>
                 <h3>{x.title}</h3>
+                <div className="slide-hover-overlay"></div>
               </div>
             </div>
           ))

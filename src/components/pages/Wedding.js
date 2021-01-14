@@ -6,6 +6,7 @@ import Bookingform from '../sections/homepage-two/Bookingform';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import WeddingTitleBlock from '../sections/wedding-main/main-text-block';
 import WeddingGrid from '../sections/wedding-main/wedding-grid';
+import Subscribe from '../sections/common/Subscribe';
 
 const roomsData = [
   {
@@ -13,7 +14,7 @@ const roomsData = [
     link: "",
     linkText: "View More",
     image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
+    description: [
       "Guests can hide themseleves away in these comfortable rooms.",
       "Lorem ipsum doler set amet lorem ipsum doler set amet",
       "Guests can hide themseleves away in these comfortable rooms.",
@@ -25,7 +26,7 @@ const roomsData = [
     link: "",
     linkText: "View More",
     image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
+    description: [
       "Guests can hide themseleves away in these comfortable rooms.",
       "Lorem ipsum doler set amet lorem ipsum doler set amet",
       "Guests can hide themseleves away in these comfortable rooms.",
@@ -37,7 +38,7 @@ const roomsData = [
     link: "",
     linkText: "View More",
     image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
+    description: [
       "Guests can hide themseleves away in these comfortable rooms.",
       "Lorem ipsum doler set amet lorem ipsum doler set amet",
       "Guests can hide themseleves away in these comfortable rooms.",
@@ -49,7 +50,7 @@ const roomsData = [
     link: "",
     linkText: "View More",
     image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
+    description: [
       "Guests can hide themseleves away in these comfortable rooms.",
       "Lorem ipsum doler set amet lorem ipsum doler set amet",
       "Guests can hide themseleves away in these comfortable rooms.",
@@ -76,17 +77,8 @@ class Wedding extends Component {
         <WeddingGrid title={"Wedding Services"} data={roomsData} />
         {/*====== ROOM GRID END ======*/}
 
-        <div className="availability-field">
-          <p>
-            Be the first to know our newsletter:
-          </p>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">SUBSCRIBE</button>
-            </div>
-          </div>
-        </div>
+        <Subscribe />
+
         <Footertwo />
 
         <BottomNavigator />

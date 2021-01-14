@@ -3,13 +3,14 @@ footer {
 	/*=======  Subscibe  =======*/
 	.footer-subscibe-area {
 		background-color: $white;
+		padding-bottom: 2rem;
 		.subscribe-text {
 			.subscribe-form {
 				position: relative;
 				input {
 					width: 100%;
 					border: none;
-					height: 90px;
+					height: 50px;
 					background-color: $main-bg;
 					padding-left: 50px;
 					padding-right: 230px;
@@ -23,15 +24,15 @@ footer {
 					@media #{$xsm} {
 						padding-left: 20px;
 						padding-right: 20px;
-						height: 70px;
+						height: 50px;
 					}
 				}
 				button {
 					position: absolute;
-					right: 15px;
-					bottom: 15px;
-					top: 15px;
-					background-color: $primary-color;
+					right: 0;
+					bottom: 0;
+					top: 0;
+					background-color: $secondary-color;
 					color: $white;
 					font-size: 14px;
 					font-weight: 700;
@@ -47,7 +48,9 @@ footer {
 					@media #{$xsm} {
 						position: unset;
 						width: 100%;
-						height: 60px;
+						width: 75%;
+						height: 50px;
+						margin-top: 15px;
 					}
 					&:hover {
 						background-color: $black;
@@ -63,7 +66,7 @@ footer {
 	/*=======  Widgets  =======*/
 	.footer-widget-area {
 		position: relative;
-		z-index: 1;
+		z-index: 0;
 		background-color: #07585c;
 		&::after {
 			position: absolute;

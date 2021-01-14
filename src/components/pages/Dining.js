@@ -7,6 +7,7 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import DiningTitleBlock from '../sections/dining/main-text-block';
 import DiningGrid from '../sections/dining/dining-grid';
 import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
+import Subscribe from '../sections/common/Subscribe';
 
 const roomsData = [
   {
@@ -98,17 +99,8 @@ class Dining extends Component {
         <DiningOfferSlider title={"Offers"} data={offersData} />
         {/*====== SUITES GRID END ======*/}
 
-        <div className="availability-field">
-          <p>
-            Be the first to know our newsletter:
-          </p>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">SUBSCRIBE</button>
-            </div>
-          </div>
-        </div>
+        <Subscribe />
+
         <Footertwo />
 
         <BottomNavigator />

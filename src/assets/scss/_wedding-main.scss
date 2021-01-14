@@ -15,6 +15,7 @@
   h2 {
     font-family: $lora;
     font-style: italic;
+    padding: 2rem 0;
   }
   p {
     color: $eden;
@@ -40,12 +41,12 @@
 .wedding-grid-title {
   font-family: $lora;
   text-align: center;
-  margin-top: 2rem;
+  padding: 2rem 0;
   font-style: italic;
 }
 
 .wedding-grid-wrapper {
-  padding-top: 1rem;
+  // padding-top: 1rem;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -69,6 +70,7 @@
         flex-direction: column;
         background-size: cover;
         background-position: center;
+        position: relative;
         @media #{$sm} {
           height: 200px;
         }
@@ -78,6 +80,7 @@
           font-family: $lora;
           width: 50%;
           text-shadow: 0 0 5px #333;
+          z-index: 2;
           @media #{$sm} {
             width: 75%;
           }

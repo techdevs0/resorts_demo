@@ -7,7 +7,7 @@ const DiningInnerTitleBlock = (props) => {
         <div className="title-image-wrapper">
           <img src={require('./../../../assets/img/room-suites/room1.jpg')} />
         </div>
-        <h1>{props.title}</h1>
+        <h2>{props.title}</h2>
         <p>
           Offering countless experience with outstanding services. Lorem ipsum doler set amet. Offering countless experience with outstanding services. Lorem ipsum doler set amet. Offering countless experience with outstanding services. Lorem ipsum doler set amet. Offering countless experience with outstanding services. Lorem ipsum doler set amet. Offering countless experience with outstanding services. Lorem ipsum doler set amet.
       </p>
