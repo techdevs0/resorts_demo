@@ -36,7 +36,7 @@ const OffersInnerMainBlock = (props) => {
                   <i className="fas fa-phone pr-2"></i>
                   <span>+248 4387000</span>
                 </div>
-                <div className="ml-md-4">
+                <div className="pl-md-4">
                   <i className="fas fa-envelope pr-2"></i>
                   <span>seychelles@h-hotel.com</span>
                 </div>
