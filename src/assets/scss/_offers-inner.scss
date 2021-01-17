@@ -17,9 +17,8 @@
       @media #{$sm} {
         width: 100%;
       }
-      h5,
       h6 {
-        padding: 1rem 0;
+        padding-top: 1rem;
         font-weight: 700;
         text-transform: uppercase;
         color: $eden;
@@ -68,6 +67,10 @@
         display: flex;
         justify-content: space-around;
         width: 30%;
+        @media #{$sm} {
+          width: 50%;
+          margin-top: 1rem;
+        }
         a {
           width: 35px;
           height: 35px;
@@ -90,9 +93,16 @@
         font-size: 18px;
       }
       .contact-links {
-        font-size: 14px;
-        display: flex;
-        margin-top: 0.5rem;
+        div {
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          margin-top: 0.5rem;
+          width: 50%;
+          @media #{$sm} {
+            width: 100%;
+          }
+        }
       }
     }
 
@@ -103,7 +113,7 @@
       margin-top: 3rem;
       @media #{$sm} {
         width: 100%;
-        margin-top: 1rem;
+        margin-top: 2rem;
       }
     }
   }
