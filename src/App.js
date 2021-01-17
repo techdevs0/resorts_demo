@@ -25,6 +25,7 @@ import Sustainability from './components/pages/Sustainability';
 import SpaWellness from './components/pages/SpaWellness';
 import OffersInner from './components/pages/Offers-Inner';
 import LeisureInner from './components/pages/Leisure-Inner';
+import RoomsInner from './components/pages/Rooms-Inner';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path='/dining' component={Dining} />
           <Route path='/dining-inner' component={DiningInner} />
           <Route path='/offers-inner' component={OffersInner} />
+          <Route path='/rooms-inner' component={RoomsInner} />
           <Route path='/weddings' component={Wedding} />
           <Route path='/whats-on' component={Leisure} />
           <Route path='/leisure-inner' component={LeisureInner} />
