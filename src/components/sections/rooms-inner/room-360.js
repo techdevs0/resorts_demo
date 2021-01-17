@@ -7,13 +7,13 @@ const RoomVR360 = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6">
-            <h3>View in 360<sup>&deg;</sup> Panaroma View</h3>
+            <h3>View in 360<sup>&deg;</sup> Panaroma</h3>
             <p className="mb-2">
               Lorem ipsum doler set amet, lorem ipsum doler set amet, lorem ipsum doler.
               Lorem ipsum doler set amet, lorem ipsum doler set amet, lorem ipsum doler.
               Lorem ipsum doler set amet, lorem ipsum doler set amet, lorem ipsum doler.
             </p>
-            <p>
+            <p className="mb-2">
               Lorem ipsum doler set amet, lorem ipsum doler set amet, lorem ipsum doler.
               Lorem ipsum doler set amet, lorem ipsum doler set amet, lorem ipsum doler.
               Lorem ipsum doler set amet, lorem ipsum doler set amet, lorem ipsum doler.
