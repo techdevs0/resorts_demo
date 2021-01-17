@@ -23,10 +23,10 @@ const OffersInnerMainBlock = (props) => {
             <div className="share-block">
               <p>Share with friends and family</p>
               <div className="share-social-links">
-                <a href=""><i className="fab fa-facebook-f"></i></a>
-                <a href=""><i className="fab fa-twitter"></i></a>
-                <a href=""><i className="fab fa-linkedin-in"></i></a>
-                <a href=""><i className="fab fa-whatsapp"></i></a>
+                <a href="#"><i className="fab fa-facebook-f"></i></a>
+                <a href="#"><i className="fab fa-twitter"></i></a>
+                <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                <a href="#"><i className="fab fa-whatsapp"></i></a>
               </div>
             </div>
             <div className="reservations-block">
