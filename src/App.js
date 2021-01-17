@@ -23,6 +23,10 @@ import DiningInner from './components/pages/Dining-Inner';
 import Leisure from './components/pages/Leisure';
 import Sustainability from './components/pages/Sustainability';
 import SpaWellness from './components/pages/SpaWellness';
+import OffersInner from './components/pages/Offers-Inner';
+import LeisureInner from './components/pages/Leisure-Inner';
+import RoomsInner from './components/pages/Rooms-Inner';
+import GalleryMain from './components/pages/Gallery-Main';
 
 function App() {
   return (
@@ -34,12 +38,15 @@ function App() {
           <Route path='/room-suites' component={RoomSuites} />
           <Route path='/dining' component={Dining} />
           <Route path='/dining-inner' component={DiningInner} />
+          <Route path='/offers-inner' component={OffersInner} />
+          <Route path='/rooms-inner' component={RoomsInner} />
           <Route path='/weddings' component={Wedding} />
           <Route path='/whats-on' component={Leisure} />
+          <Route path='/leisure-inner' component={LeisureInner} />
           <Route path='/sustainability' component={Sustainability} />
           <Route path='/spa-wellness' component={SpaWellness} />
           <Route path='/about' component={About} />
-          <Route path='/gallery' component={Gallery} />
+          <Route path='/gallery' component={GalleryMain} />
           <Route path='/menu' component={Menu} />
           <Route path='/offers' component={Offers} />
           <Route path='/restaurant' component={Restaurant} />
@@ -51,6 +58,7 @@ function App() {
           <Route path='/room-list' component={Roomlist} />
           <Route path='/room-details' component={Roomdetails} />
           <Route path='/contact' component={Contact} />
+          <Route path='/' component={()=> <div className="vh-100 d-flex align-items-center justify-content-center"><h1 className="display-3">Error 404! Page Not Found.</h1></div>} />
         </Switch>
       </Router>
   );
