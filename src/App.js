@@ -55,6 +55,7 @@ function App() {
           <Route path='/room-list' component={Roomlist} />
           <Route path='/room-details' component={Roomdetails} />
           <Route path='/contact' component={Contact} />
+          <Route path='/' component={()=> <div className="vh-100 d-flex align-items-center justify-content-center"><h1 className="display-3">Error 404! Page Not Found.</h1></div>} />
         </Switch>
       </Router>
   );
