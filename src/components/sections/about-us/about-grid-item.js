@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const WeddingGridItem = (props) => {
+const AboutGridItem = (props) => {
   return (
     <div className="wedding-grid-item-wrapper">
       <div className="grid-item">
@@ -19,4 +19,4 @@ const WeddingGridItem = (props) => {
   );
 }
 
-export default WeddingGridItem;
+export default AboutGridItem;

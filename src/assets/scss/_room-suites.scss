@@ -12,7 +12,7 @@
     }
   }
   p {
-    color: #11595c;
+    color: $para-color;
     font-weight: 500;
     line-height: 30px;
     @media #{$sm} {

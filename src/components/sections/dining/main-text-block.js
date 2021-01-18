@@ -4,15 +4,9 @@ const DiningTitleBlock = (props) => {
   return (
     <div className="dining-title-block">
       <div className="container">
-        <h2>Dining</h2>
+        <h2>Fine Dining Restaurants and Bars</h2>
         <p>
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet. 
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet.
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet.
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet.
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet.
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet.
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet.
+        Offering countless incredible experiences with outstanding services throughout your journey, two of the best restaurants and bars allow you to savor scrumptious flavors and aromas while sipping exotic cocktails to views of the Indian Ocean’s spectacular sunset. If you are a foodie, you’ll love to enjoy some of the most toothsome delicacies at one of the best resorts in Seychelles.
       </p>
       </div>
     </div>

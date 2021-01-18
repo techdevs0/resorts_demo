@@ -2,20 +2,47 @@
 footer {
 	/*=======  Subscibe  =======*/
 	.footer-subscibe-area {
-		background-color: $white;
+		background-color: $main-bg;
 		padding-bottom: 2rem;
+		width: 50%;
+		margin: auto;
+		border-radius: 4px;
+		@media #{$sm} {
+			width: 100%;
+			padding: 0.5rem;
+			// margin: auto 15px;
+		}
+		.subscribe-title {
+			font-size: 24px;
+			font-weight: 500;
+			text-align: center;
+			font-family: $lora;
+			font-style: italic;
+			padding: 1rem 0;
+			text-transform: capitalize;
+			color: $eden;
+			@media #{$sm} {
+				font-size: 20px;
+			}
+		}
 		.subscribe-text {
+			p {
+				font-size: 14px;
+				@media #{$sm} {
+					font-size: 12px;
+				}
+			}
 			.subscribe-form {
 				position: relative;
 				input {
-					width: 100%;
-					border: none;
-					height: 50px;
-					background-color: $main-bg;
-					padding-left: 50px;
-					padding-right: 230px;
+					width: 90%;
+					border: 0.5px solid $eden;
+					height: 40px;
+					background-color: $white;
+					padding-left: 20px;
+					padding-right: 125px;
 					font-size: 16px;
-					letter-spacing: 3px;
+					// letter-spacing: 3px;
 					color: #aeaeae;
 					@media #{$lsm} {
 						padding-left: 20px;
@@ -24,22 +51,22 @@ footer {
 					@media #{$xsm} {
 						padding-left: 20px;
 						padding-right: 20px;
-						height: 50px;
+						height: 40px;
 					}
 				}
 				button {
 					position: absolute;
-					right: 0;
+					right: 20px;
 					bottom: 0;
 					top: 0;
 					background-color: $secondary-color;
 					color: $white;
 					font-size: 14px;
-					font-weight: 700;
-					text-transform: uppercase;
+					font-weight: 500;
+					text-transform: capitalize;
 					border: none;
-					width: 200px;
-					letter-spacing: 3px;
+					width: 125px;
+					// letter-spacing: 3px;
 					@include transition(0.3s);
 					@media #{$lsm} {
 						width: 180px;
@@ -47,12 +74,14 @@ footer {
 
 					@media #{$xsm} {
 						position: unset;
-						width: 100%;
-						height: 50px;
-						margin-top: 15px;
+						width: 90%;
+						height: 40px;
+						margin: 10px auto;
 					}
 					&:hover {
-						background-color: $black;
+						background-color: transparent;
+						border: 1px solid $secondary-color;
+						color: $secondary-color;
 					}
 				}
 			}

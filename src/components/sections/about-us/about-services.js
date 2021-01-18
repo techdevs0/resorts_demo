@@ -12,7 +12,7 @@ const AboutServices = (props) => {
       icon: 'far fa-swimmer'
     },
     {
-      name: 'luxury rooms & suites',
+      name: 'rooms & suites',
       icon: 'far fa-bed'
     },
     {

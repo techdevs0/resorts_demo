@@ -36,7 +36,7 @@
 				font-size: 28px;
 			}
 			@media #{$tiny} {
-				font-size: 12px;
+				font-size: 28px;
 			}
 		}
 		ul {
@@ -134,9 +134,9 @@
 		.single-banner {
 			height: 90vh;
 			&.sub-banner {
-				height: 450px;
+				height: 65vh;
 				@media #{$sm} {
-					height: 350px;
+					height: 50vh;
 				}
 			}
 			position: relative;

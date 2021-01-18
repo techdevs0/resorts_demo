@@ -8,12 +8,16 @@ const WeddingGridItem = (props) => {
           <div className="slide-hover-overlay"></div>
         </div>
         <div className="wedding-description">
-          <h3>{props.title}</h3>
-          {
-            props.description?.map(x => (
-              <span className="d-block">{x}</span>
-            ))
-          }
+          <h4 className="mb-2">{props.title}</h4>
+          <ul>
+            {
+              props.description?.map(x => (
+                // <span className="d-block w-50 float-left text-left">• {x}</span>
+                <li>{x}</li>
+              ))
+            }
+          </ul>
+          <div className="clearfix"></div>
         </div>
       </div>
     </div>

@@ -9,34 +9,36 @@ import DiningGrid from '../sections/dining/dining-grid';
 import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
 import Subscribe from '../sections/common/Subscribe';
 
+const bannerImage = require('./../../assets/img/banner/dining.jpg');
+
 const roomsData = [
   {
     title: "Paris Sychelles Restaurant",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/dining/paris.jpg')
   },
   {
     title: "Lecardinal Restaurant",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/dining/cardinal.jpg')
   },
   {
-    title: "Superior Room",
+    title: "Le Cocoloba Bar",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/dining/cocoloba.jpg')
   },
   {
-    title: "Superior Room",
+    title: "Sunset Bar",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/dining/sunset.jpg')
   },
 ]
 
@@ -46,10 +48,10 @@ const offersData = [
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
+    image: require('./../../assets/img/room-suites/room1.jpg')
   },
   {
-    title: "Family Suite Garden View",
+    title: "Paris Seychelles",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
@@ -60,17 +62,10 @@ const offersData = [
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
+    image: require('./../../assets/img/room-suites/room1.jpg')
   },
   {
-    title: "Family Suite Garden View",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
-  },
-  {
-    title: "Family Suite Garden View",
+    title: "Paris Seychelles",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
@@ -84,7 +79,7 @@ class Dining extends Component {
       <div className="bg-white">
         <Headertwo />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Dining"} />
+        <Mainbanner title={"Dining"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
