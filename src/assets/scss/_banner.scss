@@ -17,17 +17,17 @@
 			}
 		}
 		.title {
-			font-size: 60px;
+			font-size: 50px;
 			line-height: 1.1;
 			font-weight: 400;
 			letter-spacing: 3px;
 			padding-bottom: 26px;
 			font-family: "Lora", serif;
 			@media #{$xl} {
-				font-size: 60px;
+				font-size: 50px;
 			}
 			@media #{$lg} {
-				font-size: 60px;
+				font-size: 50px;
 			}
 			@media #{$lsm} {
 				font-size: 38px;
@@ -132,7 +132,7 @@
 	&.banner-style-two,
 	&.banner-style-three {
 		.single-banner {
-			height: 650px;
+			height: 90vh;
 			&.sub-banner {
 				height: 450px;
 				@media #{$sm} {

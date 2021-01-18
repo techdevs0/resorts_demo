@@ -31,7 +31,7 @@ class Footertwo extends Component {
         </Link>
         {/*====== FOOTER START ======*/}
         <footer className="footer-two">
-          <div className="footer-widget-area pt-60 pb-50">
+          <div className="footer-widget-area pt-30 pb-30">
             <div className="container">
               <div className="row">
                 <div className="col-lg-3 col-sm-6 order-1">
@@ -58,9 +58,9 @@ class Footertwo extends Component {
                   {/* Nav Widget */}
                   <div className="widget nav-widget mb-50">
                     <div>
-                      <h4 className="widget-title">Services.</h4>
+                      <h4 className="widget-title">Services</h4>
                       <ul>
-                        <li><Link to="#">Spa & Fitness</Link></li>
+                        <li><Link to="#">Spa &amp; Fitness</Link></li>
                         <li><Link to="#">Leisure Activities </Link></li>
                         <li><Link to="#">Restarunts</Link></li>
                         <li><Link to="#">Conference Room</Link></li>
@@ -77,7 +77,7 @@ class Footertwo extends Component {
                 <div className="col-lg-3 col-sm-6 order-2 order-lg-3">
                   {/* Contact Widget */}
                   <div className="widget contact-widget mb-50">
-                    <h4 className="widget-title">Contact Us.</h4>
+                    <h4 className="widget-title">Contact Us</h4>
                     <div className="contact-lists">
                       <div className="contact-box">
                         {/* <div className="icon">
@@ -128,11 +128,11 @@ class Footertwo extends Component {
               </div>
             </div>
           </div>
-          <div className="copyright-area d-none pt-30 pb-30">
+          <div className="copyright-area py-3">
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-lg-6 col-md-5 order-2 order-md-1">
-                  <p className="copyright-text copyright-two">Copyright By@<Link to="#">Metropolitanthemes</Link> - 2020</p>
+                  <p className="copyright-text copyright-two">Copyright By @<Link to="#">Fishermans Cove Resort</Link> - {new Date().getFullYear()}</p>
                 </div>
                 <div className="col-lg-6 col-md-7 order-1 order-md-2">
                   <div className="footer-menu text-center text-md-right">

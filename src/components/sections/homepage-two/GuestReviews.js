@@ -41,8 +41,6 @@ const GuestReviews = (props) => {
                             <h4 className="gt-title">{x.title}</h4>
                             <p className="gt-review">{x.review}</p>
                             <p className="gt-date">Date of Stay: {x.stayDate}</p>
-
-                            <button className="btn-read-more mt-4">Read More</button>
                         </div>
                     ))
                 }

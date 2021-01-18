@@ -210,11 +210,19 @@ class Headertwo extends Component {
               <div className={`nav-push-item ${classNamess}`}>
                 {/* Header Info */}
                 <div className="header-info d-lg-flex flex-column ">
-                  <div className="item d-lg-flex align-items-center">
-                    <i className="fas fa-phone mr-2 d-inline-block" />
-                    <Link to="tel:+2484677000">
-                      <span className="title">+248 4677000</span>
-                    </Link>
+                  <div className="item d-lg-flex align-items-center ">
+                    <>
+                      <i className="fas fa-phone mr-2 d-inline-block" />
+                      <Link to="tel:+2484677000">
+                        <span className="title">+248 467 7000</span>
+                      </Link>
+                    </>
+                    <>
+                      <i className="fab fa-whatsapp mx-2 d-inline-block" />
+                      <Link to="tel:+2484677000">
+                        <span className="title">+248 281 6329</span>
+                      </Link>
+                    </>
                   </div>
                   <div className="item d-lg-flex align-items-center">
                     <i className="fas fa-envelope mr-2 d-inline-block" />

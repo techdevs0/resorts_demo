@@ -33,7 +33,7 @@ class Textblock extends Component {
                                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                                             laboris nisi ut aliquip ex ea commodo consequat.
                                         </p>
-                                        <Link to="/about" className="main-btn btn-filled mt-40" style={{ background: '#183254', borderColor: '#183254' }}>Learn More</Link>
+                                        <Link to="/about" className="main-btn btn-nile mt-40">Learn More</Link>
                                     </div>
                                 </div>
                             </ReactWOW>

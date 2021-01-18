@@ -27,9 +27,9 @@ const rooms = [
             area: 55,
         },
         additional_details_list: [
-            "King bed & Lounge area.",
-            "Bathroom with bath, shower & toiletries.",
-            "Air conditioning & Free WiFi.",
+            "King bed & Lounge area",
+            "Bathroom with bath, shower & toiletries",
+            "Air conditioning & Free WiFi",
             "Balcony overlooking the resort gardens",
             "Tea/coffee facilities & Minibar"
         ],
@@ -102,7 +102,7 @@ const rooms = [
 
 const RoomSlider = () => {
     return (
-        <div className="room-slider-wrapper py-4">
+        <div className="room-slider-wrapper">
             <h2 className="section-heading text-muted">Breathtaking Tropical Paradise</h2>
             {/* <p className="w-75 text-center mx-auto">Turn your staycation into a blissful escape with a Suite Stay and 120 minutes of relaxing spa time starting from AED 850. Rejuvenate at the award-winning Mandara Spa and choose from our range of body treatments.</p> */}
             <Carousel
@@ -131,7 +131,7 @@ const RoomSlider = () => {
                                         <li key={index}>{li}</li>
                                     ))}
                                 </ul>
-                                <button className="btn-book-now my-4" onClick={() => window.location = "https://be.synxis.com/?_ga=2.102065793.1000121752.1606552834-1702853238.1606552834&adult=1&arrive=2020-11-28&chain=27304&child=0&currency=AED&depart=2020-11-29&hotel=75043&level=hotel&locale=en-US&promo=HSPA&rooms=1"}>BOOK NOW</button>
+                                <button className="main-btn btn-eden my-4" onClick={() => window.location = "https://be.synxis.com/?_ga=2.102065793.1000121752.1606552834-1702853238.1606552834&adult=1&arrive=2020-11-28&chain=27304&child=0&currency=AED&depart=2020-11-29&hotel=75043&level=hotel&locale=en-US&promo=HSPA&rooms=1"}>BOOK NOW</button>
                             </div>
                         </div>
                     ))

@@ -109,13 +109,17 @@
                         color: gray;
                     }
                     button {
-                        border: none;
-                        padding: 0.5rem;
-                        width: 150px;
+                        // border: none;
+                        // padding: 0.5rem;
+                        // width: 150px;
                         background-color: $nile-blue;
-                        color: $white;
-                        font-weight: 600;
-                        font-size: 14px;
+                        border-color: $nile-blue;
+                        &:hover {
+                            background-color: transparent;
+                        }
+                        // color: $white;
+                        // font-weight: 600;
+                        // font-size: 14px;
                     }
                 }
             }

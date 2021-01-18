@@ -23,7 +23,7 @@ header {
 
 	.nav-container {
 		.toggle {
-			margin-right: 50px;
+			margin-right: 20px;
 			@media #{$lg} {
 				margin-right: 20px;
 			}
@@ -45,9 +45,9 @@ header {
 
 		.site-logo {
 			img {
-				max-width: 120px;
+				max-width: 100px;
 				@media #{$lg} {
-					max-width: 120px;
+					max-width: 100px;
 				}
 				@media #{$xsm} {
 					max-width: 100px;
