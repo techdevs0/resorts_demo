@@ -7,15 +7,6 @@ const room2 = require('../../../assets/img/hotel/02.jpg');
 const room3 = require('../../../assets/img/hotel/03.jpg');
 const room4 = require('../../../assets/img/hotel/04.jpg');
 
-const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500
-};
-
 const rooms = [
     {
         title: "Junior Suite King",
@@ -112,8 +103,9 @@ const RoomSlider = () => {
                 showIndicators={false}
                 showThumbs={false}
                 infiniteLoop={true}
-                autoPlay={false}
+                autoPlay={true}
                 centerMode
+                stopOnHover={false}
                 centerSlidePercentage={50}
                 className="room-carousel center"
             >
