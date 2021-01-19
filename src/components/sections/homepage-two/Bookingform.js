@@ -22,12 +22,12 @@ class Bookingform extends Component {
                                         <input type="text" placeholder="30th march 2020" name="departure-date" id="departure-date" />
                                     </div>
                                 </div>
-                                <div className="col-lg-3 col-md-6">
-                                    <div className="inputs-filed">
+                                <div className="col-lg-2 col-md-6">
+                                    <div className="inputs-filed rooms-select">
                                         <label htmlFor="guests">Rooms</label>
                                         <div className="nice-select">
                                             <select name="guests" id="guests">
-                                                <option value={0}>Select From Here</option>
+                                                <option value={0}>Select Rooms</option>
                                                 <option value={1}>1</option>
                                                 <option value={2}>2</option>
                                                 <option value={4}>4</option>
@@ -36,7 +36,21 @@ class Bookingform extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-3 col-md-6">
+                                <div className="col-lg-2 col-md-6">
+                                    <div className="inputs-filed guests-select">
+                                        <label htmlFor="guests">Guests</label>
+                                        <div className="nice-select">
+                                            <select name="guests" id="guests">
+                                                <option value={0}>Select Guests</option>
+                                                <option value={1}>1</option>
+                                                <option value={2}>2</option>
+                                                <option value={4}>4</option>
+                                                <option value={8}>8</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-2 col-md-6">
                                     <div className="inputs-filed">
                                         <button type="submit">Book Now</button>
                                     </div>

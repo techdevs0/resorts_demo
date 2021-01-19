@@ -6,6 +6,7 @@ import Bookingform from '../sections/homepage-two/Bookingform';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import LeisureContentBlocks from '../sections/leisure-inner/content-blocks';
+import BreadCrumb from '../layouts/BreadCrumb';
 
 const activities = [
   {
@@ -50,6 +51,23 @@ const activities = [
   },
 ]
 
+const breadcrumbItems=[
+  {
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
+  },
+  {
+    text: 'Leisure Activities',
+    link:'/whats-on',
+    isActive: false,
+  },
+  {
+    text: 'Other Resort Activities',
+    link:'/leisure-inner',
+    isActive: true,
+  },
+]
 
 class LeisureInner extends Component {
   render() {
@@ -62,6 +80,10 @@ class LeisureInner extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/*====== BANNER PART ENDS ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== INTRO START ======*/}
         <LeisureContentBlocks activities={activities} />
         {/*====== INTRO END ======*/}

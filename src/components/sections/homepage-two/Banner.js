@@ -39,7 +39,7 @@ class Banner extends Component {
           <div key={i} className={`single-banner d-flex align-items-center justify-content-center ${this.props.isMain? '': 'sub-banner'}`}>
             <div className="container">
               <div className="row justify-content-left">
-                <div className="col-10 col-lg-8">
+                <div className="col-10 col-lg-6">
                   <div className="banner-content text-left">
                     <ReactWOW animation="fadeInDown" data-delay={item.taganimation}>
                       <span className="promo-tag">{item.tag}</span></ReactWOW>
@@ -63,7 +63,7 @@ class Banner extends Component {
               </div>
             </div>
             {/* banner bg */}
-            <div className="banner-bg" style={{ backgroundImage: `url(${bannerimg1})` }} />
+            <div className="banner-bg" style={{ backgroundImage: `url(${this.props.image || bannerimg1})` }} />
             <div className="banner-overly" />
           </div>
         ))}

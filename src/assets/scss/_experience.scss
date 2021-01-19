@@ -2,7 +2,7 @@
     position: relative;
     box-sizing: border-box;
     background: $white;
-    
+
     .experience-item {
         height: 450px;
         box-sizing: border-box;
@@ -25,7 +25,8 @@
             width: 100%;
             background: rgba(0, 0, 0, 0.3);
             display: flex;
-            h3,h4 {
+            h3,
+            h4 {
                 color: #fff;
                 bottom: 0;
                 align-self: flex-end;
@@ -49,12 +50,8 @@
     }
 }
 
-
 @media only screen and (max-width: 600px) {
     .experience-wrapper {
-        h2{
-            font-size: 26px;
-        }
         .experience-item {
             height: 250px;
             min-width: 50%;
@@ -63,6 +60,7 @@
                 h3 {
                     text-align: left;
                     font-size: 18px;
+                    margin-left: 0.5rem;
                 }
                 &:hover {
                     cursor: pointer;

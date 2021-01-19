@@ -10,51 +10,58 @@ import Subscribe from '../sections/common/Subscribe';
 
 const roomsData = [
   {
-    title: "Paris Sychelles Restaurant",
+    title: "Seaside Pontoon Wedding",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
+    image: require('./../../assets/img/wedding/seaside.jpg'),
     description: [
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
+      "Wedding registrar and legal wedding certificate",
+      "Tropical bouquet and boutonniere",
+      "Basic décor of pontoon",
+      "One bottle of champagne for toasting",
+      "Romantic turndown in the room",
     ]
   },
   {
-    title: "Lecardinal Restaurant",
+    title: "Barefoot Wedding",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
+    image: require('./../../assets/img/wedding/barefoot.jpg'),
     description: [
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
+      "Wedding registrar and legal wedding certificate",
+      "Tropical bouquet and boutonniere",
+      "Basic floral arch set up",
+      "One bottle champagne for toasting",
+      "One tier wedding cake",
+      "Romantic turndown in the room",
+      "Breakfast for the couple on the private terrace or balcony the morning after the wedding",
     ]
   },
   {
-    title: "Superior Room",
+    title: "Fisherman’s Cove Special",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
+    image: require('./../../assets/img/wedding/special.jpg'),
     description: [
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
+      "Wedding registrar and legal wedding certificate",
+      "Tropical bouquet and boutonniere Deluxe décor",
+      "One bottle of champagne for toasting",
+      "One tier wedding cake",
+      "Bridal hair and bridal makeup",
+      "Exclusive candlelight 5-course dinner on the pontoon gazebo",
     ]
   },
   {
-    title: "Superior Room",
+    title: "Renewal of your wedding vows",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
+    image: require('./../../assets/img/wedding/renewal.jpg'),
     description: [
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
+      "Wedding celebrant",
+      "Tropical bouquet and boutonniere",
+      "Basic décor of pontoon",
+      "One bottle of champagne",
+      "Exclusive candlelight 5-course dinner on the pontoon gazebo",
     ]
   },
 ]

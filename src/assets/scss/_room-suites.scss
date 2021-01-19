@@ -5,14 +5,15 @@
   h2 {
     color: #11595c;
     font-family: "Lora", serif;
-    padding: 2rem  0;
+    padding: 2rem 0;
     font-weight: 500;
     @media #{$sm} {
-      font-size: 40px;
+      font-size: 30px;
+      padding: 1rem 0;
     }
   }
   p {
-    color: #11595c;
+    color: $para-color;
     font-weight: 500;
     line-height: 30px;
     @media #{$sm} {

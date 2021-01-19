@@ -3,7 +3,7 @@ import RoomGridItem from './offer-grid-item';
 
 const OfferGrid = (props) => {
   return (
-    <div className='container'>
+    <div className='container-fluid'>
       {
         props.title && <h1 className="offer-grid-title">{props.title}</h1>
       }

@@ -4,7 +4,7 @@ const ContactUsForm = (props) => {
   return (
     <div className="contact-form">
       <div className="container">
-        <h3 className="section-heading p-0 text-muted">Write to Us</h3>
+        <h3 className="text-center p-0">Write to Us</h3>
         <form action="#">
           <div className="w-75 mx-auto">
             <div className="row">

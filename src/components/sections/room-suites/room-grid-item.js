@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 const RoomGridItem = (props) => {
   return (
-    <div className="room-grid-item-wrapper">
+    <div className="room-grid-item-wrapper" onClick={()=>props.history.push('/rooms-inner')}>
       <div className="grid-item">
-        <div className="room-title" style={{ backgroundImage: `url(${props.image})` }}>
+        <div className="room-title" style={{ backgroundImage: `url(${props.image})`, backgroundPosition:'center', backgroundSize:'cover' }}>
           <h3>{props.title}</h3>
           <a href={props.link}>{props.linkText}</a>
           <div className="slide-hover-overlay"></div>
@@ -18,4 +19,4 @@ const RoomGridItem = (props) => {
   );
 }
 
-export default RoomGridItem;
+export default withRouter(RoomGridItem);

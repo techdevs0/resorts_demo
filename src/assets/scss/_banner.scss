@@ -17,17 +17,17 @@
 			}
 		}
 		.title {
-			font-size: 60px;
+			font-size: 50px;
 			line-height: 1.1;
 			font-weight: 400;
 			letter-spacing: 3px;
 			padding-bottom: 26px;
 			font-family: "Lora", serif;
 			@media #{$xl} {
-				font-size: 60px;
+				font-size: 50px;
 			}
 			@media #{$lg} {
-				font-size: 60px;
+				font-size: 50px;
 			}
 			@media #{$lsm} {
 				font-size: 38px;
@@ -36,13 +36,13 @@
 				font-size: 28px;
 			}
 			@media #{$tiny} {
-				font-size: 12px;
+				font-size: 28px;
 			}
 		}
 		ul {
 			@media #{$sm} {
 				display: flex;
-				flex-direction: column;
+				flex-direction: row;
 			}
 			li {
 				display: inline-block;
@@ -56,7 +56,7 @@
 					}
 					@media #{$sm} {
 						margin-left: 0;
-						margin: 0.5rem 0;
+						margin:0 0.5rem;
 					}
 					@media #{$tiny} {
 						margin-left: 0;
@@ -132,18 +132,18 @@
 	&.banner-style-two,
 	&.banner-style-three {
 		.single-banner {
-			height: 650px;
+			height: 90vh;
 			&.sub-banner {
-				height: 450px;
+				height: 65vh;
 				@media #{$sm} {
-					height: 350px;
+					height: 50vh;
 				}
 			}
 			position: relative;
 			z-index: 1;
 			overflow: hidden;
 			@media #{$sm} {
-				height: 350px;
+				height: 450px;
 			}
 			.banner-bg,
 			.banner-overly {

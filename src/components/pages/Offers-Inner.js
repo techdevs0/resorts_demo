@@ -5,59 +5,25 @@ import Mainbanner from '../sections/homepage-two/Banner';
 import Bookingform from '../sections/homepage-two/Bookingform';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
-import SustainIntroBlock from '../sections/sustainability/intro-block';
-import SustainPillarsBlock from '../sections/sustainability/pillars-block';
-import SustainProjectsBlock from '../sections/sustainability/projects-block';
 import OffersInnerMainBlock from '../sections/offers-inner/offers-inner-block';
+import BreadCrumb from '../layouts/BreadCrumb';
 
-const roomsData = [
+
+const breadcrumbItems=[
   {
-    title: "Paris Sychelles Restaurant",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
   },
   {
-    title: "Lecardinal Restaurant",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
+    text: 'Offers',
+    link:'/offers',
+    isActive: true,
   },
   {
-    title: "Superior Room",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
-  },
-  {
-    title: "Superior Room",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
+    text: 'Spa for Two',
+    link:'/offers-inner',
+    isActive: true,
   },
 ]
 
@@ -72,6 +38,9 @@ class OffersInner extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== INTRO START ======*/}
         <OffersInnerMainBlock />
         {/*====== INTRO END ======*/}

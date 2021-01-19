@@ -7,15 +7,6 @@ const room2 = require('../../../assets/img/hotel/02.jpg');
 const room3 = require('../../../assets/img/hotel/03.jpg');
 const room4 = require('../../../assets/img/hotel/04.jpg');
 
-const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500
-};
-
 const rooms = [
     {
         title: "Junior Suite King",
@@ -27,9 +18,9 @@ const rooms = [
             area: 55,
         },
         additional_details_list: [
-            "King bed & Lounge area.",
-            "Bathroom with bath, shower & toiletries.",
-            "Air conditioning & Free WiFi.",
+            "King bed & Lounge area",
+            "Bathroom with bath, shower & toiletries",
+            "Air conditioning & Free WiFi",
             "Balcony overlooking the resort gardens",
             "Tea/coffee facilities & Minibar"
         ],
@@ -47,11 +38,11 @@ const rooms = [
             area: 55,
         },
         additional_details_list: [
-            "King bed & Lounge area.",
-            "King bed & Lounge area.",
-            "Bathroom with bath, shower & toiletries.",
-            "King bed & Lounge area.",
-            "Air conditioning & Free WiFi.",
+            "King bed & Lounge area",
+            "King bed & Lounge area",
+            "Bathroom with bath, shower & toiletries",
+            "King bed & Lounge area",
+            "Air conditioning & Free WiFi",
         ],
         rate: 500.27,
         original: 347.02,
@@ -67,11 +58,11 @@ const rooms = [
             area: 55,
         },
         additional_details_list: [
-            "King bed & Lounge area.",
-            "King bed & Lounge area.",
-            "Bathroom with bath, shower & toiletries.",
-            "King bed & Lounge area.",
-            "Air conditioning & Free WiFi.",
+            "King bed & Lounge area",
+            "King bed & Lounge area",
+            "Bathroom with bath, shower & toiletries",
+            "King bed & Lounge area",
+            "Air conditioning & Free WiFi",
         ],
         rate: 1305.37,
         original: 1500.78,
@@ -87,11 +78,11 @@ const rooms = [
             area: 55,
         },
         additional_details_list: [
-            "King bed & Lounge area.",
-            "King bed & Lounge area.",
-            "Bathroom with bath, shower & toiletries.",
-            "King bed & Lounge area.",
-            "Air conditioning &amp; Free WiFi.",
+            "King bed & Lounge area",
+            "King bed & Lounge area",
+            "Bathroom with bath, shower & toiletries",
+            "King bed & Lounge area",
+            "Air conditioning & Free WiFi",
         ],
         rate: 439.06,
         original: 600.95,
@@ -102,7 +93,7 @@ const rooms = [
 
 const RoomSlider = () => {
     return (
-        <div className="room-slider-wrapper py-4">
+        <div className="room-slider-wrapper">
             <h2 className="section-heading text-muted">Breathtaking Tropical Paradise</h2>
             {/* <p className="w-75 text-center mx-auto">Turn your staycation into a blissful escape with a Suite Stay and 120 minutes of relaxing spa time starting from AED 850. Rejuvenate at the award-winning Mandara Spa and choose from our range of body treatments.</p> */}
             <Carousel
@@ -112,8 +103,9 @@ const RoomSlider = () => {
                 showIndicators={false}
                 showThumbs={false}
                 infiniteLoop={true}
-                autoPlay={false}
+                autoPlay={true}
                 centerMode
+                stopOnHover={false}
                 centerSlidePercentage={50}
                 className="room-carousel center"
             >
@@ -131,7 +123,7 @@ const RoomSlider = () => {
                                         <li key={index}>{li}</li>
                                     ))}
                                 </ul>
-                                <button className="btn-book-now my-4" onClick={() => window.location = "https://be.synxis.com/?_ga=2.102065793.1000121752.1606552834-1702853238.1606552834&adult=1&arrive=2020-11-28&chain=27304&child=0&currency=AED&depart=2020-11-29&hotel=75043&level=hotel&locale=en-US&promo=HSPA&rooms=1"}>BOOK NOW</button>
+                                <button className="main-btn btn-eden my-4" onClick={() => window.location = "https://be.synxis.com/?_ga=2.102065793.1000121752.1606552834-1702853238.1606552834&adult=1&arrive=2020-11-28&chain=27304&child=0&currency=AED&depart=2020-11-29&hotel=75043&level=hotel&locale=en-US&promo=HSPA&rooms=1"}>BOOK NOW</button>
                             </div>
                         </div>
                     ))

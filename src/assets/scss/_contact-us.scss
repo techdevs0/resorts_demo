@@ -4,6 +4,10 @@
     color: $eden;
     font-family: $lora;
     padding: 2rem 0;
+    @media #{$sm} {
+      padding: 1rem 0;
+      font-size: 30px;
+    }
   }
   .title-flex {
     flex-direction: row;
@@ -23,11 +27,11 @@
     @media #{$sm} {
       width: 100%;
     }
-    .row{
-      p{
+    .row {
+      p {
         font-weight: 300;
       }
-      i{
+      i {
         font-size: 18px;
       }
     }
@@ -58,7 +62,7 @@
       width: 100%;
     }
     iframe {
-      border-radius: 8px;
+      border-radius: 4px;
       box-shadow: 0 0 4px #eee;
       height: 400px;
       @media #{$sm} {
@@ -69,22 +73,32 @@
 }
 
 .contact-form {
-  background-color: rgba($color: $primary-color, $alpha: 0.3);
+  background-color: rgba($color: $black, $alpha: 0.05);
   padding: 1rem 0;
+  margin-top: 2rem;
   h2,
   h3 {
     font-style: italic;
     font-family: $lora;
     margin: 1rem 0;
+    color: $para-color;
   }
   input {
     background-color: #fff;
-    height: 50px;
+    height: 40px;
     border-radius: 4px;
+    padding-left: 20px;
   }
   .main-btn {
     background-color: $secondary-color;
     border-color: $secondary-color;
+  }
+  form {
+    width: 75%;
+    margin: auto;
+    @media #{$sm} {
+      width: 100%;
+    }
   }
 }
 

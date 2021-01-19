@@ -14,13 +14,13 @@ const DiningOfferSlider = (props) => {
   };
   return (
     <div className="dining-offer-slider mx-auto">
-      {/* <h1 className="dining-grid-title">{props.title}</h1> */}
+      <h1 className="section-heading">{props.title}</h1>
       <Slider {...settings}>
         {
           props.data?.map(x => (
             <div>
-              <div className="dining-slider-item" style={{ backgroundImage: `url(${x.image})` }}>
-                {/* <h2>{x.title}</h2> */}
+              <div className="dining-slider-item" style={{ backgroundImage: `url(${x.image})`, backgroundPosition:'center' }}>
+                <h2>{x.title}</h2>
               </div>
             </div>
           ))

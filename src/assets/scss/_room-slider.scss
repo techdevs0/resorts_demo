@@ -109,13 +109,17 @@
                         color: gray;
                     }
                     button {
-                        border: none;
-                        padding: 0.5rem;
-                        width: 150px;
+                        // border: none;
+                        // padding: 0.5rem;
+                        // width: 150px;
                         background-color: $nile-blue;
-                        color: $white;
-                        font-weight: 600;
-                        font-size: 14px;
+                        border-color: $nile-blue;
+                        &:hover {
+                            background-color: transparent;
+                        }
+                        // color: $white;
+                        // font-weight: 600;
+                        // font-size: 14px;
                     }
                 }
             }
@@ -134,13 +138,13 @@
         }
         .room-carousel {
             .control-arrow {
-                background: rgba(0, 0, 0, 0.5);
+                background: rgba($color: $secondary-color, $alpha:1.0);
                 opacity: 1;
                 height: 40px;
                 display: flex;
                 align-items: center;
                 position: absolute;
-                top: 8%;
+                top: 15%;
             }
             .control-next {
                 right: 1%;
@@ -149,7 +153,7 @@
                 left: 1%;
             }
             .slider-wrapper {
-                height: 60vh;
+                height: 75vh;
                 ul.slider {
                     transform: translate3d(-45%, 0px, 0px);
                 }
@@ -167,7 +171,7 @@
                         h1,
                         h2,
                         h3 {
-                            font-size: 1.5rem;
+                            font-size: 1.1rem;
                         }
                         ul {
                             font-size: smaller;

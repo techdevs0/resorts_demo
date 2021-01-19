@@ -10,9 +10,16 @@
     }
     h3 {
       margin-bottom: 1rem;
+      @media #{$sm} {
+        font-size: 24px;
+      }
     }
     h2.main-title {
       font-style: normal;
+      @media #{$sm} {
+        font-size: 30px;
+        padding: 1rem 0;
+      }
     }
     @media #{$sm}{
       padding: 0.5rem 0 !important;

@@ -3,12 +3,12 @@
   text-align: left;
   h1,
   h2 {
-    color: #11595c;
+    color: $eden;
     font-family: "Lora", serif;
     padding: 2rem 0;
   }
   p {
-    color: #11595c;
+    color: $para-color;
     font-weight: 500;
     line-height: 30px;
     font-size: 15px;
@@ -52,7 +52,7 @@
 }
 
 .dining-info-wrapper {
-  padding: 2rem 0;
+  // padding: 2rem 0;
   .travellers-choice {
     display: flex;
     flex-direction: column;
@@ -72,7 +72,7 @@
     }
     p {
       margin: 0.5rem 0;
-      font-weight: 500;
+      font-weight: 400;
     }
     .info-title {
       font-weight: bold;

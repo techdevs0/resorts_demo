@@ -53,14 +53,10 @@ const RoomsInnerTitleBlock = (props) => {
               }
             </Carousel>
           </div>
-          <div className="text-item">
-            <h3>Seychelles Restaurant</h3>
+          <div className="description-item">
+            <h3>Paris in Seychelles</h3>
             <p>
-              Lorem ipsum doler set amet, lorem ipsum doler set amet.
-              Lorem ipsum doler set amet, lorem ipsum doler set amet.
-              Lorem ipsum doler set amet, lorem ipsum doler set amet.
-              Lorem ipsum doler set amet, lorem ipsum doler set amet.
-              Lorem ipsum doler set amet, lorem ipsum doler set amet.
+              The luxurious guest rooms and suites are set amidst lush tropical gardens complimented by a peaceful environment. This tropical escape sets the scene for explorers, couples, and families to an inherited paradise. Guest rooms and suites have private balconies, open plan bathrooms, air conditioning, free Wi-Fi, and tea or coffee making facilities. Executive suites provide luxurious king-size bedrooms that feature all the essential amenities. The deluxe ocean view rooms come with a private balcony affording seafront views of the crystal-clear turquoise sea. Suites feature a separate sitting area for relaxation, complimented with soft and muted shades of décor that allows guests to unwind and calm.
             </p>
           </div>
         </div>

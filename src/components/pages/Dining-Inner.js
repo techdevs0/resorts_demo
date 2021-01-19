@@ -9,6 +9,7 @@ import DiningInnerTitleBlock from '../sections/dining-inner/main-text-block';
 import DiningInnerInfo from '../sections/dining-inner/dining-grid';
 import OtherRecommendations from '../sections/dining-inner/dining-inner-grid-item';
 import Subscribe from '../sections/common/Subscribe';
+import BreadCrumb from '../layouts/BreadCrumb';
 
 const roomsData = [
   {
@@ -16,21 +17,21 @@ const roomsData = [
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/room-suites/junior.jpg')
   },
   {
     title: "Lecardinal Restaurant",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/room-suites/partial.jpg')
   },
   {
     title: "Superior Room",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/room-suites/deluxe.jpg')
   },
 ]
 
@@ -40,38 +41,48 @@ const offersData = [
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
+    image: require('./../../assets/img/banner/home.jpg')
   },
   {
     title: "Family Suite Garden View",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
+    image: require('./../../assets/img/banner/about.jpg')
   },
   {
     title: "Family Suite Garden View",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
+    image: require('./../../assets/img/banner/dining.jpg')
   },
   {
     title: "Family Suite Garden View",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
-  },
-  {
-    title: "Family Suite Garden View",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
+    image: require('./../../assets/img/banner/rooms.jpg')
   },
 ]
 
+const breadcrumbItems = [
+  {
+    text: 'Fishermans Cove',
+    link: '/',
+    isActive: false,
+  },
+  {
+    text: 'Dining',
+    link: '/dining',
+    isActive: false,
+  },
+  {
+    text: 'Paris Seychelles Restaurant',
+    link: '/dining-inner',
+    isActive: true,
+  },
+]
 class DiningInner extends Component {
   render() {
     return (
@@ -83,6 +94,9 @@ class DiningInner extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <DiningInnerTitleBlock title={"Paris Seychelles Restaurant"} />
         {/*====== TITLE END ======*/}

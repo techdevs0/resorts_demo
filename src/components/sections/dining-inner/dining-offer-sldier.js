@@ -14,7 +14,7 @@ const DiningOfferSlider = (props) => {
   };
   return (
     <div className="dining-offer-slider container mx-auto">
-      <h1 className="dining-grid-title">{props.title}</h1>
+      <h1 className="dining-grid-title ">{props.title}</h1>
       <Slider {...settings}>
         {
           props.data?.map(x => (

@@ -4,63 +4,22 @@ import Footertwo from '../layouts/Footertwo';
 import Mainbanner from '../sections/homepage-two/Banner';
 import Bookingform from '../sections/homepage-two/Bookingform';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
-import AboutTitleBlock from '../sections/about-us/main-text-block';
-import AboutServices from '../sections/about-us/about-services';
-import AboutSecondaryTextBlock from '../sections/about-us/secondary-text-block';
-import AboutOfferSlider from '../sections/about-us/about-offer-slider';
 import Subscribe from '../sections/common/Subscribe';
 import SustainIntroBlock from '../sections/sustainability/intro-block';
 import SustainPillarsBlock from '../sections/sustainability/pillars-block';
 import SustainProjectsBlock from '../sections/sustainability/projects-block';
+import BreadCrumb from '../layouts/BreadCrumb';
 
-const roomsData = [
+const breadcrumbItems=[
   {
-    title: "Paris Sychelles Restaurant",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
   },
   {
-    title: "Lecardinal Restaurant",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
-  },
-  {
-    title: "Superior Room",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
-  },
-  {
-    title: "Superior Room",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
+    text: 'Sustainability',
+    link:'/sustainability',
+    isActive: true,
   },
 ]
 
@@ -75,6 +34,9 @@ class Sustainability extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== INTRO START ======*/}
         <SustainIntroBlock />
         {/*====== INTRO END ======*/}

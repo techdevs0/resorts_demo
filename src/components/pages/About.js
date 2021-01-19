@@ -9,69 +9,63 @@ import AboutServices from '../sections/about-us/about-services';
 import AboutSecondaryTextBlock from '../sections/about-us/secondary-text-block';
 import AboutOfferSlider from '../sections/about-us/about-offer-slider';
 import Subscribe from '../sections/common/Subscribe';
+import BreadCrumb from '../layouts/BreadCrumb';
+
+const bannerImage = require('./../../assets/img/banner/about.jpg');
 
 const roomsData = [
   {
-    title: "Paris Sychelles Restaurant",
+    title: "Coral Cove",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
+    image: require('./../../assets/img/about/coral.jpg'),
   },
   {
-    title: "Lecardinal Restaurant",
+    title: "Snorkeling",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
+    image: require('./../../assets/img/about/snorkeling.jpg'),
   },
   {
-    title: "Superior Room",
+    title: "Unlock the sea",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
+    image: require('./../../assets/img/about/sea.jpg'),
   },
   {
-    title: "Superior Room",
+    title: "Island Hopping",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
+    image: require('./../../assets/img/about/island.jpg'),
+  },
+]
+const breadcrumbItems=[
+  {
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
+  },
+  {
+    text: 'About Us',
+    link:'/about',
+    isActive: true,
   },
 ]
 
 class AboutUs extends Component {
   render() {
     return (
-      <div className="bg-white">
+      <div className="bg-white about-us-wrapper">
         <Headertwo />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"About Us"} />
+        <Mainbanner title={"About Us"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <AboutTitleBlock />
         {/*====== TITLE END ======*/}

@@ -4,7 +4,7 @@ import RoomGridItem from './wedding-grid-item';
 const WeddingGrid = (props) => {
   return (
     <div className='container'>
-      <h2 className="wedding-grid-title text-muted">{props.title}</h2>
+      <h2 className="section-heading text-muted">{props.title}</h2>
       <div className='wedding-grid-wrapper'>
         {
           props.data?.map(x => (

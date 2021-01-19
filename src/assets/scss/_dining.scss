@@ -7,9 +7,13 @@
     font-family: "Lora", serif;
     padding: 2rem 0;
     font-weight: 500;
+    @media #{$sm} {
+      padding:1rem 0;
+      font-size: 28px;
+    }
   }
   p {
-    color: #11595c;
+    color: $para-color;
     font-weight: 500;
     line-height: 30px;
   }
@@ -116,12 +120,12 @@
 
 .dining-offer-slider {
   // margin: 2rem 0;
-  padding-top: 2rem;
+  // padding-top: 2rem;
   @media #{$sm}{
   padding-top: 2rem;
   }
   .dining-slider-item {
-    height: 500px;
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;

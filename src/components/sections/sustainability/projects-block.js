@@ -30,7 +30,7 @@ const SustainProjectsBlock = (props) => {
             <p className="download-para">
               Download the sustainability project brochure for more information.
             </p>
-            <button className="main-btn btn-filled">Download</button>
+            <button className="main-btn btn-eden">Download</button>
           </div>
           <div className="projects-item img-wrapper">
             <img src={require('./../../../assets/img/banner/home.jpg')} />

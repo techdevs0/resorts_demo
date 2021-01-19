@@ -7,65 +7,73 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import OfferTitleBlock from '../sections/offers/main-text-block';
 import OfferGrid from '../sections/offers/offer-grid';
+import BreadCrumb from '../layouts/BreadCrumb';
 
 const roomsData = [
   {
-    title: "Paris Sychelles Restaurant",
+    title: "Spa for Two",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/offers/spa.jpg')
   },
   {
-    title: "Lecardinal Restaurant",
+    title: "Long Stay with snorkeling",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
+    image: require('./../../assets/img/offers/snorkeling.jpg')
   },
   {
-    title: "Superior Room",
+    title: "Long stay with fishing",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/offers/fishing.jpg')
   },
   {
-    title: "Superior Room",
+    title: "Full board Package",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
+    image: require('./../../assets/img/offers/package.jpg')
   },
   {
-    title: "Paris Sychelles Restaurant",
+    title: "Save 25% on long stays",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/offers/stay.jpg')
   },
   {
-    title: "Lecardinal Restaurant",
+    title: "book early and save more",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/offers/book.jpg')
   },
   {
-    title: "Superior Room",
+    title: "Honeymoon Offer",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
-  },
-  {
-    title: "Superior Room",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/offers/honeymoon.jpg')
   },
 ]
+
+const breadcrumbItems=[
+  {
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
+  },
+  {
+    text: 'Offers',
+    link:'/offers',
+    isActive: true,
+  },
+]
+
 
 class Offers extends Component {
   render() {
@@ -78,6 +86,9 @@ class Offers extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <OfferTitleBlock />
         {/*====== TITLE END ======*/}
