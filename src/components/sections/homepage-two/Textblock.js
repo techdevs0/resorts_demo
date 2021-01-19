@@ -19,19 +19,18 @@ class Textblock extends Component {
                                     <div className="block-text h-100 d-flex flex-column justify-content-between align-items-start">
                                         <div className="section-title mb-10">
 
-                                            <h1>About Fisherman's <br /> Cove Resort</h1>
+                                            <h1>Best Resort in Mahe Seychelles</h1>
                                         </div>
                                         <p className="text-justify my-1">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                                            ut labore et dolore magna aliqua.
+                                        Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fishermans Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. This tropical escape sets the scene for explorers, romantic couples, and families to an inherited paradise.
                                         <br />
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                            laboris nisi ut aliquip ex ea commodo consequat.
-                                            <br />
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                            laboris nisi ut aliquip ex ea commodo consequat.
+                                        <br />
+                                        Offering countless experiences with outstanding services throughout your discovery, 
+                                        Fishermans Cove is one of the best resorts in Seychelles. Restaurants and Bars allow you
+                                        to savor scrumptious flavors and aromas while sipping exotic cocktails and enjoying views
+                                        of the Indian Ocean’s most spectacular sunset. It offers two restaurants and two bars 
+                                        giving guests ample options to choose from. Le Cocoloba bar has a peaceful library to
+                                        enjoy reading in solitude. 
                                         </p>
                                         <Link to="/about" className="main-btn btn-nile mt-40">Learn More</Link>
                                     </div>

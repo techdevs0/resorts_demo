@@ -41,9 +41,7 @@ class Footertwo extends Component {
                       <img src="assets/img/logo-fisher.png" alt="fishermancove footer logo" />
                     </div>
                     <p>
-                      Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed doing eius mod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitat ion ullamco laboris nisi.
+                    Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fisherman’s Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. 
                     </p>
                     <div className="social-links mt-40 d-none">
                       <a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f" /></a>
@@ -58,14 +56,19 @@ class Footertwo extends Component {
                     <div>
                       <h4 className="widget-title">Services</h4>
                       <ul>
-                        <li><Link to="#">Spa &amp; Fitness</Link></li>
-                        <li><Link to="#">Leisure Activities </Link></li>
-                        <li><Link to="#">Restarunts</Link></li>
-                        <li><Link to="#">Conference Room</Link></li>
-                        <li><Link to="#">About Us</Link></li>
-                        <li><Link to="#">Weddings In Sey </Link></li>
-                        <li><Link to="#">Reservations</Link></li>
-                        <li><Link to="#">Terms of Use</Link></li>
+                      <li><Link to="/about">About Us</Link></li>
+                        
+                        <li><Link to="/weddings">Weddings </Link></li>
+                        
+                        <li><Link to="/room-suites">Rooms & Suites</Link></li>
+                        
+                        <li><Link to="/whats-on">Leisure Activities </Link></li>
+                        <li><Link to="/dining">Dining</Link></li>
+                        
+
+                        <li><Link to="#">Media Center</Link></li>
+                        <li><Link to="/spa-wellness">Spa</Link></li>
+                        <li><Link to="#">FAQs</Link></li>
 
                       </ul>
                     </div>
@@ -83,7 +86,7 @@ class Footertwo extends Component {
                         </div> */}
                         <div className="desc">
                           <h6 className="title">Phone Number</h6>
-                          +248 467 7000
+                          <a href="tel:+2484677000">+248 467 7000</a>
                         </div>
                       </div>
                       <div className="contact-box">
@@ -92,7 +95,7 @@ class Footertwo extends Component {
                         </div> */}
                         <div className="desc">
                           <h6 className="title">Email Address</h6>
-                          <Link to="#">reservations@fishermanscove-resort.com</Link>
+                          <a href="mailto:reservations@fishermanscove-resort.com">reservations@fishermanscove-resort.com</a>
                         </div>
                       </div>
                       <div className="contact-box">
