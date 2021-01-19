@@ -42,7 +42,7 @@
 		ul {
 			@media #{$sm} {
 				display: flex;
-				flex-direction: column;
+				flex-direction: row;
 			}
 			li {
 				display: inline-block;
@@ -56,7 +56,7 @@
 					}
 					@media #{$sm} {
 						margin-left: 0;
-						margin: 0.5rem 0;
+						margin:0 0.5rem;
 					}
 					@media #{$tiny} {
 						margin-left: 0;
@@ -143,7 +143,7 @@
 			z-index: 1;
 			overflow: hidden;
 			@media #{$sm} {
-				height: 350px;
+				height: 450px;
 			}
 			.banner-bg,
 			.banner-overly {

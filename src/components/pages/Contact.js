@@ -8,14 +8,15 @@ import ContactTitleBlock from '../sections/contact-us/main-text-block';
 import ContactUsForm from '../sections/contact-us/contact-form';
 import ContactOfferSlider from '../sections/contact-us/contact-offer-slider';
 import Subscribe from '../sections/common/Subscribe';
+import BreadCrumb from '../layouts/BreadCrumb';
 
 const roomsData = [
   {
     title: "Paris Sychelles Restaurant",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
+    image: require('./../../assets/img/social/01.jpg'),
+    description: [
       "Guests can hide themseleves away in these comfortable rooms.",
       "Lorem ipsum doler set amet lorem ipsum doler set amet",
       "Guests can hide themseleves away in these comfortable rooms.",
@@ -26,8 +27,8 @@ const roomsData = [
     title: "Lecardinal Restaurant",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
+    image: require('./../../assets/img/social/02.jpg'),
+    description: [
       "Guests can hide themseleves away in these comfortable rooms.",
       "Lorem ipsum doler set amet lorem ipsum doler set amet",
       "Guests can hide themseleves away in these comfortable rooms.",
@@ -38,8 +39,8 @@ const roomsData = [
     title: "Superior Room",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
+    image: require('./../../assets/img/social/03.jpg'),
+    description: [
       "Guests can hide themseleves away in these comfortable rooms.",
       "Lorem ipsum doler set amet lorem ipsum doler set amet",
       "Guests can hide themseleves away in these comfortable rooms.",
@@ -50,8 +51,8 @@ const roomsData = [
     title: "Superior Room",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
+    image: require('./../../assets/img/social/04.jpg'),
+    description: [
       "Guests can hide themseleves away in these comfortable rooms.",
       "Lorem ipsum doler set amet lorem ipsum doler set amet",
       "Guests can hide themseleves away in these comfortable rooms.",
@@ -62,25 +63,26 @@ const roomsData = [
     title: "Superior Room",
     link: "",
     linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
+    image: require('./../../assets/img/social/05.jpg'),
+    description: [
       "Guests can hide themseleves away in these comfortable rooms.",
       "Lorem ipsum doler set amet lorem ipsum doler set amet",
       "Guests can hide themseleves away in these comfortable rooms.",
       "Lorem ipsum doler set amet lorem ipsum doler set amet",
     ]
   },
+]
+
+const breadcrumbItems=[
   {
-    title: "Superior Room",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-    description:[
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-      "Guests can hide themseleves away in these comfortable rooms.",
-      "Lorem ipsum doler set amet lorem ipsum doler set amet",
-    ]
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
+  },
+  {
+    text: 'Contact Us',
+    link:'/contact',
+    isActive: true,
   },
 ]
 
@@ -95,6 +97,9 @@ class Wedding extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <ContactTitleBlock />
         {/*====== TITLE END ======*/}
@@ -102,7 +107,7 @@ class Wedding extends Component {
         <ContactUsForm />
         {/*====== CONTACT FORM END ======*/}
         {/*====== ABOUT SLIDER START ======*/}
-        <ContactOfferSlider data={roomsData} title={"Explore Fisherman's Cove Premium Offerings"} />
+        <ContactOfferSlider data={roomsData} title={"Fisherman's Cove on social Media"} />
         {/*====== ABOUT SLIDER END ======*/}
 
         <Subscribe />

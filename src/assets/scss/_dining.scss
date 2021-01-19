@@ -7,6 +7,10 @@
     font-family: "Lora", serif;
     padding: 2rem 0;
     font-weight: 500;
+    @media #{$sm} {
+      padding:1rem 0;
+      font-size: 28px;
+    }
   }
   p {
     color: $para-color;

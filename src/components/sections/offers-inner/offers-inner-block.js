@@ -23,10 +23,10 @@ const OffersInnerMainBlock = (props) => {
             <div className="share-block">
               <p>Share with friends and family</p>
               <div className="share-social-links">
-                <a href="#"><i className="fab fa-facebook-f"></i></a>
-                <a href="#"><i className="fab fa-twitter"></i></a>
-                <a href="#"><i className="fab fa-linkedin-in"></i></a>
-                <a href="#"><i className="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/fisherman_cove"><i className="fab fa-twitter"></i></a>
+                <a href="https://wa.me/2482816329"><i className="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/fishermanscove.resort/"><i className="fab fa-instagram"></i></a>
               </div>
             </div>
             <div className="reservations-block">
@@ -34,11 +34,11 @@ const OffersInnerMainBlock = (props) => {
               <div className="contact-links">
                 <div>
                   <i className="fas fa-phone pr-2"></i>
-                  <span>+248 4387000</span>
+                  <span>+248 467 7000</span>
                 </div>
                 <div className="pl-md-4">
                   <i className="fas fa-envelope pr-2"></i>
-                  <span>seychelles@h-hotel.com</span>
+                  <span>reservations@fishermanscove-resort.com</span>
                 </div>
               </div>
             </div>

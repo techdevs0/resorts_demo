@@ -7,78 +7,49 @@ import { findDOMNode } from 'react-dom'
 const navigationmenu = [
   {
     id: 1,
-    linkText: 'Home',
+    linkText: 'About Us',
     child: false,
-    link: "/",
-    submenu: [
-      // {
-      //     id: 11,
-      //     link: '/',
-      //     linkText: 'Home 1'
-      // },
-      // {
-      //     id: 12,
-      //     new: true,
-      //     link: '/home-two',
-      //     linkText: 'Home 2'
-      // },
-      // {
-      //     id: 13,
-      //     link: '/home-three',
-      //     linkText: 'Home 3'
-      // },
-    ]
-
+    link: "/about",
   },
   {
 
     id: 2,
-    linkText: 'Germany.png',
-    child: true,
-    submenu: [
-      {
-        id: 21,
-        link: '/room-grid',
-        linkText: 'Room Grid',
-      },
-      {
-        id: 22,
-        link: '/room-list',
-        linkText: 'Room List',
-      },
-      {
-        id: 23,
-        link: '/room-details',
-        linkText: 'Room Details',
-      },
-    ]
+    linkText: 'Dining',
+    child: false,
+    link: "/dining",
 
   },
   {
     id: 3,
-    linkText: 'News',
-    child: true,
-    submenu: [
-      {
-        id: 31,
-        link: '/news',
-        linkText: 'News',
-      },
-      {
-        id: 32,
-        link: '/news-details',
-        linkText: 'News Details',
-      },
-    ]
+    linkText: 'Rooms and Suites',
+    child: false,
+    link: "/room-suites",
 
   },
-
   {
     id: 4,
-    link: '/contact',
-    linkText: 'Contact',
+    link: '/weddings',
+    linkText: 'Weddings',
     child: false,
-  }
+  },
+  {
+    id: 5,
+    link: '/offers',
+    linkText: 'Offers',
+    child: false,
+  },
+  {
+    id: 6,
+    link: '/sustainability',
+    linkText: 'Sustainability',
+    child: false,
+  },
+  {
+    id: 7,
+    link: '/contact',
+    linkText: 'Contact Us',
+    child: false,
+  },
 ]
 
 
@@ -186,7 +157,7 @@ class Headertwo extends Component {
                 </div>
                 {/* Mneu Items */}
 
-                <div className="menu-items flags-row">
+                <div className="flags-row d-none d-md-flex">
                   <div>
                     <img src={require('./../../assets/img/flags/flag1.png')} alt="flag" />
                   </div>
@@ -197,6 +168,33 @@ class Headertwo extends Component {
                     <img src={require('./../../assets/img/flags/flag3.png')} alt="flag" />
                   </div>
 
+                </div>
+                <div className="menu-items d-block d-md-none">
+                  <ul>
+                    {navigationmenu.length > 0 ? navigationmenu.map((item, i) => (
+                      <li key={i} className={` ${item.child ? 'menu-item-has-children' : ''} `} onClick={this.triggerChild}>
+                        {item.child ? <Link onClick={e => e.preventDefault()} to="/"> {item.linkText} </Link> : <Link to={item.link}> {item.linkText} </Link>}
+                        {item.child ?
+                          <ul className="submenu" role="menu">
+                            {item.submenu.map((sub_item, i) => (
+                              <li key={i} className={`${sub_item.child ? 'menu-item-has-child' : ''} `}>
+                                {sub_item.child ? <Link onClick={e => e.preventDefault()} to="/"> {sub_item.linkText} </Link> : <Link to={sub_item.link}> {sub_item.linkText} </Link>}
+                                {sub_item.third_menu ?
+                                  <ul className="submenu">
+                                    {sub_item.third_menu.map((third_item, i) => (
+                                      <li key={i}><Link
+                                        to={third_item.link}>{third_item.linkText}</Link>
+                                      </li>
+                                    ))}
+                                  </ul> : null}
+                              </li>
+                            ))}
+                          </ul>
+                          : null
+                        }
+                      </li>
+                    )) : null}
+                  </ul>
                 </div>
                 {/* from pushed-item */}
                 <div className="nav-pushed-item" />
@@ -213,22 +211,22 @@ class Headertwo extends Component {
                   <div className="item d-lg-flex align-items-center ">
                     <>
                       <i className="fas fa-phone mr-2 d-inline-block" />
-                      <Link to="tel:+2484677000">
+                      <a href="tel:+2484677000">
                         <span className="title">+248 467 7000</span>
-                      </Link>
+                      </a>
                     </>
                     <>
                       <i className="fab fa-whatsapp mx-2 d-inline-block" />
-                      <Link to="tel:+2484677000">
+                      <a href="https://wa.me/2482816329">
                         <span className="title">+248 281 6329</span>
-                      </Link>
+                      </a>
                     </>
                   </div>
                   <div className="item d-lg-flex align-items-center">
                     <i className="fas fa-envelope mr-2 d-inline-block" />
-                    <Link to="mailto:reservations@fishermanscove-resort.com">
+                    <a href="mailto:reservations@fishermanscove-resort.com">
                       <span className="title">reservations@fishermanscove-resort.com</span>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -279,11 +277,9 @@ class Headertwo extends Component {
             <div className="widget social-link">
               <h5 className="widget-title">Contact with us</h5>
               <ul>
-                <li><Link to="#"><i className="fab fa-facebook-f" /></Link></li>
-                <li><Link to="#"><i className="fab fa-twitter" /></Link></li>
-                <li><Link to="#"><i className="fab fa-behance" /></Link></li>
-                <li><Link to="#"><i className="fab fa-linkedin" /></Link></li>
-                <li><Link to="#"><i className="fab fa-google" /></Link></li>
+                <li><a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f" /></a></li>
+                <li><a href="https://twitter.com/fisherman_cove"><i className="fab fa-twitter" /></a></li>
+                <li><a href="https://www.instagram.com/fishermanscove.resort/"><i className="fab fa-instagram" /></a></li>
               </ul>
             </div>
           </div>

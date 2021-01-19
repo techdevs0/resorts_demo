@@ -46,11 +46,9 @@ class Footertwo extends Component {
                       quis nostrud exercitat ion ullamco laboris nisi.
                     </p>
                     <div className="social-links mt-40 d-none">
-                      <Link to="#"><i className="fab fa-facebook-f" /></Link>
-                      <Link to="#"><i className="fab fa-twitter" /></Link>
-                      <Link to="#"><i className="fab fa-behance" /></Link>
-                      <Link to="#"><i className="fab fa-linkedin" /></Link>
-                      <Link to="#"><i className="fab fa-youtube" /></Link>
+                      <a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f" /></a>
+                      <a href="https://twitter.com/fisherman_cove"><i className="fab fa-twitter" /></a>
+                      <a href="https://www.instagram.com/fishermanscove.resort/"><i className="fab fa-instagram" /></a>
                     </div>
                   </div>
                 </div>
@@ -68,12 +66,12 @@ class Footertwo extends Component {
                         <li><Link to="#">Weddings In Sey </Link></li>
                         <li><Link to="#">Reservations</Link></li>
                         <li><Link to="#">Terms of Use</Link></li>
-      
+
                       </ul>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="col-lg-3 col-sm-6 order-2 order-lg-3">
                   {/* Contact Widget */}
                   <div className="widget contact-widget mb-50">
@@ -85,7 +83,7 @@ class Footertwo extends Component {
                         </div> */}
                         <div className="desc">
                           <h6 className="title">Phone Number</h6>
-                          +987 876 765 76 577
+                          +248 467 7000
                         </div>
                       </div>
                       <div className="contact-box">
@@ -94,7 +92,7 @@ class Footertwo extends Component {
                         </div> */}
                         <div className="desc">
                           <h6 className="title">Email Address</h6>
-                          <Link to="#">info@webmail.com</Link>
+                          <Link to="#">reservations@fishermanscove-resort.com</Link>
                         </div>
                       </div>
                       <div className="contact-box">
@@ -103,7 +101,7 @@ class Footertwo extends Component {
                         </div> */}
                         <div className="desc">
                           <h6 className="title">Office Address</h6>
-                          14/A, Miranda City, NYC
+                          Fisherman's Cove Resort, Bel Ombre, P.O. Box 35, Victoria
                         </div>
                       </div>
                     </div>
@@ -121,9 +119,9 @@ class Footertwo extends Component {
                   <a href="/"><img className="px-2" src={require('./../../assets/img/footer/logo-fisher.png')} alt="fishermanscove footer" /></a>
                 </div>
                 <div className="social-icons py-2">
-                  <Link to="#"><i className="fab fa-facebook-f" /></Link>
-                  <Link to="#"><i className="fab fa-twitter" /></Link>
-                  <Link to="#"><i className="fab fa-instagram" /></Link>
+                  <a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f" /></a>
+                  <a href="https://twitter.com/fisherman_cove"><i className="fab fa-twitter" /></a>
+                  <a href="https://www.instagram.com/fishermanscove.resort/"><i className="fab fa-instagram" /></a>
                 </div>
               </div>
             </div>

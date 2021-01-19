@@ -5,7 +5,7 @@ const LeisureGridItem = (props) => {
   return (
     <div className="leisure-grid-item-wrapper">
       <div className="grid-item" onClick={()=> props.history.push('leisure-inner')}>
-        <div className="leisure-title" style={{ backgroundImage: `url(${props.image})` }}>
+        <div className="leisure-title" style={{ backgroundImage: `url(${props.image})`, backgroundSize:'cover', backgroundPosition:'cover' }}>
           <h4>{props.title}</h4>
           <div className="slide-hover-overlay"></div>
         </div>

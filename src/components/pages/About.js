@@ -9,6 +9,7 @@ import AboutServices from '../sections/about-us/about-services';
 import AboutSecondaryTextBlock from '../sections/about-us/secondary-text-block';
 import AboutOfferSlider from '../sections/about-us/about-offer-slider';
 import Subscribe from '../sections/common/Subscribe';
+import BreadCrumb from '../layouts/BreadCrumb';
 
 const bannerImage = require('./../../assets/img/banner/about.jpg');
 
@@ -38,6 +39,18 @@ const roomsData = [
     image: require('./../../assets/img/about/island.jpg'),
   },
 ]
+const breadcrumbItems=[
+  {
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
+  },
+  {
+    text: 'About Us',
+    link:'/about',
+    isActive: true,
+  },
+]
 
 class AboutUs extends Component {
   render() {
@@ -50,6 +63,9 @@ class AboutUs extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <AboutTitleBlock />
         {/*====== TITLE END ======*/}

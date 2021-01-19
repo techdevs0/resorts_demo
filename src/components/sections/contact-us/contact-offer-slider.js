@@ -10,8 +10,8 @@ const ContactOfferSlider = (props) => {
     slidesToShow: 4,
     slidesToScroll: 1,
     accessibility: true,
-    autoplay: false,
-    centerMode: true,
+    autoplay: true,
+    centerMode: false,
     responsive: [
       {
         breakpoint: 600,
@@ -24,7 +24,7 @@ const ContactOfferSlider = (props) => {
     ]
   };
   return (
-    <div className="contact-offer-slider container mx-auto">
+    <div className="contact-offer-slider mx-auto">
       <h3 className="section-heading text-muted">{props.title}</h3>
       <Slider {...settings}>
         {

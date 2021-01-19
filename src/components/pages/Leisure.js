@@ -8,35 +8,49 @@ import Subscribe from '../sections/common/Subscribe';
 import LeisureTitleBlock from '../sections/leisure/main-text-block';
 import LeisureGrid from '../sections/leisure/leisure-grid';
 import LeisureAwards from '../sections/leisure/leisure-awards';
+import BreadCrumb from '../layouts/BreadCrumb';
 
 const roomsData = [
   {
-    title: "Paris Sychelles Restaurant",
+    title: "Dining",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/leisure/book.jpg')
   },
   {
-    title: "Lecardinal Restaurant",
+    title: "Spa",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/leisure/spa.jpg')
   },
   {
-    title: "Superior Room",
+    title: "Fishing",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/leisure/fishing.jpg')
   },
   {
-    title: "Superior Room",
+    title: "Snorkeling",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
+    image: require('./../../assets/img/leisure/snorkeling.jpg')
+  },
+]
+
+const breadcrumbItems=[
+  {
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
+  },
+  {
+    text: 'Leisure Activities',
+    link:'/whats-on',
+    isActive: true,
   },
 ]
 
@@ -51,6 +65,10 @@ class Leisure extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/*====== BANNER PART ENDS ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <LeisureTitleBlock />
         {/*====== TITLE END ======*/}

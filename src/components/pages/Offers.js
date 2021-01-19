@@ -7,6 +7,7 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import OfferTitleBlock from '../sections/offers/main-text-block';
 import OfferGrid from '../sections/offers/offer-grid';
+import BreadCrumb from '../layouts/BreadCrumb';
 
 const roomsData = [
   {
@@ -60,6 +61,20 @@ const roomsData = [
   },
 ]
 
+const breadcrumbItems=[
+  {
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
+  },
+  {
+    text: 'Offers',
+    link:'/offers',
+    isActive: true,
+  },
+]
+
+
 class Offers extends Component {
   render() {
     return (
@@ -71,6 +86,9 @@ class Offers extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <OfferTitleBlock />
         {/*====== TITLE END ======*/}

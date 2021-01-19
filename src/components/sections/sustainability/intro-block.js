@@ -2,9 +2,9 @@ import React from 'react';
 
 const SustainIntroBlock = (props) => {
   return (
-    <div className="intro-block py-4">
+    <div className="intro-block pb-4">
       <div className="container">
-        <h2 className="text-center main-title my-4">Sustainability</h2>
+        <h2 className="text-center main-title">Sustainability</h2>
         <div className="d-flex flex-wrap title-flex">
           <div className="intro-item">
             <h3 className=" mr-sm-4">What is sustainability for Fisherman's Cove ?</h3>

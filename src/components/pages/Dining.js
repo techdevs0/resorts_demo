@@ -8,6 +8,7 @@ import DiningTitleBlock from '../sections/dining/main-text-block';
 import DiningGrid from '../sections/dining/dining-grid';
 import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
 import Subscribe from '../sections/common/Subscribe';
+import BreadCrumb from '../layouts/BreadCrumb';
 
 const bannerImage = require('./../../assets/img/banner/dining.jpg');
 
@@ -73,6 +74,19 @@ const offersData = [
   },
 ]
 
+const breadcrumbItems=[
+  {
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
+  },
+  {
+    text: 'Dining',
+    link:'/dining',
+    isActive: true,
+  },
+]
+
 class Dining extends Component {
   render() {
     return (
@@ -84,6 +98,9 @@ class Dining extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <DiningTitleBlock />
         {/*====== TITLE END ======*/}

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const OtherRecommendations = (props) => {
   return (
@@ -10,7 +10,7 @@ const OtherRecommendations = (props) => {
             props.data?.map((x, i) => (
               <div className="col-12 col-md-4">
                 <div className="grid-item">
-                  <div className="dining-title" style={{ backgroundImage: `url(${x.image})` }}>
+                  <div className="dining-title" style={{ backgroundImage: `url(${x.image})`, backgroundPosition:'center', backgroundSize:'cover' }}>
                     <h4>{x.title}</h4>
                     <div className="slide-hover-overlay"></div>
                   </div>

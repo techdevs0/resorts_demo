@@ -64,7 +64,7 @@
         padding: 1rem 0.5rem !important;
         h1,
         h2 {
-            font-size: 2rem;
+            font-size: 1.75rem;
         }
         .slide {
             background-color: transparent !important;
@@ -72,11 +72,14 @@
         .review-wrapper {
             width: 75%;
             img {
-                width: 100px !important;
-                height: 100px;
+                width: 90px !important;
+                height: 90px;
             }
             .gt-name {
                 margin-top: 0.5rem;
+            }
+            .gt-title{
+                font-size: 20px;
             }
             .gt-title,
             .gt-review {

@@ -17,7 +17,7 @@ class Textblock extends Component {
                             <ReactWOW animation="fadeInRight" data-wow-delay=".5s">
                                 <div className="col-lg-6 col-md-8 col-sm-10">
                                     <div className="block-text h-100 d-flex flex-column justify-content-between align-items-start">
-                                        <div className="section-title mb-20">
+                                        <div className="section-title mb-10">
 
                                             <h1>About Fisherman's <br /> Cove Resort</h1>
                                         </div>

@@ -1,154 +1,206 @@
-.rooms-inner-title-block {
-  padding-top: 3rem;
-  text-align: left;
-  .intro-block {
-    display: flex;
-    flex-wrap: wrap;
-    .slider-item {
-      max-width: 50%;
-      @media #{$sm} {
+.rooms-inner-wrapper {
+  .rooms-inner-title-block {
+    padding-top: 3rem;
+    text-align: left;
+    .intro-block {
+      .slider-item {
         max-width: 100%;
-      }
-      img {
-        max-height: 300px;
         @media #{$sm} {
-          max-height: 175px;
+          max-width: 100%;
+        }
+        img {
+          max-height: 350px;
+          @media #{$sm} {
+            max-height: 175px;
+          }
+        }
+      }
+      .description-item {
+        h3 {
+          color: $secondary-color;
+          font-family: "Lora", serif;
+          padding: 1rem 0;
+          font-weight: 500;
+        }
+        p {
+          color: $para-color;
+          font-weight: 500;
+          line-height: 30px;
+          font-size: 15px;
         }
       }
     }
-    .text-item {
-      max-width: 50%;
-      padding-left: 1rem;
-      @media #{$sm} {
-        max-width: 100%;
-      }
-      h3 {
-        color: #11595c;
-        font-family: "Lora", serif;
-        padding-bottom: 2rem;
-      }
-      p {
-        color: #11595c;
-        font-weight: 500;
-        line-height: 30px;
-        font-size: 15px;
-      }
+  }
+  .rooms-inner-grid-title {
+    text-align: center;
+    color: $text-color;
+    font-family: "Lora", serif;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 36px;
+    @media #{$sm} {
+      margin: 1rem 0;
     }
   }
-}
-.rooms-inner-grid-title {
-  text-align: center;
-  color: $text-color;
-  font-family: "Lora", serif;
-  margin: 2rem 0;
-  font-style: italic;
-  font-size: 36px;
-  @media #{$sm} {
-    margin: 1rem 0;
-  }
-}
 
-.recommendations-title {
-  color: $eden;
-  font-family: $lora;
-  margin: 1rem 0;
-  text-align: center;
-  font-style: italic;
-  font-weight: 600;
-}
-
-.room-features {
-  background-color: #fafafa;
-  padding: 1rem 0;
-  h3 {
-    font-family: $lora;
+  .recommendations-title {
     color: $eden;
-    padding: 1rem;
+    font-family: $lora;
+    margin: 1rem 0;
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
   }
-  .room-features-list {
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: content-box;
-    li {
-      width: 25%;
+
+  .room-features {
+    background-color: #fafafa;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    h3 {
+      font-family: $lora;
+      color: $eden;
       padding: 1rem;
-      position: relative;
-      @media #{$sm} {
-        width: 100%;
-        padding: 0.25rem;
-      }
-      a {
-        display: block;
-        padding: 1rem;
-        background: #fff;
-        border-radius: 4px;
-        color: $eden;
-        font-weight: 500;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
-        &:hover {
-          box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
-          color: $primary-color;
+    }
+    .room-features-list {
+      display: flex;
+      flex-wrap: wrap;
+      box-sizing: content-box;
+      li {
+        width: 33.33%;
+        padding: 0.5rem;
+        position: relative;
+        @media #{$sm} {
+          width: 100%;
+          padding: 0.25rem;
+        }
+        a {
+          display: block;
+          padding: 1rem;
+          background: #fff;
+          border-radius: 4px;
+          color: $eden;
+          font-weight: 500;
+          font-size: 13.5px;
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+          &:hover {
+            box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+            color: $primary-color;
+          }
+        }
+        i {
+          padding-right: 1rem;
         }
       }
-      i {
-        padding-right: 1rem;
-      }
     }
   }
-}
 
-.room-360-wrapper {
-  padding: 2rem 0;
-  h3 {
-    padding-bottom: 1rem;
-    font-weight: 500;
-  }
-  .pnlm-container {
-    height: 350px !important;
-    border-radius: 4px;
-    overflow: hidden;
-    @media #{$sm} {
-      height: 250px !important;
+  .room-360-wrapper {
+    padding: 2rem 0;
+    h3 {
+      padding-bottom: 2rem;
+      font-weight: 500;
+      color: $eden;
+      font-family: $lora;
     }
-  }
-}
-
-.rooms-recommendations-wrapper {
-  // padding: 0.75rem;
-  @media #{$sm} {
-    max-width: 100%;
-    min-width: 100%;
-    padding: 0.5rem;
-    // margin: 1rem auto;
-  }
-  .grid-item {
-    box-shadow: 0 0 8px #dadada;
-    @media #{$sm} {
-      margin: 0.5rem 0;
-    }
-    .rooms-title {
-      height: 250px;
-      display: flex;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      position: relative;
+    .pnlm-container {
+      height: 350px !important;
+      border-radius: 4px;
+      overflow: hidden;
       @media #{$sm} {
-        height: 200px;
+        height: 250px !important;
       }
-      h3,
-      h4 {
-        color: $white;
-        text-transform: uppercase;
-        font-family: $mont;
-        line-height: 50px;
-        font-weight: 500;
-        width: 50%;
-        text-shadow: 0 0 5px #333;
-        z-index: 2;
+    }
+  }
+
+  .rooms-recommendations-wrapper {
+    // padding: 0.75rem;
+    @media #{$sm} {
+      max-width: 100%;
+      min-width: 100%;
+      padding: 0.5rem;
+      // margin: 1rem auto;
+    }
+    .grid-item {
+      box-shadow: 0 0 8px #dadada;
+      @media #{$sm} {
+        margin: 0.5rem 0;
+      }
+      .rooms-title {
+        height: 250px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
         @media #{$sm} {
-          width: 75%;
+          height: 200px;
+        }
+        h3,
+        h4 {
+          color: $white;
+          text-transform: uppercase;
+          font-family: $mont;
+          line-height: 50px;
+          font-weight: 500;
+          width: 50%;
+          text-shadow: 0 0 5px #333;
+          z-index: 2;
+          @media #{$sm} {
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
+
+  .room-booking-form {
+    background-color: $white;
+    padding: 40px;
+    @media #{$md} {
+      margin-top: 30px;
+    }
+    @media #{$sm} {
+      margin-top: 30px;
+    }
+    input,
+    .nice-select,
+    select {
+      background-color: $main-bg;
+    }
+    .main-btn {
+      height: 60px;
+      line-height: 60px;
+      box-shadow: none;
+      width: 100%;
+      padding: 0;
+    }
+    .title {
+      font-weight: 700;
+      font-family: $archivo;
+      margin-bottom: 30px;
+      padding-left: 60px;
+      position: relative;
+      @media #{$lg} {
+        padding-left: 50px;
+      }
+      @media #{$tiny} {
+        padding-left: 50px;
+      }
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 2px;
+        background-color: $primary-color;
+        content: "";
+        @media #{$lg} {
+          width: 30px;
+        }
+        @media #{$tiny} {
+          width: 30px;
         }
       }
     }

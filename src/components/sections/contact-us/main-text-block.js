@@ -14,9 +14,9 @@ const ContactTitleBlock = (props) => {
               </div>
               <div className="col-9">
                 <p>
-                  Fisherman's Cove Resort <br/>
-                  Bel Ombre <br/>
-                  P.O. Box 35,Victoria <br/>
+                  Fisherman's Cove Resort <br />
+                  Bel Ombre <br />
+                  P.O. Box 35, Victoria <br />
                 </p>
               </div>
             </div>
@@ -26,8 +26,8 @@ const ContactTitleBlock = (props) => {
               </div>
               <div className="col-9">
                 <p>
-                  reservations@fishermans <br/>
-                  cove-resort.com <br/>
+                  reservations@fishermans <br />
+                  cove-resort.com <br />
                 </p>
               </div>
             </div>
@@ -37,7 +37,7 @@ const ContactTitleBlock = (props) => {
               </div>
               <div className="col-9">
                 <p>
-                  +248 4677000
+                  +248 467 7000
                 </p>
               </div>
             </div>
@@ -47,13 +47,13 @@ const ContactTitleBlock = (props) => {
               </div>
               <div className="col-9">
                 <p>
-                  +248 8913444
+                  +248 281 6329
                 </p>
               </div>
             </div>
           </div>
           <div className="contact-title-item contact-map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.312082522826!2d55.281139014327934!3d25.22641153670663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6becb9f676ed%3A0xd45a302f703b789a!2sPrism%20Events%20Digital%20Advertising!5e0!3m2!1sen!2s!4v1610439827870!5m2!1sen!2s" frameborder="0" style={{ border: 'none', width:'100%' }} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8762101037164!2d55.41970441412309!3d-4.616162449621419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x22e02927aaaaaaab%3A0x790c58d365c53629!2sLe%20M%C3%A9ridien%20Fisherman&#39;s%20Cove!5e0!3m2!1sen!2s!4v1610996020682!5m2!1sen!2s" frameborder="0" style={{ border: 'none', width: '100%' }} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
         </div>
       </div>
