@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import Slider from "react-slick";
+// import Slider from "react-slick";
 
 const room1 = require('../../../assets/img/hotel/01.jpg');
 const room2 = require('../../../assets/img/hotel/02.jpg');
@@ -108,6 +108,7 @@ const RoomSlider = () => {
                 stopOnHover={false}
                 centerSlidePercentage={50}
                 className="room-carousel center"
+                interval={6000}
             >
             {/* <Slider {...settings}> */}
                 {

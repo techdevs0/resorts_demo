@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import ReactWOW from 'react-wow'
 
 const image = require('../../../assets/img/banner-widget.jpg');
@@ -7,19 +7,23 @@ const image = require('../../../assets/img/banner-widget.jpg');
 const data = [
     {
         image: require('../../../assets/img/experience/sustaniablity.jpg'),
-        title: "Sustainability"
+        title: "Sustainability",
+        link:'/sustainability'
     },
     {
         image: require('../../../assets/img/experience/overview.jpg'),
-        title: "Overview of the Resort"
+        title: "Overview of the Resort",
+        link:'/whats-on'
     },
     {
         image: require('../../../assets/img/experience/seychelles.jpg'),
-        title: "About Seychelles"
+        title: "About Seychelles",
+        link:'/about'
     },
     {
         image: require('../../../assets/img/experience/contact.jpg'),
-        title: "Contact \n Us"
+        title: "Contact \n Us",
+        link:'/contact'
     },
 ]
 
@@ -32,7 +36,7 @@ class Experience extends Component {
                     <div className="d-flex flex-row flex-wrap flex-sm-nowrap">
                         {
                             data.map(x => (
-                                <div className="experience-item">
+                                <div className="experience-item" onClick={()=> this.props.history.push(x.link)}>
                                     <div className="background">
                                         <img className="img-fluid w-100 h-100" src={x.image} alt="" />
                                     </div>
@@ -52,4 +56,4 @@ class Experience extends Component {
     }
 }
 
-export default Experience;
+export default withRouter(Experience);

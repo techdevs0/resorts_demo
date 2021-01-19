@@ -27,11 +27,13 @@ import OffersInner from './components/pages/Offers-Inner';
 import LeisureInner from './components/pages/Leisure-Inner';
 import RoomsInner from './components/pages/Rooms-Inner';
 import GalleryMain from './components/pages/Gallery-Main';
+import ScrollToTop from './components/layouts/ScrollToTop';
 
 function App() {
   return (
       <Router>
         { <Preloader />}
+        <ScrollToTop />
         <Switch>
           <Route exact path='/' component={Hometwo} />
           <Route path='/home-two' component={Hometwo} />

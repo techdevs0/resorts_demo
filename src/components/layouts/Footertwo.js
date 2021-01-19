@@ -58,15 +58,14 @@ class Footertwo extends Component {
                     <div>
                       <h4 className="widget-title">Services</h4>
                       <ul>
-                        <li><Link to="#">Spa &amp; Fitness</Link></li>
-                        <li><Link to="#">Leisure Activities </Link></li>
-                        <li><Link to="#">Restarunts</Link></li>
-                        <li><Link to="#">Conference Room</Link></li>
-                        <li><Link to="#">About Us</Link></li>
-                        <li><Link to="#">Weddings In Sey </Link></li>
-                        <li><Link to="#">Reservations</Link></li>
+                        <li><Link to="/spa-wellness">Spa &amp; Fitness</Link></li>
+                        <li><Link to="/whats-on">Leisure Activities </Link></li>
+                        <li><Link to="/dining">Restarunts</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/weddings">Weddings </Link></li>
+                        <li><Link to="/contact">Contact Us</Link></li>
+                        <li><Link to="/room-suites">Rooms &amp; Suites</Link></li>
                         <li><Link to="#">Terms of Use</Link></li>
-
                       </ul>
                     </div>
                   </div>
