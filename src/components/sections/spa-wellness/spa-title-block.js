@@ -7,30 +7,14 @@ const SpaWellnessTitleBlock = (props) => {
         <div className="d-flex flex-wrap title-flex">
           <div className="projects-item">
             <h2 className=" mr-sm-4">Sesel Spa</h2>
-            <h6>REDUCE, REUSE, RECYCLE</h6>
+            <h6>Feel the joy</h6>
             <p className="text-justify mr-sm-4">
-              Use recycled products <br />
-              Plastic Free <br />
-              Encourage “Reuse and Recycle” of the paper <br />
-              Composting <br />
-              Segregation <br />
-              Mobile App <br />
-            </p>
-            <h6>PROTECT WILDLIFE – FLORA &amp; FAUNA</h6>
-            <p className="text-justify mr-sm-4">
-              Our landscaping team maintains nearly 55% of the <br />
-              70,000 sq.m area of the resort <br />
-              Our lagoon is  maintained by a dedicated lagoon team and is
-              home to wide variety of creatures <br />
-              Grass Carps <br />
-              Botanical Garden <br />
-              Beach Clean Up <br />
-              The coral restoration project
+            Enjoy a rejuvenating experience at Sesel Spa located at our Sister Property - STORY Seychelles. There are numerous resorts with spa treatments in Seychelles. However, our extraordinary service is what makes us stand out. Explore the healing elements in nature and discover the true essence of being at one with the elements. Named as a tribute to its destination (Sesel is the Creole name for Seychelles), this blissful space features a total of seven treatment rooms including five single rooms and two couple suites. Vichy Hydrotherapy adds value in addition to the suites and spa. We also have a salon for nails, hair, and other beauty therapies.
             </p>
             <p className="download-para">
-              Download the sustainability project brochure for more information.
+              
             </p>
-            <button className="main-btn btn-filled">Download Spa Menu</button>
+            <a href="https://www.hresortseychelles.com/spa-and-wellness/" className="main-btn btn-filled">Learn More</a>
           </div>
           <div className="projects-item img-wrapper">
             <img src={require('./../../../assets/img/banner/home.jpg')} />

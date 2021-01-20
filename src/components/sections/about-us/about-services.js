@@ -20,7 +20,7 @@ const AboutServices = (props) => {
       link:'/room-suites'
     },
     {
-      name: 'restaurants & bars',
+      name: 'Dining',
       icon: 'far fa-utensils',
       link:'/dining'
     },
