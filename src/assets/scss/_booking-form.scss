@@ -127,6 +127,9 @@
 	position: relative;
 	// margin-top: -90px;
 	z-index: 2;
+	background-color: #fff !important;
+	box-shadow: 0px 0px 10px;
+    margin: -3rem 4rem 2rem;
 	@media #{$sm} {
 		// margin-top: -85px;
 	}
@@ -146,6 +149,7 @@
 			align-items: center;
 			background-color: $white;
 			padding: 0.5rem;
+			border:2px solid $primary-color;
 			@media #{$sm} {
 				margin-bottom: 0.5rem;
 				flex-wrap: wrap;
@@ -172,6 +176,7 @@
 			display: flex;
 			align-items: stretch;
 			font-size: 14px;
+			border:2px solid $primary-color;
 			@media #{$sm} {
 				margin-bottom: 0.5rem;
 				height: 50px;
@@ -272,6 +277,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			border:2px solid $primary-color;
 			@media #{$sm} {
 				margin-bottom: 0.5rem;
 				height: 50px;
@@ -313,5 +319,10 @@
 				height: 50px;
 			}
 		}
+	}
+
+	.main-btn {
+		background-color: $primary-color;
+		border:2px solid $primary-color;
 	}
 }
