@@ -7,6 +7,7 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import WeddingTitleBlock from '../sections/wedding-main/main-text-block';
 import WeddingGrid from '../sections/wedding-main/wedding-grid';
 import Subscribe from '../sections/common/Subscribe';
+import BreadCrumb from '../layouts/BreadCrumb';
 
 const roomsData = [
   {
@@ -66,6 +67,19 @@ const roomsData = [
   },
 ]
 
+const breadcrumbItems=[
+  {
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
+  },
+  {
+    text: 'Weddings',
+    link:'/weddings',
+    isActive: true,
+  },
+]
+
 class Wedding extends Component {
   render() {
     return (
@@ -77,6 +91,9 @@ class Wedding extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <WeddingTitleBlock />
         {/*====== TITLE END ======*/}

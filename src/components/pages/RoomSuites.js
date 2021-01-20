@@ -7,6 +7,7 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import RoomTitleBlock from '../sections/room-suites/main-text-block';
 import RoomSuiteGrid from '../sections/room-suites/room-suites-grid';
 import Subscribe from '../sections/common/Subscribe';
+import BreadCrumb from '../layouts/BreadCrumb';
 
 const bannerImage = require('./../../assets/img/banner/rooms.jpg');
 
@@ -65,6 +66,19 @@ const suitesData = [
   },
 ]
 
+const breadcrumbItems=[
+  {
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
+  },
+  {
+    text: 'Rooms & Suites',
+    link:'/room-suites',
+    isActive: true,
+  },
+]
+
 class RoomSuites extends Component {
   render() {
     return (
@@ -76,6 +90,9 @@ class RoomSuites extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <RoomTitleBlock />
         {/*====== TITLE END ======*/}

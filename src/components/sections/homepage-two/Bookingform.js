@@ -4,7 +4,7 @@ class Bookingform extends Component {
     state = {
         checkIn: new Date(),
         checkOut: new Date(),
-        adults: 0,
+        adults: 1,
         rooms: 1,
         childs: 1,
         showCountPopup: false,
@@ -21,9 +21,9 @@ class Bookingform extends Component {
     render() {
         const { rooms, childs, adults, showCountPopup, showPromoPopup } = this.state;
         return (
-            <section className="booking-form-hotizontal">
+            <section className="booking-form-hotizontal d-none d-sm-block">
                 <div className="container">
-                    <div className="booking-form-inner d-none d-sm-block">
+                    <div className="booking-form-inner">
                         <div className="row">
                             <div className="col-12 col-md-4">
                                 <div className="dates-group">
@@ -43,9 +43,9 @@ class Bookingform extends Component {
                                         <div className="room_item_box quantity">
                                             <label>Rooms</label>
                                             <div className="quantity-box">
-                                                <div className="quantity-button quantity-down minus empty">-</div>
-                                                <input id="Room" type="text" min="1" className="form-control" value="1" name="Rooms" placeholder="" required="" data-rel="rooms" />
-                                                <div className="quantity-button quantity-up plus">+</div>
+                                                <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ rooms: rooms - 1 < 1 ? 1 : rooms - 1 })}>-</div>
+                                                <input id="Room" type="text" min="1" className="form-control" value={rooms} name="Rooms" placeholder="" required="" data-rel="rooms" />
+                                                <div className="quantity-button quantity-up plus"onClick={() => this.setState({ rooms: rooms + 1 })}>+</div>
                                             </div>
                                         </div>
                                         <div className="room_item_box quantity">
@@ -59,9 +59,9 @@ class Bookingform extends Component {
                                         <div className="room_item_box quantity">
                                             <label>Children</label>
                                             <div className="quantity-box">
-                                                <div className="quantity-button quantity-down minus empty">-</div>
-                                                <input id="Child" type="text" min="0" className="form-control" value="0" name="Child" placeholder="" required="" />
-                                                <div className="quantity-button quantity-up plus">+</div>
+                                                <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ childs: childs - 1 < 1 ? 1 : childs - 1 })}>-</div>
+                                                <input id="Child" type="text" min="0" className="form-control" value={childs} name="Child" placeholder="" required="" />
+                                                <div className="quantity-button quantity-up plus" onClick={() => this.setState({ childs: childs + 1 })}>+</div>
                                             </div>
                                         </div>
                                     </div>

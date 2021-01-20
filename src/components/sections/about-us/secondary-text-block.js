@@ -12,7 +12,7 @@ class AboutSecondaryTextBlock extends Component {
             <ReactWOW animation="fadeInLeft" data-wow-delay=".3s">
               <div className="row align-items-center1 justify-content-space-between bg-div">
                 <div className="col-lg-6">
-                  <div className="text-img text-center text-lg-left mb-small image-wrapper">
+                  <div className="text-img text-center text-lg-left mb-3 image-wrapper">
                     <img src={require('../../../assets/img/about/dine.jpg')} alt="" />
                   </div>
                 </div>

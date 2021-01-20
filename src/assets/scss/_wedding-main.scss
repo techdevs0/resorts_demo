@@ -19,13 +19,16 @@
     padding: 2rem 0;
     @media #{$sm} {
       font-size: 30px;
-      padding: 1rem 0;
+      padding: 0 0 1rem 0;
     }
   }
   p {
     color: $para-color;
     font-family: $lora;
     font-weight: 500;
+    @media #{$sm} {
+      text-align: justify;
+    }
   }
   .img-wrapper {
     max-height: 300px;
@@ -101,6 +104,10 @@
         min-height: 220px;
         max-height: 220px;
         overflow-y: auto;
+        @media #{$sm} {
+          min-height: auto;
+          max-height: auto;
+        }
         p,
         h2,
         h3,

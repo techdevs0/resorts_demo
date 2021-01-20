@@ -20,6 +20,7 @@
     }
     .room-carousel {
         //   margin-top: 2rem;
+
         .control-arrow {
             background: $eden;
             opacity: 1;
@@ -144,6 +145,8 @@
             font-size: smaller;
         }
         .room-carousel {
+            height: 70vh;
+            overflow: hidden;
             .control-arrow {
                 background: rgba($color: $secondary-color, $alpha: 1);
                 opacity: 1;

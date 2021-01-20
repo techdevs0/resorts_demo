@@ -9,7 +9,7 @@
     font-weight: 500;
     @media #{$sm} {
       font-size: 30px;
-      padding: 1rem 0;
+      padding: 0 0 1rem 0;
     }
   }
   p {
@@ -18,7 +18,7 @@
     line-height: 30px;
     @media #{$sm} {
       padding: 0 1rem;
-      // text-align: justify;
+      text-align: justify;
     }
   }
 }

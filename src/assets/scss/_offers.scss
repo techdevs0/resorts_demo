@@ -7,11 +7,19 @@
     font-family: "Lora", serif;
     padding: 2rem 0;
     font-weight: 500;
+    @media #{$sm} {
+      font-size: 30px;
+      padding: 0 0 1rem 0;
+    }
   }
   p {
-    color:$para-color;
+    color: $para-color;
     font-weight: 500;
     line-height: 30px;
+    @media #{$sm} {
+      text-align: justify;
+      padding: 0 1rem;
+    }
   }
 }
 .offer-grid-title {
