@@ -67,7 +67,7 @@ class Banner extends Component {
                       <img className="img-fluid" style={{width:'100%', height:'100%', objectFit:'cover'}} src={require('./../../../assets/img/banner/tc-winner.gif')} />
                     </div>
                     <div  className="rounded-circle mx-2" style={{width:'100px', height:'100px', overflow:'hidden'}}>
-                      <img className="img-fluid" style={{width:'100%', height:'100%', objectFit:'cover'}} src={require('./../../../assets/img/banner/luxury.png')} />
+                      <img className="img-fluid" style={{width:'100%', height:'100%', objectFit:'fill'}} src={require('./../../../assets/img/banner/luxury.png')} />
                     </div>
                   </div>
                 {/* </div> */}
