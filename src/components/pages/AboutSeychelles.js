@@ -5,10 +5,10 @@ import Mainbanner from '../sections/homepage-two/Banner';
 import Bookingform from '../sections/homepage-two/Bookingform';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
-import SustainIntroBlock from '../sections/sustainability/intro-block';
-import SustainPillarsBlock from '../sections/sustainability/pillars-block';
-import SustainProjectsBlock from '../sections/sustainability/projects-block';
-import SustainEngeryBlock from '../sections/sustainability/energy-conservation';
+import SeychellesIntroBlock from '../sections/about-seychelles/intro-block';
+import SeychellesPillarsBlock from '../sections/about-seychelles/pillars-block';
+import SeychellesProjectsBlock from '../sections/about-seychelles/projects-block';
+import SeychellesEngeryBlock from '../sections/about-seychelles/energy-conservation';
 import BreadCrumb from '../layouts/BreadCrumb';
 
 const breadcrumbItems=[
@@ -18,19 +18,19 @@ const breadcrumbItems=[
     isActive: false,
   },
   {
-    text: 'Sustainability',
-    link:'/sustainability',
+    text: 'About Seychelles',
+    link:'/about-seychelles',
     isActive: true,
   },
 ]
 
-class Sustainability extends Component {
+class AboutSeychelles extends Component {
   render() {
     return (
-      <div className="bg-white sustainability-wrapper">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'sustainability'} />
+      <div className="bg-white seychelles-wrapper">
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'seychelles'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Sustainability"} />
+        <Mainbanner title={"About Seychelles"} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
@@ -39,15 +39,15 @@ class Sustainability extends Component {
         <BreadCrumb items={breadcrumbItems} />
         {/* BREADCRUMBS END */}
         {/*====== INTRO START ======*/}
-        <SustainIntroBlock />
+        <SeychellesIntroBlock />
         {/*====== INTRO END ======*/}
         {/*====== PILLARS START ======*/}
-        <SustainPillarsBlock/>
+        <SeychellesPillarsBlock/>
         {/*====== PILLARS END ======*/}
         {/*====== PROJECTS SLIDER START ======*/}
-        <SustainProjectsBlock />
+        <SeychellesProjectsBlock />
         {/*====== PROJECTS SLIDER END ======*/}
-        <SustainEngeryBlock />
+        <SeychellesEngeryBlock />
         {/*====== PROJECTS SLIDER END ======*/}
 
         <Subscribe />
@@ -60,4 +60,4 @@ class Sustainability extends Component {
   }
 }
 
-export default Sustainability;
+export default AboutSeychelles;

@@ -1,12 +1,12 @@
 import React from 'react';
 
-const SustainPillarsBlock = (props) => {
+const SeychellesPillarsBlock = (props) => {
   return (
     <div className="pillars-block py-4">
       <div className="container">
         <div className="d-flex flex-wrap title-flex">
           <div className="pillars-item img-wrapper">
-            <img className="img-thumbnail" src={require('./../../../assets/img/sustain/pillars.jpg')} />
+            <img src={require('./../../../assets/img/sustain/pillars.jpg')} />
           </div>
           <div className="pillars-item">
             <h3 className="ml-sm-4">reduce, reuse, recycle</h3>
@@ -21,4 +21,4 @@ const SustainPillarsBlock = (props) => {
   );
 }
 
-export default SustainPillarsBlock;
+export default SeychellesPillarsBlock;

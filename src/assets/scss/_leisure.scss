@@ -3,17 +3,25 @@
   text-align: center;
   h1,
   h2 {
-    color: #11595c;
+    color: $eden;
     font-family: "Lora", serif;
-    padding: 2rem 0;
+    padding: 0 0 2rem 0;
     font-weight: 500;
+    @media #{$sm} {
+      font-size: 30px;
+      padding: 0 0 1rem 0;
+    }
   }
   p {
-    color: #11595c;
+    color: $para-color;
     font-weight: 500;
     line-height: 30px;
+    font-size: 14px;
+    @media #{$sm} {
+      line-height: 1.6;
+    }
   }
-  button{
+  button {
     margin: 2rem auto;
     background-color: $secondary-color !important;
     border-color: $secondary-color;
@@ -32,12 +40,11 @@
 }
 
 .leisure-grid-wrapper {
-  padding-top: 1rem;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   .leisure-grid-item-wrapper {
-    padding: 0.75rem;
+    padding: 0.5rem;
     max-width: 50%;
     min-width: 50%;
     display: inline-block;
@@ -46,7 +53,7 @@
     @media #{$sm} {
       max-width: 100%;
       min-width: 100%;
-      padding: 0.5rem;
+      padding: 0.5rem 0;
       // margin: 1rem auto;
     }
     .grid-item {
@@ -58,7 +65,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        @media #{$sm}{
+        @media #{$sm} {
           height: 250px;
         }
         h3,
@@ -66,7 +73,7 @@
           color: $white;
           text-transform: uppercase;
           font-family: $mont;
-          line-height: 50px;
+          line-height: 30px;
           font-weight: 500;
           width: 50%;
           z-index: 2;
@@ -122,8 +129,8 @@
 .leisure-offer-slider {
   // margin: 2rem 0;
   padding-top: 2rem;
-  @media #{$sm}{
-  padding-top: 2rem;
+  @media #{$sm} {
+    padding-top: 2rem;
   }
   .leisure-slider-item {
     height: 500px;
@@ -132,7 +139,7 @@
     justify-content: center;
     background-size: cover;
     background-position: center;
-    @media #{$sm}{
+    @media #{$sm} {
       height: 200px;
     }
     h1,
@@ -143,7 +150,7 @@
       text-align: center;
       font-weight: 500;
       padding: 0 3rem;
-      @media #{$sm}{
+      @media #{$sm} {
         font-size: 24px;
       }
     }
@@ -158,14 +165,14 @@
   }
 }
 
-.leisure-awards-wrapper{
-  .award-image-wrapper{
+.leisure-awards-wrapper {
+  .award-image-wrapper {
     height: 200px;
     width: 100%;
     @media #{$sm} {
       height: 150px;
     }
-    img{
+    img {
       height: 100%;
       width: 100%;
       object-fit: contain;

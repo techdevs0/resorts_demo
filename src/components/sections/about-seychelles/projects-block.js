@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SustainProjectsBlock = (props) => {
+const SeychellesProjectsBlock = (props) => {
   return (
     <div className="projects-block py-4">
       <div className="container">
@@ -11,11 +11,9 @@ const SustainProjectsBlock = (props) => {
             <p className="text-justify mr-sm-4">
              Fisherman’s Cove is a part of the Marine Conservation Society of Seychelles and also a part of projects like Beach Clean Up, and restoration project. Moreover, the use of water-saving faucets to reduce water consumption
             </p>
-           
-           
           </div>
           <div className="projects-item img-wrapper">
-            <img className="img-thumbnail" src={require('./../../../assets/img/banner/home.jpg')} />
+            <img src={require('./../../../assets/img/banner/home.jpg')} />
           </div>
         </div>
       </div>
@@ -23,4 +21,4 @@ const SustainProjectsBlock = (props) => {
   );
 }
 
-export default SustainProjectsBlock;
+export default SeychellesProjectsBlock;

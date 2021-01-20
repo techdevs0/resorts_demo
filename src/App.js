@@ -31,6 +31,7 @@ import ScrollToTop from './components/layouts/ScrollToTop';
 import Headertwo from './components/layouts/Headertwo';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import AboutSeychelles from './components/pages/AboutSeychelles';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -63,6 +64,7 @@ function App() {
         <Route path='/whats-on' render={(props) => <Leisure {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/leisure-inner' render={(props) => <LeisureInner {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/sustainability' render={(props) => <Sustainability {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/about-seychelles' render={(props) => <AboutSeychelles {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/spa-wellness' render={(props) => <SpaWellness {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/about' render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />

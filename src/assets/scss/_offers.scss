@@ -5,7 +5,7 @@
   h2 {
     color: $eden;
     font-family: "Lora", serif;
-    padding: 2rem 0;
+    padding: 0 0 2rem 0;
     font-weight: 500;
     @media #{$sm} {
       font-size: 30px;
@@ -16,9 +16,11 @@
     color: $para-color;
     font-weight: 500;
     line-height: 30px;
+    font-size: 14px;
     @media #{$sm} {
       text-align: justify;
-      padding: 0 1rem;
+      // padding: 0 1rem;
+      line-height: 1.6;
     }
   }
 }
@@ -50,7 +52,7 @@
     @media #{$sm} {
       max-width: 50%;
       min-width: 50%;
-      padding: 0.5rem;
+      padding: 0.25rem 0.25rem;
       // margin: 1rem auto;
     }
     .grid-item {
@@ -70,7 +72,7 @@
           color: $white;
           text-transform: uppercase;
           font-family: $mont;
-          line-height: 40px;
+          line-height: 30px;
           font-weight: 500;
           width: 50%;
           z-index: 2;

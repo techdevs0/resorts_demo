@@ -39,7 +39,10 @@ header {
 			a {
 				color: $heading-color;
 				font-size: 24px;
-				padding: 10px;
+				padding: 10px 0;
+				@media #{$sm} {
+					padding: 10px;
+				}
 			}
 		}
 
@@ -47,6 +50,7 @@ header {
 			.main-logo {
 				position: absolute;
 				top: 0;
+				// transform: translate(50%, 0%);
 			}
 			img {
 				max-width: 100px;
@@ -723,18 +727,22 @@ header {
 					@media #{$md} {
 						position: absolute;
 						top: 0;
+						// transform: translate(50%, 0%);
 					}
 					@media #{$lg} {
 						position: absolute;
 						top: 0;
+						// transform: translate(50%, 0%);
 					}
 					@media #{$xl} {
 						position: absolute;
 						top: 0;
+						// transform: translate(50%, 0%);
 					}
 					@media #{$xxl} {
 						position: absolute;
 						top: 0;
+						// transform: translate(50%, 0%);
 					}
 				}
 			}
@@ -818,7 +826,7 @@ header {
 		background-color: $white;
 		width: 100%;
 		height: 100vh;
-		padding: 70px 40px;
+		padding: 40px 40px;
 		position: relative;
 		z-index: 99;
 		overflow-y: auto;
@@ -847,13 +855,13 @@ header {
 		a.offcanvas-close {
 			position: absolute;
 			right: 30px;
-			top: 30px;
+			top: 10px;
 			font-size: 28px;
 			color: $primary-color;
 		}
 
 		.widget {
-			margin-bottom: 50px;
+			margin-bottom: 40px;
 			font-size: 14px;
 			.widget-title {
 				font-size: 20px;
@@ -876,9 +884,9 @@ header {
 				form {
 					position: relative;
 					input {
-						width: 100%;
+						width: 90%;
 						background-color: $main-bg;
-						height: 60px;
+						height: 45px;
 						border: none;
 						padding-left: 30px;
 						padding-right: 60px;
@@ -887,7 +895,7 @@ header {
 					button {
 						border: none;
 						position: absolute;
-						right: 0;
+						right: 10%;
 						top: 0;
 						width: 60px;
 						height: 100%;

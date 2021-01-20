@@ -3,9 +3,9 @@
   text-align: center;
   h1,
   h2 {
-    color: #11595c;
+    color: $eden;
     font-family: "Lora", serif;
-    padding: 2rem 0;
+    padding: 0 0 2rem 0;
     font-weight: 500;
     @media #{$sm} {
       padding:0 0 1rem 0;
@@ -16,10 +16,11 @@
     color: $para-color;
     font-weight: 500;
     line-height: 30px;
-    font-size: 15px;
+    font-size: 14px;
     @media #{$sm} {
-      padding: 0 1rem;
+      // padding: 0 1rem;
       text-align: justify;
+      line-height: 1.6;
     }
   }
 }
@@ -50,7 +51,7 @@
     @media #{$sm} {
       max-width: 100%;
       min-width: 100%;
-      padding: 0.5rem;
+      padding: 0.5rem 0;
       // margin: 1rem auto;
     }
     .grid-item {
@@ -70,7 +71,7 @@
           color: $white;
           text-transform: uppercase;
           font-family: $mont;
-          line-height: 40px;
+          line-height: 30px;
           font-weight: 500;
           width: 50%;
           z-index: 2;
@@ -90,6 +91,7 @@
           color: #11595c;
           font-weight: 500;
           margin: 0.5rem auto;
+          font-size: 14px;
         }
         button {
           line-height: 30px;

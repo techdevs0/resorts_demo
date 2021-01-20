@@ -1,4 +1,4 @@
-.sustainability-wrapper {
+.seychelles-wrapper {
   .intro-block,
   .pillars-block,
   .projects-block {
@@ -25,7 +25,7 @@
         padding: 0 0 1rem 0;
       }
     }
-    @media #{$sm} {
+    @media #{$sm}{
       padding: 0.5rem 0 !important;
     }
     .title-flex {
@@ -33,7 +33,7 @@
       padding-top: 2rem;
       @media #{$sm} {
         flex-direction: column-reverse;
-        padding-top: 0.5rem;
+        padding-top: .5rem;
       }
     }
     .intro-item,
@@ -57,7 +57,7 @@
       font-family: $lora;
       font-weight: 500;
       font-size: 14px;
-      &.download-para {
+      &.download-para{
         margin-top: 1rem;
         margin-bottom: 0rem;
         color: $mine-shaft;
