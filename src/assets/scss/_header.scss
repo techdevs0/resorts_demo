@@ -724,6 +724,18 @@ header {
 						position: absolute;
 						top: 0;
 					}
+					@media #{$lg} {
+						position: absolute;
+						top: 0;
+					}
+					@media #{$xl} {
+						position: absolute;
+						top: 0;
+					}
+					@media #{$xxl} {
+						position: absolute;
+						top: 0;
+					}
 				}
 			}
 			.header-info {
