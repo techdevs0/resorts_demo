@@ -44,6 +44,10 @@ header {
 		}
 
 		.site-logo {
+			.main-logo{
+				position: absolute;
+				top: 0;
+			}
 			img {
 				max-width: 100px;
 				@media #{$lg} {
@@ -371,6 +375,7 @@ header {
 					left: 0;
 				}
 			}
+
 
 			.nav-pushed-item,
 			.navbar-close,
