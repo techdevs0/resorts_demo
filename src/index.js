@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import {BrowserRouter} from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 
 import './assets/css/animate.min.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/font-awesome.min.css';
 import './assets/css/flaticon.css';
-import "../node_modules/slick-carousel/slick/slick.css"; 
 import "../node_modules/slick-carousel/slick/slick.css";
+// import "../node_modules/slick-carousel/slick/slick.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './assets/css/default.css';
 // import './assets/css/style.css';
@@ -17,9 +17,9 @@ import './assets/css/default.css';
 import './App.scss';
 
 ReactDOM.render(
-    <BrowserRouter>
+  <BrowserRouter>
     <App />
-    </BrowserRouter>,
+  </BrowserRouter>,
   document.getElementById('miranda')
 );
 

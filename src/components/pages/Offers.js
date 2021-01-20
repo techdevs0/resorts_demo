@@ -79,7 +79,7 @@ class Offers extends Component {
   render() {
     return (
       <div className="bg-white">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'offers'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Offers"} />
         {/*====== BANNER PART ENDS ======*/}

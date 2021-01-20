@@ -5,6 +5,9 @@
       font-family: $lora;
       text-align: center;
       padding: 2rem 0;
+      @media #{$sm} {
+        padding: 0 0 1rem 0;
+      }
     }
     @media #{$sm} {
       padding: 0.5rem 0 !important;
@@ -100,7 +103,7 @@
         margin-top: 0.5rem;
         color: $eden;
         @media #{$sm} {
-          div{
+          div {
             width: 100%;
           }
         }

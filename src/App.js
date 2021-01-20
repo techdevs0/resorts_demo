@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Preloader from './components/layouts/Preloader';
 import Hometwo from './components/pages/Hometwo';
@@ -28,41 +28,58 @@ import LeisureInner from './components/pages/Leisure-Inner';
 import RoomsInner from './components/pages/Rooms-Inner';
 import GalleryMain from './components/pages/Gallery-Main';
 import ScrollToTop from './components/layouts/ScrollToTop';
+import Headertwo from './components/layouts/Headertwo';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTop, setIsTop] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setIsMobile(window.innerWidth < 1020);
+    }, false);
+    window.addEventListener('load', () => {
+      setIsMobile(window.innerWidth < 1020);
+    }, false);
+    window.addEventListener('scroll', () => {
+      setIsTop(window.scrollY > 150);
+    }, false);
+  })
   return (
-      <Router>
-        { <Preloader />}
-        <ScrollToTop />
-        <Switch>
-          <Route exact path='/' component={Hometwo} />
-          <Route path='/home-two' component={Hometwo} />
-          <Route path='/room-suites' component={RoomSuites} />
-          <Route path='/dining' component={Dining} />
-          <Route path='/dining-inner' component={DiningInner} />
-          <Route path='/offers-inner' component={OffersInner} />
-          <Route path='/rooms-inner' component={RoomsInner} />
-          <Route path='/weddings' component={Wedding} />
-          <Route path='/whats-on' component={Leisure} />
-          <Route path='/leisure-inner' component={LeisureInner} />
-          <Route path='/sustainability' component={Sustainability} />
-          <Route path='/spa-wellness' component={SpaWellness} />
-          <Route path='/about' component={About} />
-          <Route path='/gallery' component={GalleryMain} />
-          <Route path='/menu' component={Menu} />
-          <Route path='/offers' component={Offers} />
-          <Route path='/restaurant' component={Restaurant} />
-          <Route path='/news' component={Blog} />
-          <Route path='/news-details' component={Blogdetails} />
-          <Route path='/places' component={Places} />
-          <Route path='/places-details' component={Placesdetails} />
-          <Route path='/room-grid' component={Roomgrid} />
-          <Route path='/room-list' component={Roomlist} />
-          <Route path='/room-details' component={Roomdetails} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/' component={()=> <div className="vh-100 d-flex align-items-center justify-content-center"><h1 className="display-3">Error 404! Page Not Found.</h1></div>} />
-        </Switch>
-      </Router>
+    <Router>
+      { <Preloader />}
+      <ScrollToTop />
+      {/* <Headertwo /> */}
+      <Switch>
+        <Route exact path='/' render={(props) => <Hometwo {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/room-suites' render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/dining' render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/dining-inner' render={(props) => <DiningInner {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/offers-inner' render={(props) => <OffersInner {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/rooms-inner' render={(props) => <RoomsInner {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/weddings' render={(props) => <Wedding {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/whats-on' render={(props) => <Leisure {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/leisure-inner' render={(props) => <LeisureInner {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/sustainability' render={(props) => <Sustainability {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/spa-wellness' render={(props) => <SpaWellness {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/about' render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/menu' render={(props) => <Menu {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/offers' render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/restaurant' component={Restaurant} />
+        <Route path='/news' component={Blog} />
+        <Route path='/news-details' component={Blogdetails} />
+        <Route path='/places' component={Places} />
+        <Route path='/places-details' component={Placesdetails} />
+        <Route path='/room-grid' component={Roomgrid} />
+        <Route path='/room-list' component={Roomlist} />
+        <Route path='/room-details' component={Roomdetails} />
+        <Route path='/contact' render={(props) => <Contact {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/' component={() => <div className="vh-100 d-flex align-items-center justify-content-center"><h1 className="display-3">Error 404! Page Not Found.</h1></div>} />
+      </Switch>
+    </Router>
   );
 }
 

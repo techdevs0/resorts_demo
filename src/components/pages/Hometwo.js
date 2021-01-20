@@ -14,7 +14,7 @@ class Hometwo extends Component {
   render() {
     return (
       <div>
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'home'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner isMain={true} title={"The Perfect Destination for You"}/>
         {/*====== BANNER PART ENDS ======*/}

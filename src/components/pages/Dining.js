@@ -91,7 +91,7 @@ class Dining extends Component {
   render() {
     return (
       <div className="bg-white">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'dining'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Dining"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}

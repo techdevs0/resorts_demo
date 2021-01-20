@@ -57,7 +57,9 @@ class Headertwo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      redText: false
+      redText: false,
+      isMobile:false,
+      isTop:false,
     };
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
@@ -80,6 +82,7 @@ class Headertwo extends Component {
     });
   }
   componentDidMount() {
+    console.log(this.props)
     window.addEventListener('resize', () => {
       this.setState({
         isMobile: window.innerWidth < 1020
@@ -96,6 +99,11 @@ class Headertwo extends Component {
       });
     }, false);
   }
+
+  componentDidUpdate(){
+    console.log(this.props)
+  }
+
   navToggle = () => {
     const nv = findDOMNode(this.refs.navmenu);
     const nvb = findDOMNode(this.refs.navbtn);
@@ -135,9 +143,9 @@ class Headertwo extends Component {
     }
   }
   render() {
-    const className = this.state.isMobile ? 'breakpoint-on' : '';
-    const classNamess = this.state.isMobile ? 'd-none' : '';
-    const classNamesss = this.state.isTop ? 'sticky-active' : '';
+    const className = this.props.isMobile ? 'breakpoint-on' : '';
+    const classNamess = this.props.isMobile ? 'd-none' : '';
+    const classNamesss = this.props.isTop ? 'sticky-active' : '';
 
     return (
       <div>
@@ -169,7 +177,7 @@ class Headertwo extends Component {
                   </div>
 
                 </div>
-                <div className="menu-items d-block d-md-none">
+                <div className="menu-items d-sm-none">
                   <ul>
                     {navigationmenu.length > 0 ? navigationmenu.map((item, i) => (
                       <li key={i} className={` ${item.child ? 'menu-item-has-children' : ''} `} onClick={this.triggerChild}>

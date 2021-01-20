@@ -59,7 +59,7 @@ class RoomsInner extends Component {
   render() {
     return (
       <div className="bg-white rooms-inner-wrapper">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'rooms-inner'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Paris Seychelles Restaurant"} />
         {/*====== BANNER PART ENDS ======*/}

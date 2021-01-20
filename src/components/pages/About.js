@@ -56,7 +56,7 @@ class AboutUs extends Component {
   render() {
     return (
       <div className="bg-white about-us-wrapper">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'about'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"About Us"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}

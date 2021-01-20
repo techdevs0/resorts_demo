@@ -64,7 +64,7 @@ class GalleryMain extends Component {
   render() {
     return (
       <div className="bg-white">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'gallery'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Gallery"} />
         {/*====== BANNER PART ENDS ======*/}

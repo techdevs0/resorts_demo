@@ -28,7 +28,7 @@ class Sustainability extends Component {
   render() {
     return (
       <div className="bg-white sustainability-wrapper">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'sustainability'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Sustainability"} />
         {/*====== BANNER PART ENDS ======*/}

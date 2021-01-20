@@ -83,7 +83,7 @@ class RoomSuites extends Component {
   render() {
     return (
       <div className="bg-white">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'room-suites'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Inherited Paradise"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}

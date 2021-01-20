@@ -87,7 +87,7 @@ class DiningInner extends Component {
   render() {
     return (
       <div className="bg-white dining-inner-wrapper">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'dining-inner'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Paris Seychelles Restaurant"} />
         {/*====== BANNER PART ENDS ======*/}

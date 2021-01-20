@@ -31,7 +31,7 @@ class OffersInner extends Component {
   render() {
     return (
       <div className="bg-white offers-inner-wrapper">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'offers-inner'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Spa for Two"} />
         {/*====== BANNER PART ENDS ======*/}

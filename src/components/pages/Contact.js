@@ -90,7 +90,7 @@ class Wedding extends Component {
   render() {
     return (
       <div className="bg-white">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'contact'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Contact Us"} />
         {/*====== BANNER PART ENDS ======*/}

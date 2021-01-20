@@ -58,7 +58,7 @@ class Leisure extends Component {
   render() {
     return (
       <div className="bg-white">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'leisure'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Leisure Activities"} />
         {/*====== BANNER PART ENDS ======*/}

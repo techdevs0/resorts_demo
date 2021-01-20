@@ -73,7 +73,7 @@ class LeisureInner extends Component {
   render() {
     return (
       <div className="bg-white leisure-inner-wrapper">
-        <Headertwo />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'leisure-inner'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Other Resort Activities"} />
         {/*====== BANNER PART ENDS ======*/}
