@@ -56,6 +56,7 @@ class Footertwo extends Component {
                     <div>
                       <h4 className="widget-title">Services</h4>
                       <ul>
+
                       <li><Link to="/about">About Us</Link></li>
                         
                         <li><Link to="/weddings">Weddings </Link></li>
@@ -69,7 +70,6 @@ class Footertwo extends Component {
                         <li><Link to="#">Media Center</Link></li>
                         <li><Link to="/spa-wellness">Spa</Link></li>
                         <li><Link to="#">FAQs</Link></li>
-
                       </ul>
                     </div>
                   </div>

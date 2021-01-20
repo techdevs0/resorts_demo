@@ -19,7 +19,7 @@ const tabsData = [
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/book.jpg"),
-        buttonLink:""
+        buttonLink:"room-suites"
     },
     {
         tagLine: "Wedding In Seychelles",
@@ -37,13 +37,13 @@ const tabsData = [
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/spa.jpg"),
-        buttonLink:"spa-wellness"
+        buttonLink:"/spa-wellness"
     },
     {
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/food.jpg"),
-        buttonLink:""
+        buttonLink:"/dining"
     },
 ]
 

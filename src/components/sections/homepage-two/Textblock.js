@@ -18,8 +18,6 @@ class Textblock extends Component {
                                 <div className="col-lg-6 col-md-8 col-sm-10">
                                     <div className="block-text h-100 d-flex flex-column justify-content-between align-items-start">
                                         <div className="section-title mb-10">
-
-                                            <h1>Best Resort in Mahe Seychelles</h1>
                                         </div>
                                         <p className="text-justify my-1">
                                         Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fishermans Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. This tropical escape sets the scene for explorers, romantic couples, and families to an inherited paradise.
@@ -32,7 +30,7 @@ class Textblock extends Component {
                                         giving guests ample options to choose from. Le Cocoloba bar has a peaceful library to
                                         enjoy reading in solitude. 
                                         </p>
-                                        <Link to="/about" className="main-btn btn-nile mt-40">Learn More</Link>
+                                        <Link to="/room-suites" className="main-btn btn-nile mt-40">Learn More</Link>
                                     </div>
                                 </div>
                             </ReactWOW>

@@ -8,6 +8,7 @@ import Subscribe from '../sections/common/Subscribe';
 import SustainIntroBlock from '../sections/sustainability/intro-block';
 import SustainPillarsBlock from '../sections/sustainability/pillars-block';
 import SustainProjectsBlock from '../sections/sustainability/projects-block';
+import SustainEngeryBlock from '../sections/sustainability/energy-conservation';
 import BreadCrumb from '../layouts/BreadCrumb';
 
 const breadcrumbItems=[
@@ -45,6 +46,9 @@ class Sustainability extends Component {
         {/*====== PILLARS END ======*/}
         {/*====== PROJECTS SLIDER START ======*/}
         <SustainProjectsBlock />
+        {/*====== PROJECTS SLIDER END ======*/}
+
+        <SustainEngeryBlock />
         {/*====== PROJECTS SLIDER END ======*/}
 
         <Subscribe />

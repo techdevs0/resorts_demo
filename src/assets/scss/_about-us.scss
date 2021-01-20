@@ -37,6 +37,7 @@
     color: #444444;
     font-family: $lora;
     font-weight: 500;
+    font-size:15px;
   }
   .img-wrapper {
     max-height: 450px;
@@ -73,6 +74,10 @@
     width: 25%;
     border-radius: 4px;
     box-shadow: 0 0 8px #dadada;
+    cursor: pointer;
+    &:hover{
+    box-shadow: 0 0 12px #cacaca;
+    }
     @media #{$sm} {
       width: calc(50% - 1rem);
       margin: 0.5rem !important;

@@ -14,9 +14,10 @@ const ContactTitleBlock = (props) => {
               </div>
               <div className="col-9">
                 <p>
-                  Fisherman's Cove Resort <br />
+                  <a rel="nofollow" href="https://www.google.com/maps/dir//-4.6161678,55.4218931/@-4.616168,55.421893,16z?hl=en">Fisherman's Cove Resort <br />
                   Bel Ombre <br />
                   P.O. Box 35, Victoria <br />
+                  </a>
                 </p>
               </div>
             </div>
@@ -26,8 +27,8 @@ const ContactTitleBlock = (props) => {
               </div>
               <div className="col-9">
                 <p>
-                  reservations@fishermans <br />
-                  cove-resort.com <br />
+                  <a  rel="nofollow" href="reservations@fishermanscove-resort.com">reservations@fishermans <br />
+                  cove-resort.com </a><br />
                 </p>
               </div>
             </div>
@@ -37,7 +38,7 @@ const ContactTitleBlock = (props) => {
               </div>
               <div className="col-9">
                 <p>
-                  +248 467 7000
+                <a  rel="nofollow" href="tel:+2484677000">+248 467 7000</a>
                 </p>
               </div>
             </div>
@@ -47,7 +48,7 @@ const ContactTitleBlock = (props) => {
               </div>
               <div className="col-9">
                 <p>
-                  +248 281 6329
+                <a  rel="nofollow" href="https://wa.me/2482816329">+248 281 6329</a>
                 </p>
               </div>
             </div>

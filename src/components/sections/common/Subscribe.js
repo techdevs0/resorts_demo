@@ -2,7 +2,7 @@ import React from 'react';
 
 const Subscribe = (props) => {
   return (
-    <footer>
+    <footer style={{backgroundColor:'#f8f8f8'}}>
       <div className="footer-subscibe-area my-4">
         <h1 className="subscribe-title">Subscribe to our newsletter</h1>
         <div className="row justify-content-center">

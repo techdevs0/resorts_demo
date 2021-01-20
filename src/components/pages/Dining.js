@@ -14,14 +14,14 @@ const bannerImage = require('./../../assets/img/banner/dining.jpg');
 
 const roomsData = [
   {
-    title: "Paris Sychelles Restaurant",
+    title: "Paris Seychelles Restaurant",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
     image: require('./../../assets/img/dining/paris.jpg')
   },
   {
-    title: "Lecardinal Restaurant",
+    title: "Le Cardinal Restaurant",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",

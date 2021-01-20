@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const OffersInnerMainBlock = (props) => {
   return (
@@ -44,8 +45,10 @@ const OffersInnerMainBlock = (props) => {
             </div>
           </div>
         </div>
-        <div className="back-to">
-          <button className="btn btn-filled main-btn mx-auto d-block"> Back to all offers </button>
+        <div className="back-to text-center mt-4">
+          <Link to="/offers" className="btn btn-eden main-btn mx-auto d-inline-block">
+            Back to all offers
+          </Link>
         </div>
       </div>
     </div>
