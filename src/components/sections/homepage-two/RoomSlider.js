@@ -106,7 +106,7 @@ const RoomSlider = () => {
                 autoPlay={true}
                 centerMode
                 stopOnHover={false}
-                centerSlidePercentage={50}
+                centerSlidePercentage={70}
                 className="room-carousel center"
                 interval={6000}
             >

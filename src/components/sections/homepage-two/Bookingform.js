@@ -1,63 +1,96 @@
 import React, { Component } from 'react';
 
 class Bookingform extends Component {
+    state = {
+        checkIn: new Date(),
+        checkOut: new Date(),
+        adults: 0,
+        rooms: 1,
+        childs: 1,
+        showCountPopup: false,
+        showPromoPopup: false,
+    }
+
+    handleCheckInChange = (e) => {
+        this.setState({ checkIn: e.target.value })
+    }
+    handleCheckOutChange = (e) => {
+        this.setState({ checkOut: e.target.value })
+    }
+
     render() {
+        const { rooms, childs, adults, showCountPopup, showPromoPopup } = this.state;
         return (
-            <section className="booking-form">
+            <section className="booking-form-hotizontal">
                 <div className="container">
-                    <div className="booking-form-inner">
-                        <form action="#">
-                            <div className="row align-items-end">
-                                <div className="col-lg-3 col-md-6">
-                                    <div className="inputs-filed">
-                                        <label htmlFor="arrival-date">Check In</label>
-                                        <div className="icon"><i className="fal fa-calendar-alt" /></div>
-                                        <input type="text" placeholder="24th march 2020" name="arrival-date" id="arrival-date" />
-                                    </div>
+                    <div className="booking-form-inner d-none d-sm-block">
+                        <div className="row">
+                            <div className="col-12 col-md-4">
+                                <div className="dates-group">
+                                    <input onChange={this.handleCheckInChange} type="date" className="form-control" placeholder="Check In" ></input>
+                                    <span className="d-none d-sm-block">-</span>
+                                    <input onChange={this.handleCheckOutChange} type="date" className="form-control" placeholder="Check Out" ></input>
                                 </div>
-                                <div className="col-lg-3 col-md-6">
-                                    <div className="inputs-filed">
-                                        <label htmlFor="departure-date text-theme">Check Out</label>
-                                        <div className="icon"><i className="fal fa-calendar-alt" /></div>
-                                        <input type="text" placeholder="30th march 2020" name="departure-date" id="departure-date" />
+                            </div>
+                            <div className="col-12 col-md-4">
+                                <div className="room-details">
+                                    <div className="count-group" onClick={() => this.setState({ showCountPopup: !showCountPopup, showPromoPopup: false })}>
+                                        <p>{`${rooms} Room${rooms > 0 ? 's' : ''}`}</p>
+                                        <p>{`${adults} Adult${adults > 0 ? 's' : ''}`}</p>
+                                        <p>{`${childs} Child${childs > 0 ? 's' : ''}`}</p>
                                     </div>
-                                </div>
-                                <div className="col-lg-2 col-md-6">
-                                    <div className="inputs-filed rooms-select">
-                                        <label htmlFor="guests">Rooms</label>
-                                        <div className="nice-select">
-                                            <select name="guests" id="guests">
-                                                <option value={0}>Select Rooms</option>
-                                                <option value={1}>1</option>
-                                                <option value={2}>2</option>
-                                                <option value={4}>4</option>
-                                                <option value={8}>8</option>
-                                            </select>
+                                    <div className="room-details-popup" style={{ display: showCountPopup ? 'block' : 'none' }}>
+                                        <div className="room_item_box quantity">
+                                            <label>Rooms</label>
+                                            <div className="quantity-box">
+                                                <div className="quantity-button quantity-down minus empty">-</div>
+                                                <input id="Room" type="text" min="1" className="form-control" value="1" name="Rooms" placeholder="" required="" data-rel="rooms" />
+                                                <div className="quantity-button quantity-up plus">+</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-2 col-md-6">
-                                    <div className="inputs-filed guests-select">
-                                        <label htmlFor="guests">Guests</label>
-                                        <div className="nice-select">
-                                            <select name="guests" id="guests">
-                                                <option value={0}>Select Guests</option>
-                                                <option value={1}>1</option>
-                                                <option value={2}>2</option>
-                                                <option value={4}>4</option>
-                                                <option value={8}>8</option>
-                                            </select>
+                                        <div className="room_item_box quantity">
+                                            <label>Adults</label>
+                                            <div className="quantity-box">
+                                                <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ adults: adults - 1 < 1 ? 1 : adults - 1 })}>-</div>
+                                                <input id="Adult" type="text" min="1" className="form-control" value={adults} name="Adult" placeholder="" required="" data-rel="adults" />
+                                                <div className="quantity-button quantity-up plus" onClick={() => this.setState({ adults: adults + 1 })}>+</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-2 col-md-6">
-                                    <div className="inputs-filed">
-                                        <button type="submit">Book Now</button>
+                                        <div className="room_item_box quantity">
+                                            <label>Children</label>
+                                            <div className="quantity-box">
+                                                <div className="quantity-button quantity-down minus empty">-</div>
+                                                <input id="Child" type="text" min="0" className="form-control" value="0" name="Child" placeholder="" required="" />
+                                                <div className="quantity-button quantity-up plus">+</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                            <div className="col-12 col-md-2">
+                                <div className="promo-codes-wrapper">
+                                    <div className="promo-codes" onClick={() => this.setState({ showPromoPopup: !showPromoPopup, showCountPopup:false })}>
+                                        <p>Promo Codes</p>
+                                    </div>
+                                    <div className="promo-popup" style={{ display: showPromoPopup ? 'flex' : 'none' }}>
+                                        <div className="code-item">
+                                            <label>Group Code/Promotion Code</label>
+                                            <input type="text" className="form-control" />
+                                        </div>
+                                        <div className="code-item">
+                                            <label>Travel Industry ID</label>
+                                            <input type="text" className="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-12 col-md-2">
+                                <button className="main-btn btn-eden">Book Now</button>
+                            </div>
+                        </div>
                     </div>
+                    {/* <button className="main-btn w-100 btn-eden d-block my-5 d-sm-none">Book Now</button> */}
+
                 </div>
             </section>
 

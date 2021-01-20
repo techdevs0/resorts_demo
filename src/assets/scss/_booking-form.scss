@@ -54,8 +54,9 @@
 			.nice-select {
 				// padding: 0 20px;
 			}
-			&.rooms-select, &.guests-select{
-				select{
+			&.rooms-select,
+			&.guests-select {
+				select {
 					padding: 0;
 				}
 			}
@@ -84,7 +85,7 @@
 				background-color: $black;
 			}
 			@media #{$sm} {
-				height: 45px;
+				height: 50px;
 				letter-spacing: normal;
 			}
 			@media #{$lg} {
@@ -117,6 +118,199 @@
 			button {
 				font-size: 12px;
 				letter-spacing: 1;
+			}
+		}
+	}
+}
+
+.booking-form-hotizontal {
+	position: relative;
+	// margin-top: -90px;
+	z-index: 2;
+	@media #{$sm} {
+		// margin-top: -85px;
+	}
+	background-color: rgba($color: $heading-color, $alpha: 1);
+	.booking-form-inner {
+		padding: 1.5rem;
+		// box-shadow: 0 0 20px rgba($color: $text-color, $alpha: 0.4);
+		@media #{$sm} {
+			padding: 1rem;
+		}
+		//column 1
+		.dates-group {
+			box-sizing: content-box;
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			align-items: center;
+			background-color: $white;
+			padding: 0.5rem;
+			@media #{$sm} {
+				margin-bottom: 0.5rem;
+				flex-wrap: wrap;
+			}
+			input {
+				width: 49% !important;
+				display: inline-block;
+				border: none;
+				border-radius: 0 !important;
+				font-size: 14px;
+				@media #{$sm} {
+					width: 100% !important;
+					border-bottom: 0.5px solid $mine-shaft;
+					height: 50px;
+				}
+			}
+		}
+
+		//column 2
+		.room-details {
+			background-color: $white;
+			padding: 0.5rem;
+			height: 100%;
+			display: flex;
+			align-items: stretch;
+			font-size: 14px;
+			@media #{$sm} {
+				margin-bottom: 0.5rem;
+				height: 50px;
+			}
+			.count-group {
+				width: 100%;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				align-self: center;
+			}
+			.room-details-popup {
+				position: absolute;
+				min-width: 400px;
+				background: #fff;
+				z-index: 1;
+				box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+				border-radius: 5px;
+				padding: 15px;
+				top: 70px;
+				z-index: 10;
+				left: 0px;
+				.room_item_box {
+					float: left;
+					line-height: 0;
+					width: 100%;
+					margin: 15px 0;
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+					-webkit-touch-callout: none;
+					-webkit-user-select: none;
+					-khtml-user-select: none;
+					-moz-user-select: none;
+					-ms-user-select: none;
+					user-select: none;
+					label {
+						width: 50%;
+						font-size: 16px;
+						color: $mine-shaft;
+						font-weight: 500;
+						line-height: 19px;
+						margin-bottom: 0;
+						display: inline-block;
+						max-width: 100%;
+					}
+					.quantity-box {
+						// width: 50%;
+						// float: left;
+						text-align: right;
+						input {
+							width: 50px;
+							height: 40px;
+							text-align: center;
+							padding: 0;
+							font-size: 18px;
+							border: none;
+							font-weight: bold;
+							color: #000;
+							display: inline-block;
+							// line-height: 40px;
+						}
+						.minus {
+							width: 40px;
+							height: 40px;
+							border: 1px solid $secondary-color;
+							border-radius: 4px;
+							font-size: 30px;
+							text-align: center;
+							line-height: 40px;
+							color: $secondary-color;
+							display: inline-block;
+							cursor: pointer;
+						}
+						.plus {
+							width: 40px;
+							height: 40px;
+							border: 1px solid $secondary-color;
+							border-radius: 4px;
+							font-size: 30px;
+							text-align: center;
+							line-height: 40px;
+							color: $secondary-color;
+							display: inline-block;
+							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
+
+		//column 3
+
+		.promo-codes-wrapper {
+			height: 100%;
+			background-color: $white;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@media #{$sm} {
+				margin-bottom: 0.5rem;
+				height: 50px;
+			}
+			cursor: pointer;
+			.promo-codes {
+				text-align: center;
+				font-size: 14px;
+			}
+			.promo-popup {
+				position: absolute;
+				min-width: 500px;
+				background: #fff;
+				z-index: 1;
+				box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+				border-radius: 5px;
+				padding: 15px;
+				top: 70px;
+				z-index: 10;
+				right: 0px;
+				display: flex;
+				justify-content: space-between;
+				.code-item {
+					// width: 50%;
+					label {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+
+		//column 4
+
+		button {
+			height: 100%;
+			width: 100%;
+			@media #{$sm} {
+				width: 100%;
+				height: 50px;
 			}
 		}
 	}
