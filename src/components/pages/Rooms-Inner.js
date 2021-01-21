@@ -59,6 +59,7 @@ let breadcrumbItems=[
 class RoomsInner extends Component {
   state = {
     singleRoom: {},
+    othersData:[]
   }
 
   async componentDidMount() {
@@ -68,6 +69,10 @@ class RoomsInner extends Component {
       breadcrumbItems[breadcrumbItems.length -1].text=response.data.post_name;
       breadcrumbItems[breadcrumbItems.length -1].link='/rooms-inner/'+response.data.id;
       this.setState({ singleRoom: response.data });
+
+      API.get('/all_rooms').then(othersResponse => {
+        this.setState({ othersData: othersResponse.data.filter(x => x.id !== this.state.singleRoom?.id) || [] });
+      });
     } catch (error) {
       console.log(error);
     }
@@ -100,7 +105,7 @@ class RoomsInner extends Component {
             </div>
           </div>
           {/*====== OTHERS GRID START ======*/}
-          <OtherRecommendations title={"Other Restaurants & Bars"} data={roomsData} />
+          <OtherRecommendations title={"Other Rooms & Suites"} data={this.state.othersData} />
           {/*====== OTHERS GRID END ======*/}
         </div>
         <Subscribe />

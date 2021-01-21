@@ -94,15 +94,14 @@ class DiningInner extends Component {
     let id = this.props.match.params.id;
     try {
       const response = await API.get('/single_post/' + id);
-      breadcrumbItems[breadcrumbItems.length -1].text=response.data.post_name;
-      breadcrumbItems[breadcrumbItems.length -1].link='/dining-inner/'+response.data.id;
+      breadcrumbItems[breadcrumbItems.length - 1].text = response.data.post_name;
+      breadcrumbItems[breadcrumbItems.length - 1].link = '/dining-inner/' + response.data.id;
       this.setState({ singleHotel: response.data });
-      {
-        API.get('/dining').then(othersResponse=>{
-          this.setState({ othersData: othersResponse.data.filter(x=>x.id!==this.state.singleHotel?.id) || [] });
-        });
+      
+      API.get('/dining').then(othersResponse => {
+        this.setState({ othersData: othersResponse.data.filter(x => x.id !== this.state.singleHotel?.id) || [] });
+      });
 
-      }
     } catch (error) {
       console.log(error);
     }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import $ from 'jquery';
 import { findDOMNode } from 'react-dom'
+import API from '../../utils/http';
 
 const navigationmenu = [
   {
@@ -88,12 +89,29 @@ class Headertwo extends Component {
     super(props);
     this.state = {
       redText: false,
-      isMobile:false,
-      isTop:false,
+      isMobile: false,
+      isTop: false,
+      isDiningSubMenuOpen: false,
+      isRoomSubMenuOpen: false,
+      diningSubMenu: [],
+      roomSubMenu: [],
     };
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
     this.removeAll = this.removeAll.bind(this);
+  }
+
+  toggleDiningMenu = () => {
+    this.setState({
+      isDiningSubMenuOpen: !this.state.isDiningSubMenuOpen,
+      isRoomSubMenuOpen: false,
+    });
+  }
+  toggleRoomMenu = () => {
+    this.setState({
+      isRoomSubMenuOpen: !this.state.isRoomSubMenuOpen,
+      isDiningSubMenuOpen: false,
+    });
   }
   addClass() {
     this.setState({
@@ -111,7 +129,7 @@ class Headertwo extends Component {
       redText: false
     });
   }
-  componentDidMount() {
+  async componentDidMount() {
     window.addEventListener('resize', () => {
       this.setState({
         isMobile: window.innerWidth < 1020
@@ -127,6 +145,21 @@ class Headertwo extends Component {
         isTop: window.scrollY > 150
       });
     }, false);
+
+    try {
+      const diningResponse = await API.get('/dining');
+      this.setState({ diningSubMenu: diningResponse.data });
+
+      const roomsResponse = await API.get('/all_rooms', {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      this.setState({ roomSubMenu: roomsResponse.data });
+
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   navToggle = () => {
@@ -298,8 +331,32 @@ class Headertwo extends Component {
               <h5 className="widget-title">Our pages</h5>
               <ul>
                 <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/dining">Dining</Link></li>
-                <li><Link to="/room-suites">Rooms &amp; Suites</Link></li>
+                <li>
+                  <Link to="#" onClick={this.toggleDiningMenu}> <i className="far fa-plus" /> Dining</Link>
+                  <div className={"sidebar-submenu collapse" + (this.state.isDiningSubMenuOpen ? ' show' : '')}>
+                    <ul>
+                      <li key={"all"}><Link to={`/dining`}>{"All Restaurant & Bars"}</Link></li>
+                      {
+                        this.state.diningSubMenu?.map(x => (
+                          <li key={x.id}><Link to={`/dining-inner/${x.id}`}>{x.post_name}</Link></li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                <Link to="#" onClick={this.toggleRoomMenu}> <i className="far fa-plus" /> Rooms &amp; Suites</Link>
+                  <div className={"sidebar-submenu collapse" + (this.state.isRoomSubMenuOpen ? ' show' : '')}>
+                    <ul>
+                      <li key={"all"}><Link to={`/dining`}>{"All Rooms & Suites"}</Link></li>
+                      {
+                        this.state.roomsResponse?.map(x => (
+                          <li key={x.id}><Link to={`/rooms-inner/${x.id}`}>{x.post_name}</Link></li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                </li>
                 <li><Link to="/weddings">Weddings</Link></li>
                 <li><Link to="/offers">Offers</Link></li>
                 <li><Link to="/whats-on">Leisure Activities</Link></li>

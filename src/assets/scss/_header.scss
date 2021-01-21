@@ -920,7 +920,7 @@ header {
 						color: $text-color;
 						font-weight: 700;
 						&:hover {
-							padding-left: 10px;
+							padding-left: 0px;
 							color: $primary-color;
 						}
 					}
@@ -1060,5 +1060,12 @@ header {
 				}
 			}
 		}
+	}
+}
+
+.sidebar-submenu{
+	margin-left: 2rem;
+	@media #{$sm} {
+	margin-left: 1rem;
 	}
 }
