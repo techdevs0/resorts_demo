@@ -67,7 +67,7 @@ const offersData = [
   },
 ]
 
-const breadcrumbItems = [
+let breadcrumbItems = [
   {
     text: 'Fishermans Cove',
     link: '/',
@@ -79,7 +79,7 @@ const breadcrumbItems = [
     isActive: false,
   },
   {
-    text: 'Paris Seychelles Restaurant',
+    text: '',
     link: '/dining-inner',
     isActive: true,
   },
@@ -94,6 +94,8 @@ class DiningInner extends Component {
     let id = this.props.match.params.id;
     try {
       const response = await API.get('/single_post/' + id);
+      breadcrumbItems[breadcrumbItems.length -1].text=response.data.post_name;
+      breadcrumbItems[breadcrumbItems.length -1].link='/dining-inner/'+response.data.id;
       this.setState({ singleHotel: response.data });
       {
         API.get('/dining').then(othersResponse=>{

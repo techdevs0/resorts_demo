@@ -38,7 +38,7 @@ const roomsData = [
 ]
 
 
-const breadcrumbItems=[
+let breadcrumbItems=[
   {
     text: 'Fishermans Cove',
     link:'/',
@@ -50,7 +50,7 @@ const breadcrumbItems=[
     isActive: false,
   },
   {
-    text: 'Paris Seychelles Restaurant',
+    text: '',
     link:'/rooms-inner',
     isActive: true,
   },
@@ -65,7 +65,8 @@ class RoomsInner extends Component {
     let id = this.props.match.params.id;
     try {
       const response = await API.get('/single_post/'+id);
-      console.log(response.data);
+      breadcrumbItems[breadcrumbItems.length -1].text=response.data.post_name;
+      breadcrumbItems[breadcrumbItems.length -1].link='/rooms-inner/'+response.data.id;
       this.setState({ singleRoom: response.data });
     } catch (error) {
       console.log(error);
