@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { withRouter } from 'react-router-dom';
 // import Slider from "react-slick";
 
 const room1 = require('../../../assets/img/hotel/01.jpg');
@@ -118,7 +119,7 @@ const RoomSlider = (props) => {
                                 <img src={x.thumbnail} alt="" />
                             </div>
                             <div className="slide-content py-3">
-                                <h1>{x.post_name}</h1>
+                                <h1 style={{cursor:'pointer'}} onClick={()=> props.history.push("/rooms-inner/" + x.id)}>{x.post_name}</h1>
                                 {/* <ul>
                                     {x.additional_details_list.map((li,index) => (
                                         <li key={index}>{li}</li>
@@ -138,4 +139,4 @@ const RoomSlider = (props) => {
     );
 }
 
-export default RoomSlider;
+export default withRouter(RoomSlider);

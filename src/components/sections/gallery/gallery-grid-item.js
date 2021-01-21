@@ -6,7 +6,7 @@ const GalleryGridItem = (props) => {
     <div className="gallery-grid-item-wrapper">
       <div className="grid-item" onClick={()=> props.history.push('gallery-inner')}>
         <div className="gallery-title" style={{ backgroundImage: `url(${props.image})`, backgroundPosition:'center', backgroundSize:'cover' }}>
-          <h4>{props.title}</h4>
+          {/* <h4>{props.title}</h4> */}
           <div className="slide-hover-overlay"></div>
         </div>
       </div>

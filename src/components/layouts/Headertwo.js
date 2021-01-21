@@ -18,14 +18,15 @@ const navigationmenu = [
     linkText: 'Dining',
     child: true,
     link: "/dining",
-    submenu:[]
+    submenu: []
 
   },
   {
     id: 3,
     linkText: 'Rooms and Suites',
-    child: false,
+    child: true,
     link: "/room-suites",
+    submenu:[]
 
   },
   {
@@ -151,6 +152,10 @@ class Headertwo extends Component {
       const diningResponse = await API.get('/dining');
       this.setState({ diningSubMenu: diningResponse.data });
 
+      // navigationmenu.map(x=>(
+
+      // ))
+
       const roomsResponse = await API.get('/all_rooms', {
         headers: {
           'Content-Type': 'application/json'
@@ -198,7 +203,7 @@ class Headertwo extends Component {
     subMenu = (this.getNextSibling(e.target, '.submenu') !== undefined) ? this.getNextSibling(e.target, '.submenu') : null;
 
     if (subMenu !== null && subMenu !== undefined && subMenu !== '') {
-      subMenu.classList = subMenu.classList.contains('open') ? 'submenu' : 'submenu open';
+      subMenu.classList = subMenu.classList.contains('d-block') ? 'submenu' : 'submenu d-block';
     }
   }
   render() {
