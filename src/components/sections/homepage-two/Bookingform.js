@@ -44,7 +44,7 @@ class Bookingform extends Component {
                                             <label>Rooms</label>
                                             <div className="quantity-box">
                                                 <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ rooms: rooms - 1 < 1 ? 1 : rooms - 1 })}>-</div>
-                                                <input id="Room" type="text" min="1" className="form-control" value={rooms} name="Rooms" placeholder="" required="" data-rel="rooms" />
+                                                <input id="Room" type="text" min="1" className="form-control" defaultValue={rooms} name="Rooms" placeholder="" required="" data-rel="rooms" />
                                                 <div className="quantity-button quantity-up plus"onClick={() => this.setState({ rooms: rooms + 1 })}>+</div>
                                             </div>
                                         </div>
@@ -52,7 +52,7 @@ class Bookingform extends Component {
                                             <label>Adults</label>
                                             <div className="quantity-box">
                                                 <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ adults: adults - 1 < 1 ? 1 : adults - 1 })}>-</div>
-                                                <input id="Adult" type="text" min="1" className="form-control" value={adults} name="Adult" placeholder="" required="" data-rel="adults" />
+                                                <input id="Adult" type="text" min="1" className="form-control" defaultValue={adults} name="Adult" placeholder="" required="" data-rel="adults" />
                                                 <div className="quantity-button quantity-up plus" onClick={() => this.setState({ adults: adults + 1 })}>+</div>
                                             </div>
                                         </div>
@@ -60,7 +60,7 @@ class Bookingform extends Component {
                                             <label>Children</label>
                                             <div className="quantity-box">
                                                 <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ childs: childs - 1 < 1 ? 1 : childs - 1 })}>-</div>
-                                                <input id="Child" type="text" min="0" className="form-control" value={childs} name="Child" placeholder="" required="" />
+                                                <input id="Child" type="text" min="0" className="form-control" defaultValue={childs} name="Child" placeholder="" required="" />
                                                 <div className="quantity-button quantity-up plus" onClick={() => this.setState({ childs: childs + 1 })}>+</div>
                                             </div>
                                         </div>

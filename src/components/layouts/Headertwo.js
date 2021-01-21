@@ -155,6 +155,7 @@ class Headertwo extends Component {
           'Content-Type': 'application/json'
         }
       });
+      debugger;
       this.setState({ roomSubMenu: roomsResponse.data });
 
     } catch (error) {
@@ -350,7 +351,7 @@ class Headertwo extends Component {
                     <ul>
                       <li key={"all"}><Link to={`/dining`}>{"All Rooms & Suites"}</Link></li>
                       {
-                        this.state.roomsResponse?.map(x => (
+                        this.state.roomSubMenu?.map(x => (
                           <li key={x.id}><Link to={`/rooms-inner/${x.id}`}>{x.post_name}</Link></li>
                         ))
                       }

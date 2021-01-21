@@ -14,6 +14,7 @@ import API from '../../utils/http';
 class Hometwo extends Component {
   state = {
     premiumOffers: [],
+    roomsData:[]
   }
 
   async componentDidMount() {
@@ -21,6 +22,16 @@ class Hometwo extends Component {
       const response = await API.get('/premium_offers');
       console.log(response.data);
       this.setState({ premiumOffers: response.data })
+
+      const roomsResponse = await API.get('/all_rooms', {
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log(roomsResponse.data);
+      const roomsData = roomsResponse.data;
+      this.setState({ roomsData });
+
     } catch (error) {
       console.log(error)
     }
@@ -36,7 +47,7 @@ class Hometwo extends Component {
         <Bookingform/>
         {/*====== BOOKING FORM END ======*/}
         {/*====== ROOM SLIDER START ======*/}
-        <RoomSlider/>
+        <RoomSlider data={this.state.roomsData}/>
         {/*====== ROOM SLIDER END ======*/}
         {/*====== TEXT BLOCK START ======*/}
         <Textblock/>

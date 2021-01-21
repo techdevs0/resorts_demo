@@ -91,7 +91,7 @@ const rooms = [
 
 ]
 
-const RoomSlider = () => {
+const RoomSlider = (props) => {
     return (
         <div className="room-slider-wrapper">
             <h2 className="section-heading text-muted">Breathtaking Tropical Paradise</h2>
@@ -112,18 +112,21 @@ const RoomSlider = () => {
             >
             {/* <Slider {...settings}> */}
                 {
-                    rooms.map(x => (
+                    props.data?.map(x => (
                         <div>
                             <div className="room-image-wrapper">
-                                <img src={x.image} alt="" />
+                                <img src={x.thumbnail} alt="" />
                             </div>
                             <div className="slide-content py-3">
-                                <h1>{x.title}</h1>
-                                <ul>
+                                <h1>{x.post_name}</h1>
+                                {/* <ul>
                                     {x.additional_details_list.map((li,index) => (
                                         <li key={index}>{li}</li>
                                     ))}
-                                </ul>
+                                </ul> */}
+                                <div dangerouslySetInnerHTML={{__html: x.short_description}}>
+
+                                </div>
                                 <button className="main-btn btn-eden my-4" onClick={() => window.location = "https://be.synxis.com/?_ga=2.102065793.1000121752.1606552834-1702853238.1606552834&adult=1&arrive=2020-11-28&chain=27304&child=0&currency=AED&depart=2020-11-29&hotel=75043&level=hotel&locale=en-US&promo=HSPA&rooms=1"}>BOOK NOW</button>
                             </div>
                         </div>
