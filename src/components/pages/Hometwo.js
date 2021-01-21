@@ -9,8 +9,22 @@ import Experience from '../sections/homepage-two/Experience';
 import GuestReviews from '../sections/homepage-two/GuestReviews';
 import ServiceTabs from '../sections/homepage-two/ServicesTabs';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
+import API from '../../utils/http';
 
 class Hometwo extends Component {
+  state = {
+    premiumOffers: [],
+  }
+
+  async componentDidMount() {
+    try {
+      const response = await API.get('/premium_offers');
+      console.log(response.data);
+      this.setState({ premiumOffers: response.data })
+    } catch (error) {
+      console.log(error)
+    }
+  }
   render() {
     return (
       <div>
@@ -28,7 +42,7 @@ class Hometwo extends Component {
         <Textblock/>
         {/*====== TEXT BLOCK END ======*/}
         {/*====== SERVICES TABS START ======*/}
-        <ServiceTabs/>
+        <ServiceTabs data={this.state.premiumOffers} />
         {/*====== SERVICES TABS END ======*/}
         {/*====== TESTIMONIAL SLIDER START ======*/}
         <GuestReviews/>

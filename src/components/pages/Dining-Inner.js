@@ -87,14 +87,20 @@ const breadcrumbItems = [
 class DiningInner extends Component {
   state = {
     singleHotel: {},
+    othersData: []
   }
 
   async componentDidMount() {
     let id = this.props.match.params.id;
     try {
-      const response = await API.get('/single_post/'+id);
-      console.log(response.data);
+      const response = await API.get('/single_post/' + id);
       this.setState({ singleHotel: response.data });
+      {
+        API.get('/dining').then(othersResponse=>{
+          this.setState({ othersData: othersResponse.data.filter(x=>x.id!==this.state.singleHotel?.id) || [] });
+        });
+
+      }
     } catch (error) {
       console.log(error);
     }
@@ -102,7 +108,7 @@ class DiningInner extends Component {
   render() {
     return (
       <div className="bg-white dining-inner-wrapper">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'dining-inner'} />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'dining-inner'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Paris Seychelles Restaurant"} />
         {/*====== BANNER PART ENDS ======*/}
@@ -122,7 +128,7 @@ class DiningInner extends Component {
         <DiningOfferSlider title={"Offers"} data={offersData} />
         {/*====== SUITES GRID END ======*/}
         {/*====== OTHERS GRID START ======*/}
-        <OtherRecommendations title={"Other Restaurants & Bars"} data={roomsData} />
+        <OtherRecommendations title={"Other Restaurants & Bars"} data={this.state.othersData} />
         {/*====== OTHERS GRID END ======*/}
         <Subscribe />
 

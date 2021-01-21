@@ -83,13 +83,20 @@ const breadcrumbItems = [
 class RoomSuites extends Component {
   state = {
     roomsData: [],
+    suitesData: [],
   }
 
   async componentDidMount() {
     try {
-      const roomsData = await API.get('/all_rooms');
-      console.log(roomsData);
-      this.setState({ roomsData });
+      const response = await API.get('/all_rooms', {
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log(response.data);
+      const roomsData = response.data.filter(x=> x.room_type==1);
+      const suitesData = response.data.filter(x=> x.room_type==2);
+      this.setState({ roomsData, suitesData });
     } catch (error) {
       console.log(error);
     }
@@ -112,10 +119,10 @@ class RoomSuites extends Component {
         <RoomTitleBlock />
         {/*====== TITLE END ======*/}
         {/*====== ROOM GRID START ======*/}
-        <RoomSuiteGrid title={"Rooms"} data={roomsData} />
+        <RoomSuiteGrid title={"Rooms"} data={this.state.roomsData} />
         {/*====== ROOM GRID END ======*/}
         {/*====== SUITES GRID START ======*/}
-        <RoomSuiteGrid title={"Suites"} data={suitesData} />
+        <RoomSuiteGrid title={"Suites"} data={this.state.suitesData} />
         {/*====== SUITES GRID END ======*/}
 
         <Subscribe />

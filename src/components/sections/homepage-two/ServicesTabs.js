@@ -13,37 +13,37 @@ const tabsData = [
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/leisure.jpg"),
-        buttonLink:"/whats-on"
+        buttonLink: "/whats-on"
     },
     {
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/book.jpg"),
-        buttonLink:"room-suites"
+        buttonLink: "room-suites"
     },
     {
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/wedding.jpg"),
-        buttonLink:"/weddings"
+        buttonLink: "/weddings"
     },
     {
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/offer.jpg"),
-        buttonLink:"/offers"
+        buttonLink: "/offers"
     },
     {
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/spa.jpg"),
-        buttonLink:"/spa-wellness"
+        buttonLink: "/spa-wellness"
     },
     {
         tagLine: "Wedding In Seychelles",
         title: "Plan Your Dream Wedding Today",
         image: require("../../../assets/img/premium-offering/food.jpg"),
-        buttonLink:"/dining"
+        buttonLink: "/dining"
     },
 ]
 
@@ -110,28 +110,27 @@ const ServiceTabs = (props) => {
                         onChange={handleChange}
                         aria-label="scrollable auto tabs example"
                     >
-                        <Tab label="Leisure Activities" {...a11yProps(0)} />
-                        <Tab label="Book with us" {...a11yProps(1)} />
-                        <Tab label="Weddings" {...a11yProps(2)} />
-                        <Tab label="Offers" {...a11yProps(3)} />
-                        <Tab label="Spa" {...a11yProps(3)} />
-                        <Tab label="Food &amp; Beverages" {...a11yProps(3)} />
+                        {
+                            props.data?.map((x, i) => (
+                                <Tab label={x.post_name} {...a11yProps(i)} />
+                            ))
+                        }
                     </Tabs>
                 </Paper>
                 {
-                    tabsData.map((x, i) => (
+                    props.data?.map((x, i) => (
                         <TabPanel value={value} index={i} className="service-tab-panel">
                             <div className="tab-slider">
                                 <Grid container spacing={0}>
                                     <Grid item xs={12} sm={12} className="px-0 py-0">
                                         <div className="slider-image-wrapper-service">
-                                            <img src={x.image} alt={x.title} />
+                                            <img src={x.thumbnail} alt={x.title} />
                                             <div className="hotel-title-wrapper">
                                                 <h4 className="hotel-tagline my-3">
-                                                    {x.tagLine}
+                                                    {x.post_name}
                                                 </h4>
                                                 <h1 className="hotel-title my-4">
-                                                    {x.title}
+                                                    {x.short_description}
                                                 </h1>
                                                 <Link to={x.buttonLink}>
                                                     <button className="main-btn btn-filled mt-4">KNOW MORE</button>
