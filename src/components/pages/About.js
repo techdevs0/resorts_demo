@@ -10,6 +10,7 @@ import AboutSecondaryTextBlock from '../sections/about-us/secondary-text-block';
 import AboutOfferSlider from '../sections/about-us/about-offer-slider';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
+import API from '../../utils/http';
 
 const bannerImage = require('./../../assets/img/banner/about.jpg');
 
@@ -39,20 +40,34 @@ const roomsData = [
     image: require('./../../assets/img/about/island.jpg'),
   },
 ]
-const breadcrumbItems=[
+const breadcrumbItems = [
   {
     text: 'Fishermans Cove',
-    link:'/',
+    link: '/',
     isActive: false,
   },
   {
     text: 'About Us',
-    link:'/about',
+    link: '/about',
     isActive: true,
   },
 ]
 
 class AboutUs extends Component {
+  state = {
+    premiumOffers: [],
+  }
+
+  async componentDidMount() {
+    try {
+      const response = await API.get('/premium_offers');
+      console.log(response.data);
+      this.setState({ premiumOffers: response.data })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   render() {
     return (
       <div className="bg-white about-us-wrapper">
@@ -73,10 +88,10 @@ class AboutUs extends Component {
         <AboutServices data={roomsData} />
         {/*====== SERVICES END ======*/}
         {/*====== SECONDARY START ======*/}
-        <AboutSecondaryTextBlock/>
+        <AboutSecondaryTextBlock />
         {/*====== SECONDARY END ======*/}
         {/*====== ABOUT SLIDER START ======*/}
-        <AboutOfferSlider data={roomsData} title={"Explore Fisherman's Cove Premium Offerings"} />
+        <AboutOfferSlider data={this.state.premiumOffers} title={"Explore Fisherman's Cove Premium Offerings"} />
         {/*====== ABOUT SLIDER END ======*/}
 
         <Subscribe />

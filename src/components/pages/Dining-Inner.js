@@ -10,6 +10,7 @@ import DiningInnerInfo from '../sections/dining-inner/dining-grid';
 import OtherRecommendations from '../sections/dining-inner/dining-inner-grid-item';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
+import API from '../../utils/http';
 
 const roomsData = [
   {
@@ -84,6 +85,20 @@ const breadcrumbItems = [
   },
 ]
 class DiningInner extends Component {
+  state = {
+    singleHotel: {},
+  }
+
+  async componentDidMount() {
+    let id = this.props.match.params.id;
+    try {
+      const response = await API.get('/single_post/'+id);
+      console.log(response.data);
+      this.setState({ singleHotel: response.data });
+    } catch (error) {
+      console.log(error);
+    }
+  }
   render() {
     return (
       <div className="bg-white dining-inner-wrapper">
@@ -98,7 +113,7 @@ class DiningInner extends Component {
         <BreadCrumb items={breadcrumbItems} />
         {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
-        <DiningInnerTitleBlock title={"Paris Seychelles Restaurant"} />
+        <DiningInnerTitleBlock dining={this.state.singleHotel} />
         {/*====== TITLE END ======*/}
         {/*====== ROOM GRID START ======*/}
         <DiningInnerInfo />

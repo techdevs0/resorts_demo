@@ -11,6 +11,7 @@ import RoomAmenities from '../sections/rooms-inner/room-amentities';
 import RoomVR360 from '../sections/rooms-inner/room-360';
 import BookingFormVertical from '../sections/rooms-inner/BookingFormVertical';
 import BreadCrumb from '../layouts/BreadCrumb';
+import API from '../../utils/http';
 
 const roomsData = [
   {
@@ -56,6 +57,20 @@ const breadcrumbItems=[
 ]
 
 class RoomsInner extends Component {
+  state = {
+    singleRoom: {},
+  }
+
+  async componentDidMount() {
+    let id = this.props.match.params.id;
+    try {
+      const response = await API.get('/single_post/'+id);
+      console.log(response.data);
+      this.setState({ singleRoom: response.data });
+    } catch (error) {
+      console.log(error);
+    }
+  }
   render() {
     return (
       <div className="bg-white rooms-inner-wrapper">
@@ -70,7 +85,7 @@ class RoomsInner extends Component {
           <div className="row">
             <div className="col-md-8">
               {/*====== TITLE START ======*/}
-              <RoomsInnerTitleBlock title={"Paris Seychelles Restaurant"} />
+              <RoomsInnerTitleBlock room={this.state.singleRoom} />
               {/*====== TITLE END ======*/}
               {/*====== ROOM GRID START ======*/}
               <RoomAmenities />

@@ -8,6 +8,7 @@ import RoomTitleBlock from '../sections/room-suites/main-text-block';
 import RoomSuiteGrid from '../sections/room-suites/room-suites-grid';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
+import API from '../../utils/http';
 
 const bannerImage = require('./../../assets/img/banner/rooms.jpg');
 
@@ -66,24 +67,38 @@ const suitesData = [
   },
 ]
 
-const breadcrumbItems=[
+const breadcrumbItems = [
   {
     text: 'Fishermans Cove',
-    link:'/',
+    link: '/',
     isActive: false,
   },
   {
     text: 'Rooms & Suites',
-    link:'/room-suites',
+    link: '/room-suites',
     isActive: true,
   },
 ]
 
 class RoomSuites extends Component {
+  state = {
+    roomsData: [],
+  }
+
+  async componentDidMount() {
+    try {
+      const roomsData = await API.get('/all_rooms');
+      console.log(roomsData);
+      this.setState({ roomsData });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   render() {
     return (
       <div className="bg-white">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'room-suites'} />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'room-suites'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Inherited Paradise"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}
