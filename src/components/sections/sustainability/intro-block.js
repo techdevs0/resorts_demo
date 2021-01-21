@@ -7,7 +7,7 @@ const SustainIntroBlock = (props) => {
         <h2 className="text-center main-title">Sustainability</h2>
         <div className="d-flex flex-wrap title-flex">
           <div className="intro-item">
-            <h3 className=" mr-sm-4">What is sustainability for Fisherman's Cove ?</h3>
+            {/* <h3 className=" mr-sm-4">What is sustainability for Fisherman's Cove ?</h3> */}
             <h6>OUR MISSION</h6>
             <p className="text-justify mr-sm-4">
             Fisherman’s Cove is built upon the principle of protecting the environment and moving forward towards a better and sustainable future.  </p>
