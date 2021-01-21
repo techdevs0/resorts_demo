@@ -16,8 +16,9 @@ const navigationmenu = [
 
     id: 2,
     linkText: 'Dining',
-    child: false,
+    child: true,
     link: "/dining",
+    submenu:[]
 
   },
   {
@@ -310,12 +311,17 @@ class Headertwo extends Component {
           <div className="offcanvas-widget">
             <Link to="#" className="offcanvas-close" onClick={this.removeClass}><i className="fal fa-times" /></Link>
             {/* Search Widget */}
-            <div className="widget search-widget">
+            <div className="widget search-widget d-none">
               {/* <h5 className="widget-title">Search room</h5> */}
               <form action="#">
                 <input type="text" placeholder="Search your keyword..." />
                 <button type="submit"><i className="far fa-search" /></button>
+                {
+                  this.state.searchResults?.length > 0 &&
+                  <div className="search-results">
 
+                  </div>
+                }
               </form>
             </div>
             {/* About Widget */}
@@ -333,7 +339,7 @@ class Headertwo extends Component {
               <ul>
                 <li><Link to="/about">About Us</Link></li>
                 <li>
-                  <Link to="#" onClick={this.toggleDiningMenu}>Dining &nbsp; <i className={`far ${this.state.isDiningSubMenuOpen?'fa-minus':'fa-plus'}`} /></Link>
+                  <Link to="#" onClick={this.toggleDiningMenu}>Dining &nbsp; <i className={`far ${this.state.isDiningSubMenuOpen ? 'fa-minus' : 'fa-plus'}`} /></Link>
                   <div className={"sidebar-submenu collapse" + (this.state.isDiningSubMenuOpen ? ' show' : '')}>
                     <ul>
                       <li key={"all"}><Link to={`/dining`}>{"All Restaurant & Bars"}</Link></li>
@@ -346,7 +352,7 @@ class Headertwo extends Component {
                   </div>
                 </li>
                 <li>
-                <Link to="#" onClick={this.toggleRoomMenu}>Rooms &amp; Suites &nbsp; <i className={`far ${this.state.isRoomSubMenuOpen?'fa-minus':'fa-plus'}`} /></Link>
+                  <Link to="#" onClick={this.toggleRoomMenu}>Rooms &amp; Suites &nbsp; <i className={`far ${this.state.isRoomSubMenuOpen ? 'fa-minus' : 'fa-plus'}`} /></Link>
                   <div className={"sidebar-submenu collapse" + (this.state.isRoomSubMenuOpen ? ' show' : '')}>
                     <ul>
                       <li key={"all"}><Link to={`/room-suites`}>{"All Rooms & Suites"}</Link></li>

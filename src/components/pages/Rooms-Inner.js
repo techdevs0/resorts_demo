@@ -65,11 +65,22 @@ class RoomsInner extends Component {
   async componentDidMount() {
     let id = this.props.match.params.id;
     try {
+      //getting single post data
       const response = await API.get('/single_post/'+id);
+
+      //making breadcrumbs dynamic, appending into last item
       breadcrumbItems[breadcrumbItems.length -1].text=response.data.post_name;
       breadcrumbItems[breadcrumbItems.length -1].link='/rooms-inner/'+response.data.id;
-      this.setState({ singleRoom: response.data });
 
+      let singleRoom = response.data;
+
+      //getting and appending images to single room data
+      const imagesResponse = await API.get('/post_uploads/'+id);
+      singleRoom.images = imagesResponse.data;
+
+      this.setState({ singleRoom });
+      
+      //fetching others room data for
       API.get('/all_rooms').then(othersResponse => {
         this.setState({ othersData: othersResponse.data.filter(x => x.id !== this.state.singleRoom?.id) || [] });
       });
@@ -92,7 +103,7 @@ class RoomsInner extends Component {
           <div className="row">
             <div className="col-md-8">
               {/*====== TITLE START ======*/}
-              <RoomsInnerTitleBlock key={new Date().getTime()}  room={this.state.singleRoom} />
+              <RoomsInnerTitleBlock room={this.state.singleRoom} />
               {/*====== TITLE END ======*/}
               {/*====== ROOM GRID START ======*/}
               <RoomAmenities />
