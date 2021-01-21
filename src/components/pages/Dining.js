@@ -9,6 +9,7 @@ import DiningGrid from '../sections/dining/dining-grid';
 import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
+import API from '../../utils/http';
 
 const bannerImage = require('./../../assets/img/banner/dining.jpg');
 
@@ -88,6 +89,20 @@ const breadcrumbItems=[
 ]
 
 class Dining extends Component {
+  state = {
+    diningData: [],
+  }
+
+  async componentDidMount() {
+    try {
+      const response = await API.get('/dining');
+      console.log(response.data);
+      this.setState({ diningData: response.data });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   render() {
     return (
       <div className="bg-white">
@@ -105,7 +120,7 @@ class Dining extends Component {
         <DiningTitleBlock />
         {/*====== TITLE END ======*/}
         {/*====== ROOM GRID START ======*/}
-        <DiningGrid title={null} data={roomsData} />
+        <DiningGrid title={null} data={this.state.diningData} />
         {/*====== ROOM GRID END ======*/}
         {/*====== SUITES GRID START ======*/}
         <DiningOfferSlider title={"Offers"} data={offersData} />

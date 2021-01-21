@@ -5,11 +5,11 @@ const DiningInnerTitleBlock = (props) => {
     <div className="dining-inner-title-block">
       <div className="container">
         <div className="title-image-wrapper">
-          <img src={require('./../../../assets/img/room-suites/room1.jpg')} />
+          <img src={props.dining.thumbnail} />
         </div>
-        <h2>{props.title}</h2>
-        <p>
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet. Offering countless experience with outstanding services. Lorem ipsum doler set amet. Offering countless experience with outstanding services. Lorem ipsum doler set amet. Offering countless experience with outstanding services. Lorem ipsum doler set amet. Offering countless experience with outstanding services. Lorem ipsum doler set amet.
+        <h2>{props.dining.post_name}</h2>
+        <p dangerouslySetInnerHTML={{__html: props.dining.post_content}}>
+          
       </p>
       </div>
     </div>
