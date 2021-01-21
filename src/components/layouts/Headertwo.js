@@ -4,8 +4,9 @@ import classNames from 'classnames';
 import $ from 'jquery';
 import { findDOMNode } from 'react-dom'
 import API from '../../utils/http';
+import { LiveTvTwoTone } from '@material-ui/icons';
 
-const navigationmenu = [
+let navigationmenu = [
   {
     id: 1,
     linkText: 'About Us',
@@ -152,9 +153,22 @@ class Headertwo extends Component {
       const diningResponse = await API.get('/dining');
       this.setState({ diningSubMenu: diningResponse.data });
 
-      // navigationmenu.map(x=>(
-
-      // ))
+      let diningSubMenu = diningResponse?.data?.map(x=>(
+        {
+          id: x.id,
+          link:'/dining-inner/'+x.id,
+          linkText:x.post_name
+        }
+      ))
+      navigationmenu = navigationmenu.map(x=>{
+        if (x.id == 2) {
+          return {
+            ...x, submenu: [{id:101,link:'/dining',linkText:'All Restaurants & Bars'} ,...diningSubMenu]
+          }
+        }else{
+          return x;
+        }
+      })
 
       const roomsResponse = await API.get('/all_rooms', {
         headers: {
@@ -162,6 +176,23 @@ class Headertwo extends Component {
         }
       });
       this.setState({ roomSubMenu: roomsResponse.data });
+
+      let roomsSubMenu = roomsResponse?.data?.map(x=>(
+        {
+          id: x.id,
+          link:'/rooms-inner/'+x.id,
+          linkText:x.post_name
+        }
+      ))
+      navigationmenu = navigationmenu.map(x=>{
+        if (x.id == 3) {
+          return {
+            ...x, submenu: [{id:101,link:'/room-suites',linkText:'All Rooms & Suites'} ,...roomsSubMenu]
+          }
+        }else{
+          return x;
+        }
+      })
 
     } catch (error) {
       console.log(error);
