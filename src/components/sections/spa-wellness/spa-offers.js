@@ -8,7 +8,7 @@ const SpaWellnessRecommendations = (props) => {
         {/* <div className="container-fluid"> */}
         <div className="row">
           {
-            props.data?.slice(1,4).map((x, i) => (
+            props.data?.slice(2,5).map((x, i) => (
               <div className="col-12 col-md-4 no-gutters px-2">
                 <div className="grid-item">
                   <div className="spa-title" style={{ backgroundImage: `url(${x.thumbnail})`, backgroundPosition:'center', backgroundSize:'cover' }}>
