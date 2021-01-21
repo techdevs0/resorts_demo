@@ -8,6 +8,7 @@ import Subscribe from '../sections/common/Subscribe';
 import SpaWellnessTitleBlock from '../sections/spa-wellness/spa-title-block';
 import SpaWellnessRecommendations from '../sections/spa-wellness/spa-offers';
 import BreadCrumb from '../layouts/BreadCrumb';
+import API from '../../utils/http';
 
 const roomsData = [
   {
@@ -43,6 +44,21 @@ const breadcrumbItems=[
   },
 ]
 class SpaWellness extends Component {
+
+  state = {
+    premiumOffers: [],
+  }
+
+  async componentDidMount() {
+    try {
+      const response = await API.get('/premium_offers');
+      console.log(response.data);
+      this.setState({ premiumOffers: response.data })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   render() {
     return (
       <div className="bg-white spa-wrapper">
@@ -60,7 +76,7 @@ class SpaWellness extends Component {
         <SpaWellnessTitleBlock />
         {/*====== PROJECTS SLIDER END ======*/}
         {/*====== RECOOMENDATIONS START ======*/}
-        <SpaWellnessRecommendations title={"Offers"} data={roomsData} />
+        <SpaWellnessRecommendations title={"Offers"} data={this.state.premiumOffers} />
         {/*====== RECOOMENDATIONS END ======*/}
         <Subscribe />
 
