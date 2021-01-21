@@ -38,7 +38,31 @@
 @import "./assets/scss/leisure-inner";
 @import "./assets/scss/rooms-inner";
 @import "./assets/scss/gallery";
+@import "./assets/scss/about-seychelles";
 
 body {
   font-family: "Montserrat", serif;
+}
+
+// p{
+  // font-size: 14px !important;
+// }
+
+.container{
+  @media #{$md} {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  @media #{$lg} {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  @media #{$xl} {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  @media #{$xxl} {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }

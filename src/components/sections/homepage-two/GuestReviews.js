@@ -34,7 +34,7 @@ const reviews = [
 
 const GuestReviews = (props) => {
     return (
-        <div className="guest-reviews-wrapper py-3 text-center">
+        <div className="guest-reviews-wrapper pt-4 pb-3 text-center">
             <div className="trip-logo-wrapper d-inline-block mx-auto">
                 <img src={require('./../../../assets/img/travellers-choice-white.png')} alt="" />
             </div>
@@ -42,7 +42,7 @@ const GuestReviews = (props) => {
             <Carousel
                 dynamicHeight={false}
                 showStatus={false}
-                showArrows={false}
+                showArrows={true}
                 showIndicators={false}
                 showThumbs={false}
                 infiniteLoop={true}

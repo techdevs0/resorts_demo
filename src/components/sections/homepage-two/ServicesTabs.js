@@ -86,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         width: '100%',
         backgroundColor: theme.palette.background.paper,
-        boxShadow: '0 0 8px #dadada'
+        // boxShadow: '0 0 8px #dadada'
     },
 }));
 

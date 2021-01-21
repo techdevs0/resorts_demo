@@ -13,12 +13,12 @@ const data = [
     {
         image: require('../../../assets/img/experience/overview.jpg'),
         title: "Overview of the Resort",
-        link:'/whats-on'
+        link:'/about'
     },
     {
         image: require('../../../assets/img/experience/seychelles.jpg'),
         title: "About Seychelles",
-        link:'/about'
+        link:'/about-seychelles'
     },
     {
         image: require('../../../assets/img/experience/contact.jpg'),

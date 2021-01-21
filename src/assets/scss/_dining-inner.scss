@@ -5,13 +5,22 @@
   h2 {
     color: $eden;
     font-family: "Lora", serif;
-    padding: 2rem 0;
+    padding: 1rem 0;
+    @media #{$sm} {
+      padding: .75rem 0;
+      font-size: 30px;
+    }
   }
   p {
     color: $para-color;
     font-weight: 500;
     line-height: 30px;
-    font-size: 15px;
+    font-size: 14px;
+    margin-bottom: 1rem;
+    @media #{$sm} {
+      text-align: justify;
+      line-height: 1.6;
+    }
   }
   .title-image-wrapper {
     height: 400px;
@@ -73,6 +82,7 @@
     p {
       margin: 0.5rem 0;
       font-weight: 400;
+      font-size: 14px;
     }
     .info-title {
       font-weight: bold;
@@ -160,7 +170,7 @@
         color: $white;
         text-transform: uppercase;
         font-family: $mont;
-        line-height: 50px;
+        line-height: 30px;
         font-weight: 500;
         width: 50%;
         text-shadow: 0 0 5px #333;

@@ -572,9 +572,9 @@ select {
 .section-heading {
 	font-family: $lora;
 	font-style: italic;
-	font-size: 28px;
+	font-size: 23px;
 	text-align: center;
-	padding: 3rem 1rem;
+	padding: 2rem 0;
 	overflow: hidden;
 	display: flex;
 	color: $text-color;
@@ -603,20 +603,20 @@ select {
 	// background: linear-gradient(0deg,#00000098,transparent);
 
 	&:hover {
-		background-color: rgba($color: #000000, $alpha: 0.4);
+		background-color: rgba($color: #000000, $alpha: 0.5);
 		// background: linear-gradient(0deg,#000000d2,transparent);
 		// background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000000 100%);
 		cursor: pointer;
-		transition: all 0.4s;
+		transition: all 0.3s;
 	}
 }
 
 .breadcrumb {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 0.75rem 1rem;
-	margin-top: 1rem;
-	margin-bottom: 0;
+	padding: 0.75rem 0;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
 	list-style: none;
 	background-color: transparent;
 	border-radius: 0.25rem;

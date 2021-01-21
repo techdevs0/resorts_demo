@@ -1,9 +1,9 @@
 .leisure-inner-wrapper {
   .content-blocks {
     .main-title {
-      padding: 2rem 0;
       font-family: $lora;
       color: $eden;
+      padding: 0 0 2rem 0;
       @media #{$sm} {
         font-size: 30px;
       }
@@ -13,9 +13,12 @@
       flex-wrap: wrap;
       .text-item {
         width: 50%;
+        p{
+          font-size: 14px;
+        }
         @media #{$sm} {
           width: 100%;
-          p{
+          p {
             text-align: justify;
             padding: 0 0.25rem;
           }

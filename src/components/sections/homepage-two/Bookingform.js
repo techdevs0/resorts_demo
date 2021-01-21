@@ -21,7 +21,7 @@ class Bookingform extends Component {
     render() {
         const { rooms, childs, adults, showCountPopup, showPromoPopup } = this.state;
         return (
-            <section className="booking-form-hotizontal d-none d-sm-block">
+            <section className="booking-form-hotizontal container d-none d-sm-block">
                 <div className="container">
                     <div className="booking-form-inner">
                         <div className="row">

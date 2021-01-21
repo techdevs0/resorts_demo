@@ -7,8 +7,23 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import GalleryTitleBlock from '../sections/gallery/main-text-block';
 import GalleryGrid from '../sections/gallery/gallery-grid';
+import BreadCrumb from '../layouts/BreadCrumb';
 
 const roomsData = [
+  {
+    title: "Save 25% on long stays",
+    link: "",
+    linkText: "View More",
+    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
+    image: require('./../../assets/img/offers/stay.jpg')
+  },
+  {
+    title: "book early and save more",
+    link: "",
+    linkText: "View More",
+    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
+    image: require('./../../assets/img/offers/book.jpg')
+  },
   {
     title: "Spa for Two",
     link: "",
@@ -38,25 +53,24 @@ const roomsData = [
     image: require('./../../assets/img/offers/package.jpg')
   },
   {
-    title: "Save 25% on long stays",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/offers/stay.jpg')
-  },
-  {
-    title: "book early and save more",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/offers/book.jpg')
-  },
-  {
     title: "Honeymoon Offer",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
     image: require('./../../assets/img/offers/honeymoon.jpg')
+  },
+]
+
+const breadcrumbItems=[
+  {
+    text: 'Fishermans Cove',
+    link:'/',
+    isActive: false,
+  },
+  {
+    text: 'Gallery',
+    link:'/gallery',
+    isActive: true,
   },
 ]
 
@@ -71,6 +85,9 @@ class GalleryMain extends Component {
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
+        {/* BREADCRUMBS START */}
+        <BreadCrumb items={breadcrumbItems} />
+        {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <GalleryTitleBlock />
         {/*====== TITLE END ======*/}

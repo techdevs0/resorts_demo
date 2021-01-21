@@ -50,10 +50,6 @@
 			@media #{$sm} {
 				margin-bottom: 0.5rem;
 			}
-			input,
-			.nice-select {
-				// padding: 0 20px;
-			}
 			&.rooms-select,
 			&.guests-select {
 				select {
@@ -129,7 +125,7 @@
 	z-index: 2;
 	background-color: #fff !important;
 	box-shadow: 0px 0px 10px;
-    margin: -3rem 4rem 2rem;
+    margin: -3rem auto .5rem auto;
 	@media #{$sm} {
 		// margin-top: -85px;
 	}

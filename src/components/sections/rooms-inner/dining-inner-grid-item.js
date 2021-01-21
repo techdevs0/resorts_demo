@@ -8,7 +8,7 @@ const OtherRecommendations = (props) => {
         <div className="row">
           {
             props.data?.map((x, i) => (
-              <div className="col-12 col-md-4">
+              <div className="col-12 col-md-4 no-gutters px-2">
                 <div className="grid-item">
                   <div className="rooms-title" style={{ backgroundImage: `url(${x.image})`, backgroundPosition:'center', backgroundSize:'cover' }}>
                     <h4>{x.title}</h4>

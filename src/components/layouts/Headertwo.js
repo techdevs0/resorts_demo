@@ -50,6 +50,36 @@ const navigationmenu = [
     linkText: 'Contact Us',
     child: false,
   },
+  {
+    id: 8,
+    link: '/whats-on',
+    linkText: 'Leisure Activities',
+    child: false,
+  },
+  {
+    id: 9,
+    link: '/sustainability',
+    linkText: 'Sustainability',
+    child: false,
+  },
+  {
+    id: 10,
+    link: '/spa-wellness',
+    linkText: 'Spa & Wellness',
+    child: false,
+  },
+  {
+    id: 11,
+    link: '/about-seychelles',
+    linkText: 'About Seychelles',
+    child: false,
+  },
+  {
+    id: 12,
+    link: '/gallery',
+    linkText: 'Gallery',
+    child: false,
+  },
 ]
 
 
@@ -82,7 +112,6 @@ class Headertwo extends Component {
     });
   }
   componentDidMount() {
-    console.log(this.props)
     window.addEventListener('resize', () => {
       this.setState({
         isMobile: window.innerWidth < 1020
@@ -98,10 +127,6 @@ class Headertwo extends Component {
         isTop: window.scrollY > 150
       });
     }, false);
-  }
-
-  componentDidUpdate(){
-    console.log(this.props)
   }
 
   navToggle = () => {
@@ -152,7 +177,7 @@ class Headertwo extends Component {
         {/*====== HEADER START ======*/}
         <header className={`header-absolute header-two sticky-header ${classNamesss}`}>
           <div className="container container-custom-one">
-            <div className={`nav-container d-flex align-items-center justify-content-between ${className}`}>
+            <div className={`nav-container container px-0 d-flex align-items-center justify-content-between ${className}`}>
               {/* Main Menu */}
               <div className="nav-menu d-lg-flex align-items-center" ref="navmenu">
                 {/* Navbar Close Icon */}
@@ -253,7 +278,7 @@ class Headertwo extends Component {
             <Link to="#" className="offcanvas-close" onClick={this.removeClass}><i className="fal fa-times" /></Link>
             {/* Search Widget */}
             <div className="widget search-widget">
-              <h5 className="widget-title">Search room</h5>
+              {/* <h5 className="widget-title">Search room</h5> */}
               <form action="#">
                 <input type="text" placeholder="Search your keyword..." />
                 <button type="submit"><i className="far fa-search" /></button>
@@ -277,7 +302,11 @@ class Headertwo extends Component {
                 <li><Link to="/room-suites">Rooms &amp; Suites</Link></li>
                 <li><Link to="/weddings">Weddings</Link></li>
                 <li><Link to="/offers">Offers</Link></li>
+                <li><Link to="/whats-on">Leisure Activities</Link></li>
                 <li><Link to="/sustainability">Sustainability</Link></li>
+                <li><Link to="/spa-wellness">Spa &amp; Wellness</Link></li>
+                <li><Link to="/about-seychelles">About Seychelles</Link></li>
+                <li><Link to="/gallery">Gallery</Link></li>
                 <li><Link to="/contact">Contact Us</Link></li>
               </ul>
             </div>
