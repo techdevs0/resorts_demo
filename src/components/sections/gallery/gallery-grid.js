@@ -10,7 +10,7 @@ const GalleryGrid = (props) => {
       <div className='gallery-grid-wrapper'>
         {
           props.data?.map(x => (
-            <RoomGridItem title={x.title} image={x.image} link={x.link} linkText={x.linkText} description={x.description} />
+            <RoomGridItem title={x.title} image={x.avatar} link={x.link} linkText={x.linkText} description={x.description} />
           ))
         }
       </div>

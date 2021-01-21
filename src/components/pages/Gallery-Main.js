@@ -8,6 +8,7 @@ import Subscribe from '../sections/common/Subscribe';
 import GalleryTitleBlock from '../sections/gallery/main-text-block';
 import GalleryGrid from '../sections/gallery/gallery-grid';
 import BreadCrumb from '../layouts/BreadCrumb';
+import API from '../../utils/http';
 
 const roomsData = [
   {
@@ -75,6 +76,19 @@ const breadcrumbItems=[
 ]
 
 class GalleryMain extends Component {
+  state = {
+    galleryData: [],
+  }
+
+  async componentDidMount() {
+    try {
+      const response = await API.get('/gallery');
+      this.setState({ galleryData: response.data });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   render() {
     return (
       <div className="bg-white">
@@ -92,7 +106,7 @@ class GalleryMain extends Component {
         <GalleryTitleBlock />
         {/*====== TITLE END ======*/}
         {/*====== GALLERY GRID START ======*/}
-        <GalleryGrid title={null} data={roomsData} />
+        <GalleryGrid title={null} data={this.state.galleryData} />
         {/*====== GALLERY GRID END ======*/}
         <Subscribe />
 

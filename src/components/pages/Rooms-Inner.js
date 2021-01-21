@@ -94,7 +94,7 @@ class RoomsInner extends Component {
       <div className="bg-white rooms-inner-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'rooms-inner'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Paris Seychelles Restaurant"} />
+        <Mainbanner title={this.state.singleRoom?.post_name} />
         {/*====== BANNER PART ENDS ======*/}
         {/* BREADCRUMBS START */}
         <BreadCrumb items={breadcrumbItems} />

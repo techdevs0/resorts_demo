@@ -7,14 +7,14 @@ const GalleryTitleBlock = (props) => {
       <div className="container">
         <h2>Gallery</h2>
         
-        <GalleryCategories />
+        {/* <GalleryCategories /> */}
 
-        <p>
+        {/* <p>
           Offering countless experience with outstanding services. Lorem ipsum doler set amet.
           Offering countless experience with outstanding services. Lorem ipsum doler set amet.
           Offering countless experience with outstanding services. Lorem ipsum doler set amet.
           Offering countless experience with outstanding services. Lorem ipsum doler set amet.
-      </p>
+      </p> */}
       </div>
     </div>
   );
