@@ -24,7 +24,9 @@
         font-size: 30px;
         padding: 0 0 1rem 0;
       }
+
     }
+
     @media #{$sm}{
       padding: 0.5rem 0 !important;
     }
@@ -102,4 +104,30 @@
       order: 2;
     }
   }
+}
+.seyehclles-about-content{
+  background: #be8a7dad;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.seyehclles-about-content h4{
+  font-size:16px;
+  color:white;
+  font-weight: bold;
+  text-align:center;
+  transition: 0.3s all ease-in;
+}
+
+.seyehclles-about-content .col-md-4{
+  cursor: pointer;
+}
+.seyehclles-about-content .col-md-4:hover > h4 {
+color:$secondary-color;
+}
+.seyehclles-about-content p{
+  font-size:14px;
+  color:white !important;
+  text-align:justify;
+  text-align-last:center;
 }

@@ -2,8 +2,8 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import ReactStars from "react-rating-stars-component";
 
-const avatar1 = require("../../../assets/img/testimonial/John_Hind.jpg");
-const avatar2 = require("../../../assets/img/testimonial/Shefali_Vyas.jpg");
+const avatar1 = require("../../../assets/img/testimonial/Shefali_Vyas.jpg");
+const avatar2 = require("../../../assets/img/testimonial/John_Hind.jpg");
 const avatar3 = require("../../../assets/img/testimonial/Veronique.jpg");
 
 const reviews = [
@@ -18,7 +18,7 @@ const reviews = [
         name: "John Hind",
         rating: 5,
         title: "PERFECT GETAWAY",
-        review: "perfect getaway resort. value for money . love the water, bar and pool.The terrace of the sunset bar was closed due to the damages , but I still spent some time at the bar.The barman was really friendly and the cocktail divine...really sorry didnt remember the name. infinity pool was amazing.It was an amazing relaxing time.",
+        review: "Perfect getaway resort. value for money . love the water, bar and pool.The terrace of the sunset bar was closed due to the damages , but I still spent some time at the bar.The barman was really friendly and the cocktail divine...really sorry didnt remember the name. infinity pool was amazing.It was an amazing relaxing time.",
         image: avatar2,
         
     }
@@ -34,7 +34,7 @@ const reviews = [
 
 const GuestReviews = (props) => {
     return (
-        <div className="guest-reviews-wrapper py-3 text-center">
+        <div className="guest-reviews-wrapper pt-4 pb-3 text-center">
             <div className="trip-logo-wrapper d-inline-block mx-auto">
                 <img src={require('./../../../assets/img/travellers-choice-white.png')} alt="" />
             </div>
@@ -42,7 +42,7 @@ const GuestReviews = (props) => {
             <Carousel
                 dynamicHeight={false}
                 showStatus={false}
-                showArrows={false}
+                showArrows={true}
                 showIndicators={false}
                 showThumbs={false}
                 infiniteLoop={true}
@@ -60,6 +60,7 @@ const GuestReviews = (props) => {
                             <h4 className="gt-title">{x.title}</h4>
                             <p className="gt-review">{x.review}</p>
                             {/* <p className="gt-date">Date of Stay: {x.stayDate}</p> */}
+                            <a href="">Read More</a>   
                         </div>
                     ))
                 }

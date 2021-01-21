@@ -62,12 +62,12 @@ class Banner extends Component {
                 </div>
                 {/* <div className="col-12 col-lg-6"> */}
                   <div className={`d-none ${this.props.isMain?'d-md-flex':''}`} style={{position:'absolute', width:'50%', display:'flex',marginTop:'2rem' ,alignItems:'baseline', justifyContent:'flex-end'
-                  , right:'60px', bottom:'160px'}}>
+                  , right:'60px', bottom:'68px'}}>
                     <div className="rounded-circle mx-2" style={{width:'100px', height:'100px', overflow:'hidden', backgroundColor:'#fff'}}>
                       <img className="img-fluid" style={{width:'100%', height:'100%', objectFit:'cover'}} src={require('./../../../assets/img/banner/tc-winner.gif')} />
                     </div>
                     <div  className="rounded-circle mx-2" style={{width:'100px', height:'100px', overflow:'hidden'}}>
-                      <img className="img-fluid" style={{width:'100%', height:'100%', objectFit:'cover'}} src={require('./../../../assets/img/banner/luxury.png')} />
+                      <img className="img-fluid" style={{width:'100%', height:'100%', objectFit:'fill'}} src={require('./../../../assets/img/banner/luxury.png')} />
                     </div>
                   </div>
                 {/* </div> */}

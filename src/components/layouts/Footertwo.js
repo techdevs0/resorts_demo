@@ -129,7 +129,7 @@ class Footertwo extends Component {
               </div>
             </div>
           </div>
-          <div className="copyright-area py-3">
+          <div className="copyright-area py-2">
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-lg-6 col-md-5 order-2 order-md-1">
@@ -138,8 +138,9 @@ class Footertwo extends Component {
                 <div className="col-lg-6 col-md-7 order-1 order-md-2">
                   <div className="footer-menu text-center text-md-right">
                     <ul>
-                      <li><Link to="#">Terms of use</Link></li>
-                      <li><Link to="#">Privacy Environmental Policy</Link></li>
+                      <p style={{fontSize:'14px'}}>Powered By <a href="https://prismdigital.ae" style={{color:"white"}} >Prism Digital</a>.</p>
+                      {/* <li><Link to="#">Terms of use</Link></li>
+                      <li><Link to="#">Privacy Environmental Policy</Link></li> */}
                     </ul>
                   </div>
                 </div>

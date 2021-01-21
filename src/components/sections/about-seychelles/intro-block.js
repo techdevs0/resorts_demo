@@ -7,16 +7,10 @@ const SeychellesIntroBlock = (props) => {
         <h2 className="text-center main-title">About Seychelles</h2>
         <div className="d-flex flex-wrap title-flex">
           <div className="intro-item">
-            <h3 className=" mr-sm-4">What is sustainability for Fisherman's Cove ?</h3>
-            <h6>OUR MISSION</h6>
+            <h3 className=" mr-sm-4">Call of the Paradise</h3>
+            
             <p className="text-justify mr-sm-4">
-              Fisherman’s Cove is built upon the principle of protecting the environment and moving forward towards a better and sustainable future.  </p>
-            <h6>OUR VISION</h6>
-            <p className="text-justify mr-sm-4">
-              We are always striving to implement long-term strategies to rectify the harmful practices that can be detrimental to our environment.  Fisherman’s Cove is following a vision to manage and reduce the potential damages to the environment due to its business functions.
-          <br />
-It is a part of our core agenda to engage all the stakeholders to take concrete actions towards a better and sustainable future.
-  </p>
+            Seychelles is a blend of 115 coralline and granitic islands situated between 4 and 10 degrees south of equator and a thousand miles away from the east coast of Africa. It is known as the island paradise and is full of sandy beaches and pristine oceans, and lush green forests. The island nation is famed especially for honeymoon travels and it is no less than a heavenly kingdom for travelers seeking adventure. It is full of unspoiled and surreal locations including forests, beaches, and plains. It also houses a number of rare animal and plant species.</p>
           </div>
           <div className="intro-item img-wrapper">
             <img src={require('./../../../assets/img/banner/home.jpg')} />

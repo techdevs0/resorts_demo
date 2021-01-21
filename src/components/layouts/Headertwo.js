@@ -328,7 +328,7 @@ class Headertwo extends Component {
             </div> */}
             {/* Nav Widget */}
             <div className="widget nav-widget">
-              <h5 className="widget-title">Our pages</h5>
+              <h5 className="widget-title">Explore Fishermans Cove</h5>
               <ul>
                 <li><Link to="/about">About Us</Link></li>
                 <li>
@@ -369,7 +369,7 @@ class Headertwo extends Component {
             </div>
             {/* Social Link */}
             <div className="widget social-link">
-              <h5 className="widget-title">Contact with us</h5>
+              <h5 className="widget-title">Follow us</h5>
               <ul>
                 <li><a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f" /></a></li>
                 <li><a href="https://twitter.com/fisherman_cove"><i className="fab fa-twitter" /></a></li>

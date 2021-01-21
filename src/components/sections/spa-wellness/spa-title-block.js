@@ -13,7 +13,6 @@ const SpaWellnessTitleBlock = (props) => {
             </p>
             <p className="download-para">
             </p>
-            <a href="https://www.hresortseychelles.com/spa-and-wellness/" className="main-btn btn-eden">Learn More</a>
           </div>
           <div className="projects-item img-wrapper">
             <img src={require('./../../../assets/img/banner/home.jpg')} />

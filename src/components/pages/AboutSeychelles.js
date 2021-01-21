@@ -7,8 +7,6 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import SeychellesIntroBlock from '../sections/about-seychelles/intro-block';
 import SeychellesPillarsBlock from '../sections/about-seychelles/pillars-block';
-import SeychellesProjectsBlock from '../sections/about-seychelles/projects-block';
-import SeychellesEngeryBlock from '../sections/about-seychelles/energy-conservation';
 import BreadCrumb from '../layouts/BreadCrumb';
 
 const breadcrumbItems=[
@@ -45,9 +43,9 @@ class AboutSeychelles extends Component {
         <SeychellesPillarsBlock/>
         {/*====== PILLARS END ======*/}
         {/*====== PROJECTS SLIDER START ======*/}
-        <SeychellesProjectsBlock />
+        {/* <SeychellesProjectsBlock /> */}
         {/*====== PROJECTS SLIDER END ======*/}
-        <SeychellesEngeryBlock />
+        {/* <SeychellesEngeryBlock /> */}
         {/*====== PROJECTS SLIDER END ======*/}
 
         <Subscribe />

@@ -15,6 +15,7 @@
         color: $primary-color;
         font-weight: 500;
         font-family: "Lora", serif;
+        font-size:23px;
     }
     .slide {
         background-color: transparent !important;
@@ -28,12 +29,14 @@
         .gt-name {
             margin-top: 1rem;
             color: $primary-color;
+            font-size: 16px;
         }
         .gt-title,
         .gt-review {
             color: $white;
             margin-top: 0.5rem;
             font-weight: 500;
+            font-size: 15px;
         }
         .gt-review {
             font-weight: 300;
@@ -56,6 +59,16 @@
             background: transparent;
             border-bottom: 1px solid $white;
         }
+        .control-next{
+            right:11rem !important;
+        }
+        .control-prev{
+            left:11rem !important;
+
+        }
+        .carousel.carousel-slider .control-arrow:hover{
+            background: transparent;
+        }
     }
 }
 
@@ -72,8 +85,8 @@
         .review-wrapper {
             width: 75%;
             img {
-                width: 90px !important;
-                height: 90px;
+                width: 85px !important;
+                height: 85px;
             }
             .gt-name {
                 margin-top: 0.5rem;
