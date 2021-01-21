@@ -788,7 +788,7 @@ header {
 /*=======  Off canvas menu  =======*/
 .offcanvas-wrapper {
 	position: fixed;
-	width: 450px;
+	width: 380px;
 	top: 0;
 	min-height: 100vh;
 	left: 0;
@@ -864,11 +864,12 @@ header {
 			margin-bottom: 40px;
 			font-size: 14px;
 			.widget-title {
-				font-size: 20px;
+				font-size: 16px;
 				margin-bottom: 25px;
 				line-height: 1;
 				position: relative;
-				padding-left: 30px;
+				padding-left: 15px;
+				font-weight: 500;
 				&::before {
 					position: absolute;
 					left: 0;
@@ -905,7 +906,7 @@ header {
 						color: $white;
 						@include transition(0.3s);
 						&:hover {
-							background-color: $black;
+							background-color: $secondary-color;
 							color: $white;
 						}
 					}
@@ -918,7 +919,7 @@ header {
 					line-height: 30px;
 					a {
 						color: $text-color;
-						font-weight: 700;
+						font-weight: 500;
 						&:hover {
 							padding-left: 10px;
 							color: $primary-color;
