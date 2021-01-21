@@ -76,8 +76,8 @@ class RoomsInner extends Component {
 
       //getting and appending images to single room data
       const imagesResponse = await API.get('/post_uploads/'+id);
-      singleRoom.images = imagesResponse.data;
-
+      singleRoom.images = imagesResponse.data.filter(x=>x["360_view"]=="");
+      singleRoom.images360 = imagesResponse.data.filter(x=>x["360_view"]=="1");
       this.setState({ singleRoom });
       
       //fetching others room data for
@@ -109,7 +109,7 @@ class RoomsInner extends Component {
               <RoomAmenities />
               {/*====== ROOM GRID END ======*/}
               {/*====== ROOM 360 GRID START ======*/}
-              <RoomVR360 />
+              <RoomVR360 image={this.state.singleRoom?.images360?.[0]?.avatar} />
               {/*====== ROOM 360 GRID END ======*/}
             </div>
             <div className="col-md-4">
