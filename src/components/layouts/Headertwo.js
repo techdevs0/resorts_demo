@@ -155,7 +155,6 @@ class Headertwo extends Component {
           'Content-Type': 'application/json'
         }
       });
-      debugger;
       this.setState({ roomSubMenu: roomsResponse.data });
 
     } catch (error) {
@@ -316,6 +315,7 @@ class Headertwo extends Component {
               <form action="#">
                 <input type="text" placeholder="Search your keyword..." />
                 <button type="submit"><i className="far fa-search" /></button>
+
               </form>
             </div>
             {/* About Widget */}
@@ -333,7 +333,7 @@ class Headertwo extends Component {
               <ul>
                 <li><Link to="/about">About Us</Link></li>
                 <li>
-                  <Link to="#" onClick={this.toggleDiningMenu}> <i className="far fa-plus" /> Dining</Link>
+                  <Link to="#" onClick={this.toggleDiningMenu}>Dining &nbsp; <i className={`far ${this.state.isDiningSubMenuOpen?'fa-minus':'fa-plus'}`} /></Link>
                   <div className={"sidebar-submenu collapse" + (this.state.isDiningSubMenuOpen ? ' show' : '')}>
                     <ul>
                       <li key={"all"}><Link to={`/dining`}>{"All Restaurant & Bars"}</Link></li>
@@ -346,10 +346,10 @@ class Headertwo extends Component {
                   </div>
                 </li>
                 <li>
-                <Link to="#" onClick={this.toggleRoomMenu}> <i className="far fa-plus" /> Rooms &amp; Suites</Link>
+                <Link to="#" onClick={this.toggleRoomMenu}>Rooms &amp; Suites &nbsp; <i className={`far ${this.state.isRoomSubMenuOpen?'fa-minus':'fa-plus'}`} /></Link>
                   <div className={"sidebar-submenu collapse" + (this.state.isRoomSubMenuOpen ? ' show' : '')}>
                     <ul>
-                      <li key={"all"}><Link to={`/dining`}>{"All Rooms & Suites"}</Link></li>
+                      <li key={"all"}><Link to={`/room-suites`}>{"All Rooms & Suites"}</Link></li>
                       {
                         this.state.roomSubMenu?.map(x => (
                           <li key={x.id}><Link to={`/rooms-inner/${x.id}`}>{x.post_name}</Link></li>

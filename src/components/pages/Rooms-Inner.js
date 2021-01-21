@@ -77,6 +77,7 @@ class RoomsInner extends Component {
       console.log(error);
     }
   }
+ 
   render() {
     return (
       <div className="bg-white rooms-inner-wrapper">
@@ -91,7 +92,7 @@ class RoomsInner extends Component {
           <div className="row">
             <div className="col-md-8">
               {/*====== TITLE START ======*/}
-              <RoomsInnerTitleBlock room={this.state.singleRoom} />
+              <RoomsInnerTitleBlock key={new Date().getTime()}  room={this.state.singleRoom} />
               {/*====== TITLE END ======*/}
               {/*====== ROOM GRID START ======*/}
               <RoomAmenities />

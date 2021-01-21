@@ -57,9 +57,9 @@ function App() {
         <Route exact path='/' render={(props) => <Hometwo {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/room-suites' render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/dining' render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
-        <Route path='/dining-inner/:id' render={(props) => <DiningInner {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/dining-inner/:id' render={(props) => <DiningInner key={props.match.params.id} {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/offers-inner' render={(props) => <OffersInner {...props} isMobile={isMobile} isTop={isTop} />} />
-        <Route path='/rooms-inner/:id' render={(props) => <RoomsInner {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/rooms-inner/:id' render={(props) => <RoomsInner key={props.match.params.id}  {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/weddings' render={(props) => <Wedding {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/whats-on' render={(props) => <Leisure {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/leisure-inner' render={(props) => <LeisureInner {...props} isMobile={isMobile} isTop={isTop} />} />

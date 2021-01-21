@@ -120,7 +120,7 @@ class DiningInner extends Component {
         <BreadCrumb items={breadcrumbItems} />
         {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
-        <DiningInnerTitleBlock dining={this.state.singleHotel} />
+        <DiningInnerTitleBlock key={new Date().getTime()} dining={this.state.singleHotel} />
         {/*====== TITLE END ======*/}
         {/*====== ROOM GRID START ======*/}
         <DiningInnerInfo />
