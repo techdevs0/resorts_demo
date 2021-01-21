@@ -8,7 +8,7 @@ const RoomVR360 = (props) => {
       <Pannellum
         width="100%"
         height="350px"
-        image={require('./../../../assets/img/room-suites/360/02.jpg')}
+        image={require('./../../../assets/img/room-suites/360/01.jpg')}
         pitch={0}
         yaw={180}
         hfov={110}

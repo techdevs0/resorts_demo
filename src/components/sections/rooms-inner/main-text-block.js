@@ -45,10 +45,9 @@ const RoomsInnerTitleBlock = (props) => {
               className="room-carousel"
             >
               {
-                roomsData.map(x => (
-                  <div>
-                    <img src={x.image} alt="" />
-                    {/* <img src={props.room?.thumbnail} alt="" /> */}
+                props.room?.images?.map((x,i) => (
+                  <div key={x.id}>
+                    <img src={x.avatar} alt="" />
                   </div>
                 ))
               }
