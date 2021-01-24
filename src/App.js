@@ -33,6 +33,7 @@ import { useEffect } from 'react';
 import AboutSeychelles from './components/pages/AboutSeychelles';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import CancellationPolicy from './components/pages/CancellationPolicy';
+import CovidPolicy from './components/pages/CovidPolicy';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -82,6 +83,7 @@ function App() {
         <Route path='/contact' render={(props) => <Contact {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/privacy-policy' render={(props) => <PrivacyPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/cancellation-policy' render={(props) => <CancellationPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/covid-policy' render={(props) => <CovidPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/' component={() => <div className="vh-100 d-flex align-items-center justify-content-center"><h1 className="display-3">Error 404! Page Not Found.</h1></div>} />
       </Switch>
     </Router>
