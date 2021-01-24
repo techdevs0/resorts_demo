@@ -14,7 +14,7 @@ const bannerImage = require('./../../assets/img/banner/rooms.jpg');
 
 const roomsData = [
   {
-    title: "Superior Room",
+    title: "Superior Rooms",
     link: "",
     linkText: "View More",
     description: "Guests can hide themselves away in these comfortable rooms located in the main building set to the rear of the hotel.",

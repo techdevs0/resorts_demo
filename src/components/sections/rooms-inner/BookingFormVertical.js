@@ -1,44 +1,100 @@
 import React, { Component } from 'react';
 
 class BookingFormVertical extends Component {
+  state = {
+    checkIn: new Date(),
+    checkOut: new Date(),
+    adults: 1,
+    rooms: 1,
+    childs: 1,
+    showCountPopup: false,
+    showPromoPopup: false,
+  }
+
+  handleCheckInChange = (e) => {
+    this.setState({ checkIn: e.target.value })
+  }
+  handleCheckOutChange = (e) => {
+    this.setState({ checkOut: e.target.value })
+  }
+
   render() {
+    const { rooms, childs, adults, showCountPopup, showPromoPopup } = this.state;
     return (
-      <div className="room-booking-form">
-        <h5 className="title">Check Availability</h5>
-        <form action="#">
-          <div className="input-group input-group-two left-icon mb-20">
-            <label htmlFor="arrival-date">Check In</label>
-            <div className="icon"><i className="fal fa-calendar-alt" /></div>
-            <input type="text" placeholder="20-6-2020" name="arrival-date" id="arrival-date" />
+      <section className="booking-form-vertical container d-none d-sm-block">
+        <div className="container">
+          <h4 className="text-muted mb-4">Check Availability</h4>
+          <div className="booking-form-inner">
+            <div className="row">
+              <div className="col-12 col-md-12">
+                <div className="dates-group">
+                  <input onChange={this.handleCheckInChange} type="date" className="form-control" placeholder="Check In" ></input>
+                  <span className="d-none d-sm-block">-</span>
+                  <input onChange={this.handleCheckOutChange} type="date" className="form-control" placeholder="Check Out" ></input>
+                </div>
+              </div>
+              <div className="col-12 col-md-12">
+                <div className="room-details">
+                  <div className="count-group" onClick={() => this.setState({ showCountPopup: !showCountPopup, showPromoPopup: false })}>
+                    <p>{`${rooms} Room${rooms > 0 ? 's' : ''}`}</p>
+                    <p>{`${adults} Adult${adults > 0 ? 's' : ''}`}</p>
+                    <p>{`${childs} Child${childs > 0 ? 's' : ''}`}</p>
+                  </div>
+                  <div className="room-details-popup" style={{ display: showCountPopup ? 'block' : 'none' }}>
+                    <div className="room_item_box quantity">
+                      <label>Rooms</label>
+                      <div className="quantity-box">
+                        <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ rooms: rooms - 1 < 1 ? 1 : rooms - 1 })}>-</div>
+                        <input id="Room" type="text" min="1" className="form-control" defaultValue={rooms} name="Rooms" placeholder="" required="" data-rel="rooms" />
+                        <div className="quantity-button quantity-up plus" onClick={() => this.setState({ rooms: rooms + 1 })}>+</div>
+                      </div>
+                    </div>
+                    <div className="room_item_box quantity">
+                      <label>Adults</label>
+                      <div className="quantity-box">
+                        <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ adults: adults - 1 < 1 ? 1 : adults - 1 })}>-</div>
+                        <input id="Adult" type="text" min="1" className="form-control" defaultValue={adults} name="Adult" placeholder="" required="" data-rel="adults" />
+                        <div className="quantity-button quantity-up plus" onClick={() => this.setState({ adults: adults + 1 })}>+</div>
+                      </div>
+                    </div>
+                    <div className="room_item_box quantity">
+                      <label>Children</label>
+                      <div className="quantity-box">
+                        <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ childs: childs - 1 < 1 ? 1 : childs - 1 })}>-</div>
+                        <input id="Child" type="text" min="0" className="form-control" defaultValue={childs} name="Child" placeholder="" required="" />
+                        <div className="quantity-button quantity-up plus" onClick={() => this.setState({ childs: childs + 1 })}>+</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-12">
+                <div className="promo-codes-wrapper">
+                  <div className="promo-codes" onClick={() => this.setState({ showPromoPopup: !showPromoPopup, showCountPopup: false })}>
+                    <p>Promo Codes</p>
+                  </div>
+                  <div className="promo-popup" style={{ display: showPromoPopup ? 'flex' : 'none' }}>
+                    <div className="code-item">
+                      <label>Group Code/Promotion Code</label>
+                      <input type="text" className="form-control" />
+                    </div>
+                    <div className="code-item">
+                      <label>Travel Industry ID</label>
+                      <input type="text" className="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-12">
+                <button className="main-btn btn-eden">Book Now</button>
+              </div>
+            </div>
           </div>
-          <div className="input-group input-group-two left-icon mb-20">
-            <label htmlFor="departure-date">Check Out</label>
-            <div className="icon"><i className="fal fa-calendar-alt" /></div>
-            <input type="text" placeholder="30-6-2020" name="departure-date" id="departure-date" />
-          </div>
-          <div className="input-group input-group-two left-icon mb-20">
-            <label htmlFor="room">Rooms</label>
-            <select name="room" id="room">
-              <option value={1}>1 Room</option>
-              <option value={2}>2 Room</option>
-              <option value={4}>4 Room</option>
-              <option value={8}>8 Room</option>
-            </select>
-          </div>
-          <div className="input-group input-group-two left-icon mb-20">
-            <label htmlFor="departure-date">Guest</label>
-            <select name="guest" id="guest">
-              <option value={8}>8 Guest</option>
-              <option value={10}>10 Guest</option>
-              <option value={12}>12 Guest</option>
-              <option value={15}>15 Guest</option>
-            </select>
-          </div>
-          <div className="input-group">
-            <button className="main-btn btn-filled">check availability</button>
-          </div>
-        </form>
-      </div>
+          {/* <button className="main-btn w-100 btn-eden d-block my-5 d-sm-none">Book Now</button> */}
+
+        </div>
+      </section>
+
     );
   }
 }

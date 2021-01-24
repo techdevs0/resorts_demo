@@ -24,7 +24,7 @@ const roomsData = [
     image: require('./../../assets/img/room-suites/room1.jpg'),
   },
   {
-    title: "Superior Room",
+    title: "Superior Rooms",
     link: "",
     linkText: "View More",
     image: require('./../../assets/img/room-suites/room1.jpg'),
