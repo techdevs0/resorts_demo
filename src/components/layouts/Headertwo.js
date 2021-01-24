@@ -163,7 +163,7 @@ class Headertwo extends Component {
       navigationmenu = navigationmenu.map(x=>{
         if (x.id == 2) {
           return {
-            ...x, submenu: [{id:101,link:'/dining',linkText:'All Restaurants & Bars'} ,...diningSubMenu]
+            ...x, submenu: [{id:101,link:'/dining',linkText:'Restaurants & Bars'} ,...diningSubMenu]
           }
         }else{
           return x;
@@ -187,7 +187,7 @@ class Headertwo extends Component {
       navigationmenu = navigationmenu.map(x=>{
         if (x.id == 3) {
           return {
-            ...x, submenu: [{id:101,link:'/room-suites',linkText:'All Rooms & Suites'} ,...roomsSubMenu]
+            ...x, submenu: [{id:101,link:'/room-suites',linkText:'Rooms & Suites Types'} ,...roomsSubMenu]
           }
         }else{
           return x;
@@ -378,7 +378,7 @@ class Headertwo extends Component {
                   <Link to="#" onClick={this.toggleDiningMenu}>Dining &nbsp; <i className={`far ${this.state.isDiningSubMenuOpen ? 'fa-minus' : 'fa-plus'}`} /></Link>
                   <div className={"sidebar-submenu collapse" + (this.state.isDiningSubMenuOpen ? ' show' : '')}>
                     <ul>
-                      <li key={"all"}><Link to={`/dining`}>{"All Restaurant & Bars"}</Link></li>
+                      <li key={"all"}><Link to={`/dining`}>{"Restaurant & Bars"}</Link></li>
                       {
                         this.state.diningSubMenu?.map(x => (
                           <li key={x.id}><Link to={`/dining-inner/${x.id}`}>{x.post_name}</Link></li>
@@ -391,7 +391,7 @@ class Headertwo extends Component {
                   <Link to="#" onClick={this.toggleRoomMenu}>Rooms &amp; Suites &nbsp; <i className={`far ${this.state.isRoomSubMenuOpen ? 'fa-minus' : 'fa-plus'}`} /></Link>
                   <div className={"sidebar-submenu collapse" + (this.state.isRoomSubMenuOpen ? ' show' : '')}>
                     <ul>
-                      <li key={"all"}><Link to={`/room-suites`}>{"All Rooms & Suites"}</Link></li>
+                      <li key={"all"}><Link to={`/room-suites`}>{"Rooms & Suites Types"}</Link></li>
                       {
                         this.state.roomSubMenu?.map(x => (
                           <li key={x.id}><Link to={`/rooms-inner/${x.id}`}>{x.post_name}</Link></li>

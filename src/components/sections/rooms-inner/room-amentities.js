@@ -9,10 +9,10 @@ const RoomAmenities = (props) => {
           {/* row 1 */}
           <li><a href="#"><i className="fal fa-bath" />Air Conditioning</a></li>
           <li><a href="#"><i className="fal fa-shower" />Bathroom Amenities </a></li>
-          <li><a href="#"><i className="fal fa-signal-alt" />Chrome Cast </a></li>
+          <li><a href="#"><i className="fab fa-chromecast" />Chrome Cast </a></li>
           {/* row 2 */}
           <li><a href="#"><i className="fal fa-wifi" />Free Wifi </a></li>
-          <li><a href="#"><i className="fal fa-lock" />In-room safe </a></li>
+          <li><a href="#"><i className="fal fa-key-skeleton" />In-room safe </a></li>
           <li><a href="#"><i className="fal fa-megaphone" />Hairdryer</a></li>
           {/* row 3 */}
           <li><a href="#"><i className="fal fa-bolt" />High-Speed Internet (chargeable)</a></li>
