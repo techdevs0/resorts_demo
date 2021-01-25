@@ -18,6 +18,10 @@
       width: 50px;
       text-align: center;
       padding: .25rem;
+      @media #{$sm} {
+        font-size: 20px;
+        width: 40px;
+      }
       cursor: pointer;
       &.service-left{
         left:0;
