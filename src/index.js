@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 
 import './assets/css/animate.min.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/font-awesome.min.css';
 import './assets/css/flaticon.css';
 import "../node_modules/slick-carousel/slick/slick.css";

@@ -39,37 +39,42 @@ class Bookingform extends Component {
                                         <p>{`${adults} Adult${adults > 0 ? 's' : ''}`}</p>
                                         <p>{`${childs} Child${childs > 0 ? 's' : ''}`}</p>
                                     </div>
-                                    <div className="room-details-popup" style={{ display: showCountPopup ? 'block' : 'none' }}>
-                                        <div className="room_item_box quantity">
-                                            <label>Rooms</label>
-                                            <div className="quantity-box">
-                                                <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ rooms: rooms - 1 < 1 ? 1 : rooms - 1 })}>-</div>
-                                                <input id="Room" type="text" min="1" className="form-control" defaultValue={rooms} name="Rooms" placeholder="" required="" data-rel="rooms" />
-                                                <div className="quantity-button quantity-up plus"onClick={() => this.setState({ rooms: rooms + 1 })}>+</div>
+                                    {
+                                        showCountPopup ?
+                                        <div className="room-details-popup" style={{ display: showCountPopup ? 'block' : 'none' }}>
+                                            <div className="room_item_box quantity">
+                                                <label>Rooms</label>
+                                                <div className="quantity-box">
+                                                    <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ rooms: rooms - 1 < 1 ? 1 : rooms - 1 })}>-</div>
+                                                    <input id="Room" type="text" min="1" className="form-control" defaultValue={rooms} value={rooms} name="Rooms" placeholder="" required="" data-rel="rooms" />
+                                                    <div className="quantity-button quantity-up plus" onClick={() => this.setState({ rooms: rooms + 1 })}>+</div>
+                                                </div>
+                                            </div>
+                                            <div className="room_item_box quantity">
+                                                <label>Adults</label>
+                                                <div className="quantity-box">
+                                                    <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ adults: adults - 1 < 1 ? 1 : adults - 1 })}>-</div>
+                                                    <input id="Adult" type="text" min="1" className="form-control" defaultValue={adults} value={adults} name="Adult" placeholder="" required="" data-rel="adults" />
+                                                    <div className="quantity-button quantity-up plus" onClick={() => this.setState({ adults: adults + 1 })}>+</div>
+                                                </div>
+                                            </div>
+                                            <div className="room_item_box quantity">
+                                                <label>Children</label>
+                                                <div className="quantity-box">
+                                                    <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ childs: childs - 1 < 1 ? 1 : childs - 1 })}>-</div>
+                                                    <input id="Child" type="text" min="0" className="form-control" defaultValue={childs} value={childs} name="Child" placeholder="" required="" />
+                                                    <div className="quantity-button quantity-up plus" onClick={() => this.setState({ childs: childs + 1 })}>+</div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className="room_item_box quantity">
-                                            <label>Adults</label>
-                                            <div className="quantity-box">
-                                                <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ adults: adults - 1 < 1 ? 1 : adults - 1 })}>-</div>
-                                                <input id="Adult" type="text" min="1" className="form-control" defaultValue={adults} name="Adult" placeholder="" required="" data-rel="adults" />
-                                                <div className="quantity-button quantity-up plus" onClick={() => this.setState({ adults: adults + 1 })}>+</div>
-                                            </div>
-                                        </div>
-                                        <div className="room_item_box quantity">
-                                            <label>Children</label>
-                                            <div className="quantity-box">
-                                                <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ childs: childs - 1 < 1 ? 1 : childs - 1 })}>-</div>
-                                                <input id="Child" type="text" min="0" className="form-control" defaultValue={childs} name="Child" placeholder="" required="" />
-                                                <div className="quantity-button quantity-up plus" onClick={() => this.setState({ childs: childs + 1 })}>+</div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        :
+                                        null
+                                    }
                                 </div>
                             </div>
                             <div className="col-12 col-md-2">
                                 <div className="promo-codes-wrapper">
-                                    <div className="promo-codes" onClick={() => this.setState({ showPromoPopup: !showPromoPopup, showCountPopup:false })}>
+                                    <div className="promo-codes" onClick={() => this.setState({ showPromoPopup: !showPromoPopup, showCountPopup: false })}>
                                         <p>Promo Codes</p>
                                     </div>
                                     <div className="promo-popup" style={{ display: showPromoPopup ? 'flex' : 'none' }}>
