@@ -12,6 +12,7 @@ class BookingFormVertical extends Component {
   }
 
   handleCheckInChange = (e) => {
+    debugger;
     this.setState({ checkIn: e.target.value })
   }
   handleCheckOutChange = (e) => {
@@ -23,14 +24,14 @@ class BookingFormVertical extends Component {
     return (
       <section className="booking-form-vertical container d-none d-sm-block">
         <div className="container">
-          <h4 className="text-muted mb-4">Check Availability</h4>
           <div className="booking-form-inner">
+            <h4 className="text-muted mb-4">Check Availability</h4>
             <div className="row">
               <div className="col-12 col-md-12">
                 <div className="dates-group">
-                  <input onChange={this.handleCheckInChange} type="date" className="form-control" placeholder="Check In" ></input>
+                  <input value={this.state.checkIn} onChange={this.handleCheckInChange} type="date" className="form-control" placeholder="Check In" ></input>
                   <span className="d-none d-sm-block">-</span>
-                  <input onChange={this.handleCheckOutChange} type="date" className="form-control" placeholder="Check Out" ></input>
+                  <input value={this.state.checkOut} onChange={this.handleCheckOutChange} type="date" className="form-control" placeholder="Check Out" ></input>
                 </div>
               </div>
               <div className="col-12 col-md-12">

@@ -886,6 +886,7 @@ header {
 			}
 			/* Search Widget */
 			&.search-widget {
+				// position: relative;
 				form {
 					position: relative;
 					input {
@@ -912,6 +913,24 @@ header {
 						&:hover {
 							background-color: $secondary-color;
 							color: $white;
+						}
+					}
+					.search-results{
+						position: absolute;
+						width: 100%;
+						height: 300px;
+						overflow-y: auto;
+						background-color: $main-bg;
+						box-shadow: 0 0 8px #dadada;
+						border-radius: 4px;
+						z-index: 100;
+						top: 60px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						.search-spinner{
+							width: 3rem;
+							height: 3rem;
 						}
 					}
 				}

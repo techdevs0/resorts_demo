@@ -69,7 +69,7 @@ class Footertwo extends Component {
 
                         <li><Link to="/gallery">Media Center</Link></li>
                         <li><Link to="/spa-wellness">Spa</Link></li>
-                        <li><Link to="#">FAQs</Link></li>
+                        <li><Link to="/faq">FAQs</Link></li>
                         <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                         <li><Link to="/cancellation-policy">Cancellation Policy</Link></li>
                         <li><Link to="/covid-policy">Covid-19 Policy</Link></li>

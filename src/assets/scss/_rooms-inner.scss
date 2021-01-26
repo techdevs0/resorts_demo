@@ -54,7 +54,7 @@
 
   .room-features {
     background-color: #fafafa;
-    padding: 1rem 0;
+    padding: 1rem 0.5rem;
     margin-top: 2rem;
     h3 {
       font-family: $lora;
@@ -232,9 +232,9 @@
     // margin-top: -85px;
   }
   background-color: rgba($color: $heading-color, $alpha: 1);
+  box-shadow: 0px 0px 10px #dadada;
   .booking-form-inner {
-    padding: 1rem;
-    box-shadow: 0px 0px 10px #dadada;
+    padding: 2rem;
     // box-shadow: 0 0 20px rgba($color: $text-color, $alpha: 0.4);
     @media #{$sm} {
       padding: 1rem;
@@ -249,18 +249,19 @@
       background-color: $white;
       // padding: 0.5rem;
       border: 2px solid $primary-color;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       height: 50px;
       @media #{$sm} {
         margin-bottom: 0.5rem;
         flex-wrap: wrap;
       }
       input {
-        width: 49% !important;
+        width: 48% !important;
         display: inline-block;
         border: none;
         border-radius: 0 !important;
-        font-size: 14px;
+        font-size: 12.5px;
+        color: $text-color;
         @media #{$sm} {
           width: 100% !important;
           border-bottom: 0.5px solid $mine-shaft;
@@ -278,7 +279,7 @@
       align-items: stretch;
       font-size: 14px;
       border: 2px solid $primary-color;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       height: 50px;
       @media #{$sm} {
         margin-bottom: 0.5rem;
@@ -381,7 +382,7 @@
       align-items: center;
       justify-content: center;
       border: 2px solid $primary-color;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       height: 50px;
       @media #{$sm} {
         margin-bottom: 0.5rem;
