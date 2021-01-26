@@ -95,11 +95,20 @@
     margin: 1rem 0;
     color: $para-color;
   }
-  input {
+  input, select, textarea {
     background-color: #fff;
     height: 40px;
     border-radius: 4px;
     padding-left: 20px;
+    padding-right: 10px;
+    &:focus{
+      outline: none;
+    }
+  }
+  textarea{
+    height: auto;
+    resize: none;
+    padding-top: 10px;
   }
   .main-btn {
     background-color: $secondary-color;

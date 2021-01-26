@@ -69,7 +69,7 @@ const offersData = [
 
 let breadcrumbItems = [
   {
-    text: 'Fishermans Cove',
+    text: 'Fishermans Cove Resort',
     link: '/',
     isActive: false,
   },

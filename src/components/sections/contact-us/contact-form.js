@@ -18,9 +18,19 @@ const ContactUsForm = (props) => {
                 <input type="email" placeholder="Email Address" />
               </div>
               <div className="col-md-6 my-2">
-                <input type="text" placeholder="Write Message" />
+                <select>
+                  <option>Choose a Subject</option>
+                  <option>Reservations Inquiry</option>
+                  <option>Refund Policy</option>
+                  <option>Rooms and Suites Info</option>
+                </select>
               </div>
-              <div className="col-12 text-center py-2 mt-4">
+              <div className="col-md-12 mt-2">
+                <textarea type="text" placeholder="Write Message..." rows={3} >
+
+                </textarea>
+              </div>
+              <div className="col-12 text-center py-2 mt-2">
                 <button type="submit" className="main-btn btn-filled">Submit</button>
               </div>
             </div>

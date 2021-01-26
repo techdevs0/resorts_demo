@@ -15,7 +15,7 @@ import CovidFlexibilityBlock from '../sections/covid-policy/flexibility-block';
 
 const breadcrumbItems=[
   {
-    text: 'Fishermans Cove',
+    text: 'Fishermans Cove Resort',
     link:'/',
     isActive: false,
   },

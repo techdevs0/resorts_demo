@@ -12,7 +12,7 @@ import PrivacyInformationBlock from '../sections/privacy-policy/information-bloc
 
 const breadcrumbItems=[
   {
-    text: 'Fishermans Cove',
+    text: 'Fishermans Cove Resort',
     link:'/',
     isActive: false,
   },
