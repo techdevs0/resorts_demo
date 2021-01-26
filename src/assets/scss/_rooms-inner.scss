@@ -158,6 +158,13 @@
             width: 75%;
           }
         }
+        &:hover {
+          .slide-hover-overlay {
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+          }
+        }
       }
     }
   }

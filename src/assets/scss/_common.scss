@@ -610,13 +610,13 @@ select {
 	background-color: rgba($color: #00000065, $alpha: 0.1);
 	// background: linear-gradient(0deg,#00000098,transparent);
 
-	&:hover {
-		background-color: rgba($color: #000000, $alpha: 0.5);
-		// background: linear-gradient(0deg,#000000d2,transparent);
-		// background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000000 100%);
-		cursor: pointer;
-		transition: all 0.3s;
-	}
+	// &.h3:hover, h2:hover, &:hover {
+	// 	background-color: rgba($color: #000000, $alpha: 0.5);
+	// 	// background: linear-gradient(0deg,#000000d2,transparent);
+	// 	// background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000000 100%);
+	// 	cursor: pointer;
+	// 	transition: all 0.3s;
+	// }
 }
 
 .breadcrumb {
