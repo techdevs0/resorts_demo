@@ -53,7 +53,7 @@ const activities = [
 
 const breadcrumbItems=[
   {
-    text: 'Fishermans Cove',
+    text: 'Fishermans Cove Resort',
     link:'/',
     isActive: false,
   },

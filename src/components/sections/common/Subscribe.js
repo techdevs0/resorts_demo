@@ -9,7 +9,7 @@ const Subscribe = (props) => {
           <div className="col-lg-8">
             <div className="subscribe-text text-center">
               <p>
-              Be The First One to Know About The Happenings at Fishermans Cove
+              Be The First One to Know About The Happenings at Fishermans Cove Resort
                 </p>
               <form action="#" className="subscribe-form mt-20">
                 <input type="email" placeholder="Enter your email address" />

@@ -5,16 +5,6 @@ import RoomGridItem from './about-grid-item';
 const AboutServices = (props) => {
   const services = [
     {
-      name: 'weddings',
-      icon: 'far fa-rings-wedding',
-      link:'/weddings'
-    },
-    {
-      name: 'leisure activities',
-      icon: 'far fa-swimmer',
-      link:'/whats-on'
-    },
-    {
       name: 'rooms & suites',
       icon: 'far fa-bed',
       link:'/room-suites'
@@ -23,6 +13,16 @@ const AboutServices = (props) => {
       name: 'Dining',
       icon: 'far fa-utensils',
       link:'/dining'
+    },
+    {
+      name: 'weddings',
+      icon: 'far fa-rings-wedding',
+      link:'/weddings'
+    },
+    {
+      name: 'leisure activities',
+      icon: 'far fa-swimmer',
+      link:'/whats-on'
     },
   ]
   return (

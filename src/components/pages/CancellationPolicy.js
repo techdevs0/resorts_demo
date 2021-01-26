@@ -10,7 +10,7 @@ import CancellationIntroBlock from '../sections/cancellation-policy/intro-block'
 
 const breadcrumbItems=[
   {
-    text: 'Fishermans Cove',
+    text: 'Fishermans Cove Resort',
     link:'/',
     isActive: false,
   },

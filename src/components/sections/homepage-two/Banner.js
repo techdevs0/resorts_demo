@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import ReactWOW from 'react-wow'
 
-import bannerimg1 from '../../../assets/img/banner/home.jpg';
+import bannerimg1 from '../../../assets/img/banner/dining.jpg';
 // import bannerimg2 from '../../../assets/img/banner/05.jpg';
 
 const bannerPosts = [
   {
-    photo: require('../../../assets/img/banner/home.jpg'),
+    photo: require('../../../assets/img/banner/dining.jpg'),
     tag: '',
     taganimation: '.6s',
     title: "The Perfect \n Destination for you",

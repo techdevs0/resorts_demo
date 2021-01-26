@@ -12,10 +12,9 @@ import PrivacyInformationBlock from '../sections/privacy-policy/information-bloc
 import CovidIntroBlock from '../sections/covid-policy/intro-block';
 import CovidTravelSafetyBlock from '../sections/covid-policy/travel-safety-block';
 import CovidFlexibilityBlock from '../sections/covid-policy/flexibility-block';
-
 const breadcrumbItems=[
   {
-    text: 'Fishermans Cove',
+    text: 'Fishermans Cove Resort',
     link:'/',
     isActive: false,
   },

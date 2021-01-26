@@ -2,24 +2,25 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import ReactStars from "react-rating-stars-component";
 
-const avatar1 = require("../../../assets/img/testimonial/Shefali_Vyas.jpg");
+const avatar1 = require("../../../assets/img/testimonial/Philipp.jpg");
 const avatar2 = require("../../../assets/img/testimonial/John_Hind.jpg");
 const avatar3 = require("../../../assets/img/testimonial/Veronique.jpg");
 
 const reviews = [
     {
-        name: "Shefali Vyas",
+        name: "Philipp",
         rating: 5,
-        title: "Beautiful Views!",
-        review: "We stayed in one of beach rooms and the view was absolutely unbeatable. Lush grounds and the bluest water all around. What is nice is that this hotel is quite central (so if you're looking for something completely isolated, this won't be the right fit) - allowing for you to walk around, meet with locals, and try traditional cuisines (and street food!) It is also down the road from some fancy hotels, allowing for additional food options (short walk away). If you're planning a trip to the Seychelles, I certainly recommend hiring a driver for a day so you can explore additional beaches in and around the area. So much to see",
+        title: "Nice - relaxed - small",
+        review: "Had to find a new hotel since the original booking did not fit - we walked in late evening and the lady at the reception made it possible: standard room price with upgrade to junior suite.",   
         image: avatar1,
-        
+        link : 'https://www.tripadvisor.com/ShowUserReviews-g482879-d302667-r743966655-Fishermans_Cove_Resort-Bel_Ombre_Mahe_Island.html'
     },{
         name: "John Hind",
         rating: 5,
         title: "PERFECT GETAWAY",
         review: "Perfect getaway resort. value for money . love the water, bar and pool.The terrace of the sunset bar was closed due to the damages , but I still spent some time at the bar.The barman was really friendly and the cocktail divine...really sorry didnt remember the name. infinity pool was amazing.It was an amazing relaxing time.",
         image: avatar2,
+        link : 'https://www.tripadvisor.com/Profile/Hindd20177'
         
     }
     ,{
@@ -28,6 +29,8 @@ const reviews = [
         title: "Amazing time and cocktail at the Sunset bar",
         review: "The terrace of the sunset bar was closed due to the damages caused by the cyclone, but I still spent some time at the bar.  The barman was really friendly and the cocktail divine...I sipped it at the infinity pool. It was an amazing relaxing time after the marathon I ran",
         image: avatar3,
+        link : 'https://www.tripadvisor.com/Profile/Verototoo'
+
         
     }
 ]
@@ -60,7 +63,7 @@ const GuestReviews = (props) => {
                             <h4 className="gt-title">{x.title}</h4>
                             <p className="gt-review">{x.review}</p>
                             {/* <p className="gt-date">Date of Stay: {x.stayDate}</p> */}
-                            <a href="">Read More</a>   
+                            <a href={x.link} class="mt-2">Read More</a>   
                         </div>
                     ))
                 }

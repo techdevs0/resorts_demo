@@ -69,7 +69,7 @@ const offersData = [
 
 let breadcrumbItems = [
   {
-    text: 'Fishermans Cove',
+    text: 'Fishermans Cove Resort',
     link: '/',
     isActive: false,
   },
@@ -126,7 +126,7 @@ class DiningInner extends Component {
         <DiningInnerInfo />
         {/*====== ROOM GRID END ======*/}
         {/*====== SUITES GRID START ======*/}
-        <DiningOfferSlider title={"Offers"} data={offersData} />
+        {/* <DiningOfferSlider title={"Offers"} data={offersData} /> */}
         {/*====== SUITES GRID END ======*/}
         {/*====== OTHERS GRID START ======*/}
         <OtherRecommendations title={"Other Restaurants & Bars"} data={this.state.othersData} />
