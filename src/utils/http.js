@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiURL = "	http://fishermanscove-resort.com/fish/public/api";
+const apiURL = "https://fishermanscove-resort.com/fish/public/api";
 const API = axios.create({
   baseURL: apiURL,
   timeout: 60000,

@@ -6,6 +6,7 @@ footer {
 		padding-bottom: 2rem;
 		width: 50%;
 		margin: auto;
+		margin-top: 1rem;
 		border-radius: 4px;
 		@media #{$sm} {
 			width: 100%;
@@ -78,11 +79,6 @@ footer {
 						width: 90%;
 						height: 40px;
 						margin: 10px auto;
-					}
-					&:hover {
-						background-color: transparent;
-						border: 1px solid $secondary-color;
-						color: $secondary-color;
 					}
 				}
 			}
@@ -293,7 +289,7 @@ footer {
 			&:first-child {
 				img {
 					width: 95px;
-					border-right: 1px solid $white;
+					border-right: .5px solid $text-color;
 				}
 			}
 		}

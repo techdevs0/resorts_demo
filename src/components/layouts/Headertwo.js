@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import $ from 'jquery';
 import { findDOMNode } from 'react-dom'
 import API from '../../utils/http';
-import { LiveTvTwoTone } from '@material-ui/icons';
+import { Spinner } from 'react-bootstrap';
 
 let navigationmenu = [
   {
@@ -27,7 +27,7 @@ let navigationmenu = [
     linkText: 'Rooms and Suites',
     child: true,
     link: "/room-suites",
-    submenu:[]
+    submenu: []
 
   },
   {
@@ -98,6 +98,7 @@ class Headertwo extends Component {
       isRoomSubMenuOpen: false,
       diningSubMenu: [],
       roomSubMenu: [],
+      searchResults:''
     };
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
@@ -153,19 +154,19 @@ class Headertwo extends Component {
       const diningResponse = await API.get('/dining');
       this.setState({ diningSubMenu: diningResponse.data });
 
-      let diningSubMenu = diningResponse?.data?.map(x=>(
+      let diningSubMenu = diningResponse?.data?.map(x => (
         {
           id: x.id,
-          link:'/dining-inner/'+x.id,
-          linkText:x.post_name
+          link: '/dining-inner/' + x.id,
+          linkText: x.post_name
         }
       ))
-      navigationmenu = navigationmenu.map(x=>{
+      navigationmenu = navigationmenu.map(x => {
         if (x.id == 2) {
           return {
-            ...x, submenu: [{id:101,link:'/dining',linkText:'Restaurants & Bars'} ,...diningSubMenu]
+            ...x, submenu: [{ id: 101, link: '/dining', linkText: 'Restaurants & Bars' }, ...diningSubMenu]
           }
-        }else{
+        } else {
           return x;
         }
       })
@@ -177,19 +178,19 @@ class Headertwo extends Component {
       });
       this.setState({ roomSubMenu: roomsResponse.data });
 
-      let roomsSubMenu = roomsResponse?.data?.map(x=>(
+      let roomsSubMenu = roomsResponse?.data?.map(x => (
         {
           id: x.id,
-          link:'/rooms-inner/'+x.id,
-          linkText:x.post_name
+          link: '/rooms-inner/' + x.id,
+          linkText: x.post_name
         }
       ))
-      navigationmenu = navigationmenu.map(x=>{
+      navigationmenu = navigationmenu.map(x => {
         if (x.id == 3) {
           return {
-            ...x, submenu: [{id:101,link:'/room-suites',linkText:'Rooms & Suites Types'} ,...roomsSubMenu]
+            ...x, submenu: [{ id: 101, link: '/room-suites', linkText: 'Rooms & Suites Types' }, ...roomsSubMenu]
           }
-        }else{
+        } else {
           return x;
         }
       })
@@ -347,29 +348,19 @@ class Headertwo extends Component {
           <div className="offcanvas-widget">
             <Link to="#" className="offcanvas-close" onClick={this.removeClass}><i className="fal fa-times" /></Link>
             {/* Search Widget */}
-            <div className="widget search-widget d-none">
+            <div className="widget search-widget">
               {/* <h5 className="widget-title">Search room</h5> */}
               <form action="#">
-                <input type="text" placeholder="Search your keyword..." />
+                <input type="text" value={this.state.searchResults} onChange={(e) => this.setState({ searchResults: e.target.value})} placeholder="Search your keyword..." />
                 <button type="submit"><i className="far fa-search" /></button>
                 {
                   this.state.searchResults?.length > 0 &&
                   <div className="search-results">
-
+                    <Spinner className="search-spinner" animation="border" variant="danger" />
                   </div>
                 }
               </form>
             </div>
-            {/* About Widget */}
-            {/* <div className="widget d-none about-widget">
-              <h5 className="widget-title">About us</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia reiciendis illo ipsa asperiores,
-                perspiciatis corrupti veritatis assumenda architecto commodi provident quas necessitatibus
-                consequatur praesentium magnam optio deserunt fugiat repellat culpa.
-              </p>
-            </div> */}
-            {/* Nav Widget */}
             <div className="widget nav-widget">
               <h5 className="widget-title">Explore Fishermans Cove</h5>
               <ul>
