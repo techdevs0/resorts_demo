@@ -120,6 +120,7 @@ const ServiceTabs = (props) => {
                 {
                     props.data?.map((x, i) => (
                         <TabPanel value={value} index={i} className="service-tab-panel">
+                            <i className="fa fa-arrow-left service-left" onClick={()=> setValue(value - 1)} />
                             <div className="tab-slider">
                                 <Grid container spacing={0}>
                                     <Grid item xs={12} sm={12} className="px-0 py-0">
@@ -140,6 +141,7 @@ const ServiceTabs = (props) => {
                                     </Grid>
                                 </Grid>
                             </div>
+                            <i className="fa fa-arrow-right service-right" onClick={()=> setValue(value + 1)}  />
                         </TabPanel>
                     ))
                 }

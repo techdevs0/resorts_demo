@@ -288,6 +288,15 @@ footer {
 				width: 60px;
 			}
 		}
+		a {
+			height: 100%;
+			&:first-child {
+				img {
+					width: 95px;
+					border-right: 1px solid $white;
+				}
+			}
+		}
 		.hhotel-dubai-footer {
 			height: 75px;
 			width: auto;

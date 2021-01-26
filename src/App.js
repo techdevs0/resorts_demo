@@ -34,6 +34,7 @@ import AboutSeychelles from './components/pages/AboutSeychelles';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import CancellationPolicy from './components/pages/CancellationPolicy';
 import CovidPolicy from './components/pages/CovidPolicy';
+import FAQ from './components/pages/FAQ';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -54,7 +55,6 @@ function App() {
     <Router>
       { <Preloader />}
       <ScrollToTop />
-      {/* <Headertwo /> */}
       <Switch>
         <Route exact path='/' render={(props) => <Hometwo {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/room-suites' render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
@@ -84,6 +84,7 @@ function App() {
         <Route path='/privacy-policy' render={(props) => <PrivacyPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/cancellation-policy' render={(props) => <CancellationPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/covid-policy' render={(props) => <CovidPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+        <Route path='/faq' render={(props) => <FAQ {...props} isMobile={isMobile} isTop={isTop} />} />
         <Route path='/' component={() => <div className="vh-100 d-flex align-items-center justify-content-center"><h1 className="display-3">Error 404! Page Not Found.</h1></div>} />
       </Switch>
     </Router>
