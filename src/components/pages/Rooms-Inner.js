@@ -29,7 +29,7 @@ const roomsData = [
     image: require('./../../assets/img/room-suites/partial.jpg')
   },
   {
-    title: "Superior Room",
+    title: "Superior Rooms",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",

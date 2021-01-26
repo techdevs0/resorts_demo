@@ -36,7 +36,7 @@ const roomsData = [
     ]
   },
   {
-    title: "Superior Room",
+    title: "Superior Rooms",
     link: "",
     linkText: "View More",
     image: require('./../../assets/img/social/03.jpg'),
@@ -48,7 +48,7 @@ const roomsData = [
     ]
   },
   {
-    title: "Superior Room",
+    title: "Superior Rooms",
     link: "",
     linkText: "View More",
     image: require('./../../assets/img/social/04.jpg'),
@@ -60,7 +60,7 @@ const roomsData = [
     ]
   },
   {
-    title: "Superior Room",
+    title: "Superior Rooms",
     link: "",
     linkText: "View More",
     image: require('./../../assets/img/social/05.jpg'),

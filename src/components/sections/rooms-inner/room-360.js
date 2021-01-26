@@ -2,7 +2,6 @@ import React from 'react';
 import { Pannellum } from "pannellum-react";
 
 const RoomVR360 = (props) => {
-  debugger;
   return (
     <div className="room-360-wrapper">
       <h3>View in 360<sup>&deg;</sup> Panaroma</h3>
