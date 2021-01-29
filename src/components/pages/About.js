@@ -91,7 +91,7 @@ class AboutUs extends Component {
         <AboutSecondaryTextBlock />
         {/*====== SECONDARY END ======*/}
         {/*====== ABOUT SLIDER START ======*/}
-        <AboutOfferSlider data={this.state.premiumOffers} title={"Explore Fisherman's Cove Premium Offerings"} />
+        <AboutOfferSlider data={this.state.premiumOffers} title={"Explore Fishermans Cove Resort Premium Offerings"} />
         {/*====== ABOUT SLIDER END ======*/}
 
         <Subscribe />

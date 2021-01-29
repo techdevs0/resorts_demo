@@ -28,7 +28,7 @@ const Subscribe = (props) => {
               Be The First One to Know About The Happenings at Fishermans Cove Resort
                 </p>
               <form action="#" className="subscribe-form mt-20">
-                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email address" />
+                <input value={email} onChange={(e) => setEmail(e.target.value)} required="required" type="email" placeholder="Enter your email address" />
                 <button type="button" onClick={handleSubmit}>subscribe</button>
               </form>
             </div>

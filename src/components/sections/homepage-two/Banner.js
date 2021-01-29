@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import ReactWOW from 'react-wow'
 
-import bannerimg1 from '../../../assets/img/banner/dining.jpg';
+import bannerimg1 from '../../../assets/img/banner/home.jpg';
 // import bannerimg2 from '../../../assets/img/banner/05.jpg';
 
 const bannerPosts = [

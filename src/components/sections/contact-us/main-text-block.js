@@ -15,8 +15,8 @@ const ContactTitleBlock = (props) => {
               <div className="col-9">
                 <p>
                   <a rel="nofollow" href="https://www.google.com/maps/dir//-4.6161678,55.4218931/@-4.616168,55.421893,16z?hl=en">Fisherman's Cove Resort <br />
-                  Bel Ombre <br />
-                  P.O. Box 35, Victoria <br />
+                  Bel Ombre, Victoria, Mahé, <br />
+Seychelles | PO Box 35<br />
                   </a>
                 </p>
               </div>

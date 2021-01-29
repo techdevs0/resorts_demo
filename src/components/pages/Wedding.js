@@ -39,7 +39,7 @@ const roomsData = [
     ]
   },
   {
-    title: "Fisherman’s Cove Special",
+    title: "Fishermans Cove Resort Special",
     link: "",
     linkText: "View More",
     image: require('./../../assets/img/wedding/special.jpg'),
