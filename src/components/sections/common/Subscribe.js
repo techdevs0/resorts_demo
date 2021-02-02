@@ -5,14 +5,20 @@ const Subscribe = (props) => {
   const [email, setEmail] = useState('');
 
   const handleSubmit = () => {
-    API.post('/subscribe', JSON.stringify({ email }), {headers:{
-      'Content-Type': 'application/json'
-    }}).then(response=>{
+    if (email == "" || !email) {
+      alert("Please enter email");
+      return;
+    }
+    API.post('/subscribe', JSON.stringify({ email }), {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(response => {
       if (response.status == 200) {
         setEmail(null);
         alert('Successfully Subscribed !');
       }
-    }).catch(error=>{
+    }).catch(error => {
       console.log(error)
     });
   }
