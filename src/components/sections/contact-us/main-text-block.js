@@ -7,14 +7,14 @@ const ContactTitleBlock = (props) => {
         <h2 className="text-center">Contact Us</h2>
         <div className="d-flex flex-wrap title-flex">
           <div className="contact-title-item">
-            <h4>Fisherman's Cove Resort</h4>
+            <h4>Fishermans Cove Resort</h4>
             <div className="row align-items-center py-1">
               <div className="col-1">
                 <i className="fas fa-map-marker-alt"></i>
               </div>
               <div className="col-9">
                 <p>
-                  <a rel="nofollow" href="https://www.google.com/maps/dir//-4.6161678,55.4218931/@-4.616168,55.421893,16z?hl=en">Fisherman's Cove Resort <br />
+                  <a rel="nofollow" href="https://www.google.com/maps/dir//-4.6161678,55.4218931/@-4.616168,55.421893,16z?hl=en">
                   Bel Ombre, Victoria, Mahé, <br />
 Seychelles | PO Box 35<br />
                   </a>

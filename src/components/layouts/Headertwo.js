@@ -362,7 +362,7 @@ class Headertwo extends Component {
               </form>
             </div>
             <div className="widget nav-widget">
-              <h5 className="widget-title">Explore Fishermans Cove</h5>
+              <h5 className="widget-title">Explore Fishermans Cove Resort</h5>
               <ul>
                 <li><Link to="/about">About Us</Link></li>
                 <li>
