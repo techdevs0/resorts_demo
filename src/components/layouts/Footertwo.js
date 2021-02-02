@@ -38,7 +38,7 @@ class Footertwo extends Component {
                   {/* Site Info Widget */}
                   <div className="widget site-info-widget mb-50">
                     <div className="footer-logo mb-1">
-                      <img src={require('./../../assets/img/logo-fisher.png')} alt="fishermancove footer logo" />
+                      <img src={require('assets/img/logo-fisher.png')} alt="fishermancove footer logo" />
                     </div>
                     <p>
                     Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fisherman’s Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. 
