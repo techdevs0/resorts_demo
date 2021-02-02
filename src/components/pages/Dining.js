@@ -123,7 +123,7 @@ class Dining extends Component {
         <DiningGrid title={null} data={this.state.diningData} />
         {/*====== ROOM GRID END ======*/}
         {/*====== SUITES GRID START ======*/}
-        <DiningOfferSlider title={"Offers"} data={offersData} />
+        {/* <DiningOfferSlider title={"Offers"} data={offersData} /> */}
         {/*====== SUITES GRID END ======*/}
 
         <Subscribe />

@@ -106,6 +106,8 @@
         .hotel-title {
           color: $white;
           width: 50%;
+          font-size: 37px;
+          text-transform: capitalize;
           font-family: "Lora", serif;
           @media #{$sm} {
             width: 75%;

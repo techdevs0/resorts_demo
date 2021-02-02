@@ -13,7 +13,7 @@ Get married on a beach or on the pontoon that offers a unique setting to exchang
 <br/> We can even take care of all the legal documents that are required for the ceremony as well as the event through tailor-made packages which make Fishermans Cove one of the top wedding and event venues in Seychelles</p>
           </div>
           <div className="wedding-title-item img-wrapper">
-            <img src={require('./../../../assets/img/banner/home.jpg')} />
+            <img src={require('./../../../assets/img/banner/wedding.jpg')} />
           </div>
         </div>
       </div>

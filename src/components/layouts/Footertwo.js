@@ -41,7 +41,7 @@ class Footertwo extends Component {
                       <img src={require('assets/img/logo-fisher.png')} alt="fishermancove footer logo" />
                     </div>
                     <p>
-                    Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fisherman’s Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. 
+                    Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fishermans Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. 
                     </p>
                     <div className="social-links mt-40 d-none">
                       <a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f" /></a>
@@ -107,7 +107,7 @@ class Footertwo extends Component {
                         </div> */}
                         <div className="desc">
                           <h6 className="title">Office Address</h6>
-                          Fisherman's Cove Resort, Bel Ombre, P.O. Box 35, Victoria
+                          Bel Ombre, Victoria, Mahé, <br /> Seychelles | PO Box 35
                         </div>
                       </div>
                     </div>

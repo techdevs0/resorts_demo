@@ -8,7 +8,7 @@ import bannerimg1 from '../../../assets/img/banner/home.jpg';
 
 const bannerPosts = [
   {
-    photo: require('../../../assets/img/banner/home.jpg'),
+    photo: require('../../../assets/img/banner/dining.jpg'),
     tag: '',
     taganimation: '.6s',
     title: "The Perfect \n Destination for you",
