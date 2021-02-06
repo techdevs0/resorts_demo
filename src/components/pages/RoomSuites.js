@@ -88,7 +88,7 @@ class RoomSuites extends Component {
 
   async componentDidMount() {
     try {
-      const response = await API.get('/all_rooms', {
+      const response = await API.get('/rooms', {
         headers:{
           'Content-Type': 'application/json'
         }

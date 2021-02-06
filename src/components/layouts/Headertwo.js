@@ -171,7 +171,7 @@ class Headertwo extends Component {
         }
       })
 
-      const roomsResponse = await API.get('/all_rooms', {
+      const roomsResponse = await API.get('/rooms', {
         headers: {
           'Content-Type': 'application/json'
         }

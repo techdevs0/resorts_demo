@@ -11,7 +11,7 @@ const OtherRecommendations = (props) => {
             props.data?.slice(0,3).map((x, i) => (
               <div className="col-12 col-md-4">
                 <div className="grid-item" onClick={()=> props.history.push('/dining-inner/'+x.id)}>
-                  <div className="dining-title" style={{ backgroundImage: `url(${x.avatar})`, backgroundPosition:'center', backgroundSize:'cover' }}>
+                  <div className="dining-title" style={{ backgroundImage: `url(${x.thumbnail})`, backgroundPosition:'center', backgroundSize:'cover' }}>
                     <h4>{x.post_name}</h4>
                     <div className="slide-hover-overlay"></div>
                   </div>

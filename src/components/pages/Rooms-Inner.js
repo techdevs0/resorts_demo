@@ -66,7 +66,7 @@ class RoomsInner extends Component {
     let id = this.props.match.params.id;
     try {
       //getting single post data
-      const response = await API.get('/single_post/'+id);
+      const response = await API.get('/rooms/'+id);
 
       //making breadcrumbs dynamic, appending into last item
       breadcrumbItems[breadcrumbItems.length -1].text=response.data.post_name;
@@ -81,7 +81,7 @@ class RoomsInner extends Component {
       this.setState({ singleRoom });
       
       //fetching others room data for
-      API.get('/all_rooms').then(othersResponse => {
+      API.get('/rooms').then(othersResponse => {
         this.setState({ othersData: othersResponse.data.filter(x => x.id !== this.state.singleRoom?.id) || [] });
       });
     } catch (error) {

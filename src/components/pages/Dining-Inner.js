@@ -87,17 +87,22 @@ let breadcrumbItems = [
 class DiningInner extends Component {
   state = {
     singleHotel: {},
-    othersData: []
+    othersData: [],
+    pageSections: []
   }
 
   async componentDidMount() {
     let id = this.props.match.params.id;
     try {
-      const response = await API.get('/single_post/' + id);
-      breadcrumbItems[breadcrumbItems.length - 1].text = response.data.post_name;
-      breadcrumbItems[breadcrumbItems.length - 1].link = '/dining-inner/' + response.data.id;
-      this.setState({ singleHotel: response.data });
-      
+      const response = await API.get('/dining/' + id);
+      let singleHotel = response?.data?.category_details[0];
+      breadcrumbItems[breadcrumbItems.length - 1].text = singleHotel.post_name;
+      breadcrumbItems[breadcrumbItems.length - 1].link = '/dining-inner/' + singleHotel.id;
+      this.setState({ singleHotel });
+
+      const sectionsResonse = await API.get('/all_sections/' + id);
+      this.setState({ pageSections: sectionsResonse?.data });
+
       API.get('/dining').then(othersResponse => {
         this.setState({ othersData: othersResponse.data.filter(x => x.id !== this.state.singleHotel?.id) || [] });
       });
@@ -120,10 +125,10 @@ class DiningInner extends Component {
         <BreadCrumb items={breadcrumbItems} />
         {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
-        <DiningInnerTitleBlock dining={this.state.singleHotel} />
+        <DiningInnerTitleBlock dining={this.state.singleHotel} introSection={this.state.pageSections?.find(x => x.section_slug === "intro")} />
         {/*====== TITLE END ======*/}
         {/*====== ROOM GRID START ======*/}
-        <DiningInnerInfo />
+        <DiningInnerInfo timingSection={this.state.pageSections?.find(x => x.section_slug === "timings")} dressSection={this.state.pageSections?.find(x => x.section_slug === "dress")} />
         {/*====== ROOM GRID END ======*/}
         {/*====== SUITES GRID START ======*/}
         {/* <DiningOfferSlider title={"Offers"} data={offersData} /> */}

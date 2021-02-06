@@ -23,7 +23,7 @@ class Hometwo extends Component {
       console.log(response.data);
       this.setState({ premiumOffers: response.data })
 
-      const roomsResponse = await API.get('/all_rooms', {
+      const roomsResponse = await API.get('/rooms', {
         headers:{
           'Content-Type': 'application/json'
         }
