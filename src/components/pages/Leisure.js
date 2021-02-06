@@ -12,32 +12,32 @@ import BreadCrumb from '../layouts/BreadCrumb';
 
 const roomsData = [
   {
-    title: "Dining",
+    title: "Diving In Seychelles",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/leisure/book.jpg')
+    image: require('./../../assets/img/leisure/divin.jpg')
   },
   {
-    title: "Spa",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/leisure/spa.jpg')
-  },
-  {
-    title: "Fishing",
+    title: "Fishing In Seychelles",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
     image: require('./../../assets/img/leisure/fishing.jpg')
   },
   {
-    title: "Snorkeling",
+    title: "Unlock the Sea",
     link: "",
     linkText: "View More",
     description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/leisure/snorkeling.jpg')
+    image: require('./../../assets/img/leisure/unlock-sea.jpg')
+  },
+  {
+    title: "Water Activities",
+    link: "",
+    linkText: "View More",
+    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
+    image: require('./../../assets/img/leisure/water.jpg')
   },
 ]
 

@@ -10,7 +10,7 @@ const SeychellesPillarsBlock = (props) => {
             <img src={require('./../../../assets/img/icon/market.png')} style={{height:"30px",margin:'10px auto',display:'block'}}/> 
             <h4 class="mb-3">Market Street </h4>
             <p>
-            It is encouraged at Fisherman’s Cove to use recycled products. Strategies including ‘Reuse and Recycle’ of the paper, composting, segregation, Mobile app, ‘Refuse the straw’ have been strictly implemented to ensure the advancement towards a better and sustainable future.
+            It is encouraged at Fishermans Cove Resort to use recycled products. Strategies including ‘Reuse and Recycle’ of the paper, composting, segregation, Mobile app, ‘Refuse the straw’ have been strictly implemented to ensure the advancement towards a better and sustainable future.
               </p>     
           </div>  
           <div class="col-md-4 col-sm-6 col-12 ">

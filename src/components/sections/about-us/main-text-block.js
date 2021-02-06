@@ -15,7 +15,7 @@ const AboutTitleBlock = (props) => {
             </p>
           </div>
           <div className="about-title-item img-wrapper">
-            <img src={require('./../../../assets/img/about/inherited.jpg')} />
+            <img src={require('./../../../assets/img/about/about-intro.jpg')} />
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const SustainProjectsBlock = (props) => {
            
           </div>
           <div className="projects-item img-wrapper">
-            <img className="img-thumbnail" src={require('./../../../assets/img/banner/home.jpg')} />
+            <img className="img-thumbnail" src={require('./../../../assets/img/sustain/fauna.jpg')} />
           </div>
         </div>
       </div>

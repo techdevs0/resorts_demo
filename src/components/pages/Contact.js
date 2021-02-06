@@ -24,7 +24,7 @@ const roomsData = [
     ]
   },
   {
-    title: "Lecardinal Restaurant",
+    title: "Le Cardinal Restaurant",
     link: "",
     linkText: "View More",
     image: require('./../../assets/img/social/02.jpg'),
@@ -107,7 +107,7 @@ class Wedding extends Component {
         <ContactUsForm />
         {/*====== CONTACT FORM END ======*/}
         {/*====== ABOUT SLIDER START ======*/}
-        <ContactOfferSlider data={roomsData} title={"Fisherman's Cove on social Media"} />
+        <ContactOfferSlider data={roomsData} title={"Fishermans Cove Resort on Social Media"} />
         {/*====== ABOUT SLIDER END ======*/}
 
         <Subscribe />

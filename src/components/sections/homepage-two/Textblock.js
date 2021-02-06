@@ -25,7 +25,7 @@ class Textblock extends Component {
                                         <br />
                                             <br />
                                         Offering countless experiences with outstanding services throughout your discovery,
-                                        Fishermans Cove is one of the best resorts in Seychelles. Restaurants and Bars allow you
+                                        Fishermans Cove Resort is one of the best resorts in Seychelles. Restaurants and Bars allow you
                                         to savor scrumptious flavors and aromas while sipping exotic cocktails and enjoying views
                                         of the Indian Ocean’s most spectacular sunset. It offers two restaurants and two bars
                                         giving guests ample options to choose from. Le Cocoloba bar has a peaceful library to
