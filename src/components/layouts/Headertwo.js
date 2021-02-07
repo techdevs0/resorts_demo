@@ -98,7 +98,7 @@ class Headertwo extends Component {
       isRoomSubMenuOpen: false,
       diningSubMenu: [],
       roomSubMenu: [],
-      searchResults:''
+      searchResults: ''
     };
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
@@ -277,7 +277,7 @@ class Headertwo extends Component {
                   <ul>
                     {navigationmenu.length > 0 ? navigationmenu.map((item, i) => (
                       <li key={i} className={` ${item.child ? 'menu-item-has-children' : ''} `} onClick={this.triggerChild}>
-                        {item.child ? <Link onClick={e => e.preventDefault()} to="/"> {item.linkText} </Link> : <Link to={item.link}> {item.linkText} </Link>}
+                        {item.child ? <Link onClick={e => { e.preventDefault(); item.id === 2 ? this.toggleDiningMenu() : this.toggleRoomMenu() }} to="#"> {item.linkText} <i className={`far ${(item.id === 2 ? this.state.isDiningSubMenuOpen : this.state.isRoomSubMenuOpen) ? 'fa-minus' : 'fa-plus'}`} /> </Link> : <Link to={item.link}> {item.linkText} </Link>}
                         {item.child ?
                           <ul className="submenu" role="menu">
                             {item.submenu.map((sub_item, i) => (
@@ -351,7 +351,7 @@ class Headertwo extends Component {
             <div className="widget search-widget d-none">
               {/* <h5 className="widget-title">Search room</h5> */}
               <form action="#">
-                <input type="text" value={this.state.searchResults} onChange={(e) => this.setState({ searchResults: e.target.value})} placeholder="Search your keyword..." />
+                <input type="text" value={this.state.searchResults} onChange={(e) => this.setState({ searchResults: e.target.value })} placeholder="Search your keyword..." />
                 <button type="submit"><i className="far fa-search" /></button>
                 {
                   this.state.searchResults?.length > 0 &&
