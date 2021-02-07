@@ -37,6 +37,18 @@ const roomsData = [
   },
 ]
 
+// const breadcrumbItems=[
+//   {
+//     text: 'Fishermans Cove Resort',
+//     link:'/',
+//     isActive: false,
+//   },
+//   {
+//     text: 'Dining',
+//     link:'/dining',
+//     isActive: true,
+//   },
+// ]
 const offersData = [
   {
     title: "Family Suite Garden View",
