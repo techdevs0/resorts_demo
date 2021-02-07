@@ -12,7 +12,6 @@ class BookingFormVertical extends Component {
   }
 
   handleCheckInChange = (e) => {
-    debugger;
     this.setState({ checkIn: e.target.value })
   }
   handleCheckOutChange = (e) => {

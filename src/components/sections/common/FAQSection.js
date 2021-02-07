@@ -29,9 +29,9 @@ const FAQSection = (props) => {
   }
 
   return (
-    <div className="faq-section-block my-5">
+    <div className="faq-section-block my-3 my-sm-5">
       <div className="container">
-        <h4 className="text-center main-title mb-5">Frequently Asked Questions (F.A.Q's)</h4>
+        <h4 className="text-center main-title mb-3 mb-sm-5">Frequently Asked Questions (F.A.Q's)</h4>
         <Accordion>
           {
             props.faqList?.map((x, i) => (

@@ -59,7 +59,6 @@ class SpaWellness extends Component {
       this.setState({ premiumOffers: response.data })
 
       const sectionsResonse = await API.get('/all_sections/' + id);
-      debugger;
       this.setState({ pageSections: sectionsResonse?.data });
 
     } catch (error) {
