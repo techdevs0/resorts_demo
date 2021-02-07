@@ -9,7 +9,7 @@ const SustainProjectsBlock = (props) => {
             {/* <h3 className=" mr-sm-4">Sustainability Projects</h3> */}
             <h3>protect wildlife – flora &amp; fauna</h3>
             <p className="text-justify mr-sm-4">
-             Fishermans Cove Resort is a part of the Marine Conservation Society of Seychelles and also a part of projects like Beach Clean Up, and restoration project. Moreover, the use of water-saving faucets to reduce water consumption
+             Fishermans Cove Resort is a part of the Marine Conservation Society of Seychelles and also a part of projects like beach clean up, and restoration project. Moreover, the use of water-saving faucets to reduce water consumption
             </p>
            
            

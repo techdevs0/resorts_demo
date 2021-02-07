@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const LeisureTitleBlock = (props) => {
   return (
     <div className="leisure-title-block">
@@ -8,7 +8,10 @@ const LeisureTitleBlock = (props) => {
         <p>
           Recreational facilities are dotted throughout the resort with the stunning infinity pool taking centre stage.
         </p>
-        <button className="main-btn btn-filled">Download Experience Guide</button>
+        <Link to="/files/experience-guide.pdf" download target="_blank">
+            <button className="main-btn btn-filled">Download Experience Guide</button>
+        </Link>
+        
       </div>
     </div>
   );
