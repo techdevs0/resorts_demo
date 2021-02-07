@@ -40,23 +40,18 @@ const roomsData = [
 
 const faqList = [
   {
-    question: 'How much does a wedding for 150 guests in Seychelles cost?',
-    answer: `Depending on how much you plan to spend, a wedding in Seychelles will cost somewhere between $1200 to $10000. Seychelles is home to some of the best wedding resort venues.`,
+    question: 'What is the difference between a deluxe and a superior room?',
+    answer: `There is not much of a difference in terms of area. However, the difference is in the availability of amenities. deluxe rooms are equipped with more amenities and usually are placed on higher floors with better views and surroundings.`,
     category: 'dining',
     id: 1,
   },
   {
-    question: 'Can foreigners get married in Seychelles?',
-    answer: `Yes, foreigners can get married in Seychelles. The documents need to be submitted 30 days prior to the wedding for verification. It is not necessary for the couple to be present for verification, it can be arranged beforehand. All the documents must be in English or french. If any of the documents are not in English or French they will have to be translated into either language. These documents will then have to be stamped and signed by a solicitor stating that it is the true translation of the original.`,
+    question: 'How do I choose the best hotel superior rooms in Seychelles?',
+    answer: `The choices for rooms and suites in Seychelles are endless and sometimes it gets hard to choose which one is the best. The key is to know that the difference is almost always in amenities and views. Try to gather information about which ones have more to offer in terms of amenities and always go for the ones with a better view.`,
     category: 'policy',
-    id: 7,
+    id: 1,
   },
-  {
-    question: 'Can you get married in Seychelles?',
-    answer: `Yes, you can. Seychelles has numerous luxury wedding venues. Couples marrying in Seychelles must have a valid passport and birth certificate. ... Ceremonies are conducted by the Registrar per Seychelles Law. The date selected is subject to the Registrar's availability and the ceremony can be arranged Monday - Friday. Additional cost will be incurred if you plan to organize the wedding ceremony over the weekend or public holidays depending on the availability.`,
-    category: 'policy',
-    id: 2,
-  },
+
   {
     question: 'Do the hotels have the facility to organize Couple Weddings? ',
     answer: `Yes, hotels and resorts in Seychelles have the facility to organize couple weddings and the prices start from 850 Euros depending on the venue.`,
@@ -64,22 +59,109 @@ const faqList = [
     id: 3,
   },
   {
-    question: 'Do the hotels have the facility to organize Couple Weddings? ',
-    answer: `Yes, hotels and resorts in Seychelles have the facility to organize couple weddings and the prices start from 850 Euros depending on the venue.`,
+    question: 'What does a two-bedroom suite mean?',
+    answer: `Contrary to the popular belief, A two bedroom suite generally means one bedroom and a living room. It does not mean two full bedrooms as some people might think. `,
     category: 'policy',
-    id: 19,
+    id: 21,
   },
   {
-    question: 'Do the hotels have the facility to organize Couple Weddings? ',
+    question: 'Which hotels in Seychelles have suites with a private balcony?',
+    answer: `There are many Seychelles Resorts and Hotels providing suites with private balconies. Fishermans Cove Resort and STORY Seychelles Resort are two of the best options to choose from. Both the resorts provide private balconies with great views of the Indian Ocean.
+    `,
+    category: 'policy',
+    id: 21,
+  },
+  {
+    question: 'What is the difference between a room and a suite?',
+    answer: `A room in a hotel is one single room with all the necessary amenities in it and an attached bathroom. However, a suite has a larger area with a small living room and sometimes along with a dining area as well.`,
+    category: 'policy',
+    id: 21,
+  },
+  {
+    question: 'Do the hotels have the facility to organize Couple Weddings?',
     answer: `Yes, hotels and resorts in Seychelles have the facility to organize couple weddings and the prices start from 850 Euros depending on the venue.`,
     category: 'policy',
     id: 20,
   },
   {
-    question: 'Do the hotels have the facility to organize Couple Weddings? ',
-    answer: `Yes, hotels and resorts in Seychelles have the facility to organize couple weddings and the prices start from 850 Euros depending on the venue.`,
+    question: 'Which hotels in Seychelles have suites with a private balcony?',
+    answer: `There are many Seychelles Resorts and Hotels providing suites with private balconies. Some of the options are listed here. Fishermans Cove Resort has the finest rooms with a private balcony which provides thrilling views of the Indian Ocean. The balcony is the perfect place to just sit and chill for a while away from the hustle and bustle of the city.`,
     category: 'policy',
-    id: 21,
+    id: 20,
+  },
+  {
+    question: 'What is the difference between a room and a suite?',
+    answer: `A room in a hotel is one single room with all the necessary amenities in it and an attached bathroom. However, a suite has a larger area with a small living room and sometimes along with a dining area as well.`,
+    category: 'policy',
+    id: 20,
+  },
+
+  {
+    question: 'What is a junior suite room? ',
+    answer: `Junior suites are usually smaller than the regular suites with no solid separation between the room and the living area. Moreover, the living area is an extension of the room so it's not that big.`,
+    category: 'policy',
+    id: 2,
+  },
+  {
+    question: 'Whats the difference between a suite and a junior suite? ',
+    answer: `Junior suites are usually smaller than the regular suites with no solid separation between the room and the living area. Moreover, the living area is an extension of the room so there is less space.`,
+    category: 'policy',
+    id: 2,
+  },
+  {
+    question: 'Which are the hotels with the best rooms and suites in Seychelles?',
+    answer: `The choices for rooms and suites in Seychelles hotels are endless and the quality varies as well so you will easily be able to find the ones for your liking. Some of the resorts with the best rooms and suites in Seychelles STORY Seychelles Resort and Fisherman’s Cove Resort `,
+    category: 'policy',
+    id: 2,
+  },
+  {
+    question: 'Which hotels in Seychelles have the best suites?',
+    answer: `There are a number of options to choose from because Seychelles has some of the best resorts and hotels. Fishermans Cove Resort and STORY Seychelles Resort are two of the many options you can choose from. Both of these resorts in Seychelles have unmatched service and amenities.`,
+    category: 'policy',
+    id: 19,
+  },
+  {
+    question: 'Which hotels in Seychelles have suites with a private balcony?',
+    answer: `There are many Seychelles Resorts and Hotels providing suites with private balconies. Some of the options are listed here. Fishermans Cove Resort and STORY Seychelles Resort also have private balconies with unmatched views of the beach.`,
+    category: 'policy',
+    id: 19,
+  },
+  {
+    question: 'Which family resorts in Seychelles are romantic?',
+    answer: `There is a huge list of romantic family resorts in Seychelles. However, fishermans Cove Resort tops the list because of its location and the mesmerizing views it provides. The resort provides every all the necessary amenities with unmatched vervice.
+    `,
+    category: 'policy',
+    id: 3,
+  },
+  {
+    question: 'What is the difference between a room and a suite?',
+    answer: `A room in a hotel is one single room with all the necessary amenities in it and an attached bathroom. However, a suite has a larger area with a small living room and sometimes along with a dining area as well.`,
+    category: 'policy',
+    id: 3,
+  },
+  {
+    question: 'Which hotels in Seychelles have suites with a private balcony? ',
+    answer: `There are many Seychelles Resorts and Hotels providing suites with private balconies. Fishermans Cove Resort has many rooms and suites with private balconies for you to enjoy amazing views of the Indian Ocean. `,
+    category: 'policy',
+    id: 3,
+  },
+  {
+    question: 'Are there private pools with hotel rooms in Seychelles?',
+    answer: `Yes, some of the Seychelles hotels and resorts have private pools with rooms but you might not find this facility in every hotel. However, the choices are unlimited and there are a number of hotels and resorts in Seychelles providing the private pool facility.`,
+    category: 'policy',
+    id: 7,
+  },
+  {
+    question: 'Can you order food to your room at Fishermans Cove Resort?',
+    answer: `Yes, you can order food directly to your room and we have a great menu with numerous options to choose from.`,
+    category: 'policy',
+    id: 7,
+  },
+  {
+    question: 'What is the difference between an Oceanview room and an oceanfront room?',
+    answer: `An ocean view room means that you will be able to see the ocean from the window or the balcony. However, an oceanfront room means that your room will directly be facing the ocean. Oceanfront rooms generally provide the best views.`,
+    category: 'policy',
+    id: 7,
   },
 ]
 
