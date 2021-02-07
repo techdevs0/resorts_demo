@@ -9,6 +9,7 @@ import BreadCrumb from '../layouts/BreadCrumb';
 import PrivacyIntroBlock from '../sections/privacy-policy/intro-block';
 import PrivacyAcceptanceBlock from '../sections/privacy-policy/acceptance-block';
 import PrivacyInformationBlock from '../sections/privacy-policy/information-block';
+import API from '../../utils/http';
 
 const breadcrumbItems=[
   {
@@ -24,6 +25,24 @@ const breadcrumbItems=[
 ]
 
 class PrivacyPolicy extends Component {
+
+  state = {
+    pageSections: []
+  }
+
+  async componentDidMount() {
+    const privacyPolicyID = 44;
+    // let id = this.props.match.params.id;
+    let id = privacyPolicyID;
+    try {
+      const sectionsResonse = await API.get('/all_sections/' + id);
+      this.setState({ pageSections: sectionsResonse?.data });
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   render() {
     return (
       <div className="bg-white privacy-policy-wrapper">
@@ -38,13 +57,13 @@ class PrivacyPolicy extends Component {
         <BreadCrumb items={breadcrumbItems} />
         {/* BREADCRUMBS END */}
         {/*====== INTRO START ======*/}
-        <PrivacyIntroBlock />
+        <PrivacyIntroBlock data={this.state.pageSections.find(x => x.section_slug === "intro")}  />
         {/*====== INTRO END ======*/}
         {/*====== PILLARS START ======*/}
-        <PrivacyAcceptanceBlock/>
+        {/* <PrivacyAcceptanceBlock/> */}
         {/*====== PILLARS END ======*/}
         {/*====== PROJECTS SLIDER START ======*/}
-        <PrivacyInformationBlock />
+        {/* <PrivacyInformationBlock /> */}
         {/*====== PROJECTS SLIDER END ======*/}
 
         <Subscribe />
