@@ -8,7 +8,7 @@ const DiningInnerTitleBlock = (props) => {
           <img src={props.dining.thumbnail} />
         </div>
         <h2>{props.dining.post_name}</h2>
-        <p dangerouslySetInnerHTML={{__html: props.introSection?.section_content}}>
+        <p dangerouslySetInnerHTML={{__html: props.dining?.post_content}}>
           
       </p>
       </div>
