@@ -31,15 +31,15 @@ const roomsData = [
   },
 ]
 
-const breadcrumbItems=[
+const breadcrumbItems = [
   {
     text: 'Fishermans Cove Resort',
-    link:'/',
+    link: '/',
     isActive: false,
   },
   {
     text: 'Spa & Wellness',
-    link:'/spa-wellness',
+    link: '/spa-wellness',
     isActive: true,
   },
 ]
@@ -47,13 +47,21 @@ class SpaWellness extends Component {
 
   state = {
     premiumOffers: [],
+    pageSections: []
   }
 
   async componentDidMount() {
+    const spaWellnessID = 42;
+    // let id = this.props.match.params.id;
+    let id = spaWellnessID;
     try {
       const response = await API.get('/premium_offers');
-      console.log(response.data);
       this.setState({ premiumOffers: response.data })
+
+      const sectionsResonse = await API.get('/all_sections/' + id);
+      debugger;
+      this.setState({ pageSections: sectionsResonse?.data });
+
     } catch (error) {
       console.log(error)
     }
@@ -62,7 +70,7 @@ class SpaWellness extends Component {
   render() {
     return (
       <div className="bg-white spa-wrapper">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'spa-wellness'} />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'spa-wellness'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Spa & Wellness"} />
         {/*====== BANNER PART ENDS ======*/}
@@ -73,7 +81,7 @@ class SpaWellness extends Component {
         <BreadCrumb items={breadcrumbItems} />
         {/* BREADCRUMBS END */}
         {/*====== PROJECTS SLIDER START ======*/}
-        <SpaWellnessTitleBlock />
+        <SpaWellnessTitleBlock data={this.state.pageSections.find(x => x.section_slug === "intro")} />
         {/*====== PROJECTS SLIDER END ======*/}
         {/*====== RECOOMENDATIONS START ======*/}
         <SpaWellnessRecommendations title={"Offers"} data={this.state.premiumOffers} />
