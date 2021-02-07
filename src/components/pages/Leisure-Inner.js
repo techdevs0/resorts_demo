@@ -7,7 +7,7 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import LeisureContentBlocks from '../sections/leisure-inner/content-blocks';
 import BreadCrumb from '../layouts/BreadCrumb';
-
+import FAQSection from '../sections/common/FAQSection';
 const activities = [
   {
     title: 'Water Activities',
@@ -60,6 +60,25 @@ const activities = [
   },
 ]
 
+const faqList = [
+  {
+    question: 'What are the fun activities to do in Seychelles?',
+    answer: `There are numerous fun activities to do in Seychelles. Some of the best things to do in Seychelles are Island hopping, chilling on the beach, diving, snorkeling are some of the few activities to do in Seychelles`,
+    category: 'dining'
+  },
+  {
+    question: 'What are the things to do with children?',
+    answer: `Seychelles is a fun place to be in and kids would love to visit Beau Vallon Beach, La Digue island. Moreover, you could take them to Botanical Gardens and Sainte Anne Marine National Park is also a nice place to visit.`,
+    category:'policy'
+  },
+  {
+    question: 'What is Seychelles best known for? ',
+    answer: `Seychelles is best known for its crystal clear waters and its beautiful beaches. The place is filled with tropical forests and untouched wonderlands. It’s a place with a rich history and filled with opportunities for leisure activities. `,
+    category:'policy'
+  },
+]
+
+
 const breadcrumbItems=[
   {
     text: 'Fishermans Cove Resort',
@@ -96,6 +115,8 @@ class LeisureInner extends Component {
         {/*====== INTRO START ======*/}
         <LeisureContentBlocks activities={activities} />
         {/*====== INTRO END ======*/}
+
+        <FAQSection faqList={faqList} />
 
         <Subscribe />
 

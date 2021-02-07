@@ -71,22 +71,24 @@ const roomsData = [
 
 const faqList = [
   {
-    question: 'What is the weather like for holidays in the Caribbean?',
-    answer: `The Caribbean’s tropical climate brings warmth and sunshine all year round, supporting Caribbean holidays as the destination of choice for many holidaymakers. Added to this, the Caribbean Sea has an average temperature of 27 degrees. During the summer months, from May to October, the temperature heats up and the islands see the most significant rainfall, which is heavier on north-east facing coasts and mountains. This is when the Atlantic hurricane season affects the Caribbean, bringing slightly increased rainfall and stronger winds, however, major storms are very rare. In the event of a hurricane we have a hurricane policy in place.`,
+    question: 'How much does a wedding for 150 guests in Seychelles cost?',
+    answer: `Depending on how much you plan to spend, a wedding in Seychelles will cost somewhere between $1200 to $10000. Seychelles is home to some of the best wedding resort venues.`,
     category: 'dining'
   },
   {
-    question: 'What activities are there to do in the Caribbean Islands?',
-    answer: `Depending on the resort you are staying at, there are a whole host of activities to take part in in the Caribbean. Elite Island Resorts have it all covered from exciting water sports to relaxing spa treatments. A range of bars and restaurants are available on all-inclusive holidays, with many resorts offering cocktail classes, so you can recreate your favourite Caribbean drinks at home.
-
-    Complimentary water sports include windsurfing, kayaking, snorkelling, stand up paddle boarding, pedal boats and hobie cat sailing. Your resort will also be happy to arrange scuba diving, boating or fishing excursions.`,
+    question: 'Can foreigners get married in Seychelles?',
+    answer: `Yes, foreigners can get married in Seychelles. The documents need to be submitted 30 days prior to the wedding for verification. It is not necessary for the couple to be present for verification, it can be arranged beforehand. All the documents must be in English or french. If any of the documents are not in English or French they will have to be translated into either language. These documents will then have to be stamped and signed by a solicitor stating that it is the true translation of the original.`,
     category:'policy'
   },
   {
-    question: 'Do you provide honeymoon packages?',
-    answer: `All of our resorts will make the perfect honeymoon destination, with many offering romantic packages to enjoy with your other half. Some of the honeymoon packages available offer couples massages, spa treatments, breakfast in bed and private dining options. We want to make sure that your honeymoon in the Caribbean is perfect in every way!
+    question: 'Can you get married in Seychelles?',
+    answer: `Yes, you can. Seychelles has numerous luxury wedding venues. Couples marrying in Seychelles must have a valid passport and birth certificate. ... Ceremonies are conducted by the Registrar per Seychelles Law. The date selected is subject to the Registrar's availability and the ceremony can be arranged Monday - Friday. Additional cost will be incurred if you plan to organize the wedding ceremony over the weekend or public holidays depending on the availability.`,
+    category:'policy'
+  },
 
-    To find out more about each resort and how they can make your honeymoon a dream come true, click here.`,
+  {
+    question: 'Do the hotels have the facility to organize Couple Weddings? ',
+    answer: `Yes, hotels and resorts in Seychelles have the facility to organize couple weddings and the prices start from 850 Euros depending on the venue.`,
     category:'policy'
   },
 ]

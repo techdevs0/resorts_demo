@@ -23,38 +23,95 @@ const breadcrumbItems = [
 
 const faqList = [
   {
-    question: 'What is the weather like for holidays in the Caribbean?',
-    answer: `The Caribbean’s tropical climate brings warmth and sunshine all year round, supporting Caribbean holidays as the destination of choice for many holidaymakers. Added to this, the Caribbean Sea has an average temperature of 27 degrees. During the summer months, from May to October, the temperature heats up and the islands see the most significant rainfall, which is heavier on north-east facing coasts and mountains. This is when the Atlantic hurricane season affects the Caribbean, bringing slightly increased rainfall and stronger winds, however, major storms are very rare. In the event of a hurricane we have a hurricane policy in place.`,
+    question: 'What are the best hotels with restaurants in Seychelles Victoria?',
+    answer: `Here is a list of some of the popular hotels and resorts with restaurants and dining bars in Seychelles.
+     STORY Seychelles Resort ,
+    Six Senses Zil Pasyon ,
+    La Digue Lodge ,
+    Constance Lemuria ,
+    Fishermans Cove Resort.
+    `,
     category: 'dining'
   },
   {
-    question: 'When is the best time to go to The Caribbean?',
-    answer: `Winter is a popular time to visit the Caribbean, between the months of November and April, as the average temperature is still hitting 26 degrees and rainfall is very minimal.
+    question: 'Which hotels with restaurants in Seychelles Victoria are romantic?',
+    answer: `There are a number of restaurants and resorts in Seychelles that can be considered for romantic dinners. Here are some of the suggestions.
+    STORY Seychelles Resort ,
+Four Seasons Resort Seychelles ,
+Anantara Maia Seychelles Villas ,
+Fishermans Cove Resort ,
+Constance Lemuria.
 
-    For higher temperatures and less crowds, the summer is the best time to visit as it’s outside of the peak travel times, so you can enjoy a quieter holiday. Winter months are busier in the Caribbean and best if you prefer to avoid rainfall and winds, but still want to enjoy tropical temperatures.`,
-    category: 'rooms'
-  },
-  {
-    question: 'What should I pack for luxury Caribbean Island holidays?',
-    answer: `Packing for a Caribbean Island holiday is similar to packing for any other tropical holiday, from sun protection, swimwear and clothing, you will need all of the usual essentials. Firstly, you need to ensure you have all of the correct travel documents, such as a valid passport, tickets and/or boarding passes.
-    Sun protection and lip balm with an SPF are essential, alongside after sun and bug spray to keep away those pesky bug bites. As well as the obvious sun protection products, a hat and a pair of sunglasses will also help keep the sun from your face.`,
+    `,
     category:'policy'
   },
   {
-    question: 'What activities are there to do in the Caribbean Islands?',
-    answer: `Depending on the resort you are staying at, there are a whole host of activities to take part in in the Caribbean. Elite Island Resorts have it all covered from exciting water sports to relaxing spa treatments. A range of bars and restaurants are available on all-inclusive holidays, with many resorts offering cocktail classes, so you can recreate your favourite Caribbean drinks at home.
+    question: 'Is Seychelles expensive in terms of eating and drinking?',
+    answer: `Seychelles restaurants can sometimes be expensive. However, there are countless options to choose from and it depends on how much you are willing to spend. There is no end to luxury so be smart while planning to go out.`,
+    category:'policy'
+  },
 
-    Complimentary water sports include windsurfing, kayaking, snorkelling, stand up paddle boarding, pedal boats and hobie cat sailing. Your resort will also be happy to arrange scuba diving, boating or fishing excursions.`,
+  {
+    question: 'What should I eat in Seychelles Victoria? ',
+    answer: `Here is a list of some of the best fine dining restaurants in Seychelles Victoria.
+    Marie-Antoinette ,
+    Papagalo ,
+    Coco Blu ,
+    Le Rendevous Café ,
+    Paris Seychelles Restaurant .
+    `,
     category:'policy'
   },
   {
-    question: 'Do you provide honeymoon packages?',
-    answer: `All of our resorts will make the perfect honeymoon destination, with many offering romantic packages to enjoy with your other half. Some of the honeymoon packages available offer couples massages, spa treatments, breakfast in bed and private dining options. We want to make sure that your honeymoon in the Caribbean is perfect in every way!
-
-    To find out more about each resort and how they can make your honeymoon a dream come true, click here.`,
+    question: 'How much does a wedding for 150 guests in Seychelles cost?',
+    answer: `Depending on how much you plan to spend, a wedding in Seychelles will cost somewhere between $1200 to $10000. Seychelles is home to some of the best wedding resort venues.`,
+    category: 'dining'
+  },
+  {
+    question: 'Can foreigners get married in Seychelles?',
+    answer: `Yes, foreigners can get married in Seychelles. The documents need to be submitted 30 days prior to the wedding for verification. It is not necessary for the couple to be present for verification, it can be arranged beforehand. All the documents must be in English or french. If any of the documents are not in English or French they will have to be translated into either language. These documents will then have to be stamped and signed by a solicitor stating that it is the true translation of the original.`,
     category:'policy'
   },
-]
+  {
+    question: 'Can you get married in Seychelles?',
+    answer: `Yes, you can. Seychelles has numerous luxury wedding venues. Couples marrying in Seychelles must have a valid passport and birth certificate. ... Ceremonies are conducted by the Registrar per Seychelles Law. The date selected is subject to the Registrar's availability and the ceremony can be arranged Monday - Friday. Additional cost will be incurred if you plan to organize the wedding ceremony over the weekend or public holidays depending on the availability.`,
+    category:'policy'
+  },
+
+  {
+    question: 'Do the hotels have the facility to organize Couple Weddings? ',
+    answer: `Yes, hotels and resorts in Seychelles have the facility to organize couple weddings and the prices start from 850 Euros depending on the venue.`,
+    category:'policy'
+  },
+  {
+    question: 'What are the fun activities to do in Seychelles?',
+    answer: `There are numerous fun activities to do in Seychelles. Some of the best things to do in Seychelles are Island hopping, chilling on the beach, diving, snorkeling are some of the few activities to do in Seychelles`,
+    category: 'dining'
+  },
+  {
+    question: 'What are the things to do with children?',
+    answer: `Seychelles is a fun place to be in and kids would love to visit Beau Vallon Beach, La Digue island. Moreover, you could take them to Botanical Gardens and Sainte Anne Marine National Park is also a nice place to visit.`,
+    category:'policy'
+  },
+  {
+    question: 'What is Seychelles best known for? ',
+    answer: `Seychelles is best known for its crystal clear waters and its beautiful beaches. The place is filled with tropical forests and untouched wonderlands. It’s a place with a rich history and filled with opportunities for leisure activities. `,
+    category:'policy'
+  },
+];
+
+// const breadcrumbItems=[
+//   {
+//     text: 'Fishermans Cove Resort',
+//     link:'/',
+//     isActive: false,
+//   },
+//   {
+//     text: 'Weddings',
+//     link:'/weddings',
+//     isActive: true,
+//   },
+// ]
 
 class FAQ extends Component {
   render() {

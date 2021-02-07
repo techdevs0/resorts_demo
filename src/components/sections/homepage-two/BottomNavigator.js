@@ -23,7 +23,7 @@ const BottomNavigator = () => {
         <div className="bottom-navigator-wrapper">
             <BottomNavigation showLabels={false} value={value} onChange={handleChange} className={classes.root}>
                 <Link to="/"><HomeRounded /></Link>
-                <a href={"https://be.synxis.com/?_ga=2.102065793.1000121752.1606552834-1702853238.1606552834&adult=1&arrive=2020-11-28&chain=27304&child=0&currency=AED&depart=2020-11-29&hotel=75043&level=hotel&locale=en-US&promo=HSPA&rooms=1"}><EventRounded /></a>
+                <a href={"https://be.synxis.com/?adult=1&arrive=2021-02-07&chain=27304&child=0&currency=EUR&depart=2021-02-08&hotel=31842&level=hotel&locale=en-US&room=SUP&rooms=1"}><EventRounded /></a>
                 <a href="tel:+2484677000"><PhoneRounded /></a>
                 <a href="mailto:reservations@fishermanscove-resort.com"><EmailRounded /></a>
             </BottomNavigation>

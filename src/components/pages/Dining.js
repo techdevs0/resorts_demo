@@ -10,7 +10,7 @@ import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
-
+import FAQSection from '../sections/common/FAQSection';
 const bannerImage = require('./../../assets/img/banner/dining.jpg');
 
 const roomsData = [
@@ -75,6 +75,49 @@ const offersData = [
   },
 ]
 
+const faqList = [
+  {
+    question: 'What are the best hotels with restaurants in Seychelles Victoria?',
+    answer: `Here is a list of some of the popular hotels and resorts with restaurants and dining bars in Seychelles.
+     STORY Seychelles Resort ,
+    Six Senses Zil Pasyon ,
+    La Digue Lodge ,
+    Constance Lemuria ,
+    Fishermans Cove Resort.
+    `,
+    category: 'dining'
+  },
+  {
+    question: 'Which hotels with restaurants in Seychelles Victoria are romantic?',
+    answer: `There are a number of restaurants and resorts in Seychelles that can be considered for romantic dinners. Here are some of the suggestions.
+    STORY Seychelles Resort ,
+Four Seasons Resort Seychelles ,
+Anantara Maia Seychelles Villas ,
+Fishermans Cove Resort ,
+Constance Lemuria.
+
+    `,
+    category:'policy'
+  },
+  {
+    question: 'Is Seychelles expensive in terms of eating and drinking?',
+    answer: `Seychelles restaurants can sometimes be expensive. However, there are countless options to choose from and it depends on how much you are willing to spend. There is no end to luxury so be smart while planning to go out.`,
+    category:'policy'
+  },
+
+  {
+    question: 'What should I eat in Seychelles Victoria? ',
+    answer: `Here is a list of some of the best fine dining restaurants in Seychelles Victoria.
+    Marie-Antoinette ,
+    Papagalo ,
+    Coco Blu ,
+    Le Rendevous Café ,
+    Paris Seychelles Restaurant .
+    `,
+    category:'policy'
+  },
+]
+
 const breadcrumbItems=[
   {
     text: 'Fishermans Cove Resort',
@@ -126,6 +169,7 @@ class Dining extends Component {
         {/* <DiningOfferSlider title={"Offers"} data={offersData} /> */}
         {/*====== SUITES GRID END ======*/}
 
+        <FAQSection faqList={faqList} />
         <Subscribe />
 
         <Footertwo />
