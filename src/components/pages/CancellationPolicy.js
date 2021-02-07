@@ -7,6 +7,7 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import CancellationIntroBlock from '../sections/cancellation-policy/intro-block';
+import API from '../../utils/http';
 
 const breadcrumbItems=[
   {

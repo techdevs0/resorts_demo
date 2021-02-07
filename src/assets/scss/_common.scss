@@ -637,3 +637,12 @@ select {
 		}
 	}
 }
+
+.faq-section-block{
+	.main-title{
+		color: $eden;
+		font-style: italic;
+		font-family: $lora;
+		font-weight: 500;
+	}
+}
