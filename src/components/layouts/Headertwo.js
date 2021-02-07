@@ -348,7 +348,7 @@ class Headertwo extends Component {
           <div className="offcanvas-widget">
             <Link to="#" className="offcanvas-close" onClick={this.removeClass}><i className="fal fa-times" /></Link>
             {/* Search Widget */}
-            <div className="widget search-widget">
+            <div className="widget search-widget d-none">
               {/* <h5 className="widget-title">Search room</h5> */}
               <form action="#">
                 <input type="text" value={this.state.searchResults} onChange={(e) => this.setState({ searchResults: e.target.value})} placeholder="Search your keyword..." />

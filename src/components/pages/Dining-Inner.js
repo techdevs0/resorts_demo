@@ -166,7 +166,7 @@ class DiningInner extends Component {
         <OtherRecommendations title={"Other Restaurants & Bars"} data={this.state.othersData} />
         {/*====== OTHERS GRID END ======*/}
 
-        <FAQSection faqList={faqList.filter(x => x.id == this.state.singleHotel.id)} />
+        <FAQSection faqList={faqList.filter(x => x.id == this.state.singleHotel?.id)} />
 
         <Subscribe />
 
