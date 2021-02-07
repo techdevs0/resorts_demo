@@ -22,6 +22,22 @@ const breadcrumbItems=[
 ]
 
 class CancellationPolicy extends Component {
+  state = {
+    pageSections: []
+  }
+
+  async componentDidMount() {
+    const cancellationPolicyID = 46;
+    // let id = this.props.match.params.id;
+    let id = cancellationPolicyID;
+    try {
+      const sectionsResonse = await API.get('/all_sections/' + id);
+      this.setState({ pageSections: sectionsResonse?.data });
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
   render() {
     return (
       <div className="bg-white cancellation-policy-wrapper">
@@ -36,7 +52,7 @@ class CancellationPolicy extends Component {
         <BreadCrumb items={breadcrumbItems} />
         {/* BREADCRUMBS END */}
         {/*====== INTRO START ======*/}
-        <CancellationIntroBlock />
+        <CancellationIntroBlock  data={this.state.pageSections.find(x => x.section_slug === "intro")}   />
         {/*====== INTRO END ======*/}
 
         <Subscribe />
