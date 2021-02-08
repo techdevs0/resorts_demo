@@ -9,6 +9,8 @@ class Bookingform extends Component {
         childs: 1,
         showCountPopup: false,
         showPromoPopup: false,
+        chain: 27304,
+        hotel: 31842
     }
 
     handleCheckInChange = (e) => {
@@ -16,6 +18,12 @@ class Bookingform extends Component {
     }
     handleCheckOutChange = (e) => {
         this.setState({ checkOut: e.target.value })
+    }
+
+    handleSubmit = () => {
+        const finalURL = `https://be.synxis.com/?adult=${this.state.adults}&arrive=${this.state.checkIn}&chain=${this.state.chain}&child=${this.state.childs}&currency=EUR&depart=${this.state.checkOut}&hotel=${this.state.hotel}&level=hotel&locale=en-US&room=SUP&rooms=${this.state.rooms}`;
+
+        window.open(finalURL, '_blank') || window.location.replace(finalURL);
     }
 
     render() {
@@ -35,40 +43,40 @@ class Bookingform extends Component {
                             <div className="col-12 col-md-4">
                                 <div className="room-details">
                                     <div className="count-group" onClick={() => this.setState({ showCountPopup: !showCountPopup, showPromoPopup: false })}>
-                                        <p>{`${rooms} Room${rooms > 0 ? 's' : ''}`}</p>
-                                        <p>{`${adults} Adult${adults > 0 ? 's' : ''}`}</p>
-                                        <p>{`${childs} Child${childs > 0 ? 's' : ''}`}</p>
+                                        <p>{`${rooms} Room${rooms > 1 ? 's' : ''}`}</p>
+                                        <p>{`${adults} Adult${adults > 1 ? 's' : ''}`}</p>
+                                        <p>{`${childs} Child${childs > 1 ? 's' : ''}`}</p>
                                     </div>
                                     {
                                         showCountPopup ?
-                                        <div className="room-details-popup" style={{ display: showCountPopup ? 'block' : 'none' }}>
-                                            <div className="room_item_box quantity">
-                                                <label>Rooms</label>
-                                                <div className="quantity-box">
-                                                    <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ rooms: rooms - 1 < 1 ? 1 : rooms - 1 })}>-</div>
-                                                    <input id="Room" type="text" min="1" className="form-control" defaultValue={rooms} value={rooms} name="Rooms" placeholder="" required="" data-rel="rooms" />
-                                                    <div className="quantity-button quantity-up plus" onClick={() => this.setState({ rooms: rooms + 1 })}>+</div>
+                                            <div className="room-details-popup" style={{ display: showCountPopup ? 'block' : 'none' }}>
+                                                <div className="room_item_box quantity">
+                                                    <label>Rooms</label>
+                                                    <div className="quantity-box">
+                                                        <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ rooms: rooms - 1 < 1 ? 1 : rooms - 1 })}>-</div>
+                                                        <input id="Room" type="text" min="1" className="form-control" defaultValue={rooms} value={rooms} name="Rooms" placeholder="" required="" data-rel="rooms" />
+                                                        <div className="quantity-button quantity-up plus" onClick={() => this.setState({ rooms: rooms + 1 })}>+</div>
+                                                    </div>
+                                                </div>
+                                                <div className="room_item_box quantity">
+                                                    <label>Adults</label>
+                                                    <div className="quantity-box">
+                                                        <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ adults: adults - 1 < 1 ? 1 : adults - 1 })}>-</div>
+                                                        <input id="Adult" type="text" min="1" className="form-control" defaultValue={adults} value={adults} name="Adult" placeholder="" required="" data-rel="adults" />
+                                                        <div className="quantity-button quantity-up plus" onClick={() => this.setState({ adults: adults + 1 })}>+</div>
+                                                    </div>
+                                                </div>
+                                                <div className="room_item_box quantity">
+                                                    <label>Children</label>
+                                                    <div className="quantity-box">
+                                                        <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ childs: childs - 1 < 1 ? 1 : childs - 1 })}>-</div>
+                                                        <input id="Child" type="text" min="0" className="form-control" defaultValue={childs} value={childs} name="Child" placeholder="" required="" />
+                                                        <div className="quantity-button quantity-up plus" onClick={() => this.setState({ childs: childs + 1 })}>+</div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="room_item_box quantity">
-                                                <label>Adults</label>
-                                                <div className="quantity-box">
-                                                    <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ adults: adults - 1 < 1 ? 1 : adults - 1 })}>-</div>
-                                                    <input id="Adult" type="text" min="1" className="form-control" defaultValue={adults} value={adults} name="Adult" placeholder="" required="" data-rel="adults" />
-                                                    <div className="quantity-button quantity-up plus" onClick={() => this.setState({ adults: adults + 1 })}>+</div>
-                                                </div>
-                                            </div>
-                                            <div className="room_item_box quantity">
-                                                <label>Children</label>
-                                                <div className="quantity-box">
-                                                    <div className="quantity-button quantity-down minus empty" onClick={() => this.setState({ childs: childs - 1 < 1 ? 1 : childs - 1 })}>-</div>
-                                                    <input id="Child" type="text" min="0" className="form-control" defaultValue={childs} value={childs} name="Child" placeholder="" required="" />
-                                                    <div className="quantity-button quantity-up plus" onClick={() => this.setState({ childs: childs + 1 })}>+</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        :
-                                        null
+                                            :
+                                            null
                                     }
                                 </div>
                             </div>
@@ -90,7 +98,7 @@ class Bookingform extends Component {
                                 </div>
                             </div>
                             <div className="col-12 col-md-2">
-                                <button className="main-btn btn-eden">Book Now</button>
+                                <button type="button" onClick={this.handleSubmit} className="main-btn btn-eden">Book Now</button>
                             </div>
                         </div>
                     </div>

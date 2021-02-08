@@ -74,7 +74,7 @@ class Banner extends Component {
               </div>
             </div>
             {/* banner bg */}
-            <div className="banner-bg" style={{ backgroundImage: `url(${this.props.image || bannerimg1})` }} />
+            <div className="banner-bg" style={{ backgroundImage: `url(${this.props.image || bannerimg1})`, backgroundPosition:'center', backgroundSize:'cover', backgroundAttachment:'fixed' }} />
             <div className="banner-overly" />
           </div>
         ))}

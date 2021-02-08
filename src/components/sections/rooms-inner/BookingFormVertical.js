@@ -9,6 +9,8 @@ class BookingFormVertical extends Component {
     childs: 1,
     showCountPopup: false,
     showPromoPopup: false,
+    chain: 27304,
+    hotel: 31842
   }
 
   handleCheckInChange = (e) => {
@@ -17,6 +19,11 @@ class BookingFormVertical extends Component {
   handleCheckOutChange = (e) => {
     this.setState({ checkOut: e.target.value })
   }
+  handleSubmit = () => {
+    const finalURL = `https://be.synxis.com/?adult=${this.state.adults}&arrive=${this.state.checkIn}&chain=${this.state.chain}&child=${this.state.childs}&currency=EUR&depart=${this.state.checkOut}&hotel=${this.state.hotel}&level=hotel&locale=en-US&room=SUP&rooms=${this.state.rooms}`;
+
+    window.open(finalURL, '_blank') || window.location.replace(finalURL);
+}
 
   render() {
     const { rooms, childs, adults, showCountPopup, showPromoPopup } = this.state;
@@ -36,9 +43,9 @@ class BookingFormVertical extends Component {
               <div className="col-12 col-md-12">
                 <div className="room-details">
                   <div className="count-group" onClick={() => this.setState({ showCountPopup: !showCountPopup, showPromoPopup: false })}>
-                    <p>{`${rooms} Room${rooms > 0 ? 's' : ''}`}</p>
-                    <p>{`${adults} Adult${adults > 0 ? 's' : ''}`}</p>
-                    <p>{`${childs} Child${childs > 0 ? 's' : ''}`}</p>
+                    <p>{`${rooms} Room${rooms > 1 ? 's' : ''}`}</p>
+                    <p>{`${adults} Adult${adults > 1 ? 's' : ''}`}</p>
+                    <p>{`${childs} Child${childs > 1 ? 's' : ''}`}</p>
                   </div>
                   <div className="room-details-popup" style={{ display: showCountPopup ? 'block' : 'none' }}>
                     <div className="room_item_box quantity">
