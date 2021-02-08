@@ -15,21 +15,21 @@ const DiningInnerTitleBlock = (props) => {
             <Carousel
               dynamicHeight={false}
               showStatus={false}
-              showArrows={false}
+              showArrows={true}
               showIndicators={false}
-              showThumbs={true}
+              showThumbs={false}
               infiniteLoop={true}
               autoPlay={true}
               emulateTouch={true}
               className="dining-carousel"
             >
-              {/* {
-                props.dining?.images?.map((x,i) => ( */}
-              <div key={1}>
-                <img src={props?.dining?.thumbnail} alt="" />
-              </div>
-              {/* ))
-              } */}
+              {
+                props.dining?.images?.map((x, i) => (
+                  <div key={x.id}>
+                    <img src={x.avatar} alt="" />
+                  </div>
+                ))
+              }
             </Carousel>
           </div>
         </div>

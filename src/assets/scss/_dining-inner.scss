@@ -43,6 +43,35 @@
         width: 100%;
         order: 1;
       }
+      .control-arrow {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 35px;
+        width: 45px;
+        background: $black;
+        line-height: 33px;
+        text-align: center;
+        font-size: 17px;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 9;
+        &:hover {
+          background-color: $secondary-color;
+          color: $white;
+        }
+        &.control-next {
+          right: 1%;
+          left: auto;
+        }
+      }
+      .control-next {
+        right: 1%;
+      }
+      .control-prev {
+        left: 1%;
+      }
     }
   }
 
