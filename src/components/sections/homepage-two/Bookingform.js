@@ -10,7 +10,8 @@ class Bookingform extends Component {
         showCountPopup: false,
         showPromoPopup: false,
         chain: 27304,
-        hotel: 31842
+        hotel: 31842,
+        promo:''
     }
 
     handleCheckInChange = (e) => {
@@ -21,7 +22,7 @@ class Bookingform extends Component {
     }
 
     handleSubmit = () => {
-        const finalURL = `https://be.synxis.com/?adult=${this.state.adults}&arrive=${this.state.checkIn}&chain=${this.state.chain}&child=${this.state.childs}&currency=EUR&depart=${this.state.checkOut}&hotel=${this.state.hotel}&level=hotel&locale=en-US&room=SUP&rooms=${this.state.rooms}`;
+        const finalURL = `https://be.synxis.com/?adult=${this.state.adults}&arrive=${this.state.checkIn}&chain=${this.state.chain}&child=${this.state.childs}&currency=EUR&depart=${this.state.checkOut}&hotel=${this.state.hotel}&level=hotel&locale=en-US&rooms=${this.state.rooms}&promo=${this.state.promo}`;
 
         window.open(finalURL, '_blank') || window.location.replace(finalURL);
     }
@@ -88,7 +89,7 @@ class Bookingform extends Component {
                                     <div className="promo-popup" style={{ display: showPromoPopup ? 'flex' : 'none' }}>
                                         <div className="code-item">
                                             <label>Group Code/Promotion Code</label>
-                                            <input type="text" className="form-control" />
+                                            <input type="text" onChange={(e) => this.setState({ promo: e.target.value })} className="form-control" />
                                         </div>
                                         <div className="code-item">
                                             <label>Travel Industry ID</label>
@@ -98,7 +99,7 @@ class Bookingform extends Component {
                                 </div>
                             </div>
                             <div className="col-12 col-md-2">
-                                <button type="button" onClick={this.handleSubmit} className="main-btn btn-eden">Book Now</button>
+                                <button type="button" value={this.state.promo} onClick={this.handleSubmit} className="main-btn btn-eden">Book Now</button>
                             </div>
                         </div>
                     </div>

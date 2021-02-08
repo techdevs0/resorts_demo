@@ -165,20 +165,20 @@ const faqList = [
   },
 ]
 
-let breadcrumbItems=[
+let breadcrumbItems = [
   {
     text: 'Fishermans Cove Resort',
-    link:'/',
+    link: '/',
     isActive: false,
   },
   {
     text: 'Rooms & Suites',
-    link:'/room-suites',
+    link: '/room-suites',
     isActive: false,
   },
   {
     text: '',
-    link:'/rooms-inner',
+    link: '/rooms-inner',
     isActive: true,
   },
 ]
@@ -186,27 +186,28 @@ let breadcrumbItems=[
 class RoomsInner extends Component {
   state = {
     singleRoom: {},
-    othersData:[]
+    othersData: []
   }
 
   async componentDidMount() {
     let id = this.props.match.params.id;
     try {
       //getting single post data
-      const response = await API.get('/rooms/'+id);
+      const response = await API.get('/rooms/' + id);
 
       //making breadcrumbs dynamic, appending into last item
-      breadcrumbItems[breadcrumbItems.length -1].text=response.data.post_name;
-      breadcrumbItems[breadcrumbItems.length -1].link='/rooms-inner/'+response.data.id;
+      breadcrumbItems[breadcrumbItems.length - 1].text = response.data.post_name;
+      breadcrumbItems[breadcrumbItems.length - 1].link = '/rooms-inner/' + response.data.id;
 
       let singleRoom = response.data;
 
+      singleRoom.roomCode = singleRoom?.post_url?.split("room=")[1]
       //getting and appending images to single room data
-      const imagesResponse = await API.get('/post_uploads/'+id);
-      singleRoom.images = imagesResponse.data.filter(x=>x["360_view"]=="");
-      singleRoom.images360 = imagesResponse.data.filter(x=>x["360_view"]=="1");
+      const imagesResponse = await API.get('/post_uploads/' + id);
+      singleRoom.images = imagesResponse.data.filter(x => x["360_view"] == "");
+      singleRoom.images360 = imagesResponse.data.filter(x => x["360_view"] == "1");
       this.setState({ singleRoom });
-      
+
       //fetching others room data for
       API.get('/rooms').then(othersResponse => {
         this.setState({ othersData: othersResponse.data.filter(x => x.id !== this.state.singleRoom?.id) || [] });
@@ -215,11 +216,11 @@ class RoomsInner extends Component {
       console.log(error);
     }
   }
- 
+
   render() {
     return (
       <div className="bg-white rooms-inner-wrapper">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'rooms-inner'} />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'rooms-inner'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={this.state.singleRoom?.post_name} />
         {/*====== BANNER PART ENDS ======*/}
@@ -240,14 +241,14 @@ class RoomsInner extends Component {
               {/*====== ROOM 360 GRID END ======*/}
             </div>
             <div className="col-md-4">
-              <BookingFormVertical />
+              <BookingFormVertical roomCode={this.state.singleRoom?.roomCode} />
             </div>
           </div>
           {/*====== OTHERS GRID START ======*/}
           <OtherRecommendations title={"Other Rooms & Suites"} data={this.state.othersData} />
           {/*====== OTHERS GRID END ======*/}
         </div>
-        <FAQSection faqList={faqList.filter(x=> x.id === this.state.singleRoom?.id)} />
+        <FAQSection faqList={faqList.filter(x => x.id === this.state.singleRoom?.id)} />
         <Subscribe />
 
         <Footertwo />
