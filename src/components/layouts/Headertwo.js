@@ -248,7 +248,7 @@ class Headertwo extends Component {
         {/*====== HEADER START ======*/}
         <header className={`header-absolute header-two sticky-header ${classNamesss}`}>
           <div className="container container-custom-one">
-            <div className={`nav-container container px-0 d-flex align-items-center justify-content-between ${className}`}>
+            <div className={`nav-container container px-0 d-none d-sm-flex align-items-center justify-content-between ${className}`}>
               {/* Main Menu */}
               <div className="nav-menu d-lg-flex align-items-center" ref="navmenu">
                 {/* Navbar Close Icon */}

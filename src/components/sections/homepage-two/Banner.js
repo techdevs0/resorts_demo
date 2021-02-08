@@ -36,7 +36,7 @@ class Banner extends Component {
     return (
       <Slider className="banner-area banner-style-two" id="bannerSlider" {...settings}>
         {bannerPosts.map((item, i) => (
-          <div key={i} className={`single-banner d-flex align-items-center justify-content-center ${this.props.isMain? '': 'sub-banner'}`}>
+          <div key={i} className={`single-banner d-flex align-items-center justify-content-center ${this.props.isMain ? '' : 'sub-banner'}`}>
             <div className="container">
               <div className="row justify-content-left">
                 <div className="col-10 col-lg-6">
@@ -61,20 +61,22 @@ class Banner extends Component {
                   </div>
                 </div>
                 {/* <div className="col-12 col-lg-6"> */}
-                  <div className={`d-none ${this.props.isMain?'d-md-flex':''}`} style={{position:'absolute', width:'50%', display:'flex',marginTop:'2rem' ,alignItems:'baseline', justifyContent:'flex-end'
-                  , right:'60px', bottom:'68px'}}>
-                    <div className="rounded-circle mx-2" style={{width:'100px', height:'100px', overflow:'hidden', backgroundColor:'#fff'}}>
-                      <img className="img-fluid" style={{width:'100%', height:'100%', objectFit:'cover'}} src={require('./../../../assets/img/banner/tc-winner.gif')} />
-                    </div>
-                    <div  className="rounded-circle mx-2" style={{width:'100px', height:'100px', overflow:'hidden'}}>
-                      <img className="img-fluid" style={{width:'100%', height:'100%', objectFit:'fill'}} src={require('./../../../assets/img/banner/luxury.png')} />
-                    </div>
+                <div className={`d-none ${this.props.isMain ? 'd-md-flex' : ''}`} style={{
+                  position: 'absolute', width: '50%', display: 'flex', marginTop: '2rem', alignItems: 'baseline', justifyContent: 'flex-end'
+                  , right: '60px', bottom: '68px'
+                }}>
+                  <div className="rounded-circle mx-2" style={{ width: '100px', height: '100px', overflow: 'hidden', backgroundColor: '#fff' }}>
+                    <img className="img-fluid" style={{ width: '100%', height: '100%', objectFit: 'cover' }} src={require('./../../../assets/img/banner/tc-winner.gif')} />
                   </div>
+                  <div className="rounded-circle mx-2" style={{ width: '100px', height: '100px', overflow: 'hidden' }}>
+                    <img className="img-fluid" style={{ width: '100%', height: '100%', objectFit: 'fill' }} src={require('./../../../assets/img/banner/luxury.png')} />
+                  </div>
+                </div>
                 {/* </div> */}
               </div>
             </div>
             {/* banner bg */}
-            <div className="banner-bg" style={{ backgroundImage: `url(${this.props.image || bannerimg1})`, backgroundPosition:'center', backgroundSize:'cover', backgroundAttachment:'fixed' }} />
+            <div className="banner-bg" style={{ backgroundImage: `url(${this.props.image || bannerimg1})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundAttachment: 'fixed' }} />
             <div className="banner-overly" />
           </div>
         ))}
