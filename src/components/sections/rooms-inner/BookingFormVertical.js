@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
+const year = `${new Date().getFullYear()}`;
+const month = (new Date().getMonth() + 1).toString().length === 1 ? `0${new Date().getMonth() + 1}` : `${new Date().getMonth() + 1}`;
+const day = (new Date().getDate()).toString().length === 1 ? `0${new Date().getDate()}` : `${new Date().getDate()}`;
+const day2 = (new Date().getDate() + 1).toString().length === 1 ? `0${new Date().getDate() + 1}` : `${new Date().getDate() + 1}`;
+
 class BookingFormVertical extends Component {
   state = {
-    checkIn: new Date(),
-    checkOut: new Date(),
+    checkIn: `${year}-${month}-${day}`,
+    checkOut: `${year}-${month}-${day2}`,
     adults: 1,
     rooms: 1,
     childs: 1,
@@ -11,7 +16,7 @@ class BookingFormVertical extends Component {
     showPromoPopup: false,
     chain: 27304,
     hotel: 31842,
-    promo:''
+    promo: ''
   }
 
   handleCheckInChange = (e) => {
@@ -24,7 +29,7 @@ class BookingFormVertical extends Component {
     const finalURL = `https://be.synxis.com/?adult=${this.state.adults}&arrive=${this.state.checkIn}&chain=${this.state.chain}&child=${this.state.childs}&currency=EUR&depart=${this.state.checkOut}&hotel=${this.state.hotel}&level=hotel&locale=en-US&room=${this.props.roomCode}&rooms=${this.state.rooms}`;
 
     window.open(finalURL, '_blank') || window.location.replace(finalURL);
-}
+  }
 
   render() {
     const { rooms, childs, adults, showCountPopup, showPromoPopup } = this.state;
@@ -36,9 +41,9 @@ class BookingFormVertical extends Component {
             <div className="row">
               <div className="col-12 col-md-12">
                 <div className="dates-group">
-                  <input value={this.state.checkIn} onChange={this.handleCheckInChange} type="date" className="form-control" placeholder="Check In" ></input>
+                  <input value={this.state.checkIn} onChange={this.handleCheckInChange} value={this.state.checkIn} type="date" className="form-control" placeholder="Check In" ></input>
                   <span className="d-none d-sm-block">-</span>
-                  <input value={this.state.checkOut} onChange={this.handleCheckOutChange} type="date" className="form-control" placeholder="Check Out" ></input>
+                  <input value={this.state.checkOut} onChange={this.handleCheckOutChange} value={this.state.checkOut} type="date" className="form-control" placeholder="Check Out" ></input>
                 </div>
               </div>
               <div className="col-12 col-md-12">
