@@ -219,7 +219,7 @@ class RoomsInner extends Component {
   }
 
   render() {
-   
+     {console.log(this.state.singleRoom.images);}
     return (
  
      <div className="bg-white rooms-inner-wrapper">
