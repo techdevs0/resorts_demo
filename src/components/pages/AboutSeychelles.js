@@ -8,7 +8,7 @@ import Subscribe from '../sections/common/Subscribe';
 import SeychellesIntroBlock from '../sections/about-seychelles/intro-block';
 import SeychellesPillarsBlock from '../sections/about-seychelles/pillars-block';
 import BreadCrumb from '../layouts/BreadCrumb';
-
+const bannerImage = require('./../../assets/img/banner/About-Seychelles.jpg');
 const breadcrumbItems=[
   {
     text: 'Fishermans Cove Resort',
@@ -28,7 +28,7 @@ class AboutSeychelles extends Component {
       <div className="bg-white seychelles-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'seychelles'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"About Seychelles"} />
+        <Mainbanner title={"About Seychelles"} image={bannerImage}/>
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

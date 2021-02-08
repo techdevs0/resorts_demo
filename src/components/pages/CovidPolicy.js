@@ -13,6 +13,8 @@ import CovidIntroBlock from '../sections/covid-policy/intro-block';
 import CovidTravelSafetyBlock from '../sections/covid-policy/travel-safety-block';
 import CovidFlexibilityBlock from '../sections/covid-policy/flexibility-block';
 import API from '../../utils/http';
+const bannerImage = require('./../../assets/img/banner/sunset.jpg');
+
 const breadcrumbItems=[
   {
     text: 'Fishermans Cove Resort',
@@ -48,7 +50,7 @@ class CovidPolicy extends Component {
       <div className="bg-white covid-policy-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'covid-policy'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Covid Policy"} />
+        <Mainbanner title={"Covid Policy"} image={bannerImage}/>
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

@@ -10,6 +10,8 @@ import SpaWellnessRecommendations from '../sections/spa-wellness/spa-offers';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 
+const bannerImage = require('./../../assets/img/banner/spa-banner.jpg');
+
 const roomsData = [
   {
     title: "Paris Sychelles Restaurant",
@@ -71,7 +73,7 @@ class SpaWellness extends Component {
       <div className="bg-white spa-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'spa-wellness'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Spa & Wellness"} />
+        <Mainbanner title={"Spa & Wellness"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

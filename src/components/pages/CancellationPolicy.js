@@ -8,6 +8,7 @@ import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import CancellationIntroBlock from '../sections/cancellation-policy/intro-block';
 import API from '../../utils/http';
+const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 const breadcrumbItems=[
   {
@@ -44,7 +45,7 @@ class CancellationPolicy extends Component {
       <div className="bg-white cancellation-policy-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'cancellation-policy'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Cancellation Policy"} />
+        <Mainbanner title={"Cancellation Policy"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

@@ -9,6 +9,7 @@ import ContactUsForm from '../sections/contact-us/contact-form';
 import ContactOfferSlider from '../sections/contact-us/contact-offer-slider';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
+const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 const roomsData = [
   {
@@ -92,7 +93,7 @@ class Wedding extends Component {
       <div className="bg-white">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'contact'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Contact Us"} />
+        <Mainbanner title={"Contact Us"} image={bannerImage}/>
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

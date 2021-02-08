@@ -14,6 +14,7 @@ import galleryimg8 from '../../assets/img/gallery/08.jpg';
 import Headertwo from '../layouts/Headertwo';
 
 
+
 const galleryPosts = [
   {
     photo: galleryimg1,

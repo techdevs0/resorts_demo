@@ -7,6 +7,7 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import FAQIntroBlock from '../sections/faq/intro-block';
+const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 const breadcrumbItems = [
   {
@@ -15,7 +16,7 @@ const breadcrumbItems = [
     isActive: false,
   },
   {
-    text: 'F.A.Q',
+    text: 'F.A.Qs',
     link: '/faq',
     isActive: true,
   },
@@ -119,7 +120,7 @@ class FAQ extends Component {
       <div>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'faq'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"F.A.Q"} />
+        <Mainbanner title={"F.A.Q"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

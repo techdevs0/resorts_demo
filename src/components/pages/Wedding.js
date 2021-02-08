@@ -10,6 +10,8 @@ import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import FAQSection from '../sections/common/FAQSection';
 
+const bannerImage = require('./../../assets/img/banner/wedding-banner.jpg');
+
 const roomsData = [
   {
     title: "Seaside Pontoon Wedding",
@@ -112,7 +114,7 @@ class Wedding extends Component {
       <div className="bg-white">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'weddings'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Weddings In Paradise"} />
+        <Mainbanner title={"Weddings In Paradise"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

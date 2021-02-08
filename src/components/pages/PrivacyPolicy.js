@@ -10,6 +10,7 @@ import PrivacyIntroBlock from '../sections/privacy-policy/intro-block';
 import PrivacyAcceptanceBlock from '../sections/privacy-policy/acceptance-block';
 import PrivacyInformationBlock from '../sections/privacy-policy/information-block';
 import API from '../../utils/http';
+const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 const breadcrumbItems=[
   {
@@ -48,7 +49,7 @@ class PrivacyPolicy extends Component {
       <div className="bg-white privacy-policy-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'privacy-policy'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Privacy Policy"} />
+        <Mainbanner title={"Privacy Policy"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

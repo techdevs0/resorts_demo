@@ -9,6 +9,7 @@ import GalleryTitleBlock from '../sections/gallery/main-text-block';
 import GalleryGrid from '../sections/gallery/gallery-grid';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
+const bannerImage = require('./../../assets/img/banner/gallery-Banner.jpg');
 
 const roomsData = [
   {
@@ -94,7 +95,7 @@ class GalleryMain extends Component {
       <div className="bg-white">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'gallery'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Gallery"} />
+        <Mainbanner title={"Gallery"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

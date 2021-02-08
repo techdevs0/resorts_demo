@@ -10,6 +10,8 @@ import LeisureGrid from '../sections/leisure/leisure-grid';
 import LeisureAwards from '../sections/leisure/leisure-awards';
 import BreadCrumb from '../layouts/BreadCrumb';
 
+const bannerImage = require('./../../assets/img/banner/Leisure-banner.jpg');
+
 const roomsData = [
   {
     title: "Diving In Seychelles",
@@ -60,7 +62,7 @@ class Leisure extends Component {
       <div className="bg-white">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'leisure'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Leisure Activities"} />
+        <Mainbanner title={"Leisure Activities"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

@@ -33,7 +33,7 @@ const FAQIntroBlock = (props) => {
     <div className="intro-block">
       <div className="container">
         <h2 className="text-center main-title">Frequently Asked Questions (F.A.Q's)</h2>
-        <FAQCategories setCurrentIndex={setCurrentIndex} currentIndex={currentIndex} />
+        {/* <FAQCategories setCurrentIndex={setCurrentIndex} currentIndex={currentIndex} /> */}
         <Accordion>
           {
             props.faqList?.map((x, i) => (

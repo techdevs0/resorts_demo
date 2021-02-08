@@ -11,6 +11,8 @@ import SustainProjectsBlock from '../sections/sustainability/projects-block';
 import SustainEngeryBlock from '../sections/sustainability/energy-conservation';
 import BreadCrumb from '../layouts/BreadCrumb';
 
+const bannerImage = require('./../../assets/img/banner/Sustainability-banner.jpg');
+
 const breadcrumbItems=[
   {
     text: 'Fishermans Cove Resort',
@@ -30,7 +32,7 @@ class Sustainability extends Component {
       <div className="bg-white sustainability-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'sustainability'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Sustainability"} />
+        <Mainbanner title={"Sustainability"} image={bannerImage}/>
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
