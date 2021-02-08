@@ -14,9 +14,12 @@ function ContextAwareToggle({ children, eventKey, callback }) {
   const isCurrentEventKey = currentEventKey === eventKey;
 
   return (
-    <h6 style={{padding:'0.5rem 0'}}> <i className={`pr-4 fa ${isCurrentEventKey ? 'fa-minus' : 'fa-plus'}`} /> 
-      {children}
-    </h6>
+    <div className="d-flex align-items-center">
+      <i className={`pr-4 fa ${isCurrentEventKey ? 'fa-minus' : 'fa-plus'}`} />
+      <h6 style={{ padding: '0.5rem 0' }}>
+        {children}
+      </h6>
+    </div>
   );
 }
 
