@@ -248,7 +248,7 @@ class DiningInner extends Component {
       <div className="bg-white dining-inner-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'dining-inner'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={this.state.singleHotel?.post_name} image={this.state.singleHotel.thumbnail}/>
+        <Mainbanner title={this.state.singleHotel?.post_name} image={this.state.singleHotel?.images?.[this.state.singleHotel?.images?.length - 1]?.avatar}/>
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
