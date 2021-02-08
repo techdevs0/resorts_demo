@@ -50,7 +50,7 @@ class CovidPolicy extends Component {
       <div className="bg-white covid-policy-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'covid-policy'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Covid Policy"} image={bannerImage}/>
+        <Mainbanner title={"COVID Policy"} image={bannerImage}/>
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

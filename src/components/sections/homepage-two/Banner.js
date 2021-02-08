@@ -8,7 +8,7 @@ import bannerimg1 from '../../../assets/img/banner/home.jpg';
 
 const bannerPosts = [
   {
-    photo: require('../../../assets/img/banner/dining.jpg'),
+  //photo: require('../../../assets/img/banner/dining.jpg'),
     tag: '',
     taganimation: '.6s',
     title: "The Perfect \n Destination for you",
@@ -76,7 +76,7 @@ class Banner extends Component {
               </div>
             </div>
             {/* banner bg */}
-            <div className="banner-bg" style={{ backgroundImage: `url(${this.props.image || bannerimg1})`, backgroundPosition: 'bottom', backgroundSize: 'cover', backgroundAttachment: 'fixed' }} />
+            <div className="banner-bg" style={{ backgroundImage: `url(${this.props.image || bannerimg1})`, backgroundPosition: 'left', backgroundSize: 'cover'}} />
             <div className="banner-overly" />
           </div>
         ))}

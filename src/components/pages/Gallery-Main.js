@@ -9,7 +9,7 @@ import GalleryTitleBlock from '../sections/gallery/main-text-block';
 import GalleryGrid from '../sections/gallery/gallery-grid';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
-const bannerImage = require('./../../assets/img/banner/gallery-Banner.jpg');
+const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 const roomsData = [
   {

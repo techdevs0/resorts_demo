@@ -218,11 +218,13 @@ class RoomsInner extends Component {
   }
 
   render() {
+   
     return (
-      <div className="bg-white rooms-inner-wrapper">
+ 
+     <div className="bg-white rooms-inner-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'rooms-inner'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={this.state.singleRoom?.post_name} />
+        <Mainbanner title={this.state.singleRoom?.post_name} image={this.state.singleRoom.thumbnail}/>
         {/*====== BANNER PART ENDS ======*/}
         {/* BREADCRUMBS START */}
         <BreadCrumb items={breadcrumbItems} />
