@@ -11,7 +11,7 @@ class BookingFormVertical extends Component {
     checkOut: `${year}-${month}-${day2}`,
     adults: 1,
     rooms: 1,
-    childs: 1,
+    childs: 0,
     showCountPopup: false,
     showPromoPopup: false,
     chain: 27304,
