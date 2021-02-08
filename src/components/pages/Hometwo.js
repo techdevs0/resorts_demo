@@ -10,6 +10,7 @@ import GuestReviews from '../sections/homepage-two/GuestReviews';
 import ServiceTabs from '../sections/homepage-two/ServicesTabs';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import API from '../../utils/http';
+import bannerimg1 from '../../assets/img/banner/home.jpg';
 
 class Hometwo extends Component {
   state = {
@@ -41,7 +42,7 @@ class Hometwo extends Component {
       <div>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'home'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner isMain={true} title={"The Perfect Destination for You"}/>
+        <Mainbanner isMain={true} title={"The Perfect Destination for You"} image={bannerimg1} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform/>
