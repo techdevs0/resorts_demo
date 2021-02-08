@@ -205,6 +205,7 @@ class RoomsInner extends Component {
       //getting and appending images to single room data
       const imagesResponse = await API.get('/post_uploads/' + id);
       singleRoom.images = imagesResponse.data.filter(x => x["360_view"] == "");
+
       singleRoom.images360 = imagesResponse.data.filter(x => x["360_view"] == "1");
       this.setState({ singleRoom });
 
@@ -224,7 +225,7 @@ class RoomsInner extends Component {
      <div className="bg-white rooms-inner-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'rooms-inner'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={this.state.singleRoom?.post_name} image={this.state.singleRoom.thumbnail}/>
+        <Mainbanner title={this.state.singleRoom?.post_name} image={this.state.singleRoom?.images?.[this.state.singleRoom?.images?.length - 1]?.avatar}/>
         {/*====== BANNER PART ENDS ======*/}
         {/* BREADCRUMBS START */}
         <BreadCrumb items={breadcrumbItems} />
