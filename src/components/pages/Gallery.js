@@ -74,9 +74,9 @@ class Gallery extends Component {
             {galleryPosts.map((item, i) => (
               <ReactWOW key={i} animation="fadeInUp" data-wow-delay={item.anitime}>
               <div className="single-gallery-image">
-                <Link to={item.photo} className="popup-image">
+                {/* <Link to={item.photo} className="popup-image"> */}
                   <img src={item.photo} alt="Images" />
-                </Link>
+                {/* </Link> */}
               </div>
               </ReactWOW>
               ))}

@@ -133,9 +133,9 @@ const ServiceTabs = (props) => {
                                                 <h1 className="hotel-title my-4">
                                                     {x.short_description}
                                                 </h1>
-                                                <Link to={x.buttonLink}>
-                                                    <button className="main-btn btn-filled mt-4">KNOW MORE</button>
-                                                </Link>
+                                                <a href={x.route}>
+                                                    <button className="main-btn btn-filled mt-4" >KNOW MORE</button>
+                                                </a>
                                             </div>
                                         </div>
                                     </Grid>
