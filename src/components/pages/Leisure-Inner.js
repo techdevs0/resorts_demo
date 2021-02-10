@@ -8,6 +8,8 @@ import Subscribe from '../sections/common/Subscribe';
 import LeisureContentBlocks from '../sections/leisure-inner/content-blocks';
 import BreadCrumb from '../layouts/BreadCrumb';
 import FAQSection from '../sections/common/FAQSection';
+const bannerImage = require('./../../assets/img/banner/Leisure-banner.jpg');
+
 const activities = [
   {
     title: 'Water Activities',
@@ -103,7 +105,7 @@ class LeisureInner extends Component {
       <div className="bg-white leisure-inner-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'leisure-inner'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Other Resort Activities"} />
+        <Mainbanner title={"Other Resort Activities"} image={bannerImage}/>
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
