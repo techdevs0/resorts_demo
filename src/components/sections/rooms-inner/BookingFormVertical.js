@@ -6,17 +6,26 @@ const day = (new Date().getDate()).toString().length === 1 ? `0${new Date().getD
 const day2 = (new Date().getDate() + 1).toString().length === 1 ? `0${new Date().getDate() + 1}` : `${new Date().getDate() + 1}`;
 
 class BookingFormVertical extends Component {
-  state = {
-    checkIn: `${year}-${month}-${day}`,
-    checkOut: `${year}-${month}-${day2}`,
-    adults: 1,
-    rooms: 1,
-    childs: 0,
-    showCountPopup: false,
-    showPromoPopup: false,
-    chain: 27304,
-    hotel: 31842,
-    promo: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      checkIn: `${year}-${month}-${day}`,
+      checkOut: `${year}-${month}-${day2}`,
+      adults: 1,
+      rooms: 1,
+      childs: 0,
+      showCountPopup: false,
+      showPromoPopup: false,
+      chain: 27304,
+      hotel: 31842,
+      promo: ''
+    }
+    this.wrapperRef = React.createRef();
+    this.propmoWrapperRef = React.createRef();
+
+    // this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+
   }
 
   handleCheckInChange = (e) => {
@@ -29,6 +38,23 @@ class BookingFormVertical extends Component {
     const finalURL = `https://be.synxis.com/?adult=${this.state.adults}&arrive=${this.state.checkIn}&chain=${this.state.chain}&child=${this.state.childs}&currency=EUR&depart=${this.state.checkOut}&hotel=${this.state.hotel}&level=hotel&locale=en-US&room=${this.props.roomCode}&rooms=${this.state.rooms}`;
 
     window.open(finalURL, '_blank') || window.location.replace(finalURL);
+  }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  handleClickOutside(event) {
+    if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
+      this.setState({ showCountPopup: false })
+    }
+    if (this.propmoWrapperRef && !this.propmoWrapperRef.current.contains(event.target)) {
+      this.setState({ showPromoPopup: false })
+    }
   }
 
   render() {
@@ -47,8 +73,8 @@ class BookingFormVertical extends Component {
                 </div>
               </div>
               <div className="col-12 col-md-12">
-                <div className="room-details">
-                  <div className="count-group" onClick={() => this.setState({ showCountPopup: !showCountPopup, showPromoPopup: false })}>
+                <div className="room-details" ref={this.wrapperRef} onClick={() => this.setState({ showCountPopup: !showCountPopup, showPromoPopup: false })}>
+                  <div className="count-group" >
                     <p>{`${rooms} Room${rooms > 1 ? 's' : ''}`}</p>
                     <p>{`${adults} Adult${adults > 1 ? 's' : ''}`}</p>
                     <p>{`${childs} Child${childs > 1 ? 's' : ''}`}</p>
@@ -82,8 +108,8 @@ class BookingFormVertical extends Component {
                 </div>
               </div>
               <div className="col-12 col-md-12">
-                <div className="promo-codes-wrapper">
-                  <div className="promo-codes" onClick={() => this.setState({ showPromoPopup: !showPromoPopup, showCountPopup: false })}>
+                <div className="promo-codes-wrapper" ref={this.propmoWrapperRef} onClick={() => this.setState({ showPromoPopup: !showPromoPopup, showCountPopup: false })}>
+                  <div className="promo-codes" >
                     <p>Promo Codes</p>
                   </div>
                   <div className="promo-popup" style={{ display: showPromoPopup ? 'flex' : 'none' }}>
