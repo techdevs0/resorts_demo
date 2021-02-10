@@ -164,6 +164,12 @@
 			}
 			.banner-bg {
 				animation: zoomIn 15s linear infinite;
+				&.webp{
+					background-image: url('../../assets/img/banner/coral.avif');
+				}
+				&.avif{
+					background-image: url('../../assets/img/banner/coral.avif');
+				}
 			}
 		}
 		.banner-content {

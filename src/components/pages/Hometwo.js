@@ -10,7 +10,8 @@ import GuestReviews from '../sections/homepage-two/GuestReviews';
 import ServiceTabs from '../sections/homepage-two/ServicesTabs';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import API from '../../utils/http';
-import bannerimg1 from '../../assets/img/banner/home.jpg';
+import bannerimg1 from '../../assets/img/banner/coral.avif';
+// import bannerimg1 from '../../assets/img/banner/home.jpg';
 
 class Hometwo extends Component {
   state = {

@@ -12,6 +12,8 @@ import "../node_modules/slick-carousel/slick/slick.css";
 // import "../node_modules/slick-carousel/slick/slick.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './assets/css/default.css';
+import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
+
 // import './assets/css/style.css';
 
 import './App.scss';
