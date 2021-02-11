@@ -161,3 +161,88 @@
     }
   }
 }
+
+.wedding-form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#form-dialog-title {
+  h2 {
+    font-family: $mont;
+    margin: 1rem 0;
+    color: $secondary-color !important;
+    text-align: center;
+    font-size: 23px !important;
+  }
+}
+
+.wedding-form {
+  background-color: rgba($color: $black, $alpha: 0.03);
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  h3,
+  h4 {
+    font-style: italic;
+    font-family: $lora;
+    margin: 1rem 0;
+    color: $eden;
+  }
+  input,
+  select,
+  textarea {
+    background-color: #fff;
+    height: 40px;
+    border-radius: 4px;
+    padding-left: 20px;
+    padding-right: 10px;
+    // border: 1px solid $eden;
+    &:focus {
+      outline: none;
+    }
+  }
+  textarea {
+    height: auto;
+    resize: none;
+    padding-top: 10px;
+  }
+  .MuiInputBase-input {
+    color: $text-color;
+    padding: 0 10px 0 20px;
+    border: none;
+  }
+  .MuiFormControl-root{
+    // border: 1px solid $eden;
+    // border-radius: 4px;
+  }
+  .MuiInput-underline::before {
+    border: none !important;
+  }
+  
+  .MuiInput-underline::after {
+    border: none !important;
+  }
+  
+  .main-btn {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+  }
+  form {
+    margin: auto;
+    @media #{$sm} {
+      width: 100%;
+    }
+  }
+  
+}
+
+.submit-btn{
+  background-color: $eden !important;
+  color: $white !important;
+  margin:auto !important;
+  align-self: center !important;
+  margin-right: 1rem !important;
+  width: 100px !important;
+  border-radius: 0 !important;
+  display: block !important;
+}
