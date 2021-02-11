@@ -84,7 +84,7 @@ class Bookingform extends Component {
                                     </div>
                                     {
                                         showCountPopup ?
-                                            <div className="room-details-popup" style={{ display: showCountPopup ? 'block' : 'none' }}>
+                                            <div onClick={(e)=> e.stopPropagation()} className="room-details-popup" style={{ display: showCountPopup ? 'block' : 'none' }}>
                                                 <div className="room_item_box quantity">
                                                     <label>Rooms</label>
                                                     <div className="quantity-box">
@@ -120,7 +120,7 @@ class Bookingform extends Component {
                                     <div className="promo-codes">
                                         <p>Promo Codes</p>
                                     </div>
-                                    <div className="promo-popup" style={{ display: showPromoPopup ? 'flex' : 'none' }}>
+                                    <div className="promo-popup" onClick={(e)=> e.stopPropagation()} style={{ display: showPromoPopup ? 'flex' : 'none' }}>
                                         <div className="code-item">
                                             <label>Group Code/Promotion Code</label>
                                             <input type="text" onChange={(e) => this.setState({ promo: e.target.value })} className="form-control" />
