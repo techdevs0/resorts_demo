@@ -1,4 +1,5 @@
 export const formattedDate = (date, format) => {
+    date = new Date(date);
     if (format === "yyyy-MM-dd") {
 
         const year = `${date.getFullYear()}`;

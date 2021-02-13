@@ -85,8 +85,8 @@ export default function WeddingFormDialog() {
                 setRemarks('');
                 setContactNumber('');
                 setPackage('');
-                setPreferredDateOne(new Date());
-                setPreferredDateTwo(new Date());
+                setPreferredDateOne(formattedDate(new Date(), 'yyyy-MM-dd'));
+                setPreferredDateTwo(formattedDate(new Date(), 'yyyy-MM-dd'));
                 setPaxAmount('');
                 alert('Message Submitted. We will get in touch shortly.');
                 setOpen(false);
