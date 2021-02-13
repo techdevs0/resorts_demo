@@ -7,6 +7,7 @@ import API from '../../../utils/http';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { formattedDate } from '../../../utils/snippets.js';
 
 export default function WeddingFormDialog() {
 
@@ -21,8 +22,8 @@ export default function WeddingFormDialog() {
     const [package_chosen, setPackage] = useState('');
     const [remark, setRemarks] = useState('');
     const [number_of_pax, setPaxAmount] = useState(1);
-    const [pr_date_1, setPreferredDateOne] = useState(new Date());
-    const [pr_date_2, setPreferredDateTwo] = useState(new Date());
+    const [pr_date_1, setPreferredDateOne] = useState(formattedDate(new Date(), 'yyyy-MM-dd'));
+    const [pr_date_2, setPreferredDateTwo] = useState(formattedDate(new Date(), 'yyyy-MM-dd'));
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -69,7 +70,7 @@ export default function WeddingFormDialog() {
             return;
         }
         setIsLoading(true);
-        API.post('/book_wedding', JSON.stringify({ name, sr_name, address, package_chosen, remark, number_of_pax, nationality, contact_number, email, pr_date_1: pr_date_1.toLocaleDateString(), pr_date_2 }), {
+        API.post('/book_wedding', JSON.stringify({ name, sr_name, address, package_chosen, remark, number_of_pax, nationality, contact_number, email, pr_date_1: formattedDate(pr_date_1, 'yyyy-MM-dd'), pr_date_2: formattedDate(pr_date_2, 'yyyy-MM-dd') }), {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -147,7 +148,7 @@ export default function WeddingFormDialog() {
                                             <KeyboardDatePicker
                                                 disableToolbar
                                                 variant="inline"
-                                                format="dd/MM/yyyy"
+                                                format="yyyy-MM-dd"
                                                 margin="none"
                                                 id="date-picker-inline"
                                                 value={pr_date_1}
@@ -161,7 +162,7 @@ export default function WeddingFormDialog() {
                                             <KeyboardDatePicker
                                                 disableToolbar
                                                 variant="inline"
-                                                format="dd/MM/yyyy"
+                                                format="yyyy-MM-dd"
                                                 margin="none"
                                                 id="date-picker-inline"
                                                 value={pr_date_2}
