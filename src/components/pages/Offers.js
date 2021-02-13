@@ -8,6 +8,7 @@ import Subscribe from '../sections/common/Subscribe';
 import OfferTitleBlock from '../sections/offers/main-text-block';
 import OfferGrid from '../sections/offers/offer-grid';
 import BreadCrumb from '../layouts/BreadCrumb';
+const bannerImage = require('./../../assets/img/offers/stay.jpg');
 
 const roomsData = [
   {
@@ -81,7 +82,7 @@ class Offers extends Component {
       <div className="bg-white">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'offers'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Offers"} />
+        <Mainbanner title={"Offers"} image={bannerImage}/>
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />

@@ -8,7 +8,7 @@ import Subscribe from '../sections/common/Subscribe';
 import LeisureContentBlocks from '../sections/leisure-inner/content-blocks';
 import BreadCrumb from '../layouts/BreadCrumb';
 import FAQSection from '../sections/common/FAQSection';
-const bannerImage = require('./../../assets/img/banner/Leisure-banner.jpg');
+const bannerImage = require('./../../assets/img/banner/Leisure-inner.jpg');
 
 const activities = [
   {

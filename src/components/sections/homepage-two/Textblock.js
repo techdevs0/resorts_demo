@@ -11,7 +11,7 @@ class Textblock extends Component {
                         <div className="row align-items-center1 justify-content-space-between">
                             <div className="col-lg-6">
                                 <div className="text-img text-center text-lg-left mb-3 image-wrapper">
-                                    <img src={require('../../../assets/img/text-block/hotel.jpg')} alt="" />
+                                    <img src={require('../../../assets/img/text-block/hotel.webp')} alt="" />
                                 </div>
                             </div>
                             <ReactWOW animation="fadeInRight" data-wow-delay=".5s">
