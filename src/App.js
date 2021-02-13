@@ -57,7 +57,7 @@ const Leisure = lazy(() => import('./components/pages/Leisure'));
 const Sustainability = lazy(() => import('./components/pages/Sustainability'));
 const SpaWellness = lazy(() => import('./components/pages/SpaWellness'));
 const OffersInner = lazy(() => import('./components/pages/Offers-Inner'));
-const LeisureInner = lazy(() => import('./components/pages/Offers-Inner'));
+const LeisureInner = lazy(() => import('./components/pages/Leisure-Inner'));
 const RoomsInner = lazy(() => import('./components/pages/Rooms-Inner'));
 const GalleryMain = lazy(() => import('./components/pages/Gallery-Main'));
 const AboutSeychelles = lazy(() => import('./components/pages/AboutSeychelles'));
