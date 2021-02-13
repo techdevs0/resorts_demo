@@ -12,26 +12,6 @@ import API from '../../utils/http';
 
 const bannerImage = require('./../../assets/img/banner/spa-banner.jpg');
 
-const roomsData = [
-  {
-    title: "Paris Sychelles Restaurant",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-  },
-  {
-    title: "Lecardinal Restaurant",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-  },
-  {
-    title: "Superior Rooms",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/room-suites/room1.jpg'),
-  },
-]
 
 const breadcrumbItems = [
   {

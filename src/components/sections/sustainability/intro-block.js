@@ -19,7 +19,7 @@ It is a part of our core agenda to engage all the stakeholders to take concrete 
   </p>
           </div>
           <div className="intro-item img-wrapper">
-            <img className="img-thumbnail" src={require('./../../../assets/img/sustain/intro.jpg')} />
+            <img alt="" className="img-thumbnail" src={require('./../../../assets/img/sustain/intro.jpg')} />
           </div>
         </div>
       </div>

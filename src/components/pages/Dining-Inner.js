@@ -4,7 +4,7 @@ import Footertwo from '../layouts/Footertwo';
 import Mainbanner from '../sections/homepage-two/Banner';
 import Bookingform from '../sections/homepage-two/Bookingform';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
-import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
+// import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
 import DiningInnerTitleBlock from '../sections/dining-inner/main-text-block';
 import DiningInnerInfo from '../sections/dining-inner/dining-grid';
 import OtherRecommendations from '../sections/dining-inner/dining-inner-grid-item';
@@ -13,29 +13,6 @@ import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import FAQSection from '../sections/common/FAQSection';
 
-const roomsData = [
-  {
-    title: "Paris Sychelles Restaurant",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/junior.jpg')
-  },
-  {
-    title: "Lecardinal Restaurant",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/partial.jpg')
-  },
-  {
-    title: "Superior Rooms",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/deluxe.jpg')
-  },
-]
 
 // const breadcrumbItems=[
 //   {

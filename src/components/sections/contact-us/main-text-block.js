@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const ContactTitleBlock = (props) => {
   return (
@@ -54,7 +54,7 @@ Seychelles | PO Box 35<br />
             </div>
           </div>
           <div className="contact-title-item contact-map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8762101037164!2d55.41970441412309!3d-4.616162449621419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x22e02927aaaaaaab%3A0x790c58d365c53629!2sLe%20M%C3%A9ridien%20Fisherman&#39;s%20Cove!5e0!3m2!1sen!2s!4v1610996020682!5m2!1sen!2s" frameborder="0" style={{ border: 'none', width: '100%' }} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe title="contact-form" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8762101037164!2d55.41970441412309!3d-4.616162449621419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x22e02927aaaaaaab%3A0x790c58d365c53629!2sLe%20M%C3%A9ridien%20Fisherman&#39;s%20Cove!5e0!3m2!1sen!2s!4v1610996020682!5m2!1sen!2s" frameborder="0" style={{ border: 'none', width: '100%' }} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
         </div>
       </div>

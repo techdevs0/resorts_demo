@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 import API from '../../../utils/http';
 
 const ContactUsForm = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -9,40 +12,44 @@ const ContactUsForm = (props) => {
   const [message, setMessage] = useState('');
 
   const handleSubmit = () => {
-    if (firstName == "" || firstName == null) {
+    if (firstName === "" || firstName === null) {
       alert('Please enter first name');
       return;
     }
-    if (lastName == "" || lastName == null) {
+    if (lastName === "" || lastName === null) {
       alert('Please enter last name');
       return;
     }
-    if (email == "" || email == null) {
+    if (email === "" || email === null) {
       alert('Please enter email');
       return;
     }
-    if (subject == "" || subject == null) {
+    if (subject === "" || subject === null) {
       alert('Please enter subject');
       return;
     }
-    if (message == "" || message == null) {
+    if (message === "" || message === null) {
       alert('Please enter message');
       return;
     }
-    API.post('/contact', JSON.stringify({ fName:firstName, lName: lastName, email, subject, message }), {
+    setIsLoading(true);
+    API.post('/contact', JSON.stringify({ fName: firstName, lName: lastName, email, subject, message }), {
       headers: {
         'Content-Type': 'application/json'
       }
     }).then(response => {
       if (response.status == 200) {
-        setFirstName(null);
-        setLastName(null);
-        setEmail(null);
-        setSubject(null);
-        setMessage(null);
+        setIsLoading(false);
+
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
         alert('Message Submitted. We will get in touch shortly.');
       }
     }).catch(error => {
+      setIsLoading(false);
       console.log(error)
     });
   }
@@ -77,7 +84,12 @@ const ContactUsForm = (props) => {
                 </textarea>
               </div>
               <div className="col-12 text-center py-2 mt-2">
-                <button type="button" onClick={handleSubmit} className="main-btn btn-filled">Submit</button>
+                {
+                  isLoading ? <CircularProgress /> :
+                    <button type="button" onClick={handleSubmit} className="main-btn btn-filled">
+                      Submit
+                    </button>
+                }
               </div>
             </div>
           </div>

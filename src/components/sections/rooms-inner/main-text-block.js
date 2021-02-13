@@ -2,29 +2,6 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 
 
-const roomsData = [
-  {
-    title: "Paris Sychelles Restaurant",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../../assets/img/room-suites/room1.jpg')
-  },
-  {
-    title: "Lecardinal Restaurant",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../../assets/img/room-suites/suite1.jpg')
-  },
-  {
-    title: "Superior Rooms",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../../assets/img/room-suites/room1.jpg')
-  },
-]
 
 
 const RoomsInnerTitleBlock = (props) => {

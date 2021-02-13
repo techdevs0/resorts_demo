@@ -67,9 +67,9 @@ class BookingFormVertical extends Component {
             <div className="row">
               <div className="col-12 col-md-12">
                 <div className="dates-group">
-                  <input value={this.state.checkIn} onChange={this.handleCheckInChange} value={this.state.checkIn} type="date" className="form-control" placeholder="Check In" ></input>
+                  <input onChange={this.handleCheckInChange} value={this.state.checkIn} type="date" className="form-control" placeholder="Check In" ></input>
                   <span className="d-none d-sm-block">-</span>
-                  <input value={this.state.checkOut} onChange={this.handleCheckOutChange} value={this.state.checkOut} type="date" className="form-control" placeholder="Check Out" ></input>
+                  <input onChange={this.handleCheckOutChange} value={this.state.checkOut} type="date" className="form-control" placeholder="Check Out" ></input>
                 </div>
               </div>
               <div className="col-12 col-md-12">

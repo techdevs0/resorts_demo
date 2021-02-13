@@ -7,8 +7,6 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import PrivacyIntroBlock from '../sections/privacy-policy/intro-block';
-import PrivacyAcceptanceBlock from '../sections/privacy-policy/acceptance-block';
-import PrivacyInformationBlock from '../sections/privacy-policy/information-block';
 import API from '../../utils/http';
 const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 

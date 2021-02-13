@@ -11,57 +11,6 @@ import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
-const roomsData = [
-  {
-    title: "Save 25% on long stays",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/offers/stay.jpg')
-  },
-  {
-    title: "book early and save more",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/offers/book.jpg')
-  },
-  {
-    title: "Spa for Two",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/offers/spa.jpg')
-  },
-  {
-    title: "Long Stay with snorkeling",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/offers/snorkeling.jpg')
-  },
-  {
-    title: "Long stay with fishing",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/offers/fishing.jpg')
-  },
-  {
-    title: "Full board Package",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/offers/package.jpg')
-  },
-  {
-    title: "Honeymoon Offer",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/offers/honeymoon.jpg')
-  },
-]
 
 const breadcrumbItems=[
   {

@@ -22,7 +22,7 @@ const SpaWellnessTitleBlock = (props) => {
             </Link>
           </div>
           <div className="projects-item img-wrapper">
-            <img src={require('./../../../assets/img/spa/spa.jpg')} />
+            <img alt="" src={require('./../../../assets/img/spa/spa.jpg')} />
           </div>
         </div>
       </div>

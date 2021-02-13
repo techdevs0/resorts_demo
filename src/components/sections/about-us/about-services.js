@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
-import RoomGridItem from './about-grid-item';
+// import RoomGridItem from './about-grid-item';
 
 const AboutServices = (props) => {
   const services = [

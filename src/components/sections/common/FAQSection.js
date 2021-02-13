@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { AccordionContext, Card, useAccordionToggle } from 'react-bootstrap';
+import { AccordionContext, Card } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 
 
@@ -25,11 +25,11 @@ function ContextAwareToggle({ children, eventKey, callback }) {
 
 const FAQSection = (props) => {
 
-  const [currentIndex, setIndex] = useState(0);
+  // const [currentIndex, setIndex] = useState(0);
 
-  const setCurrentIndex = (index) => {
-    setIndex(index);
-  }
+  // const setCurrentIndex = (index) => {
+  //   setIndex(index);
+  // }
 
   return (
     <div className="faq-section-block my-3 my-sm-5">

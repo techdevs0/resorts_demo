@@ -12,60 +12,7 @@ import API from '../../utils/http';
 
 const bannerImage = require('./../../assets/img/banner/rooms.jpg');
 
-const roomsData = [
-  {
-    title: "Superior Rooms",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themselves away in these comfortable rooms located in the main building set to the rear of the hotel.",
-    image: require('./../../assets/img/room-suites/superior.jpg')
-  },
-  {
-    title: "Deluxe Ocean View Room",
-    link: "",
-    linkText: "View More",
-    description: "The deluxe ocean view rooms come with a private balcony providing seafront views of the crystal-clear turquoise sea.",
-    image: require('./../../assets/img/room-suites/deluxe.jpg')
-  },
-]
 
-const suitesData = [
-  {
-    title: "Family Suite Garden View",
-    link: "",
-    linkText: "View More",
-    description: "The high ceilings create an old-world charm. In addition to that, the dark wood furnishing and traditional wooden louvered windows complete the creole atmosphere.",
-    image: require('./../../assets/img/room-suites/family.jpg')
-  },
-  {
-    title: "Junior Suite Ocean View",
-    link: "",
-    linkText: "View More",
-    description: "Similar to the deluxe ocean view rooms, the Junior Suite Ocean view rooms are at ground level resting amongst verdant tropical fauna with a private balcony.",
-    image: require('./../../assets/img/room-suites/junior.jpg')
-  },
-  {
-    title: "Hilltop Executive Suites",
-    link: "",
-    linkText: "View More",
-    description: "Located on the higher elevation of the property, the hilltop suites offer panoramic views of the bay and ocean from the terrace.",
-    image: require('./../../assets/img/room-suites/hilltop.jpg')
-  },
-  {
-    title: "Executive suites Partial Ocean View",
-    link: "",
-    linkText: "View More",
-    description: "Along with the warm natural palette, uniquely creole décor adds to the unmatched luxury of these rooms.",
-    image: require('./../../assets/img/room-suites/partial.jpg')
-  },
-  {
-    title: "Executive Suites Ocean Front – Modern",
-    link: "",
-    linkText: "View More",
-    description: "Front-Modern meets traditional creole in these suites situated at sea level so all that stands between the room and the Indian ocean is an immaculate lawn.",
-    image: require('./../../assets/img/room-suites/executive.jpg')
-  },
-]
 
 const breadcrumbItems = [
   {
@@ -86,17 +33,14 @@ class RoomSuites extends Component {
     suitesData: [],
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     try {
-      const response = await API.get('/rooms', {
-        headers:{
-          'Content-Type': 'application/json'
-        }
-      });
-      console.log(response.data);
-      const roomsData = response.data.filter(x=> x.room_type==1);
-      const suitesData = response.data.filter(x=> x.room_type==2);
-      this.setState({ roomsData, suitesData });
+      API.get('/rooms').then(response=>{
+        const roomsData = response.data.filter(x=> x.room_type==1);
+        const suitesData = response.data.filter(x=> x.room_type==2);
+        this.setState({ roomsData, suitesData });
+      })
+      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }

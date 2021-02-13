@@ -1,36 +1,20 @@
 import React, { useState } from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+// import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import API from '../../../utils/http';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function WeddingFormDialog() {
 
-    // {
-
-    //     "name": "name",
-    //     "sr_name": "sr name",
-    //     "address": "address",
-    //     "nationality": "abc",
-    //     "contact_number": "986778",
-    //     "email": 1,
-    //     "package_chosen" : "slug",
-    //      "pr_date_1" : "01 day 2010",
-    //       "pr_date_2" : "01-2-2010",
-    //        "number_of_pax" : "number",
-    //         "Remark" : "remark"
-
-    // }
-
     const [open, setOpen] = React.useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [name, setFirstName] = useState('');
     const [sr_name, setLastName] = useState('');
+    const [email, setEmail] = useState('');
     const [nationality, setNationality] = useState('');
     const [contact_number, setContactNumber] = useState('');
     const [address, setAddress] = useState('');
@@ -48,74 +32,69 @@ export default function WeddingFormDialog() {
         setOpen(false);
     };
     const handleSubmit = () => {
-        if (name == "" || name == null) {
+        if (name === "" || name === null) {
             alert('Please enter first name');
             return;
         }
-        if (sr_name == "" || sr_name == null) {
+        if (sr_name === "" || sr_name === null) {
             alert('Please enter last name');
             return;
         }
-        if (address == "" || address == null) {
+        if (email === "" || email === null) {
+            alert('Please enter email address');
+            return;
+        }
+        if (address === "" || address === null) {
             alert('Please enter address');
             return;
         }
-        if (package_chosen == "" || package_chosen == null) {
+        if (package_chosen === "" || package_chosen === null) {
             alert('Please enter package_chosen');
             return;
         }
-        if (remark == "" || remark == null) {
+        if (remark === "" || remark === null) {
             alert('Please enter remark');
             return;
         }
-        if (number_of_pax == "" || number_of_pax == null) {
+        if (number_of_pax === "" || number_of_pax === null) {
             alert('Please enter number of Pax');
             return;
         }
-        if (nationality == "" || nationality == null) {
+        if (nationality === "" || nationality === null) {
             alert('Please enter nationality');
             return;
         }
-        if (contact_number == "" || contact_number == null) {
+        if (contact_number === "" || contact_number === null) {
             alert('Please enter contact number');
             return;
         }
-        API.post('/book_wedding', JSON.stringify({ name, sr_name, address, package_chosen, remark, number_of_pax, nationality, contact_number }), {
+        setIsLoading(true);
+        API.post('/book_wedding', JSON.stringify({ name, sr_name, address, package_chosen, remark, number_of_pax, nationality, contact_number, email, pr_date_1: pr_date_1.toLocaleDateString(), pr_date_2 }), {
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then(response => {
-            if (response.status == 200) {
-                setFirstName(null);
-                setLastName(null);
-                setAddress(null);
-                setNationality(null);
-                setRemarks(null);
-                setContactNumber(null);
-                setPackage(null);
-                setPreferredDateOne(null);
-                setPreferredDateTwo(null);
-                setPaxAmount(null);
+            if (response.status === 200) {
+                setIsLoading(false);
+                setFirstName('');
+                setLastName('');
+                setEmail('');
+                setAddress('');
+                setNationality('');
+                setRemarks('');
+                setContactNumber('');
+                setPackage('');
+                setPreferredDateOne(new Date());
+                setPreferredDateTwo(new Date());
+                setPaxAmount('');
                 alert('Message Submitted. We will get in touch shortly.');
+                setOpen(false);
             }
         }).catch(error => {
-            console.log(error)
+            console.log(error);
+            setIsLoading(false);
         });
     }
-
-
-    // wedding form detail fields:
-    // * Name
-    // * Surname
-    // * Address; Current address
-    // * Nationality
-    // * Contact Number
-    // * Email address
-    // * Package chosen
-    // * Preferred Date 1
-    // * Preferred Date 2
-    // * Number of Pax
-    // * Remark
 
     return (
         <div className="wedding-form-wrapper mt-3 mt-sm-5">
@@ -146,8 +125,11 @@ export default function WeddingFormDialog() {
                                         <div className="col-md-6 my-2">
                                             <input type="text" value={contact_number} onChange={(e) => setContactNumber(e.target.value)} placeholder="Contact Number" />
                                         </div>
-                                        <div className="col-md-12 my-2">
-                                            <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Address (Current Address)" />
+                                        <div className="col-md-6 my-2">
+                                            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+                                        </div>
+                                        <div className="col-md-6 my-2">
+                                            <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Current Address" />
                                         </div>
                                         <div className="col-md-6 my-2">
                                             <select value={package_chosen} onChange={(e) => setPackage(e.target.value)}>
@@ -165,7 +147,7 @@ export default function WeddingFormDialog() {
                                             <KeyboardDatePicker
                                                 disableToolbar
                                                 variant="inline"
-                                                format="MM/dd/yyyy"
+                                                format="dd/MM/yyyy"
                                                 margin="none"
                                                 id="date-picker-inline"
                                                 value={pr_date_1}
@@ -179,7 +161,7 @@ export default function WeddingFormDialog() {
                                             <KeyboardDatePicker
                                                 disableToolbar
                                                 variant="inline"
-                                                format="MM/dd/yyyy"
+                                                format="dd/MM/yyyy"
                                                 margin="none"
                                                 id="date-picker-inline"
                                                 value={pr_date_2}
@@ -195,7 +177,10 @@ export default function WeddingFormDialog() {
                                             </textarea>
                                         </div>
                                         <div className="col-12 text-center py-2 my-2">
-                                            <button type="button" onClick={handleSubmit} className="main-btn btn-filled btn-eden">Submit</button>
+                                            {
+                                                isLoading ? <CircularProgress /> :
+                                                    <button type="button" onClick={handleSubmit} className="main-btn btn-filled btn-eden">Submit</button>
+                                            }
                                         </div>
                                     </div>
                                 </form>
@@ -203,14 +188,6 @@ export default function WeddingFormDialog() {
                         </div>
                     </MuiPickersUtilsProvider>
                 </DialogContent>
-                {/* <DialogActions>
-                    <Button onClick={handleClose} color="primary">
-                        Cancel
-                    </Button>
-                    <Button onClick={handleClose} color="primary">
-                        Subscribe
-                    </Button>
-                </DialogActions> */}
             </Dialog>
         </div>
     );

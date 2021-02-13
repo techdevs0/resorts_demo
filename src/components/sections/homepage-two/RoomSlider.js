@@ -1,98 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { withRouter } from 'react-router-dom';
 // import Slider from "react-slick";
+const placeholderImage = require('./../../../assets/img/img-placeholder.png')
 
-const room1 = require('../../../assets/img/hotel/01.jpg');
-const room2 = require('../../../assets/img/hotel/02.jpg');
-const room3 = require('../../../assets/img/hotel/03.jpg');
-const room4 = require('../../../assets/img/hotel/04.jpg');
+const LazyImage = src => {
+    const [sourceLoaded, setSourceLoaded] = useState(null)
 
-const rooms = [
-    {
-        title: "Junior Suite King",
-        image: room1,
-        accomodation: {
-            left: 4,
-            sleeps: 2,
-            size: 'King',
-            area: 55,
-        },
-        additional_details_list: [
-            "King bed & Lounge area",
-            "Bathroom with bath, shower & toiletries",
-            "Air conditioning & Free WiFi",
-            "Balcony overlooking the resort gardens",
-            "Tea/coffee facilities & Minibar"
-        ],
-        rate: 1087.81,
-        original: 1200.05,
-        room_details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
-    },
-    {
-        title: "Garden Junior Suite King",
-        image: room2,
-        accomodation: {
-            left: 4,
-            sleeps: 2,
-            size: 'King',
-            area: 55,
-        },
-        additional_details_list: [
-            "King bed & Lounge area",
-            "King bed & Lounge area",
-            "Bathroom with bath, shower & toiletries",
-            "King bed & Lounge area",
-            "Air conditioning & Free WiFi",
-        ],
-        rate: 500.27,
-        original: 347.02,
-        room_details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
-    },
-    {
-        title: "Garden Junior Suite Twin",
-        image: room3,
-        accomodation: {
-            left: 4,
-            sleeps: 2,
-            size: 'King',
-            area: 55,
-        },
-        additional_details_list: [
-            "King bed & Lounge area",
-            "King bed & Lounge area",
-            "Bathroom with bath, shower & toiletries",
-            "King bed & Lounge area",
-            "Air conditioning & Free WiFi",
-        ],
-        rate: 1305.37,
-        original: 1500.78,
-        room_details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
-    },
-    {
-        title: "Grand Beach Villa With King Bed",
-        image: room4,
-        accomodation: {
-            left: 4,
-            sleeps: 2,
-            size: 'King',
-            area: 55,
-        },
-        additional_details_list: [
-            "King bed & Lounge area",
-            "King bed & Lounge area",
-            "Bathroom with bath, shower & toiletries",
-            "King bed & Lounge area",
-            "Air conditioning & Free WiFi",
-        ],
-        rate: 439.06,
-        original: 600.95,
-        room_details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
-    },
+    useEffect(() => {
+        const img = new Image()
+        img.src = src
+        img.onload = () => setSourceLoaded(src)
+    }, [src])
 
-]
+    return sourceLoaded
+}
 
 const RoomSlider = (props) => {
+
     return (
         <div className="room-slider-wrapper">
             <h2 className="section-heading text-muted">Breathtaking Tropical Paradise</h2>
@@ -111,7 +36,7 @@ const RoomSlider = (props) => {
                 className="room-carousel center"
                 interval={6000}
             >
-            {/* <Slider {...settings}> */}
+                {/* <Slider {...settings}> */}
                 {
                     props.data?.map(x => (
                         <div>
@@ -119,13 +44,13 @@ const RoomSlider = (props) => {
                                 <img src={x.thumbnail} alt="" />
                             </div>
                             <div className="slide-content py-3">
-                                <h1 style={{cursor:'pointer'}} onClick={()=> props.history.push("/rooms-inner/" + x.id)}>{x.post_name}</h1>
+                                <h1 style={{ cursor: 'pointer' }} onClick={() => props.history.push("/rooms-inner/" + x.id)}>{x.post_name}</h1>
                                 {/* <ul>
                                     {x.additional_details_list.map((li,index) => (
                                         <li key={index}>{li}</li>
                                     ))}
                                 </ul> */}
-                                <div dangerouslySetInnerHTML={{__html: x.short_description}}>
+                                <div dangerouslySetInnerHTML={{ __html: x.short_description }}>
 
                                 </div>
                                 <button className="main-btn btn-eden my-4" onClick={() => window.location = x.post_url}>BOOK NOW</button>
@@ -133,7 +58,7 @@ const RoomSlider = (props) => {
                         </div>
                     ))
                 }
-            {/* </Slider> */}
+                {/* </Slider> */}
             </Carousel>
         </div>
     );

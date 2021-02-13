@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { AccordionContext, Card, useAccordionToggle } from 'react-bootstrap';
+import { AccordionContext, Card } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
-import FAQCategories from './faq-categories';
+// import FAQCategories from './faq-categories';
 
 
 function ContextAwareToggle({ children, eventKey, callback }) {

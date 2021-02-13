@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const AboutTitleBlock = (props) => {
   return (
@@ -15,7 +15,7 @@ const AboutTitleBlock = (props) => {
             </p>
           </div>
           <div className="about-title-item img-wrapper">
-            <img src={require('./../../../assets/img/about/about-intro.jpg')} />
+            <img alt="" src={require('./../../../assets/img/about/about-intro.jpg')} />
           </div>
         </div>
       </div>

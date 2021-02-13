@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import LazyLoad from 'react-lazyload';
+
+//components
 import Headertwo from '../layouts/Headertwo';
 import Footertwo from '../layouts/Footertwo';
 import Mainbanner from '../sections/homepage-two/Banner';
@@ -19,20 +22,26 @@ class Hometwo extends Component {
     roomsData: []
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     try {
-      const response = await API.get('/premium_offers');
-      console.log(response.data);
-      this.setState({ premiumOffers: response.data })
+      API.get('/premium_offers').then(response => {
+        this.setState({ premiumOffers: response.data })
+      })
+      // console.log(response.data);
 
-      const roomsResponse = await API.get('/rooms', {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      console.log(roomsResponse.data);
-      const roomsData = roomsResponse.data;
-      this.setState({ roomsData });
+
+      API.get('/rooms').then(roomsResponse => {
+        const roomsData = roomsResponse.data;
+        this.setState({ roomsData });
+      })
+
+      // const roomsResponse = await API.get('/rooms', {
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   }
+      // });
+      // console.log(roomsResponse.data);
+
 
     } catch (error) {
       console.log(error)
@@ -43,13 +52,16 @@ class Hometwo extends Component {
       <div>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'home'} />
         {/*====== BANNER PART START ======*/}
+        {/* <LazyLoad> */}
         <Mainbanner isMain={true} title={"The Perfect Destination for You"} image={bannerimg1} />
+        {/* </LazyLoad> */}
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
         {/*====== BOOKING FORM END ======*/}
         {/*====== ROOM SLIDER START ======*/}
         <RoomSlider data={this.state.roomsData} />
+
         {/*====== ROOM SLIDER END ======*/}
         {/*====== TEXT BLOCK START ======*/}
         <Textblock />

@@ -8,7 +8,7 @@ const OffersInnerMainBlock = (props) => {
         <h2>Spa for Two</h2>
         <div className="d-flex flex-wrap title-flex">
           <div className="main-item img-wrapper">
-            <img src={require('./../../../assets/img/offers/inner.jpg')} />
+            <img alt="" src={require('./../../../assets/img/offers/inner.jpg')} />
           </div>
           <div className="main-item pl-sm-4">
             <p className="text-justify ">

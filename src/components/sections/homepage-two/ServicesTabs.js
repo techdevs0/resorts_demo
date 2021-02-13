@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -6,46 +6,20 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { Grid, Paper } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+const placeholderImage = require('./../../../assets/img/img-placeholder.png')
 
-const tabsData = [
-    {
-        tagLine: "Wedding In Seychelles",
-        title: "Plan Your Dream Wedding Today",
-        image: require("../../../assets/img/premium-offering/leisure.jpg"),
-        buttonLink: "/whats-on"
-    },
-    {
-        tagLine: "Wedding In Seychelles",
-        title: "Plan Your Dream Wedding Today",
-        image: require("../../../assets/img/premium-offering/book.jpg"),
-        buttonLink: "room-suites"
-    },
-    {
-        tagLine: "Wedding In Seychelles",
-        title: "Plan Your Dream Wedding Today",
-        image: require("../../../assets/img/premium-offering/wedding.jpg"),
-        buttonLink: "/weddings"
-    },
-    {
-        tagLine: "Wedding In Seychelles",
-        title: "Plan Your Dream Wedding Today",
-        image: require("../../../assets/img/premium-offering/offer.jpg"),
-        buttonLink: "/offers"
-    },
-    {
-        tagLine: "Wedding In Seychelles",
-        title: "Plan Your Dream Wedding Today",
-        image: require("../../../assets/img/premium-offering/spa.jpg"),
-        buttonLink: "/spa-wellness"
-    },
-    {
-        tagLine: "Wedding In Seychelles",
-        title: "Plan Your Dream Wedding Today",
-        image: require("../../../assets/img/premium-offering/food.jpg"),
-        buttonLink: "/dining"
-    },
-]
+
+const LazyImage = src => {
+    const [sourceLoaded, setSourceLoaded] = useState(null)
+
+    useEffect(() => {
+        const img = new Image()
+        img.src = src
+        img.onload = () => setSourceLoaded(src)
+    }, [src])
+
+    return sourceLoaded
+}
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -125,7 +99,8 @@ const ServiceTabs = (props) => {
                                 <Grid container spacing={0}>
                                     <Grid item xs={12} sm={12} className="px-0 py-0">
                                         <div className="slider-image-wrapper-service">
-                                            <img src={x.thumbnail} alt={x.title} />
+                                            <img src={x.thumbnail} alt={x.title || ""} />
+
                                             <div className="hotel-title-wrapper">
                                                 <h4 className="hotel-tagline my-3">
                                                     {x.post_name}

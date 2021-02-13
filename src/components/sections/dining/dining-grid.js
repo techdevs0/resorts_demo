@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import RoomGridItem from './dining-grid-item';
 
 const DiningGrid = (props) => {

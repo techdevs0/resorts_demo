@@ -6,74 +6,14 @@ import Bookingform from '../sections/homepage-two/Bookingform';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import DiningTitleBlock from '../sections/dining/main-text-block';
 import DiningGrid from '../sections/dining/dining-grid';
-import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
+// import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import FAQSection from '../sections/common/FAQSection';
 const bannerImage = require('./../../assets/img/banner/dining.jpg');
 
-const roomsData = [
-  {
-    title: "Paris Seychelles Restaurant",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/dining/paris.jpg')
-  },
-  {
-    title: "Le Cardinal Restaurant",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/dining/cardinal.jpg')
-  },
-  {
-    title: "Le Cocoloba Bar",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/dining/cocoloba.jpg')
-  },
-  {
-    title: "Sunset Bar",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/dining/sunset.jpg')
-  },
-]
 
-const offersData = [
-  {
-    title: "Family Suite Garden View",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
-  },
-  {
-    title: "Paris Seychelles",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
-  },
-  {
-    title: "Family Suite Garden View",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/room1.jpg')
-  },
-  {
-    title: "Paris Seychelles",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/suite1.jpg')
-  },
-]
 
 const faqList = [
   {
@@ -97,12 +37,12 @@ Fishermans Cove Resort ,
 Constance Lemuria.
 
     `,
-    category:'policy'
+    category: 'policy'
   },
   {
     question: 'Is Seychelles expensive in terms of eating and drinking?',
     answer: `Seychelles restaurants can sometimes be expensive. However, there are countless options to choose from and it depends on how much you are willing to spend. There is no end to luxury so be smart while planning to go out.`,
-    category:'policy'
+    category: 'policy'
   },
 
   {
@@ -114,19 +54,19 @@ Constance Lemuria.
     Le Rendevous Café ,
     Paris Seychelles Restaurant .
     `,
-    category:'policy'
+    category: 'policy'
   },
 ]
 
-const breadcrumbItems=[
+const breadcrumbItems = [
   {
     text: 'Fishermans Cove Resort',
-    link:'/',
+    link: '/',
     isActive: false,
   },
   {
     text: 'Dining',
-    link:'/dining',
+    link: '/dining',
     isActive: true,
   },
 ]
@@ -136,11 +76,12 @@ class Dining extends Component {
     diningData: [],
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     try {
-      const response = await API.get('/dining');
-      console.log(response.data);
-      this.setState({ diningData: response.data });
+      API.get('/dining').then(response => {
+        this.setState({ diningData: response.data });
+      })
+      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -149,7 +90,7 @@ class Dining extends Component {
   render() {
     return (
       <div className="bg-white">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'dining'} />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'dining'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Dining"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}

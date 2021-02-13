@@ -6,7 +6,7 @@ const SustainPillarsBlock = (props) => {
       <div className="container">
         <div className="d-flex flex-wrap title-flex">
           <div className="pillars-item img-wrapper">
-            <img className="img-thumbnail" src={require('./../../../assets/img/sustain/pillars.jpg')} />
+            <img alt="" className="img-thumbnail" src={require('./../../../assets/img/sustain/pillars.jpg')} />
           </div>
           <div className="pillars-item">
             <h3 className="ml-sm-4">reduce, reuse, recycle</h3>

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import ReactWOW from 'react-wow'
 
-const image = require('../../../assets/img/banner-widget.jpg');
 
 const data = [
     {

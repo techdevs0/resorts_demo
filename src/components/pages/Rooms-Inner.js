@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Headertwo from '../layouts/Headertwo';
 import Footertwo from '../layouts/Footertwo';
 import Mainbanner from '../sections/homepage-two/Banner';
-import Bookingform from '../sections/homepage-two/Bookingform';
+// import Bookingform from '../sections/homepage-two/Bookingform';
 import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import OtherRecommendations from '../sections/rooms-inner/dining-inner-grid-item';
 import Subscribe from '../sections/common/Subscribe';
@@ -14,29 +14,6 @@ import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import FAQSection from '../sections/common/FAQSection';
 
-const roomsData = [
-  {
-    title: "Paris Sychelles Restaurant",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/junior.jpg')
-  },
-  {
-    title: "Lecardinal Restaurant",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/partial.jpg')
-  },
-  {
-    title: "Superior Rooms",
-    link: "",
-    linkText: "View More",
-    description: "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require('./../../assets/img/room-suites/deluxe.jpg')
-  },
-]
 
 const faqList = [
   {
@@ -219,7 +196,6 @@ class RoomsInner extends Component {
   }
 
   render() {
-     {console.log(this.state.singleRoom.images);}
     return (
  
      <div className="bg-white rooms-inner-wrapper">
