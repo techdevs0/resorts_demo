@@ -21,9 +21,9 @@ export default function WeddingFormDialog() {
     const [address, setAddress] = useState('');
     const [package_chosen, setPackage] = useState('');
     const [remark, setRemarks] = useState('');
-    const [number_of_pax, setPaxAmount] = useState(1);
-    const [pr_date_1, setPreferredDateOne] = useState(formattedDate(new Date(), 'yyyy-MM-dd'));
-    const [pr_date_2, setPreferredDateTwo] = useState(formattedDate(new Date(), 'yyyy-MM-dd'));
+    const [number_of_pax, setPaxAmount] = useState('');
+    const [pr_date_1, setPreferredDateOne] = useState(null);
+    const [pr_date_2, setPreferredDateTwo] = useState(null);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -103,10 +103,10 @@ export default function WeddingFormDialog() {
                 Book Now
             </button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">
+                <DialogTitle className="py-2" id="form-dialog-title">
                     Book Your Wedding Destination
                 </DialogTitle>
-                <DialogContent>
+                <DialogContent className="pt-0">
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
 
                         <div className="wedding-form">
@@ -152,6 +152,7 @@ export default function WeddingFormDialog() {
                                                 margin="none"
                                                 id="date-picker-inline"
                                                 value={pr_date_1}
+                                                placeholder="Preferred Date 1"
                                                 onChange={(date => setPreferredDateOne(date))}
                                                 KeyboardButtonProps={{
                                                     'aria-label': 'change date',
@@ -166,6 +167,7 @@ export default function WeddingFormDialog() {
                                                 margin="none"
                                                 id="date-picker-inline"
                                                 value={pr_date_2}
+                                                placeholder="Preferred Date 2"
                                                 onChange={(date => setPreferredDateTwo(date))}
                                                 KeyboardButtonProps={{
                                                     'aria-label': 'change date',
