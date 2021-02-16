@@ -7,6 +7,7 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import OffersInnerMainBlock from '../sections/offers-inner/offers-inner-block';
 import BreadCrumb from '../layouts/BreadCrumb';
+const bannerImage = require('./../../assets/img/banner/Leisure-inner.jpg');
 
 
 const breadcrumbItems=[
@@ -33,7 +34,7 @@ class OffersInner extends Component {
       <div className="bg-white offers-inner-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'offers-inner'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Spa for Two"} />
+        <Mainbanner title={"Spa for Two"} image={bannerImage}/>
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
