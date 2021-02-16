@@ -142,7 +142,11 @@ export default function WeddingFormDialog() {
                                             </select>
                                         </div>
                                         <div className="col-md-6 my-2">
-                                            <input type="number" value={number_of_pax} onChange={(e) => setPaxAmount(e.target.value)} placeholder="Number of Pax" />
+                                            <input type="number" value={number_of_pax} onChange={(e) => {
+                                                if (e.target.value > -1) {
+                                                    setPaxAmount(e.target.value)
+                                                }
+                                            }} placeholder="Number of Pax" />
                                         </div>
                                         <div className="col-md-6 my-2">
                                             <KeyboardDatePicker
