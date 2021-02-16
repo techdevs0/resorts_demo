@@ -200,7 +200,14 @@
     &:focus {
       outline: none;
     }
+    &::placeholder {
+      color: $text-color !important;
+      opacity: 1 !important;
+    }
   }
+  // #date-picker-inline::placeholder, .MuiInputBase-input, MuiInputBase-input::placeholder   {
+  //   color: $text-color !important;
+  // }
   textarea {
     height: auto;
     resize: none;
@@ -211,18 +218,18 @@
     padding: 0 10px 0 20px;
     border: none;
   }
-  .MuiFormControl-root{
+  .MuiFormControl-root {
     // border: 1px solid $eden;
     // border-radius: 4px;
   }
   .MuiInput-underline::before {
     border: none !important;
   }
-  
+
   .MuiInput-underline::after {
     border: none !important;
   }
-  
+
   .main-btn {
     background-color: $secondary-color;
     border-color: $secondary-color;
@@ -233,13 +240,12 @@
       width: 100%;
     }
   }
-  
 }
 
-.submit-btn{
+.submit-btn {
   background-color: $eden !important;
   color: $white !important;
-  margin:auto !important;
+  margin: auto !important;
   align-self: center !important;
   margin-right: 1rem !important;
   width: 100px !important;
