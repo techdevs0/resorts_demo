@@ -262,15 +262,15 @@ class Headertwo extends Component {
                 {/* Mneu Items */}
 
                 <div className="flags-row d-none d-md-flex">
-                  <div>
+                  {/* <div>
                     <img src={require('./../../assets/img/flags/flag1.png')} alt="flag" />
-                  </div>
+                  </div> 
                   <div>
                     <img src={require('./../../assets/img/flags/flag2.png')} alt="flag" />
                   </div>
                   <div>
                     <img src={require('./../../assets/img/flags/flag3.png')} alt="flag" />
-                  </div>
+                  </div> */}
 
                 </div>
                 <div className="menu-items d-sm-none">
@@ -392,7 +392,7 @@ class Headertwo extends Component {
                   </div>
                 </li>
                 <li><Link to="/weddings">Weddings</Link></li>
-                <li><Link to="/offers">Offers</Link></li>
+                {/* <li><Link to="/offers">Offers</Link></li> */}
                 <li><Link to="/whats-on">Leisure Activities</Link></li>
                 <li><Link to="/sustainability">Sustainability</Link></li>
                 <li><Link to="/spa-wellness">Spa &amp; Wellness</Link></li>
