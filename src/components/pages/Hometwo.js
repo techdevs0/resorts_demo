@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import LazyLoad from 'react-lazyload';
 
 //components
 import Headertwo from '../layouts/Headertwo';

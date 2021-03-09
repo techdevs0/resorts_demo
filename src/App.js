@@ -43,6 +43,7 @@ import Preloader from './components/layouts/Preloader';
 // import FAQ from './components/pages/FAQ';
 
 import ScrollToTop from './components/layouts/ScrollToTop';
+import Error404 from './components/pages/Error404';
 
 // ********* lazy loading componentes *******
 const Hometwo = lazy(() => import('./components/pages/Hometwo'));
@@ -118,7 +119,7 @@ function App() {
           <Route path='/cancellation-policy' render={(props) => <CancellationPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path='/covid-policy' render={(props) => <CovidPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path='/faq' render={(props) => <FAQ {...props} isMobile={isMobile} isTop={isTop} />} />
-          <Route path='/' component={() => <div className="vh-100 d-flex align-items-center justify-content-center"><h1 className="display-3">Error 404! Page Not Found.</h1></div>} />
+          <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
         </Switch>
       </Suspense>
     </Router>

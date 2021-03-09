@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Helmet } from "react-helmet";
+
 import Headertwo from '../layouts/Headertwo';
 import Footertwo from '../layouts/Footertwo';
 import Mainbanner from '../sections/homepage-two/Banner';
@@ -197,11 +199,22 @@ class RoomsInner extends Component {
 
   render() {
     return (
- 
-     <div className="bg-white rooms-inner-wrapper">
+
+      <div className="bg-white rooms-inner-wrapper">
+        {/* SEO TAG */}
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>
+            {
+              this.state.singleRoom?.post_name || "Fishermans Cove Resort"
+            }
+          </title>
+        </Helmet>
+        {/* SEO TAG END  */}
+
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'rooms-inner'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={this.state.singleRoom?.post_name} image={this.state.singleRoom?.images?.[this.state.singleRoom?.images?.length - 1]?.avatar}/>
+        <Mainbanner title={this.state.singleRoom?.post_name} image={this.state.singleRoom?.images?.[this.state.singleRoom?.images?.length - 1]?.avatar} />
         {/*====== BANNER PART ENDS ======*/}
         {/* BREADCRUMBS START */}
         <BreadCrumb items={breadcrumbItems} />
