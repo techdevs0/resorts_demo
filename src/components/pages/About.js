@@ -11,6 +11,7 @@ import AboutOfferSlider from '../sections/about-us/about-offer-slider';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
+import PageLayout from '../layouts/PageLayout';
 
 const bannerImage = require('./../../assets/img/banner/about.jpg');
 
@@ -71,34 +72,40 @@ class AboutUs extends Component {
   render() {
     return (
       <div className="bg-white about-us-wrapper">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'about'} />
-        {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"About Us"} image={bannerImage} />
-        {/*====== BANNER PART ENDS ======*/}
-        {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
-        {/*====== BOOKING FORM END ======*/}
-        {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems} />
-        {/* BREADCRUMBS END */}
-        {/*====== TITLE START ======*/}
-        <AboutTitleBlock />
-        {/*====== TITLE END ======*/}
-        {/*====== SERVICES START ======*/}
-        <AboutServices data={roomsData} />
-        {/*====== SERVICES END ======*/}
-        {/*====== SECONDARY START ======*/}
-        <AboutSecondaryTextBlock />
-        {/*====== SECONDARY END ======*/}
-        {/*====== ABOUT SLIDER START ======*/}
-        <AboutOfferSlider data={this.state.premiumOffers} title={"Explore Fishermans Cove Resort Premium Offerings"} />
-        {/*====== ABOUT SLIDER END ======*/}
+        <PageLayout
+          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop, key: 'about' }}
+          banner={{ title: "About Us", image: bannerImage }}
+          breadCrumb={{ items: breadcrumbItems }}
+        >
+          {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'about'} /> */}
+          {/*====== BANNER PART START ======*/}
+          {/* <Mainbanner title={"About Us"} image={bannerImage} /> */}
+          {/*====== BANNER PART ENDS ======*/}
+          {/*====== BOOKING FORM START ======*/}
+          {/* <Bookingform /> */}
+          {/*====== BOOKING FORM END ======*/}
+          {/* BREADCRUMBS START */}
+          {/* <BreadCrumb items={breadcrumbItems} /> */}
+          {/* BREADCRUMBS END */}
+          {/*====== TITLE START ======*/}
+          <AboutTitleBlock />
+          {/*====== TITLE END ======*/}
+          {/*====== SERVICES START ======*/}
+          <AboutServices data={roomsData} />
+          {/*====== SERVICES END ======*/}
+          {/*====== SECONDARY START ======*/}
+          <AboutSecondaryTextBlock />
+          {/*====== SECONDARY END ======*/}
+          {/*====== ABOUT SLIDER START ======*/}
+          <AboutOfferSlider data={this.state.premiumOffers} title={"Explore Fishermans Cove Resort Premium Offerings"} />
+          {/*====== ABOUT SLIDER END ======*/}
 
-        <Subscribe />
+          {/* <Subscribe />
 
         <Footertwo />
 
-        <BottomNavigator />
+        <BottomNavigator /> */}
+        </PageLayout>
       </div>
     );
   }

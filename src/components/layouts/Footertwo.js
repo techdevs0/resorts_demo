@@ -57,9 +57,9 @@ class Footertwo extends Component {
                       <h4 className="widget-title">Services</h4>
                       <ul>
 
-                      <li><Link to="/about">About Us</Link></li>
+                      <li><Link to="/about-us">About Us</Link></li>
                         
-                        <li><Link to="/weddings">Weddings </Link></li>
+                        <li><Link to="/wedding">Weddings </Link></li>
                         
                         <li><Link to="/room-suites">Rooms &amp; Suites</Link></li>
                         <li><Link to="/sustainability">Sustainability</Link></li>

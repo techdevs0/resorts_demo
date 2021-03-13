@@ -11,7 +11,7 @@ let navigationmenu = [
     id: 1,
     linkText: 'About Us',
     child: false,
-    link: "/about",
+    link: "/about-us",
   },
   {
 
@@ -32,7 +32,7 @@ let navigationmenu = [
   },
   {
     id: 4,
-    link: '/weddings',
+    link: '/wedding',
     linkText: 'Weddings',
     child: false,
   },
@@ -98,41 +98,16 @@ class Headertwo extends Component {
       isRoomSubMenuOpen: false,
       diningSubMenu: [],
       roomSubMenu: [],
-      searchResults: ''
+      searchResults: '',
+      navigationmenu: [],
+      widgetMenuLinks: []
     };
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
     this.removeAll = this.removeAll.bind(this);
   }
 
-  toggleDiningMenu = () => {
-    this.setState({
-      isDiningSubMenuOpen: !this.state.isDiningSubMenuOpen,
-      isRoomSubMenuOpen: false,
-    });
-  }
-  toggleRoomMenu = () => {
-    this.setState({
-      isRoomSubMenuOpen: !this.state.isRoomSubMenuOpen,
-      isDiningSubMenuOpen: false,
-    });
-  }
-  addClass() {
-    this.setState({
-      redText: true
-    });
-  }
 
-  removeClass() {
-    this.setState({
-      redText: false
-    });
-  }
-  removeAll() {
-    this.setState({
-      redText: false
-    });
-  }
   async componentDidMount() {
     window.addEventListener('resize', () => {
       this.setState({
@@ -151,6 +126,13 @@ class Headertwo extends Component {
     }, false);
 
     try {
+
+      const menuResponse = await API.get('/get_widgets/header');
+      let menuLinks = menuResponse.data.find(x => x.widget_name === "menuItems")?.items;
+      if (menuLinks) {
+        this.setState({ widgetMenuLinks: JSON.parse(menuLinks) })
+      }
+
       const diningResponse = await API.get('/dining');
       this.setState({ diningSubMenu: diningResponse.data });
 
@@ -200,6 +182,40 @@ class Headertwo extends Component {
     }
   }
 
+
+  toggleDiningMenu = () => {
+    this.setState({
+      isDiningSubMenuOpen: !this.state.isDiningSubMenuOpen,
+      isRoomSubMenuOpen: false,
+    });
+  }
+  toggleRoomMenu = () => {
+    this.setState({
+      isRoomSubMenuOpen: !this.state.isRoomSubMenuOpen,
+      isDiningSubMenuOpen: false,
+    });
+  }
+  toggleSubMenu = (text) => {
+    this.setState({
+      [text]: !this.state[text],
+    });
+  }
+  addClass() {
+    this.setState({
+      redText: true
+    });
+  }
+
+  removeClass() {
+    this.setState({
+      redText: false
+    });
+  }
+  removeAll() {
+    this.setState({
+      redText: false
+    });
+  }
   navToggle = () => {
     const nv = findDOMNode(this.refs.navmenu);
     const nvb = findDOMNode(this.refs.navbtn);
@@ -364,7 +380,7 @@ class Headertwo extends Component {
             <div className="widget nav-widget">
               <h5 className="widget-title">Explore Fishermans Cove Resort</h5>
               <ul>
-                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/about-us">About Us</Link></li>
                 <li>
                   <Link to="#" onClick={this.toggleDiningMenu}>Dining &nbsp; <i className={`far ${this.state.isDiningSubMenuOpen ? 'fa-minus' : 'fa-plus'}`} /></Link>
                   <div className={"sidebar-submenu collapse" + (this.state.isDiningSubMenuOpen ? ' show' : '')}>
@@ -391,14 +407,40 @@ class Headertwo extends Component {
                     </ul>
                   </div>
                 </li>
-                <li><Link to="/weddings">Weddings</Link></li>
+
                 {/* <li><Link to="/offers">Offers</Link></li> */}
+
+                {/* <li><Link to="/wedding">Weddings</Link></li>
                 <li><Link to="/whats-on">Leisure Activities</Link></li>
                 <li><Link to="/sustainability">Sustainability</Link></li>
                 <li><Link to="/spa-wellness">Spa &amp; Wellness</Link></li>
                 <li><Link to="/about-seychelles">About Seychelles</Link></li>
                 <li><Link to="/gallery">Gallery</Link></li>
-                <li><Link to="/contact">Contact Us</Link></li>
+                <li><Link to="/contact">Contact Us</Link></li> */}
+
+                {
+                  this.state.widgetMenuLinks?.map(x => (
+                    !x.subMenu?.length > 0 ?
+                      <li className="text-capitalize"><Link to={x.inner_route}>{x.text}</Link></li>
+                      :
+                      <li>
+                        <Link to="#" onClick={()=>this.toggleSubMenu(x.text)}>
+                          {x.text} &nbsp; <i className={`far ${this.state[x.text] ? 'fa-minus' : 'fa-plus'}`} />
+                        </Link>
+                        <div className={"sidebar-submenu collapse" + (this.state[x.text] ? ' show' : '')}>
+                          <ul>
+                            {/* <li key={"all"}><Link to={`/room-suites`}>{"Rooms & Suites Types"}</Link></li> */}
+                            {
+                              x.subMenu?.map(y => (
+                                <li key={y.id}><Link to={y.inner_route}>{y.text}</Link></li>
+                              ))
+                            }
+                          </ul>
+                        </div>
+                      </li>
+                  ))
+                }
+
               </ul>
             </div>
             {/* Social Link */}
