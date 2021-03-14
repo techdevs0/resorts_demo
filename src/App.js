@@ -113,7 +113,11 @@ function App() {
         )
       case "dining-inner":
         return (
-          <Route path={`/${route}`} render={(props) => <DiningInner {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${inner_route}/:id`} render={(props) => <DiningInner {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "rooms-inner":
+        return (
+          <Route path={`/${inner_route}/:id`} render={(props) => <RoomsInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "sustainability":
         return (

@@ -380,7 +380,7 @@ class Headertwo extends Component {
             <div className="widget nav-widget">
               <h5 className="widget-title">Explore Fishermans Cove Resort</h5>
               <ul>
-                <li><Link to="/about-us">About Us</Link></li>
+                {/* <li><Link to="/about-us">About Us</Link></li>
                 <li>
                   <Link to="#" onClick={this.toggleDiningMenu}>Dining &nbsp; <i className={`far ${this.state.isDiningSubMenuOpen ? 'fa-minus' : 'fa-plus'}`} /></Link>
                   <div className={"sidebar-submenu collapse" + (this.state.isDiningSubMenuOpen ? ' show' : '')}>
@@ -406,7 +406,7 @@ class Headertwo extends Component {
                       }
                     </ul>
                   </div>
-                </li>
+                </li> */}
 
                 {/* <li><Link to="/offers">Offers</Link></li> */}
 
@@ -421,10 +421,10 @@ class Headertwo extends Component {
                 {
                   this.state.widgetMenuLinks?.map(x => (
                     !x.subMenu?.length > 0 ?
-                      <li className="text-capitalize"><Link to={x.inner_route}>{x.text}</Link></li>
+                      <li className="text-capitalize"><Link to={`/${x.address}`}>{x.text}</Link></li>
                       :
                       <li>
-                        <Link to="#" onClick={()=>this.toggleSubMenu(x.text)}>
+                        <Link to="#" onClick={() => this.toggleSubMenu(x.text)}>
                           {x.text} &nbsp; <i className={`far ${this.state[x.text] ? 'fa-minus' : 'fa-plus'}`} />
                         </Link>
                         <div className={"sidebar-submenu collapse" + (this.state[x.text] ? ' show' : '')}>
@@ -432,7 +432,7 @@ class Headertwo extends Component {
                             {/* <li key={"all"}><Link to={`/room-suites`}>{"Rooms & Suites Types"}</Link></li> */}
                             {
                               x.subMenu?.map(y => (
-                                <li key={y.id}><Link to={y.inner_route}>{y.text}</Link></li>
+                                <li key={y.id}><Link to={`/${y.base_url}/${y.address}`}>{y.text}</Link></li>
                               ))
                             }
                           </ul>

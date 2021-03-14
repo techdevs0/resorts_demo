@@ -15,6 +15,7 @@ import BookingFormVertical from '../sections/rooms-inner/BookingFormVertical';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import FAQSection from '../sections/common/FAQSection';
+import PageLayout from '../layouts/PageLayout';
 
 
 const faqList = [
@@ -181,11 +182,12 @@ class RoomsInner extends Component {
       let singleRoom = response.data;
 
       singleRoom.roomCode = singleRoom?.post_url?.split("room=")[1]
-      //getting and appending images to single room data
-      const imagesResponse = await API.get('/post_uploads/' + id);
-      singleRoom.images = imagesResponse.data.filter(x => x["360_view"] == "");
 
-      singleRoom.images360 = imagesResponse.data.filter(x => x["360_view"] == "1");
+      //getting and appending images to single room data
+      // const imagesResponse = await API.get('/post_uploads/' + id);
+      // singleRoom.images = imagesResponse.data.filter(x => x["360_view"] == "");
+
+      // singleRoom.images360 = imagesResponse.data.filter(x => x["360_view"] == "1");
       this.setState({ singleRoom });
 
       //fetching others room data for
@@ -203,7 +205,6 @@ class RoomsInner extends Component {
       <div className="bg-white rooms-inner-wrapper">
         {/* SEO TAG */}
         <Helmet>
-          <meta charSet="utf-8" />
           <title>
             {
               this.state.singleRoom?.post_name || "Fishermans Cove Resort"
@@ -211,41 +212,49 @@ class RoomsInner extends Component {
           </title>
         </Helmet>
         {/* SEO TAG END  */}
-
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'rooms-inner'} />
-        {/*====== BANNER PART START ======*/}
-        <Mainbanner title={this.state.singleRoom?.post_name} image={this.state.singleRoom?.images?.[this.state.singleRoom?.images?.length - 1]?.avatar} />
-        {/*====== BANNER PART ENDS ======*/}
-        {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems} />
-        {/* BREADCRUMBS END */}
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8">
-              {/*====== TITLE START ======*/}
-              <RoomsInnerTitleBlock room={this.state.singleRoom} />
-              {/*====== TITLE END ======*/}
-              {/*====== ROOM GRID START ======*/}
-              <RoomAmenities />
-              {/*====== ROOM GRID END ======*/}
-              {/*====== ROOM 360 GRID START ======*/}
-              <RoomVR360 image={this.state.singleRoom?.images360?.[0]?.avatar} />
-              {/*====== ROOM 360 GRID END ======*/}
+        <PageLayout
+          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+          banner={{ title: this.state.singleRoom?.post_name, image: this.state.singleRoom?.banner_img }}
+          breadCrumb={{ items: breadcrumbItems }}
+          hideBooking
+        >
+          {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'rooms-inner'} /> */}
+          {/*====== BANNER PART START ======*/}
+          {/* <Mainbanner title={this.state.singleRoom?.post_name} image={this.state.singleRoom?.images?.[this.state.singleRoom?.images?.length - 1]?.avatar} /> */}
+          {/*====== BANNER PART ENDS ======*/}
+          {/* BREADCRUMBS START */}
+          {/* <BreadCrumb items={breadcrumbItems} /> */}
+          {/* BREADCRUMBS END */}
+          <div className="container">
+            <div className="row">
+              <div className="col-md-8">
+                {/*====== TITLE START ======*/}
+                <RoomsInnerTitleBlock room={this.state.singleRoom} />
+                {/*====== TITLE END ======*/}
+                {/*====== ROOM GRID START ======*/}
+                <RoomAmenities />
+                {/*====== ROOM GRID END ======*/}
+                {/*====== ROOM 360 GRID START ======*/}
+                <RoomVR360 image={this.state.singleRoom?.images360?.[0]?.avatar} />
+                {/*====== ROOM 360 GRID END ======*/}
+              </div>
+              <div className="col-md-4">
+                <BookingFormVertical roomCode={this.state.singleRoom?.roomCode} />
+              </div>
             </div>
-            <div className="col-md-4">
-              <BookingFormVertical roomCode={this.state.singleRoom?.roomCode} />
-            </div>
+            {/*====== OTHERS GRID START ======*/}
+            <OtherRecommendations title={"Other Rooms & Suites"} data={this.state.othersData} />
+            {/*====== OTHERS GRID END ======*/}
           </div>
-          {/*====== OTHERS GRID START ======*/}
-          <OtherRecommendations title={"Other Rooms & Suites"} data={this.state.othersData} />
-          {/*====== OTHERS GRID END ======*/}
-        </div>
-        <FAQSection faqList={faqList.filter(x => x.id === this.state.singleRoom?.id)} />
-        <Subscribe />
+          <FAQSection faqList={faqList.filter(x => x.id === this.state.singleRoom?.id)} />
+          
+          {/* <Subscribe /> */}
 
-        <Footertwo />
+          {/* <Footertwo /> */}
 
-        <BottomNavigator />
+          {/* <BottomNavigator /> */}
+
+        </PageLayout>
       </div>
     );
   }

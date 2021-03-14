@@ -73,7 +73,7 @@ class AboutUs extends Component {
     return (
       <div className="bg-white about-us-wrapper">
         <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop, key: 'about' }}
+          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{ title: "About Us", image: bannerImage }}
           breadCrumb={{ items: breadcrumbItems }}
         >
