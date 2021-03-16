@@ -16,6 +16,7 @@ import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import FAQSection from '../sections/common/FAQSection';
 import PageLayout from '../layouts/PageLayout';
+import SEOTags from '../sections/common/SEOTags';
 
 
 const faqList = [
@@ -166,6 +167,7 @@ let breadcrumbItems = [
 class RoomsInner extends Component {
   state = {
     singleRoom: {},
+    meta: {},
     othersData: []
   }
 
@@ -174,7 +176,6 @@ class RoomsInner extends Component {
     try {
       //getting single post data
       const response = await API.get('/rooms/' + id);
-
       //making breadcrumbs dynamic, appending into last item
       breadcrumbItems[breadcrumbItems.length - 1].text = response.data.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link = '/rooms-inner/' + response.data.id;
@@ -203,20 +204,13 @@ class RoomsInner extends Component {
     return (
 
       <div className="bg-white rooms-inner-wrapper">
-        {/* SEO TAG */}
-        <Helmet>
-          <title>
-            {
-              this.state.singleRoom?.post_name || "Fishermans Cove Resort"
-            }
-          </title>
-        </Helmet>
-        {/* SEO TAG END  */}
+        <SEOTags meta={this.state.singleRoom?.post_metas?.[0]} />
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{ title: this.state.singleRoom?.post_name, image: this.state.singleRoom?.banner_img }}
           breadCrumb={{ items: breadcrumbItems }}
           hideBooking
+          key={"rooms-inner"}
         >
           {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'rooms-inner'} /> */}
           {/*====== BANNER PART START ======*/}
@@ -247,7 +241,7 @@ class RoomsInner extends Component {
             {/*====== OTHERS GRID END ======*/}
           </div>
           <FAQSection faqList={faqList.filter(x => x.id === this.state.singleRoom?.id)} />
-          
+
           {/* <Subscribe /> */}
 
           {/* <Footertwo /> */}

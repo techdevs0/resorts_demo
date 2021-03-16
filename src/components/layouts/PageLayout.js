@@ -10,8 +10,8 @@ import Headertwo from './Headertwo'
 export default function PageLayout(props) {
     const { header, banner, hideBooking, bookingForm, breadCrumb } = props;
     return (
-        <div>
-            <Headertwo {...header} />
+        <div key={props.key}>
+            <Headertwo {...header} key={props.key} />
             <Banner {...banner} />
             {!hideBooking &&
                 <Bookingform />

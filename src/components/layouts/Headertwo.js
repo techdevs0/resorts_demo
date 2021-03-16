@@ -429,7 +429,7 @@ class Headertwo extends Component {
                         </Link>
                         <div className={"sidebar-submenu collapse" + (this.state[x.text] ? ' show' : '')}>
                           <ul>
-                            {/* <li key={"all"}><Link to={`/room-suites`}>{"Rooms & Suites Types"}</Link></li> */}
+                            <li key={"all"}><Link to={`/${x.address}`}>{`All ${x.text}`}</Link></li>
                             {
                               x.subMenu?.map(y => (
                                 <li key={y.id}><Link to={`/${y.base_url}/${y.address}`}>{y.text}</Link></li>

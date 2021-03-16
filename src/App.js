@@ -101,58 +101,65 @@ function App() {
     switch (inner_route) {
       case "wedding":
         return (
-          <Route path={`/${route}`} render={(props) => <Wedding {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}`} exact render={(props) => <Wedding {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "offers":
         return (
-          <Route path={`/${route}`} render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "dining":
         return (
-          <Route path={`/${route}`} render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "dining-inner":
         return (
-          <Route path={`/${inner_route}/:id`} render={(props) => <DiningInner {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${inner_route}/:id`} exact render={(props) => <DiningInner {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "rooms-suites":
+        return (
+          <Route path={`/${inner_route}`} exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "rooms-inner":
         return (
-          <Route path={`/${inner_route}/:id`} render={(props) => <RoomsInner {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${inner_route}/:id`} exact render={(props) => <RoomsInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "sustainability":
         return (
-          <Route path={`/${route}`} render={(props) => <Sustainability {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}`} exact render={(props) => <Sustainability {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "about-us":
         return (
-          <Route path={`/${route}`} render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "leisure-inner":
         return (
-          <Route path={`/${route}`} render={(props) => <LeisureInner {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}`} exact render={(props) => <LeisureInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "spa-wellness":
         return (
-          <Route path={`/${route}`} render={(props) => <SpaWellness {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}`} exact render={(props) => <SpaWellness {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "about-seychelles":
         return (
-          <Route path={`/${route}`} render={(props) => <AboutSeychelles {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}`} exact render={(props) => <AboutSeychelles {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "privacy-policy":
         return (
-          <Route path={`/${route}`} render={(props) => <PrivacyPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}`} exact render={(props) => <PrivacyPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "covid-policy":
         return (
-          <Route path={`/${route}`} render={(props) => <CovidPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}`} exact render={(props) => <CovidPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "cancellation-policy":
         return (
-          <Route path={`/${route}`} render={(props) => <CancellationPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}`} exact render={(props) => <CancellationPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       default:
         break;
+        return (
+          <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
     }
   }
 
@@ -192,7 +199,11 @@ function App() {
           <Route path='/covid-policy' render={(props) => <CovidPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path='/faq' render={(props) => <FAQ {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} /> */}
+          
+          {/* <Route path='/room-suites' exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} /> */}
+          <Route path='/again-addeing' exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
 
+          <Route path='/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
 
 
           {/* OLD ROUTES */}

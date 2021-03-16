@@ -8,7 +8,7 @@ const RoomSuiteGrid = (props) => {
       <div className='room-suite-grid-wrapper'>
         {
           props.data?.map(x => (
-            <RoomGridItem key={x.id} id={x.id} title={x.post_name} image={x.thumbnail} link={x.link} linkText={x.linkText} description={x.short_description} url={x.post_url} />
+            <RoomGridItem key={x.id} id={x.id} title={x.post_name} image={x.thumbnail} link={x.route} linkText={x.linkText} description={x.short_description} url={x.post_url} />
           ))
         }
       </div>

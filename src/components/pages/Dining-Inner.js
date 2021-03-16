@@ -13,6 +13,7 @@ import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import FAQSection from '../sections/common/FAQSection';
 import PageLayout from '../layouts/PageLayout';
+import SEOTags from '../sections/common/SEOTags';
 
 const faqList = [
   //sunset
@@ -161,9 +162,10 @@ class DiningInner extends Component {
     try {
       const response = await API.get('/dining/' + id);
       let singleHotel = response?.data?.category_details[0];
-      singleHotel.images = response?.data?.uploads?.filter(x => x["360_view"] === "");
+      singleHotel.uploads = response?.data?.uploads;
       breadcrumbItems[breadcrumbItems.length - 1].text = singleHotel.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link = '/dining-inner/' + singleHotel.id;
+      singleHotel.post_metas = response.data.metas;
       this.setState({ singleHotel });
 
       const sectionsResonse = await API.get('/all_sections/' + singleHotel?.id);
@@ -180,10 +182,13 @@ class DiningInner extends Component {
   render() {
     return (
       <div className="bg-white dining-inner-wrapper">
+        <SEOTags meta={this.state.singleHotel?.post_metas?.[0]} />
+
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{ title: this.state.singleHotel?.post_name, image: this.state.singleHotel?.banner_img }}
           breadCrumb={{ items: breadcrumbItems }}
+          key={this.state.singleHotel?.post_name}
         >
           {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'dining-inner'} /> */}
           {/*====== BANNER PART START ======*/}

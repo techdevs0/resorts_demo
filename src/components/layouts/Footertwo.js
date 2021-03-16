@@ -1,14 +1,32 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import API from '../../utils/http';
 
 class Footertwo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      redText: false
+      redText: false,
+      footerData: null,
     };
   }
-  componentDidMount() {
+  async componentDidMount() {
+    const response = await API.get('/get_widgets/footer');
+    if (response.status === 200) {
+      const { data } = response;
+      const first = data.find(x => x.widget_name === "first")?.items;
+      const second = data.find(x => x.widget_name === "second")?.items;
+      const third = data.find(x => x.widget_name === "third")?.items;
+      // const social = data.find(x => x.widget_name === "social");
+      this.setState({
+        footerData: {
+          first: JSON.parse(first),
+          second: JSON.parse(second),
+          third: JSON.parse(third),
+        }
+      });
+    }
+
     window.addEventListener('scroll', () => {
       this.setState({
         isTop: window.scrollY > 300
@@ -41,7 +59,10 @@ class Footertwo extends Component {
                       <img src={require('./../../assets/img/logo-fisher.png')} alt="fishermancove footer logo" />
                     </div>
                     <p>
-                    Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fishermans Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. 
+                      {/* Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fishermans Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. */}
+                      {
+                        this.state.footerData?.first?.description
+                      }
                     </p>
                     <div className="social-links mt-40 d-none">
                       <a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f" /></a>
@@ -57,23 +78,29 @@ class Footertwo extends Component {
                       <h4 className="widget-title">Services</h4>
                       <ul>
 
-                      <li><Link to="/about-us">About Us</Link></li>
-                        
+                        {
+                          this.state.footerData?.second?.links?.map(x => (
+                            <li><Link to={`/${x.address}`}>{x.text}</Link></li>
+
+                          ))
+                        }
+                        {/* <li><Link to="/about-us">About Us</Link></li>
+
                         <li><Link to="/wedding">Weddings </Link></li>
-                        
+
                         <li><Link to="/room-suites">Rooms &amp; Suites</Link></li>
                         <li><Link to="/sustainability">Sustainability</Link></li>
                         <li><Link to="/whats-on">Leisure Activities </Link></li>
                         <li><Link to="/dining">Dining</Link></li>
-                        
+
 
                         <li><Link to="/gallery">Media Center</Link></li>
                         <li><Link to="/spa-wellness">Spa</Link></li>
                         <li><Link to="/faq">FAQs</Link></li>
                         <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                         <li><Link to="/cancellation-policy">Cancellation Policy</Link></li>
-                        
-                        <li><Link to="/covid-policy">COVID-19 Policy</Link></li>
+
+                        <li><Link to="/covid-policy">COVID-19 Policy</Link></li> */}
                       </ul>
                     </div>
                   </div>
@@ -90,7 +117,8 @@ class Footertwo extends Component {
                         </div> */}
                         <div className="desc">
                           <h6 className="title">Phone Number</h6>
-                          <a href="tel:+2484677000">+248 467 7000</a>
+                          {/* <a href="tel:+2484677000">+248 467 7000</a> */}
+                          <a href={`tel:${this.state.footerData?.third?.phone?.replace(/\s/g, '')}`}>{this.state.footerData?.third?.phone}</a>
                         </div>
                       </div>
                       <div className="contact-box">
@@ -99,7 +127,7 @@ class Footertwo extends Component {
                         </div> */}
                         <div className="desc">
                           <h6 className="title">Email Address</h6>
-                          <a href="mailto:reservations@fishermanscove-resort.com">reservations@fishermanscove-resort.com</a>
+                          <a href={`mailto:${this.state.footerData?.third?.email}`}>{this.state.footerData?.third?.email}</a>
                         </div>
                       </div>
                       <div className="contact-box">
@@ -108,7 +136,7 @@ class Footertwo extends Component {
                         </div> */}
                         <div className="desc">
                           <h6 className="title">Office Address</h6>
-                          Bel Ombre, Victoria, Mahé, <br /> Seychelles | PO Box 35
+                          {this.state.footerData?.third?.address}
                         </div>
                       </div>
                     </div>
@@ -142,7 +170,7 @@ class Footertwo extends Component {
                 <div className="col-lg-6 col-md-7 order-1 order-md-2">
                   <div className="footer-menu text-center text-md-right">
                     <ul>
-                      <p style={{fontSize:'14px'}}>Powered By <a href="https://prismdigital.ae" style={{color:"white"}} >Prism Digital</a>.</p>
+                      <p style={{ fontSize: '14px' }}>Powered By <a href="https://prismdigital.ae" style={{ color: "white" }} >Prism Digital</a>.</p>
                       {/* <li><Link to="#">Terms of use</Link></li>
                       <li><Link to="#">Privacy Environmental Policy</Link></li> */}
                     </ul>
