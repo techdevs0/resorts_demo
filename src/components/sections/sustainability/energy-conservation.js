@@ -6,18 +6,21 @@ const SustainEngeryBlock = (props) => {
       <div className="container">
         <div className="d-flex flex-wrap title-flex">
           <div className="pillars-item img-wrapper">
-            <img alt="" className="img-thumbnail" src={require('./../../../assets/img/sustain/pillars.jpg')} />
+            <img alt="" className="img-thumbnail" src={props.data?.section_avatar} />
           </div>
-          <div className="pillars-item">
-            <h3 className="ml-sm-4">energy conservation</h3>
-            <p className="text-justify ml-sm-4">Usage of Light timers and LED lights to conserve energy are a few of the concrete steps taken by Fishermans Cove Resort. These actions highlight that we are determined and are moving towards the goal of a sustainable future</p>
+          <div className="pillars-item pl-sm-4">
+            <h3 className="">
+              {props.data?.section_name}
+            </h3>
+            <div dangerouslySetInnerHTML={{ __html: props.data?.section_content }}></div>
+
             {/* <p className="download-para ml-sm-4">
               Download the sustainability project brochure for more information.
             </p>
             <button className="main-btn btn-eden ml-sm-4">Download</button> */}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

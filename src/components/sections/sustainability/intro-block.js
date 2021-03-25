@@ -6,20 +6,10 @@ const SustainIntroBlock = (props) => {
       <div className="container">
         <h2 className="text-center main-title">Sustainability</h2>
         <div className="d-flex flex-wrap title-flex">
-          <div className="intro-item">
-            {/* <h3 className=" mr-sm-4">What is sustainability for Fisherman's Cove ?</h3> */}
-            <h6>OUR MISSION</h6>
-            <p className="text-justify mr-sm-4">
-            Fishermans Cove Resort is built upon the principle of protecting the environment and moving forward towards a better and sustainable future.  </p>
-          <h6>OUR VISION</h6>
-          <p className="text-justify mr-sm-4">
-          We are always striving to implement long-term strategies to rectify the harmful practices that can be detrimental to our environment.  Fishermans Cove Resort is following a vision to manage and reduce the potential damages to the environment due to its business functions.
-          <br />
-It is a part of our core agenda to engage all the stakeholders to take concrete actions towards a better and sustainable future. 
-  </p>
+          <div className="intro-item pr-sm-4" dangerouslySetInnerHTML={{__html: props.data?.section_content}}>
           </div>
           <div className="intro-item img-wrapper">
-            <img alt="" className="img-thumbnail" src={require('./../../../assets/img/sustain/intro.jpg')} />
+            <img alt="" className="img-thumbnail" src={props.data?.section_avatar} />
           </div>
         </div>
       </div>

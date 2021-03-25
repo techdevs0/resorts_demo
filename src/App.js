@@ -131,6 +131,10 @@ function App() {
         return (
           <Route path={`/${route}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />
         )
+      case "contact":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <Contact {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
       case "leisure-inner":
         return (
           <Route path={`/${route}`} exact render={(props) => <LeisureInner {...props} isMobile={isMobile} isTop={isTop} />} />
@@ -199,7 +203,7 @@ function App() {
           <Route path='/covid-policy' render={(props) => <CovidPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path='/faq' render={(props) => <FAQ {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} /> */}
-          
+
           {/* <Route path='/room-suites' exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} /> */}
           <Route path='/again-addeing' exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
 

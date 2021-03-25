@@ -53,17 +53,43 @@ const breadcrumbItems = [
     isActive: true,
   },
 ]
+const pageId = 40;
 
 class AboutUs extends Component {
   state = {
     premiumOffers: [],
+    sections: null,
+    banner: null
   }
 
   async componentDidMount() {
     try {
-      const response = await API.get('/premium_offers');
-      console.log(response.data);
-      this.setState({ premiumOffers: response.data })
+      // const response = await API.get('/offers');
+      // debugger;
+
+      // this.setState({ premiumOffers: response.data })
+
+      API.get(`/all_sections/${pageId}`).then(response => {
+        this.setState({
+          banner: response.data?.find(x => x.section_slug === "banner"),
+          sections: {
+            intro: response.data?.find(x => x.section_slug === "intro"),
+            dine: response.data?.find(x => x.section_slug === "dine"),
+          }
+        });
+      })
+        // .then(() => {
+        //   API.get(`/all_sections/${pageId}`).then(response => {
+  
+        //     this.setState({
+        //       intro: response.data?.find(x => x.section_slug === "intro"),
+        //       banner: response.data?.find(x => x.section_slug === "banner"),
+        //     });
+        //   })
+        // })
+        .catch(err => {
+          console.log(err)
+        })
     } catch (error) {
       console.log(error)
     }
@@ -74,7 +100,7 @@ class AboutUs extends Component {
       <div className="bg-white about-us-wrapper">
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: "About Us", image: bannerImage }}
+          banner={{ title: "About Us", image:  this.state.banner?.section_avatar }}
           breadCrumb={{ items: breadcrumbItems }}
         >
           {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'about'} /> */}
@@ -88,13 +114,13 @@ class AboutUs extends Component {
           {/* <BreadCrumb items={breadcrumbItems} /> */}
           {/* BREADCRUMBS END */}
           {/*====== TITLE START ======*/}
-          <AboutTitleBlock />
+          <AboutTitleBlock data={this.state.sections?.intro} />
           {/*====== TITLE END ======*/}
           {/*====== SERVICES START ======*/}
           <AboutServices data={roomsData} />
           {/*====== SERVICES END ======*/}
           {/*====== SECONDARY START ======*/}
-          <AboutSecondaryTextBlock />
+          <AboutSecondaryTextBlock data={this.state.sections?.dine} />
           {/*====== SECONDARY END ======*/}
           {/*====== ABOUT SLIDER START ======*/}
           <AboutOfferSlider data={this.state.premiumOffers} title={"Explore Fishermans Cove Resort Premium Offerings"} />

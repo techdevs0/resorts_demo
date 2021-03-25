@@ -15,8 +15,9 @@ const ContactTitleBlock = (props) => {
               <div className="col-9">
                 <p>
                   <a rel="nofollow" href="https://www.google.com/maps/dir//-4.6161678,55.4218931/@-4.616168,55.421893,16z?hl=en">
-                  Bel Ombre, Victoria, Mahé, <br />
-Seychelles | PO Box 35<br />
+                    {
+                      props.data?.address
+                    }
                   </a>
                 </p>
               </div>
@@ -27,8 +28,12 @@ Seychelles | PO Box 35<br />
               </div>
               <div className="col-9">
                 <p>
-                  <a  rel="nofollow" href="reservations@fishermanscove-resort.com">reservations@fishermans <br />
-                  cove-resort.com </a><br />
+                  <a rel="nofollow" href={`mailto:${props.data?.email}`}>
+                    {
+                      props.data?.email
+                    }
+                  </a>
+                  <br />
                 </p>
               </div>
             </div>
@@ -38,7 +43,11 @@ Seychelles | PO Box 35<br />
               </div>
               <div className="col-9">
                 <p>
-                <a  rel="nofollow" href="tel:+2484677000">+248 467 7000</a>
+                  <a rel="nofollow" href={`tel:${props.data?.phone?.split(" ").join("")}`}>
+                    {
+                      props.data?.phone
+                    }
+                  </a>
                 </p>
               </div>
             </div>
@@ -48,7 +57,11 @@ Seychelles | PO Box 35<br />
               </div>
               <div className="col-9">
                 <p>
-                <a  rel="nofollow" href="https://wa.me/2482816329">+248 281 6329</a>
+                  <a rel="nofollow" href={`https://wa.me/${props.data?.whatsapp?.replace('+',"").split(" ").join("")}`}>
+                    {
+                      props.data?.whatsapp
+                    }
+                  </a>
                 </p>
               </div>
             </div>
