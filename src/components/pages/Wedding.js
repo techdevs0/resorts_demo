@@ -10,8 +10,13 @@ import WeddingFormDialog from '../sections/wedding-main/quote-form';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import FAQSection from '../sections/common/FAQSection';
+import API from '../../utils/http';
+import SEOTags from '../sections/common/SEOTags';
+import PageLayout from '../layouts/PageLayout';
 
 const bannerImage = require('./../../assets/img/banner/wedding-banner.jpg');
+
+const pageId = 10;
 
 const roomsData = [
   {
@@ -110,39 +115,76 @@ const breadcrumbItems = [
 ]
 
 class Wedding extends Component {
+  state = {
+    weddingData: [],
+    intro: {},
+    banner: {},
+    meta: {}
+  }
+
+  componentDidMount() {
+    API.get('/wedding').then(response => {
+      this.setState({ weddingData: response.data?.filter(x => x.post_type !== "page") });
+    })
+      .then(() => {
+        API.get(`/meta/${pageId}`).then(response => {
+          this.setState({ meta: response.data });
+        })
+      })
+      .then(() => {
+        API.get(`/all_sections/${pageId}`).then(response => {
+          this.setState({
+            intro: response.data?.find(x => x.section_slug === "intro"),
+            banner: response.data?.find(x => x.section_slug === "banner"),
+          });
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   render() {
     return (
       <div className="bg-white">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'weddings'} />
-        {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Weddings In Paradise"} image={bannerImage} />
-        {/*====== BANNER PART ENDS ======*/}
-        {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
-        {/*====== BOOKING FORM END ======*/}
-        {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems} />
-        {/* BREADCRUMBS END */}
-        {/*====== TITLE START ======*/}
-        <WeddingTitleBlock />
-        {/*====== TITLE END ======*/}
-        {/*====== ROOM GRID START ======*/}
-        <WeddingGrid title={"Wedding Services"} data={roomsData} />
-        {/*====== ROOM GRID END ======*/}
-        {/* <div>
+        <SEOTags meta={this.state.meta} />
+
+        <PageLayout
+          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          breadCrumb={{ items: breadcrumbItems }}
+        >
+          {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} /> */}
+          {/*====== BANNER PART START ======*/}
+          {/* <Mainbanner title={this.state.intro?.post_name || "Weddings In Paradise"} image={bannerImage} /> */}
+          {/*====== BANNER PART ENDS ======*/}
+          {/*====== BOOKING FORM START ======*/}
+          {/* <Bookingform /> */}
+          {/*====== BOOKING FORM END ======*/}
+          {/* BREADCRUMBS START */}
+          {/* <BreadCrumb items={breadcrumbItems} /> */}
+          {/* BREADCRUMBS END */}
+          {/*====== TITLE START ======*/}
+          <WeddingTitleBlock intro={this.state.intro} />
+          {/*====== TITLE END ======*/}
+          {/*====== ROOM GRID START ======*/}
+          <WeddingGrid title={"Wedding Services"} data={this.state.weddingData} />
+          {/*====== ROOM GRID END ======*/}
+          {/* <div>
           <button onClick={()=> this.setState({showWedForm: true})} className="btn main-btn btn-eden">
             Book Now
         </button>
         </div> */}
-        <WeddingFormDialog />
+          <WeddingFormDialog />
 
-        <FAQSection faqList={faqList} />
+          <FAQSection faqList={faqList} />
 
-        <Subscribe />
+          {/* <Subscribe /> */}
 
-        <Footertwo />
+          {/* <Footertwo /> */}
 
-        <BottomNavigator />
+          {/* <BottomNavigator /> */}
+        </PageLayout>
       </div>
     );
   }

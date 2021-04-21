@@ -8,7 +8,12 @@ import Subscribe from '../sections/common/Subscribe';
 import LeisureContentBlocks from '../sections/leisure-inner/content-blocks';
 import BreadCrumb from '../layouts/BreadCrumb';
 import FAQSection from '../sections/common/FAQSection';
+import PageLayout from '../layouts/PageLayout';
+import SEOTags from '../sections/common/SEOTags';
+import API from '../../utils/http';
 const bannerImage = require('./../../assets/img/banner/Leisure-inner.jpg');
+
+const pageId = 41;
 
 const activities = [
   {
@@ -71,60 +76,106 @@ const faqList = [
   {
     question: 'What are the things to do with children?',
     answer: `Seychelles is a fun place to be in and kids would love to visit Beau Vallon Beach, La Digue island. Moreover, you could take them to Botanical Gardens and Sainte Anne Marine National Park is also a nice place to visit.`,
-    category:'policy'
+    category: 'policy'
   },
   {
     question: 'What is Seychelles best known for? ',
     answer: `Seychelles is best known for its crystal clear waters and its beautiful beaches. The place is filled with tropical forests and untouched wonderlands. It’s a place with a rich history and filled with opportunities for leisure activities. `,
-    category:'policy'
+    category: 'policy'
   },
 ]
 
 
-const breadcrumbItems=[
+const breadcrumbItems = [
   {
     text: 'Fishermans Cove Resort',
-    link:'/',
+    link: '/',
     isActive: false,
   },
   {
     text: 'Leisure Activities',
-    link:'/whats-on',
+    link: '/whats-on',
     isActive: false,
   },
   {
     text: 'Other Resort Activities',
-    link:'/leisure-inner',
+    link: '/leisure-inner',
     isActive: true,
   },
 ]
 
 class LeisureInner extends Component {
+
+  state = {
+    lesiureData: [],
+    activities: {},
+    intro: {},
+    banner: {},
+    meta: {}
+  }
+
+  componentDidMount() {
+    API.get(`/all_sections/${pageId}`).then(response => {
+      this.setState({
+        banner: response.data?.find(x => x.section_slug === "banner"),
+        activities: {
+          lounge: response.data?.find(x => x.section_slug === "lounge"),
+          snorkeling: response.data?.find(x => x.section_slug === "snorkeling"),
+          kayaking: response.data?.find(x => x.section_slug === "kayaking"),
+          marine: response.data?.find(x => x.section_slug === "marine"),
+          others: response.data?.find(x => x.section_slug === "others"),
+        }
+      });
+    })
+      // .then(() => {
+      //   API.get(`/all_sections/${pageId}`).then(response => {
+
+      //     this.setState({
+      //       intro: response.data?.find(x => x.section_slug === "intro"),
+      //       banner: response.data?.find(x => x.section_slug === "banner"),
+      //     });
+      //   })
+      // })
+      .catch(err => {
+        console.log(err)
+      })
+  }
   render() {
+
     return (
       <div className="bg-white leisure-inner-wrapper">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'leisure-inner'} />
-        {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Other Resort Activities"} image={bannerImage}/>
-        {/*====== BANNER PART ENDS ======*/}
-        {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
-        {/*====== BOOKING FORM END ======*/}
-        {/*====== BANNER PART ENDS ======*/}
-        {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems} />
-        {/* BREADCRUMBS END */}
-        {/*====== INTRO START ======*/}
-        <LeisureContentBlocks activities={activities} />
-        {/*====== INTRO END ======*/}
 
-        <FAQSection faqList={faqList} />
+        <SEOTags meta={this.state.meta} />
 
-        <Subscribe />
+        <PageLayout
+          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          breadCrumb={{ items: breadcrumbItems }}
+        >
 
-        <Footertwo />
+          {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'leisure-inner'} /> */}
+          {/*====== BANNER PART START ======*/}
+          {/* <Mainbanner title={"Other Resort Activities"} image={bannerImage} /> */}
+          {/*====== BANNER PART ENDS ======*/}
+          {/*====== BOOKING FORM START ======*/}
+          {/* <Bookingform /> */}
+          {/*====== BOOKING FORM END ======*/}
+          {/*====== BANNER PART ENDS ======*/}
+          {/* BREADCRUMBS START */}
+          {/* <BreadCrumb items={breadcrumbItems} /> */}
+          {/* BREADCRUMBS END */}
+          {/*====== INTRO START ======*/}
+          <LeisureContentBlocks activities={this.state.activities} />
+          {/*====== INTRO END ======*/}
 
-        <BottomNavigator />
+          <FAQSection faqList={faqList} />
+
+          {/* <Subscribe /> */}
+
+          {/* <Footertwo /> */}
+
+          {/* <BottomNavigator /> */}
+        </PageLayout>
       </div>
     );
   }

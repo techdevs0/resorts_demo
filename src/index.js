@@ -19,9 +19,9 @@ import 'react-image-lightbox/style.css'; // This only needs to be imported once 
 import './App.scss';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  // <BrowserRouter>
+    <App />,
+  // </BrowserRouter>,
   document.getElementById('miranda')
 );
 

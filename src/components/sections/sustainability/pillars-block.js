@@ -6,17 +6,19 @@ const SustainPillarsBlock = (props) => {
       <div className="container">
         <div className="d-flex flex-wrap title-flex">
           <div className="pillars-item img-wrapper">
-            <img alt="" className="img-thumbnail" src={require('./../../../assets/img/sustain/pillars.jpg')} />
+            <img alt="" className="img-thumbnail" src={props.data?.section_avatar} />
           </div>
-          <div className="pillars-item">
-            <h3 className="ml-sm-4">reduce, reuse, recycle</h3>
-            <p className="text-justify ml-sm-4">
-            It is encouraged at Fishermans Cove Resort to use recycled products. Strategies including ‘Reuse and Recycle’ of the paper, composting, segregation, Mobile app, ‘Refuse the straw’ have been strictly implemented to ensure the advancement towards a better and sustainable future.
-          </p>
-          
+          <div className="pillars-item pl-sm-4">
+            <h3 className="">
+              {props.data?.section_name}
+            </h3>
+            <div dangerouslySetInnerHTML={{ __html: props.data?.section_content }}>
+
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

@@ -44,6 +44,7 @@ import Preloader from './components/layouts/Preloader';
 
 import ScrollToTop from './components/layouts/ScrollToTop';
 import Error404 from './components/pages/Error404';
+import API from './utils/http';
 
 // ********* lazy loading componentes *******
 const Hometwo = lazy(() => import('./components/pages/Hometwo'));
@@ -71,6 +72,7 @@ const FAQ = lazy(() => import('./components/pages/FAQ'));
 function App() {
   const [isMobile, setIsMobile] = useState(false);
   const [isTop, setIsTop] = useState(false);
+  const [appRoutes, setAppRoutes] = useState([]);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -83,6 +85,88 @@ function App() {
       setIsTop(window.scrollY > 150);
     }, false);
   })
+
+  useEffect(() => {
+
+    API.get('/pages').then(res => {
+      if (res.status === 200) {
+        const { data } = res;
+        setAppRoutes(data);
+      }
+    })
+  }, [])
+
+  const mapRoute = (route, inner_route) => {
+    route = route.split('/')?.[1] || route;
+    switch (inner_route) {
+      case "wedding":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <Wedding {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "offers":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "dining":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "dining-inner":
+        return (
+          <Route path={`/${inner_route}/:id`} exact render={(props) => <DiningInner {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "rooms-suites":
+        return (
+          <Route path={`/${inner_route}`} exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "rooms-inner":
+        return (
+          <Route path={`/${inner_route}/:id`} exact render={(props) => <RoomsInner {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "sustainability":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <Sustainability {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "about-us":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "contact":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <Contact {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "leisure-inner":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <LeisureInner {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "spa-wellness":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <SpaWellness {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "about-seychelles":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <AboutSeychelles {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "privacy-policy":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <PrivacyPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "covid-policy":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <CovidPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "cancellation-policy":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <CancellationPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      default:
+        break;
+        return (
+          <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+    }
+  }
+
   return (
     <Router>
       <Suspense fallback={<Preloader />}>
@@ -91,7 +175,15 @@ function App() {
         <ScrollToTop />
         <Switch>
           <Route exact path='/' render={(props) => <Hometwo {...props} isMobile={isMobile} isTop={isTop} />} />
-          <Route path='/room-suites' render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
+
+          {
+            appRoutes?.map(x => (
+              mapRoute(x.route, x.inner_route)
+            ))
+          }
+
+          {/* NEW ROUTES  */}
+          {/* <Route path='/room-suites' render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path='/dining' render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path='/dining-inner/:id' render={(props) => <DiningInner key={props.match.params.id} {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path='/offers-inner' render={(props) => <OffersInner {...props} isMobile={isMobile} isTop={isTop} />} />
@@ -105,6 +197,20 @@ function App() {
           <Route path='/about' render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path='/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path='/offers' render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path='/contact' render={(props) => <Contact {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path='/privacy-policy' render={(props) => <PrivacyPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path='/cancellation-policy' render={(props) => <CancellationPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path='/covid-policy' render={(props) => <CovidPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path='/faq' render={(props) => <FAQ {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} /> */}
+
+          {/* <Route path='/room-suites' exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} /> */}
+          <Route path='/again-addeing' exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
+
+          <Route path='/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
+
+
+          {/* OLD ROUTES */}
           {/* <Route path='/menu' render={(props) => <Menu {...props} isMobile={isMobile} isTop={isTop} />} /> */}
           {/* <Route path='/restaurant' component={Restaurant} /> */}
           {/* <Route path='/news' component={Blog} />
@@ -114,12 +220,6 @@ function App() {
           {/* <Route path='/room-grid' component={Roomgrid} /> */}
           {/* <Route path='/room-list' component={Roomlist} /> */}
           {/* <Route path='/room-details' component={Roomdetails} /> */}
-          <Route path='/contact' render={(props) => <Contact {...props} isMobile={isMobile} isTop={isTop} />} />
-          <Route path='/privacy-policy' render={(props) => <PrivacyPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
-          <Route path='/cancellation-policy' render={(props) => <CancellationPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
-          <Route path='/covid-policy' render={(props) => <CovidPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
-          <Route path='/faq' render={(props) => <FAQ {...props} isMobile={isMobile} isTop={isTop} />} />
-          <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
         </Switch>
       </Suspense>
     </Router>

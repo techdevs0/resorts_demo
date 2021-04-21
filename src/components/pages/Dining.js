@@ -77,14 +77,26 @@ class Dining extends Component {
   }
 
   componentDidMount() {
-    try {
-      API.get('/dining').then(response => {
-        this.setState({ diningData: response.data });
-      })
-      // console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
+
+    API.get('/dining').then(response => {
+      this.setState({ diningData: response.data });
+    })
+    // .then(() => {
+    //   API.get(`/meta/${pageId}`).then(response => {
+    //     this.setState({ meta: response.data });
+    //   })
+    // })
+    // .then(() => {
+    //   API.get(`/all_sections/${pageId}`).then(response => {
+    //     this.setState({
+    //       intro: response.data?.find(x => x.section_slug === "intro"),
+    //       banner: response.data?.find(x => x.section_slug === "banner"),
+    //     });
+    //   })
+    // })
+    .catch(err => {
+      console.log(err)
+    })
   }
 
   render() {

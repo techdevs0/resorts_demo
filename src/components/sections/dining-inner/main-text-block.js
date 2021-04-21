@@ -24,7 +24,7 @@ const DiningInnerTitleBlock = (props) => {
               className="dining-carousel"
             >
               {
-                props.dining?.images?.map((x, i) => (
+                props.dining?.uploads?.map((x, i) => (
                   <div key={x.id}>
                     <img src={x.avatar} alt="" />
                   </div>

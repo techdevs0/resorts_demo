@@ -32,7 +32,7 @@ class GalleryMain extends Component {
 
   async componentDidMount() {
     try {
-      const response = await API.get('/gallery');
+      const response = await API.get('/uploads');
       this.setState({ galleryData: response.data });
     } catch (error) {
       console.log(error);
@@ -42,7 +42,7 @@ class GalleryMain extends Component {
   render() {
     return (
       <div className="bg-white">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'gallery'} />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Gallery"} image={bannerImage} />
         {/*====== BANNER PART ENDS ======*/}

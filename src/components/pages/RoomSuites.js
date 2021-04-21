@@ -36,8 +36,8 @@ class RoomSuites extends Component {
   componentDidMount() {
     try {
       API.get('/rooms').then(response=>{
-        const roomsData = response.data.filter(x=> x.room_type==1);
-        const suitesData = response.data.filter(x=> x.room_type==2);
+        const roomsData = response.data.filter(x=> x.room_type==0);
+        const suitesData = response.data.filter(x=> x.room_type==0);
         this.setState({ roomsData, suitesData });
       })
       // console.log(response.data);

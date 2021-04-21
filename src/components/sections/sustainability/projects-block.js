@@ -5,17 +5,16 @@ const SustainProjectsBlock = (props) => {
     <div className="projects-block py-4">
       <div className="container">
         <div className="d-flex flex-wrap title-flex">
-          <div className="projects-item">
+          <div className="projects-item  pr-sm-4">
             {/* <h3 className=" mr-sm-4">Sustainability Projects</h3> */}
-            <h3>protect wildlife – flora &amp; fauna</h3>
-            <p className="text-justify mr-sm-4">
-             Fishermans Cove Resort is a part of the Marine Conservation Society of Seychelles and also a part of projects like beach clean up, and restoration project. Moreover, the use of water-saving faucets to reduce water consumption
-            </p>
-           
-           
+            <h3 className="">
+              {props.data?.section_name}
+            </h3>
+            <div dangerouslySetInnerHTML={{ __html: props.data?.section_content }}></div>
+
           </div>
           <div className="projects-item img-wrapper">
-            <img alt="" className="img-thumbnail" src={require('./../../../assets/img/sustain/fauna.jpg')} />
+            <img alt="" className="img-thumbnail" src={props.data?.section_avatar} />
           </div>
         </div>
       </div>

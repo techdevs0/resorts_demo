@@ -10,29 +10,65 @@ import SustainPillarsBlock from '../sections/sustainability/pillars-block';
 import SustainProjectsBlock from '../sections/sustainability/projects-block';
 import SustainEngeryBlock from '../sections/sustainability/energy-conservation';
 import BreadCrumb from '../layouts/BreadCrumb';
+import API from '../../utils/http';
 
 const bannerImage = require('./../../assets/img/banner/Sustainability-banner.jpg');
 
-const breadcrumbItems=[
+const breadcrumbItems = [
   {
     text: 'Fishermans Cove Resort',
-    link:'/',
+    link: '/',
     isActive: false,
   },
   {
     text: 'Sustainability',
-    link:'/sustainability',
+    link: '/sustainability',
     isActive: true,
   },
 ]
 
+const pageId = 39;
+
 class Sustainability extends Component {
+  state = {
+    lesiureData: [],
+    activities: {},
+    intro: {},
+    banner: {},
+    meta: {}
+  }
+
+  componentDidMount() {
+    API.get(`/all_sections/${pageId}`).then(response => {
+      this.setState({
+        banner: response.data?.find(x => x.section_slug === "banner"),
+        activities: {
+          intro: response.data?.find(x => x.section_slug === "intro"),
+          projects: response.data?.find(x => x.section_slug === "projects"),
+          pillars: response.data?.find(x => x.section_slug === "pillars"),
+          energy: response.data?.find(x => x.section_slug === "energy"),
+        }
+      });
+    })
+      // .then(() => {
+      //   API.get(`/all_sections/${pageId}`).then(response => {
+
+      //     this.setState({
+      //       intro: response.data?.find(x => x.section_slug === "intro"),
+      //       banner: response.data?.find(x => x.section_slug === "banner"),
+      //     });
+      //   })
+      // })
+      .catch(err => {
+        console.log(err)
+      })
+  }
   render() {
     return (
       <div className="bg-white sustainability-wrapper">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'sustainability'} />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'sustainability'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Sustainability"} image={bannerImage}/>
+        <Mainbanner title={"Sustainability"} image={this.state.banner?.section_avatar} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
@@ -41,15 +77,15 @@ class Sustainability extends Component {
         <BreadCrumb items={breadcrumbItems} />
         {/* BREADCRUMBS END */}
         {/*====== INTRO START ======*/}
-        <SustainIntroBlock />
+        <SustainIntroBlock data={this.state.activities?.intro} />
         {/*====== INTRO END ======*/}
         {/*====== PILLARS START ======*/}
-        <SustainPillarsBlock/>
+        <SustainPillarsBlock data={this.state.activities?.pillars} />
         {/*====== PILLARS END ======*/}
         {/*====== PROJECTS SLIDER START ======*/}
-        <SustainProjectsBlock />
+        <SustainProjectsBlock data={this.state.activities?.projects} />
         {/*====== PROJECTS SLIDER END ======*/}
-        <SustainEngeryBlock />
+        <SustainEngeryBlock data={this.state.activities?.energy} />
         {/*====== PROJECTS SLIDER END ======*/}
 
         <Subscribe />
