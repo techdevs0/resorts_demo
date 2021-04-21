@@ -139,6 +139,10 @@ function App() {
         return (
           <Route path={`/${route}`} exact render={(props) => <LeisureInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )
+      case "whats-on":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <Leisure {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
       case "spa-wellness":
         return (
           <Route path={`/${route}`} exact render={(props) => <SpaWellness {...props} isMobile={isMobile} isTop={isTop} />} />
@@ -208,6 +212,7 @@ function App() {
           <Route path='/again-addeing' exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
 
           <Route path='/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
+          {/* <Route path='/whats-on' render={(props) => <Leisure {...props} isMobile={isMobile} isTop={isTop} />} /> */}
 
 
           {/* OLD ROUTES */}
