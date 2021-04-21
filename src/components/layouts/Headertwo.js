@@ -36,12 +36,12 @@ let navigationmenu = [
     linkText: 'Weddings',
     child: false,
   },
-  {
-    id: 5,
-    link: '/offers',
-    linkText: 'Offers',
-    child: false,
-  },
+  // {
+  //   id: 5,
+  //   link: '/offers',
+  //   linkText: 'Offers',
+  //   child: false,
+  // },
   {
     id: 6,
     link: '/sustainability',
