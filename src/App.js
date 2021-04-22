@@ -108,6 +108,7 @@ function App() {
           <Route path={`/${route}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "dining":
+        debugger;
         return (
           <Route path={`/${route}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
         )
@@ -116,6 +117,12 @@ function App() {
           <Route path={`/${inner_route}/:id`} exact render={(props) => <DiningInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "rooms-suites":
+        debugger;
+        return (
+          <Route path={`/${route}`} exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "room-suites":
+        debugger;
         return (
           <Route path={`/${inner_route}`} exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
         )
@@ -209,7 +216,7 @@ function App() {
           <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} /> */}
 
           {/* <Route path='/room-suites' exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} /> */}
-          <Route path='/again-addeing' exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
+          {/* <Route path='/again-addeing' exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} /> */}
 
           <Route path='/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
           {/* <Route path='/whats-on' render={(props) => <Leisure {...props} isMobile={isMobile} isTop={isTop} />} /> */}
