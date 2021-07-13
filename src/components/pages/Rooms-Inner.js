@@ -159,7 +159,7 @@ let breadcrumbItems = [
   },
   {
     text: '',
-    link: '/rooms-inner',
+    link: '/rooms',
     isActive: true,
   },
 ]
@@ -178,7 +178,7 @@ class RoomsInner extends Component {
       const response = await API.get('/rooms/' + id);
       //making breadcrumbs dynamic, appending into last item
       breadcrumbItems[breadcrumbItems.length - 1].text = response.data.post_name;
-      breadcrumbItems[breadcrumbItems.length - 1].link = '/rooms-inner/' + response.data.id;
+      breadcrumbItems[breadcrumbItems.length - 1].link = '/rooms/' + response.data.id;
 
       let singleRoom = response.data;
 

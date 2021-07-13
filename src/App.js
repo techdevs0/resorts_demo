@@ -117,12 +117,12 @@ function App() {
           <Route path={`/${inner_route}/:id`} exact render={(props) => <DiningInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "rooms-suites":
-        
+    
         return (
           <Route path={`/${route}`} exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "room-suites":
-      
+    
         return (
           <Route path={`/${inner_route}`} exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
         )
