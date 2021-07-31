@@ -39,7 +39,8 @@ class Bookingform extends Component {
     handleSubmit = () => {
         const finalURL = `https://be.synxis.com/?adult=${this.state.adults}&arrive=${this.state.checkIn}&chain=${this.state.chain}&child=${this.state.childs}&currency=EUR&depart=${this.state.checkOut}&hotel=${this.state.hotel}&level=hotel&locale=en-US&rooms=${this.state.rooms}&promo=${this.state.promo}`;
 
-        window.open(finalURL, '_blank') || window.location.replace(finalURL);
+        window.gtag_report_conversion(finalURL);
+        return;
     }
 
 

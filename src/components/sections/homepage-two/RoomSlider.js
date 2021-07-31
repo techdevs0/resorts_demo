@@ -53,7 +53,15 @@ const RoomSlider = (props) => {
                                 <div dangerouslySetInnerHTML={{ __html: x.short_description }}>
 
                                 </div>
-                                <button className="main-btn btn-eden my-4" onClick={() => window.location = x.post_url}>BOOK NOW</button>
+                                <button
+                                className="main-btn btn-eden my-4"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    window.gtag_report_conversion(x.post_url,true)
+                                }}
+                               >
+                                BOOK NOW
+                            </button>
                             </div>
                         </div>
                     ))
