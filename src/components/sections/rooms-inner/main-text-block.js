@@ -1,8 +1,5 @@
-import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
-
-
-
+import React from "react";
+import { Carousel } from "react-responsive-carousel";
 
 const RoomsInnerTitleBlock = (props) => {
   return (
@@ -21,24 +18,25 @@ const RoomsInnerTitleBlock = (props) => {
               emulateTouch={true}
               className="room-carousel"
             >
-              {
-                props.room?.uploads?.map((x,i) => (
+              {props.room?.uploads
+                ?.filter((x) => x["360_view"] === "0")
+                ?.map((x, i) => (
                   <div key={x.id}>
                     <img src={x.avatar} alt="" />
                   </div>
-                ))
-              }
+                ))}
             </Carousel>
           </div>
           <div className="description-item">
             <h3>{props.room?.post_name}</h3>
-            <p dangerouslySetInnerHTML={ {__html: props.room?.post_content}}>
-            </p>
+            <p
+              dangerouslySetInnerHTML={{ __html: props.room?.post_content }}
+            ></p>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default RoomsInnerTitleBlock;

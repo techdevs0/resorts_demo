@@ -138,6 +138,7 @@ class Headertwo extends Component {
       let menuLinks = menuResponse.data.find(
         (x) => x.widget_name === "menuItems"
       )?.items;
+      // debugger;
       let contact = menuResponse.data.find((x) => x.widget_name === "contact")
         ?.items;
       if (menuLinks) {
@@ -181,6 +182,7 @@ class Headertwo extends Component {
         link: "/rooms-inner/" + x.id,
         linkText: x.post_name,
       }));
+      // debugger;
       navigationmenu = navigationmenu.map((x) => {
         if (x.id == 3) {
           return {

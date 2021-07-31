@@ -104,7 +104,7 @@ class ContactUs extends Component {
       // this.setState({ premiumOffers: response.data })
 
       API.get(`/all_sections/${pageId}`).then(response => {
-        debugger;
+        // debugger;
         this.setState({
           banner: response.data?.find(x => x.section_slug === "banner"),
           sections: {
