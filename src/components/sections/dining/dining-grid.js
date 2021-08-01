@@ -9,7 +9,7 @@ const DiningGrid = (props) => {
       }
       <div className='dining-grid-wrapper'>
         {
-          props.data?.map(x => (
+          props.data?.filter((x, index) => index <= 3).map(x => (
             <RoomGridItem key={x.id} id={x.id} route={x.route} title={x.post_name} image={x.thumbnail} link={x.link} linkText={x.linkText} description={x.post_content} />
           ))
         }
