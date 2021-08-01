@@ -167,9 +167,9 @@ function App() {
         return (
           <Route path={`/${route}`} exact render={(props) => <CancellationPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
         )
-      case "offers-inner":
+      case "offer":
         return (
-          <Route path={`/${route}`} exact render={(props) => <OffersInner {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}/:id`} exact render={(props) => <OffersInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       default:
         break;
