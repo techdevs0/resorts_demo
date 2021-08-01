@@ -18,29 +18,82 @@ class Bookingform extends Component {
             showPromoPopup: false,
             chain: 27304,
             hotel: 31842,
-            promo: ''
+            promo: '',
+            checkOutMin:`${year}-${month}-${day2}`
         }
         this.wrapperRef = React.createRef();
         this.propmoWrapperRef = React.createRef();
-        
+
         // this.setWrapperRef = this.setWrapperRef.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
 
     }
+     dateChange = (e) => {
+        let cur = e.target.value;
+        console.log(cur);
 
-    handleCheckInChange = (e) => {
-        alert(e.target.value)
-        this.setState({ checkIn: e.target.value })
+        let newDate =  this.nextDate(cur);
+        let checkOutMin = newDate;
+
+       // console.log(newDate);
+         this.setState({  checkOut: newDate , checkIn: cur , checkOutMin : checkOutMin });
+        // this.setState(newDate);    //updating state for check-out date
+
+
     }
+     nextDate(cur) {
+        var currentdate = new Date(cur);
+        let currMonth  = currentdate.getMonth()+1;
+        if(currMonth <= 9){
+            currMonth = '0' + currMonth;
+        }
+        console.log(currMonth);
+
+        let currDate  = currentdate.getDate();
+        if(currDate <= 9){
+            currDate = '0' + (currDate+1);
+        }
+        else{
+            currDate = currDate+1;
+        }
+
+        currDate = currDate.toString();
+        console.log(currDate);
+
+        var datetime =
+            currentdate.getFullYear() +
+            "-" +
+            (currMonth) +
+            "-" +
+            (currDate)
+         // this.setState({checkOut: datetime });
+         // this.setState({  checkOut: datetime , checkIn: cur.target.value  });
+        console.log(datetime);
+        return datetime;
+    }
+    // handleCheckInChange = (e) => {
+    //
+    //     let today = e.target.value;
+    //     let n = 1;
+    //     let fudate = new Date(new Date(today).setDate(new Date(today).getDate() + n));
+    //     fudate = fudate.getFullYear() +  '-' + (fudate.getMonth() + 1) + '-' + fudate.toDateString().substring(8, 10) ;
+    //     this.setState({checkOut: fudate });
+    //     this.setState({  checkOut: fudate , checkIn: e.target.value  });
+    //     // console.log(this.state.checkOut);
+    //     // debugger;
+    // }
     handleCheckOutChange = (e) => {
         this.setState({ checkOut: e.target.value })
     }
 
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault();
         const finalURL = `https://be.synxis.com/?adult=${this.state.adults}&arrive=${this.state.checkIn}&chain=${this.state.chain}&child=${this.state.childs}&currency=EUR&depart=${this.state.checkOut}&hotel=${this.state.hotel}&level=hotel&locale=en-US&rooms=${this.state.rooms}&promo=${this.state.promo}`;
 
         window.gtag_report_conversion(finalURL);
         return;
+        // window.open(finalURL, '_blank') || window.location.replace(finalURL);
+
     }
 
 
@@ -66,14 +119,14 @@ class Bookingform extends Component {
         const { rooms, childs, adults, showCountPopup, showPromoPopup } = this.state;
         return (
             <section className="booking-form-hotizontal container d-none d-sm-block">
-                <div className="container">
+                <div className="container-fluid">
                     <div className="booking-form-inner">
                         <div className="row">
                             <div className="col-12 col-md-4">
                                 <div className="dates-group">
-                                    <input onChange={this.handleCheckInChange} type="date" value={this.state.checkIn} className="form-control" placeholder="Check In" ></input>
+                                    <input onChange={this.dateChange} type="date" value={this.state.checkIn} className="form-control" placeholder="Check In" min={new Date().toISOString().split('T')[0]}></input>
                                     <span className="d-none d-sm-block">-</span>
-                                    <input onChange={this.handleCheckOutChange} type="date" value={this.state.checkOut} className="form-control" placeholder="Check Out" ></input>
+                                    <input onChange={this.handleCheckOutChange} type="date" value={this.state.checkOut} min={this.state.checkOutMin} className="form-control" placeholder="Check Out" ></input>
                                 </div>
                             </div>
                             <div className="col-12 col-md-4">

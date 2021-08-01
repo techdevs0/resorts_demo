@@ -13,7 +13,16 @@ const RoomGridItem = (props) => {
         </div>
         <div className="room-description">
           <p dangerouslySetInnerHTML={{__html:props.description}}></p>
-          <button className="main-btn btn-filled" onClick={() => window.location =props.url}>Check Availability</button>
+          <button
+            className="main-btn btn-filled"
+            onClick={(e) => {
+                e.preventDefault();
+                window.gtag_report_conversion(props.url,true)
+            }
+            }
+          >
+            Check Availability
+          </button>
         </div>
       </div>
     </div>

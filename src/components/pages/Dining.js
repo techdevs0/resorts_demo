@@ -66,7 +66,7 @@ const breadcrumbItems = [
   },
   {
     text: 'Dining',
-    link: '/dining',
+    link: '/fine-dining-seychelles',
     isActive: true,
   },
 ]

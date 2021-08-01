@@ -107,23 +107,23 @@ function App() {
         return (
           <Route path={`/${route}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />
         )
-      case "dining":
+      case "fine-dining-seychelles":
         return (
           <Route path={`/${route}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
         )
-      case "dining-inner":
+      case "dining":
         return (
           <Route path={`/${inner_route}/:id`} exact render={(props) => <DiningInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )
-      case "rooms-suites":
+      case "rooms-suites-seychelles":
         return (
           <Route path={`/${route}`} exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
         )
-      case "room-suites":
+      case "rooms-suites-seychelles":
         return (
           <Route path={`/${inner_route}`} exact render={(props) => <RoomSuites {...props} isMobile={isMobile} isTop={isTop} />} />
         )
-      case "rooms-inner":
+      case "rooms":
         return (
           <Route path={`/${inner_route}/:id`} exact render={(props) => <RoomsInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )

@@ -139,12 +139,12 @@ let breadcrumbItems = [
   },
   {
     text: "Dining",
-    link: "/dining",
+    link: "/fine-dining-seychelles",
     isActive: false,
   },
   {
     text: "",
-    link: "/dining-inner",
+    link: "/dining",
     isActive: true,
   },
 ];
@@ -163,7 +163,7 @@ class DiningInner extends Component {
       singleHotel.uploads = response?.data?.uploads;
       breadcrumbItems[breadcrumbItems.length - 1].text = singleHotel.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
-        "/dining-inner/" + singleHotel.id;
+        "/dining/" + singleHotel.id;
       singleHotel.post_metas = response.data.metas;
       this.setState({ singleHotel });
 
@@ -193,7 +193,7 @@ class DiningInner extends Component {
         breadcrumbItems[breadcrumbItems.length - 1].text =
           singleHotel.post_name;
         breadcrumbItems[breadcrumbItems.length - 1].link =
-          "/dining-inner/" + singleHotel.id;
+          "/dining/" + singleHotel.id;
         singleHotel.post_metas = response.data.metas;
         this.setState({ singleHotel });
 

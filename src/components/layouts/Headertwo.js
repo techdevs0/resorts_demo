@@ -17,7 +17,7 @@ let navigationmenu = [
     id: 2,
     linkText: "Dining",
     child: true,
-    link: "/dining",
+    link: "/fine-dining-seychelles",
     submenu: [],
   },
   {
@@ -29,7 +29,7 @@ let navigationmenu = [
   },
   {
     id: 4,
-    link: "/wedding",
+    link: "/seychelles-wedding-resort",
     linkText: "Weddings",
     child: false,
   },
