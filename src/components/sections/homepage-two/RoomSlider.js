@@ -44,7 +44,7 @@ const RoomSlider = (props) => {
                                 <img src={x.thumbnail} alt="" />
                             </div>
                             <div className="slide-content py-3">
-                                <h1 style={{ cursor: 'pointer' }} onClick={() => props.history.push("/rooms-inner/" + x.route)}>{x.post_name}</h1>
+                                <h1 style={{ cursor: 'pointer' }} onClick={() => props.history.push("/rooms/" + x.route)}>{x.post_name}</h1>
                                 {/* <ul>
                                     {x.additional_details_list.map((li,index) => (
                                         <li key={index}>{li}</li>

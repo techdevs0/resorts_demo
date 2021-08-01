@@ -155,6 +155,7 @@ import React, { Component } from 'react';
                   </div>
                   <div
                     className="room-details-popup"
+                    onClick={(e)=> e.stopPropagation()}
                     style={{ display: showCountPopup ? "block" : "none" }}
                   >
                     <div className="room_item_box quantity">
@@ -274,6 +275,7 @@ import React, { Component } from 'react';
                   </div>
                   <div
                     className="promo-popup"
+                    onClick={(e)=> e.stopPropagation()}
                     style={{ display: showPromoPopup ? "flex" : "none" }}
                   >
                     <div className="code-item">
