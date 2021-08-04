@@ -66,7 +66,6 @@ class Leisure extends Component {
     activitiesData: {},
     awardData:{},
     banner: null,
-    // awards: null
   }
 
   async componentDidMount() {
@@ -134,15 +133,14 @@ class Leisure extends Component {
         <LeisureTitleBlock />
         {/*====== TITLE END ======*/}
         {/*====== ROOM GRID START ======*/}
-        <LeisureGrid title={null}
-                     act={this.state.activitiesData}
-                     // data={roomsData}
+        <LeisureGrid
+                     actData={this.state.activitiesData}
+            // data={roomsData}
         />
         {/*====== ROOM GRID END ======*/}
         {/* ===== LEISURE AWARDS START */}
         <LeisureAwards
             award={this.state.awardData}
-            // awards={{image: this.state.awards?.section_avatar }}
         />
         {/* ===== LEISURE AWARDS END */}
         {/*<Subscribe />*/}
