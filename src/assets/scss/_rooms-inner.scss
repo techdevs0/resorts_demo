@@ -432,3 +432,37 @@
     border: 2px solid $primary-color;
   }
 }
+
+.left-image-section{
+
+  @media #{$lg}{
+    max-width: 70% !important;
+    flex : 0 0 70% !important;
+  }
+
+  @media #{$md}{
+    max-width: 100% !important;
+    flex : 0 0 100% !important;
+  }
+  @media #{$sm}{
+    max-width: 100% !important;
+    flex : 0 0 100% !important;
+  }
+
+}
+
+.right-booking-section{
+  @media #{$lg}{
+    max-width: 30% !important;
+    flex : 0 0 30% !important;
+  }
+ 
+  @media #{$md}{
+    max-width: 100% !important;
+    flex : 0 0 100% !important;
+  }
+  @media #{$sm}{
+    max-width: 100% !important;
+    flex : 0 0 100% !important;
+  }
+}

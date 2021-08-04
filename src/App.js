@@ -98,6 +98,9 @@ function App() {
 
   const mapRoute = (route, inner_route) => {
     route = route.split('/')?.[1] || route;
+    
+    if(route)
+
     switch (inner_route) {
       case "wedding":
         return (
@@ -169,7 +172,7 @@ function App() {
         )
       case "offer":
         return (
-          <Route path={`/${route}/:id`} exact render={(props) => <OffersInner {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${inner_route}/:id`} exact render={(props) => <OffersInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       default:
         break;

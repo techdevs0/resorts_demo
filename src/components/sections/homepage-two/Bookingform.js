@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 const year = `${new Date().getFullYear()}`;
 const month = (new Date().getMonth() + 1).toString().length === 1 ? `0${new Date().getMonth() + 1}` : `${new Date().getMonth() + 1}`;
 const day = (new Date().getDate()).toString().length === 1 ? `0${new Date().getDate()}` : `${new Date().getDate()}`;
@@ -28,8 +30,8 @@ class Bookingform extends Component {
         this.handleClickOutside = this.handleClickOutside.bind(this);
 
     }
-     dateChange = (e) => {
-        let cur = e.target.value;
+     dateChange = (date) => {
+        let cur = date;
         console.log(cur);
 
         let newDate =  this.nextDate(cur);
@@ -82,8 +84,8 @@ class Bookingform extends Component {
     //     // console.log(this.state.checkOut);
     //     // debugger;
     // }
-    handleCheckOutChange = (e) => {
-        this.setState({ checkOut: e.target.value })
+    handleCheckOutChange = (date) => {
+        this.setState({ checkOut: date })
     }
 
     handleSubmit = (e) => {
@@ -124,9 +126,40 @@ class Bookingform extends Component {
                         <div className="row">
                             <div className="col-12 col-md-4">
                                 <div className="dates-group">
-                                    <input onChange={this.dateChange} type="date" value={this.state.checkIn} className="form-control" placeholder="Check In" min={new Date().toISOString().split('T')[0]}></input>
-                                    <span className="d-none d-sm-block">-</span>
-                                    <input onChange={this.handleCheckOutChange} type="date" value={this.state.checkOut} min={this.state.checkOutMin} className="form-control" placeholder="Check Out" ></input>
+                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                <KeyboardDatePicker
+                                    disableToolbar
+                                    variant="inline"
+                                    format="MM-dd-yyyy"
+                                    margin="none"
+                                    id="date-picker-inline"
+                                    value={this.state.checkIn} 
+                                    className="form-control" 
+                                    placeholder="Check In" 
+                                    minDate={new Date().toISOString().split('T')[0]}
+                                    onChange={(date => this.dateChange(date))}
+                                    allowKeyboardControl={true}
+                
+                                />
+                                {/* <span className="d-none d-sm-block">-</span> */}
+                                <KeyboardDatePicker
+                                    disableToolbar
+                                    variant="inline"
+                                    format="MM-dd-yyyy"
+                                    margin="none"
+                                    id="date-picker-inline-1"
+                                    value={this.state.checkOut}
+                                    className="form-control" 
+                                    placeholder="Check In" 
+                                    minDate={this.state.checkOutMin}
+                                    onChange={(date => this.handleCheckOutChange(date))}
+                
+                                />        
+                                    </MuiPickersUtilsProvider>
+
+                                    {/* <input onChange={this.dateChange} type="date" value={this.state.checkIn} className="form-control" placeholder="Check In" min={new Date().toISOString().split('T')[0]}></input> */}
+                                    {/* <span className="d-none d-sm-block">-</span> */}
+                                   {/* <input onChange={this.handleCheckOutChange} type="date"  min={this.state.checkOutMin} className="form-control" placeholder="Check Out" ></input> */}
                                 </div>
                             </div>
                             <div className="col-12 col-md-4">

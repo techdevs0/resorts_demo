@@ -95,12 +95,12 @@ function gtag_report_conversion(url) {
     if (typeof url != "undefined") {
       // window.location = url;
     //window.open.url().location.replace(url);
-   window.open(url ,"_blank");
-    // var link = document.createElement('a');
-    // link.href = url;
-    // link.target = "_new";
-    // document.body.appendChild(link);
-    // link.click();
+  // window.open(url ,"_blank");
+    var link = document.createElement('a');
+    link.href = url;
+    link.target = "_new";
+    document.body.appendChild(link);
+    link.click();
   
   }
 

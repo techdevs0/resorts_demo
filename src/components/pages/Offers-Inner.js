@@ -21,16 +21,24 @@ const breadcrumbItems=[
     link:'/offers',
     isActive: true,
   },
-  {
-    text: 'Spa for Two',
-    link:'/offers-inner',
-    isActive: true,
-  },
+  // {
+  //   text: 'Spa for Two',
+  //   link:'/offer',
+  //   isActive: true,
+  // },
 ]
 
 class OffersInner extends Component {
+ 
+  componentDidMount() {
+
+    console.log('hello');
+ 
+  }
+ 
   render() {
     return (
+      
       <div className="bg-white offers-inner-wrapper">
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'offers-inner'} />
         {/*====== BANNER PART START ======*/}

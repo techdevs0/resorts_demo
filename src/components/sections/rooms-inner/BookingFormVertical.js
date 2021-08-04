@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
   const year = `${new Date().getFullYear()}`;
   const month = (new Date().getMonth() + 1).toString().length === 1 ? `0${new Date().getMonth() + 1}` : `${new Date().getMonth() + 1}`;
   const day = (new Date().getDate()).toString().length === 1 ? `0${new Date().getDate()}` : `${new Date().getDate()}`;
@@ -132,9 +133,39 @@ import React, { Component } from 'react';
             <div className="row">
               <div className="col-12 col-md-12">
                 <div className="dates-group">
-                <input onChange={this.dateChange} type="date" value={this.state.checkIn} className="form-control" placeholder="Check In" min={new Date().toISOString().split('T')[0]}></input>
+                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                    <KeyboardDatePicker
+                        disableToolbar
+                        variant="inline"
+                        format="MM-dd-yyyy"
+                        margin="none"
+                        id="date-picker-inline"
+                        value={this.state.checkIn} 
+                        className="form-control" 
+                        placeholder="Check In" 
+                        minDate={new Date().toISOString().split('T')[0]}
+                        onChange={(date => this.dateChange(date))}
+                        allowKeyboardControl={true}
+    
+                    />
+                    {/* <span className="d-none d-sm-block">-</span> */}
+                    <KeyboardDatePicker
+                        disableToolbar
+                        variant="inline"
+                        format="MM-dd-yyyy"
+                        margin="none"
+                        id="date-picker-inline-1"
+                        value={this.state.checkOut}
+                        className="form-control" 
+                        placeholder="Check In" 
+                        minDate={this.state.checkOutMin}
+                        onChange={(date => this.handleCheckOutChange(date))}
+    
+                    />        
+                </MuiPickersUtilsProvider>
+                {/* <input onChange={this.dateChange} type="date" value={this.state.checkIn} className="form-control" placeholder="Check In" min={new Date().toISOString().split('T')[0]}></input>
                   <span className="d-none d-sm-block">-</span>
-                  <input onChange={this.handleCheckOutChange} type="date" value={this.state.checkOut} min={this.state.checkOutMin} className="form-control" placeholder="Check Out" ></input>
+                  <input onChange={this.handleCheckOutChange} type="date" value={this.state.checkOut} min={this.state.checkOutMin} className="form-control" placeholder="Check Out" ></input> */}
                 </div>
               </div>
               <div className="col-12 col-md-12">
