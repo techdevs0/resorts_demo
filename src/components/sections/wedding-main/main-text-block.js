@@ -4,7 +4,9 @@ const WeddingTitleBlock = (props) => {
   return (
     <div className="wedding-title-block">
       <div className="container">
-        <h2 className="text-center">Wedding in Seychelles</h2>
+        <h2 className="text-center">
+          {props.intro?.section_name}
+        </h2>
         <div className="d-flex flex-wrap title-flex">
           <div className="wedding-title-item">
             <div dangerouslySetInnerHTML={{ __html: props.intro?.section_content }} className="text-justify mr-sm-4 mb-2">

@@ -9,6 +9,8 @@ import LeisureTitleBlock from '../sections/leisure/main-text-block';
 import LeisureGrid from '../sections/leisure/leisure-grid';
 import LeisureAwards from '../sections/leisure/leisure-awards';
 import BreadCrumb from '../layouts/BreadCrumb';
+import PageLayout from "../layouts/PageLayout";
+import API from "../../utils/http";
 
 const bannerImage = require('./../../assets/img/banner/Leisure-banner.jpg');
 
@@ -56,35 +58,99 @@ const breadcrumbItems=[
   },
 ]
 
+const pageId = 8;
+
 class Leisure extends Component {
+  state = {
+    // activitiesData: [],
+    activitiesData: {},
+    awardData:{},
+    banner: null,
+    // awards: null
+  }
+
+  async componentDidMount() {
+    try {
+      // const response = await API.get('/offers');
+      // debugger;
+
+      // this.setState({ premiumOffers: response.data })
+
+      API.get(`/all_sections/${pageId}`).then(response => {
+        this.setState({
+          banner: response.data?.find(x => x.section_slug === "banner"),
+          activitiesData: {
+            activities: response.data?.find(x => x.section_slug === "activities"),
+            Fishing: response.data?.find(x => x.section_slug === "Fishing"),
+            Unlock: response.data?.find(x => x.section_slug === "Unlock"),
+            Water: response.data?.find(x => x.section_slug === "Water"),
+          },
+          awardData: {
+            awards: response.data?.find(x => x.section_slug === "awards"),
+            excellence: response.data?.find(x => x.section_slug === "excellence")
+          },
+          // sections: {
+          //   intro: response.data?.find(x => x.section_slug === "intro"),
+          //   dine: response.data?.find(x => x.section_slug === "dine"),
+          // }
+        });
+      })
+          // .then(() => {
+          //   API.get(`/all_sections/${pageId}`).then(response => {
+
+          //     this.setState({
+          //       intro: response.data?.find(x => x.section_slug === "intro"),
+          //       banner: response.data?.find(x => x.section_slug === "banner"),
+          //     });
+          //   })
+          // })
+          .catch(err => {
+            console.log(err)
+          })
+    } catch (error) {
+      console.log(error)
+    }
+  }
   render() {
     return (
       <div className="bg-white">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'leisure'} />
-        {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Leisure Activities"} image={bannerImage} />
-        {/*====== BANNER PART ENDS ======*/}
-        {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
-        {/*====== BOOKING FORM END ======*/}
-        {/*====== BANNER PART ENDS ======*/}
-        {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems} />
-        {/* BREADCRUMBS END */}
-        {/*====== TITLE START ======*/}
+        <PageLayout
+            header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+            banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
+            breadCrumb={{ items: breadcrumbItems }}
+        >
+        {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'leisure'} />*/}
+        {/*/!*====== BANNER PART START ======*!/*/}
+        {/*<Mainbanner title={"Leisure Activities"} image={bannerImage} />*/}
+        {/*/!*====== BANNER PART ENDS ======*!/*/}
+        {/*/!*====== BOOKING FORM START ======*!/*/}
+        {/*<Bookingform />*/}
+        {/*/!*====== BOOKING FORM END ======*!/*/}
+        {/*/!*====== BANNER PART ENDS ======*!/*/}
+        {/*/!* BREADCRUMBS START *!/*/}
+        {/*<BreadCrumb items={breadcrumbItems} />*/}
+        {/*/!* BREADCRUMBS END *!/*/}
+        {/*/!*====== TITLE START ======*!/*/}
         <LeisureTitleBlock />
         {/*====== TITLE END ======*/}
         {/*====== ROOM GRID START ======*/}
-        <LeisureGrid title={null} data={roomsData} />
+        <LeisureGrid title={null}
+                     act={this.state.activitiesData}
+                     // data={roomsData}
+        />
         {/*====== ROOM GRID END ======*/}
         {/* ===== LEISURE AWARDS START */}
-        <LeisureAwards />
+        <LeisureAwards
+            award={this.state.awardData}
+            // awards={{image: this.state.awards?.section_avatar }}
+        />
         {/* ===== LEISURE AWARDS END */}
-        <Subscribe />
+        {/*<Subscribe />*/}
 
-        <Footertwo />
+        {/*<Footertwo />*/}
 
-        <BottomNavigator />
+        {/*<BottomNavigator />*/}
+        </PageLayout>
       </div>
     );
   }
