@@ -16,8 +16,6 @@ import PageLayout from '../layouts/PageLayout';
 
 const bannerImage = require('./../../assets/img/banner/wedding-banner.jpg');
 
-const pageId = 10;
-
 const roomsData = [
   {
     title: "Seaside Pontoon Wedding",
@@ -114,15 +112,19 @@ const breadcrumbItems = [
   },
 ]
 
+const pageId = 10;
+
 class Wedding extends Component {
   state = {
     weddingData: [],
     intro: {},
-    banner: {},
+    banner: null,
     meta: {}
   }
 
+
   componentDidMount() {
+
     API.get('/wedding').then(response => {
       this.setState({ weddingData: response.data?.filter(x => x.post_type !== "page") });
     })
@@ -150,9 +152,9 @@ class Wedding extends Component {
         <SEOTags meta={this.state.meta} />
 
         <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
+            header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+            banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
+            breadCrumb={{ items: breadcrumbItems }}
         >
           {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} /> */}
           {/*====== BANNER PART START ======*/}

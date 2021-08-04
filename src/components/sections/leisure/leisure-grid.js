@@ -9,8 +9,8 @@ const LeisureGrid = (props) => {
       }
       <div className='leisure-grid-wrapper'>
         {
-          props.data?.map(x => (
-            <RoomGridItem title={x.title} image={x.image} link={x.link} linkText={x.linkText} description={x.description} />
+            Object.keys(props.act)?.map(([key, x]) => (
+                <RoomGridItem title={x.section_name} image={x.section_avatar}/>
           ))
         }
       </div>
