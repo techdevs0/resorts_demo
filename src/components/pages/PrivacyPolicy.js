@@ -8,6 +8,7 @@ import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import PrivacyIntroBlock from '../sections/privacy-policy/intro-block';
 import API from '../../utils/http';
+import Helmet from "react-helmet";
 const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 const breadcrumbItems=[
@@ -45,6 +46,15 @@ class PrivacyPolicy extends Component {
   render() {
     return (
       <div className="bg-white privacy-policy-wrapper">
+          <Helmet>
+              <title>
+                  Privacy Police | Fishermans Cove Resort
+              </title>
+              <meta
+                  name="description"
+                  content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
+              />
+          </Helmet>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'privacy-policy'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Privacy Policy"} image={bannerImage} />

@@ -11,6 +11,7 @@ import FAQSection from '../sections/common/FAQSection';
 import PageLayout from '../layouts/PageLayout';
 import SEOTags from '../sections/common/SEOTags';
 import API from '../../utils/http';
+import Helmet from "react-helmet";
 const bannerImage = require('./../../assets/img/banner/Leisure-inner.jpg');
 
 const pageId = 41;
@@ -141,12 +142,20 @@ class LeisureInner extends Component {
       })
   }
   render() {
-
     return (
       <div className="bg-white leisure-inner-wrapper">
 
-        <SEOTags meta={this.state.meta} />
-
+        {/*<SEOTags meta={this.state.meta} />*/}
+        <Helmet>
+          <title>
+            Other Resort Activities | Fishermans Cove Resort
+            {/*Best Beach Resorts in Seychelles | Fishermans Cove Resort*/}
+          </title>
+          <meta
+              name="description"
+              content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
+          />
+        </Helmet>
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}

@@ -131,6 +131,7 @@ class Wedding extends Component {
       .then(() => {
         API.get(`/meta/${pageId}`).then(response => {
           this.setState({ meta: response.data });
+          console.log(response.data);
         })
       })
       .then(() => {

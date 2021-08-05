@@ -12,6 +12,7 @@ import galleryimg6 from '../../assets/img/gallery/06.jpg';
 import galleryimg7 from '../../assets/img/gallery/07.jpg';
 import galleryimg8 from '../../assets/img/gallery/08.jpg';
 import Headertwo from '../layouts/Headertwo';
+import Helmet from "react-helmet";
 
 
 
@@ -53,6 +54,16 @@ class Gallery extends Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>
+            Gallery | Fishermans Cove Resort
+            {/*Best Beach Resorts in Seychelles | Fishermans Cove Resort*/}
+          </title>
+          <meta
+              name="description"
+              content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
+          />
+        </Helmet>
         <Headertwo />
         {/*====== BREADCRUMB PART START ======*/}
         <section className="breadcrumb-area" style={{backgroundImage: 'url(assets/img/bg/04.jpg)'}}>

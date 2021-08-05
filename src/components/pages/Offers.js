@@ -9,6 +9,7 @@ import OfferTitleBlock from "../sections/offers/main-text-block";
 import OfferGrid from "../sections/offers/offer-grid";
 import BreadCrumb from "../layouts/BreadCrumb";
 import API from "../../utils/http";
+import Helmet from "react-helmet";
 const bannerImage = require("./../../assets/img/offers/stay.jpg");
 
 const roomsData = [
@@ -99,6 +100,16 @@ class Offers extends Component {
   render() {
     return (
       <div className="bg-white">
+        <Helmet>
+          <title>
+            Offers | Fishermans Cove Resort
+            {/*Fishermans Cove offers The Best Resort Deals for Seychelles*/}
+          </title>
+          <meta
+              name="description"
+              content="Fishermans Cove Resort is a veritable paradise that offers countless amazing experiences throughout the journey with some of the best resort deals in Seychelles."
+          />
+        </Helmet>
         <Headertwo
           isMobile={this.props.isMobile}
           isTop={this.props.isTop}

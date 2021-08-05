@@ -9,6 +9,7 @@ import RoomSuiteGrid from '../sections/room-suites/room-suites-grid';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
+import Helmet from "react-helmet";
 
 const bannerImage = require('./../../assets/img/banner/rooms.jpg');
 
@@ -49,6 +50,13 @@ class RoomSuites extends Component {
   render() {
     return (
       <div className="bg-white">
+          <Helmet>
+              <title>Best Rooms &amp; Suites in Seychelles at Fishermans Cove Resort</title>
+              <meta
+                  name="description"
+                  content="These are among the best hotel rooms and suites in Mahe, Seychelles providing guests with an amazing facilities and a view of the ocean at their doorsteps."
+              />
+          </Helmet>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'room-suites'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Inherited Paradise"} image={bannerImage} />
