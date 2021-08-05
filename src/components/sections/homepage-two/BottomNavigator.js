@@ -32,20 +32,26 @@ const BottomNavigator = () => {
         onChange={handleChange}
         className={classes.root}
       >
-        <Link to="/">
-          <HomeRounded />
-        </Link>
-        <a href="#">
-          <EventRounded
-            onClick={(e) => {
-              e.preventDefault();
-              window.gtag_report_conversion(
-                  "https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB"
-              )
-            }
-            }
-          />
-        </a>
+        <Link className="main-btn btn-border" to={"#"}
+              style={{borderColor: "#be8a7d",
+                background: "#be8a7d",
+                color:"white"
+              }}
+        >Book Now</Link>
+        {/*<Link to="/">*/}
+        {/*  <HomeRounded />*/}
+        {/*</Link>*/}
+        {/*<a href="#">*/}
+        {/*  <EventRounded*/}
+        {/*    onClick={(e) => {*/}
+        {/*      e.preventDefault();*/}
+        {/*      window.gtag_report_conversion(*/}
+        {/*          "https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB"*/}
+        {/*      )*/}
+        {/*    }*/}
+        {/*    }*/}
+        {/*  />*/}
+        {/*</a>*/}
         <a href="tel:+2484677000">
           <PhoneRounded />
         </a>
