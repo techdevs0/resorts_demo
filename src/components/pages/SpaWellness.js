@@ -9,6 +9,7 @@ import SpaWellnessTitleBlock from '../sections/spa-wellness/spa-title-block';
 import SpaWellnessRecommendations from '../sections/spa-wellness/spa-offers';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
+import Helmet from "react-helmet";
 
 const bannerImage = require('./../../assets/img/banner/spa-banner.jpg');
 
@@ -51,6 +52,13 @@ class SpaWellness extends Component {
   render() {
     return (
       <div className="bg-white spa-wrapper">
+          <Helmet>
+              <title>Spa Resort in Seychelles | Sesel Spa at Fishermans Cove Resort </title>
+              <meta
+                  name="description"
+                  content="Explore the healing elements in nature at Fishermans Cove, a spa resort in Seychelles. This space features Hydrotherapy &amp; and other beauty therapies as well"
+              />
+          </Helmet>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'spa-wellness'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Spa & Wellness"} image={bannerImage} />

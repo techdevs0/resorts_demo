@@ -7,7 +7,7 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import OffersInnerMainBlock from '../sections/offers-inner/offers-inner-block';
 import BreadCrumb from '../layouts/BreadCrumb';
-import API from "../../utils/http";
+import Helmet from "react-helmet";
 const bannerImage = require('./../../assets/img/banner/Leisure-inner.jpg');
 
 
@@ -54,6 +54,16 @@ class OffersInner extends Component {
   render() {
     return (
       <div className="bg-white offers-inner-wrapper">
+          <Helmet>
+              <title>
+                  Stay and Save With Fishermans Cove Resort + Dinner for Two |
+                  Fishermans Cove Resort
+              </title>
+              <meta
+                  name="description"
+                  content="Make your ordinary vacation, extra ordinary with 10% off at Fishermans Cove Resort. Book your stay now and get a complimentary dinner for two at Le Cardinal Restaurant."
+              />
+          </Helmet>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'offers-inner'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={this.state.offerData.banner_text} image={this.state.offerData.banner_img}/>

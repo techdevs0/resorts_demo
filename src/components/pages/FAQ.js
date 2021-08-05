@@ -7,6 +7,7 @@ import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import FAQIntroBlock from '../sections/faq/intro-block';
+import Helmet from "react-helmet";
 const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 const breadcrumbItems = [
@@ -118,6 +119,13 @@ class FAQ extends Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>F.A.Q. | Fishermans Cove Resort</title>
+          <meta
+              name="description"
+              content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
+          />
+        </Helmet>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'faq'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"F.A.Q"} image={bannerImage} />

@@ -11,6 +11,8 @@ import SustainProjectsBlock from '../sections/sustainability/projects-block';
 import SustainEngeryBlock from '../sections/sustainability/energy-conservation';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
+import Helmet from "react-helmet";
+import SEOTags from "../sections/common/SEOTags";
 
 const bannerImage = require('./../../assets/img/banner/Sustainability-banner.jpg');
 
@@ -48,7 +50,7 @@ class Sustainability extends Component {
           pillars: response.data?.find(x => x.section_slug === "pillars"),
           energy: response.data?.find(x => x.section_slug === "energy"),
         }
-      });
+      })
     })
       // .then(() => {
       //   API.get(`/all_sections/${pageId}`).then(response => {
@@ -66,6 +68,15 @@ class Sustainability extends Component {
   render() {
     return (
       <div className="bg-white sustainability-wrapper">
+          <Helmet>
+              <title>
+                  Sustainability | An Eco Friendly Resort in Seychelles
+              </title>
+              <meta
+                  name="description"
+                  content="Fishermans Cove Resort is an eco friendly resort built upon the principle of protecting the environment and moving forward towards a better and sustainable future."
+              />
+          </Helmet>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'sustainability'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Sustainability"} image={this.state.banner?.section_avatar} />

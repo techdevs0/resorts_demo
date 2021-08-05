@@ -219,7 +219,6 @@ class DiningInner extends Component {
     return (
       <div className="bg-white dining-inner-wrapper">
         <SEOTags meta={this.state.singleHotel?.post_metas?.[0]} />
-
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{

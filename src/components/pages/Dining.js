@@ -11,6 +11,7 @@ import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import FAQSection from '../sections/common/FAQSection';
+import Helmet from "react-helmet";
 const bannerImage = require('./../../assets/img/banner/dining.jpg');
 
 
@@ -102,6 +103,16 @@ class Dining extends Component {
   render() {
     return (
       <div className="bg-white">
+        <Helmet>
+          <title>
+            Dining | Fishermans Cove Resort
+            {/*Restaurants in Seychelles Mahe | Fishermans Cove Resort*/}
+          </title>
+          <meta
+              name="description"
+              content="The resort has two of the best restaurants and bars in Seychelles that allow you to savor scrumptious flavors while enjoying the Indian Ocean’s spectacular sunset."
+          />
+        </Helmet>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'dining'} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Dining"} image={bannerImage} />

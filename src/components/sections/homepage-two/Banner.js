@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import ReactWOW from 'react-wow'
+import {Hidden} from "@material-ui/core";
 
 // import bannerimg1 from '../../../assets/img/banner/home.jpg';
 // import bannerimg2 from '../../../assets/img/banner/05.jpg';
@@ -19,6 +20,9 @@ const bannerPosts = [
     btn2: 'Learn More',
     btn2animation: '1.3s',
     btn2url: '/about',
+    btn3: 'Book Now',
+    btn3animation: '1.3s',
+    btn3url: '/about',
   },
 ];
 
@@ -52,11 +56,24 @@ class Banner extends Component {
                           <Link className="main-btn btn-border" to={item.btn1url}>{item.btn1}</Link>
                         </li>
                       </ReactWOW>
-                      <ReactWOW animation="fadeInUp" data-delay={item.btn2animation}>
-                        <li>
-                          <Link className="main-btn btn-border" to={item.btn2url}>{item.btn2}</Link>
-                        </li>
-                      </ReactWOW>
+                      <Hidden smDown>
+                        <ReactWOW animation="fadeInUp" data-delay={item.btn2animation}>
+                          <li>
+                            <Link className="main-btn btn-border" to={item.btn2url}>{item.btn2}</Link>
+                          </li>
+                        </ReactWOW>
+                      </Hidden>
+                      <Hidden mdUp>
+                        <ReactWOW animation="fadeInUp" data-delay={item.btn3animation}>
+                          <li>
+                            <Link className="main-btn btn-border" to={item.btn3url}
+                            style={{borderColor: "#be8a7d",
+                              background: "#be8a7d"
+                            }}
+                            >{item.btn3}</Link>
+                          </li>
+                        </ReactWOW>
+                      </Hidden>
                     </ul>
                   </div>
                 </div>

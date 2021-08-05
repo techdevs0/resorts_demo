@@ -11,6 +11,7 @@ import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import PageLayout from '../layouts/PageLayout';
+import Helmet from "react-helmet";
 const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 const roomsData = [
@@ -132,6 +133,15 @@ class ContactUs extends Component {
   render() {
     return (
       <div className="bg-white">
+        <Helmet>
+          <title>
+            Contact Us | Fishermans Cove Resort
+          </title>
+          <meta
+              name="description"
+              content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
+          />
+        </Helmet>
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}

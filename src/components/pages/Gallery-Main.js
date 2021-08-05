@@ -9,6 +9,7 @@ import GalleryTitleBlock from '../sections/gallery/main-text-block';
 import GalleryGrid from '../sections/gallery/gallery-grid';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
+import Helmet from "react-helmet";
 const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 
@@ -42,6 +43,16 @@ class GalleryMain extends Component {
   render() {
     return (
       <div className="bg-white">
+          <Helmet>
+              <title>
+                  Gallery | Fishermans Cove Resort
+                  {/*Best Beach Resorts in Seychelles | Fishermans Cove Resort*/}
+              </title>
+              <meta
+                  name="description"
+                  content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
+              />
+          </Helmet>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} />
         {/*====== BANNER PART START ======*/}
         <Mainbanner title={"Gallery"} image={bannerImage} />

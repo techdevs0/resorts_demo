@@ -11,6 +11,7 @@ import LeisureAwards from '../sections/leisure/leisure-awards';
 import BreadCrumb from '../layouts/BreadCrumb';
 import PageLayout from "../layouts/PageLayout";
 import API from "../../utils/http";
+import Helmet from "react-helmet";
 
 const bannerImage = require('./../../assets/img/banner/Leisure-banner.jpg');
 
@@ -66,7 +67,6 @@ class Leisure extends Component {
     activitiesData: {},
     awardData:{},
     banner: null,
-    // awards: null
   }
 
   async componentDidMount() {
@@ -114,6 +114,16 @@ class Leisure extends Component {
   render() {
     return (
       <div className="bg-white">
+        <Helmet>
+          <title>
+            Leisure Activities | Fishermans Cove Resort
+            {/*Best Beach Resorts in Seychelles | Fishermans Cove Resort*/}
+          </title>
+          <meta
+              name="description"
+              content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
+          />
+        </Helmet>
         <PageLayout
             header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
             banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
@@ -134,15 +144,14 @@ class Leisure extends Component {
         <LeisureTitleBlock />
         {/*====== TITLE END ======*/}
         {/*====== ROOM GRID START ======*/}
-        <LeisureGrid title={null}
-                     act={this.state.activitiesData}
-                     // data={roomsData}
+        <LeisureGrid
+                     actData={this.state.activitiesData}
+            // data={roomsData}
         />
         {/*====== ROOM GRID END ======*/}
         {/* ===== LEISURE AWARDS START */}
         <LeisureAwards
             award={this.state.awardData}
-            // awards={{image: this.state.awards?.section_avatar }}
         />
         {/* ===== LEISURE AWARDS END */}
         {/*<Subscribe />*/}
