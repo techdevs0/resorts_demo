@@ -5,23 +5,18 @@ const OffersInnerMainBlock = (props) => {
   return (
     <div className="main-block">
       <div className="container">
-        <h2>Spa for Two</h2>
+        <div className="inner-block-heading" dangerouslySetInnerHTML={{__html: props.offerData?.short_description}}></div>
         <div className="d-flex flex-wrap title-flex">
           <div className="main-item img-wrapper">
-            <img alt="" src={require('./../../../assets/img/offers/inner.jpg')} />
+            <img alt="" src={props.offerData?.thumbnail} />
           </div>
           <div className="main-item pl-sm-4">
-            <p className="text-justify ">
-              Embark on a romantic journey of tranquillity with your partner at the award-winning Sesel Spa
-            </p>
-            <p className="text-justify ">
-              Enjoy memorable moments of spa bonding with a 60’ deep relaxing massage treatment in our scenic Couples Suite, followed by an hour’s calming moment in our private garden with views of Seychelles’ beautiful mountains whilst sipping on some bubbly and enjoying delicious appetizers lovingly prepared by our Chef.
-            </p>
-            <h6 className="mv">All for AED 4000/- only
+            <div  dangerouslySetInnerHTML={{__html:props.offerData?.post_content}}/>
+            {/* <h6 className="mv">All for AED 4000/- only
             <br />
               <small>Terms &amp; Conditions applied.</small>
-            </h6>
-            <div className="share-block">
+            </h6> */}
+            {/* <div className="share-block">
               <p>Share with friends and family</p>
               <div className="share-social-links">
                 <a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f"></i></a>
@@ -29,8 +24,8 @@ const OffersInnerMainBlock = (props) => {
                 <a href="https://wa.me/2482816329"><i className="fab fa-whatsapp"></i></a>
                 <a href="https://www.instagram.com/fishermanscove.resort/"><i className="fab fa-instagram"></i></a>
               </div>
-            </div>
-            <div className="reservations-block">
+            </div> */}
+            <div className="reservations-block mt-3">
               <p>For Reservations</p>
               <div className="contact-links">
                 <div>
@@ -42,6 +37,16 @@ const OffersInnerMainBlock = (props) => {
                   <span>reservations@fishermanscove-resort.com</span>
                 </div>
               </div>
+              <button className="btn btn-eden main-btn mx-auto d-inline-block"    
+              
+              onClick={(e) => {
+                                    
+              window.gtag_report_conversion(props.offerData.post_url,true)
+                               
+                               }}                  
+              >
+               Book Now
+               </button>  
             </div>
           </div>
         </div>

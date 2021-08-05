@@ -7,14 +7,8 @@ const OfferTitleBlock = (props) => {
       <div className="container">
         <h2>Offers</h2>
         
-        <OfferCategories />
-
-        <p>
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet.
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet.
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet.
-          Offering countless experience with outstanding services. Lorem ipsum doler set amet.
-      </p>
+        {/* <OfferCategories /> */}
+        
       </div>
     </div>
   );

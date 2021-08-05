@@ -98,9 +98,6 @@ function App() {
 
   const mapRoute = (route, inner_route) => {
     route = route.split('/')?.[1] || route;
-    
-    if(route)
-
     switch (inner_route) {
       case "wedding":
         return (

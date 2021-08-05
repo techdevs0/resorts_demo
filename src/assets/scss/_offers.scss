@@ -49,12 +49,31 @@
     display: inline-block;
     cursor: pointer;
     // margin: 2rem auto;
+    @media #{$md} {
+      max-width: 33.33%;
+      min-width: 33.33%;
+      padding: 0.25rem 0.25rem;
+      // margin: 1rem auto;
+    }
     @media #{$sm} {
       max-width: 50%;
       min-width: 50%;
       padding: 0.25rem 0.25rem;
       // margin: 1rem auto;
     }
+    @media #{$lsm} {
+      max-width: 50%;
+      min-width: 50%;
+      padding: 0.25rem 0.25rem;
+      // margin: 1rem auto;
+    }
+    @media #{$xsm} {
+      max-width: 100%;
+      min-width: 100%;
+      padding: 0.25rem 0.25rem;
+      // margin: 1rem auto;
+    }
+
     .grid-item {
       box-shadow: 0 0 8px #dadada;
       .offer-title {
@@ -66,6 +85,9 @@
         flex-direction: column;
         @media #{$sm} {
           height: 150px;
+        }
+        @media #{$xsm} {
+          height: 250px;
         }
         h3,
         h4 {
