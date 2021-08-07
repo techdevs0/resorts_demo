@@ -65,7 +65,7 @@ class AboutUs extends Component {
     meta:{}
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     try {
       // const response = await API.get('/offers');
       // debugger;
@@ -96,10 +96,8 @@ class AboutUs extends Component {
         //     });
         //   })
         // })
-        .catch(err => {
-          console.log(err)
-        })
-    } catch (error) {
+    }
+    catch (error) {
       console.log(error)
     }
   }

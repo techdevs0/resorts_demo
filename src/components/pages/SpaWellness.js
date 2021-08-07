@@ -39,7 +39,7 @@ class SpaWellness extends Component {
       meta:{}
   }
 
-  async componentDidMount() {
+   componentDidMount() {
     // const spaWellnessID = 42;
     // let id = this.props.match.params.id;
     // let id = spaWellnessID;
