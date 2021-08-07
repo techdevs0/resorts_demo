@@ -166,6 +166,8 @@ class Bookingform extends Component {
                                         disablePast={true}
                                         open={openCheckOut}
                                         minDate={checkOutMin}
+                                        dateRange={true}
+                                        startDate={checkIn}
                                         onOpen={() => {
                                             this.setState({
                                                 openCheckOut: true,
