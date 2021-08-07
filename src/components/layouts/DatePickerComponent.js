@@ -112,8 +112,8 @@ const DatePickerComponent = (props) => {
         let selectedDateClone = new Date(selectedDate);
         let disablePast = new Date(minDate);
 
-        const start = !dateRange ? new Date(selectedDateClone.setHours(0,0,0,0)) : new Date(new Date(startDate).setHours(0,0,0,0));
-        const end = !dateRange ? new Date(selectedDateClone.setHours(23,59,59,999)) : new Date(new Date(value).setHours(23,59,59,999));
+        const start = !dateRange ? new Date(selectedDateClone.setHours(0, 0, 0, 0)) : new Date(new Date(startDate).setHours(0, 0, 0, 0));
+        const end = !dateRange ? new Date(selectedDateClone.setHours(23, 59, 59, 999)) : new Date(new Date(value).setHours(23, 59, 59, 999));
         // console.log("renderWrappedWeekDay", start)
         // console.log("renderWrappedWeekDay", end)
         // console.log("renderWrappedWeekDay", selectedDateClone)
@@ -163,9 +163,13 @@ const DatePickerComponent = (props) => {
                     onChange={handleChange}
                     renderDay={renderWrappedMonthDays}
                     allowKeyboardControl={true}
+                    animateYearScrolling={true}
                     autoOk={true}
-                    onOpen={onOpen}
-                    onClose={onClose}
+                    onOpen={onOpen()}
+                    PopoverProps={{
+                        disableScrollLock: true,
+                    }}
+                    onClose={onClose()}
                     disablePast={disablePast}
                     open={open}
                     color="black"
