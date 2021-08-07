@@ -67,20 +67,20 @@ class AboutUs extends Component {
 
   componentDidMount() {
     try {
-      // const response = await API.get('/offers');
-      // debugger;
-
-      // this.setState({ premiumOffers: response.data })
-
-      API.get(`/all_sections/${pageId}`).then(response => {
-        this.setState({
-          banner: response.data?.find(x => x.section_slug === "banner"),
-          sections: {
-            intro: response.data?.find(x => x.section_slug === "intro"),
-            dine: response.data?.find(x => x.section_slug === "dine"),
-          }
-        });
+      API.get('/premium_offers').then(response=>{
+        this.setState({ premiumOffers: response.data })
       })
+          .then(() => {
+            API.get(`/all_sections/${pageId}`).then(response => {
+              this.setState({
+                banner: response.data?.find(x => x.section_slug === "banner"),
+                sections: {
+                  intro: response.data?.find(x => x.section_slug === "intro"),
+                  dine: response.data?.find(x => x.section_slug === "dine"),
+                }
+              });
+            })
+          })
           .then(() => {
             API.get(`/meta/${pageId}`).then(response => {
               this.setState({ meta: response.data });

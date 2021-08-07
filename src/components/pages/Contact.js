@@ -12,6 +12,7 @@ import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import PageLayout from '../layouts/PageLayout';
 import Helmet from "react-helmet";
+import SEOTags from "../sections/common/SEOTags";
 const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 const roomsData = [
@@ -95,7 +96,8 @@ const pageId = 78;
 class ContactUs extends Component {
   state = {
     sections: null,
-    banner: null
+    banner: null,
+    meta:{}
   }
 
   componentDidMount() {
@@ -113,6 +115,12 @@ class ContactUs extends Component {
           }
         });
       })
+          .then(() => {
+            API.get(`/meta/${pageId}`).then(response => {
+              this.setState({ meta: response.data });
+              console.log(response.data);
+            })
+          })
         // .then(() => {
         //   API.get(`/all_sections/${pageId}`).then(response => {
 
@@ -133,15 +141,17 @@ class ContactUs extends Component {
   render() {
     return (
       <div className="bg-white">
-        <Helmet>
-          <title>
-            Contact Us | Fishermans Cove Resort
-          </title>
-          <meta
-              name="description"
-              content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
-          />
-        </Helmet>
+        <SEOTags meta={this.state.meta} />
+
+        {/*<Helmet>*/}
+        {/*  <title>*/}
+        {/*    Contact Us | Fishermans Cove Resort*/}
+        {/*  </title>*/}
+        {/*  <meta*/}
+        {/*      name="description"*/}
+        {/*      content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"*/}
+        {/*  />*/}
+        {/*</Helmet>*/}
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
