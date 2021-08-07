@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import API from '../../utils/http';
 import Headertwo from '../layouts/Headertwo';
 import Footertwo from '../layouts/Footertwo';
 import Mainbanner from '../sections/homepage-two/Banner';
