@@ -8,6 +8,9 @@ import Subscribe from '../sections/common/Subscribe';
 import BreadCrumb from '../layouts/BreadCrumb';
 import FAQIntroBlock from '../sections/faq/intro-block';
 import Helmet from "react-helmet";
+import API from "../../utils/http";
+import SEOTags from "../sections/common/SEOTags";
+import PageLayout from "../layouts/PageLayout";
 const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 const breadcrumbItems = [
@@ -100,53 +103,70 @@ Constance Lemuria.
     answer: `Seychelles is best known for its crystal clear waters and its beautiful beaches. The place is filled with tropical forests and untouched wonderlands. It’s a place with a rich history and filled with opportunities for leisure activities. `,
     category:'policy'
   },
-];
-
-// const breadcrumbItems=[
-//   {
-//     text: 'Fishermans Cove Resort',
-//     link:'/',
-//     isActive: false,
-//   },
-//   {
-//     text: 'Weddings',
-//     link:'/weddings',
-//     isActive: true,
-//   },
-// ]
-
+]
+const pageId = 147;
 class FAQ extends Component {
+  state = {
+    banner: null,
+    meta: {}
+  }
+
+   componentDidMount() {
+    try {
+      API.get(`/all_sections/${pageId}`).then(response => {
+        this.setState({
+          banner: response.data?.find(x => x.section_slug === "banner"),
+          intro: response.data?.find(x => x.section_slug === "intro"),
+        });
+      })
+          .then(() => {
+            API.get(`/meta/${pageId}`).then(response => {
+              this.setState({ meta: response.data });
+              console.log(response.data);
+            })
+          })
+    } catch (error) {
+      console.log(error);
+    }
+  }
   render() {
     return (
       <div>
-        <Helmet>
-          <title>F.A.Q. | Fishermans Cove Resort</title>
-          <meta
-              name="description"
-              content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
-          />
-        </Helmet>
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'faq'} />
-        {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"F.A.Q"} image={bannerImage} />
-        {/*====== BANNER PART ENDS ======*/}
-        {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
-        {/*====== BOOKING FORM END ======*/}
-        <div className="bg-white faq-wrapper">
-          {/* BREADCRUMBS START */}
-          <BreadCrumb items={breadcrumbItems} />
-          {/* BREADCRUMBS END */}
-          {/*====== INTRO START ======*/}
+        <SEOTags meta={this.state.meta} />
+
+        {/*<Helmet>*/}
+        {/*  <title>F.A.Q. | Fishermans Cove Resort</title>*/}
+        {/*  <meta*/}
+        {/*      name="description"*/}
+        {/*      content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"*/}
+        {/*  />*/}
+        {/*</Helmet>*/}
+        <PageLayout
+            header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+            banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
+            breadCrumb={{ items: breadcrumbItems }}
+        >
+        {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'faq'} />*/}
+        {/*/!*====== BANNER PART START ======*!/*/}
+        {/*<Mainbanner title={"F.A.Q"} image={bannerImage} />*/}
+        {/*/!*====== BANNER PART ENDS ======*!/*/}
+        {/*/!*====== BOOKING FORM START ======*!/*/}
+        {/*<Bookingform />*/}
+        {/*/!*====== BOOKING FORM END ======*!/*/}
+        {/*  /!* BREADCRUMBS START *!/*/}
+        {/*  <BreadCrumb items={breadcrumbItems} />*/}
+        {/*  /!* BREADCRUMBS END *!/*/}
+        {/*  /!*====== INTRO START ======*!/*/}
+          <div className="bg-white faq-wrapper">
           <FAQIntroBlock faqList={faqList} />
           {/*====== INTRO END ======*/}
-
         </div>
-        <Subscribe />
+        {/*<Subscribe />*/}
 
-        <Footertwo />
+        {/*<Footertwo />*/}
 
-        <BottomNavigator />
+        {/*<BottomNavigator />*/}
+        </PageLayout>
       </div>
     );
   }
