@@ -171,6 +171,11 @@ function App() {
         return (
           <Route path={`/${inner_route}/:id`} exact render={(props) => <OffersInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )
+
+        case "faqs":
+          return (
+            <Route path={`/${route}`} exact render={(props) => <FAQ {...props} isMobile={isMobile} isTop={isTop} />} />
+          )
       default:
         break;
         return (

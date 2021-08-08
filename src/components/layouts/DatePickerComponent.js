@@ -166,9 +166,9 @@ const DatePickerComponent = (props) => {
                     animateYearScrolling={true}
                     autoOk={true}
                     onOpen={onOpen}
-                    PopoverProps={{
-                        disableScrollLock: true,
-                    }}
+                    // PopoverProps={{
+                    //     disableScrollLock: true,
+                    // }}
                     onClose={onClose}
                     disablePast={disablePast}
                     open={open}
