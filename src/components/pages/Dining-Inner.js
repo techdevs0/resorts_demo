@@ -148,10 +148,12 @@ let breadcrumbItems = [
     isActive: true,
   },
 ];
+const pageId = 137;
 class DiningInner extends Component {
   state = {
     singleHotel: {},
     othersData: [],
+    sections: null,
     pageSections: [],
   };
 
@@ -177,7 +179,20 @@ class DiningInner extends Component {
               (x) => x.id !== this.state.singleHotel?.id
             ) || [],
         });
-      });
+      })
+          .then(() => {
+            API.get(`/all_sections/${pageId}`).then(response => {
+              this.setState({
+                banner: response.data?.find(x => x.section_slug === "banner"),
+                sections: {
+                  intro: response.data?.find(x => x.section_slug === "intro"),
+                  dine: response.data?.find(x => x.section_slug === "dine"),
+                  dress : response.data?.find(x => x.section_slug === "dress"),
+                  timings : response.data?.find(x => x.section_slug === "timings")
+                }
+              });
+            })
+          })
     } catch (error) {
       console.log(error);
     }
@@ -248,12 +263,15 @@ class DiningInner extends Component {
           {/*====== TITLE END ======*/}
           {/*====== ROOM GRID START ======*/}
           <DiningInnerInfo
-            timingSection={this.state.pageSections?.find(
-              (x) => x.section_slug === "timings"
-            )}
-            dressSection={this.state.pageSections?.find(
-              (x) => x.section_slug === "dress"
-            )}
+              timingSection={this.state.sections?.timings}
+              dressSection={this.state.sections?.dress}
+
+              // timingSection={this.state.pageSections?.find(
+            //   (x) => x.section_slug === "timings"
+            // )}
+            // dressSection={this.state.pageSections?.find(
+            //   (x) => x.section_slug === "dress"
+            // )}
           />
           {/*====== ROOM GRID END ======*/}
           {/*====== SUITES GRID START ======*/}
