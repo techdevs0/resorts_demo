@@ -13,6 +13,7 @@ import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import PageLayout from '../layouts/PageLayout';
 import { Helmet } from "react-helmet";
+import SEOTags from "../sections/common/SEOTags";
 
 const bannerImage = require('./../../assets/img/banner/about.jpg');
 
@@ -60,25 +61,32 @@ class AboutUs extends Component {
   state = {
     premiumOffers: [],
     sections: null,
-    banner: null
+    banner: null,
+    meta:{}
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     try {
-      // const response = await API.get('/offers');
-      // debugger;
-
-      // this.setState({ premiumOffers: response.data })
-
-      API.get(`/all_sections/${pageId}`).then(response => {
-        this.setState({
-          banner: response.data?.find(x => x.section_slug === "banner"),
-          sections: {
-            intro: response.data?.find(x => x.section_slug === "intro"),
-            dine: response.data?.find(x => x.section_slug === "dine"),
-          }
-        });
+      API.get('/premium_offers').then(response=>{
+        this.setState({ premiumOffers: response.data })
       })
+          .then(() => {
+            API.get(`/all_sections/${pageId}`).then(response => {
+              this.setState({
+                banner: response.data?.find(x => x.section_slug === "banner"),
+                sections: {
+                  intro: response.data?.find(x => x.section_slug === "intro"),
+                  dine: response.data?.find(x => x.section_slug === "dine"),
+                }
+              });
+            })
+          })
+          .then(() => {
+            API.get(`/meta/${pageId}`).then(response => {
+              this.setState({ meta: response.data });
+              console.log(response.data);
+            })
+          })
         // .then(() => {
         //   API.get(`/all_sections/${pageId}`).then(response => {
   
@@ -88,10 +96,8 @@ class AboutUs extends Component {
         //     });
         //   })
         // })
-        .catch(err => {
-          console.log(err)
-        })
-    } catch (error) {
+    }
+    catch (error) {
       console.log(error)
     }
   }
@@ -99,16 +105,18 @@ class AboutUs extends Component {
   render() {
     return (
       <div className="bg-white about-us-wrapper">
-        <Helmet>
-          <title>
-            About | Fishermans Cove Resort
-            {/*Best Beach Resorts in Seychelles | Fishermans Cove Resort*/}
-          </title>
-          <meta
-              name="description"
-              content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
-          />
-        </Helmet>
+        <SEOTags meta={this.state.meta} />
+
+        {/*<Helmet>*/}
+        {/*  <title>*/}
+        {/*    About | Fishermans Cove Resort*/}
+        {/*    /!*Best Beach Resorts in Seychelles | Fishermans Cove Resort*!/*/}
+        {/*  </title>*/}
+        {/*  <meta*/}
+        {/*      name="description"*/}
+        {/*      content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"*/}
+        {/*  />*/}
+        {/*</Helmet>*/}
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}

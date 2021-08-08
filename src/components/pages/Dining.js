@@ -12,6 +12,8 @@ import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import FAQSection from '../sections/common/FAQSection';
 import Helmet from "react-helmet";
+import PageLayout from "../layouts/PageLayout";
+import SEOTags from "../sections/common/SEOTags";
 const bannerImage = require('./../../assets/img/banner/dining.jpg');
 
 
@@ -71,10 +73,13 @@ const breadcrumbItems = [
     isActive: true,
   },
 ]
-
+const pageId = 119;
 class Dining extends Component {
   state = {
     diningData: [],
+    banner:null,
+    intro:null,
+    meta:{}
   }
 
   componentDidMount() {
@@ -82,19 +87,19 @@ class Dining extends Component {
     API.get('/dining').then(response => {
       this.setState({ diningData: response.data });
     })
-    // .then(() => {
-    //   API.get(`/meta/${pageId}`).then(response => {
-    //     this.setState({ meta: response.data });
-    //   })
-    // })
-    // .then(() => {
-    //   API.get(`/all_sections/${pageId}`).then(response => {
-    //     this.setState({
-    //       intro: response.data?.find(x => x.section_slug === "intro"),
-    //       banner: response.data?.find(x => x.section_slug === "banner"),
-    //     });
-    //   })
-    // })
+    .then(() => {
+      API.get(`/meta/${pageId}`).then(response => {
+        this.setState({ meta: response.data });
+      })
+    })
+    .then(() => {
+      API.get(`/all_sections/${pageId}`).then(response => {
+        this.setState({
+          intro: response.data?.find(x => x.section_slug === "intro"),
+          banner: response.data?.find(x => x.section_slug === "banner"),
+        });
+      })
+    })
     .catch(err => {
       console.log(err)
     })
@@ -103,28 +108,35 @@ class Dining extends Component {
   render() {
     return (
       <div className="bg-white">
-        <Helmet>
-          <title>
-            Dining | Fishermans Cove Resort
-            {/*Restaurants in Seychelles Mahe | Fishermans Cove Resort*/}
-          </title>
-          <meta
-              name="description"
-              content="The resort has two of the best restaurants and bars in Seychelles that allow you to savor scrumptious flavors while enjoying the Indian Ocean’s spectacular sunset."
-          />
-        </Helmet>
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'dining'} />
-        {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Dining"} image={bannerImage} />
-        {/*====== BANNER PART ENDS ======*/}
-        {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
-        {/*====== BOOKING FORM END ======*/}
-        {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems} />
-        {/* BREADCRUMBS END */}
-        {/*====== TITLE START ======*/}
-        <DiningTitleBlock />
+        <SEOTags meta={this.state.meta} />
+
+        {/*<Helmet>*/}
+        {/*  <title>*/}
+        {/*    Dining | Fishermans Cove Resort*/}
+        {/*    /!*Restaurants in Seychelles Mahe | Fishermans Cove Resort*!/*/}
+        {/*  </title>*/}
+        {/*  <meta*/}
+        {/*      name="description"*/}
+        {/*      content="The resort has two of the best restaurants and bars in Seychelles that allow you to savor scrumptious flavors while enjoying the Indian Ocean’s spectacular sunset."*/}
+        {/*  />*/}
+        {/*</Helmet>*/}
+        <PageLayout
+            header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+            banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
+            breadCrumb={{ items: breadcrumbItems }}
+        >
+        {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'dining'} />*/}
+        {/*/!*====== BANNER PART START ======*!/*/}
+        {/*<Mainbanner title={"Dining"} image={bannerImage} />*/}
+        {/*/!*====== BANNER PART ENDS ======*!/*/}
+        {/*/!*====== BOOKING FORM START ======*!/*/}
+        {/*<Bookingform />*/}
+        {/*/!*====== BOOKING FORM END ======*!/*/}
+        {/*/!* BREADCRUMBS START *!/*/}
+        {/*<BreadCrumb items={breadcrumbItems} />*/}
+        {/*/!* BREADCRUMBS END *!/*/}
+        {/*/!*====== TITLE START ======*!/*/}
+        <DiningTitleBlock data={this.state.intro}/>
         {/*====== TITLE END ======*/}
         {/*====== ROOM GRID START ======*/}
         <DiningGrid title={null} data={this.state.diningData} />
@@ -134,11 +146,12 @@ class Dining extends Component {
         {/*====== SUITES GRID END ======*/}
 
         <FAQSection faqList={faqList} />
-        <Subscribe />
+        {/*<Subscribe />*/}
 
-        <Footertwo />
+        {/*<Footertwo />*/}
 
-        <BottomNavigator />
+        {/*<BottomNavigator />*/}
+        </PageLayout>
       </div>
     );
   }
