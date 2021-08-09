@@ -11,8 +11,8 @@ const DiningInnerInfo = (props) => {
               {/* <div className="image-wrapper">
                 <img src={require('./../../../assets/img/travellers-choice.png')} alt="" />
               </div> */}
-              <p className="info-title">Dress Code {console.log(props.section_dress_code)}</p>
-              <div dangerouslySetInnerHTML={{ __html: props.dresSection?.section_dress_code }}>
+              <p className="info-title">Dress Code {console.log(props.dress_code)}</p>
+              <div dangerouslySetInnerHTML={{ __html: props.dress_code }}>
 
               </div>
               {/* <p className="text-muted">Daily: <br /> 7pm - 11pm</p>
@@ -25,7 +25,7 @@ const DiningInnerInfo = (props) => {
                 <img src={require('./../../../assets/img/travellers-choice.png')} alt="" />
               </div> */}
               <p className="info-title">Opening Hours</p>
-              <div dangerouslySetInnerHTML={{ __html: props.dresSection?.section_opening_hours }}>
+              <div dangerouslySetInnerHTML={{ __html: props.opening_hours }}>
 
               </div>              
               {/* <p className="text-muted">Daily: <br /> Smart or elegant casuals, resort chick or appropriate footwear.</p>

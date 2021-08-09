@@ -10,6 +10,8 @@ import GalleryGrid from '../sections/gallery/gallery-grid';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import Helmet from "react-helmet";
+import SEOTags from "../sections/common/SEOTags";
+import PageLayout from "../layouts/PageLayout";
 const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 
@@ -25,16 +27,31 @@ const breadcrumbItems=[
     isActive: true,
   },
 ]
-
+const pageId = 144;
 class GalleryMain extends Component {
   state = {
     galleryData: [],
+      banner: null,
+      meta: {}
   }
 
   async componentDidMount() {
     try {
       const response = await API.get('/uploads');
       this.setState({ galleryData: response.data });
+
+        API.get(`/all_sections/${pageId}`).then(response => {
+            this.setState({
+                banner: response.data?.find(x => x.section_slug === "banner"),
+                intro: response.data?.find(x => x.section_slug === "intro"),
+            });
+        })
+            .then(() => {
+                API.get(`/meta/${pageId}`).then(response => {
+                    this.setState({ meta: response.data });
+                    console.log(response.data);
+                })
+            })
     } catch (error) {
       console.log(error);
     }
@@ -43,25 +60,32 @@ class GalleryMain extends Component {
   render() {
     return (
       <div className="bg-white">
-          <Helmet>
-              <title>
-                  Gallery | Fishermans Cove Resort
-                  {/*Best Beach Resorts in Seychelles | Fishermans Cove Resort*/}
-              </title>
-              <meta
-                  name="description"
-                  content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
-              />
-          </Helmet>
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} />
-        {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Gallery"} image={bannerImage} />
-        {/*====== BANNER PART ENDS ======*/}
-        {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
-        {/*====== BOOKING FORM END ======*/}
-        {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems} />
+          <SEOTags meta={this.state.meta} />
+
+          {/*<Helmet>*/}
+          {/*    <title>*/}
+          {/*        Gallery | Fishermans Cove Resort*/}
+          {/*        /!*Best Beach Resorts in Seychelles | Fishermans Cove Resort*!/*/}
+          {/*    </title>*/}
+          {/*    <meta*/}
+          {/*        name="description"*/}
+          {/*        content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"*/}
+          {/*    />*/}
+          {/*</Helmet>*/}
+          <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+          >
+        {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} />*/}
+        {/*/!*====== BANNER PART START ======*!/*/}
+        {/*<Mainbanner title={"Gallery"} image={bannerImage} />*/}
+        {/*/!*====== BANNER PART ENDS ======*!/*/}
+        {/*/!*====== BOOKING FORM START ======*!/*/}
+        {/*<Bookingform />*/}
+        {/*/!*====== BOOKING FORM END ======*!/*/}
+        {/*/!* BREADCRUMBS START *!/*/}
+        {/*<BreadCrumb items={breadcrumbItems} />*/}
         {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <GalleryTitleBlock />
@@ -69,11 +93,12 @@ class GalleryMain extends Component {
         {/*====== GALLERY GRID START ======*/}
         <GalleryGrid title={null} data={this.state.galleryData} />
         {/*====== GALLERY GRID END ======*/}
-        <Subscribe />
+        {/*<Subscribe />*/}
 
-        <Footertwo />
+        {/*<Footertwo />*/}
 
-        <BottomNavigator />
+        {/*<BottomNavigator />*/}
+          </PageLayout>
       </div>
     );
   }
