@@ -17,12 +17,14 @@ const useStyles = makeStyles({
 });
 
 const BottomNavigator = () => {
+  
   const classes = useStyles();
   const [value, setValue] = React.useState("");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
 
   return (
     <div className="bottom-navigator-wrapper">
@@ -37,21 +39,11 @@ const BottomNavigator = () => {
                 background: "#be8a7d",
                 color:"white"
               }}
+              onClick={(e) => 
+            
+                window.gtag_report_conversion("https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB")
+              }
         >Book Now</Link>
-        {/*<Link to="/">*/}
-        {/*  <HomeRounded />*/}
-        {/*</Link>*/}
-        {/*<a href="#">*/}
-        {/*  <EventRounded*/}
-        {/*    onClick={(e) => {*/}
-        {/*      e.preventDefault();*/}
-        {/*      window.gtag_report_conversion(*/}
-        {/*          "https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB"*/}
-        {/*      )*/}
-        {/*    }*/}
-        {/*    }*/}
-        {/*  />*/}
-        {/*</a>*/}
         <a href="tel:+2484677000">
           <PhoneRounded />
         </a>

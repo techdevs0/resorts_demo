@@ -200,6 +200,8 @@ class DiningInner extends Component {
     } catch (error) {
       console.log(error);
     }
+
+  
   }
 
   async componentDidUpdate(prevProps) {
@@ -235,6 +237,7 @@ class DiningInner extends Component {
     }
   }
   render() {
+
     return (
       <div className="bg-white dining-inner-wrapper">
         <SEOTags meta={this.state.singleHotel?.post_metas?.[0]} />
@@ -268,7 +271,8 @@ class DiningInner extends Component {
           {/*====== ROOM GRID START ======*/}
           <DiningInnerInfo
               timingSection={this.state.sections?.timings}
-              dressSection={this.state.sections?.dress}
+              opening_hours={this.state.singleHotel.section_opening_hours}
+              dress_code={this.state.singleHotel.section_dress_code}
 
               // timingSection={this.state.pageSections?.find(
             //   (x) => x.section_slug === "timings"
