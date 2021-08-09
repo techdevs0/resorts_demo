@@ -7,17 +7,17 @@ const AboutServices = (props) => {
     {
       name: 'rooms & suites',
       icon: 'far fa-bed',
-      link:'/room-suites'
+      link:'/rooms-suites-seychelles'
     },
     {
       name: 'Dining',
       icon: 'far fa-utensils',
-      link:'/dining'
+      link:'/fine-dining-seychelles'
     },
     {
       name: 'weddings',
       icon: 'far fa-rings-wedding',
-      link:'/weddings'
+      link:'/seychelles-wedding-resort'
     },
     {
       name: 'leisure activities',

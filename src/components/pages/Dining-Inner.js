@@ -191,8 +191,6 @@ class DiningInner extends Component {
                 sections: {
                   intro: response.data?.find(x => x.section_slug === "intro"),
                   dine: response.data?.find(x => x.section_slug === "dine"),
-                  dress : response.data?.find(x => x.section_slug === "dress"),
-                  timings : response.data?.find(x => x.section_slug === "timings")
                 }
               });
             })
@@ -271,8 +269,8 @@ class DiningInner extends Component {
           {/*====== ROOM GRID START ======*/}
           <DiningInnerInfo
               timingSection={this.state.sections?.timings}
-              opening_hours={this.state.singleHotel.section_opening_hours}
-              dress_code={this.state.singleHotel.section_dress_code}
+              opening_hours={this.state.singleHotel?.section_opening_hours}
+              dress_code={this.state.singleHotel?.section_dress_code}
 
               // timingSection={this.state.pageSections?.find(
             //   (x) => x.section_slug === "timings"
