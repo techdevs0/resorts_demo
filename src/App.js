@@ -98,6 +98,7 @@ function App() {
 
   const mapRoute = (route, inner_route) => {
     route = route.split('/')?.[1] || route;
+    console.log(route);
     switch (inner_route) {
       case "wedding":
         return (
@@ -194,9 +195,11 @@ function App() {
           <Route exact path='/' render={(props) => <Hometwo {...props} isMobile={isMobile} isTop={isTop} />} />
 
           {
+           
             appRoutes?.map(x => (
               mapRoute(x.route, x.inner_route)
             ))
+            
           }
 
           {/* NEW ROUTES  */}

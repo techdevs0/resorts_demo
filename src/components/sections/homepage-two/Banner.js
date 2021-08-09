@@ -22,7 +22,7 @@ const bannerPosts = [
     btn2url: '/about',
     btn3: 'Book Now',
     btn3animation: '1.3s',
-    btn3url: '/about',
+    btn3url: '/',
   },
 ];
 
@@ -70,6 +70,10 @@ class Banner extends Component {
                             style={{borderColor: "#be8a7d",
                               background: "#be8a7d"
                             }}
+                            onClick={(e) => 
+            
+                              window.gtag_report_conversion("https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB")
+                            }
                             >{item.btn3}</Link>
                           </li>
                         </ReactWOW>
