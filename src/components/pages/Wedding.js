@@ -119,6 +119,7 @@ class Wedding extends Component {
     weddingData: [],
     intro: {},
     banner: null,
+    faq: [],
     meta: {}
   }
 
@@ -136,9 +137,14 @@ class Wedding extends Component {
       })
       .then(() => {
         API.get(`/all_sections/${pageId}`).then(response => {
+          let faqRes= response?.data[4]?.section_content;
+          faqRes = faqRes.replace(/'/g, '"')
+          faqRes=JSON.parse(faqRes)
+          console.log("response",faqRes)
           this.setState({
             intro: response.data?.find(x => x.section_slug === "intro"),
             banner: response.data?.find(x => x.section_slug === "banner"),
+            faq: faqRes
           });
         })
       })
@@ -149,6 +155,7 @@ class Wedding extends Component {
   }
 
   render() {
+    // console.log("wedding response",this.state)
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
@@ -181,7 +188,10 @@ class Wedding extends Component {
         </div> */}
           <WeddingFormDialog />
 
-          <FAQSection faqList={faqList} />
+          <FAQSection
+              faqData={this.state.faq}
+              // faqList={faqList}
+          />
 
           {/* <Subscribe /> */}
 

@@ -95,10 +95,16 @@ class Dining extends Component {
     })
     .then(() => {
       API.get(`/all_sections/${pageId}`).then(response => {
+        debugger;
+        let faqRes= response?.data[3]?.section_content;
+        faqRes = faqRes.replace(/'/g, '"')
+        faqRes=JSON.parse(faqRes)
+        console.log("response",faqRes)
         this.setState({
           intro: response.data?.find(x => x.section_slug === "intro"),
           banner: response.data?.find(x => x.section_slug === "banner"),
-          faq: response.data?.find(x => x.section_slug === "faq"),
+          // faq: response.data?.find(x => x.section_slug === "faq"),
+          faq: faqRes
         });
       })
     })
@@ -108,7 +114,7 @@ class Dining extends Component {
   }
 
   render() {
-
+      // console.log("Dining Response",this.state)
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
