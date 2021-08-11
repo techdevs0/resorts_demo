@@ -35,23 +35,31 @@ const FAQSection = (props) => {
         <div className="faq-section-block my-3 my-sm-5">
             <div className="container">
                 <h4 className="text-center main-title mb-3 mb-sm-5">Frequently Asked Questions (F.A.Q's)</h4>
+                {
+                    console.log(props.faqData)
+                }
                 <Accordion>
-                    {
-                        props.faqList?.map((x, i) => (
-                            <Card>
-                                <Accordion.Toggle as={Card.Header} eventKey={`${i}`} style={{ cursor: 'pointer' }} >
-                                    <ContextAwareToggle eventKey={`${i}`} >
-                                        {x.question}
-                                    </ContextAwareToggle>
-                                </Accordion.Toggle>
-                                <Accordion.Collapse eventKey={`${i}`}>
-                                    <Card.Body>
-                                        <p>{x.answer}</p>
-                                    </Card.Body>
-                                </Accordion.Collapse>
-                            </Card>
-                        ))
-                    }
+                    {Object.entries(props.faqData).map(([key, val], i) => (
+                        <p key={i}>
+                            {key}: {val}
+                        </p>
+                    ))}
+                    {/*{*/}
+                    {/*    props.faqData?.map((x, i) => (*/}
+                    {/*        <Card>*/}
+                    {/*            <Accordion.Toggle as={Card.Header} eventKey={`${i}`} style={{ cursor: 'pointer' }} >*/}
+                    {/*                <ContextAwareToggle eventKey={`${i}`} >*/}
+                    {/*                    {x.question}*/}
+                    {/*                </ContextAwareToggle>*/}
+                    {/*            </Accordion.Toggle>*/}
+                    {/*            <Accordion.Collapse eventKey={`${i}`}>*/}
+                    {/*                <Card.Body>*/}
+                    {/*                    <p>{x.answer}</p>*/}
+                    {/*                </Card.Body>*/}
+                    {/*            </Accordion.Collapse>*/}
+                    {/*        </Card>*/}
+                    {/*    ))*/}
+                    {/*}*/}
                 </Accordion>
             </div>
         </div>

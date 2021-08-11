@@ -79,6 +79,7 @@ class Dining extends Component {
     diningData: [],
     banner:null,
     intro:null,
+    faq: [],
     meta:{}
   }
 
@@ -97,6 +98,7 @@ class Dining extends Component {
         this.setState({
           intro: response.data?.find(x => x.section_slug === "intro"),
           banner: response.data?.find(x => x.section_slug === "banner"),
+          faq: response.data?.find(x => x.section_slug === "faq"),
         });
       })
     })
@@ -106,6 +108,7 @@ class Dining extends Component {
   }
 
   render() {
+
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
@@ -145,7 +148,10 @@ class Dining extends Component {
         {/* <DiningOfferSlider title={"Offers"} data={offersData} /> */}
         {/*====== SUITES GRID END ======*/}
 
-        <FAQSection faqList={faqList} />
+        <FAQSection
+            faqData={this.state.faq}
+            // faqList={faqList}
+        />
         {/*<Subscribe />*/}
 
         {/*<Footertwo />*/}
