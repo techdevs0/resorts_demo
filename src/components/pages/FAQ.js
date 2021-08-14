@@ -108,11 +108,20 @@ const pageId = 147;
 class FAQ extends Component {
   state = {
     banner: null,
-    meta: {}
+    meta: {},
+    faqsData:[]
   }
 
-   componentDidMount() {
+  async componentDidMount() {
     try {
+      const response = await API.get('/faqs');
+      debugger;
+      let faqRes= response?.data[0]?.section_content;
+      faqRes = faqRes.replace(/'/g, '"')
+      faqRes=JSON.parse(faqRes)
+      console.log("response",faqRes)
+      this.setState({ faqsData: faqRes });
+
       API.get(`/all_sections/${pageId}`).then(response => {
         this.setState({
           banner: response.data?.find(x => x.section_slug === "banner"),
@@ -158,7 +167,9 @@ class FAQ extends Component {
         {/*  /!* BREADCRUMBS END *!/*/}
         {/*  /!*====== INTRO START ======*!/*/}
           <div className="bg-white faq-wrapper">
-          <FAQIntroBlock faqList={faqList} />
+          <FAQIntroBlock
+              // data={this.state.galleryData}
+              faqList={this.state.faqsData} />
           {/*====== INTRO END ======*/}
         </div>
         {/*<Subscribe />*/}

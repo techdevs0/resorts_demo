@@ -36,6 +36,9 @@ const FAQIntroBlock = (props) => {
         {/* <FAQCategories setCurrentIndex={setCurrentIndex} currentIndex={currentIndex} /> */}
         <Accordion>
           {
+            console.log(props.faqList)
+          }
+          {
             props.faqList?.map((x, i) => (
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey={`${i}`} style={{ cursor: 'pointer' }} >
