@@ -14,6 +14,7 @@ import API from "../../utils/http";
 import FAQSection from "../sections/common/FAQSection";
 import PageLayout from "../layouts/PageLayout";
 import SEOTags from "../sections/common/SEOTags";
+import FAQInnerSection from "../sections/common/FAQInnerSection";
 
 const faqList = [
   //sunset
@@ -290,7 +291,7 @@ class DiningInner extends Component {
           />
           {/*====== OTHERS GRID END ======*/}
 
-          <FAQSection
+          <FAQInnerSection
               faqList={faqList.filter((x) => x.route == this.state.singleHotel?.route)}
           />
 

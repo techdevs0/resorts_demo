@@ -95,7 +95,7 @@ class Dining extends Component {
     })
     .then(() => {
       API.get(`/all_sections/${pageId}`).then(response => {
-        debugger;
+        // debugger;
         let faqRes= response?.data[3]?.section_content;
         faqRes = faqRes.replace(/'/g, '"')
         faqRes=JSON.parse(faqRes)

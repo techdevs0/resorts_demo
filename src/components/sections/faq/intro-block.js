@@ -48,7 +48,7 @@ const FAQIntroBlock = (props) => {
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={`${i}`}>
                   <Card.Body>
-                    <p>{x.answer}</p>
+                    <p dangerouslySetInnerHTML={{ __html: x.answer }}></p>
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>

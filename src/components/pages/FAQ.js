@@ -115,7 +115,7 @@ class FAQ extends Component {
   async componentDidMount() {
     try {
       const response = await API.get('/faqs');
-      debugger;
+      // debugger;
       let faqRes= response?.data[0]?.section_content;
       faqRes = faqRes.replace(/'/g, '"')
       faqRes=JSON.parse(faqRes)
@@ -168,7 +168,6 @@ class FAQ extends Component {
         {/*  /!*====== INTRO START ======*!/*/}
           <div className="bg-white faq-wrapper">
           <FAQIntroBlock
-              // data={this.state.galleryData}
               faqList={this.state.faqsData} />
           {/*====== INTRO END ======*/}
         </div>
