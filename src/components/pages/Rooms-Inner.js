@@ -283,7 +283,7 @@ class RoomsInner extends Component {
                 {/*====== ROOM GRID END ======*/}
                 {/*====== ROOM 360 GRID START ======*/}
                 <RoomVR360
-                  image={this.state.singleRoom?.uploads?.find((x) => x["360_view"] === "0")?.avatar}
+                  image={this.state.singleRoom?.uploads?.find((x) => x["360_view"] === "1")?.avatar}
                 />
                 {/*====== ROOM 360 GRID END ======*/}
               </div>
