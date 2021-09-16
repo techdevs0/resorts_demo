@@ -30,7 +30,7 @@ class Textblock extends Component {
                                         of the Indian Ocean’s most spectacular sunset. It offers two restaurants and two bars
                                         giving guests ample options to choose from.
                                         </p>
-                                        <Link to="/room-suites" className="main-btn btn-nile mt-40">Learn More</Link>
+                                        <Link to="/rooms-suites-seychelles" className="main-btn btn-nile mt-40">Learn More</Link>
                                     </div>
                                 </div>
                             </ReactWOW>

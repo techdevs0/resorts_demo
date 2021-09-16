@@ -152,9 +152,15 @@
       background-color: $secondary-color;
       border-color: $secondary-color;
       box-shadow: none;
+      width: 100%;
+      margin-bottom: 16px;
       &:nth-child(2) {
         margin: 1rem 0;
       }
+    }
+    .pdf_btn_hide {
+      opacity: 0.5;
+      pointer-events: none;
     }
   }
 }

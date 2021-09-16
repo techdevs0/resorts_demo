@@ -7,7 +7,7 @@ const data = [
     {
         image: require('../../../assets/img/experience/sustaniablity.webp'),
         title: "Sustainability",
-        link:'/sustainability'
+        link:'/seychelles-eco-resort'
     },
     {
         image: require('../../../assets/img/experience/overview.webp'),

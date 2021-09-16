@@ -14,10 +14,10 @@ class Blogdetails extends Component {
           <div className="container">
             <div className="breadcrumb-text">
               <span>The ultimate luxury</span>
-              <h2 className="page-title">News Details</h2>
+              <h2 className="page-title">Blog Inner</h2>
               <ul className="breadcrumb-nav">
                 <li><Link to="/">Home</Link></li>
-                <li className="active">Blog</li>
+                <li className="active">Blog Inner</li>
               </ul>
             </div>
           </div>

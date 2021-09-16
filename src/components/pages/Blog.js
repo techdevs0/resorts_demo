@@ -34,9 +34,9 @@ class Blog extends Component {
                       <img src="assets/img/blog/01.jpg" alt="" />
                     </div>
                     <div className="post-desc">
-                      <Link to="/news-details" className="cat">Businese</Link>
+                      <Link to="/blog-inner" className="cat">Businese</Link>
                       <h2>
-                        <Link to="/news-details">Lorem ipsum dolor sit amet, consecte cing elit, sed do eiusmod
+                        <Link to="/blog-inner">Lorem ipsum dolor sit amet, consecte cing elit, sed do eiusmod
                           tempor.</Link>
                       </h2>
                       <ul className="post-meta">
@@ -56,7 +56,7 @@ class Blog extends Component {
                           </Link>
                         </div>
                         <div className="read-more">
-                          <Link to="/news-details"><i className="far fa-arrow-right" />Read More</Link>
+                          <Link to="/blog-inner"><i className="far fa-arrow-right" />Read More</Link>
                         </div>
                       </div>
                     </div>
@@ -67,9 +67,9 @@ class Blog extends Component {
                       <Link to="#" className="play-icon"><i className="fas fa-play" /></Link>
                     </div>
                     <div className="post-desc">
-                      <Link to="/news-details" className="cat">Businese</Link>
+                      <Link to="/blog-inner" className="cat">Businese</Link>
                       <h2>
-                        <Link to="/news-details">Adipisicing elit, sed do eiusmod tempor
+                        <Link to="/blog-inner">Adipisicing elit, sed do eiusmod tempor
                           incididunt ut labore et dolore.</Link>
                       </h2>
                       <ul className="post-meta">
@@ -89,7 +89,7 @@ class Blog extends Component {
                           </Link>
                         </div>
                         <div className="read-more">
-                          <Link to="/news-details"><i className="far fa-arrow-right" />Read More</Link>
+                          <Link to="/blog-inner"><i className="far fa-arrow-right" />Read More</Link>
                         </div>
                       </div>
                     </div>
@@ -99,9 +99,9 @@ class Blog extends Component {
                       <img src="assets/img/blog/03.jpg" alt="" />
                     </div>
                     <div className="post-desc">
-                      <Link to="/news-details" className="cat">Businese</Link>
+                      <Link to="/blog-inner" className="cat">Businese</Link>
                       <h2>
-                        <Link to="/news-details">Magna aliqua. Ut enim ad minim venia
+                        <Link to="/blog-inner">Magna aliqua. Ut enim ad minim venia
                           m, quis nostrud exercitation ullamco</Link>
                       </h2>
                       <ul className="post-meta">
@@ -121,7 +121,7 @@ class Blog extends Component {
                           </Link>
                         </div>
                         <div className="read-more">
-                          <Link to="/news-details"><i className="far fa-arrow-right" />Read More</Link>
+                          <Link to="/blog-inner"><i className="far fa-arrow-right" />Read More</Link>
                         </div>
                       </div>
                     </div>
@@ -131,9 +131,9 @@ class Blog extends Component {
                       <img src="assets/img/blog/06.jpg" alt="" />
                     </div>
                     <div className="post-desc">
-                      <Link to="/news-details" className="cat">Businese</Link>
+                      <Link to="/blog-inner" className="cat">Businese</Link>
                       <h2>
-                        <Link to="/news-details">Laboris nisi ut aliquip ex ea commodo
+                        <Link to="/blog-inner">Laboris nisi ut aliquip ex ea commodo
                           consequat. Duis aute irure dolor.</Link>
                       </h2>
                       <ul className="post-meta">
@@ -153,16 +153,16 @@ class Blog extends Component {
                           </Link>
                         </div>
                         <div className="read-more">
-                          <Link to="/news-details"><i className="far fa-arrow-right" />Read More</Link>
+                          <Link to="/blog-inner"><i className="far fa-arrow-right" />Read More</Link>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="post-box no-thumb mb-40">
                     <div className="post-desc">
-                      <Link to="/news-details" className="cat">Businese</Link>
+                      <Link to="/blog-inner" className="cat">Businese</Link>
                       <h2>
-                        <Link to="/news-details">In reprehenderit in voluptate velit esse
+                        <Link to="/blog-inner">In reprehenderit in voluptate velit esse
                           cillum dolore eu fugiat.</Link>
                       </h2>
                       <ul className="post-meta">
@@ -176,13 +176,13 @@ class Blog extends Component {
                         irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
                       <div className="post-footer">
                         <div className="author">
-                          <Link to="/news-details">
+                          <Link to="/blog-inner">
                             <img src="assets/img/author-small.png" alt="" />
                             by Hetmayar
                           </Link>
                         </div>
                         <div className="read-more">
-                          <Link to="/news-details"><i className="far fa-arrow-right" />Read More</Link>
+                          <Link to="/blog-inner"><i className="far fa-arrow-right" />Read More</Link>
                         </div>
                       </div>
                     </div>
@@ -190,7 +190,7 @@ class Blog extends Component {
                   <div className="post-box quote-post mb-40">
                     <div className="post-desc">
                       <h2>
-                        <Link to="/news-details">Excepteur sint occaecat cupida
+                        <Link to="/blog-inner">Excepteur sint occaecat cupida
                           tat non proident, sunt in.</Link>
                       </h2>
                       <ul className="post-meta">
@@ -202,9 +202,9 @@ class Blog extends Component {
                   </div>
                   <div className="post-box title-with-thumb mb-40">
                     <div className="post-desc">
-                      <Link to="/news-details" className="cat">Businese</Link>
+                      <Link to="/blog-inner" className="cat">Businese</Link>
                       <h2>
-                        <Link to="/news-details">Culpa qui officia deserunt mollit anim
+                        <Link to="/blog-inner">Culpa qui officia deserunt mollit anim
                           id est laborum. Sed ut perspiciatis</Link>
                       </h2>
                       <ul className="post-meta">

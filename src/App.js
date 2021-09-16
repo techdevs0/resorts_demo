@@ -67,7 +67,8 @@ const PrivacyPolicy = lazy(() => import('./components/pages/PrivacyPolicy'));
 const CancellationPolicy = lazy(() => import('./components/pages/CancellationPolicy'));
 const CovidPolicy = lazy(() => import('./components/pages/CovidPolicy'));
 const FAQ = lazy(() => import('./components/pages/FAQ'));
-
+const Blog = lazy(() => import('./components/pages/Blog'));
+const Blogdetails = lazy(() => import('./components/pages/Blogdetails'));
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -173,10 +174,18 @@ function App() {
           <Route path={`/${inner_route}/:id`} exact render={(props) => <OffersInner {...props} isMobile={isMobile} isTop={isTop} />} />
         )
 
-        case "faqs":
-          return (
-            <Route path={`/${route}`} exact render={(props) => <FAQ {...props} isMobile={isMobile} isTop={isTop} />} />
-          )
+      case "faqs":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <FAQ {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "blog":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <Blog {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "blog-inner":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <Blogdetails {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
       default:
         break;
         return (
@@ -195,11 +204,11 @@ function App() {
           <Route exact path='/' render={(props) => <Hometwo {...props} isMobile={isMobile} isTop={isTop} />} />
 
           {
-           
+
             appRoutes?.map(x => (
               mapRoute(x.route, x.inner_route)
             ))
-            
+
           }
 
           {/* NEW ROUTES  */}
