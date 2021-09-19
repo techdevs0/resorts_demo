@@ -189,8 +189,8 @@ class Wedding extends Component {
           <WeddingFormDialog />
 
           <FAQSection
-              faqData={this.state.faq}
-              // faqList={faqList}
+              //faqData={this.state.faq}
+              faqData={faqList}
           />
 
           {/* <Subscribe /> */}

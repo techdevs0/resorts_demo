@@ -20,7 +20,11 @@ import SunsetBarBeverageMenu from '../../assets/img/dinning/FCR Wine List UPDATE
 import ParisSeychellesMainMenu from '../../assets/img/dinning/Paris Seychelles Menu Updated.pdf';
 import LeCocolobaBarDrinksMenu from '../../assets/img/dinning/Le Cocoloba Bar Drinks Menu.pdf';
 import LeCocolobaFoodMenu from '../../assets/img/dinning/Le Cocoloba Food Menu.pdf';
+// import LeCardinalBreakfastMenu from '../../assets/img/dinning/Le Cardinal Breakfast Menu.pdf';
 import LeCardinalBreakfastMenu from '../../assets/img/dinning/Le Cardinal Breakfast Menu.pdf';
+import FCRWineListUPDATED from '../../assets/img/dinning/FCR Wine List UPDATED.pdf';
+import FCRInRoomDiningMenuWITHPRICING from '../../assets/img/dinning/FCR-In-Room Dining Menu WITH PRICING.pdf';
+
 
 const faqList = [
   //sunset
@@ -146,25 +150,29 @@ const menuPdf = [
     route: "sunset-bar",
     beverageMenu: SunsetBarBeverageMenu,
     ourMainMenu: "",
-    wineList: "",
+    wineList: FCRWineListUPDATED,
+    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
   },
   {
     route: "paris-french-restaurant",
     beverageMenu: "",
     ourMainMenu: ParisSeychellesMainMenu,
-    wineList: "",
+    wineList: FCRWineListUPDATED,
+    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
   },
   {
     route: "le-cocoloba-bar-seychelles",
     beverageMenu: "",
     ourMainMenu: LeCocolobaFoodMenu,
     wineList: LeCocolobaBarDrinksMenu,
+    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
   },
   {
     route: "le-cardinal-restaurant",
     beverageMenu: "",
     ourMainMenu: LeCardinalBreakfastMenu,
-    wineList: "",
+    wineList: FCRWineListUPDATED,
+    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
   },
 ];
 

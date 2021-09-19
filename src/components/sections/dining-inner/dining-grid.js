@@ -4,7 +4,6 @@ import React from 'react';
 const currentPage = window.location.pathname.split("/");
 
 const DiningInnerInfo = (props) => {
-  console.log("Props::", props);
   return (
     <div className='dining-info-wrapper'>
       <div className='container'>
@@ -39,7 +38,7 @@ const DiningInnerInfo = (props) => {
           <div className="col-12 col-md-4">
             {props.menuPdf?.map((x, i) => (
               x.route === currentPage[2] &&
-              <div className="menu-buttons">
+              <div className="menu-buttons" key={i}>
                 <a href={x.ourMainMenu} className={x.ourMainMenu === "" ? "pdf_btn_hide" : ""} without rel="noopener noreferrer" target="_blank">
                   <button className="main-btn btn-filled">Download our Menu</button>
                 </a>
@@ -48,6 +47,9 @@ const DiningInnerInfo = (props) => {
                 </a>
                 <a href={x.wineList} className={x.wineList === "" ? "pdf_btn_hide" : ""} without rel="noopener noreferrer" target="_blank">
                   <button className="main-btn btn-filled">Download wine list</button>
+                </a>
+                <a href={x.inRoomDining} className={x.inRoomDining === "" ? "pdf_btn_hide" : ""} without rel="noopener noreferrer" target="_blank">
+                  <button className="main-btn btn-filled">Download In Room Dining</button>
                 </a>
               </div>
             ))

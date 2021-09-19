@@ -150,7 +150,9 @@ class FAQ extends Component {
         {/*  /!*====== INTRO START ======*!/*/}
           <div className="bg-white faq-wrapper">
           <FAQIntroBlock
-              faqList={this.state.faqsData} />
+              // faqList={this.state.faqsData}
+              faqList={faqList}
+              />
           {/*====== INTRO END ======*/}
         </div>
         {/*<Subscribe />*/}

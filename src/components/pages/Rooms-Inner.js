@@ -146,20 +146,20 @@ const faqList = [
     question: "Are there private pools with hotel rooms in Seychelles?",
     answer: `Yes, some of the Seychelles hotels and resorts have private pools with rooms but you might not find this facility in every hotel. However, the choices are unlimited and there are a number of hotels and resorts in Seychelles providing the private pool facility.`,
     category: "policy",
-    route:"deluxe-ocean-suite"
+    route:"deluxe-ocean-view-rooms"
   },
   {
     question: "Can you order food to your room at Fishermans Cove Resort?",
     answer: `Yes, you can order food directly to your room and we have a great menu with numerous options to choose from.`,
     category: "policy",
-    route:"deluxe-ocean-suite"
+    route:"deluxe-ocean-view-rooms"
   },
   {
     question:
       "What is the difference between an Oceanview room and an oceanfront room?",
     answer: `An ocean view room means that you will be able to see the ocean from the window or the balcony. However, an oceanfront room means that your room will directly be facing the ocean. Oceanfront rooms generally provide the best views.`,
     category: "policy",
-    route:"deluxe-ocean-suite"
+    route:"deluxe-ocean-view-rooms"
     // id: 7,
   },
 ];
@@ -276,7 +276,7 @@ class RoomsInner extends Component {
           }}
           breadCrumb={{ items: breadcrumbItems }}
           hideBooking
-          key={"rooms-inner"}
+          key={this.state.singleRoom?.post_name}
         >
           {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'rooms-inner'} /> */}
           {/*====== BANNER PART START ======*/}

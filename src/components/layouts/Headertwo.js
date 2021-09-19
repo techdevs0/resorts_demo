@@ -580,10 +580,7 @@ class Headertwo extends Component {
                         />
                       </Link>
                       <div
-                        className={
-                          "sidebar-submenu collapse" +
-                          (this.state[x.text] ? " show" : "")
-                        }
+                        className={"sidebar-submenu collapse" + (this.state[x.text] ? " show" : "")}
                       >
                         <ul>
                           <li key={"all"}>
