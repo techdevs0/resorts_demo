@@ -205,6 +205,7 @@ class DiningInner extends Component {
   async componentDidMount() {
     let id = this.props.match.params.id;
     try {
+      console.log(id);
       const response = await API.get("/dining/" + id);
       let singleHotel = response?.data?.category_details[0];
       singleHotel.uploads = response?.data?.uploads;

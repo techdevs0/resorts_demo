@@ -107,7 +107,7 @@ const breadcrumbItems = [
   },
   {
     text: 'Weddings',
-    link: '/weddings',
+    link: '/seychelles-wedding-resort',
     isActive: true,
   },
 ]

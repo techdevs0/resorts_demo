@@ -65,7 +65,7 @@ let navigationmenu = [
   },
   {
     id: 10,
-    link: "/spa-wellness",
+    link: "/spa-resort-seychelles",
     linkText: "Spa & Wellness",
     child: false,
   },
