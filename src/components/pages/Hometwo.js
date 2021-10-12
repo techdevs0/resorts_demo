@@ -14,18 +14,28 @@ import BottomNavigator from "../sections/homepage-two/BottomNavigator";
 import API from "../../utils/http";
 // import bannerimg1 from '../../assets/img/banner/coral.avif';
 import bannerimg1 from "../../assets/img/banner/home.jpg";
+import SEOTags from "../sections/common/SEOTags";
+
+const pageId = 93;
 
 class Hometwo extends Component {
   state = {
     premiumOffers: [],
     roomsData: [],
+    meta:{}
   };
 
   componentDidMount() {
     try {
       API.get("/premium_offers").then((response) => {
         this.setState({ premiumOffers: response.data });
-      });
+      })
+        .then(() => {
+          API.get(`/meta/${pageId}`).then(response => {
+            this.setState({ meta: response.data });
+            // console.log(response.data);
+          })
+        })
       // console.log(response.data);
 
       API.get("/rooms").then((roomsResponse) => {
@@ -34,6 +44,7 @@ class Hometwo extends Component {
           roomsData: roomsData.filter((x) => x.post_type === "page"),
         });
       });
+
 
       // const roomsResponse = await API.get('/rooms', {
       //   headers: {
@@ -48,6 +59,7 @@ class Hometwo extends Component {
   render() {
     return (
       <div>
+        <SEOTags meta={this.state.meta} />
         <Headertwo
           isMobile={this.props.isMobile}
           isTop={this.props.isTop}
