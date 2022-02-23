@@ -26,15 +26,15 @@ class Hometwo extends Component {
     premiumOffers: [],
     roomsData: [],
     meta:{},
-    offerPopup : true,
+    // offerPopup : true,
   };
  
-  this.handleShowOffer = this.handleShowOffer.bind(this);
+  // this.handleShowOffer = this.handleShowOffer.bind(this);
 }
 
-handleShowOffer() {
-  this.setState({ offerPopup: !this.state.offerPopup });
-}
+// handleShowOffer() {
+//   this.setState({ offerPopup: !this.state.offerPopup });
+// }
 
   componentDidMount() {
     try {
@@ -150,7 +150,7 @@ handleShowOffer() {
           </p>
         </div>
        
-        <PopUp show={this.state.offerPopup}  onHide={this.handleShowOffer}/>
+        {/* <PopUp show={this.state.offerPopup}  onHide={this.handleShowOffer}/> */}
 
         <Footertwo />
 
