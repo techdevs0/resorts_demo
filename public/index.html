@@ -93,9 +93,6 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 function gtag_report_conversion(url) {
   var callback = function () {
     if (typeof url != "undefined") {
-      // window.location = url;
-    //window.open.url().location.replace(url);
-  // window.open(url ,"_blank");
     var link = document.createElement('a');
     link.href = url;
     link.target = "_new";

@@ -48,6 +48,19 @@ class Footertwo extends Component {
           <i className="fal fa-angle-double-up" />
         </Link>
         {/*====== FOOTER START ======*/}
+        <div className="container-1">
+              <div className="row">
+                <div className="col-md-12 alert-footer">
+
+                    <p>Kindly note, we will be undergoing some repair work around the Sea Wall and Executive Rooms at
+                    Fisherman’s Cove Resort from 22 November 2021 for 3 months. Hence there will be some noise and
+                    hoarding in that area. We do apologies for any inconvenience that this may cause during your 
+                    stay with us. The finished project will give our guests direct access to the Beau Vallon beach
+                    and they can also enjoy leisurely walks along our Sea Wall.
+                    </p>
+                </div>
+              </div>
+            </div>
         <footer className="footer-two">
           <div className="footer-widget-area pt-30 pb-30">
             <div className="container">
@@ -144,6 +157,8 @@ class Footertwo extends Component {
                 </div>
               </div>
             </div>
+
+
             <div className="footer-bottom-wrapper py-1">
               <div className="container d-flex flex-wrap justify-content-between align-items-center">
                 <div className="py-2 footer-logos">
@@ -161,6 +176,8 @@ class Footertwo extends Component {
               </div>
             </div>
           </div>
+
+
           <div className="copyright-area py-2">
             <div className="container">
               <div className="row align-items-center">

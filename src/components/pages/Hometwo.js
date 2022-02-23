@@ -15,15 +15,26 @@ import API from "../../utils/http";
 // import bannerimg1 from '../../assets/img/banner/coral.avif';
 import bannerimg1 from "../../assets/img/banner/home.jpg";
 import SEOTags from "../sections/common/SEOTags";
+import PopUp from "../popup/PopUp";
 
 const pageId = 93;
 
 class Hometwo extends Component {
-  state = {
+ constructor(props){
+  super(props);
+  this.state = {
     premiumOffers: [],
     roomsData: [],
-    meta:{}
+    meta:{},
+    offerPopup : true,
   };
+ 
+  this.handleShowOffer = this.handleShowOffer.bind(this);
+}
+
+handleShowOffer() {
+  this.setState({ offerPopup: !this.state.offerPopup });
+}
 
   componentDidMount() {
     try {
@@ -138,6 +149,9 @@ class Hometwo extends Component {
             service.
           </p>
         </div>
+       
+        <PopUp show={this.state.offerPopup}  onHide={this.handleShowOffer}/>
+
         <Footertwo />
 
         <BottomNavigator />

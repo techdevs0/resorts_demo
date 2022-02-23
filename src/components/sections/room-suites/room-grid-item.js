@@ -17,7 +17,7 @@ const RoomGridItem = (props) => {
             className="main-btn btn-filled"
             onClick={(e) => {
                 e.preventDefault();
-                window.gtag_report_conversion(props.url,true)
+                window.gtag_report_conversion(props.synx,true)
             }
             }
           >

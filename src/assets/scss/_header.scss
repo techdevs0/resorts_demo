@@ -1096,3 +1096,46 @@ header {
 	margin-left: 1rem;
 	}
 }
+
+
+
+.Documents {
+	
+	.modal-body{
+	padding: 0px;
+}
+	.icon{
+	position: absolute;
+    top: 0%;
+    color:$primary-color;
+	height: 30px;
+    z-index: 99;
+    right: -2rem;
+    border-radius: 30px;
+
+	@media #{$xsm}{
+		height: 34px;
+		right: 3rem;
+		top:1%;
+	}
+
+	}
+	.modal-content{
+		@media #{$xsm}{
+			background-color: transparent;
+		}
+	}
+	.container{
+		@media #{$xsm}{
+			padding-right: 34px;
+    padding-left: 18px;
+		}
+	}
+
+	.modal-dialog{
+		@media #{$xsm}{
+			
+			margin: 0px;
+		}
+	}
+}
