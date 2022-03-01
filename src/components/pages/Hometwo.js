@@ -20,21 +20,21 @@ import PopUp from "../popup/PopUp";
 const pageId = 93;
 
 class Hometwo extends Component {
- constructor(props){
-  super(props);
-  this.state = {
-    premiumOffers: [],
-    roomsData: [],
-    meta:{},
-    // offerPopup : true,
-  };
- 
-  // this.handleShowOffer = this.handleShowOffer.bind(this);
-}
+  constructor(props) {
+    super(props);
+    this.state = {
+      premiumOffers: [],
+      roomsData: [],
+      meta: {},
+      offerPopup: true,
+    };
 
-// handleShowOffer() {
-//   this.setState({ offerPopup: !this.state.offerPopup });
-// }
+    this.handleShowOffer = this.handleShowOffer.bind(this);
+  }
+
+  handleShowOffer() {
+    this.setState({ offerPopup: !this.state.offerPopup });
+  }
 
   componentDidMount() {
     try {
@@ -149,8 +149,8 @@ class Hometwo extends Component {
             service.
           </p>
         </div>
-       
-        {/* <PopUp show={this.state.offerPopup}  onHide={this.handleShowOffer}/> */}
+
+        <PopUp show={this.state.offerPopup} onHide={this.handleShowOffer} />
 
         <Footertwo />
 

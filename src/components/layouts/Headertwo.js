@@ -641,9 +641,9 @@ class Headertwo extends Component {
 
     
 
-      <button onClick={(e) => this.handleClickCheck(1,e)}>
+      {/* <button onClick={(e) => this.handleClickCheck(1,e)}>
         click me
-      </button>
+      </button> */}
 
   </div>
 
