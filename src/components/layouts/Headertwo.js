@@ -5,6 +5,7 @@ import $ from "jquery";
 import { findDOMNode } from "react-dom";
 import API from "../../utils/http";
 import { Spinner } from "react-bootstrap";
+import PopUp from "../popup/PopUp";
 
 let navigationmenu = [
   {
@@ -65,7 +66,7 @@ let navigationmenu = [
   },
   {
     id: 10,
-    link: "/spa-wellness",
+    link: "/spa-resort-seychelles",
     linkText: "Spa & Wellness",
     child: false,
   },
@@ -98,11 +99,18 @@ class Headertwo extends Component {
       navigationmenu: [],
       widgetMenuLinks: [],
       contact: null,
+      offerPopup : true,
     };
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
     this.removeAll = this.removeAll.bind(this);
+    
   }
+
+
+
+
+
 
   async componentDidMount() {
     window.addEventListener(
@@ -203,6 +211,11 @@ class Headertwo extends Component {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  handleClickCheck(value,e) {
+
+    console.log('--------------------helllooo---------------',value);
   }
 
   toggleDiningMenu = () => {
@@ -580,10 +593,7 @@ class Headertwo extends Component {
                         />
                       </Link>
                       <div
-                        className={
-                          "sidebar-submenu collapse" +
-                          (this.state[x.text] ? " show" : "")
-                        }
+                        className={"sidebar-submenu collapse" + (this.state[x.text] ? " show" : "")}
                       >
                         <ul>
                           <li key={"all"}>
@@ -627,7 +637,17 @@ class Headertwo extends Component {
           </div>
         </div>
         {/*====== OFF CANVAS END ======*/}
-      </div>
+        
+
+    
+
+      {/* <button onClick={(e) => this.handleClickCheck(1,e)}>
+        click me
+      </button> */}
+
+  </div>
+
+
     );
   }
 }

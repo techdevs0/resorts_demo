@@ -107,7 +107,7 @@ const breadcrumbItems = [
   },
   {
     text: 'Weddings',
-    link: '/weddings',
+    link: '/seychelles-wedding-resort',
     isActive: true,
   },
 ]
@@ -189,8 +189,8 @@ class Wedding extends Component {
           <WeddingFormDialog />
 
           <FAQSection
-              faqData={this.state.faq}
-              // faqList={faqList}
+              //faqData={this.state.faq}
+              faqData={faqList}
           />
 
           {/* <Subscribe /> */}

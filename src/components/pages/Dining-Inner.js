@@ -15,6 +15,16 @@ import FAQSection from "../sections/common/FAQSection";
 import PageLayout from "../layouts/PageLayout";
 import SEOTags from "../sections/common/SEOTags";
 import FAQInnerSection from "../sections/common/FAQInnerSection";
+//import "../../assets/img/dinning/FCR Wine List UPDATED.pdf";
+import SunsetBarBeverageMenu from '../../assets/img/dinning/FCR Wine List UPDATED.pdf';
+import ParisSeychellesMainMenu from '../../assets/img/dinning/Paris Seychelles Menu Updated.pdf';
+import LeCocolobaBarDrinksMenu from '../../assets/img/dinning/Le Cocoloba Bar Drinks Menu.pdf';
+import LeCocolobaFoodMenu from '../../assets/img/dinning/Le Cocoloba Food Menu.pdf';
+// import LeCardinalBreakfastMenu from '../../assets/img/dinning/Le Cardinal Breakfast Menu.pdf';
+import LeCardinalBreakfastMenu from '../../assets/img/dinning/Le Cardinal Breakfast Menu.pdf';
+import FCRWineListUPDATED from '../../assets/img/dinning/FCR Wine List UPDATED.pdf';
+import FCRInRoomDiningMenuWITHPRICING from '../../assets/img/dinning/FCR-In-Room Dining Menu WITH PRICING.pdf';
+
 
 const faqList = [
   //sunset
@@ -47,30 +57,28 @@ const faqList = [
   },
   //paris seychelles
   {
-    route:"paris-french-restaurant",
+    route: "paris-french-restaurant",
     question: "Is it expensive to eat out in Seychelles?",
     answer: `There are numerous restaurants in Seychelles, Victoria and the cost of eating out can vary. However, the average cost of lunch and dinner is SCR 560 per day. Breakfasts are usually a bit cheaper.`,
     category: "policy",
   },
 
   {
-    route:"paris-french-restaurant",
+    route: "paris-french-restaurant",
     question: "What is Seychelles known for?",
     answer: `Seychelles is known for its deep blue waters and yet unspoiled shores. However, there is much more to Seychelles than just a remote island including fine dining restaurants and luxurious resorts.`,
     category: "policy",
   },
 
   {
-    route:"paris-french-restaurant",
+    route: "paris-french-restaurant",
     question: "How many days are enough to explore Seychelles?",
     answer: `The Island is around 17 miles long. Scheduling three nights and four days would allow tourists to explore enough attractions including beaches, bars, and restaurants in Seychelles.`,
     category: "policy",
   },
 
-  //lecocoloba
   {
     route: "le-cocoloba-bar-seychelles",
-    // id: 16,
     question: "Is Seychelles expensive to eat?",
     answer: `The prices at Seychelles bars and restaurants can vary. There are numerous options to choose from and there is no end to luxury so visitors need to be careful and spend according to their budget.`,
     category: "policy",
@@ -136,6 +144,38 @@ const faqList = [
   },
 ];
 
+const menuPdf = [
+  //sunset
+  {
+    route: "sunset-bar",
+    beverageMenu: SunsetBarBeverageMenu,
+    ourMainMenu: "",
+    wineList: FCRWineListUPDATED,
+    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
+  },
+  {
+    route: "paris-french-restaurant",
+    beverageMenu: "",
+    ourMainMenu: ParisSeychellesMainMenu,
+    wineList: FCRWineListUPDATED,
+    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
+  },
+  {
+    route: "le-cocoloba-bar-seychelles",
+    beverageMenu: "",
+    ourMainMenu: LeCocolobaFoodMenu,
+    wineList: LeCocolobaBarDrinksMenu,
+    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
+  },
+  {
+    route: "le-cardinal-restaurant",
+    beverageMenu: "",
+    ourMainMenu: LeCardinalBreakfastMenu,
+    wineList: FCRWineListUPDATED,
+    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
+  },
+];
+
 let breadcrumbItems = [
   {
     text: "Fishermans Cove Resort",
@@ -165,6 +205,7 @@ class DiningInner extends Component {
   async componentDidMount() {
     let id = this.props.match.params.id;
     try {
+      console.log(id);
       const response = await API.get("/dining/" + id);
       let singleHotel = response?.data?.category_details[0];
       singleHotel.uploads = response?.data?.uploads;
@@ -185,22 +226,22 @@ class DiningInner extends Component {
             ) || [],
         });
       })
-          .then(() => {
-            API.get(`/all_sections/${pageId}`).then(response => {
-              this.setState({
-                banner: response.data?.find(x => x.section_slug === "banner"),
-                sections: {
-                  intro: response.data?.find(x => x.section_slug === "intro"),
-                  dine: response.data?.find(x => x.section_slug === "dine"),
-                }
-              });
-            })
+        .then(() => {
+          API.get(`/all_sections/${pageId}`).then(response => {
+            this.setState({
+              banner: response.data?.find(x => x.section_slug === "banner"),
+              sections: {
+                intro: response.data?.find(x => x.section_slug === "intro"),
+                dine: response.data?.find(x => x.section_slug === "dine"),
+              }
+            });
           })
+        })
     } catch (error) {
       console.log(error);
     }
 
-  
+
   }
 
   async componentDidUpdate(prevProps) {
@@ -236,7 +277,6 @@ class DiningInner extends Component {
     }
   }
   render() {
-
     return (
       <div className="bg-white dining-inner-wrapper">
         <SEOTags meta={this.state.singleHotel?.post_metas?.[0]} />
@@ -269,16 +309,17 @@ class DiningInner extends Component {
           {/*====== TITLE END ======*/}
           {/*====== ROOM GRID START ======*/}
           <DiningInnerInfo
-              timingSection={this.state.sections?.timings}
-              opening_hours={this.state.singleHotel?.section_opening_hours}
-              dress_code={this.state.singleHotel?.section_dress_code}
+            timingSection={this.state.sections?.timings}
+            opening_hours={this.state.singleHotel?.section_opening_hours}
+            dress_code={this.state.singleHotel?.section_dress_code}
+            menuPdf={menuPdf}
 
-              // timingSection={this.state.pageSections?.find(
-            //   (x) => x.section_slug === "timings"
-            // )}
-            // dressSection={this.state.pageSections?.find(
-            //   (x) => x.section_slug === "dress"
-            // )}
+          // timingSection={this.state.pageSections?.find(
+          //   (x) => x.section_slug === "timings"
+          // )}
+          // dressSection={this.state.pageSections?.find(
+          //   (x) => x.section_slug === "dress"
+          // )}
           />
           {/*====== ROOM GRID END ======*/}
           {/*====== SUITES GRID START ======*/}
@@ -292,7 +333,8 @@ class DiningInner extends Component {
           {/*====== OTHERS GRID END ======*/}
 
           <FAQInnerSection
-              faqList={faqList.filter((x) => x.route == this.state.singleHotel?.route)}
+            // faqList={faqList.filter((x) => x.route == this.state.singleHotel?.route)}
+            faqList={faqList}
           />
 
           {/* <Subscribe /> */}

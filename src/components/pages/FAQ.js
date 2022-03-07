@@ -142,33 +142,17 @@ class FAQ extends Component {
     return (
       <div>
         <SEOTags meta={this.state.meta} />
-
-        {/*<Helmet>*/}
-        {/*  <title>F.A.Q. | Fishermans Cove Resort</title>*/}
-        {/*  <meta*/}
-        {/*      name="description"*/}
-        {/*      content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"*/}
-        {/*  />*/}
-        {/*</Helmet>*/}
         <PageLayout
             header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
             banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
             breadCrumb={{ items: breadcrumbItems }}
         >
-        {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'faq'} />*/}
-        {/*/!*====== BANNER PART START ======*!/*/}
-        {/*<Mainbanner title={"F.A.Q"} image={bannerImage} />*/}
-        {/*/!*====== BANNER PART ENDS ======*!/*/}
-        {/*/!*====== BOOKING FORM START ======*!/*/}
-        {/*<Bookingform />*/}
-        {/*/!*====== BOOKING FORM END ======*!/*/}
-        {/*  /!* BREADCRUMBS START *!/*/}
-        {/*  <BreadCrumb items={breadcrumbItems} />*/}
-        {/*  /!* BREADCRUMBS END *!/*/}
         {/*  /!*====== INTRO START ======*!/*/}
           <div className="bg-white faq-wrapper">
           <FAQIntroBlock
-              faqList={this.state.faqsData} />
+              // faqList={this.state.faqsData}
+              faqList={faqList}
+              />
           {/*====== INTRO END ======*/}
         </div>
         {/*<Subscribe />*/}

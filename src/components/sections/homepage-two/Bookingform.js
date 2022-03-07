@@ -41,10 +41,8 @@ class Bookingform extends Component {
         let newDate = this.nextDate(cur);
         let checkOutMin = newDate;
 
-        // console.log(newDate);
         this.setState({checkOut: newDate, checkIn: cur,checkOutMin: checkOutMin});//
-        // this.setState(newDate);    //updating state for check-out date
-
+        this.setState({openCheckOut: true});    //updating state for check-out date
 
     }
 
@@ -93,7 +91,7 @@ class Bookingform extends Component {
     //     // debugger;
     // }
     handleCheckOutChange = (date) => {
-        this.setState({checkOut: date, openCheckOut: false})
+        this.setState({checkOut: date})
     }
 
     handleSubmit = (e) => {
@@ -115,11 +113,11 @@ class Bookingform extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevState.checkOut !== this.state.checkOut){
-            this.setState({
-                openCheckOut: true,
-            })
-        }
+        // if(prevState.checkOut !== this.state.checkOut){
+        //     this.setState({
+        //         openCheckOut: false,
+        //     })
+        // }
     }
 
     handleClickOutside(event) {

@@ -14,18 +14,39 @@ import BottomNavigator from "../sections/homepage-two/BottomNavigator";
 import API from "../../utils/http";
 // import bannerimg1 from '../../assets/img/banner/coral.avif';
 import bannerimg1 from "../../assets/img/banner/home.jpg";
+import SEOTags from "../sections/common/SEOTags";
+import PopUp from "../popup/PopUp";
+
+const pageId = 93;
 
 class Hometwo extends Component {
-  state = {
-    premiumOffers: [],
-    roomsData: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      premiumOffers: [],
+      roomsData: [],
+      meta: {},
+      offerPopup: true,
+    };
+
+    this.handleShowOffer = this.handleShowOffer.bind(this);
+  }
+
+  handleShowOffer() {
+    this.setState({ offerPopup: !this.state.offerPopup });
+  }
 
   componentDidMount() {
     try {
       API.get("/premium_offers").then((response) => {
         this.setState({ premiumOffers: response.data });
-      });
+      })
+        .then(() => {
+          API.get(`/meta/${pageId}`).then(response => {
+            this.setState({ meta: response.data });
+            // console.log(response.data);
+          })
+        })
       // console.log(response.data);
 
       API.get("/rooms").then((roomsResponse) => {
@@ -34,6 +55,7 @@ class Hometwo extends Component {
           roomsData: roomsData.filter((x) => x.post_type === "page"),
         });
       });
+
 
       // const roomsResponse = await API.get('/rooms', {
       //   headers: {
@@ -48,6 +70,7 @@ class Hometwo extends Component {
   render() {
     return (
       <div>
+        <SEOTags meta={this.state.meta} />
         <Headertwo
           isMobile={this.props.isMobile}
           isTop={this.props.isTop}
@@ -126,6 +149,9 @@ class Hometwo extends Component {
             service.
           </p>
         </div>
+
+        <PopUp show={this.state.offerPopup} onHide={this.handleShowOffer} />
+
         <Footertwo />
 
         <BottomNavigator />

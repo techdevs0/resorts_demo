@@ -418,3 +418,10 @@ border-radius: 0px !important;
 .booking-form-vertical .booking-form-inner button{
 	height: auto !important;
 }
+.booking-form-vertical .menu-buttons a, .booking-form-vertical .menu-buttons a button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.booking-form-vertical .menu-buttons {
+	padding: 0 32px;
+}
