@@ -49,7 +49,7 @@ class Footertwo extends Component {
         </Link>
         {/*====== FOOTER START ======*/}
         <div className="container-1">
-              <div className="row">
+          {/* <div className="row">
                 <div className="col-md-12 alert-footer">
 
                     <p>Kindly note, we will be undergoing some repair work around the Sea Wall and Executive Rooms at
@@ -59,8 +59,8 @@ class Footertwo extends Component {
                     and they can also enjoy leisurely walks along our Sea Wall.
                     </p>
                 </div>
-              </div>
-            </div>
+              </div> */}
+        </div>
         <footer className="footer-two">
           <div className="footer-widget-area pt-30 pb-30">
             <div className="container">
