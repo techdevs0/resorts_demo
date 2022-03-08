@@ -25,7 +25,7 @@ const PopUp = (props) => {
                 <div>
 
                     <Modal.Body>
-                        <a href="https://fishermanscove-resort.com/offer/spend-your-dream-vacation" >
+                        <a href="https://fishermanscove-resort.com/offer/10-percentage-off-dinner-for-two" >
                             <img
                                 src={popupimg}
                                 alt="popup fishermans cove resort"
