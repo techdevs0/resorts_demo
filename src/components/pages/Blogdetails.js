@@ -60,6 +60,8 @@ const Blogdetails = () => {
     getRecentData();
   }, [id]);
 
+
+
   return (
     <div>
       <Headertwo />
