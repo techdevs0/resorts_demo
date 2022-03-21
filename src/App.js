@@ -184,7 +184,7 @@ function App() {
         )
       case "blog-inner":
         return (
-          <Route path={`/${route}`} exact render={(props) => <Blogdetails {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path={`/${route}/:id`} exact render={(props) => <Blogdetails {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       default:
         break;
