@@ -230,7 +230,7 @@ const Blogdetails = () => {
                       <Link to={`/blog-inner/${singleBlogData?.slug}`}>Tips On Minimalist</Link>
                     </div>
                     <span className="icon">
-                      <img src="assets/img/blog-details/icon.png" alt="icon" />
+                      <img src="../../assets/img/blog-details/icon.png" alt="icon" />
                     </span>
                     <div className="next-post text-right">
                       <span>Next Post</span>
@@ -285,11 +285,16 @@ const Blogdetails = () => {
                   </div>
                   <div className="author-info-box mb-45">
                     <div className="author-img">
-                      <img src="assets/img/blog-details/author.jpg" alt="" />
+                      <img src="../../assets/img/blog-details/author.jpg" alt="" />
+
                     </div>
                     <div className="info-text">
                       <span>Written by</span>
-                      <h3>Rosalina D. William</h3>
+                      <h3>
+                        {
+                          singleBlogData?.title
+                        }
+                      </h3>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -303,7 +308,7 @@ const Blogdetails = () => {
                   <ul className="comments-list mb-100">
                     <li>
                       <div className="comment-img">
-                        <img src="assets/img/blog-details/avatar-1.jpg" alt="img" />
+                        <img src="../../assets/img/blog-details/avatar-1.jpg" alt="img" />
                       </div>
                       <div className="comment-desc">
                         <div className="desc-top">
@@ -321,7 +326,7 @@ const Blogdetails = () => {
                       <ul className="children">
                         <li>
                           <div className="comment-img">
-                            <img src="assets/img/blog-details/avatar-2.jpg" alt="img" />
+                            <img src="../../assets/img/blog-details/avatar-2.jpg" alt="img" />
                           </div>
                           <div className="comment-desc">
                             <div className="desc-top">
@@ -344,7 +349,7 @@ const Blogdetails = () => {
                     </li>
                     <li>
                       <div className="comment-img">
-                        <img src="assets/img/blog-details/avatar-3.jpg" alt="img" />
+                        <img src="../../assets/img/blog-details/avatar-3.jpg" alt="img" />
                       </div>
                       <div className="comment-desc">
                         <div className="desc-top">
