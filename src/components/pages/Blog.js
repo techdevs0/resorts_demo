@@ -4,6 +4,7 @@ import Blogsidebar from '../layouts/Blogsidebar';
 import { Link } from 'react-router-dom';
 import Headertwo from '../layouts/Headertwo';
 import API from '../../utils/http';
+import ReactPaginate from "react-paginate";
 
 const Blog = () => {
   //  blog Data
@@ -39,7 +40,62 @@ const Blog = () => {
     getRecentData();
   }, []);
 
+  // pagination code
 
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const usersPerPage = 10;
+  const pagesVisited = pageNumber * usersPerPage;
+
+  const displayBlogs = blogData
+    .slice(pagesVisited, pagesVisited + usersPerPage)
+    .map((x, i) => {
+      return (
+        <div className="post-box mb-40" key={i}>
+          <div className="post-media">
+            <img src={x?.img} alt="image" />
+          </div>
+          <div className="post-desc">
+            <Link to={`/blog-inner/${x?.slug}`} className="cat">Businese</Link>
+            <h2>
+              <Link to={`/blog-inner/${x?.slug}`}>
+                {x?.title}
+              </Link>
+            </h2>
+            <ul className="post-meta">
+              <li><Link to="#"><i className="far fa-eye" />232 Views</Link></li>
+              <li><Link to="#"><i className="far fa-comments" />35 Comments</Link></li>
+              <li><Link to="#"><i className="far fa-calendar-alt" />
+                {new Date(x?.created_at).toLocaleDateString()}
+              </Link></li>
+            </ul>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: x?.short_description.substr(0, 200)
+              }}
+            >
+            </p>
+            <div className="post-footer">
+              <div className="author">
+                <Link to="#">
+                  <img src="assets/img/author-small.png" alt="" />
+                  {x?.posted_by}
+                </Link>
+              </div>
+              <div className="read-more">
+                <Link to={`/blog-inner/${x?.slug}`}><i className="far fa-arrow-right" />Read More</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    });
+
+  const pageCount = Math.ceil(blogData.length / usersPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   return (
     <div>
@@ -64,7 +120,9 @@ const Blog = () => {
           <div className="row justify-content-center">
             <div className="col-lg-8 col-md-10">
               <div className="blog-loop">
-                {
+
+                {displayBlogs}
+                {/* {
                   blogData.map((x, i) => (
                     <div className="post-box mb-40" key={i}>
                       <div className="post-media">
@@ -104,7 +162,7 @@ const Blog = () => {
                       </div>
                     </div>
                   ))
-                }
+                } */}
 
 
 
@@ -269,7 +327,19 @@ const Blog = () => {
               </div>
 
 
-              <div className="pagination-wrap">
+              <ReactPaginate
+                previousLabel={<i className="far fa-angle-double-left" />}
+                nextLabel={<i className="far fa-angle-double-right" />}
+                pageCount={pageCount}
+                onPageChange={changePage}
+                containerClassName={"paginationBttns"}
+                previousLinkClassName={"previousBttn"}
+                nextLinkClassName={"nextBttn"}
+                disabledClassName={"paginationDisabled"}
+                activeClassName={"paginationActive"}
+              />
+
+              {/* <div className="pagination-wrap">
                 <ul>
                   <li><Link to="#"><i className="far fa-angle-double-left" /></Link></li>
                   <li className="active"><Link to="#">1</Link></li>
@@ -279,7 +349,7 @@ const Blog = () => {
                   <li><Link to="#">10</Link></li>
                   <li><Link to="#"><i className="far fa-angle-double-right" /></Link></li>
                 </ul>
-              </div>
+              </div> */}
             </div>
             {/* Blog Sidebar */}
             <div className="col-lg-4 col-md-8 col-sm-10">
