@@ -27,7 +27,10 @@ const Blog = () => {
 
   const getRecentData = () => {
     API.get(`/blogs`).then(response => {
-      const recentData = response.data?.data.slice().sort((a, b) => b.created_at - a.created_at);
+      const recentData = response.data?.data.sort(
+        (a, b) =>
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+      )
       setRecentBlog(recentData);
     })
       .catch(err => {

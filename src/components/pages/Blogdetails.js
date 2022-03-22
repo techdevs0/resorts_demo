@@ -46,7 +46,10 @@ const Blogdetails = () => {
 
   const getRecentData = () => {
     API.get(`/blogs`).then(response => {
-      const recentData = response.data?.data.slice().sort((a, b) => b.created_at - a.created_at);
+      const recentData = response.data?.data.sort(
+        (a, b) =>
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+      );
       setRecentBlog(recentData);
     })
       .catch(err => {
@@ -249,8 +252,10 @@ const Blogdetails = () => {
                         blogData?.map((x, i) => (
                           <div className="col-md-6" key={i}>
                             <div className="related-post-box mb-50">
-                              <div className="thumb" style={{ backgroundImage: `url(${x?.img})` }}>
-                              </div>
+                              <img src={x?.img} alt="img" className='imgstyle' />
+                              {/* <div className="thumb"
+                                style={{ backgroundImage: `url( ${x?.img})` }} >
+                              </div> */}
                               <div className="desc">
                                 <Link to={`/blog-inner/${x?.slug}`} className="date"><i className="far fa-calendar-alt" />
                                   {new Date(x?.created_at).toLocaleDateString()}
