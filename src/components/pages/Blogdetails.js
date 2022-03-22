@@ -72,7 +72,11 @@ const Blogdetails = () => {
       <section className="breadcrumb-area" style={{ backgroundImage: `url( ${singleBlogData?.banner_img})` }}>
         <div className="container">
           <div className="breadcrumb-text">
-            <span>The ultimate luxury</span>
+            <span>
+              {
+                singleBlogData?.sub_title
+              }
+            </span>
             <h2 className="page-title">
 
               {
@@ -82,7 +86,12 @@ const Blogdetails = () => {
             </h2>
             <ul className="breadcrumb-nav">
               <li><Link to="/">Home</Link></li>
-              <li className="active">Blog Inner</li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li className="active">
+                {
+                  singleBlogData?.title
+                }
+              </li>
             </ul>
           </div>
         </div>
@@ -292,20 +301,24 @@ const Blogdetails = () => {
                   </div>
                   <div className="author-info-box mb-45">
                     <div className="author-img">
-                      <img src="../../assets/img/blog-details/author.jpg" alt="" />
+                      <img src={singleBlogData?.author_img} alt="" />
 
                     </div>
                     <div className="info-text">
                       <span>Written by</span>
                       <h3>
                         {
-                          singleBlogData?.title
+                          singleBlogData?.posted_by
                         }
                       </h3>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: singleBlogData?.author_details
+                        }}
+                      >
+                        {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation is enougn for today.
+                        nostrud exercitation is enougn for today. */}
                       </p>
                     </div>
                   </div>

@@ -81,7 +81,7 @@ const Blog = () => {
             <div className="post-footer">
               <div className="author">
                 <Link to="#">
-                  <img src="assets/img/author-small.png" alt="" />
+                  <img src={x?.author_img} alt="" />
                   {x?.posted_by}
                 </Link>
               </div>
