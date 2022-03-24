@@ -294,11 +294,7 @@ const Blogdetails = () => {
 
                   {/* ----------------------Author details---------------------- */}
 
-                  <div className="author-info-box mb-45">
-                    {/* <div className="author-img">
-                      <img src={singleBlogData?.author_img} alt="" />
-
-                    </div> */}
+                  {/* <div className="author-info-box mb-45">
                     <div className="info-text">
                       <span>Written by</span>
                       <h3>
@@ -313,7 +309,7 @@ const Blogdetails = () => {
                       >
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 {/* <div className="comment-template">
                   <h3 className="box-title">03 Comments</h3>
