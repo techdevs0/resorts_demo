@@ -62,7 +62,7 @@ const Blog = (props) => {
             <img src={x?.img} alt="image" />
           </div>
           <div className="post-desc">
-            <Link to={`/blog-inner/${x?.slug}`} className="cat">Businese</Link>
+            {/* <Link to={`/blog-inner/${x?.slug}`} className="cat">Businese</Link> */}
             <h2>
               <Link to={`/blog-inner/${x?.slug}`}>
                 {x?.title}

@@ -132,7 +132,7 @@ const Blogdetails = (props) => {
               <div className="col-lg-8">
                 <div className="news-details-box">
                   <div className="entry-content">
-                    <Link to={`/blog-inner/${singleBlogData?.slug}`} className="cat">Businese</Link>
+                    {/* <Link to={`/blog-inner/${singleBlogData?.slug}`} className="cat">Businese</Link> */}
                     <h2 className="title">
                       {
                         singleBlogData?.title
