@@ -47,7 +47,7 @@ const Blog = () => {
 
   const [pageNumber, setPageNumber] = useState(0);
 
-  const usersPerPage = 10;
+  const usersPerPage = 6;
   const pagesVisited = pageNumber * usersPerPage;
 
   const displayBlogs = blogData
@@ -66,8 +66,8 @@ const Blog = () => {
               </Link>
             </h2>
             <ul className="post-meta">
-              <li><Link to="#"><i className="far fa-eye" />232 Views</Link></li>
-              <li><Link to="#"><i className="far fa-comments" />35 Comments</Link></li>
+              {/* <li><Link to="#"><i className="far fa-eye" />232 Views</Link></li> */}
+              {/* <li><Link to="#"><i className="far fa-comments" />35 Comments</Link></li> */}
               <li><Link to="#"><i className="far fa-calendar-alt" />
                 {new Date(x?.created_at).toLocaleDateString()}
               </Link></li>
@@ -81,7 +81,7 @@ const Blog = () => {
             <div className="post-footer">
               <div className="author">
                 <Link to="#">
-                  <img src={x?.author_img} alt="" />
+                  {/* <img src={x?.author_img} alt="" /> */}
                   {x?.posted_by}
                 </Link>
               </div>

@@ -119,7 +119,7 @@ const Blogdetails = () => {
                     <li><Link to="#"><i className="fal fa-calendar-alt" />
                       {new Date(singleBlogData?.created_at).toLocaleDateString()}
                     </Link></li>
-                    <li><Link to="#"><i className="fal fa-comments" />35 Comments</Link></li>
+                    {/* <li><Link to="#"><i className="fal fa-comments" />35 Comments</Link></li> */}
                   </ul>
                   <p className="mb-30"
                     dangerouslySetInnerHTML={{
@@ -217,8 +217,12 @@ const Blogdetails = () => {
                       voluptatem.
                     </p> */}
                 </div>
+
+
                 <div className="entry-footer">
-                  <div className="tag-and-share mt-50 mb-50 d-md-flex align-items-center justify-content-between">
+                  {/* ----------------------Social share---------------------- */}
+
+                  {/* <div className="tag-and-share mt-50 mb-50 d-md-flex align-items-center justify-content-between">
                     <div className="tag">
                       <h5>Related Tags</h5>
                       <ul>
@@ -237,8 +241,10 @@ const Blogdetails = () => {
                         <li><Link to="#"><i className="fab fa-tumblr" /></Link></li>
                       </ul>
                     </div>
-                  </div>
-                  <div className="post-nav d-md-flex align-items-center justify-content-between">
+                  </div> */}
+
+                  {/* ----------------------next and previous buttons ---------------------- */}
+                  {/* <div className="post-nav d-md-flex align-items-center justify-content-between">
                     <div className="prev-post">
                       <span>Prev Post</span>
                       <Link to={`/blog-inner/${singleBlogData?.slug}`}>Tips On Minimalist</Link>
@@ -250,7 +256,7 @@ const Blogdetails = () => {
                       <span>Next Post</span>
                       <Link to={`/blog-inner/${singleBlogData?.slug}`}>Less Is More</Link>
                     </div>
-                  </div>
+                  </div> */}
 
 
                   {/* ----------------------Related Post---------------------- */}
@@ -283,27 +289,16 @@ const Blogdetails = () => {
                           </div>
                         ))
                       }
-
-                      {/* <div className="col-md-6">
-                          <div className="related-post-box mb-50">
-                            <div className="thumb" style={{ backgroundImage: 'url(assets/img/blog-details/04.jpg)' }}>
-                            </div>
-                            <div className="desc">
-                              <Link to={`/blog-inner/${singleBlogData?.slug}`} className="date"><i className="far fa-calendar-alt" />24th March
-                                2019</Link>
-                              <h4><Link to={`/blog-inner/${singleBlogData?.slug}`}>A series of iOS 7 inspire vector icons sense.</Link></h4>
-                              <p>Lorem ipsum dolor sit amet, conse ctet ur adipisicing elit, sed
-                                doing.</p>
-                            </div>
-                          </div>
-                        </div> */}
                     </div>
                   </div>
+
+                  {/* ----------------------Author details---------------------- */}
+
                   <div className="author-info-box mb-45">
-                    <div className="author-img">
+                    {/* <div className="author-img">
                       <img src={singleBlogData?.author_img} alt="" />
 
-                    </div>
+                    </div> */}
                     <div className="info-text">
                       <span>Written by</span>
                       <h3>
@@ -316,14 +311,11 @@ const Blogdetails = () => {
                           __html: singleBlogData?.author_details
                         }}
                       >
-                        {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation is enougn for today. */}
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="comment-template">
+                {/* <div className="comment-template">
                   <h3 className="box-title">03 Comments</h3>
                   <ul className="comments-list mb-100">
                     <li>
@@ -411,7 +403,7 @@ const Blogdetails = () => {
                       </div>
                     </form>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             {/* Blog Sidebar */}
