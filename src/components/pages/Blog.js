@@ -82,7 +82,7 @@ const Blog = () => {
               <div className="author">
                 <Link to="#">
                   {/* <img src={x?.author_img} alt="" /> */}
-                  <i className="fal fa-user" />
+                  <i className="fal fa-user mr-1" />
                   {x?.posted_by}
                 </Link>
               </div>
