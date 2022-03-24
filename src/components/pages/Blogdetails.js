@@ -86,7 +86,6 @@ const Blogdetails = (props) => {
   ]
 
 
-
   return (
     <div>
       {/* <Headertwo /> */}

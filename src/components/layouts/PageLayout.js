@@ -8,7 +8,7 @@ import Footertwo from './Footertwo'
 import Headertwo from './Headertwo'
 
 export default function PageLayout(props) {
-    const { header, banner, hideBooking, bookingForm, breadCrumb } = props;
+    const { header, banner, hideBooking, bookingForm, breadCrumb, image } = props;
     return (
         <div key={props.key}>
             <Headertwo {...header} key={props.key} />
