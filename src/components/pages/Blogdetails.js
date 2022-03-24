@@ -260,37 +260,42 @@ const Blogdetails = () => {
 
 
                   {/* ----------------------Related Post---------------------- */}
-                  <div className="related-post mt-50">
-                    <h3 className="mb-30">Related Post</h3>
-                    <div className="row">
-                      {
-                        blogData?.map((x, i) => (
-                          <div className="col-md-6" key={i}>
-                            <div className="related-post-box mb-50">
-                              <img src={x?.img} alt="img" className='imgstyle' />
-                              {/* <div className="thumb"
+
+                  {
+                    blogData?.length > 0 &&
+                    <div className="related-post mt-50">
+                      <h3 className="mb-30">Related Post</h3>
+                      <div className="row">
+                        {
+                          blogData?.map((x, i) => (
+                            <div className="col-md-6" key={i}>
+                              <div className="related-post-box mb-50">
+                                <img src={x?.img} alt="img" className='imgstyle' />
+                                {/* <div className="thumb"
                                 style={{ backgroundImage: `url( ${x?.img})` }} >
                               </div> */}
-                              <div className="desc">
-                                <Link to={`/blog-inner/${x?.slug}`} className="date"><i className="far fa-calendar-alt" />
-                                  {new Date(x?.created_at).toLocaleDateString()}
-                                </Link>
-                                <h4><Link to={`/blog-inner/${x?.slug}`}>
-                                  {x?.title}
-                                </Link></h4>
-                                <p
-                                  dangerouslySetInnerHTML={{
-                                    __html: x?.short_description?.substr(0, 200)
-                                  }}
-                                >
-                                </p>
+                                <div className="desc">
+                                  <Link to={`/blog-inner/${x?.slug}`} className="date"><i className="far fa-calendar-alt" />
+                                    {new Date(x?.created_at).toLocaleDateString()}
+                                  </Link>
+                                  <h4><Link to={`/blog-inner/${x?.slug}`}>
+                                    {x?.title}
+                                  </Link></h4>
+                                  <p
+                                    dangerouslySetInnerHTML={{
+                                      __html: x?.short_description?.substr(0, 200)
+                                    }}
+                                  >
+                                  </p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))
-                      }
+                          ))
+                        }
+                      </div>
                     </div>
-                  </div>
+                  }
+
 
                   {/* ----------------------Author details---------------------- */}
 
