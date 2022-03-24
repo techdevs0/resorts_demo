@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 import Headertwo from '../layouts/Headertwo';
 import API from '../../utils/http';
 import ReactPaginate from "react-paginate";
+import PageLayout from '../layouts/PageLayout';
+import bannerImg from "../../assets/img/blog/blogBanner.jpg"
 
-const Blog = () => {
+
+const Blog = (props) => {
   //  blog Data
 
   const [blogData, setBlogData] = useState([]);
@@ -82,7 +85,7 @@ const Blog = () => {
               <div className="author">
                 <Link to="#">
                   {/* <img src={x?.author_img} alt="" /> */}
-                  <i className="fal fa-user mr-1" />
+                  <i className="fal fa-user mr-2" />
                   {x?.posted_by}
                 </Link>
               </div>
@@ -101,11 +104,30 @@ const Blog = () => {
     setPageNumber(selected);
   };
 
+  const breadcrumbItems = [
+    {
+      text: 'Fishermans Cove Resort',
+      link: '/',
+      isActive: false,
+    },
+    {
+      text: 'Blogs',
+      link: '/blog',
+      isActive: true,
+    },
+  ]
+
   return (
     <div>
-      <Headertwo />
-      {/*====== BREADCRUMB PART START ======*/}
-      <section className="breadcrumb-area" style={{ backgroundImage: 'url(assets/img/bg/04.jpg)' }}>
+      <PageLayout
+        header={{ isMobile: props.isMobile, isTop: props.isTop }}
+        banner={{ title: "Blogs", image: bannerImg }}
+        breadCrumb={{ items: breadcrumbItems }}
+      >
+        {/* <Headertwo /> */}
+        {/*====== BREADCRUMB PART START ======*/}
+
+        {/* <section className="breadcrumb-area" style={{ backgroundImage: 'url(assets/img/bg/04.jpg)' }}>
         <div className="container">
           <div className="breadcrumb-text">
             <span>The ultimate luxury</span>
@@ -116,17 +138,17 @@ const Blog = () => {
             </ul>
           </div>
         </div>
-      </section>
-      {/*====== BREADCRUMB PART END ======*/}
-      {/*====== BLOG SECTION START ======*/}
-      <section className="blog-section pt-120 pb-120">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-8 col-md-10">
-              <div className="blog-loop">
+      </section> */}
+        {/*====== BREADCRUMB PART END ======*/}
+        {/*====== BLOG SECTION START ======*/}
+        <section className="blog-section pt-40 pb-100">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-8 col-md-10">
+                <div className="blog-loop">
 
-                {displayBlogs}
-                {/* {
+                  {displayBlogs}
+                  {/* {
                   blogData.map((x, i) => (
                     <div className="post-box mb-40" key={i}>
                       <div className="post-media">
@@ -175,7 +197,7 @@ const Blog = () => {
 
 
 
-                {/* <div className="post-box with-video mb-40">
+                  {/* <div className="post-box with-video mb-40">
                     <div className="post-media">
                       <img src="assets/img/blog/02.jpg" alt="" />
                       <Link to="#" className="play-icon"><i className="fas fa-play" /></Link>
@@ -328,22 +350,22 @@ const Blog = () => {
                       </ul>
                     </div>
                   </div>*/}
-              </div>
+                </div>
 
 
-              <ReactPaginate
-                previousLabel={<i className="far fa-angle-double-left" />}
-                nextLabel={<i className="far fa-angle-double-right" />}
-                pageCount={pageCount}
-                onPageChange={changePage}
-                containerClassName={"paginationBttns"}
-                previousLinkClassName={"previousBttn"}
-                nextLinkClassName={"nextBttn"}
-                disabledClassName={"paginationDisabled"}
-                activeClassName={"paginationActive"}
-              />
+                <ReactPaginate
+                  previousLabel={<i className="far fa-angle-double-left" />}
+                  nextLabel={<i className="far fa-angle-double-right" />}
+                  pageCount={pageCount}
+                  onPageChange={changePage}
+                  containerClassName={"paginationBttns"}
+                  previousLinkClassName={"previousBttn"}
+                  nextLinkClassName={"nextBttn"}
+                  disabledClassName={"paginationDisabled"}
+                  activeClassName={"paginationActive"}
+                />
 
-              {/* <div className="pagination-wrap">
+                {/* <div className="pagination-wrap">
                 <ul>
                   <li><Link to="#"><i className="far fa-angle-double-left" /></Link></li>
                   <li className="active"><Link to="#">1</Link></li>
@@ -354,18 +376,19 @@ const Blog = () => {
                   <li><Link to="#"><i className="far fa-angle-double-right" /></Link></li>
                 </ul>
               </div> */}
-            </div>
-            {/* Blog Sidebar */}
-            <div className="col-lg-4 col-md-8 col-sm-10">
-              <Blogsidebar
-                recentBlog={recentBlog}
-              />
+              </div>
+              {/* Blog Sidebar */}
+              <div className="col-lg-4 col-md-8 col-sm-10">
+                <Blogsidebar
+                  recentBlog={recentBlog}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      {/*====== BLOG SECTION END ======*/}
-      <Footer />
+        </section>
+        {/*====== BLOG SECTION END ======*/}
+        {/* <Footer /> */}
+      </PageLayout>
     </div>
 
   );

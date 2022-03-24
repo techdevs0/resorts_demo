@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import ReactWOW from 'react-wow'
-import {Hidden} from "@material-ui/core";
+import { Hidden } from "@material-ui/core";
 
 // import bannerimg1 from '../../../assets/img/banner/home.jpg';
 // import bannerimg2 from '../../../assets/img/banner/05.jpg';
 
 const bannerPosts = [
   {
-  //photo: require('../../../assets/img/banner/dining.jpg'),
+    //photo: require('../../../assets/img/banner/dining.jpg'),
     tag: '',
     taganimation: '.6s',
     title: "The Perfect \n Destination for you",
@@ -67,13 +67,14 @@ class Banner extends Component {
                         <ReactWOW animation="fadeInUp" data-delay={item.btn3animation}>
                           <li>
                             <Link className="main-btn btn-border" to={item.btn3url}
-                            style={{borderColor: "#be8a7d",
-                              background: "#be8a7d"
-                            }}
-                            onClick={(e) => 
-            
-                              window.gtag_report_conversion("https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB")
-                            }
+                              style={{
+                                borderColor: "#be8a7d",
+                                background: "#be8a7d"
+                              }}
+                              onClick={(e) =>
+
+                                window.gtag_report_conversion("https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB")
+                              }
                             >{item.btn3}</Link>
                           </li>
                         </ReactWOW>
@@ -97,9 +98,10 @@ class Banner extends Component {
               </div>
             </div>
             {/* banner bg */}
-            <div className="banner-bg" style={{ backgroundImage: `url(${this.props.image})`, backgroundPosition: 'left', backgroundSize: 'cover'}} />
+            <div className="banner-bg" style={{ backgroundImage: `url(${this.props.image})`, backgroundPosition: 'left', backgroundSize: 'cover' }} />
             <div className="banner-overly" />
           </div>
+
         ))}
       </Slider>
     );

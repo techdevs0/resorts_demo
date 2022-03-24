@@ -5,20 +5,27 @@ import { Link } from 'react-router-dom';
 import Headertwo from '../layouts/Headertwo';
 import API from '../../utils/http';
 import { useParams } from "react-router-dom";
+import PageLayout from '../layouts/PageLayout';
 
 
 
-const Blogdetails = () => {
+const Blogdetails = (props) => {
 
 
   // single blog Data
   const { id } = useParams();
 
+  useEffect(() => {
+    getBlogData();
+    getSingleBlogData();
+    getRecentData();
+  }, [id]);
+
   const [singleBlogData, setSingleBlogData] = useState([]);
 
   const getSingleBlogData = () => {
     API.get(`/blogs/${id}`).then(response => {
-      const singleData = response.data?.data;
+      const singleData = response?.data?.data;
       setSingleBlogData(singleData);
     })
       .catch(err => {
@@ -57,75 +64,97 @@ const Blogdetails = () => {
       })
   }
 
-  useEffect(() => {
-    getBlogData();
-    getSingleBlogData();
-    getRecentData();
-  }, [id]);
+
+
+
+  const breadcrumbItems = [
+    {
+      text: 'Fishermans Cove Resort',
+      link: '/',
+      isActive: false,
+    },
+    {
+      text: 'Blogs',
+      link: '/blog',
+      isActive: false,
+    },
+    {
+      text: `${singleBlogData?.title}`,
+      link: `/blog-inner/${singleBlogData?.slug}`,
+      isActive: true,
+    },
+  ]
 
 
 
   return (
     <div>
-      <Headertwo />
-      {/*====== BREADCRUMB PART START ======*/}
-      <section className="breadcrumb-area" style={{ backgroundImage: `url( ${singleBlogData?.banner_img})` }}>
-        <div className="container">
-          <div className="breadcrumb-text">
-            <span>
-              {
-                singleBlogData?.sub_title
-              }
-            </span>
-            <h2 className="page-title">
+      {/* <Headertwo /> */}
+      <PageLayout
+        header={{ isMobile: props.isMobile, isTop: props.isTop }}
+        banner={{ title: singleBlogData?.title, image: singleBlogData?.banner_img }}
+        breadCrumb={{ items: breadcrumbItems }}
+      >
 
-              {
-                singleBlogData?.title
-              }
 
-            </h2>
-            <ul className="breadcrumb-nav">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
-              <li className="active">
+        {/*====== BREADCRUMB PART START ======*/}
+        {/* <section className="breadcrumb-area" style={{ backgroundImage: `url( ${singleBlogData?.banner_img})` }}>
+          <div className="container">
+            <div className="breadcrumb-text">
+              <span>
+                {
+                  singleBlogData?.sub_title
+                }
+              </span>
+              <h2 className="page-title">
+
                 {
                   singleBlogData?.title
                 }
-              </li>
-            </ul>
+
+              </h2>
+              <ul className="breadcrumb-nav">
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/blog">Blog</Link></li>
+                <li className="active">
+                  {
+                    singleBlogData?.title
+                  }
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
-      {/*====== BREADCRUMB PART END ======*/}
-      {/*====== BLOG SECTION START ======*/}
-      <section className="blog-section pt-120 pb-120">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-8">
-              <div className="news-details-box">
-                <div className="entry-content">
-                  <Link to={`/blog-inner/${singleBlogData?.slug}`} className="cat">Businese</Link>
-                  <h2 className="title">
-                    {
-                      singleBlogData?.title
-                    }
-                  </h2>
-                  <ul className="post-meta">
-                    <li><Link to="#"><i className="fal fa-user" />
+        </section> */}
+        {/*====== BREADCRUMB PART END ======*/}
+        {/*====== BLOG SECTION START ======*/}
+        <section className="blog-section pt-40 pb-100">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-8">
+                <div className="news-details-box">
+                  <div className="entry-content">
+                    <Link to={`/blog-inner/${singleBlogData?.slug}`} className="cat">Businese</Link>
+                    <h2 className="title">
                       {
-                        singleBlogData?.posted_by
+                        singleBlogData?.title
                       }
-                    </Link></li>
-                    <li><Link to="#"><i className="fal fa-calendar-alt" />
-                      {new Date(singleBlogData?.created_at).toLocaleDateString()}
-                    </Link></li>
-                    {/* <li><Link to="#"><i className="fal fa-comments" />35 Comments</Link></li> */}
-                  </ul>
-                  <p className="mb-30"
-                    dangerouslySetInnerHTML={{
-                      __html: singleBlogData?.short_description
-                    }}
-                  >
+                    </h2>
+                    <ul className="post-meta">
+                      <li><Link to="#"><i className="fal fa-user" />
+                        {
+                          singleBlogData?.posted_by
+                        }
+                      </Link></li>
+                      <li><Link to="#"><i className="fal fa-calendar-alt" />
+                        {new Date(singleBlogData?.created_at).toLocaleDateString()}
+                      </Link></li>
+                      {/* <li><Link to="#"><i className="fal fa-comments" />35 Comments</Link></li> */}
+                    </ul>
+                    {/* <p className="mb-30"
+                      dangerouslySetInnerHTML={{
+                        __html: singleBlogData?.short_description
+                      }}
+                    > */}
                     {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -138,30 +167,30 @@ const Blogdetails = () => {
                       magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
                       dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
                       eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. */}
-                  </p>
-                  {/* <p>
+                    {/* </p> */}
+                    {/* <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                       dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
                     </p> */}
-                  <figure className="mt-45 mb-45">
-                    <img src={singleBlogData?.img} alt="image" />
-                  </figure>
-                  {/* <h3 className="subtitle"> A cleansing hot shower or bath</h3> */}
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: singleBlogData?.long_description
-                    }}
-                  >
-                    {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    <figure className="mt-45 mb-45">
+                      <img src={singleBlogData?.img} alt="image" />
+                    </figure>
+                    {/* <h3 className="subtitle"> A cleansing hot shower or bath</h3> */}
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: singleBlogData?.long_description
+                      }}
+                    >
+                      {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                       dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia. */}
-                  </p>
-                  {/* <div className="gap" />
+                    </p>
+                    {/* <div className="gap" />
                     <h3 className="subtitle">Setting the mood with incense</h3>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -216,13 +245,13 @@ const Blogdetails = () => {
                       mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit
                       voluptatem.
                     </p> */}
-                </div>
+                  </div>
 
 
-                <div className="entry-footer">
-                  {/* ----------------------Social share---------------------- */}
+                  <div className="entry-footer">
+                    {/* ----------------------Social share---------------------- */}
 
-                  {/* <div className="tag-and-share mt-50 mb-50 d-md-flex align-items-center justify-content-between">
+                    {/* <div className="tag-and-share mt-50 mb-50 d-md-flex align-items-center justify-content-between">
                     <div className="tag">
                       <h5>Related Tags</h5>
                       <ul>
@@ -243,8 +272,8 @@ const Blogdetails = () => {
                     </div>
                   </div> */}
 
-                  {/* ----------------------next and previous buttons ---------------------- */}
-                  {/* <div className="post-nav d-md-flex align-items-center justify-content-between">
+                    {/* ----------------------next and previous buttons ---------------------- */}
+                    {/* <div className="post-nav d-md-flex align-items-center justify-content-between">
                     <div className="prev-post">
                       <span>Prev Post</span>
                       <Link to={`/blog-inner/${singleBlogData?.slug}`}>Tips On Minimalist</Link>
@@ -259,47 +288,47 @@ const Blogdetails = () => {
                   </div> */}
 
 
-                  {/* ----------------------Related Post---------------------- */}
+                    {/* ----------------------Related Post---------------------- */}
 
-                  {
-                    blogData?.length > 0 &&
-                    <div className="related-post mt-50">
-                      <h3 className="mb-30">Related Post</h3>
-                      <div className="row">
-                        {
-                          blogData?.map((x, i) => (
-                            <div className="col-md-6" key={i}>
-                              <div className="related-post-box mb-50">
-                                <img src={x?.img} alt="img" className='imgstyle' />
-                                {/* <div className="thumb"
+                    {
+                      blogData?.length > 0 &&
+                      <div className="related-post mt-50">
+                        <h3 className="mb-30">Related Post</h3>
+                        <div className="row">
+                          {
+                            blogData?.map((x, i) => (
+                              <div className="col-md-6" key={i}>
+                                <div className="related-post-box mb-50">
+                                  <img src={x?.img} alt="img" className='imgstyle' />
+                                  {/* <div className="thumb"
                                 style={{ backgroundImage: `url( ${x?.img})` }} >
                               </div> */}
-                                <div className="desc">
-                                  <Link to={`/blog-inner/${x?.slug}`} className="date"><i className="far fa-calendar-alt" />
-                                    {new Date(x?.created_at).toLocaleDateString()}
-                                  </Link>
-                                  <h4><Link to={`/blog-inner/${x?.slug}`}>
-                                    {x?.title}
-                                  </Link></h4>
-                                  <p
-                                    dangerouslySetInnerHTML={{
-                                      __html: x?.short_description?.substr(0, 200)
-                                    }}
-                                  >
-                                  </p>
+                                  <div className="desc">
+                                    <Link to={`/blog-inner/${x?.slug}`} className="date"><i className="far fa-calendar-alt" />
+                                      {new Date(x?.created_at).toLocaleDateString()}
+                                    </Link>
+                                    <h4><Link to={`/blog-inner/${x?.slug}`}>
+                                      {x?.title}
+                                    </Link></h4>
+                                    <p
+                                      dangerouslySetInnerHTML={{
+                                        __html: x?.short_description?.substr(0, 200)
+                                      }}
+                                    >
+                                    </p>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          ))
-                        }
+                            ))
+                          }
+                        </div>
                       </div>
-                    </div>
-                  }
+                    }
 
 
-                  {/* ----------------------Author details---------------------- */}
+                    {/* ----------------------Author details---------------------- */}
 
-                  {/* <div className="author-info-box mb-45">
+                    {/* <div className="author-info-box mb-45">
                     <div className="info-text">
                       <span>Written by</span>
                       <h3>
@@ -315,8 +344,8 @@ const Blogdetails = () => {
                       </p>
                     </div>
                   </div> */}
-                </div>
-                {/* <div className="comment-template">
+                  </div>
+                  {/* <div className="comment-template">
                   <h3 className="box-title">03 Comments</h3>
                   <ul className="comments-list mb-100">
                     <li>
@@ -405,20 +434,22 @@ const Blogdetails = () => {
                     </form>
                   </div>
                 </div> */}
+                </div>
+              </div>
+              {/* Blog Sidebar */}
+              <div className="col-lg-4 col-md-8 col-sm-10">
+                <Blogsidebar
+                  recentBlog={recentBlog}
+                />
               </div>
             </div>
-            {/* Blog Sidebar */}
-            <div className="col-lg-4 col-md-8 col-sm-10">
-              <Blogsidebar
-                recentBlog={recentBlog}
-              />
-            </div>
           </div>
-        </div>
-      </section>
-      {/*====== BLOG SECTION END ======*/}
-      <Footer />
-    </div>
+        </section>
+        {/*====== BLOG SECTION END ======*/}
+        {/* <Footer /> */}
+      </PageLayout>
+
+    </div >
 
   );
 }

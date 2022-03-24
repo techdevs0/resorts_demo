@@ -62,40 +62,40 @@ class AboutUs extends Component {
     premiumOffers: [],
     sections: null,
     banner: null,
-    meta:{}
+    meta: {}
   }
 
   componentDidMount() {
     try {
-      API.get('/premium_offers').then(response=>{
+      API.get('/premium_offers').then(response => {
         this.setState({ premiumOffers: response.data })
       })
-          .then(() => {
-            API.get(`/all_sections/${pageId}`).then(response => {
-              this.setState({
-                banner: response.data?.find(x => x.section_slug === "banner"),
-                sections: {
-                  intro: response.data?.find(x => x.section_slug === "intro"),
-                  dine: response.data?.find(x => x.section_slug === "dine"),
-                }
-              });
-            })
+        .then(() => {
+          API.get(`/all_sections/${pageId}`).then(response => {
+            this.setState({
+              banner: response.data?.find(x => x.section_slug === "banner"),
+              sections: {
+                intro: response.data?.find(x => x.section_slug === "intro"),
+                dine: response.data?.find(x => x.section_slug === "dine"),
+              }
+            });
           })
-          .then(() => {
-            API.get(`/meta/${pageId}`).then(response => {
-              this.setState({ meta: response.data });
-              // console.log(response.data);
-            })
+        })
+        .then(() => {
+          API.get(`/meta/${pageId}`).then(response => {
+            this.setState({ meta: response.data });
+            // console.log(response.data);
           })
-        // .then(() => {
-        //   API.get(`/all_sections/${pageId}`).then(response => {
-  
-        //     this.setState({
-        //       intro: response.data?.find(x => x.section_slug === "intro"),
-        //       banner: response.data?.find(x => x.section_slug === "banner"),
-        //     });
-        //   })
-        // })
+        })
+      // .then(() => {
+      //   API.get(`/all_sections/${pageId}`).then(response => {
+
+      //     this.setState({
+      //       intro: response.data?.find(x => x.section_slug === "intro"),
+      //       banner: response.data?.find(x => x.section_slug === "banner"),
+      //     });
+      //   })
+      // })
     }
     catch (error) {
       console.log(error)
@@ -119,7 +119,7 @@ class AboutUs extends Component {
         {/*</Helmet>*/}
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
           breadCrumb={{ items: breadcrumbItems }}
         >
           {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'about'} /> */}
