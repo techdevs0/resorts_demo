@@ -126,13 +126,13 @@ const Blogdetails = (props) => {
         </section> */}
         {/*====== BREADCRUMB PART END ======*/}
         {/*====== BLOG SECTION START ======*/}
-        <section className="blog-section pt-40 pb-100">
+        <section className="blog-section pt-30 pb-60">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8">
                 <div className="news-details-box">
                   <div className="entry-content">
-                    <Link to={`/blog-inner/${singleBlogData?.slug}`} className="cat">Businese</Link>
+                    {/* <Link to={`/blog-inner/${singleBlogData?.slug}`} className="cat">Businese</Link> */}
                     <h2 className="title">
                       {
                         singleBlogData?.title
