@@ -338,7 +338,7 @@ class Headertwo extends Component {
                     <img src={require('./../../assets/img/flags/flag3.png')} alt="flag" />
                   </div> */}
                 </div>
-                <div className="menu-items d-lg-none d-xl-none mblMenuItem">
+                <div className="menu-items d-lg-none d-xl-none menuDisplay">
                   <ul>
                     {navigationmenu.length > 0
                       ? navigationmenu.map((item, i) => (
