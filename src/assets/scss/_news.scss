@@ -1,7 +1,7 @@
 /*=======  News   =======*/
 .post-box {
 	.post-desc {
-		padding: 50px;
+		padding: 50px 0px;
 		background-color: $white;
 		@media #{$lsm} {
 			padding: 40px 30px;
@@ -27,7 +27,7 @@
 			}
 		}
 		h2 {
-			font-size: 42px;
+			font-size: 30px;
 			margin-bottom: 20px;
 			letter-spacing: -2px;
 			line-height: 1;
@@ -46,7 +46,7 @@
 			}
 		}
 		.post-meta {
-			margin-bottom: 30px;
+			margin-bottom: 15px;
 			li {
 				display: inline-block;
 				margin-right: 30px;
@@ -76,7 +76,7 @@
 			}
 		}
 		.post-footer {
-			margin-top: 35px;
+			margin-top: 20px;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -256,6 +256,9 @@
 		padding: 15px;
 	}
 	.entry-content {
+		p{
+			margin-bottom: 15px;
+		}
 		.cat {
 			margin-bottom: 25px;
 			padding: 10px 30px;
