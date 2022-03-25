@@ -12,7 +12,7 @@ let navigationmenu = [
     id: 1,
     linkText: "About Us",
     child: false,
-    link: "/about-us",
+    link: "/about",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ let navigationmenu = [
     id: 3,
     linkText: "Rooms and Suites",
     child: true,
-    link: "/room-suites",
+    link: "/rooms-suites-seychelles",
     submenu: [],
   },
   {
@@ -36,54 +36,48 @@ let navigationmenu = [
   },
   {
     id: 5,
-    link: "/offers",
-    linkText: "Offers",
-    child: false,
-  },
-  {
-    id: 6,
-    link: "/sustainability",
-    linkText: "Sustainability",
-    child: false,
-  },
-  {
-    id: 7,
-    link: "/contact",
-    linkText: "Contact Us",
-    child: false,
-  },
-  {
-    id: 8,
     link: "/whats-on",
     linkText: "Leisure Activities",
     child: false,
   },
   {
-    id: 9,
+    id: 6,
     link: "/seychelles-eco-resort",
     linkText: "Sustainability",
     child: false,
   },
   {
-    id: 10,
+    id: 7,
     link: "/spa-resort-seychelles",
     linkText: "Spa & Wellness",
     child: false,
   },
   {
-    id: 11,
+    id: 8,
     link: "/about-seychelles",
     linkText: "About Seychelles",
     child: false,
   },
   {
-    id: 12,
+    id: 9,
+    link: "/offers",
+    linkText: "Offers",
+    child: false,
+  },
+  {
+    id: 10,
     link: "/gallery",
     linkText: "Gallery",
     child: false,
   },
   {
-    id: 13,
+    id: 11,
+    link: "/contact",
+    linkText: "Contact Us",
+    child: false,
+  },
+  {
+    id: 12,
     link: "/blog",
     linkText: "Blog",
     child: false,
@@ -167,7 +161,7 @@ class Headertwo extends Component {
 
       let diningSubMenu = diningResponse?.data?.map((x) => ({
         id: x.id,
-        link: "/dining-inner/" + x.route,
+        link: "/dining/" + x.route,
         linkText: x.post_name,
       }));
       navigationmenu = navigationmenu.map((x) => {
@@ -175,7 +169,7 @@ class Headertwo extends Component {
           return {
             ...x,
             submenu: [
-              { id: 101, link: "/dining", linkText: "Restaurants & Bars" },
+              { id: 101, link: "/fine-dining-seychelles", linkText: "All Dining" },
               ...diningSubMenu,
             ],
           };
@@ -193,7 +187,7 @@ class Headertwo extends Component {
 
       let roomsSubMenu = roomsResponse?.data?.map((x) => ({
         id: x.id,
-        link: "/rooms-inner/" + x.id,
+        link: "/rooms/" + x.id,
         linkText: x.post_name,
       }));
       // debugger;
@@ -204,8 +198,8 @@ class Headertwo extends Component {
             submenu: [
               {
                 id: 101,
-                link: "/room-suites",
-                linkText: "Rooms & Suites Types",
+                link: "/rooms-suites-seychelles",
+                linkText: "All Rooms & Suites",
               },
               ...roomsSubMenu,
             ],
@@ -344,7 +338,7 @@ class Headertwo extends Component {
                     <img src={require('./../../assets/img/flags/flag3.png')} alt="flag" />
                   </div> */}
                 </div>
-                <div className="menu-items d-sm-none">
+                <div className="menu-items d-lg-none d-xl-none mblMenuItem">
                   <ul>
                     {navigationmenu.length > 0
                       ? navigationmenu.map((item, i) => (
