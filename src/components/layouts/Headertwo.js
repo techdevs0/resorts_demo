@@ -60,7 +60,7 @@ let navigationmenu = [
   },
   {
     id: 9,
-    link: "/sustainability",
+    link: "/seychelles-eco-resort",
     linkText: "Sustainability",
     child: false,
   },
