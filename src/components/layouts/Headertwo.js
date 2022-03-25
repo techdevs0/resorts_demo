@@ -82,6 +82,12 @@ let navigationmenu = [
     linkText: "Gallery",
     child: false,
   },
+  {
+    id: 13,
+    link: "/blog",
+    linkText: "Blog",
+    child: false,
+  },
 ];
 
 class Headertwo extends Component {
@@ -99,12 +105,12 @@ class Headertwo extends Component {
       navigationmenu: [],
       widgetMenuLinks: [],
       contact: null,
-      offerPopup : true,
+      offerPopup: true,
     };
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
     this.removeAll = this.removeAll.bind(this);
-    
+
   }
 
 
@@ -213,9 +219,9 @@ class Headertwo extends Component {
     }
   }
 
-  handleClickCheck(value,e) {
+  handleClickCheck(value, e) {
 
-    console.log('--------------------helllooo---------------',value);
+    console.log('--------------------helllooo---------------', value);
   }
 
   toggleDiningMenu = () => {
@@ -342,84 +348,81 @@ class Headertwo extends Component {
                   <ul>
                     {navigationmenu.length > 0
                       ? navigationmenu.map((item, i) => (
-                          <li
-                            key={i}
-                            className={` ${
-                              item.child ? "menu-item-has-children" : ""
+                        <li
+                          key={i}
+                          className={` ${item.child ? "menu-item-has-children" : ""
                             } `}
-                            onClick={this.triggerChild}
-                          >
-                            {item.child ? (
-                              <Link
-                                onClick={(e) => {
-                                  e.preventDefault();
+                          onClick={this.triggerChild}
+                        >
+                          {item.child ? (
+                            <Link
+                              onClick={(e) => {
+                                e.preventDefault();
+                                item.id === 2
+                                  ? this.toggleDiningMenu()
+                                  : this.toggleRoomMenu();
+                              }}
+                              to="#"
+                            >
+                              {" "}
+                              {item.linkText}{" "}
+                              <i
+                                className={`far ${(
                                   item.id === 2
-                                    ? this.toggleDiningMenu()
-                                    : this.toggleRoomMenu();
-                                }}
-                                to="#"
-                              >
-                                {" "}
-                                {item.linkText}{" "}
-                                <i
-                                  className={`far ${
-                                    (
-                                      item.id === 2
-                                        ? this.state.isDiningSubMenuOpen
-                                        : this.state.isRoomSubMenuOpen
-                                    )
-                                      ? "fa-minus"
-                                      : "fa-plus"
+                                    ? this.state.isDiningSubMenuOpen
+                                    : this.state.isRoomSubMenuOpen
+                                )
+                                  ? "fa-minus"
+                                  : "fa-plus"
                                   }`}
-                                />{" "}
-                              </Link>
-                            ) : (
-                              <Link to={item.link}> {item.linkText} </Link>
-                            )}
-                            {item.child ? (
-                              <ul className="submenu" role="menu">
-                                {item.submenu.map((sub_item, i) => (
-                                  <li
-                                    key={i}
-                                    className={`${
-                                      sub_item.child
-                                        ? "menu-item-has-child"
-                                        : ""
+                              />{" "}
+                            </Link>
+                          ) : (
+                            <Link to={item.link}> {item.linkText} </Link>
+                          )}
+                          {item.child ? (
+                            <ul className="submenu" role="menu">
+                              {item.submenu.map((sub_item, i) => (
+                                <li
+                                  key={i}
+                                  className={`${sub_item.child
+                                    ? "menu-item-has-child"
+                                    : ""
                                     } `}
-                                  >
-                                    {sub_item.child ? (
-                                      <Link
-                                        onClick={(e) => e.preventDefault()}
-                                        to="/"
-                                      >
-                                        {" "}
-                                        {sub_item.linkText}{" "}
-                                      </Link>
-                                    ) : (
-                                      <Link to={sub_item.link}>
-                                        {" "}
-                                        {sub_item.linkText}{" "}
-                                      </Link>
-                                    )}
-                                    {sub_item.third_menu ? (
-                                      <ul className="submenu">
-                                        {sub_item.third_menu.map(
-                                          (third_item, i) => (
-                                            <li key={i}>
-                                              <Link to={third_item.link}>
-                                                {third_item.linkText}
-                                              </Link>
-                                            </li>
-                                          )
-                                        )}
-                                      </ul>
-                                    ) : null}
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : null}
-                          </li>
-                        ))
+                                >
+                                  {sub_item.child ? (
+                                    <Link
+                                      onClick={(e) => e.preventDefault()}
+                                      to="/"
+                                    >
+                                      {" "}
+                                      {sub_item.linkText}{" "}
+                                    </Link>
+                                  ) : (
+                                    <Link to={sub_item.link}>
+                                      {" "}
+                                      {sub_item.linkText}{" "}
+                                    </Link>
+                                  )}
+                                  {sub_item.third_menu ? (
+                                    <ul className="submenu">
+                                      {sub_item.third_menu.map(
+                                        (third_item, i) => (
+                                          <li key={i}>
+                                            <Link to={third_item.link}>
+                                              {third_item.linkText}
+                                            </Link>
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  ) : null}
+                                </li>
+                              ))}
+                            </ul>
+                          ) : null}
+                        </li>
+                      ))
                       : null}
                   </ul>
                 </div>
@@ -587,9 +590,8 @@ class Headertwo extends Component {
                       <Link to="#" onClick={() => this.toggleSubMenu(x.text)}>
                         {x.text} &nbsp;{" "}
                         <i
-                          className={`far ${
-                            this.state[x.text] ? "fa-minus" : "fa-plus"
-                          }`}
+                          className={`far ${this.state[x.text] ? "fa-minus" : "fa-plus"
+                            }`}
                         />
                       </Link>
                       <div
@@ -637,15 +639,15 @@ class Headertwo extends Component {
           </div>
         </div>
         {/*====== OFF CANVAS END ======*/}
-        
 
-    
 
-      {/* <button onClick={(e) => this.handleClickCheck(1,e)}>
+
+
+        {/* <button onClick={(e) => this.handleClickCheck(1,e)}>
         click me
       </button> */}
 
-  </div>
+      </div>
 
 
     );
