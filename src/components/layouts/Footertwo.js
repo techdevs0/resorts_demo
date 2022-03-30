@@ -162,19 +162,19 @@ class Footertwo extends Component {
             <div className="footer-bottom-wrapper py-1">
               <div className="container d-flex flex-wrap justify-content-between align-items-center">
                 <div className="py-2 footer-logos">
-                  <a href="https://story-hospitality.com/"><img className="px-2" src={require('./../../assets/img/footer/story-hospitality-footer.png')} alt="story-rabat hospitality footer" /></a>
-                  <a href="https://www.story-rabat.com/"><img className="px-2" src={require('./../../assets/img/footer/story-rabat-footer.png')} alt="sotry-rabat footer" /></a>
-                  <a href="https://www.cue-podgorica.com/"><img className="px-2" src={require('./../../assets/img/footer/cue-hotel-footer.png')} alt="cue hotel footer" /></a>
-                  <a href="https://www.hhoteldubai.com/"> <img className="px-2 hhotel-dubai-footer" src={require('./../../assets/img/footer/hhotel-footer.png')} alt="hhotel footer" /></a>
+                  <a href="https://story-hospitality.com/" target='_blank'><img className="px-2" src={require('./../../assets/img/footer/story-hospitality-footer.png')} alt="story-rabat hospitality footer" /></a>
+                  <a href="https://www.story-rabat.com/" target='_blank'><img className="px-2" src={require('./../../assets/img/footer/story-rabat-footer.png')} alt="sotry-rabat footer" /></a>
+                  <a href="https://www.cue-podgorica.com/" target='_blank'><img className="px-2" src={require('./../../assets/img/footer/cue-hotel-footer.png')} alt="cue hotel footer" /></a>
+                  <a href="https://www.hhoteldubai.com/" target='_blank'> <img className="px-2 hhotel-dubai-footer" src={require('./../../assets/img/footer/hhotel-footer.png')} alt="hhotel footer" /></a>
                   <a href="/"><img className="px-2" src={require('./../../assets/img/footer/logo-fisher.png')} alt="fishermanscove footer" /></a>
                 </div>
                 <div className="social-icons py-2">
-                  <a href="https://www.tripadvisor.co.za/Hotel_Review-g1185571-d302667-Reviews-Fisherman_s_Cove_Resort-Beau_Vallon_Mahe_Island.html">
+                  <a href="https://www.tripadvisor.co.za/Hotel_Review-g1185571-d302667-Reviews-Fisherman_s_Cove_Resort-Beau_Vallon_Mahe_Island.html" target='_blank'>
                     <img className="px-2" style={{ width: "80px" }} src={require('./../../assets/img/footer/tripadvisor.png')} alt="tripAdvisor" />
                   </a>
-                  <a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f" /></a>
-                  <a href="https://twitter.com/fisherman_cove"><i className="fab fa-twitter" /></a>
-                  <a href="https://www.instagram.com/fishermanscove.resort/"><i className="fab fa-instagram" /></a>
+                  <a href="https://www.facebook.com/fishermanscoveresort/" target='_blank'><i className="fab fa-facebook-f" /></a>
+                  <a href="https://twitter.com/fisherman_cove" target='_blank'><i className="fab fa-twitter" /></a>
+                  <a href="https://www.instagram.com/fishermanscove.resort/" target='_blank'><i className="fab fa-instagram" /></a>
                 </div>
               </div>
             </div>
