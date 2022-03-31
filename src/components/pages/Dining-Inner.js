@@ -23,7 +23,7 @@ import LeCocolobaFoodMenu from '../../assets/img/dinning/Le Cocoloba Food Menu.p
 // import LeCardinalBreakfastMenu from '../../assets/img/dinning/Le Cardinal Breakfast Menu.pdf';
 import LeCardinalBreakfastMenu from '../../assets/img/dinning/Le Cardinal Breakfast Menu.pdf';
 import FCRWineListUPDATED from '../../assets/img/dinning/FCR Wine List UPDATED.pdf';
-import FCRInRoomDiningMenuWITHPRICING from '../../assets/img/dinning/FCR-In-Room Dining Menu WITH PRICING.pdf';
+import FCRInRoomDiningMenuWITHPRICING from '../../assets/img/dinning/FCR In-Room Dining 03-24-2022.pdf';
 
 
 const faqList = [
@@ -151,28 +151,28 @@ const menuPdf = [
     beverageMenu: SunsetBarBeverageMenu,
     ourMainMenu: "",
     wineList: FCRWineListUPDATED,
-    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
+    inRoomDining: FCRInRoomDiningMenuWITHPRICING,
   },
   {
     route: "paris-french-restaurant",
     beverageMenu: "",
     ourMainMenu: ParisSeychellesMainMenu,
     wineList: FCRWineListUPDATED,
-    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
+    inRoomDining: FCRInRoomDiningMenuWITHPRICING,
   },
   {
     route: "le-cocoloba-bar-seychelles",
     beverageMenu: "",
     ourMainMenu: LeCocolobaFoodMenu,
     wineList: LeCocolobaBarDrinksMenu,
-    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
+    inRoomDining: FCRInRoomDiningMenuWITHPRICING,
   },
   {
     route: "le-cardinal-restaurant",
     beverageMenu: "",
     ourMainMenu: LeCardinalBreakfastMenu,
     wineList: FCRWineListUPDATED,
-    inRoomDining : FCRInRoomDiningMenuWITHPRICING,
+    inRoomDining: FCRInRoomDiningMenuWITHPRICING,
   },
 ];
 
