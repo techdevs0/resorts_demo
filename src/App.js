@@ -64,6 +64,7 @@ const RoomsInner = lazy(() => import('./components/pages/Rooms-Inner'));
 const GalleryMain = lazy(() => import('./components/pages/Gallery-Main'));
 const AboutSeychelles = lazy(() => import('./components/pages/AboutSeychelles'));
 const PrivacyPolicy = lazy(() => import('./components/pages/PrivacyPolicy'));
+const TermsofUse = lazy(() => import('./components/pages/TermsofUse'));
 const CancellationPolicy = lazy(() => import('./components/pages/CancellationPolicy'));
 const CovidPolicy = lazy(() => import('./components/pages/CovidPolicy'));
 const FAQ = lazy(() => import('./components/pages/FAQ'));
@@ -160,6 +161,10 @@ function App() {
       case "privacy-policy":
         return (
           <Route path={`/${route}`} exact render={(props) => <PrivacyPolicy {...props} isMobile={isMobile} isTop={isTop} />} />
+        )
+      case "terms-of-use":
+        return (
+          <Route path={`/${route}`} exact render={(props) => <TermsofUse {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "covid-policy":
         return (
