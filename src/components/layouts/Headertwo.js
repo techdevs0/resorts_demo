@@ -608,7 +608,7 @@ class Headertwo extends Component {
                 {this.state.widgetMenuLinks?.map((x) =>
                   !x.subMenu?.length > 0 ? (
                     <li className="text-capitalize">
-                      <Link to={`/${x.address}`}>{x.text}</Link>
+                      <Link to={`/${activeLang}/${x.address}`}>{x.text}</Link>
                     </li>
                   ) : (
                     <li>

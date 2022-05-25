@@ -127,7 +127,7 @@ class Offers extends Component {
         <BreadCrumb items={breadcrumbItems} />
         {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
-        <OfferTitleBlock />
+        <OfferTitleBlock lang={this.props.lang} />
         {/*====== TITLE END ======*/}
         {/*====== ROOM GRID START ======*/}
         <OfferGrid title={null} data={this.state.offers} />

@@ -7,6 +7,7 @@ const AboutTitleBlock = (props) => {
         <h2 className="text-center">{props.data?.section_name}</h2>
         <div className="d-flex flex-wrap title-flex">
           <div className="about-title-item">
+            {props.lang+"==========="}
             <div className="mr-sm-4 mb-2" dangerouslySetInnerHTML={{ __html: props.data?.section_content }}>
 
             </div>

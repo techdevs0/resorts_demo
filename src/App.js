@@ -119,13 +119,17 @@ function App() {
           <Route path={`/${route}`} exact render={(props) => <Wedding {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "offers":
-        return (
-          <Route path={`/${route}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />
-        )
+        return [
+          <Route path={`/en/${route}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} lang={'en'} />} />,
+          <Route path={`/fr/${route}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} lang={'fr'} />} />,
+          <Route path={`/de/${route}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} lang={'de'} />} />
+        ]
       case "fine-dining-seychelles":
-        return (
-          <Route path={`/${route}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
-        )
+        return [
+          <Route path={`/en/${route}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />,
+          <Route path={`/fr/${route}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />,
+          <Route path={`/de/${route}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
+        ]
       case "dining":
         return (
           <Route path={`/${inner_route}/:id`} exact render={(props) => <DiningInner {...props} isMobile={isMobile} isTop={isTop} />} />
@@ -147,9 +151,11 @@ function App() {
           <Route path={`/${route}`} exact render={(props) => <Sustainability {...props} isMobile={isMobile} isTop={isTop} />} />
         )
       case "about-us":
-        return (
-          <Route path={`/${route}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />
-        )
+        return [
+          <Route path={`/en/${route}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} lang={'en'} />} />,
+          <Route path={`/de/${route}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} lang={'de'} />} />,
+          <Route path={`/fr/${route}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} lang={'fr'} />} />
+        ]
       case "contact":
         return (
           <Route path={`/${route}`} exact render={(props) => <Contact {...props} isMobile={isMobile} isTop={isTop} />} />

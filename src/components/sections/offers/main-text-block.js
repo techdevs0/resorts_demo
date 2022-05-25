@@ -5,7 +5,7 @@ const OfferTitleBlock = (props) => {
   return (
     <div className="offer-title-block">
       <div className="container">
-        <h2>Offers</h2>
+        <h2>Offers {props.lang}</h2>
         
         {/* <OfferCategories /> */}
         

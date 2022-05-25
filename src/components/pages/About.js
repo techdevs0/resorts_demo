@@ -133,7 +133,7 @@ class AboutUs extends Component {
           {/* <BreadCrumb items={breadcrumbItems} /> */}
           {/* BREADCRUMBS END */}
           {/*====== TITLE START ======*/}
-          <AboutTitleBlock data={this.state.sections?.intro} />
+          <AboutTitleBlock data={this.state.sections?.intro} lang={this.props.lang} />
           {/*====== TITLE END ======*/}
           {/*====== SERVICES START ======*/}
           <AboutServices data={roomsData} />
