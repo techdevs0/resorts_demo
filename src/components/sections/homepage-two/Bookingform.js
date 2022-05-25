@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 // import {KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
 // import DateFnsUtils from '@date-io/date-fns';
@@ -41,8 +41,8 @@ class Bookingform extends Component {
         let newDate = this.nextDate(cur);
         let checkOutMin = newDate;
 
-        this.setState({checkOut: newDate, checkIn: cur,checkOutMin: checkOutMin});//
-        this.setState({openCheckOut: true});    //updating state for check-out date
+        this.setState({ checkOut: newDate, checkIn: cur, checkOutMin: checkOutMin });//
+        this.setState({ openCheckOut: true });    //updating state for check-out date
 
     }
 
@@ -91,7 +91,7 @@ class Bookingform extends Component {
     //     // debugger;
     // }
     handleCheckOutChange = (date) => {
-        this.setState({checkOut: date})
+        this.setState({ checkOut: date })
     }
 
     handleSubmit = (e) => {
@@ -122,16 +122,17 @@ class Bookingform extends Component {
 
     handleClickOutside(event) {
         if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
-            this.setState({showCountPopup: false})
+            this.setState({ showCountPopup: false })
         }
         if (this.propmoWrapperRef && !this.propmoWrapperRef.current.contains(event.target)) {
-            this.setState({showPromoPopup: false})
+            this.setState({ showPromoPopup: false })
         }
     }
 
 
     render() {
-        const {rooms, childs, adults, showCountPopup, showPromoPopup,openCheckOut,openCheckIn,checkIn,checkOut,checkOutMin} = this.state;
+        const activeLang = localStorage.getItem('lang');
+        const { rooms, childs, adults, showCountPopup, showPromoPopup, openCheckOut, openCheckIn, checkIn, checkOut, checkOutMin } = this.state;
         return (
             <section className="booking-form-hotizontal container d-none d-sm-block">
                 <div className="container-fluid">
@@ -144,14 +145,14 @@ class Bookingform extends Component {
                                         value={checkIn}
                                         placeholder={"Check In"}
                                         open={openCheckIn}
-                                        onOpen={()=>{
+                                        onOpen={() => {
                                             this.setState({
-                                                openCheckIn:true,
+                                                openCheckIn: true,
                                             })
                                         }}
-                                        onClose={()=>{
+                                        onClose={() => {
                                             this.setState({
-                                                openCheckIn:false
+                                                openCheckIn: false
                                             })
                                         }}
                                         minDate={new Date().toISOString().split('T')[0]}
@@ -177,42 +178,42 @@ class Bookingform extends Component {
                                         onChange={(date => this.handleCheckOutChange(date))}
                                     />
                                     {/*<MuiPickersUtilsProvider utils={DateFnsUtils}>*/}
-                                        {/*<KeyboardDatePicker*/}
-                                        {/*    disableToolbar*/}
-                                        {/*    variant="inline"*/}
-                                        {/*    format="MM-dd-yyyy"*/}
-                                        {/*    margin="none"*/}
-                                        {/*    id="date-picker-inline"*/}
-                                        {/*    value={this.state.checkIn}*/}
-                                        {/*    className="form-control"*/}
-                                        {/*    placeholder="Check In"*/}
-                                        {/*    minDate={new Date().toISOString().split('T')[0]}*/}
-                                        {/*    onChange={(date => this.dateChange(date))}*/}
-                                        {/*    allowKeyboardControl={true}*/}
-                                        {/*    autoOk={true}*/}
-                                        {/*/>*/}
-                                        {/* <span className="d-none d-sm-block">-</span> */}
-                                        {/*<KeyboardDatePicker*/}
-                                        {/*    // autoOk={true}*/}
-                                        {/*    disableToolbar*/}
-                                        {/*    variant="inline"*/}
-                                        {/*    format="MM-dd-yyyy"*/}
-                                        {/*    margin="none"*/}
-                                        {/*    disablePast={true}*/}
-                                        {/*    id="date-picker-inline-1"*/}
-                                        {/*    value={this.state.checkOut}*/}
-                                        {/*    onOpen={() => this.setState({*/}
-                                        {/*        openCheckOut: true*/}
-                                        {/*    })}*/}
-                                        {/*    onClose={() => this.setState({*/}
-                                        {/*        openCheckOut: false*/}
-                                        {/*    })}*/}
-                                        {/*    className="form-control"*/}
-                                        {/*    placeholder="Check Out"*/}
-                                        {/*    minDate={this.state.checkOutMin}*/}
-                                        {/*    onChange={(date => this.handleCheckOutChange(date))}*/}
-                                        {/*    open={this.state.openCheckOut}*/}
-                                        {/*/>*/}
+                                    {/*<KeyboardDatePicker*/}
+                                    {/*    disableToolbar*/}
+                                    {/*    variant="inline"*/}
+                                    {/*    format="MM-dd-yyyy"*/}
+                                    {/*    margin="none"*/}
+                                    {/*    id="date-picker-inline"*/}
+                                    {/*    value={this.state.checkIn}*/}
+                                    {/*    className="form-control"*/}
+                                    {/*    placeholder="Check In"*/}
+                                    {/*    minDate={new Date().toISOString().split('T')[0]}*/}
+                                    {/*    onChange={(date => this.dateChange(date))}*/}
+                                    {/*    allowKeyboardControl={true}*/}
+                                    {/*    autoOk={true}*/}
+                                    {/*/>*/}
+                                    {/* <span className="d-none d-sm-block">-</span> */}
+                                    {/*<KeyboardDatePicker*/}
+                                    {/*    // autoOk={true}*/}
+                                    {/*    disableToolbar*/}
+                                    {/*    variant="inline"*/}
+                                    {/*    format="MM-dd-yyyy"*/}
+                                    {/*    margin="none"*/}
+                                    {/*    disablePast={true}*/}
+                                    {/*    id="date-picker-inline-1"*/}
+                                    {/*    value={this.state.checkOut}*/}
+                                    {/*    onOpen={() => this.setState({*/}
+                                    {/*        openCheckOut: true*/}
+                                    {/*    })}*/}
+                                    {/*    onClose={() => this.setState({*/}
+                                    {/*        openCheckOut: false*/}
+                                    {/*    })}*/}
+                                    {/*    className="form-control"*/}
+                                    {/*    placeholder="Check Out"*/}
+                                    {/*    minDate={this.state.checkOutMin}*/}
+                                    {/*    onChange={(date => this.handleCheckOutChange(date))}*/}
+                                    {/*    open={this.state.openCheckOut}*/}
+                                    {/*/>*/}
                                     {/*</MuiPickersUtilsProvider>*/}
 
 
@@ -235,18 +236,18 @@ class Bookingform extends Component {
                                     {
                                         showCountPopup ?
                                             <div onClick={(e) => e.stopPropagation()} className="room-details-popup"
-                                                 style={{display: showCountPopup ? 'block' : 'none'}}>
+                                                style={{ display: showCountPopup ? 'block' : 'none' }}>
                                                 <div className="room_item_box quantity">
                                                     <label>Rooms</label>
                                                     <div className="quantity-box">
                                                         <div className="quantity-button quantity-down minus empty"
-                                                             onClick={() => this.setState({rooms: rooms - 1 < 1 ? 1 : rooms - 1})}>-
+                                                            onClick={() => this.setState({ rooms: rooms - 1 < 1 ? 1 : rooms - 1 })}>-
                                                         </div>
                                                         <input id="Room" type="text" min="1" className="form-control"
-                                                               defaultValue={rooms} value={rooms} name="Rooms"
-                                                               placeholder="" required="" data-rel="rooms"/>
+                                                            defaultValue={rooms} value={rooms} name="Rooms"
+                                                            placeholder="" required="" data-rel="rooms" />
                                                         <div className="quantity-button quantity-up plus"
-                                                             onClick={() => this.setState({rooms: rooms + 1})}>+
+                                                            onClick={() => this.setState({ rooms: rooms + 1 })}>+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -254,13 +255,13 @@ class Bookingform extends Component {
                                                     <label>Adults</label>
                                                     <div className="quantity-box">
                                                         <div className="quantity-button quantity-down minus empty"
-                                                             onClick={() => this.setState({adults: adults - 1 < 1 ? 1 : adults - 1})}>-
+                                                            onClick={() => this.setState({ adults: adults - 1 < 1 ? 1 : adults - 1 })}>-
                                                         </div>
                                                         <input id="Adult" type="text" min="1" className="form-control"
-                                                               defaultValue={adults} value={adults} name="Adult"
-                                                               placeholder="" required="" data-rel="adults"/>
+                                                            defaultValue={adults} value={adults} name="Adult"
+                                                            placeholder="" required="" data-rel="adults" />
                                                         <div className="quantity-button quantity-up plus"
-                                                             onClick={() => this.setState({adults: adults + 1})}>+
+                                                            onClick={() => this.setState({ adults: adults + 1 })}>+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -268,13 +269,13 @@ class Bookingform extends Component {
                                                     <label>Children</label>
                                                     <div className="quantity-box">
                                                         <div className="quantity-button quantity-down minus empty"
-                                                             onClick={() => this.setState({childs: childs - 1 < 1 ? 1 : childs - 1})}>-
+                                                            onClick={() => this.setState({ childs: childs - 1 < 1 ? 1 : childs - 1 })}>-
                                                         </div>
                                                         <input id="Child" type="text" min="0" className="form-control"
-                                                               defaultValue={childs} value={childs} name="Child"
-                                                               placeholder="" required=""/>
+                                                            defaultValue={childs} value={childs} name="Child"
+                                                            placeholder="" required="" />
                                                         <div className="quantity-button quantity-up plus"
-                                                             onClick={() => this.setState({childs: childs + 1})}>+
+                                                            onClick={() => this.setState({ childs: childs + 1 })}>+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -286,30 +287,33 @@ class Bookingform extends Component {
                             </div>
                             <div className="col-12 col-md-2">
                                 <div className="promo-codes-wrapper" ref={this.propmoWrapperRef}
-                                     onClick={() => this.setState({
-                                         showPromoPopup: !showPromoPopup,
-                                         showCountPopup: false
-                                     })}>
+                                    onClick={() => this.setState({
+                                        showPromoPopup: !showPromoPopup,
+                                        showCountPopup: false
+                                    })}>
                                     <div className="promo-codes">
                                         <p>Promo Codes</p>
                                     </div>
                                     <div className="promo-popup" onClick={(e) => e.stopPropagation()}
-                                         style={{display: showPromoPopup ? 'flex' : 'none'}}>
+                                        style={{ display: showPromoPopup ? 'flex' : 'none' }}>
                                         <div className="code-item">
                                             <label>Group Code/Promotion Code</label>
-                                            <input type="text" onChange={(e) => this.setState({promo: e.target.value})}
-                                                   className="form-control"/>
+                                            <input type="text" onChange={(e) => this.setState({ promo: e.target.value })}
+                                                className="form-control" />
                                         </div>
                                         <div className="code-item">
                                             <label>Travel Industry ID</label>
-                                            <input type="text" className="form-control"/>
+                                            <input type="text" className="form-control" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-12 col-md-2">
                                 <button type="button" value={this.state.promo} onClick={this.handleSubmit}
-                                        className="main-btn btn-eden">Book Now
+                                    className="main-btn btn-eden">
+                                    {activeLang === "en" ?
+                                        ' Book Now' : activeLang === "fr" ? 'Reserve maintenant' : activeLang === "de" ? 'buchen Sie jetzt'
+                                            : 'Book Now'}
                                 </button>
                             </div>
                         </div>

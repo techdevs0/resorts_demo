@@ -37,6 +37,9 @@ class Hometwo extends Component {
   }
 
   componentDidMount() {
+    const lang = localStorage.getItem('lang');
+
+    console.log("activelang", lang)
     try {
       API.get("/premium_offers").then((response) => {
         this.setState({ premiumOffers: response.data });

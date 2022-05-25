@@ -109,10 +109,38 @@ class Headertwo extends Component {
 
 
 
+  //languagesssss
 
+  onChangeLocale = (locale) => {
+    // console.log('lang', locale);
+
+    const pathArray = window.location.pathname.split('/');
+    const lang = 'en';
+    console.log('i am here', pathArray[1]);
+    if (pathArray[1] && (pathArray[1] == 'en' || pathArray[1] == 'fr' || pathArray[1] == 'de')) {
+      console.log('i am here', pathArray[1]);
+
+      if (pathArray[1] != locale) {
+        let path = `/${locale}`;
+        if (pathArray.length > 2) {
+          for (let index = 2; index < pathArray.length; index++) {
+            path += `/${pathArray[index]}`;
+          }
+        }
+        if (window.location.search) {
+          path += window.location.search;
+        }
+        window.location.replace(path);
+      }
+      // lang = pathArray[1]
+    } else {
+      window.location.replace(`/${locale}`);
+    }
+  }
 
 
   async componentDidMount() {
+
     window.addEventListener(
       "resize",
       () => {
@@ -292,10 +320,13 @@ class Headertwo extends Component {
         : "submenu d-block";
     }
   };
+
   render() {
     const className = this.props.isMobile ? "breakpoint-on" : "";
     const classNamess = this.props.isMobile ? "d-none" : "";
     const classNamesss = this.props.isTop ? "sticky-active" : "";
+    const activeLang = localStorage.getItem('lang');
+
 
     return (
       <div>
@@ -608,7 +639,45 @@ class Headertwo extends Component {
                   )
                 )}
               </ul>
+
+              {/* Languages */}
+
+              <div className="mt-2">
+                <ul>
+                  <li>
+                    <Link to="#" onClick={() => this.toggleSubMenu("Language")}>
+                      Language &nbsp;{" "}
+                      <i
+                        className={`far ${this.state["Language"] ? "fa-minus" : "fa-plus"
+                          }`}
+                      />
+                    </Link>
+                    <div
+                      className={"sidebar-submenu collapse" + (this.state["Language"] ? " show" : "")}
+                    >
+                      <ul className="languageDropdown">
+                        <li onClick={() => this.onChangeLocale('en')}
+                          className={`${activeLang === 'en' && 'active'}`}
+                        >
+                          EN
+                        </li>
+                        <li onClick={() => this.onChangeLocale('fr')}
+                          className={`${activeLang === 'fr' && 'active'}`}
+                        >
+                          FR
+                        </li>
+                        <li onClick={() => this.onChangeLocale('de')}
+                          className={`${activeLang === 'de' && 'active'}`}
+                        >
+                          DE
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
+
             {/* Social Link */}
             <div className="widget social-link">
               <h5 className="widget-title">Follow us</h5>
@@ -641,7 +710,7 @@ class Headertwo extends Component {
         click me
       </button> */}
 
-      </div>
+      </div >
 
 
     );

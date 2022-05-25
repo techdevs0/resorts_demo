@@ -72,6 +72,19 @@ const Blog = lazy(() => import('./components/pages/Blog'));
 const Blogdetails = lazy(() => import('./components/pages/Blogdetails'));
 
 function App() {
+
+  //language 
+
+  useEffect(() => {
+    const pathArray = window.location.pathname.split('/');
+    let lang = 'en';
+    if (pathArray[1] && (pathArray[1] == 'en' || pathArray[1] == 'fr' || pathArray[1] == 'de')) {
+      console.log('homelanguage', pathArray[1]);
+      lang = pathArray[1];
+    }
+    localStorage.setItem("lang", lang);
+  }, []);
+
   const [isMobile, setIsMobile] = useState(false);
   const [isTop, setIsTop] = useState(false);
   const [appRoutes, setAppRoutes] = useState([]);
@@ -89,7 +102,6 @@ function App() {
   })
 
   useEffect(() => {
-
     API.get('/pages').then(res => {
       if (res.status === 200) {
         const { data } = res;
@@ -100,7 +112,7 @@ function App() {
 
   const mapRoute = (route, inner_route) => {
     // route = route.split('/')?.[1] || route;
-    // console.log(route);
+    // console.log("route", route, inner_route);
     switch (inner_route) {
       case "wedding":
         return (
@@ -207,7 +219,9 @@ function App() {
         <ScrollToTop />
         <Switch>
           <Route exact path='/' render={(props) => <Hometwo {...props} isMobile={isMobile} isTop={isTop} />} />
-
+          <Route exact path='/en' render={(props) => <Hometwo {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route exact path='/fr' render={(props) => <Hometwo {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route exact path='/de' render={(props) => <Hometwo {...props} isMobile={isMobile} isTop={isTop} />} />
           {
 
             appRoutes?.map(x => (

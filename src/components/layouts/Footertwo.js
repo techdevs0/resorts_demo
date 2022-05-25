@@ -41,6 +41,8 @@ class Footertwo extends Component {
   }
   render() {
     const className = this.state.isTop ? 'active' : '';
+    const activeLang = localStorage.getItem('lang');
+
     return (
       <div>
         {/*====== Back to Top ======*/}
@@ -93,7 +95,7 @@ class Footertwo extends Component {
 
                         {
                           this.state.footerData?.second?.links?.map(x => (
-                            <li><Link to={`/${x.address}`}>{x.text}</Link></li>
+                            <li><Link to={`/${activeLang}/${x.address}`}>{x.text}</Link></li>
 
                           ))
                         }

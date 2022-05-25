@@ -1,5 +1,6 @@
 /*=======  HEADER CSS  =======*/
 header {
+
 	&.header-absolute {
 		position: absolute;
 		left: 0;
@@ -7,6 +8,7 @@ header {
 		z-index: 99;
 		background-color: transparent;
 		top: 10px;
+
 		@media #{$sm} {
 			top: 10px;
 		}
@@ -16,6 +18,7 @@ header {
 		@media #{$xl} {
 			max-width: 100%;
 		}
+
 		@media #{$lg} {
 			max-width: 100%;
 		}
@@ -24,22 +27,28 @@ header {
 	.nav-container {
 		.toggle {
 			margin-right: 20px;
+
 			@media #{$lg} {
 				margin-right: 20px;
 			}
+
 			@media #{$lg} {
 				margin-right: 15px;
 			}
+
 			@media #{$md} {
 				display: none;
 			}
+
 			@media #{$sm} {
 				display: none;
 			}
+
 			a {
 				color: $heading-color;
 				font-size: 24px;
 				padding: 10px 0;
+
 				@media #{$sm} {
 					padding: 10px;
 				}
@@ -52,15 +61,19 @@ header {
 				top: 0;
 				// transform: translate(50%, 0%);
 			}
+
 			img {
 				max-width: 100px;
+
 				@media #{$lg} {
 					max-width: 100px;
 				}
+
 				@media #{$xsm} {
 					max-width: 100px;
 				}
 			}
+
 			.sticky-logo {
 				display: none;
 			}
@@ -78,12 +91,15 @@ header {
 			.item {
 				padding-left: 50px;
 				position: relative;
+
 				@media #{$md} {
 					color: $white;
 				}
+
 				@media #{$sm} {
 					color: $white;
 				}
+
 				i {
 					// position: absolute;
 					// left: 0;
@@ -97,44 +113,56 @@ header {
 					color: $white;
 					font-size: 14px;
 				}
+
 				span {
 					font-weight: 600;
 					font-size: 14px;
 					padding-bottom: 4px;
 				}
+
 				a {
 					display: block;
 				}
+
 				.title {
 					font-size: 13px;
 					font-weight: 400;
+
 					@media #{$xl} {
 						font-size: 13px;
 					}
+
 					@media #{$lg} {
 						font-size: 13px;
 					}
+
 					@media #{$md} {
 						color: $white;
 						font-size: 22px;
 					}
+
 					@media #{$sm} {
 						color: $white;
 						font-size: 22px;
 					}
 				}
+
 				&:not(:last-child) {
 					margin-right: 45px;
+
 					@media #{$xl} {
 						margin-right: 15px;
 					}
+
 					@media #{$lg} {
 						margin-right: 15px;
 					}
+
 					@media #{$md} {
 						margin-right: 0;
 						margin-bottom: 30px;
 					}
+
 					@media #{$sm} {
 						margin-right: 0;
 						margin-bottom: 30px;
@@ -147,9 +175,11 @@ header {
 			display: flex;
 			align-items: center;
 			align-self: center;
+
 			div {
 				margin: 0 0.25rem;
 				width: 24px;
+
 				img {
 					border-radius: 2px;
 					width: 100%;
@@ -163,6 +193,7 @@ header {
 			ul li {
 				display: inline-block;
 				position: relative;
+
 				a {
 					font-size: 16px;
 					font-weight: 600;
@@ -170,10 +201,12 @@ header {
 					text-transform: capitalize;
 					line-height: 80px;
 					padding: 0px 20px;
+
 					@media #{$xl} {
 						font-size: 14px;
 						padding: 0 10px;
 					}
+
 					@media #{$lg} {
 						padding: 0 8px;
 					}
@@ -193,6 +226,7 @@ header {
 
 					li {
 						display: block;
+
 						a {
 							display: block;
 							padding: 8px 24px;
@@ -206,7 +240,7 @@ header {
 
 							&:hover {
 								background-color: $primary-color;
-								color: $white !important;
+								color: $white  !important;
 								border-color: $primary-color;
 							}
 						}
@@ -225,7 +259,7 @@ header {
 				}
 
 				&:hover {
-					& > .submenu {
+					&>.submenu {
 						opacity: 1;
 						visibility: visible;
 						top: 100%;
@@ -261,14 +295,17 @@ header {
 				cursor: pointer;
 				display: block;
 			}
+
 			&.active {
 				span:nth-of-type(1) {
 					transform: rotate3d(0, 0, 1, 45deg);
 					top: 8px;
 				}
+
 				span:nth-of-type(2) {
 					opacity: 0;
 				}
+
 				span:nth-of-type(3) {
 					transform: rotate3d(0, 0, 1, -45deg);
 					top: -8px;
@@ -282,11 +319,13 @@ header {
 			right: 20px;
 			z-index: 12;
 			display: none;
+
 			.cross-wrap {
 				width: 26px;
 				height: 26px;
 				cursor: pointer;
 				position: relative;
+
 				span {
 					position: absolute;
 					display: block;
@@ -294,12 +333,14 @@ header {
 					height: 2px;
 					border-radius: 6px;
 					background: $white;
+
 					&.top {
 						top: 12px;
 						left: 0;
 						-webkit-transform: rotate(45deg);
 						transform: rotate(45deg);
 					}
+
 					&.bottom {
 						bottom: 12px;
 						left: 0;
@@ -314,6 +355,7 @@ header {
 			&.nav-container {
 				display: flex !important;
 			}
+
 			.nav-menu {
 				background-color: $primary-color;
 				position: fixed;
@@ -329,16 +371,19 @@ header {
 				overflow-x: hidden;
 				overflow-y: scroll;
 				padding-top: 70px;
+
 				.menu-items {
 					ul li {
 						display: block;
+
 						a {
 							display: block;
 							border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-							color: $white !important;
+							color: $white  !important;
 							line-height: 45px !important;
 							font-size: 14px;
 						}
+
 						.submenu {
 							width: 100%;
 							position: relative;
@@ -350,11 +395,13 @@ header {
 							opacity: 1;
 							display: none;
 							transition: none;
+
 							li a {
 								color: $white;
 								padding: 0px 20px 0 40px;
 								line-height: 45px !important;
 								font-size: 13px;
+
 								&:hover {
 									border-color: rgba(255, 255, 255, 0.5);
 								}
@@ -395,6 +442,7 @@ header {
 
 	&.header-two {
 		.nav-container {
+
 			.toggle a,
 			.menu-items ul li a {
 				color: $white;
@@ -406,17 +454,21 @@ header {
 				}
 			}
 		}
+
 		.header-info {
 			.item {
 				i {
 					background: transparent;
+
 					@media #{$md} {
 						background: transparent;
 					}
+
 					@media #{$sm} {
 						color: $black;
 					}
 				}
+
 				a,
 				&,
 				.title {
@@ -437,11 +489,13 @@ header {
 			z-index: 99;
 			height: auto;
 			bottom: -60px;
+
 			@media #{$tiny} {
 				position: relative;
 				bottom: 0;
 				top: 0;
 			}
+
 			&.sticky-header.sticky-active {
 				position: fixed;
 				top: 0;
@@ -450,8 +504,10 @@ header {
 				bottom: auto;
 				z-index: 999;
 				animation: sticky 1.2s;
+
 				.nav-container {
 					box-shadow: 0px 8px 8px -2px rgba(0, 0, 0, 0.15);
+
 					.menu-items ul li a {
 						line-height: 100px;
 					}
@@ -464,30 +520,38 @@ header {
 			padding-bottom: 75px;
 			font-family: $roboto;
 			background-color: $heading-color;
+
 			@media #{$md} {
 				padding-bottom: 60px;
 			}
+
 			@media #{$sm} {
 				text-align: center;
 				padding-bottom: 50px;
 			}
+
 			@media #{$tiny} {
 				display: none;
 			}
+
 			&,
 			a {
 				color: $white;
 			}
+
 			ul.header-top-info {
 				@media #{$sm} {
 					margin-top: 10px;
 				}
+
 				li {
 					display: inline-block;
 					margin-left: 15px;
+
 					@media #{$xsm} {
 						margin-left: 5px;
 					}
+
 					i {
 						margin-right: 10px;
 						color: $primary-color;
@@ -499,12 +563,15 @@ header {
 		.nav-container {
 			background-color: $white;
 			padding: 0 40px;
+
 			@media #{$lg} {
 				padding: 0 10px;
 			}
+
 			@media #{$md} {
 				padding: 10px;
 			}
+
 			@media #{$sm} {
 				padding: 10px;
 			}
@@ -521,17 +588,20 @@ header {
 						max-width: 200px;
 						width: 120px;
 					}
+
 					@media #{$tiny} {
 						max-width: 150px;
 						width: 120px;
 					}
 				}
 			}
+
 			.menu-items {
 				ul li {
 					a {
 						line-height: 120px;
 					}
+
 					.submenu {
 						li {
 							a {
@@ -544,15 +614,18 @@ header {
 
 			.menu-right-buttons {
 				display: flex;
+
 				.toggle {
 					margin-right: 0;
 				}
 
-				& > div {
+				&>div {
 					margin-left: 20px;
+
 					@media #{$lg} {
 						margin-left: 5px;
 					}
+
 					@media #{$sm} {
 						margin-left: 5px;
 					}
@@ -561,8 +634,10 @@ header {
 				.navbar-toggler {
 					border: 2px solid rgba($color: #858585, $alpha: 0.2);
 					padding: 15px;
+
 					@media #{$xsm} {
 						padding: 5px 10px;
+
 						span {
 							width: 20px;
 						}
@@ -577,12 +652,14 @@ header {
 					line-height: 65px;
 					padding: 0;
 					color: $black;
+
 					@media #{$xsm} {
 						height: 40px;
 						width: 40px;
 						line-height: 40px;
 						font-size: 14px;
 					}
+
 					&:hover {
 						background-color: $primary-color;
 						color: $white;
@@ -593,9 +670,11 @@ header {
 
 		.search {
 			position: relative;
+
 			.search-icon {
 				position: relative;
 				display: block;
+
 				.close-icon,
 				.open-icon {
 					position: absolute;
@@ -604,43 +683,53 @@ header {
 					z-index: 2;
 					transform: translate(-50%, -50%);
 				}
+
 				.close-icon {
 					visibility: hidden;
 					opacity: 0;
 				}
+
 				&.active {
 					.close-icon {
 						visibility: visible;
 						opacity: 1;
 					}
+
 					.open-icon {
 						visibility: hidden;
 						opacity: 0;
 					}
 				}
 			}
+
 			.search-form {
 				position: absolute;
 				right: 0;
 				width: 350px;
 				display: none;
 				top: calc(100% + 27px);
+
 				@media #{$md} {
 					top: calc(100% + 17px);
 				}
+
 				@media #{$lsm} {
 					top: calc(100% + 10px);
 				}
+
 				@media #{$xsm} {
 					top: calc(100% + 20px);
 					width: 250px;
 				}
+
 				@media #{$tiny} {
 					right: -100%;
 					top: calc(100% + 12px);
 				}
+
 				form {
 					position: relative;
+
 					input {
 						width: 100%;
 						background-color: $main-bg;
@@ -649,10 +738,12 @@ header {
 						padding-left: 30px;
 						padding-right: 60px;
 						font-size: 14px;
+
 						@media #{$xsm} {
 							height: 50px;
 						}
 					}
+
 					button {
 						border: none;
 						position: absolute;
@@ -665,6 +756,7 @@ header {
 						font-size: 14px;
 						color: $white;
 						@include transition(0.3s);
+
 						&:hover {
 							background-color: $black;
 							color: $white;
@@ -678,13 +770,16 @@ header {
 	&.inner-page.header-absolute {
 		background-color: $white;
 		top: 0;
+
 		.nav-container {
 			@media #{$md} {
 				padding: 10px 0;
 			}
+
 			@media #{$sm} {
 				padding: 10px 0;
 			}
+
 			.menu-items ul li a {
 				line-height: 130px;
 			}
@@ -704,8 +799,10 @@ header {
 		.nav-container {
 			position: relative;
 			padding: 0.5rem 0;
+
 			@media #{$md} {
 				padding: 10px 0;
+
 				.site-logo img {
 					max-width: 120px;
 					width: 120px;
@@ -726,23 +823,28 @@ header {
 				.main-logo {
 					display: none;
 				}
+
 				.sticky-logo {
 					display: block;
+
 					@media #{$md} {
 						position: absolute;
 						top: 0;
 						// transform: translate(50%, 0%);
 					}
+
 					@media #{$lg} {
 						position: absolute;
 						top: 0;
 						// transform: translate(50%, 0%);
 					}
+
 					@media #{$xl} {
 						position: absolute;
 						top: 0;
 						// transform: translate(50%, 0%);
 					}
+
 					@media #{$xxl} {
 						position: absolute;
 						top: 0;
@@ -750,6 +852,7 @@ header {
 					}
 				}
 			}
+
 			.header-info {
 				.item {
 					i {
@@ -758,27 +861,34 @@ header {
 				}
 			}
 		}
+
 		&.header-two {
 			.nav-container {
+
 				.toggle a,
 				.menu-items ul li a {
 					color: $black;
 				}
+
 				.navbar-toggler {
 					span {
 						background-color: $black;
 					}
 				}
 			}
+
 			.header-info {
 				.item {
+
 					a,
 					&,
 					.title {
 						color: $black;
+
 						@media #{$md} {
 							color: $white;
 						}
+
 						@media #{$sm} {
 							color: $white;
 						}
@@ -826,6 +936,7 @@ header {
 			opacity: 0.5;
 		}
 	}
+
 	.offcanvas-widget {
 		background-color: $white;
 		width: 100%;
@@ -834,6 +945,7 @@ header {
 		position: relative;
 		z-index: 99;
 		overflow-y: auto;
+
 		&::-webkit-scrollbar {
 			width: 8px;
 		}
@@ -854,6 +966,7 @@ header {
 			-webkit-box-shadow: inset 0 0 1px rgba($color: $primary-color, $alpha: 0.3);
 			box-shadow: inset 0 0 1px rgba($color: $primary-color, $alpha: 0.3);
 		}
+
 		&::-webkit-scrollbar-thumb:window-inactive {
 			background: rgba($color: $primary-color, $alpha: 0.1);
 		}
@@ -869,6 +982,7 @@ header {
 		.widget {
 			margin-bottom: 40px;
 			font-size: 14px;
+
 			.widget-title {
 				font-size: 16px;
 				margin-bottom: 25px;
@@ -876,6 +990,7 @@ header {
 				position: relative;
 				padding-left: 15px;
 				font-weight: 500;
+
 				&::before {
 					position: absolute;
 					left: 0;
@@ -886,11 +1001,14 @@ header {
 					content: "";
 				}
 			}
+
 			/* Search Widget */
 			&.search-widget {
+
 				// position: relative;
 				form {
 					position: relative;
+
 					input {
 						width: 90%;
 						background-color: $main-bg;
@@ -900,6 +1018,7 @@ header {
 						padding-right: 60px;
 						font-size: 14px;
 					}
+
 					button {
 						border: none;
 						position: absolute;
@@ -912,12 +1031,14 @@ header {
 						font-size: 14px;
 						color: $white;
 						@include transition(0.3s);
+
 						&:hover {
 							background-color: $secondary-color;
 							color: $white;
 						}
 					}
-					.search-results{
+
+					.search-results {
 						position: absolute;
 						width: 100%;
 						height: 300px;
@@ -930,7 +1051,8 @@ header {
 						display: flex;
 						align-items: center;
 						justify-content: center;
-						.search-spinner{
+
+						.search-spinner {
 							width: 3rem;
 							height: 3rem;
 						}
@@ -942,14 +1064,17 @@ header {
 			&.nav-widget {
 				ul li {
 					line-height: 30px;
+
 					a {
 						color: $text-color;
 						font-weight: 500;
+
 						&:hover {
 							padding-left: 0px;
 							color: $primary-color;
 						}
 					}
+
 					.submenu {
 						padding-left: 10px;
 					}
@@ -961,6 +1086,7 @@ header {
 				ul li {
 					display: inline-block;
 					margin-right: 5px;
+
 					a {
 						height: 40px;
 						width: 40px;
@@ -968,6 +1094,7 @@ header {
 						color: $white;
 						line-height: 40px;
 						text-align: center;
+
 						&:hover {
 							background-color: $secondary-color;
 						}
@@ -1013,29 +1140,36 @@ header {
 	.breadcrumb-text {
 		position: relative;
 		padding: 165px 0;
+
 		&,
 		h2.page-title {
 			color: $white;
 		}
+
 		h2.page-title {
 			font-size: 72px;
 			letter-spacing: -1px;
+
 			@media #{$lsm} {
 				font-size: 60px;
 			}
+
 			@media #{$xsm} {
 				font-size: 50px;
 			}
 		}
+
 		span {
 			font-size: 14px;
 			font-weight: 700;
 			letter-spacing: 4px;
 			text-transform: uppercase;
 			padding-bottom: 25px;
+
 			@media #{$sm} {
 				letter-spacing: 2px;
 			}
+
 			@media #{$xsm} {
 				font-size: 12px;
 			}
@@ -1048,14 +1182,17 @@ header {
 			background-color: $white;
 			padding: 20px 40px;
 			z-index: 2;
+
 			@media #{$xsm} {
 				padding: 15px 20px;
 				font-size: 14px;
 			}
+
 			li {
 				display: inline-block;
 				font-weight: 700;
 				position: relative;
+
 				&,
 				a {
 					color: $heading-color;
@@ -1068,6 +1205,7 @@ header {
 				&:not(:first-child) {
 					padding-left: 10px;
 					margin-left: 10px;
+
 					&::before {
 						position: absolute;
 						left: -2px;
@@ -1080,6 +1218,7 @@ header {
 
 				&.active {
 					color: $primary-color;
+
 					&::before {
 						color: $primary-color;
 					}
@@ -1089,60 +1228,77 @@ header {
 	}
 }
 
-.sidebar-submenu{
+.sidebar-submenu {
 	margin-left: 2rem;
+
 	@media #{$sm} {
-	margin-left: 1rem;
+		margin-left: 1rem;
+	}
+
+	.languageDropdown {
+		li {
+			cursor: pointer;
+
+			&.active {
+				color: #be8a7d;
+				font-weight: bold;
+			}
+		}
 	}
 }
 
 
 
 .Documents {
-	
-	.modal-body{
-	padding: 0px;
-}
-	.icon{
-	position: absolute;
-    top: 0%;
-    color:$primary-color;
-	height: 30px;
-    z-index: 99;
-    right: -2rem;
-    border-radius: 30px;
 
-	@media #{$xsm}{
-		height: 34px;
-		right: 3rem;
-		top:1%;
+	.modal-body {
+		padding: 0px;
 	}
 
+	.icon {
+		position: absolute;
+		top: 0%;
+		color: $primary-color;
+		height: 30px;
+		z-index: 99;
+		right: -2rem;
+		border-radius: 30px;
+
+		@media #{$xsm} {
+			height: 34px;
+			right: 3rem;
+			top: 1%;
+		}
+
 	}
-	.modal-content{
-		@media #{$xsm}{
+
+	.modal-content {
+		@media #{$xsm} {
 			background-color: transparent;
 		}
 	}
-	.container{
-		@media #{$xsm}{
+
+	.container {
+		@media #{$xsm} {
 			padding-right: 34px;
-    padding-left: 18px;
+			padding-left: 18px;
 		}
 	}
 
-	.modal-dialog{
-		@media #{$xsm}{
-			
+	.modal-dialog {
+		@media #{$xsm} {
+
 			margin: 0px;
 		}
 	}
 }
-@media only screen and (min-width: 992px) and (max-width: 1019px){
-	.menuDisplay{
-display: block !important;
+
+@media only screen and (min-width: 992px) and (max-width: 1019px) {
+	.menuDisplay {
+		display: block !important;
 	}
-	.toggle{
+
+	.toggle {
 		display: none !important;
 	}
 }
