@@ -137,10 +137,10 @@ class Wedding extends Component {
       })
       .then(() => {
         API.get(`/all_sections/${pageId}`).then(response => {
-          let faqRes= response?.data[4]?.section_content;
+          let faqRes = response?.data[4]?.section_content;
           faqRes = faqRes.replace(/'/g, '"')
-          faqRes=JSON.parse(faqRes)
-          console.log("response",faqRes)
+          faqRes = JSON.parse(faqRes)
+          console.log("response", faqRes)
           this.setState({
             intro: response.data?.find(x => x.section_slug === "intro"),
             banner: response.data?.find(x => x.section_slug === "banner"),
@@ -156,14 +156,16 @@ class Wedding extends Component {
 
   render() {
     // console.log("wedding response",this.state)
+    const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
 
         <PageLayout
-            header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-            banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
-            breadCrumb={{ items: breadcrumbItems }}
+          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          breadCrumb={{ items: breadcrumbItems }}
+          activeLang={activeLang}
         >
           {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} /> */}
           {/*====== BANNER PART START ======*/}
@@ -189,8 +191,8 @@ class Wedding extends Component {
           <WeddingFormDialog />
 
           <FAQSection
-              //faqData={this.state.faq}
-              faqData={faqList}
+            //faqData={this.state.faq}
+            faqData={faqList}
           />
 
           {/* <Subscribe /> */}

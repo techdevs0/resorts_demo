@@ -7,22 +7,22 @@ const AboutServices = (props) => {
     {
       name: 'rooms & suites',
       icon: 'far fa-bed',
-      link:'/rooms-suites-seychelles'
+      link: '/rooms-suites-seychelles'
     },
     {
       name: 'Dining',
       icon: 'far fa-utensils',
-      link:'/fine-dining-seychelles'
+      link: '/fine-dining-seychelles'
     },
     {
       name: 'weddings',
       icon: 'far fa-rings-wedding',
-      link:'/seychelles-wedding-resort'
+      link: '/seychelles-wedding-resort'
     },
     {
       name: 'leisure activities',
       icon: 'far fa-swimmer',
-      link:'/whats-on'
+      link: '/whats-on'
     },
   ]
   return (
@@ -31,7 +31,7 @@ const AboutServices = (props) => {
         <div className="items-wrapper">
           {
             services.map((x, i) => (
-              <div onClick={()=>props.history.push(x.link)} className={`about-service-item bg-white ${i == services.length - 1 ? 'mr-0' : 'mr-5'} ${i == 0 ? 'ml-0' : 'ml-5'} text-center p-4 d-flex align-items-center flex-column justify-content-center`}>
+              <div onClick={() => props.history.push(`/${props?.activeLang}${x.link}`)} className={`about-service-item bg-white ${i == services.length - 1 ? 'mr-0' : 'mr-5'} ${i == 0 ? 'ml-0' : 'ml-5'} text-center p-4 d-flex align-items-center flex-column justify-content-center`}>
                 <i className={`${x.icon} icon d-block h1`}></i>
                 <span className="d-block">{x.name}</span>
               </div>

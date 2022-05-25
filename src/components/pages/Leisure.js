@@ -47,15 +47,15 @@ const roomsData = [
   },
 ]
 
-const breadcrumbItems=[
+const breadcrumbItems = [
   {
     text: 'Fishermans Cove Resort',
-    link:'/',
+    link: '/',
     isActive: false,
   },
   {
     text: 'Leisure Activities',
-    link:'/whats-on',
+    link: '/whats-on',
     isActive: true,
   },
 ]
@@ -66,9 +66,9 @@ class Leisure extends Component {
   state = {
     // activitiesData: [],
     activitiesData: {},
-    awardData:{},
+    awardData: {},
     banner: null,
-    meta:{}
+    meta: {}
   }
 
   async componentDidMount() {
@@ -97,29 +97,30 @@ class Leisure extends Component {
           // }
         });
       })
-          .then(() => {
-            API.get(`/meta/${pageId}`).then(response => {
-              this.setState({ meta: response.data });
-              console.log(response.data);
-            })
+        .then(() => {
+          API.get(`/meta/${pageId}`).then(response => {
+            this.setState({ meta: response.data });
+            console.log(response.data);
           })
-          // .then(() => {
-          //   API.get(`/all_sections/${pageId}`).then(response => {
+        })
+        // .then(() => {
+        //   API.get(`/all_sections/${pageId}`).then(response => {
 
-          //     this.setState({
-          //       intro: response.data?.find(x => x.section_slug === "intro"),
-          //       banner: response.data?.find(x => x.section_slug === "banner"),
-          //     });
-          //   })
-          // })
-          .catch(err => {
-            console.log(err)
-          })
+        //     this.setState({
+        //       intro: response.data?.find(x => x.section_slug === "intro"),
+        //       banner: response.data?.find(x => x.section_slug === "banner"),
+        //     });
+        //   })
+        // })
+        .catch(err => {
+          console.log(err)
+        })
     } catch (error) {
       console.log(error)
     }
   }
   render() {
+    const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
@@ -135,40 +136,41 @@ class Leisure extends Component {
         {/*  />*/}
         {/*</Helmet>*/}
         <PageLayout
-            header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-            banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
-            breadCrumb={{ items: breadcrumbItems }}
+          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          breadCrumb={{ items: breadcrumbItems }}
+          activeLang={activeLang}
         >
-        {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'leisure'} />*/}
-        {/*/!*====== BANNER PART START ======*!/*/}
-        {/*<Mainbanner title={"Leisure Activities"} image={bannerImage} />*/}
-        {/*/!*====== BANNER PART ENDS ======*!/*/}
-        {/*/!*====== BOOKING FORM START ======*!/*/}
-        {/*<Bookingform />*/}
-        {/*/!*====== BOOKING FORM END ======*!/*/}
-        {/*/!*====== BANNER PART ENDS ======*!/*/}
-        {/*/!* BREADCRUMBS START *!/*/}
-        {/*<BreadCrumb items={breadcrumbItems} />*/}
-        {/*/!* BREADCRUMBS END *!/*/}
-        {/*/!*====== TITLE START ======*!/*/}
-        <LeisureTitleBlock />
-        {/*====== TITLE END ======*/}
-        {/*====== ROOM GRID START ======*/}
-        <LeisureGrid
-                     actData={this.state.activitiesData}
-            // data={roomsData}
-        />
-        {/*====== ROOM GRID END ======*/}
-        {/* ===== LEISURE AWARDS START */}
-        <LeisureAwards
+          {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'leisure'} />*/}
+          {/*/!*====== BANNER PART START ======*!/*/}
+          {/*<Mainbanner title={"Leisure Activities"} image={bannerImage} />*/}
+          {/*/!*====== BANNER PART ENDS ======*!/*/}
+          {/*/!*====== BOOKING FORM START ======*!/*/}
+          {/*<Bookingform />*/}
+          {/*/!*====== BOOKING FORM END ======*!/*/}
+          {/*/!*====== BANNER PART ENDS ======*!/*/}
+          {/*/!* BREADCRUMBS START *!/*/}
+          {/*<BreadCrumb items={breadcrumbItems} />*/}
+          {/*/!* BREADCRUMBS END *!/*/}
+          {/*/!*====== TITLE START ======*!/*/}
+          <LeisureTitleBlock />
+          {/*====== TITLE END ======*/}
+          {/*====== ROOM GRID START ======*/}
+          <LeisureGrid
+            actData={this.state.activitiesData}
+          // data={roomsData}
+          />
+          {/*====== ROOM GRID END ======*/}
+          {/* ===== LEISURE AWARDS START */}
+          <LeisureAwards
             award={this.state.awardData}
-        />
-        {/* ===== LEISURE AWARDS END */}
-        {/*<Subscribe />*/}
+          />
+          {/* ===== LEISURE AWARDS END */}
+          {/*<Subscribe />*/}
 
-        {/*<Footertwo />*/}
+          {/*<Footertwo />*/}
 
-        {/*<BottomNavigator />*/}
+          {/*<BottomNavigator />*/}
         </PageLayout>
       </div>
     );

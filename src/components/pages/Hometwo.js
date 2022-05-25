@@ -37,9 +37,6 @@ class Hometwo extends Component {
   }
 
   componentDidMount() {
-    const lang = localStorage.getItem('lang');
-
-    console.log("activelang", lang)
     try {
       API.get("/premium_offers").then((response) => {
         this.setState({ premiumOffers: response.data });
@@ -71,6 +68,8 @@ class Hometwo extends Component {
     }
   }
   render() {
+    const activeLang = localStorage.getItem('lang');
+
     return (
       <div>
         <SEOTags meta={this.state.meta} />
@@ -85,6 +84,7 @@ class Hometwo extends Component {
           isMain={true}
           title={"The Perfect Destination for You"}
           image={bannerimg1}
+          activeLang={activeLang}
         />
         {/* </LazyLoad> */}
         {/*====== BANNER PART ENDS ======*/}
@@ -96,15 +96,21 @@ class Hometwo extends Component {
 
         {/*====== ROOM SLIDER END ======*/}
         {/*====== TEXT BLOCK START ======*/}
-        <Textblock />
+        <Textblock
+          activeLang={activeLang}
+        />
         {/*====== TEXT BLOCK END ======*/}
         {/*====== SERVICES TABS START ======*/}
-        <ServiceTabs data={this.state.premiumOffers} />
+        <ServiceTabs data={this.state.premiumOffers}
+          activeLang={activeLang}
+        />
         {/*====== SERVICES TABS END ======*/}
         {/*====== TESTIMONIAL SLIDER START ======*/}
         <GuestReviews />
         {/*====== EXPERIENCE START ======*/}
-        <Experience />
+        <Experience
+          activeLang={activeLang}
+        />
         {/*====== EXPERIENCE END ======*/}
         <div style={{ display: "none" }}>
           <h3>

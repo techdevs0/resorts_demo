@@ -53,20 +53,20 @@ class Banner extends Component {
                     <ul className={this.props.isMain ? '' : 'd-none'}>
                       <ReactWOW animation="fadeInUp" data-delay={item.btn1animation}>
                         <li>
-                          <Link className="main-btn btn-border" to={item.btn1url}>{item.btn1}</Link>
+                          <Link className="main-btn btn-border" to={`/${this.props?.activeLang}${item.btn1url}`}>{item.btn1}</Link>
                         </li>
                       </ReactWOW>
                       <Hidden smDown>
                         <ReactWOW animation="fadeInUp" data-delay={item.btn2animation}>
                           <li>
-                            <Link className="main-btn btn-border" to={item.btn2url}>{item.btn2}</Link>
+                            <Link className="main-btn btn-border" to={`/${this.props?.activeLang}${item.btn2url}`}>{item.btn2}</Link>
                           </li>
                         </ReactWOW>
                       </Hidden>
                       <Hidden mdUp>
                         <ReactWOW animation="fadeInUp" data-delay={item.btn3animation}>
                           <li>
-                            <Link className="main-btn btn-border" to={item.btn3url}
+                            <Link className="main-btn btn-border" to={`/${this.props?.activeLang}${item.btn3url}`}
                               style={{
                                 borderColor: "#be8a7d",
                                 background: "#be8a7d"

@@ -97,7 +97,7 @@ class ContactUs extends Component {
   state = {
     sections: null,
     banner: null,
-    meta:{}
+    meta: {}
   }
 
   componentDidMount() {
@@ -115,12 +115,12 @@ class ContactUs extends Component {
           }
         });
       })
-          .then(() => {
-            API.get(`/meta/${pageId}`).then(response => {
-              this.setState({ meta: response.data });
-              console.log(response.data);
-            })
+        .then(() => {
+          API.get(`/meta/${pageId}`).then(response => {
+            this.setState({ meta: response.data });
+            console.log(response.data);
           })
+        })
         // .then(() => {
         //   API.get(`/all_sections/${pageId}`).then(response => {
 
@@ -139,6 +139,7 @@ class ContactUs extends Component {
   }
 
   render() {
+    const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
@@ -156,6 +157,7 @@ class ContactUs extends Component {
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
           breadCrumb={{ items: breadcrumbItems }}
+          activeLang={activeLang}
         >
           {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'contact'} /> */}
           {/*====== BANNER PART START ======*/}

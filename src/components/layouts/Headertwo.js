@@ -403,7 +403,7 @@ class Headertwo extends Component {
                               />{" "}
                             </Link>
                           ) : (
-                            <Link to={item.link}> {item.linkText} </Link>
+                            <Link to={`/${activeLang}${item.link}`}> {item.linkText} </Link>
                           )}
                           {item.child ? (
                             <ul className="submenu" role="menu">
@@ -424,7 +424,7 @@ class Headertwo extends Component {
                                       {sub_item.linkText}{" "}
                                     </Link>
                                   ) : (
-                                    <Link to={sub_item.link}>
+                                    <Link to={`/${activeLang}${sub_item.link}`}>
                                       {" "}
                                       {sub_item.linkText}{" "}
                                     </Link>
@@ -434,7 +434,7 @@ class Headertwo extends Component {
                                       {sub_item.third_menu.map(
                                         (third_item, i) => (
                                           <li key={i}>
-                                            <Link to={third_item.link}>
+                                            <Link to={`/${activeLang}${third_item.link}`}>
                                               {third_item.linkText}
                                             </Link>
                                           </li>
@@ -450,6 +450,42 @@ class Headertwo extends Component {
                       ))
                       : null}
                   </ul>
+                  {/* Languages */}
+
+                  <div>
+                    <ul className="submenu" role="menu">
+                      <li>
+                        <Link to="#" onClick={() => this.toggleSubMenu("Language")}>
+                          Language &nbsp;{" "}
+                          <i
+                            className={`far ${this.state["Language"] ? "fa-minus" : "fa-plus"
+                              }`}
+                          />
+                        </Link>
+                        <div
+                          className={"sidebar-submenu collapse" + (this.state["Language"] ? " show" : "")}
+                        >
+                          <ul className="languageDropdown">
+                            <li onClick={() => this.onChangeLocale('en')}
+                              className={`${activeLang === 'en' && 'active'}`}
+                            >
+                              EN
+                            </li>
+                            <li onClick={() => this.onChangeLocale('fr')}
+                              className={`${activeLang === 'fr' && 'active'}`}
+                            >
+                              FR
+                            </li>
+                            <li onClick={() => this.onChangeLocale('de')}
+                              className={`${activeLang === 'de' && 'active'}`}
+                            >
+                              DE
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 {/* from pushed-item */}
                 <div className="nav-pushed-item" />

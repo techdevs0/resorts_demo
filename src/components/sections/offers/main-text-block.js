@@ -6,9 +6,9 @@ const OfferTitleBlock = (props) => {
     <div className="offer-title-block">
       <div className="container">
         <h2>Offers</h2>
-        
+
         {/* <OfferCategories /> */}
-        
+
       </div>
     </div>
   );

@@ -48,12 +48,12 @@ Fishermans Cove Resort ,
 Constance Lemuria.
 
     `,
-    category:'policy'
+    category: 'policy'
   },
   {
     question: 'Is Seychelles expensive in terms of eating and drinking?',
     answer: `Seychelles restaurants can sometimes be expensive. However, there are countless options to choose from and it depends on how much you are willing to spend. There is no end to luxury so be smart while planning to go out.`,
-    category:'policy'
+    category: 'policy'
   },
 
   {
@@ -65,7 +65,7 @@ Constance Lemuria.
     Le Rendevous Café ,
     Paris Seychelles Restaurant .
     `,
-    category:'policy'
+    category: 'policy'
   },
   {
     question: 'How much does a wedding for 150 guests in Seychelles cost?',
@@ -75,18 +75,18 @@ Constance Lemuria.
   {
     question: 'Can foreigners get married in Seychelles?',
     answer: `Yes, foreigners can get married in Seychelles. The documents need to be submitted 30 days prior to the wedding for verification. It is not necessary for the couple to be present for verification, it can be arranged beforehand. All the documents must be in English or french. If any of the documents are not in English or French they will have to be translated into either language. These documents will then have to be stamped and signed by a solicitor stating that it is the true translation of the original.`,
-    category:'policy'
+    category: 'policy'
   },
   {
     question: 'Can you get married in Seychelles?',
     answer: `Yes, you can. Seychelles has numerous luxury wedding venues. Couples marrying in Seychelles must have a valid passport and birth certificate. ... Ceremonies are conducted by the Registrar per Seychelles Law. The date selected is subject to the Registrar's availability and the ceremony can be arranged Monday - Friday. Additional cost will be incurred if you plan to organize the wedding ceremony over the weekend or public holidays depending on the availability.`,
-    category:'policy'
+    category: 'policy'
   },
 
   {
     question: 'Do the hotels have the facility to organize Couple Weddings? ',
     answer: `Yes, hotels and resorts in Seychelles have the facility to organize couple weddings and the prices start from 850 Euros depending on the venue.`,
-    category:'policy'
+    category: 'policy'
   },
   {
     question: 'What are the fun activities to do in Seychelles?',
@@ -96,12 +96,12 @@ Constance Lemuria.
   {
     question: 'What are the things to do with children?',
     answer: `Seychelles is a fun place to be in and kids would love to visit Beau Vallon Beach, La Digue island. Moreover, you could take them to Botanical Gardens and Sainte Anne Marine National Park is also a nice place to visit.`,
-    category:'policy'
+    category: 'policy'
   },
   {
     question: 'What is Seychelles best known for? ',
     answer: `Seychelles is best known for its crystal clear waters and its beautiful beaches. The place is filled with tropical forests and untouched wonderlands. It’s a place with a rich history and filled with opportunities for leisure activities. `,
-    category:'policy'
+    category: 'policy'
   },
 ]
 const pageId = 147;
@@ -109,17 +109,17 @@ class FAQ extends Component {
   state = {
     banner: null,
     meta: {},
-    faqsData:[]
+    faqsData: []
   }
 
   async componentDidMount() {
     try {
       const response = await API.get('/faqs');
       // debugger;
-      let faqRes= response?.data[0]?.section_content;
+      let faqRes = response?.data[0]?.section_content;
       faqRes = faqRes.replace(/'/g, '"')
-      faqRes=JSON.parse(faqRes)
-      console.log("response",faqRes)
+      faqRes = JSON.parse(faqRes)
+      console.log("response", faqRes)
       this.setState({ faqsData: faqRes });
 
       API.get(`/all_sections/${pageId}`).then(response => {
@@ -128,38 +128,40 @@ class FAQ extends Component {
           intro: response.data?.find(x => x.section_slug === "intro"),
         });
       })
-          .then(() => {
-            API.get(`/meta/${pageId}`).then(response => {
-              this.setState({ meta: response.data });
-              console.log(response.data);
-            })
+        .then(() => {
+          API.get(`/meta/${pageId}`).then(response => {
+            this.setState({ meta: response.data });
+            console.log(response.data);
           })
+        })
     } catch (error) {
       console.log(error);
     }
   }
   render() {
+    const activeLang = localStorage.getItem('lang');
     return (
       <div>
         <SEOTags meta={this.state.meta} />
         <PageLayout
-            header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-            banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
-            breadCrumb={{ items: breadcrumbItems }}
+          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          breadCrumb={{ items: breadcrumbItems }}
+          activeLang={activeLang}
         >
-        {/*  /!*====== INTRO START ======*!/*/}
+          {/*  /!*====== INTRO START ======*!/*/}
           <div className="bg-white faq-wrapper">
-          <FAQIntroBlock
+            <FAQIntroBlock
               // faqList={this.state.faqsData}
               faqList={faqList}
-              />
-          {/*====== INTRO END ======*/}
-        </div>
-        {/*<Subscribe />*/}
+            />
+            {/*====== INTRO END ======*/}
+          </div>
+          {/*<Subscribe />*/}
 
-        {/*<Footertwo />*/}
+          {/*<Footertwo />*/}
 
-        {/*<BottomNavigator />*/}
+          {/*<BottomNavigator />*/}
         </PageLayout>
       </div>
     );

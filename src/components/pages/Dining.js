@@ -77,10 +77,10 @@ const pageId = 119;
 class Dining extends Component {
   state = {
     diningData: [],
-    banner:null,
-    intro:null,
+    banner: null,
+    intro: null,
     faq: [],
-    meta:{}
+    meta: {}
   }
 
   componentDidMount() {
@@ -88,33 +88,34 @@ class Dining extends Component {
     API.get('/dining').then(response => {
       this.setState({ diningData: response.data });
     })
-    .then(() => {
-      API.get(`/meta/${pageId}`).then(response => {
-        this.setState({ meta: response.data });
+      .then(() => {
+        API.get(`/meta/${pageId}`).then(response => {
+          this.setState({ meta: response.data });
+        })
       })
-    })
-    .then(() => {
-      API.get(`/all_sections/${pageId}`).then(response => {
-        // debugger;
-        let faqRes= response?.data[3]?.section_content;
-        faqRes = faqRes.replace(/'/g, '"')
-        faqRes=JSON.parse(faqRes)
-        console.log("response",faqRes)
-        this.setState({
-          intro: response.data?.find(x => x.section_slug === "intro"),
-          banner: response.data?.find(x => x.section_slug === "banner"),
-          // faq: response.data?.find(x => x.section_slug === "faq"),
-          faq: faqRes
-        });
+      .then(() => {
+        API.get(`/all_sections/${pageId}`).then(response => {
+          // debugger;
+          let faqRes = response?.data[3]?.section_content;
+          faqRes = faqRes.replace(/'/g, '"')
+          faqRes = JSON.parse(faqRes)
+          console.log("response", faqRes)
+          this.setState({
+            intro: response.data?.find(x => x.section_slug === "intro"),
+            banner: response.data?.find(x => x.section_slug === "banner"),
+            // faq: response.data?.find(x => x.section_slug === "faq"),
+            faq: faqRes
+          });
+        })
       })
-    })
-    .catch(err => {
-      console.log(err)
-    })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render() {
-      // console.log("Dining Response",this.state)
+    // console.log("Dining Response",this.state)
+    const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
@@ -130,39 +131,40 @@ class Dining extends Component {
         {/*  />*/}
         {/*</Helmet>*/}
         <PageLayout
-            header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-            banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
-            breadCrumb={{ items: breadcrumbItems }}
+          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          breadCrumb={{ items: breadcrumbItems }}
+          activeLang={activeLang}
         >
-        {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'dining'} />*/}
-        {/*/!*====== BANNER PART START ======*!/*/}
-        {/*<Mainbanner title={"Dining"} image={bannerImage} />*/}
-        {/*/!*====== BANNER PART ENDS ======*!/*/}
-        {/*/!*====== BOOKING FORM START ======*!/*/}
-        {/*<Bookingform />*/}
-        {/*/!*====== BOOKING FORM END ======*!/*/}
-        {/*/!* BREADCRUMBS START *!/*/}
-        {/*<BreadCrumb items={breadcrumbItems} />*/}
-        {/*/!* BREADCRUMBS END *!/*/}
-        {/*/!*====== TITLE START ======*!/*/}
-        <DiningTitleBlock data={this.state.intro}/>
-        {/*====== TITLE END ======*/}
-        {/*====== ROOM GRID START ======*/}
-        <DiningGrid title={null} data={this.state.diningData} />
-        {/*====== ROOM GRID END ======*/}
-        {/*====== SUITES GRID START ======*/}
-        {/* <DiningOfferSlider title={"Offers"} data={offersData} /> */}
-        {/*====== SUITES GRID END ======*/}
+          {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'dining'} />*/}
+          {/*/!*====== BANNER PART START ======*!/*/}
+          {/*<Mainbanner title={"Dining"} image={bannerImage} />*/}
+          {/*/!*====== BANNER PART ENDS ======*!/*/}
+          {/*/!*====== BOOKING FORM START ======*!/*/}
+          {/*<Bookingform />*/}
+          {/*/!*====== BOOKING FORM END ======*!/*/}
+          {/*/!* BREADCRUMBS START *!/*/}
+          {/*<BreadCrumb items={breadcrumbItems} />*/}
+          {/*/!* BREADCRUMBS END *!/*/}
+          {/*/!*====== TITLE START ======*!/*/}
+          <DiningTitleBlock data={this.state.intro} />
+          {/*====== TITLE END ======*/}
+          {/*====== ROOM GRID START ======*/}
+          <DiningGrid title={null} data={this.state.diningData} />
+          {/*====== ROOM GRID END ======*/}
+          {/*====== SUITES GRID START ======*/}
+          {/* <DiningOfferSlider title={"Offers"} data={offersData} /> */}
+          {/*====== SUITES GRID END ======*/}
 
-        <FAQSection
+          <FAQSection
             faqData={this.state.faq}
-            // faqList={faqList}
-        />
-        {/*<Subscribe />*/}
+          // faqList={faqList}
+          />
+          {/*<Subscribe />*/}
 
-        {/*<Footertwo />*/}
+          {/*<Footertwo />*/}
 
-        {/*<BottomNavigator />*/}
+          {/*<BottomNavigator />*/}
         </PageLayout>
       </div>
     );

@@ -103,6 +103,8 @@ class AboutUs extends Component {
   }
 
   render() {
+    const activeLang = localStorage.getItem('lang');
+
     return (
       <div className="bg-white about-us-wrapper">
         <SEOTags meta={this.state.meta} />
@@ -121,6 +123,7 @@ class AboutUs extends Component {
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
           breadCrumb={{ items: breadcrumbItems }}
+          activeLang={activeLang}
         >
           {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'about'} /> */}
           {/*====== BANNER PART START ======*/}
@@ -133,16 +136,23 @@ class AboutUs extends Component {
           {/* <BreadCrumb items={breadcrumbItems} /> */}
           {/* BREADCRUMBS END */}
           {/*====== TITLE START ======*/}
-          <AboutTitleBlock data={this.state.sections?.intro} />
+          <AboutTitleBlock data={this.state.sections?.intro}
+          />
           {/*====== TITLE END ======*/}
           {/*====== SERVICES START ======*/}
-          <AboutServices data={roomsData} />
+          <AboutServices data={roomsData}
+            activeLang={activeLang}
+          />
           {/*====== SERVICES END ======*/}
           {/*====== SECONDARY START ======*/}
-          <AboutSecondaryTextBlock data={this.state.sections?.dine} />
+          <AboutSecondaryTextBlock data={this.state.sections?.dine}
+            activeLang={activeLang}
+          />
           {/*====== SECONDARY END ======*/}
           {/*====== ABOUT SLIDER START ======*/}
-          <AboutOfferSlider data={this.state.premiumOffers} title={"Explore Fishermans Cove Resort Premium Offerings"} />
+          <AboutOfferSlider data={this.state.premiumOffers} title={"Explore Fishermans Cove Resort Premium Offerings"}
+            activeLang={activeLang}
+          />
           {/*====== ABOUT SLIDER END ======*/}
 
           {/* <Subscribe />

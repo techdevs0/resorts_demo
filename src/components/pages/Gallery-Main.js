@@ -15,15 +15,15 @@ import PageLayout from "../layouts/PageLayout";
 const bannerImage = require('./../../assets/img/banner/sunset.jpg');
 
 
-const breadcrumbItems=[
+const breadcrumbItems = [
   {
     text: 'Fishermans Cove Resort',
-    link:'/',
+    link: '/',
     isActive: false,
   },
   {
     text: 'Gallery',
-    link:'/gallery',
+    link: '/gallery',
     isActive: true,
   },
 ]
@@ -31,8 +31,8 @@ const pageId = 144;
 class GalleryMain extends Component {
   state = {
     galleryData: [],
-      banner: null,
-      meta: {}
+    banner: null,
+    meta: {}
   }
 
   async componentDidMount() {
@@ -40,65 +40,68 @@ class GalleryMain extends Component {
       const response = await API.get('/uploads');
       this.setState({ galleryData: response.data });
 
-        API.get(`/all_sections/${pageId}`).then(response => {
-            this.setState({
-                banner: response.data?.find(x => x.section_slug === "banner"),
-                intro: response.data?.find(x => x.section_slug === "intro"),
-            });
+      API.get(`/all_sections/${pageId}`).then(response => {
+        this.setState({
+          banner: response.data?.find(x => x.section_slug === "banner"),
+          intro: response.data?.find(x => x.section_slug === "intro"),
+        });
+      })
+        .then(() => {
+          API.get(`/meta/${pageId}`).then(response => {
+            this.setState({ meta: response.data });
+            console.log(response.data);
+          })
         })
-            .then(() => {
-                API.get(`/meta/${pageId}`).then(response => {
-                    this.setState({ meta: response.data });
-                    console.log(response.data);
-                })
-            })
     } catch (error) {
       console.log(error);
     }
   }
 
   render() {
+    const activeLang = localStorage.getItem('lang');
+
     return (
       <div className="bg-white">
-          <SEOTags meta={this.state.meta} />
+        <SEOTags meta={this.state.meta} />
 
-          {/*<Helmet>*/}
-          {/*    <title>*/}
-          {/*        Gallery | Fishermans Cove Resort*/}
-          {/*        /!*Best Beach Resorts in Seychelles | Fishermans Cove Resort*!/*/}
-          {/*    </title>*/}
-          {/*    <meta*/}
-          {/*        name="description"*/}
-          {/*        content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"*/}
-          {/*    />*/}
-          {/*</Helmet>*/}
-          <PageLayout
-              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-              banner={{ title: this.state.banner?.section_name, image:  this.state.banner?.section_avatar }}
-              breadCrumb={{ items: breadcrumbItems }}
-          >
-        {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} />*/}
-        {/*/!*====== BANNER PART START ======*!/*/}
-        {/*<Mainbanner title={"Gallery"} image={bannerImage} />*/}
-        {/*/!*====== BANNER PART ENDS ======*!/*/}
-        {/*/!*====== BOOKING FORM START ======*!/*/}
-        {/*<Bookingform />*/}
-        {/*/!*====== BOOKING FORM END ======*!/*/}
-        {/*/!* BREADCRUMBS START *!/*/}
-        {/*<BreadCrumb items={breadcrumbItems} />*/}
-        {/* BREADCRUMBS END */}
-        {/*====== TITLE START ======*/}
-        <GalleryTitleBlock />
-        {/*====== TITLE END ======*/}
-        {/*====== GALLERY GRID START ======*/}
-        <GalleryGrid title={null} data={this.state.galleryData} />
-        {/*====== GALLERY GRID END ======*/}
-        {/*<Subscribe />*/}
+        {/*<Helmet>*/}
+        {/*    <title>*/}
+        {/*        Gallery | Fishermans Cove Resort*/}
+        {/*        /!*Best Beach Resorts in Seychelles | Fishermans Cove Resort*!/*/}
+        {/*    </title>*/}
+        {/*    <meta*/}
+        {/*        name="description"*/}
+        {/*        content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"*/}
+        {/*    />*/}
+        {/*</Helmet>*/}
+        <PageLayout
+          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          breadCrumb={{ items: breadcrumbItems }}
+          activeLang={activeLang}
+        >
+          {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} />*/}
+          {/*/!*====== BANNER PART START ======*!/*/}
+          {/*<Mainbanner title={"Gallery"} image={bannerImage} />*/}
+          {/*/!*====== BANNER PART ENDS ======*!/*/}
+          {/*/!*====== BOOKING FORM START ======*!/*/}
+          {/*<Bookingform />*/}
+          {/*/!*====== BOOKING FORM END ======*!/*/}
+          {/*/!* BREADCRUMBS START *!/*/}
+          {/*<BreadCrumb items={breadcrumbItems} />*/}
+          {/* BREADCRUMBS END */}
+          {/*====== TITLE START ======*/}
+          <GalleryTitleBlock />
+          {/*====== TITLE END ======*/}
+          {/*====== GALLERY GRID START ======*/}
+          <GalleryGrid title={null} data={this.state.galleryData} />
+          {/*====== GALLERY GRID END ======*/}
+          {/*<Subscribe />*/}
 
-        {/*<Footertwo />*/}
+          {/*<Footertwo />*/}
 
-        {/*<BottomNavigator />*/}
-          </PageLayout>
+          {/*<BottomNavigator />*/}
+        </PageLayout>
       </div>
     );
   }

@@ -60,13 +60,13 @@ class Gallery extends Component {
             {/*Best Beach Resorts in Seychelles | Fishermans Cove Resort*/}
           </title>
           <meta
-              name="description"
-              content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
+            name="description"
+            content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
           />
         </Helmet>
         <Headertwo />
         {/*====== BREADCRUMB PART START ======*/}
-        <section className="breadcrumb-area" style={{backgroundImage: 'url(assets/img/bg/04.jpg)'}}>
+        <section className="breadcrumb-area" style={{ backgroundImage: 'url(assets/img/bg/04.jpg)' }}>
           <div className="container">
             <div className="breadcrumb-text">
               <span>The ultimate luxury</span>
@@ -83,14 +83,14 @@ class Gallery extends Component {
         <section className="gallery-wrappper pt-120 pb-120">
           <div className="container">
             <div className="gallery-loop">
-            {galleryPosts.map((item, i) => (
-              <ReactWOW key={i} animation="fadeInUp" data-wow-delay={item.anitime}>
-              <div className="single-gallery-image">
-                {/* <Link to={item.photo} className="popup-image"> */}
-                  <img src={item.photo} alt="Images" />
-                {/* </Link> */}
-              </div>
-              </ReactWOW>
+              {galleryPosts.map((item, i) => (
+                <ReactWOW key={i} animation="fadeInUp" data-wow-delay={item.anitime}>
+                  <div className="single-gallery-image">
+                    {/* <Link to={item.photo} className="popup-image"> */}
+                    <img src={item.photo} alt="Images" />
+                    {/* </Link> */}
+                  </div>
+                </ReactWOW>
               ))}
             </div>
           </div>

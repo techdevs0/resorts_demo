@@ -60,6 +60,7 @@ class TermsofUse extends Component {
     }
 
     render() {
+        const activeLang = localStorage.getItem('lang');
         return (
             <div className="bg-white privacy-policy-wrapper">
                 <SEOTags meta={this.state.meta} />
@@ -76,6 +77,7 @@ class TermsofUse extends Component {
                     header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
                     banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
                     breadCrumb={{ items: breadcrumbItems }}
+                    activeLang={activeLang}
                 >
                     {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'privacy-policy'} />*/}
                     {/*/!*====== BANNER PART START ======*!/*/}

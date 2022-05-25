@@ -277,6 +277,7 @@ class DiningInner extends Component {
     }
   }
   render() {
+    const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white dining-inner-wrapper">
         <SEOTags meta={this.state.singleHotel?.post_metas?.[0]} />
@@ -288,6 +289,7 @@ class DiningInner extends Component {
           }}
           breadCrumb={{ items: breadcrumbItems }}
           key={this.state.singleHotel?.post_name}
+          activeLang={activeLang}
         >
           {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'dining-inner'} /> */}
           {/*====== BANNER PART START ======*/}
@@ -329,6 +331,7 @@ class DiningInner extends Component {
           <OtherRecommendations
             title={"Other Restaurants & Bars"}
             data={this.state.othersData}
+            activeLang={activeLang}
           />
           {/*====== OTHERS GRID END ======*/}
 

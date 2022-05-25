@@ -8,7 +8,6 @@ const AboutTitleBlock = (props) => {
         <div className="d-flex flex-wrap title-flex">
           <div className="about-title-item">
             <div className="mr-sm-4 mb-2" dangerouslySetInnerHTML={{ __html: props.data?.section_content }}>
-
             </div>
           </div>
           <div className="about-title-item img-wrapper">

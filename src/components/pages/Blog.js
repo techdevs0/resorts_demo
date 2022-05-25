@@ -10,6 +10,8 @@ import bannerImg from "../../assets/img/blog/blogBanner.jpg"
 
 
 const Blog = (props) => {
+  const activeLang = localStorage.getItem('lang');
+
   //  blog Data
 
   const [blogData, setBlogData] = useState([]);
@@ -64,7 +66,7 @@ const Blog = (props) => {
           <div className="post-desc">
             {/* <Link to={`/blog-inner/${x?.slug}`} className="cat">Businese</Link> */}
             <h2>
-              <Link to={`/blog-inner/${x?.slug}`}>
+              <Link to={`/${activeLang}/blog-inner/${x?.slug}`}>
                 {x?.title}
               </Link>
             </h2>
@@ -90,7 +92,7 @@ const Blog = (props) => {
                 </Link>
               </div>
               <div className="read-more">
-                <Link to={`/blog-inner/${x?.slug}`}><i className="far fa-arrow-right" />Read More</Link>
+                <Link to={`/${activeLang}/blog-inner/${x?.slug}`}><i className="far fa-arrow-right" />Read More</Link>
               </div>
             </div>
           </div>
@@ -115,7 +117,8 @@ const Blog = (props) => {
       link: '/blog',
       isActive: true,
     },
-  ]
+  ];
+
 
   return (
     <div>
@@ -123,6 +126,7 @@ const Blog = (props) => {
         header={{ isMobile: props.isMobile, isTop: props.isTop }}
         banner={{ title: "Blogs", image: bannerImg }}
         breadCrumb={{ items: breadcrumbItems }}
+        activeLang={activeLang}
       >
         {/* <Headertwo /> */}
         {/*====== BREADCRUMB PART START ======*/}
@@ -381,6 +385,7 @@ const Blog = (props) => {
               <div className="col-lg-4 col-md-8 col-sm-10">
                 <Blogsidebar
                   recentBlog={recentBlog}
+                  activeLang={activeLang}
                 />
               </div>
             </div>

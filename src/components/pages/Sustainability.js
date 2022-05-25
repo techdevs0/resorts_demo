@@ -52,12 +52,12 @@ class Sustainability extends Component {
         }
       })
     })
-        .then(() => {
-            API.get(`/meta/${pageId}`).then(response => {
-                this.setState({ meta: response.data });
-                console.log(response.data);
-            })
+      .then(() => {
+        API.get(`/meta/${pageId}`).then(response => {
+          this.setState({ meta: response.data });
+          console.log(response.data);
         })
+      })
       // .then(() => {
       //   API.get(`/all_sections/${pageId}`).then(response => {
 
@@ -72,28 +72,35 @@ class Sustainability extends Component {
       })
   }
   render() {
+    const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white sustainability-wrapper">
-          <SEOTags meta={this.state.meta} />
+        <SEOTags meta={this.state.meta} />
 
-          {/*<Helmet>*/}
-          {/*    <title>*/}
-          {/*        Sustainability | An Eco Friendly Resort in Seychelles*/}
-          {/*    </title>*/}
-          {/*    <meta*/}
-          {/*        name="description"*/}
-          {/*        content="Fishermans Cove Resort is an eco friendly resort built upon the principle of protecting the environment and moving forward towards a better and sustainable future."*/}
-          {/*    />*/}
-          {/*</Helmet>*/}
+        {/*<Helmet>*/}
+        {/*    <title>*/}
+        {/*        Sustainability | An Eco Friendly Resort in Seychelles*/}
+        {/*    </title>*/}
+        {/*    <meta*/}
+        {/*        name="description"*/}
+        {/*        content="Fishermans Cove Resort is an eco friendly resort built upon the principle of protecting the environment and moving forward towards a better and sustainable future."*/}
+        {/*    />*/}
+        {/*</Helmet>*/}
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'sustainability'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Sustainability"} image={this.state.banner?.section_avatar} />
+        <Mainbanner title={"Sustainability"} image={this.state.banner?.section_avatar}
+          activeLang={activeLang}
+        />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
+        <Bookingform
+          activeLang={activeLang}
+        />
         {/*====== BOOKING FORM END ======*/}
         {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems} />
+        <BreadCrumb items={breadcrumbItems}
+          activeLang={activeLang}
+        />
         {/* BREADCRUMBS END */}
         {/*====== INTRO START ======*/}
         <SustainIntroBlock data={this.state.activities?.intro} />

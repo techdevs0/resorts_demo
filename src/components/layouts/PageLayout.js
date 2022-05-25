@@ -8,19 +8,25 @@ import Footertwo from './Footertwo'
 import Headertwo from './Headertwo'
 
 export default function PageLayout(props) {
-    const { header, banner, hideBooking, bookingForm, breadCrumb, image } = props;
+    const { header, banner, hideBooking, bookingForm, breadCrumb, image, activeLang } = props;
     return (
         <div key={props.key}>
             <Headertwo {...header} key={props.key} />
-            <Banner {...banner} />
+            <Banner {...banner}
+                activeLang={activeLang}
+            />
             {!hideBooking &&
                 <Bookingform />
             }
-            <BreadCrumb {...breadCrumb} />
+            <BreadCrumb {...breadCrumb}
+                activeLang={activeLang}
+            />
             {
                 props.children
             }
-            <Subscribe />
+            <Subscribe
+                activeLang={activeLang}
+            />
             <Footertwo />
             <BottomNavigator />
         </div>

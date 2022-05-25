@@ -85,7 +85,7 @@ const Blogdetails = (props) => {
     },
   ]
 
-
+  const activeLang = localStorage.getItem('lang');
   return (
     <div>
       {/* <Headertwo /> */}
@@ -93,6 +93,7 @@ const Blogdetails = (props) => {
         header={{ isMobile: props.isMobile, isTop: props.isTop }}
         banner={{ title: singleBlogData?.title, image: singleBlogData?.banner_img }}
         breadCrumb={{ items: breadcrumbItems }}
+        activeLang={activeLang}
       >
 
 
@@ -303,10 +304,10 @@ const Blogdetails = (props) => {
                                 style={{ backgroundImage: `url( ${x?.img})` }} >
                               </div> */}
                                   <div className="desc">
-                                    <Link to={`/blog-inner/${x?.slug}`} className="date"><i className="far fa-calendar-alt" />
+                                    <Link to={`/${activeLang}/blog-inner/${x?.slug}`} className="date"><i className="far fa-calendar-alt" />
                                       {new Date(x?.created_at).toLocaleDateString()}
                                     </Link>
-                                    <h4><Link to={`/blog-inner/${x?.slug}`}>
+                                    <h4><Link to={`/${activeLang}/blog-inner/${x?.slug}`}>
                                       {x?.title}
                                     </Link></h4>
                                     <p
@@ -439,6 +440,7 @@ const Blogdetails = (props) => {
               <div className="col-lg-4 col-md-8 col-sm-10">
                 <Blogsidebar
                   recentBlog={recentBlog}
+                  activeLang={activeLang}
                 />
               </div>
             </div>

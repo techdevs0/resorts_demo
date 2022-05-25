@@ -7,22 +7,22 @@ const data = [
     {
         image: require('../../../assets/img/experience/sustaniablity.webp'),
         title: "Sustainability",
-        link:'/seychelles-eco-resort'
+        link: '/seychelles-eco-resort'
     },
     {
         image: require('../../../assets/img/experience/overview.webp'),
         title: "Overview of the Resort",
-        link:'/about'
+        link: '/about'
     },
     {
         image: require('../../../assets/img/experience/seychelles-min.webp'),
         title: "About Seychelles",
-        link:'/about-seychelles'
+        link: '/about-seychelles'
     },
     {
         image: require('../../../assets/img/experience/contact.jpg'),
         title: "Contact \n Us",
-        link:'/contact'
+        link: '/contact'
     },
 ]
 
@@ -35,7 +35,7 @@ class Experience extends Component {
                     <div className="d-flex flex-row flex-wrap flex-sm-nowrap">
                         {
                             data.map(x => (
-                                <div className="experience-item" onClick={()=> this.props.history.push(x.link)}>
+                                <div className="experience-item" onClick={() => this.props.history.push(`/${this.props?.activeLang}${x.link}`)}>
                                     <div className="background">
                                         <img className="img-fluid w-100 h-100" src={x.image} alt="" />
                                     </div>

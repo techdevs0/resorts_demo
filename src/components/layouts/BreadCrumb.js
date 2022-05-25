@@ -9,7 +9,7 @@ const BreadCrumb = (props) => {
           {
             props.items?.map((x, i) => (
               <li class={`breadcrumb-item ${x.isActive ? 'active' : ''}`} aria-current={`${x.isActive ? 'page' : 'false'}`}>
-                <Link to={x.link}>{x.text}</Link>
+                <Link to={`/${props?.activeLang}${x.link}`}>{x.text}</Link>
               </li>
             ))
           }

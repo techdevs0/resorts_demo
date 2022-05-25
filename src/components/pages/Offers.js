@@ -100,6 +100,7 @@ class Offers extends Component {
 
   }
   render() {
+    const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white">
         {/* <SEOTags meta={this.state.meta} /> */}
@@ -108,8 +109,8 @@ class Offers extends Component {
             Fishermans Cove offers The Best Resort Deals for Seychelles
           </title>
           <meta
-              name="description"
-              content="Fishermans Cove Resort is a veritable paradise that offers countless amazing experiences throughout the journey with some of the best resort deals in Seychelles."
+            name="description"
+            content="Fishermans Cove Resort is a veritable paradise that offers countless amazing experiences throughout the journey with some of the best resort deals in Seychelles."
           />
         </Helmet>
         <Headertwo
@@ -118,13 +119,19 @@ class Offers extends Component {
           key={"offers"}
         />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Offers"} image={bannerImage} />
+        <Mainbanner title={"Offers"} image={bannerImage}
+          activeLang={activeLang}
+        />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
+        <Bookingform
+          activeLang={activeLang}
+        />
         {/*====== BOOKING FORM END ======*/}
         {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems} />
+        <BreadCrumb items={breadcrumbItems}
+          activeLang={activeLang}
+        />
         {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
         <OfferTitleBlock />
