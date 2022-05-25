@@ -20,7 +20,7 @@ import './App.scss';
 
 ReactDOM.render(
   // <BrowserRouter>
-    <App />,
+  <App />,
   // </BrowserRouter>,
   document.getElementById('miranda')
 );

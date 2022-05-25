@@ -608,7 +608,7 @@ class Headertwo extends Component {
                 {this.state.widgetMenuLinks?.map((x) =>
                   !x.subMenu?.length > 0 ? (
                     <li className="text-capitalize">
-                      <Link to={`/${x.address}`}>{x.text}</Link>
+                      <Link to={`/${activeLang}/${x.address}`}>{x.text}</Link>
                     </li>
                   ) : (
                     <li>
@@ -624,11 +624,11 @@ class Headertwo extends Component {
                       >
                         <ul>
                           <li key={"all"}>
-                            <Link to={`/${x.address}`}>{`All ${x.text}`}</Link>
+                            <Link to={`/${activeLang}/${x.address}`}>{`All ${x.text}`}</Link>
                           </li>
                           {x.subMenu?.map((y) => (
                             <li key={y.id}>
-                              <Link to={`/${y.base_url}/${y.address}`}>
+                              <Link to={`/${activeLang}/${y.base_url}/${y.address}`}>
                                 {y.text}
                               </Link>
                             </li>
