@@ -1,26 +1,26 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import RoomGridItem from './about-grid-item';
+import { constants } from '../../../utils/constants';
 
 const AboutServices = (props) => {
   const services = [
     {
-      name: 'rooms & suites',
+      name: `${constants?.site_content?.about_page?.rooms_data?.title[props?.activeLang]}`,
       icon: 'far fa-bed',
       link: '/rooms-suites-seychelles'
     },
     {
-      name: 'Dining',
+      name: `${constants?.site_content?.about_page?.rooms_data?.title2[props?.activeLang]}`,
       icon: 'far fa-utensils',
       link: '/fine-dining-seychelles'
     },
     {
-      name: 'weddings',
+      name: `${constants?.site_content?.about_page?.rooms_data?.title3[props?.activeLang]}`,
       icon: 'far fa-rings-wedding',
       link: '/seychelles-wedding-resort'
     },
     {
-      name: 'leisure activities',
+      name: `${constants?.site_content?.about_page?.rooms_data?.title4[props?.activeLang]}`,
       icon: 'far fa-swimmer',
       link: '/whats-on'
     },

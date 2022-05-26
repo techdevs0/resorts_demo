@@ -207,5 +207,97 @@ export const constants = {
         }
       }
     },
+    about_page: {
+      subscribe: {
+        title: {
+          en: "Subscribe to our newsletter",
+          fr: "Abonnez-vous à notre newsletter",
+          de: "Abonnieren Sie unseren Newsletter"
+        },
+        subtitle: {
+          en: "Be The First One to Know About The Happenings at Fishermans Cove Resort",
+          fr: "Soyez le premier à connaître les événements au Fishermans Cove Resort",
+          de: "Seien Sie der Erste, der von den Geschehnissen im Fishermans Cove Resort erfährt"
+        },
+        btn_text: {
+          en: "Subscribe",
+          fr: "S'abonner",
+          de: "Abonnieren"
+        },
+        email_error: {
+          en: "Please enter email",
+          fr: "Veuillez saisir un e-mail",
+          de: "Bitte E-Mail eingeben"
+        },
+        place_holder: {
+          en: "Enter your email address",
+          fr: "Entrez votre adresse email",
+          de: "Geben sie ihre E-Mailadresse ein"
+        },
+        submit_text: {
+          en: "Successfully Subscribed !",
+          fr: "Inscrit avec succès !",
+          de: "Erfolgreich abonniert!"
+        }
+      },
+      bread_crumb: {
+        title: {
+          en: "Fishermans Cove Resort",
+          fr: "Fishermans Cove Resort",
+          de: "Fishermans Cove Resort"
+        },
+        title2: {
+          en: "About Us",
+          fr: "À propos de nous",
+          de: "Über uns"
+        }
+      },
+      rooms_data: {
+        title: {
+          en: "rooms & suites",
+          fr: "chambres & suites",
+          de: "Zimmer & Suiten"
+        },
+        title2: {
+          en: "Dining",
+          fr: "À manger",
+          de: "Essen"
+        },
+        title3: {
+          en: "weddings",
+          fr: "mariages",
+          de: "Hochzeiten"
+        },
+        title4: {
+          en: "leisure activities",
+          fr: "loisirs",
+          de: "Freizeitaktivitäten"
+        }
+      },
+      sec_text_box: {
+        title: {
+          en: "Escape and Enjoy in your own little paradise",
+          fr: "Évadez-vous et profitez de votre propre petit paradis",
+          de: "Entfliehen und genießen Sie in Ihrem eigenen kleinen Paradies"
+        },
+        subtitle: {
+          en: "Dine Elegantly \n With Us",
+          fr: "Dînez élégamment \n avec nous",
+          de: "Dinieren Sie elegant \n bei uns"
+        },
+        detail: {
+          en: "The two of the best restaurants in Seychelles allow you to savor scrumptious flavors and aromas while sipping exotic cocktails to views of the Indian Ocean’s most spectacular sunset, offering countless experiences with outstanding services throughout your discovery. Enjoy the most toothsome mix of authentic Creole and International cuisine.  Paris Seychelles Restaurant allows you to dine under the stars with a picturesque setting while Le Cardinal  Restaurant offers a new perspective to the mornings with unmatched ambiance.",
+          fr: "Les deux des meilleurs restaurants des Seychelles vous permettent de savourer des saveurs et des arômes succulents tout en sirotant des cocktails exotiques face au coucher de soleil le plus spectaculaire de l'océan Indien, offrant d'innombrables expériences avec des services exceptionnels tout au long de votre découverte. Profitez du mélange le plus savoureux de cuisine créole authentique et internationale. Le restaurant Paris Seychelles vous permet de dîner sous les étoiles dans un cadre pittoresque tandis que le restaurant Le Cardinal offre une nouvelle perspective aux matins avec une ambiance inégalée.",
+          de: "Die zwei der besten Restaurants auf den Seychellen ermöglichen es Ihnen, köstliche Geschmacksrichtungen und Aromen zu genießen, während Sie exotische Cocktails mit Blick auf den spektakulärsten Sonnenuntergang des Indischen Ozeans schlürfen und während Ihrer Entdeckung unzählige Erlebnisse mit hervorragendem Service bieten. Genießen Sie die köstlichste Mischung aus authentischer kreolischer und internationaler Küche. Im Paris Seychelles Restaurant können Sie in malerischer Umgebung unter den Sternen speisen, während das Le Cardinal Restaurant mit einem unvergleichlichen Ambiente eine neue Perspektive auf den Morgen bietet."
+        }
+      },
+      about_offer: {
+        title: {
+          en: "Explore Fishermans Cove Resort Premium Offerings",
+          fr: "Découvrez les offres premium de Fishermans Cove Resort",
+          de: "Erkunden Sie die Premium-Angebote des Fishermans Cove Resort"
+        }
+      }
+    },
   }
 };
