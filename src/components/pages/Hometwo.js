@@ -17,6 +17,8 @@ import bannerimg1 from "../../assets/img/banner/home.jpg";
 import SEOTags from "../sections/common/SEOTags";
 import PopUp from "../popup/PopUp";
 
+import { constants } from "../../utils/constants";
+
 const pageId = 93;
 
 class Hometwo extends Component {
@@ -82,17 +84,21 @@ class Hometwo extends Component {
         {/* <LazyLoad> */}
         <Mainbanner
           isMain={true}
-          title={"The Perfect Destination for You"}
+          title={constants?.site_content?.home_page?.banner?.title[activeLang]}
           image={bannerimg1}
           activeLang={activeLang}
         />
         {/* </LazyLoad> */}
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
+        <Bookingform
+          activeLang={activeLang}
+        />
         {/*====== BOOKING FORM END ======*/}
         {/*====== ROOM SLIDER START ======*/}
-        <RoomSlider data={this.state.roomsData} />
+        <RoomSlider data={this.state.roomsData}
+          activeLang={activeLang}
+        />
 
         {/*====== ROOM SLIDER END ======*/}
         {/*====== TEXT BLOCK START ======*/}
@@ -106,7 +112,9 @@ class Hometwo extends Component {
         />
         {/*====== SERVICES TABS END ======*/}
         {/*====== TESTIMONIAL SLIDER START ======*/}
-        <GuestReviews />
+        <GuestReviews
+          activeLang={activeLang}
+        />
         {/*====== EXPERIENCE START ======*/}
         <Experience
           activeLang={activeLang}

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // import {KeyboardDatePicker, MuiPickersUtilsProvider} from '@material-ui/pickers';
 // import DateFnsUtils from '@date-io/date-fns';
 import DatePickerComponent from "../../layouts/DatePickerComponent";
+import { constants } from '../../../utils/constants';
 import $ from "jquery";
 
 const year = `${new Date().getFullYear()}`;
@@ -143,7 +144,7 @@ class Bookingform extends Component {
                                     <DatePickerComponent
                                         id={"date-picker-inline"}
                                         value={checkIn}
-                                        placeholder={"Check In"}
+                                        placeholder={constants?.site_content?.home_page?.booking_form?.check_in[activeLang]}
                                         open={openCheckIn}
                                         onOpen={() => {
                                             this.setState({
@@ -161,7 +162,7 @@ class Bookingform extends Component {
                                     <DatePickerComponent
                                         id={"date-picker-inline-1"}
                                         value={checkOut}
-                                        placeholder={"Check Out"}
+                                        placeholder={constants?.site_content?.home_page?.booking_form?.check_out[activeLang]}
                                         disablePast={true}
                                         open={openCheckOut}
                                         minDate={checkOutMin}
@@ -229,16 +230,16 @@ class Bookingform extends Component {
                                     showPromoPopup: false
                                 })}>
                                     <div className="count-group">
-                                        <p>{`${rooms} Room${rooms > 1 ? 's' : ''}`}</p>
-                                        <p>{`${adults} Adult${adults > 1 ? 's' : ''}`}</p>
-                                        <p>{`${childs} Child${childs > 1 ? 's' : ''}`}</p>
+                                        <p>{`${rooms} ${constants?.site_content?.home_page?.booking_form?.room[activeLang]}${rooms > 1 ? 's' : ''}`}</p>
+                                        <p>{`${adults} ${constants?.site_content?.home_page?.booking_form?.adult[activeLang]}${adults > 1 ? 's' : ''}`}</p>
+                                        <p>{`${childs} ${constants?.site_content?.home_page?.booking_form?.child[activeLang]}${childs > 1 ? 's' : ''}`}</p>
                                     </div>
                                     {
                                         showCountPopup ?
                                             <div onClick={(e) => e.stopPropagation()} className="room-details-popup"
                                                 style={{ display: showCountPopup ? 'block' : 'none' }}>
                                                 <div className="room_item_box quantity">
-                                                    <label>Rooms</label>
+                                                    <label>{constants?.site_content?.home_page?.booking_form?.rooms[activeLang]}</label>
                                                     <div className="quantity-box">
                                                         <div className="quantity-button quantity-down minus empty"
                                                             onClick={() => this.setState({ rooms: rooms - 1 < 1 ? 1 : rooms - 1 })}>-
@@ -252,7 +253,7 @@ class Bookingform extends Component {
                                                     </div>
                                                 </div>
                                                 <div className="room_item_box quantity">
-                                                    <label>Adults</label>
+                                                    <label>{constants?.site_content?.home_page?.booking_form?.adults[activeLang]}</label>
                                                     <div className="quantity-box">
                                                         <div className="quantity-button quantity-down minus empty"
                                                             onClick={() => this.setState({ adults: adults - 1 < 1 ? 1 : adults - 1 })}>-
@@ -266,7 +267,7 @@ class Bookingform extends Component {
                                                     </div>
                                                 </div>
                                                 <div className="room_item_box quantity">
-                                                    <label>Children</label>
+                                                    <label>{constants?.site_content?.home_page?.booking_form?.children[activeLang]}</label>
                                                     <div className="quantity-box">
                                                         <div className="quantity-button quantity-down minus empty"
                                                             onClick={() => this.setState({ childs: childs - 1 < 1 ? 1 : childs - 1 })}>-
@@ -292,17 +293,23 @@ class Bookingform extends Component {
                                         showCountPopup: false
                                     })}>
                                     <div className="promo-codes">
-                                        <p>Promo Codes</p>
+                                        <p>
+                                            {constants?.site_content?.home_page?.booking_form?.promo_code[activeLang]}
+                                        </p>
                                     </div>
                                     <div className="promo-popup" onClick={(e) => e.stopPropagation()}
                                         style={{ display: showPromoPopup ? 'flex' : 'none' }}>
                                         <div className="code-item">
-                                            <label>Group Code/Promotion Code</label>
+                                            <label>
+                                                {constants?.site_content?.home_page?.booking_form?.group_code[activeLang]}
+                                            </label>
                                             <input type="text" onChange={(e) => this.setState({ promo: e.target.value })}
                                                 className="form-control" />
                                         </div>
                                         <div className="code-item">
-                                            <label>Travel Industry ID</label>
+                                            <label>
+                                                {constants?.site_content?.home_page?.booking_form?.ind_id[activeLang]}
+                                            </label>
                                             <input type="text" className="form-control" />
                                         </div>
                                     </div>
@@ -311,9 +318,7 @@ class Bookingform extends Component {
                             <div className="col-12 col-md-2">
                                 <button type="button" value={this.state.promo} onClick={this.handleSubmit}
                                     className="main-btn btn-eden">
-                                    {activeLang === "en" ?
-                                        ' Book Now' : activeLang === "fr" ? 'Reserve maintenant' : activeLang === "de" ? 'buchen Sie jetzt'
-                                            : 'Book Now'}
+                                    {constants?.site_content?.home_page?.banner?.btn3[activeLang]}
                                 </button>
                             </div>
                         </div>

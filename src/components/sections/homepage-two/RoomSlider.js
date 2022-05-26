@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { withRouter } from 'react-router-dom';
+import { constants } from '../../../utils/constants';
 // import Slider from "react-slick";
 const placeholderImage = require('./../../../assets/img/img-placeholder.png')
 
@@ -20,7 +21,9 @@ const RoomSlider = (props) => {
 
     return (
         <div className="room-slider-wrapper">
-            <h2 className="section-heading text-muted">Breathtaking Tropical Paradise</h2>
+            <h2 className="section-heading text-muted">
+                {constants?.site_content?.home_page?.rooms_slider?.title[props?.activeLang]}
+            </h2>
             {/* <p className="w-75 text-center mx-auto">Turn your staycation into a blissful escape with a Suite Stay and 120 minutes of relaxing spa time starting from AED 850. Rejuvenate at the award-winning Mandara Spa and choose from our range of body treatments.</p> */}
             <Carousel
                 dynamicHeight={false}
@@ -60,7 +63,7 @@ const RoomSlider = (props) => {
                                         window.gtag_report_conversion(x.post_url, true)
                                     }}
                                 >
-                                    BOOK NOW
+                                    {constants?.site_content?.home_page?.banner?.btn3[props?.activeLang]}
                                 </button>
                             </div>
                         </div>

@@ -3,28 +3,9 @@ import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import ReactWOW from 'react-wow'
 import { Hidden } from "@material-ui/core";
-
+import { constants } from '../../../utils/constants';
 // import bannerimg1 from '../../../assets/img/banner/home.jpg';
 // import bannerimg2 from '../../../assets/img/banner/05.jpg';
-
-const bannerPosts = [
-  {
-    //photo: require('../../../assets/img/banner/dining.jpg'),
-    tag: '',
-    taganimation: '.6s',
-    title: "The Perfect \n Destination for you",
-    titleanimation: '.9s',
-    btn1: 'gallery',
-    btn1animation: '1.1s',
-    btn1url: '/gallery',
-    btn2: 'Learn More',
-    btn2animation: '1.3s',
-    btn2url: '/about',
-    btn3: 'Book Now',
-    btn3animation: '1.3s',
-    btn3url: '/',
-  },
-];
 
 
 class Banner extends Component {
@@ -37,6 +18,26 @@ class Banner extends Component {
       fade: true,
       arrows: false,
     };
+
+    const bannerPosts = [
+      {
+        //photo: require('../../../assets/img/banner/dining.jpg'),
+        tag: '',
+        taganimation: '.6s',
+        title: "The Perfect \n Destination for you",
+        titleanimation: '.9s',
+        btn1: `${constants?.site_content?.home_page?.banner?.btn1[this.props?.activeLang]}`,
+        btn1animation: '1.1s',
+        btn1url: '/gallery',
+        btn2: `${constants?.site_content?.home_page?.banner?.btn2[this.props?.activeLang]}`,
+        btn2animation: '1.3s',
+        btn2url: '/about',
+        btn3: `${constants?.site_content?.home_page?.banner?.btn3[this.props?.activeLang]}`,
+        btn3animation: '1.3s',
+        btn3url: '/',
+      },
+    ];
+
     return (
       <Slider className="banner-area banner-style-two" id="bannerSlider" {...settings}>
         {bannerPosts.map((item, i) => (

@@ -1,36 +1,39 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import ReactWOW from 'react-wow'
+import ReactWOW from 'react-wow';
+import { constants } from '../../../utils/constants';
 
 
-const data = [
-    {
-        image: require('../../../assets/img/experience/sustaniablity.webp'),
-        title: "Sustainability",
-        link: '/seychelles-eco-resort'
-    },
-    {
-        image: require('../../../assets/img/experience/overview.webp'),
-        title: "Overview of the Resort",
-        link: '/about'
-    },
-    {
-        image: require('../../../assets/img/experience/seychelles-min.webp'),
-        title: "About Seychelles",
-        link: '/about-seychelles'
-    },
-    {
-        image: require('../../../assets/img/experience/contact.jpg'),
-        title: "Contact \n Us",
-        link: '/contact'
-    },
-]
 
 class Experience extends Component {
     render() {
+        const data = [
+            {
+                image: require('../../../assets/img/experience/sustaniablity.webp'),
+                title: `${constants?.site_content?.home_page?.experience?.data_title1[this.props?.activeLang]}`,
+                link: '/seychelles-eco-resort'
+            },
+            {
+                image: require('../../../assets/img/experience/overview.webp'),
+                title: `${constants?.site_content?.home_page?.experience?.data_title2[this.props?.activeLang]}`,
+                link: '/about'
+            },
+            {
+                image: require('../../../assets/img/experience/seychelles-min.webp'),
+                title: `${constants?.site_content?.home_page?.experience?.data_title3[this.props?.activeLang]}`,
+                link: '/about-seychelles'
+            },
+            {
+                image: require('../../../assets/img/experience/contact.jpg'),
+                title: `${constants?.site_content?.home_page?.experience?.data_title4[this.props?.activeLang]}`,
+                link: '/contact'
+            },
+        ]
         return (
             <section className="experience-wrapper">
-                <h2 className="section-heading text-muted">Unlock the ultimate experience with us today</h2>
+                <h2 className="section-heading text-muted">
+                    {constants?.site_content?.home_page?.experience?.title[this.props?.activeLang]}
+                </h2>
                 <ReactWOW animation="fadeInLeft" data-wow-delay=".3s">
                     <div className="d-flex flex-row flex-wrap flex-sm-nowrap">
                         {

@@ -6,6 +6,9 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { Grid, Paper } from '@material-ui/core';
+import { constants } from '../../../utils/constants';
+
+
 const placeholderImage = require('./../../../assets/img/img-placeholder.png')
 
 
@@ -74,7 +77,9 @@ const ServiceTabs = (props) => {
 
     return (
         <div className="service-tabs-wrapper">
-            <h2 className="text-center section-heading text-muted">Premium Offerings</h2>
+            <h2 className="text-center section-heading text-muted">
+                {constants?.site_content?.home_page?.premium_offer?.title[props?.activeLang]}
+            </h2>
             <div className={classes.root}>
                 <Paper square elevation={0}>
                     <Tabs
@@ -109,7 +114,9 @@ const ServiceTabs = (props) => {
                                                     {x.short_description}
                                                 </h1>
                                                 <a href={`/${props?.activeLang}/${x.route}`}>
-                                                    <button className="main-btn btn-filled mt-4" >KNOW MORE</button>
+                                                    <button className="main-btn btn-filled mt-4" >
+                                                        {constants?.site_content?.home_page?.premium_offer?.btn_text[props?.activeLang]}
+                                                    </button>
                                                 </a>
                                             </div>
                                         </div>
