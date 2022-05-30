@@ -1,23 +1,15 @@
 import React, { Component } from "react";
-import { Helmet } from "react-helmet";
-
-import Headertwo from "../layouts/Headertwo";
-import Footertwo from "../layouts/Footertwo";
-import Mainbanner from "../sections/homepage-two/Banner";
-// import Bookingform from '../sections/homepage-two/Bookingform';
-import BottomNavigator from "../sections/homepage-two/BottomNavigator";
 import OtherRecommendations from "../sections/rooms-inner/dining-inner-grid-item";
-import Subscribe from "../sections/common/Subscribe";
 import RoomsInnerTitleBlock from "../sections/rooms-inner/main-text-block";
 import RoomAmenities from "../sections/rooms-inner/room-amentities";
 import RoomVR360 from "../sections/rooms-inner/room-360";
 import BookingFormVertical from "../sections/rooms-inner/BookingFormVertical";
-import BreadCrumb from "../layouts/BreadCrumb";
 import API from "../../utils/http";
-import FAQSection from "../sections/common/FAQSection";
 import PageLayout from "../layouts/PageLayout";
 import SEOTags from "../sections/common/SEOTags";
 import FAQInnerSection from "../sections/common/FAQInnerSection";
+import { constants } from "../../utils/constants";
+
 
 const faqList = [
   {
@@ -280,13 +272,6 @@ class RoomsInner extends Component {
           key={this.state.singleRoom?.post_name}
           activeLang={activeLang}
         >
-          {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'rooms-inner'} /> */}
-          {/*====== BANNER PART START ======*/}
-          {/* <Mainbanner title={this.state.singleRoom?.post_name} image={this.state.singleRoom?.images?.[this.state.singleRoom?.images?.length - 1]?.avatar} /> */}
-          {/*====== BANNER PART ENDS ======*/}
-          {/* BREADCRUMBS START */}
-          {/* <BreadCrumb items={breadcrumbItems} /> */}
-          {/* BREADCRUMBS END */}
           <div className="container">
             <div className="row">
               <div className="col-md-8 left-image-section">
@@ -294,11 +279,14 @@ class RoomsInner extends Component {
                 <RoomsInnerTitleBlock room={this.state.singleRoom} />
                 {/*====== TITLE END ======*/}
                 {/*====== ROOM GRID START ======*/}
-                <RoomAmenities />
+                <RoomAmenities
+                  activeLang={activeLang}
+                />
                 {/*====== ROOM GRID END ======*/}
                 {/*====== ROOM 360 GRID START ======*/}
                 <RoomVR360
                   image={this.state.singleRoom?.uploads?.find((x) => x["360_view"] === "1")?.avatar}
+                  activeLang={activeLang}
                 />
                 {/*====== ROOM 360 GRID END ======*/}
               </div>
@@ -310,7 +298,7 @@ class RoomsInner extends Component {
             </div>
             {/*====== OTHERS GRID START ======*/}
             <OtherRecommendations
-              title={"Other Rooms & Suites"}
+              title={constants?.site_content?.roomsInner_page?.other_recom?.title[activeLang]}
               data={this.state.othersData}
               activeLang={activeLang}
             />
@@ -319,13 +307,8 @@ class RoomsInner extends Component {
           <FAQInnerSection
             // faqList={faqList.filter((x) => x.route === this.state.singleRoom?.route)}
             faqList={faqList}
+            activeLang={activeLang}
           />
-
-          {/* <Subscribe /> */}
-
-          {/* <Footertwo /> */}
-
-          {/* <BottomNavigator /> */}
         </PageLayout>
       </div>
     );

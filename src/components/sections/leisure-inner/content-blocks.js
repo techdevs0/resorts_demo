@@ -1,11 +1,14 @@
 import React from 'react';
+import { constants } from '../../../utils/constants';
 
 
 const LeisureContentBlocks = (props) => {
   return (
     <div className="content-blocks">
       <div className="container">
-        <h2 className="text-center main-title">Other Resort Activities</h2>
+        <h2 className="text-center main-title">
+          {constants?.site_content?.leisureInner_page?.text_block?.title[props?.activeLang]}
+        </h2>
         {
           Object.entries(props.activities)?.map(([key, x]) => (
             <div className="content-item">

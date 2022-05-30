@@ -10,80 +10,10 @@ import OfferGrid from "../sections/offers/offer-grid";
 import BreadCrumb from "../layouts/BreadCrumb";
 import API from "../../utils/http";
 import Helmet from "react-helmet";
+import { constants } from "../../utils/constants";
 
 const bannerImage = require("./../../assets/img/offers/stay.jpg");
 
-const roomsData = [
-  {
-    title: "Spa for Two",
-    link: "",
-    linkText: "View More",
-    description:
-      "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require("./../../assets/img/offers/spa.jpg"),
-  },
-  {
-    title: "Long Stay with snorkeling",
-    link: "",
-    linkText: "View More",
-    description:
-      "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require("./../../assets/img/offers/snorkeling.jpg"),
-  },
-  {
-    title: "Long stay with fishing",
-    link: "",
-    linkText: "View More",
-    description:
-      "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require("./../../assets/img/offers/fishing.jpg"),
-  },
-  {
-    title: "Full board Package",
-    link: "",
-    linkText: "View More",
-    description:
-      "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require("./../../assets/img/offers/package.jpg"),
-  },
-  {
-    title: "Save 25% on long stays",
-    link: "",
-    linkText: "View More",
-    description:
-      "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require("./../../assets/img/offers/stay.jpg"),
-  },
-  {
-    title: "book early and save more",
-    link: "",
-    linkText: "View More",
-    description:
-      "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require("./../../assets/img/offers/book.jpg"),
-  },
-  {
-    title: "Honeymoon Offer",
-    link: "",
-    linkText: "View More",
-    description:
-      "Guests can hide themseleves away in these comfortable rooms located in the middle of a main buillding set to the rear of hotel.",
-    image: require("./../../assets/img/offers/honeymoon.jpg"),
-  },
-];
-
-const breadcrumbItems = [
-  {
-    text: "Fishermans Cove Resort",
-    link: "/",
-    isActive: false,
-  },
-  {
-    text: "Offers",
-    link: "/offers",
-    isActive: true,
-  },
-];
 
 class Offers extends Component {
   state = {
@@ -101,6 +31,19 @@ class Offers extends Component {
   }
   render() {
     const activeLang = localStorage.getItem('lang');
+
+    const breadcrumbItems = [
+      {
+        text: `${constants?.site_content?.about_page?.bread_crumb?.title[activeLang]}`,
+        link: "/",
+        isActive: false,
+      },
+      {
+        text: `${constants?.site_content?.offers_page?.bread_crumb?.title2[activeLang]}`,
+        link: "/offers",
+        isActive: true,
+      },
+    ];
     return (
       <div className="bg-white">
         {/* <SEOTags meta={this.state.meta} /> */}
@@ -119,7 +62,7 @@ class Offers extends Component {
           key={"offers"}
         />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Offers"} image={bannerImage}
+        <Mainbanner title={constants?.site_content?.offers_page?.bread_crumb?.title2[activeLang]} image={bannerImage}
           activeLang={activeLang}
         />
         {/*====== BANNER PART ENDS ======*/}
@@ -134,12 +77,16 @@ class Offers extends Component {
         />
         {/* BREADCRUMBS END */}
         {/*====== TITLE START ======*/}
-        <OfferTitleBlock />
+        <OfferTitleBlock
+          activeLang={activeLang}
+        />
         {/*====== TITLE END ======*/}
         {/*====== ROOM GRID START ======*/}
         <OfferGrid title={null} data={this.state.offers} />
         {/*====== ROOM GRID END ======*/}
-        <Subscribe />
+        <Subscribe
+          activeLang={activeLang}
+        />
 
         <Footertwo />
 

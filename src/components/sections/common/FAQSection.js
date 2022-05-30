@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AccordionContext, Card } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
+import { constants } from "../../../utils/constants";
 
 
 function ContextAwareToggle({ children, eventKey, callback }) {
@@ -34,13 +35,15 @@ const FAQSection = (props) => {
     return (
         <div className="faq-section-block my-3 my-sm-5">
             <div className="container">
-                <h4 className="text-center main-title mb-3 mb-sm-5">Frequently Asked Questions (F.A.Q's)</h4>
+                <h4 className="text-center main-title mb-3 mb-sm-5">
+                    {constants?.site_content?.dinning_page?.faq_sec?.title[props?.activeLang]}
+                </h4>
                 {/*{*/}
                 {/*    console.log(props)*/}
                 {/*}*/}
                 <Accordion>
                     {
-                        props.faqData?.map((x, i) => (
+                        props?.faqData?.map((x, i) => (
                             <Card>
                                 <Accordion.Toggle as={Card.Header} eventKey={`${i}`} style={{ cursor: 'pointer' }} >
                                     <ContextAwareToggle eventKey={`${i}`} >

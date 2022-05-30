@@ -316,17 +316,49 @@ class Bookingform extends Component {
                                 </div>
                             </div>
                             <div className="col-12 col-md-2">
-                                <button type="button" value={this.state.promo} onClick={this.handleSubmit}
-                                    className="main-btn btn-eden">
-                                    {constants?.site_content?.home_page?.banner?.btn3[activeLang]}
-                                </button>
+                                {
+                                    activeLang === "en" ?
+                                        <button type="button" value={this.state.promo} onClick={this.handleSubmit}
+                                            className="main-btn btn-eden">
+                                            Book Now
+                                            {/* {constants?.site_content?.home_page?.banner?.btn4[activeLang]} */}
+                                        </button>
+                                        : activeLang === "fr" ?
+                                            <button type="button" value={this.state.promo} onClick={this.handleSubmit}
+                                                className="main-btn btn-eden"
+                                                style={{ lineHeight: "normal" }}
+                                            >
+                                                <p>
+                                                    Reserve
+                                                </p>
+                                                <p>
+                                                    maintenant
+                                                </p>
+                                            </button>
+                                            : activeLang === "de" ?
+                                                <button type="button" value={this.state.promo} onClick={this.handleSubmit}
+                                                    className="main-btn btn-eden"
+                                                    style={{ lineHeight: "normal" }}
+                                                >
+                                                    <p>
+                                                        buchen
+                                                    </p>
+                                                    <p>
+                                                        Sie jetzt
+                                                    </p>
+                                                </button> :
+                                                <button type="button" value={this.state.promo} onClick={this.handleSubmit}
+                                                    className="main-btn btn-eden">
+                                                    Book Now
+                                                </button>
+                                }
                             </div>
                         </div>
                     </div>
                     {/* <button className="main-btn w-100 btn-eden d-block my-5 d-sm-none">Book Now</button> */}
 
                 </div>
-            </section>
+            </section >
 
         );
     }

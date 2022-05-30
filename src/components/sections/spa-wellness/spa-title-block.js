@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { constants } from '../../../utils/constants';
 
 const SpaWellnessTitleBlock = (props) => {
   return (
@@ -14,11 +15,13 @@ const SpaWellnessTitleBlock = (props) => {
             </p>
             <br />
             <p >You can avail the spa facilities at our sister resort, STORY Seychelles <br /> right next door. </p> */}
-            <div dangerouslySetInnerHTML={{__html: props.data?.section_content}}>
+            <div dangerouslySetInnerHTML={{ __html: props.data?.section_content }}>
 
             </div>
             <Link to="/files/Spa-Pricelist-2020-November.pdf" download target="_blank">
-              <button className="main-btn btn-eden">Download SPA Menu</button>
+              <button className="main-btn btn-eden">
+                {constants?.site_content?.spawellness_page?.text_block?.btn_txt[props?.activeLang]}
+              </button>
             </Link>
           </div>
           <div className="projects-item img-wrapper">

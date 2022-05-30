@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { constants } from '../../../utils/constants';
 
 const RoomGridItem = (props) => {
   return (
@@ -21,7 +22,7 @@ const RoomGridItem = (props) => {
             }
             }
           >
-            Check Availability
+            {constants?.site_content?.rooms_page?.room_grid?.btn_text[props?.activeLang]}
           </button>
         </div>
       </div>

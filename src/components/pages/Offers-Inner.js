@@ -9,7 +9,6 @@ import Subscribe from '../sections/common/Subscribe';
 import OffersInnerMainBlock from '../sections/offers-inner/offers-inner-block';
 import BreadCrumb from '../layouts/BreadCrumb';
 import Helmet from "react-helmet";
-const bannerImage = require('./../../assets/img/banner/Leisure-inner.jpg');
 
 
 const breadcrumbItems = [
@@ -88,7 +87,9 @@ class OffersInner extends Component {
         />
         {/*====== INTRO END ======*/}
 
-        <Subscribe />
+        <Subscribe
+          activeLang={activeLang}
+        />
 
         <Footertwo />
 

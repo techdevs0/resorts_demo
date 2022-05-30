@@ -1,10 +1,11 @@
 import React from 'react';
 import { Pannellum } from "pannellum-react";
+import { constants } from '../../../utils/constants';
 
 const RoomVR360 = (props) => {
   return (
     <div className="room-360-wrapper">
-      <h3>View in 360<sup>&deg;</sup> Panaroma</h3>
+      <h3> {constants?.site_content?.roomsInner_page?.view_360?.title[props?.activeLang]} </h3>
       {
         props.image &&
         <Pannellum

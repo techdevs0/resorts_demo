@@ -8,8 +8,9 @@ import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/picker
 import DateFnsUtils from '@date-io/date-fns';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { formattedDate } from '../../../utils/snippets.js';
+import { constants } from '../../../utils/constants';
 
-export default function WeddingFormDialog() {
+export default function WeddingFormDialog({ activeLang }) {
 
     const [open, setOpen] = React.useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -34,39 +35,39 @@ export default function WeddingFormDialog() {
     };
     const handleSubmit = () => {
         if (name === "" || name === null) {
-            alert('Please enter first name');
+            alert(`${constants?.site_content?.weddings_page?.wedding_booking_form?.name_error[activeLang]}`);
             return;
         }
         if (sr_name === "" || sr_name === null) {
-            alert('Please enter last name');
+            alert(`${constants?.site_content?.weddings_page?.wedding_booking_form?.Last_name_error[activeLang]}`);
             return;
         }
         if (email === "" || email === null) {
-            alert('Please enter email address');
+            alert(`${constants?.site_content?.weddings_page?.wedding_booking_form?.email_error[activeLang]}`);
             return;
         }
         if (address === "" || address === null) {
-            alert('Please enter address');
+            alert(`${constants?.site_content?.weddings_page?.wedding_booking_form?.address_error[activeLang]}`);
             return;
         }
         if (package_chosen === "" || package_chosen === null) {
-            alert('Please enter package_chosen');
+            alert(`${constants?.site_content?.weddings_page?.wedding_booking_form?.package_error[activeLang]}`);
             return;
         }
         if (remark === "" || remark === null) {
-            alert('Please enter remark');
+            alert(`${constants?.site_content?.weddings_page?.wedding_booking_form?.remark_error[activeLang]}`);
             return;
         }
         if (number_of_pax === "" || number_of_pax === null) {
-            alert('Please enter number of Pax');
+            alert(`${constants?.site_content?.weddings_page?.wedding_booking_form?.pax_error[activeLang]}`);
             return;
         }
         if (nationality === "" || nationality === null) {
-            alert('Please enter nationality');
+            alert(`${constants?.site_content?.weddings_page?.wedding_booking_form?.nationality_error[activeLang]}`);
             return;
         }
         if (contact_number === "" || contact_number === null) {
-            alert('Please enter contact number');
+            alert(`${constants?.site_content?.weddings_page?.wedding_booking_form?.numb_error[activeLang]}`);
             return;
         }
         setIsLoading(true);
@@ -88,7 +89,7 @@ export default function WeddingFormDialog() {
                 setPreferredDateOne(formattedDate(new Date(), 'yyyy-MM-dd'));
                 setPreferredDateTwo(formattedDate(new Date(), 'yyyy-MM-dd'));
                 setPaxAmount('');
-                alert('Message Submitted. We will get in touch shortly.');
+                alert(`${constants?.site_content?.weddings_page?.wedding_booking_form?.submit_text[activeLang]}`);
                 setOpen(false);
             }
         }).catch(error => {
@@ -100,11 +101,11 @@ export default function WeddingFormDialog() {
     return (
         <div className="wedding-form-wrapper mt-3 mt-sm-5">
             <button onClick={handleClickOpen} className="btn main-btn btn-eden">
-                Book Now
+                {constants?.site_content?.home_page?.banner?.btn3[activeLang]}
             </button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle className="py-2" id="form-dialog-title">
-                    Book Your Wedding Destination
+                    {constants?.site_content?.weddings_page?.wedding_booking_form?.form_title[activeLang]}
                 </DialogTitle>
                 <DialogContent className="pt-0">
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -115,30 +116,46 @@ export default function WeddingFormDialog() {
                                 <form action="#">
                                     <div className="row">
                                         <div className="col-md-6 my-2">
-                                            <input type="text" value={name} onChange={(e) => setFirstName(e.target.value)} placeholder="First Name" />
+                                            <input type="text" value={name} onChange={(e) => setFirstName(e.target.value)}
+                                                placeholder={constants?.site_content?.weddings_page?.wedding_booking_form?.first_name[activeLang]} />
                                         </div>
                                         <div className="col-md-6 my-2">
-                                            <input type="text" value={sr_name} onChange={(e) => setLastName(e.target.value)} placeholder="Last Name" />
+                                            <input type="text" value={sr_name} onChange={(e) => setLastName(e.target.value)}
+                                                placeholder={constants?.site_content?.weddings_page?.wedding_booking_form?.last_name[activeLang]} />
                                         </div>
                                         <div className="col-md-6 my-2">
-                                            <input type="text" value={nationality} onChange={(e) => setNationality(e.target.value)} placeholder="Nationality" />
+                                            <input type="text" value={nationality} onChange={(e) => setNationality(e.target.value)}
+                                                placeholder={constants?.site_content?.weddings_page?.wedding_booking_form?.nationality[activeLang]} />
                                         </div>
                                         <div className="col-md-6 my-2">
-                                            <input type="text" value={contact_number} onChange={(e) => setContactNumber(e.target.value)} placeholder="Contact Number" />
+                                            <input type="text" value={contact_number} onChange={(e) => setContactNumber(e.target.value)}
+                                                placeholder={constants?.site_content?.weddings_page?.wedding_booking_form?.contact_numb[activeLang]} />
                                         </div>
                                         <div className="col-md-6 my-2">
-                                            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+                                            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)}
+                                                placeholder={constants?.site_content?.weddings_page?.wedding_booking_form?.email[activeLang]} />
                                         </div>
                                         <div className="col-md-6 my-2">
-                                            <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Current Address" />
+                                            <input type="text" value={address} onChange={(e) => setAddress(e.target.value)}
+                                                placeholder={constants?.site_content?.weddings_page?.wedding_booking_form?.address[activeLang]} />
                                         </div>
                                         <div className="col-md-6 my-2">
                                             <select value={package_chosen} onChange={(e) => setPackage(e.target.value)}>
-                                                <option value="">Choose a Package</option>
-                                                <option value="pontoon">Seaside Pontoon Wedding</option>
-                                                <option value="special">Fishermans Cove Resort Special</option>
-                                                <option value="barefoot">Barefoot Wedding</option>
-                                                <option value="vows">Renewal of your wedding vows</option>
+                                                <option value="">
+                                                    {constants?.site_content?.weddings_page?.wedding_booking_form?.choose_pkg[activeLang]}
+                                                </option>
+                                                <option value="pontoon">
+                                                    {constants?.site_content?.weddings_page?.wedding_booking_form?.choose_pkg1[activeLang]}
+                                                </option>
+                                                <option value="special">
+                                                    {constants?.site_content?.weddings_page?.wedding_booking_form?.choose_pkg2[activeLang]}
+                                                </option>
+                                                <option value="barefoot">
+                                                    {constants?.site_content?.weddings_page?.wedding_booking_form?.choose_pkg3[activeLang]}
+                                                </option>
+                                                <option value="vows">
+                                                    {constants?.site_content?.weddings_page?.wedding_booking_form?.choose_pkg4[activeLang]}
+                                                </option>
                                             </select>
                                         </div>
                                         <div className="col-md-6 my-2">
@@ -146,7 +163,7 @@ export default function WeddingFormDialog() {
                                                 if (e.target.value > -1) {
                                                     setPaxAmount(e.target.value)
                                                 }
-                                            }} placeholder="Number of Pax" />
+                                            }} placeholder={constants?.site_content?.weddings_page?.wedding_booking_form?.numb_pax[activeLang]} />
                                         </div>
                                         <div className="col-md-6 my-2">
                                             <KeyboardDatePicker
@@ -156,10 +173,10 @@ export default function WeddingFormDialog() {
                                                 margin="none"
                                                 id="date-picker-inline"
                                                 value={pr_date_1}
-                                                placeholder="Preferred Date 1"
+                                                placeholder={constants?.site_content?.weddings_page?.wedding_booking_form?.date1[activeLang]}
                                                 onChange={(date => setPreferredDateOne(date))}
                                                 KeyboardButtonProps={{
-                                                    'aria-label': 'change date',
+                                                    'aria-label': `${constants?.site_content?.weddings_page?.wedding_booking_form?.change_date[activeLang]}`,
                                                 }}
                                             />
                                         </div>
@@ -171,22 +188,25 @@ export default function WeddingFormDialog() {
                                                 margin="none"
                                                 id="date-picker-inline"
                                                 value={pr_date_2}
-                                                placeholder="Preferred Date 2"
+                                                placeholder={constants?.site_content?.weddings_page?.wedding_booking_form?.date2[activeLang]}
                                                 onChange={(date => setPreferredDateTwo(date))}
                                                 KeyboardButtonProps={{
-                                                    'aria-label': 'change date',
+                                                    'aria-label': `${constants?.site_content?.weddings_page?.wedding_booking_form?.change_date[activeLang]}`,
                                                 }}
                                             />
                                         </div>
                                         <div className="col-md-12 mt-2">
-                                            <textarea type="text" value={remark} onChange={(e) => setRemarks(e.target.value)} placeholder="Write a Remark..." rows={3} >
+                                            <textarea type="text" value={remark} onChange={(e) => setRemarks(e.target.value)}
+                                                placeholder={constants?.site_content?.weddings_page?.wedding_booking_form?.remark[activeLang]} rows={3} >
 
                                             </textarea>
                                         </div>
                                         <div className="col-12 text-center py-2 my-2">
                                             {
                                                 isLoading ? <CircularProgress /> :
-                                                    <button type="button" onClick={handleSubmit} className="main-btn btn-filled btn-eden">Submit</button>
+                                                    <button type="button" onClick={handleSubmit} className="main-btn btn-filled btn-eden">
+                                                        {constants?.site_content?.weddings_page?.wedding_booking_form?.btn_text[activeLang]}
+                                                    </button>
                                             }
                                         </div>
                                     </div>

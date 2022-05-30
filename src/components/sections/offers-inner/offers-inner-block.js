@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { constants } from '../../../utils/constants';
 
 const OffersInnerMainBlock = (props) => {
   return (
@@ -26,7 +27,9 @@ const OffersInnerMainBlock = (props) => {
               </div>
             </div> */}
             <div className="reservations-block mt-3">
-              <p>For Reservations</p>
+              <p>
+                {constants?.site_content?.offersInner_page?.reservation?.title[props?.activeLang]}
+              </p>
               <div className="contact-links">
                 <div>
                   <i className="fas fa-phone pr-2"></i>
@@ -45,14 +48,14 @@ const OffersInnerMainBlock = (props) => {
 
                 }}
               >
-                Book Now
+                {constants?.site_content?.home_page?.banner?.btn3[props?.activeLang]}
               </button>
             </div>
           </div>
         </div>
         <div className="back-to text-center mt-4">
           <Link to={`${props?.activeLang}/offers`} className="btn btn-eden main-btn mx-auto d-inline-block">
-            Back to all offers
+            {constants?.site_content?.offersInner_page?.reservation?.btn_txt[props?.activeLang]}
           </Link>
         </div>
       </div>
