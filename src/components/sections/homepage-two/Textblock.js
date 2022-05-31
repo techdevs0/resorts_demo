@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ReactWOW from 'react-wow'
+import ReactWOW from 'react-wow';
+import { constants } from '../../../utils/constants';
+
 
 class Textblock extends Component {
     render() {
@@ -18,19 +20,19 @@ class Textblock extends Component {
                                 <div className="col-lg-6 col-md-8 col-sm-10">
                                     <div className="block-text h-100 d-flex flex-column justify-content-between align-items-start">
                                         <div className="section-title mb-10">
-                                            <h1>Best Resort in Mahé Seychelles</h1>
+                                            <h1>
+                                                {constants?.site_content?.home_page?.text_block?.title[this.props?.activeLang]}
+                                            </h1>
                                         </div>
                                         <p className="text-justify my-1">
-                                            Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fishermans Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. This tropical escape sets the scene for explorers, romantic couples, and families to an inherited paradise.
-                                        <br />
+                                            {constants?.site_content?.home_page?.text_block?.subtitle[this.props?.activeLang]}
                                             <br />
-                                        Offering countless experiences with outstanding services throughout your discovery,
-                                        Fishermans Cove Resort is one of the best resorts in Seychelles. Restaurants and Bars allow you
-                                        to savor scrumptious flavors and aromas while sipping exotic cocktails and enjoying views
-                                        of the Indian Ocean’s most spectacular sunset. It offers two restaurants and two bars
-                                        giving guests ample options to choose from.
+                                            <br />
+                                            {constants?.site_content?.home_page?.text_block?.detail[this.props?.activeLang]}
                                         </p>
-                                        <Link to="/rooms-suites-seychelles" className="main-btn btn-nile mt-40">Learn More</Link>
+                                        <Link to={`/${this.props?.activeLang}/rooms-suites-seychelles`} className="main-btn btn-nile mt-40">
+                                            {constants?.site_content?.home_page?.banner?.btn2[this.props?.activeLang]}
+                                        </Link>
                                     </div>
                                 </div>
                             </ReactWOW>

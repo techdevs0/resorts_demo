@@ -11,23 +11,9 @@ import SustainProjectsBlock from '../sections/sustainability/projects-block';
 import SustainEngeryBlock from '../sections/sustainability/energy-conservation';
 import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
-import Helmet from "react-helmet";
 import SEOTags from "../sections/common/SEOTags";
+import { constants } from '../../utils/constants';
 
-const bannerImage = require('./../../assets/img/banner/Sustainability-banner.jpg');
-
-const breadcrumbItems = [
-  {
-    text: 'Fishermans Cove Resort',
-    link: '/',
-    isActive: false,
-  },
-  {
-    text: 'Sustainability',
-    link: '/seychelles-eco-resort',
-    isActive: true,
-  },
-]
 
 const pageId = 39;
 
@@ -52,12 +38,12 @@ class Sustainability extends Component {
         }
       })
     })
-        .then(() => {
-            API.get(`/meta/${pageId}`).then(response => {
-                this.setState({ meta: response.data });
-                console.log(response.data);
-            })
+      .then(() => {
+        API.get(`/meta/${pageId}`).then(response => {
+          this.setState({ meta: response.data });
+          console.log(response.data);
         })
+      })
       // .then(() => {
       //   API.get(`/all_sections/${pageId}`).then(response => {
 
@@ -72,31 +58,44 @@ class Sustainability extends Component {
       })
   }
   render() {
+    const activeLang = localStorage.getItem('lang');
+
+    const breadcrumbItems = [
+      {
+        text: `${constants?.site_content?.about_page?.bread_crumb?.title[activeLang]}`,
+        link: '/',
+        isActive: false,
+      },
+      {
+        text: `${constants?.site_content?.sustainbility_page?.bread_crumb?.title2[activeLang]}`,
+        link: '/seychelles-eco-resort',
+        isActive: true,
+      },
+    ]
     return (
       <div className="bg-white sustainability-wrapper">
-          <SEOTags meta={this.state.meta} />
+        <SEOTags meta={this.state.meta} />
 
-          {/*<Helmet>*/}
-          {/*    <title>*/}
-          {/*        Sustainability | An Eco Friendly Resort in Seychelles*/}
-          {/*    </title>*/}
-          {/*    <meta*/}
-          {/*        name="description"*/}
-          {/*        content="Fishermans Cove Resort is an eco friendly resort built upon the principle of protecting the environment and moving forward towards a better and sustainable future."*/}
-          {/*    />*/}
-          {/*</Helmet>*/}
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'sustainability'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={"Sustainability"} image={this.state.banner?.section_avatar} />
+        <Mainbanner title={constants?.site_content?.sustainbility_page?.bread_crumb?.title2[activeLang]} image={this.state.banner?.section_avatar}
+          activeLang={activeLang}
+        />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
+        <Bookingform
+          activeLang={activeLang}
+        />
         {/*====== BOOKING FORM END ======*/}
         {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems} />
+        <BreadCrumb items={breadcrumbItems}
+          activeLang={activeLang}
+        />
         {/* BREADCRUMBS END */}
         {/*====== INTRO START ======*/}
-        <SustainIntroBlock data={this.state.activities?.intro} />
+        <SustainIntroBlock data={this.state.activities?.intro}
+          activeLang={activeLang}
+        />
         {/*====== INTRO END ======*/}
         {/*====== PILLARS START ======*/}
         <SustainPillarsBlock data={this.state.activities?.pillars} />
@@ -107,7 +106,9 @@ class Sustainability extends Component {
         <SustainEngeryBlock data={this.state.activities?.energy} />
         {/*====== PROJECTS SLIDER END ======*/}
 
-        <Subscribe />
+        <Subscribe
+          activeLang={activeLang}
+        />
 
         <Footertwo />
 

@@ -17,6 +17,8 @@ import bannerimg1 from "../../assets/img/banner/home.jpg";
 import SEOTags from "../sections/common/SEOTags";
 import PopUp from "../popup/PopUp";
 
+import { constants } from "../../utils/constants";
+
 const pageId = 93;
 
 class Hometwo extends Component {
@@ -37,9 +39,6 @@ class Hometwo extends Component {
   }
 
   componentDidMount() {
-    const lang = localStorage.getItem('lang');
-
-    console.log("activelang", lang)
     try {
       API.get("/premium_offers").then((response) => {
         this.setState({ premiumOffers: response.data });
@@ -71,6 +70,8 @@ class Hometwo extends Component {
     }
   }
   render() {
+    const activeLang = localStorage.getItem('lang');
+
     return (
       <div>
         <SEOTags meta={this.state.meta} />
@@ -83,28 +84,41 @@ class Hometwo extends Component {
         {/* <LazyLoad> */}
         <Mainbanner
           isMain={true}
-          title={"The Perfect Destination for You"}
+          title={constants?.site_content?.home_page?.banner?.title[activeLang]}
           image={bannerimg1}
+          activeLang={activeLang}
         />
         {/* </LazyLoad> */}
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
+        <Bookingform
+          activeLang={activeLang}
+        />
         {/*====== BOOKING FORM END ======*/}
         {/*====== ROOM SLIDER START ======*/}
-        <RoomSlider data={this.state.roomsData} />
+        <RoomSlider data={this.state.roomsData}
+          activeLang={activeLang}
+        />
 
         {/*====== ROOM SLIDER END ======*/}
         {/*====== TEXT BLOCK START ======*/}
-        <Textblock />
+        <Textblock
+          activeLang={activeLang}
+        />
         {/*====== TEXT BLOCK END ======*/}
         {/*====== SERVICES TABS START ======*/}
-        <ServiceTabs data={this.state.premiumOffers} />
+        <ServiceTabs data={this.state.premiumOffers}
+          activeLang={activeLang}
+        />
         {/*====== SERVICES TABS END ======*/}
         {/*====== TESTIMONIAL SLIDER START ======*/}
-        <GuestReviews />
+        <GuestReviews
+          activeLang={activeLang}
+        />
         {/*====== EXPERIENCE START ======*/}
-        <Experience />
+        <Experience
+          activeLang={activeLang}
+        />
         {/*====== EXPERIENCE END ======*/}
         <div style={{ display: "none" }}>
           <h3>

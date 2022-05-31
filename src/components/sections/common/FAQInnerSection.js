@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AccordionContext, Card } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
+import { constants } from '../../../utils/constants';
 import faqList from '../../pages/Rooms-Inner';
 
 const pageurl = window.location.pathname;
@@ -25,24 +26,26 @@ function ContextAwareToggle({ children, eventKey, callback }) {
         </div>
     );
 }
-    
+
 
 const FAQInnerSection = (props) => {
 
-     const [currentIndex, setIndex] = useState(0);
+    const [currentIndex, setIndex] = useState(0);
 
-     const setCurrentIndex = (index) => {
-       setIndex(index);
-     }
+    const setCurrentIndex = (index) => {
+        setIndex(index);
+    }
 
     return (
         <div className="faq-section-block my-3 my-sm-5">
             <div className="container">
-                <h4 className="text-center main-title mb-3 mb-sm-5">Frequently Asked Questions (F.A.Q's)</h4>
+                <h4 className="text-center main-title mb-3 mb-sm-5">
+                    {constants?.site_content?.dinning_page?.faq_sec?.title[props?.activeLang]}
+                </h4>
                 <Accordion>
                     {
-                        props.faqList?.map((x, i) => (
-                            pageRout[2] === x.route &&
+                        props?.faqList?.map((x, i) => (
+                            pageRout[3] === x.route &&
                             <Card>
                                 <Accordion.Toggle as={Card.Header} eventKey={`${i}`} style={{ cursor: 'pointer' }} >
                                     <ContextAwareToggle eventKey={`${i}`} >

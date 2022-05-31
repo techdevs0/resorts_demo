@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DatePickerComponent from "../../layouts/DatePickerComponent";
+import { constants } from '../../../utils/constants';
+
 import DateFnsUtils from '@date-io/date-fns';
 const year = `${new Date().getFullYear()}`;
 const month = (new Date().getMonth() + 1).toString().length === 1 ? `0${new Date().getMonth() + 1}` : `${new Date().getMonth() + 1}`;
@@ -133,19 +135,22 @@ class BookingFormVertical extends Component {
   }
 
   render() {
+    const activeLang = localStorage.getItem('lang');
     const { rooms, childs, adults, showCountPopup, showPromoPopup, openCheckOut, openCheckIn, checkIn, checkOut, checkOutMin } = this.state;
     return (
       <section className="booking-form-vertical container d-none d-sm-block">
         <div className="container">
           <div className="booking-form-inner">
-            <h4 className="text-muted mb-4">Check Availability</h4>
+            <h4 className="text-muted mb-4">
+              {constants?.site_content?.rooms_page?.room_grid?.btn_text[activeLang]}
+            </h4>
             <div className="row">
               <div className="col-12 col-md-12">
                 <div className="dates-group">
                   <DatePickerComponent
                     id={"date-picker-inline-1"}
                     value={checkIn}
-                    placeholder={"Check In"}
+                    placeholder={constants?.site_content?.home_page?.booking_form?.check_in[activeLang]}
                     open={openCheckIn}
                     onOpen={() => {
                       this.setState({
@@ -163,7 +168,7 @@ class BookingFormVertical extends Component {
                   <DatePickerComponent
                     id={"date-picker-inline-1"}
                     value={checkOut}
-                    placeholder={"Check Out"}
+                    placeholder={constants?.site_content?.home_page?.booking_form?.check_out[activeLang]}
                     disablePast={true}
                     open={openCheckOut}
                     minDate={checkOutMin}
@@ -196,9 +201,9 @@ class BookingFormVertical extends Component {
                   }
                 >
                   <div className="count-group">
-                    <p>{`${rooms} Room${rooms > 1 ? "s" : ""}`}</p>
-                    <p>{`${adults} Adult${adults > 1 ? "s" : ""}`}</p>
-                    <p>{`${childs} Child${childs > 1 ? "s" : ""}`}</p>
+                    <p>{`${rooms} ${constants?.site_content?.home_page?.booking_form?.room[activeLang]}${rooms > 1 ? "s" : ""}`}</p>
+                    <p>{`${adults} ${constants?.site_content?.home_page?.booking_form?.adult[activeLang]}${adults > 1 ? "s" : ""}`}</p>
+                    <p>{`${childs} ${constants?.site_content?.home_page?.booking_form?.child[activeLang]}${childs > 1 ? "s" : ""}`}</p>
                   </div>
                   <div
                     className="room-details-popup"
@@ -206,7 +211,7 @@ class BookingFormVertical extends Component {
                     style={{ display: showCountPopup ? "block" : "none" }}
                   >
                     <div className="room_item_box quantity">
-                      <label>Rooms</label>
+                      <label>{constants?.site_content?.home_page?.booking_form?.rooms[activeLang]}</label>
                       <div className="quantity-box">
                         <div
                           className="quantity-button quantity-down minus empty"
@@ -239,7 +244,7 @@ class BookingFormVertical extends Component {
                       </div>
                     </div>
                     <div className="room_item_box quantity">
-                      <label>Adults</label>
+                      <label>{constants?.site_content?.home_page?.booking_form?.adults[activeLang]}</label>
                       <div className="quantity-box">
                         <div
                           className="quantity-button quantity-down minus empty"
@@ -272,7 +277,7 @@ class BookingFormVertical extends Component {
                       </div>
                     </div>
                     <div className="room_item_box quantity">
-                      <label>Children</label>
+                      <label>{constants?.site_content?.home_page?.booking_form?.children[activeLang]}</label>
                       <div className="quantity-box">
                         <div
                           className="quantity-button quantity-down minus empty"
@@ -318,7 +323,7 @@ class BookingFormVertical extends Component {
                   }
                 >
                   <div className="promo-codes">
-                    <p>Promo Codes</p>
+                    <p>{constants?.site_content?.home_page?.booking_form?.promo_code[activeLang]}</p>
                   </div>
                   <div
                     className="promo-popup"
@@ -326,7 +331,7 @@ class BookingFormVertical extends Component {
                     style={{ display: showPromoPopup ? "flex" : "none" }}
                   >
                     <div className="code-item">
-                      <label>Group Code/Promotion Code</label>
+                      <label>{constants?.site_content?.home_page?.booking_form?.group_code[activeLang]}</label>
                       <input
                         type="text"
                         value={this.state.promo}
@@ -337,7 +342,7 @@ class BookingFormVertical extends Component {
                       />
                     </div>
                     <div className="code-item">
-                      <label>Travel Industry ID</label>
+                      <label>{constants?.site_content?.home_page?.booking_form?.ind_id[activeLang]}</label>
                       <input type="text" className="form-control" />
                     </div>
                   </div>
@@ -349,7 +354,7 @@ class BookingFormVertical extends Component {
                   onClick={this.handleSubmit}
                   className="main-btn btn-eden"
                 >
-                  Book Now
+                  {constants?.site_content?.home_page?.banner?.btn3[activeLang]}
                 </button>
               </div>
             </div>

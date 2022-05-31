@@ -11,7 +11,7 @@ const OtherRecommendations = (props) => {
             <div className="col-12 col-md-4 no-gutters px-2">
               <div
                 className="grid-item"
-                onClick={() => props.history.push("/rooms/" + x.route)}
+                onClick={() => props.history.push(`/${props?.activeLang}/rooms/${x.route}`)}
               >
                 <div
                   className="rooms-title"

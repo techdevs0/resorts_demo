@@ -1,29 +1,19 @@
 import React, { Component } from "react";
-import Headertwo from "../layouts/Headertwo";
-import Footertwo from "../layouts/Footertwo";
-import Mainbanner from "../sections/homepage-two/Banner";
-import Bookingform from "../sections/homepage-two/Bookingform";
-import BottomNavigator from "../sections/homepage-two/BottomNavigator";
-// import DiningOfferSlider from '../sections/dining/dining-offer-sldier';
 import DiningInnerTitleBlock from "../sections/dining-inner/main-text-block";
 import DiningInnerInfo from "../sections/dining-inner/dining-grid";
 import OtherRecommendations from "../sections/dining-inner/dining-inner-grid-item";
-import Subscribe from "../sections/common/Subscribe";
-import BreadCrumb from "../layouts/BreadCrumb";
 import API from "../../utils/http";
-import FAQSection from "../sections/common/FAQSection";
 import PageLayout from "../layouts/PageLayout";
 import SEOTags from "../sections/common/SEOTags";
 import FAQInnerSection from "../sections/common/FAQInnerSection";
-//import "../../assets/img/dinning/FCR Wine List UPDATED.pdf";
 import SunsetBarBeverageMenu from '../../assets/img/dinning/FCR Wine List UPDATED.pdf';
 import ParisSeychellesMainMenu from '../../assets/img/dinning/Paris Seychelles Menu Updated.pdf';
 import LeCocolobaBarDrinksMenu from '../../assets/img/dinning/Le Cocoloba Bar Drinks Menu.pdf';
 import LeCocolobaFoodMenu from '../../assets/img/dinning/Le Cocoloba Food Menu.pdf';
-// import LeCardinalBreakfastMenu from '../../assets/img/dinning/Le Cardinal Breakfast Menu.pdf';
 import LeCardinalBreakfastMenu from '../../assets/img/dinning/Le Cardinal Breakfast Menu.pdf';
 import FCRWineListUPDATED from '../../assets/img/dinning/FCR Wine List UPDATED.pdf';
 import FCRInRoomDiningMenuWITHPRICING from '../../assets/img/dinning/FCR In-Room Dining 03-24-2022.pdf';
+import { constants } from "../../utils/constants";
 
 
 const faqList = [
@@ -277,6 +267,7 @@ class DiningInner extends Component {
     }
   }
   render() {
+    const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white dining-inner-wrapper">
         <SEOTags meta={this.state.singleHotel?.post_metas?.[0]} />
@@ -288,17 +279,8 @@ class DiningInner extends Component {
           }}
           breadCrumb={{ items: breadcrumbItems }}
           key={this.state.singleHotel?.post_name}
+          activeLang={activeLang}
         >
-          {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'dining-inner'} /> */}
-          {/*====== BANNER PART START ======*/}
-          {/* <Mainbanner title={this.state.singleHotel?.post_name} image={this.state.singleHotel?.banner_img} /> */}
-          {/*====== BANNER PART ENDS ======*/}
-          {/*====== BOOKING FORM START ======*/}
-          {/* <Bookingform /> */}
-          {/*====== BOOKING FORM END ======*/}
-          {/* BREADCRUMBS START */}
-          {/* <BreadCrumb items={breadcrumbItems} /> */}
-          {/* BREADCRUMBS END */}
           {/*====== TITLE START ======*/}
           <DiningInnerTitleBlock
             dining={this.state.singleHotel}
@@ -313,6 +295,7 @@ class DiningInner extends Component {
             opening_hours={this.state.singleHotel?.section_opening_hours}
             dress_code={this.state.singleHotel?.section_dress_code}
             menuPdf={menuPdf}
+            activeLang={activeLang}
 
           // timingSection={this.state.pageSections?.find(
           //   (x) => x.section_slug === "timings"
@@ -321,27 +304,21 @@ class DiningInner extends Component {
           //   (x) => x.section_slug === "dress"
           // )}
           />
-          {/*====== ROOM GRID END ======*/}
-          {/*====== SUITES GRID START ======*/}
-          {/* <DiningOfferSlider title={"Offers"} data={offersData} /> */}
-          {/*====== SUITES GRID END ======*/}
+
           {/*====== OTHERS GRID START ======*/}
           <OtherRecommendations
-            title={"Other Restaurants & Bars"}
+            title={constants?.site_content?.dinningInner_page?.other_recom?.title[activeLang]}
             data={this.state.othersData}
+            activeLang={activeLang}
           />
           {/*====== OTHERS GRID END ======*/}
 
           <FAQInnerSection
             // faqList={faqList.filter((x) => x.route == this.state.singleHotel?.route)}
             faqList={faqList}
+            activeLang={activeLang}
           />
 
-          {/* <Subscribe /> */}
-
-          {/* <Footertwo /> */}
-
-          {/* <BottomNavigator /> */}
         </PageLayout>
       </div>
     );

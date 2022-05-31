@@ -1,4 +1,5 @@
 import React from 'react';
+import { constants } from '../../../utils/constants';
 //import PdfSunsetBar from '../../../assets/img/dinning/FCR Wine List UPDATED.pdf';
 
 const currentPage = window.location.pathname.split("/");
@@ -13,7 +14,9 @@ const DiningInnerInfo = (props) => {
               {/* <div className="image-wrapper">
                 <img src={require('./../../../assets/img/travellers-choice.png')} alt="" />
               </div> */}
-              <p className="info-title">Dress Code</p>
+              <p className="info-title">
+                {constants?.site_content?.dinningInner_page?.diningInner_Info?.dress_code[props?.activeLang]}
+              </p>
               <div dangerouslySetInnerHTML={{ __html: props.dress_code }}>
 
               </div>
@@ -26,7 +29,9 @@ const DiningInnerInfo = (props) => {
               {/* <div className="image-wrapper">
                 <img src={require('./../../../assets/img/travellers-choice.png')} alt="" />
               </div> */}
-              <p className="info-title">Opening Hours</p>
+              <p className="info-title">
+                {constants?.site_content?.dinningInner_page?.diningInner_Info?.opening_hours[props?.activeLang]}
+              </p>
               <div dangerouslySetInnerHTML={{ __html: props.opening_hours }}>
 
               </div>
@@ -40,16 +45,24 @@ const DiningInnerInfo = (props) => {
               x.route === currentPage[2] &&
               <div className="menu-buttons" key={i}>
                 <a href={x.ourMainMenu} className={x.ourMainMenu === "" ? "pdf_btn_hide" : ""} without rel="noopener noreferrer" target="_blank">
-                  <button className="main-btn btn-filled">Download our Menu</button>
+                  <button className="main-btn btn-filled">
+                    {constants?.site_content?.dinningInner_page?.diningInner_Info?.our_menu[props?.activeLang]}
+                  </button>
                 </a>
                 <a href={x.beverageMenu} className={x.beverageMenu === "" ? "pdf_btn_hide" : ""} without rel="noopener noreferrer" target="_blank">
-                  <button className="main-btn btn-filled">Download Beverage Menu</button>
+                  <button className="main-btn btn-filled">
+                    {constants?.site_content?.dinningInner_page?.diningInner_Info?.beverage_menu[props?.activeLang]}
+                  </button>
                 </a>
                 <a href={x.wineList} className={x.wineList === "" ? "pdf_btn_hide" : ""} without rel="noopener noreferrer" target="_blank">
-                  <button className="main-btn btn-filled">Download wine list</button>
+                  <button className="main-btn btn-filled">
+                    {constants?.site_content?.dinningInner_page?.diningInner_Info?.Wine_list[props?.activeLang]}
+                  </button>
                 </a>
                 <a href={x.inRoomDining} className={x.inRoomDining === "" ? "pdf_btn_hide" : ""} without rel="noopener noreferrer" target="_blank">
-                  <button className="main-btn btn-filled">Download In Room Dining</button>
+                  <button className="main-btn btn-filled">
+                    {constants?.site_content?.dinningInner_page?.diningInner_Info?.room_dining[props?.activeLang]}
+                  </button>
                 </a>
               </div>
             ))

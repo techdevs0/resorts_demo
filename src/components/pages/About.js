@@ -1,60 +1,14 @@
 import React, { Component } from 'react'
-import Headertwo from '../layouts/Headertwo';
-import Footertwo from '../layouts/Footertwo';
-import Mainbanner from '../sections/homepage-two/Banner';
-import Bookingform from '../sections/homepage-two/Bookingform';
-import BottomNavigator from '../sections/homepage-two/BottomNavigator';
 import AboutTitleBlock from '../sections/about-us/main-text-block';
 import AboutServices from '../sections/about-us/about-services';
 import AboutSecondaryTextBlock from '../sections/about-us/secondary-text-block';
 import AboutOfferSlider from '../sections/about-us/about-offer-slider';
-import Subscribe from '../sections/common/Subscribe';
-import BreadCrumb from '../layouts/BreadCrumb';
 import API from '../../utils/http';
 import PageLayout from '../layouts/PageLayout';
-import { Helmet } from "react-helmet";
 import SEOTags from "../sections/common/SEOTags";
+import { constants } from "../../utils/constants";
 
-const bannerImage = require('./../../assets/img/banner/about.jpg');
 
-const roomsData = [
-  {
-    title: "Coral Cove",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/about/coral.jpg'),
-  },
-  {
-    title: "Snorkeling",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/about/snorkeling.jpg'),
-  },
-  {
-    title: "Unlock the sea",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/about/sea.jpg'),
-  },
-  {
-    title: "Island Hopping",
-    link: "",
-    linkText: "View More",
-    image: require('./../../assets/img/about/island.jpg'),
-  },
-]
-const breadcrumbItems = [
-  {
-    text: 'Fishermans Cove Resort',
-    link: '/',
-    isActive: false,
-  },
-  {
-    text: 'About Us',
-    link: '/about',
-    isActive: true,
-  },
-]
 const pageId = 40;
 
 class AboutUs extends Component {
@@ -103,53 +57,49 @@ class AboutUs extends Component {
   }
 
   render() {
+    const activeLang = localStorage.getItem('lang');
+
+    const breadcrumbItems = [
+      {
+        text: `${constants?.site_content?.about_page?.bread_crumb?.title[activeLang]}`,
+        link: '/',
+        isActive: false,
+      },
+      {
+        text: `${constants?.site_content?.about_page?.bread_crumb?.title2[activeLang]}`,
+        link: '/about',
+        isActive: true,
+      },
+    ];
+
     return (
       <div className="bg-white about-us-wrapper">
         <SEOTags meta={this.state.meta} />
-
-        {/*<Helmet>*/}
-        {/*  <title>*/}
-        {/*    About | Fishermans Cove Resort*/}
-        {/*    /!*Best Beach Resorts in Seychelles | Fishermans Cove Resort*!/*/}
-        {/*  </title>*/}
-        {/*  <meta*/}
-        {/*      name="description"*/}
-        {/*      content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"*/}
-        {/*  />*/}
-        {/*</Helmet>*/}
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
           breadCrumb={{ items: breadcrumbItems }}
+          activeLang={activeLang}
         >
-          {/* <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'about'} /> */}
-          {/*====== BANNER PART START ======*/}
-          {/* <Mainbanner title={"About Us"} image={bannerImage} /> */}
-          {/*====== BANNER PART ENDS ======*/}
-          {/*====== BOOKING FORM START ======*/}
-          {/* <Bookingform /> */}
-          {/*====== BOOKING FORM END ======*/}
-          {/* BREADCRUMBS START */}
-          {/* <BreadCrumb items={breadcrumbItems} /> */}
-          {/* BREADCRUMBS END */}
-          {/*====== TITLE START ======*/}
-          <AboutTitleBlock data={this.state.sections?.intro} lang={this.props.lang} />
+          <AboutTitleBlock data={this.state.sections?.intro}
+          />
           {/*====== TITLE END ======*/}
+
           {/*====== SERVICES START ======*/}
-          <AboutServices data={roomsData} />
+          <AboutServices
+            activeLang={activeLang}
+          />
           {/*====== SERVICES END ======*/}
           {/*====== SECONDARY START ======*/}
-          <AboutSecondaryTextBlock data={this.state.sections?.dine} />
+          <AboutSecondaryTextBlock data={this.state.sections?.dine}
+            activeLang={activeLang}
+          />
           {/*====== SECONDARY END ======*/}
           {/*====== ABOUT SLIDER START ======*/}
-          <AboutOfferSlider data={this.state.premiumOffers} title={"Explore Fishermans Cove Resort Premium Offerings"} />
-          {/*====== ABOUT SLIDER END ======*/}
+          <AboutOfferSlider data={this.state.premiumOffers} title={constants?.site_content?.about_page?.about_offer?.title[activeLang]}
+            activeLang={activeLang}
+          />
 
-          {/* <Subscribe />
-
-        <Footertwo />
-
-        <BottomNavigator /> */}
         </PageLayout>
       </div>
     );

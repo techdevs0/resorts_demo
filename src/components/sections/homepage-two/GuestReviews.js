@@ -1,47 +1,48 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import ReactStars from "react-rating-stars-component";
+import { constants } from '../../../utils/constants';
+
 
 const avatar1 = require("../../../assets/img/testimonial/Philipp.jpg");
 const avatar2 = require("../../../assets/img/testimonial/John_Hind.jpg");
 const avatar3 = require("../../../assets/img/testimonial/Veronique.jpg");
 
-const reviews = [
-    {
-        name: "Philipp",
-        rating: 5,
-        title: "Nice - relaxed - small",
-        review: "Had to find a new hotel since the original booking did not fit - we walked in late evening and the lady at the reception made it possible: standard room price with upgrade to junior suite.",   
-        image: avatar1,
-        link : 'https://www.tripadvisor.com/ShowUserReviews-g482879-d302667-r743966655-Fishermans_Cove_Resort-Bel_Ombre_Mahe_Island.html'
-    },{
-        name: "John Hind",
-        rating: 5,
-        title: "PERFECT GETAWAY",
-        review: "Perfect getaway resort. value for money . love the water, bar and pool.The terrace of the sunset bar was closed due to the damages , but I still spent some time at the bar.The barman was really friendly and the cocktail divine...really sorry didnt remember the name. infinity pool was amazing.It was an amazing relaxing time.",
-        image: avatar2,
-        link : 'https://www.tripadvisor.com/Profile/Hindd20177'
-        
-    }
-    ,{
-        name: "Veronique",
-        rating: 5,
-        title: "Amazing time and cocktail at the Sunset bar",
-        review: "The terrace of the sunset bar was closed due to the damages caused by the cyclone, but I still spent some time at the bar.  The barman was really friendly and the cocktail divine...I sipped it at the infinity pool. It was an amazing relaxing time after the marathon I ran",
-        image: avatar3,
-        link : 'https://www.tripadvisor.com/Profile/Verototoo'
-
-        
-    }
-]
-
 const GuestReviews = (props) => {
+    const reviews = [
+        {
+            name: `${constants?.site_content?.home_page?.guest_review?.review1?.name[props?.activeLang]}`,
+            rating: 5,
+            title: `${constants?.site_content?.home_page?.guest_review?.review1?.title[props?.activeLang]}`,
+            review: `${constants?.site_content?.home_page?.guest_review?.review1?.review[props?.activeLang]}`,
+            image: avatar1,
+            link: 'https://www.tripadvisor.com/ShowUserReviews-g482879-d302667-r743966655-Fishermans_Cove_Resort-Bel_Ombre_Mahe_Island.html'
+        }, {
+            name: `${constants?.site_content?.home_page?.guest_review?.review2?.name[props?.activeLang]}`,
+            rating: 5,
+            title: `${constants?.site_content?.home_page?.guest_review?.review2?.title[props?.activeLang]}`,
+            review: `${constants?.site_content?.home_page?.guest_review?.review2?.review[props?.activeLang]}`,
+            image: avatar2,
+            link: 'https://www.tripadvisor.com/Profile/Hindd20177'
+
+        }
+        , {
+            name: `${constants?.site_content?.home_page?.guest_review?.review3?.name[props?.activeLang]}`,
+            rating: 5,
+            title: `${constants?.site_content?.home_page?.guest_review?.review3?.title[props?.activeLang]}`,
+            review: `${constants?.site_content?.home_page?.guest_review?.review3?.review[props?.activeLang]}`,
+            image: avatar3,
+            link: 'https://www.tripadvisor.com/Profile/Verototoo'
+        }
+    ]
     return (
         <div className="guest-reviews-wrapper pt-4 pb-3 text-center">
             <div className="trip-logo-wrapper d-inline-block mx-auto">
                 <img src={require('./../../../assets/img/travellers-choice-white.png')} alt="" />
             </div>
-            <h2>Guest Reviews</h2>
+            <h2>
+                {constants?.site_content?.home_page?.guest_review?.title[props?.activeLang]}
+            </h2>
             <Carousel
                 dynamicHeight={false}
                 showStatus={false}
@@ -63,7 +64,9 @@ const GuestReviews = (props) => {
                             <h4 className="gt-title">{x.title}</h4>
                             <p className="gt-review">{x.review}</p>
                             {/* <p className="gt-date">Date of Stay: {x.stayDate}</p> */}
-                            <a href={x.link} class="mt-2">Read More</a>   
+                            <a href={x.link} class="mt-2">
+                                {constants?.site_content?.home_page?.guest_review?.btn_text[props?.activeLang]}
+                            </a>
                         </div>
                     ))
                 }

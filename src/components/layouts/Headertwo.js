@@ -5,6 +5,7 @@ import $ from "jquery";
 import { findDOMNode } from "react-dom";
 import API from "../../utils/http";
 import { Spinner } from "react-bootstrap";
+import { constants } from "../../utils/constants";
 import PopUp from "../popup/PopUp";
 
 let navigationmenu = [
@@ -403,7 +404,7 @@ class Headertwo extends Component {
                               />{" "}
                             </Link>
                           ) : (
-                            <Link to={item.link}> {item.linkText} </Link>
+                            <Link to={`/${activeLang}${item.link}`}> {item.linkText} </Link>
                           )}
                           {item.child ? (
                             <ul className="submenu" role="menu">
@@ -424,7 +425,7 @@ class Headertwo extends Component {
                                       {sub_item.linkText}{" "}
                                     </Link>
                                   ) : (
-                                    <Link to={sub_item.link}>
+                                    <Link to={`/${activeLang}${sub_item.link}`}>
                                       {" "}
                                       {sub_item.linkText}{" "}
                                     </Link>
@@ -434,7 +435,7 @@ class Headertwo extends Component {
                                       {sub_item.third_menu.map(
                                         (third_item, i) => (
                                           <li key={i}>
-                                            <Link to={third_item.link}>
+                                            <Link to={`/${activeLang}${third_item.link}`}>
                                               {third_item.linkText}
                                             </Link>
                                           </li>
@@ -450,6 +451,42 @@ class Headertwo extends Component {
                       ))
                       : null}
                   </ul>
+                  {/* Languages */}
+
+                  <div>
+                    <ul className="submenu" role="menu">
+                      <li>
+                        <Link to="#" onClick={() => this.toggleSubMenu("Language")}>
+                          {constants?.site_content?.header_content?.language[activeLang]} &nbsp;{" "}
+                          <i
+                            className={`far ${this.state["Language"] ? "fa-minus" : "fa-plus"
+                              }`}
+                          />
+                        </Link>
+                        <div
+                          className={"sidebar-submenu collapse" + (this.state["Language"] ? " show" : "")}
+                        >
+                          <ul className="languageDropdown">
+                            <li onClick={() => this.onChangeLocale('en')}
+                              className={`${activeLang === 'en' && 'active'}`}
+                            >
+                              EN
+                            </li>
+                            <li onClick={() => this.onChangeLocale('fr')}
+                              className={`${activeLang === 'fr' && 'active'}`}
+                            >
+                              FR
+                            </li>
+                            <li onClick={() => this.onChangeLocale('de')}
+                              className={`${activeLang === 'de' && 'active'}`}
+                            >
+                              DE
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 {/* from pushed-item */}
                 <div className="nav-pushed-item" />
@@ -565,7 +602,9 @@ class Headertwo extends Component {
               </form>
             </div>
             <div className="widget nav-widget">
-              <h5 className="widget-title">Explore Fishermans Cove Resort</h5>
+              <h5 className="widget-title">
+                {constants?.site_content?.header_content?.explore[activeLang]}
+              </h5>
               <ul>
                 {/* <li><Link to="/about-us">About Us</Link></li>
                 <li>
@@ -624,11 +663,11 @@ class Headertwo extends Component {
                       >
                         <ul>
                           <li key={"all"}>
-                            <Link to={`/${x.address}`}>{`All ${x.text}`}</Link>
+                            <Link to={`/${activeLang}/${x.address}`}>{`All ${x.text}`}</Link>
                           </li>
                           {x.subMenu?.map((y) => (
                             <li key={y.id}>
-                              <Link to={`/${y.base_url}/${y.address}`}>
+                              <Link to={`/${activeLang}/${y.base_url}/${y.address}`}>
                                 {y.text}
                               </Link>
                             </li>
@@ -646,7 +685,7 @@ class Headertwo extends Component {
                 <ul>
                   <li>
                     <Link to="#" onClick={() => this.toggleSubMenu("Language")}>
-                      Language &nbsp;{" "}
+                      {constants?.site_content?.header_content?.language[activeLang]} &nbsp;{" "}
                       <i
                         className={`far ${this.state["Language"] ? "fa-minus" : "fa-plus"
                           }`}
@@ -680,7 +719,9 @@ class Headertwo extends Component {
 
             {/* Social Link */}
             <div className="widget social-link">
-              <h5 className="widget-title">Follow us</h5>
+              <h5 className="widget-title">
+                {constants?.site_content?.header_content?.follow[activeLang]}
+              </h5>
               <ul>
                 <li>
                   <a href="https://www.facebook.com/fishermanscoveresort/">

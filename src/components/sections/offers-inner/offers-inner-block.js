@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { constants } from '../../../utils/constants';
 
 const OffersInnerMainBlock = (props) => {
   return (
     <div className="main-block">
       <div className="container">
-        <div className="inner-block-heading" dangerouslySetInnerHTML={{__html: props.offerData?.short_description}}></div>
+        <div className="inner-block-heading" dangerouslySetInnerHTML={{ __html: props.offerData?.short_description }}></div>
         <div className="d-flex flex-wrap title-flex">
           <div className="main-item img-wrapper">
             <img alt="" src={props.offerData?.thumbnail} />
           </div>
           <div className="main-item pl-sm-4">
-            <div  dangerouslySetInnerHTML={{__html:props.offerData?.post_content}}/>
+            <div dangerouslySetInnerHTML={{ __html: props.offerData?.post_content }} />
             {/* <h6 className="mv">All for AED 4000/- only
             <br />
               <small>Terms &amp; Conditions applied.</small>
@@ -26,7 +27,9 @@ const OffersInnerMainBlock = (props) => {
               </div>
             </div> */}
             <div className="reservations-block mt-3">
-              <p>For Reservations</p>
+              <p>
+                {constants?.site_content?.offersInner_page?.reservation?.title[props?.activeLang]}
+              </p>
               <div className="contact-links">
                 <div>
                   <i className="fas fa-phone pr-2"></i>
@@ -37,22 +40,22 @@ const OffersInnerMainBlock = (props) => {
                   <span>reservations@fishermanscove-resort.com</span>
                 </div>
               </div>
-              <button className="btn btn-eden main-btn mx-auto d-inline-block"    
-              
-              onClick={(e) => {
-                                    
-              window.gtag_report_conversion(props.offerData.post_url,true)
-                               
-                               }}                  
+              <button className="btn btn-eden main-btn mx-auto d-inline-block"
+
+                onClick={(e) => {
+
+                  window.gtag_report_conversion(props.offerData.post_url, true)
+
+                }}
               >
-               Book Now
-               </button>  
+                {constants?.site_content?.home_page?.banner?.btn3[props?.activeLang]}
+              </button>
             </div>
           </div>
         </div>
         <div className="back-to text-center mt-4">
-          <Link to="/offers" className="btn btn-eden main-btn mx-auto d-inline-block">
-            Back to all offers
+          <Link to={`${props?.activeLang}/offers`} className="btn btn-eden main-btn mx-auto d-inline-block">
+            {constants?.site_content?.offersInner_page?.reservation?.btn_txt[props?.activeLang]}
           </Link>
         </div>
       </div>

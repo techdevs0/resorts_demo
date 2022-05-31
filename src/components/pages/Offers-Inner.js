@@ -9,23 +9,22 @@ import Subscribe from '../sections/common/Subscribe';
 import OffersInnerMainBlock from '../sections/offers-inner/offers-inner-block';
 import BreadCrumb from '../layouts/BreadCrumb';
 import Helmet from "react-helmet";
-const bannerImage = require('./../../assets/img/banner/Leisure-inner.jpg');
 
 
-const breadcrumbItems=[
+const breadcrumbItems = [
   {
     text: 'Fishermans Cove Resort',
-    link:'/',
+    link: '/',
     isActive: false,
   },
   {
     text: 'Offers',
-    link:'/offers',
+    link: '/offers',
     isActive: true,
   },
   {
     text: 'Spa for Two',
-    link:'/offers-inner',
+    link: '/offers-inner',
     isActive: true,
   },
 ]
@@ -53,33 +52,44 @@ class OffersInner extends Component {
     }
   }
   render() {
+    const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white offers-inner-wrapper">
-          <Helmet>
-              <title>
-                  Stay and Save With Fishermans Cove Resort + Dinner for Two |
-                  Fishermans Cove Resort
-              </title>
-              <meta
-                  name="description"
-                  content="Make your ordinary vacation, extra ordinary with 10% off at Fishermans Cove Resort. Book your stay now and get a complimentary dinner for two at Le Cardinal Restaurant."
-              />
-          </Helmet>
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'offers-inner'} />
+        <Helmet>
+          <title>
+            Stay and Save With Fishermans Cove Resort + Dinner for Two |
+            Fishermans Cove Resort
+          </title>
+          <meta
+            name="description"
+            content="Make your ordinary vacation, extra ordinary with 10% off at Fishermans Cove Resort. Book your stay now and get a complimentary dinner for two at Le Cardinal Restaurant."
+          />
+        </Helmet>
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'offers-inner'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={this.state.offerData.banner_text} image={this.state.offerData.banner_img}/>
+        <Mainbanner title={this.state.offerData.banner_text} image={this.state.offerData.banner_img}
+          activeLang={activeLang}
+        />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
-        <Bookingform />
+        <Bookingform
+          activeLang={activeLang}
+        />
         {/*====== BOOKING FORM END ======*/}
         {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems} />
+        <BreadCrumb items={breadcrumbItems}
+          activeLang={activeLang}
+        />
         {/* BREADCRUMBS END */}
         {/*====== INTRO START ======*/}
-        <OffersInnerMainBlock offerData = {this.state.offerData} />
+        <OffersInnerMainBlock offerData={this.state.offerData}
+          activeLang={activeLang}
+        />
         {/*====== INTRO END ======*/}
 
-        <Subscribe />
+        <Subscribe
+          activeLang={activeLang}
+        />
 
         <Footertwo />
 

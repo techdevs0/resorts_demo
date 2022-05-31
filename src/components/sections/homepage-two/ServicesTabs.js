@@ -6,6 +6,9 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { Grid, Paper } from '@material-ui/core';
+import { constants } from '../../../utils/constants';
+
+
 const placeholderImage = require('./../../../assets/img/img-placeholder.png')
 
 
@@ -74,7 +77,9 @@ const ServiceTabs = (props) => {
 
     return (
         <div className="service-tabs-wrapper">
-            <h2 className="text-center section-heading text-muted">Premium Offerings</h2>
+            <h2 className="text-center section-heading text-muted">
+                {constants?.site_content?.home_page?.premium_offer?.title[props?.activeLang]}
+            </h2>
             <div className={classes.root}>
                 <Paper square elevation={0}>
                     <Tabs
@@ -94,7 +99,7 @@ const ServiceTabs = (props) => {
                 {
                     props.data?.map((x, i) => (
                         <TabPanel value={value} index={i} className="service-tab-panel">
-                            <i className="fa fa-arrow-left service-left" onClick={()=> value > 0 ? setValue(value - 1) : setValue(props.data.length - 1)} />
+                            <i className="fa fa-arrow-left service-left" onClick={() => value > 0 ? setValue(value - 1) : setValue(props.data.length - 1)} />
                             <div className="tab-slider">
                                 <Grid container spacing={0}>
                                     <Grid item xs={12} sm={12} className="px-0 py-0">
@@ -108,15 +113,17 @@ const ServiceTabs = (props) => {
                                                 <h1 className="hotel-title my-4">
                                                     {x.short_description}
                                                 </h1>
-                                                <a href={x.route}>
-                                                    <button className="main-btn btn-filled mt-4" >KNOW MORE</button>
+                                                <a href={`/${props?.activeLang}/${x.route}`}>
+                                                    <button className="main-btn btn-filled mt-4" >
+                                                        {constants?.site_content?.home_page?.premium_offer?.btn_text[props?.activeLang]}
+                                                    </button>
                                                 </a>
                                             </div>
                                         </div>
                                     </Grid>
                                 </Grid>
                             </div>
-                            <i className="fa fa-arrow-right service-right" onClick={()=> value + 1 < props.data?.length ? setValue(value + 1) : setValue(0) }  />
+                            <i className="fa fa-arrow-right service-right" onClick={() => value + 1 < props.data?.length ? setValue(value + 1) : setValue(0)} />
                         </TabPanel>
                     ))
                 }

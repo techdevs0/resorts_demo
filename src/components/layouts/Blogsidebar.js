@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { constants } from '../../utils/constants';
 
 class Blogsidebar extends Component {
   render() {
@@ -8,7 +9,9 @@ class Blogsidebar extends Component {
       <div className="sidebar">
         {/* Popular Post Widget */}
         <div className="widget popular-feeds mb-40">
-          <h5 className="widget-title">Recent Blogs</h5>
+          <h5 className="widget-title">
+            {constants?.site_content?.blog_page?.recent_blog?.title[this.props?.activeLang]}
+          </h5>
           <div className="popular-feed-loop">
 
             {
@@ -18,7 +21,7 @@ class Blogsidebar extends Component {
                     <img src={x?.img} alt="image" />
                   </div>
                   <div className="feed-desc">
-                    <h6><Link to={`/blog-inner/${x?.slug}`}>
+                    <h6><Link to={`/${this.props?.activeLang}/blog-inner/${x?.slug}`}>
                       {x?.title}
                     </Link></h6>
                     <span className="time"><i className="far fa-calendar-alt" />

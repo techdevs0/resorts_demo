@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import API from '../../utils/http';
+import { constants } from '../../utils/constants';
 
 class Footertwo extends Component {
   constructor(props) {
@@ -90,7 +91,9 @@ class Footertwo extends Component {
                   {/* Nav Widget */}
                   <div className="widget nav-widget mb-50">
                     <div>
-                      <h4 className="widget-title">Services</h4>
+                      <h4 className="widget-title">
+                        {constants?.site_content?.footer_content?.title1[activeLang]}
+                      </h4>
                       <ul>
 
                         {
@@ -124,14 +127,18 @@ class Footertwo extends Component {
                 <div className="col-lg-3 col-sm-6 order-2 order-lg-3">
                   {/* Contact Widget */}
                   <div className="widget contact-widget mb-50">
-                    <h4 className="widget-title">Contact Us</h4>
+                    <h4 className="widget-title">
+                      {constants?.site_content?.footer_content?.title2[activeLang]}
+                    </h4>
                     <div className="contact-lists">
                       <div className="contact-box">
                         {/* <div className="icon">
                           <i className="flaticon-call" />
                         </div> */}
                         <div className="desc">
-                          <h6 className="title">Phone Number</h6>
+                          <h6 className="title">
+                            {constants?.site_content?.footer_content?.phone[activeLang]}
+                          </h6>
                           {/* <a href="tel:+2484677000">+248 467 7000</a> */}
                           <a href={`tel:${this.state.footerData?.third?.phone?.replace(/\s/g, '')}`}>{this.state.footerData?.third?.phone}</a>
                         </div>
@@ -141,7 +148,9 @@ class Footertwo extends Component {
                           <i className="flaticon-message" />
                         </div> */}
                         <div className="desc">
-                          <h6 className="title">Email Address</h6>
+                          <h6 className="title">
+                            {constants?.site_content?.footer_content?.email[activeLang]}
+                          </h6>
                           <a href={`mailto:${this.state.footerData?.third?.email}`}>{this.state.footerData?.third?.email}</a>
                         </div>
                       </div>
@@ -150,7 +159,9 @@ class Footertwo extends Component {
                           <i className="flaticon-location-pin" />
                         </div> */}
                         <div className="desc">
-                          <h6 className="title">Office Address</h6>
+                          <h6 className="title">
+                            {constants?.site_content?.footer_content?.address[activeLang]}
+                          </h6>
                           {this.state.footerData?.third?.address}
                         </div>
                       </div>
@@ -187,12 +198,12 @@ class Footertwo extends Component {
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-lg-6 col-md-5 order-2 order-md-1">
-                  <p className="copyright-text copyright-two">Copyright By @<Link to="#">Fishermans Cove Resort</Link> - {new Date().getFullYear()}</p>
+                  <p className="copyright-text copyright-two">{constants?.site_content?.footer_content?.copyright_by[activeLang]} @<Link to="#">Fishermans Cove Resort</Link> - {new Date().getFullYear()}</p>
                 </div>
                 <div className="col-lg-6 col-md-7 order-1 order-md-2">
                   <div className="footer-menu text-center text-md-right">
                     <ul>
-                      <p style={{ fontSize: '14px' }}>Powered By <a href="https://prismdigital.ae" style={{ color: "white" }} >Prism Digital</a>.</p>
+                      <p style={{ fontSize: '14px' }}> {constants?.site_content?.footer_content?.powered_by[activeLang]} <a href="https://prismdigital.ae" style={{ color: "white" }} >Prism Digital</a>.</p>
                       {/* <li><Link to="#">Terms of use</Link></li>
                       <li><Link to="#">Privacy Environmental Policy</Link></li> */}
                     </ul>
