@@ -8,7 +8,7 @@ const WeddingGrid = (props) => {
       <div className='wedding-grid-wrapper'>
         {
           props.data?.map(x => (
-            <RoomGridItem title={x.post_name} image={x.thumbnail} link={x.link || ""} linkText={x.linkText || ""} description={x.post_content} />
+            <RoomGridItem title={x.name} image={x.thumbnailPreview} link={x.slug || ""} linkText={x.linkText || ""} description={x.detailed_content} />
           ))
         }
       </div>

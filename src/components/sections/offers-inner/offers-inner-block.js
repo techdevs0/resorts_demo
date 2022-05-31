@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import { constants } from '../../../utils/constants';
 
 const OffersInnerMainBlock = (props) => {
+
+  console.log("offerData", props?.offerData)
   return (
     <div className="main-block">
       <div className="container">
         <div className="inner-block-heading" dangerouslySetInnerHTML={{ __html: props.offerData?.short_description }}></div>
         <div className="d-flex flex-wrap title-flex">
           <div className="main-item img-wrapper">
-            <img alt="" src={props.offerData?.thumbnail} />
+            <img alt="" src={props.offerData?.thumbnailPreview} />
           </div>
           <div className="main-item pl-sm-4">
             <div dangerouslySetInnerHTML={{ __html: props.offerData?.post_content }} />

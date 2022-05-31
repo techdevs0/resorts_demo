@@ -10,7 +10,7 @@ const OfferGrid = (props) => {
       <div className='offer-grid-wrapper'>
         {
           props.data?.map((x, index) => (
-            <RoomGridItem key={index} id={x.id} route={x.route} title={x.post_name} thumbnail={x.thumbnail} banner={x.banner_img} link={x.link} linkText={x.linkText} description={x.short_description} />
+            <RoomGridItem key={index} id={x._id} route={x.slug} title={x.post_name} thumbnail={x.thumbnailPreview} banner={x.banner_img} link={x.link} linkText={x.linkText} description={x.short_description} />
           ))
         }
       </div>

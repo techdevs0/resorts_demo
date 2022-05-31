@@ -4,7 +4,7 @@ import RoomsInnerTitleBlock from "../sections/rooms-inner/main-text-block";
 import RoomAmenities from "../sections/rooms-inner/room-amentities";
 import RoomVR360 from "../sections/rooms-inner/room-360";
 import BookingFormVertical from "../sections/rooms-inner/BookingFormVertical";
-import API from "../../utils/http";
+import API from '../../langapi/http';
 import PageLayout from "../layouts/PageLayout";
 import SEOTags from "../sections/common/SEOTags";
 import FAQInnerSection from "../sections/common/FAQInnerSection";
@@ -185,14 +185,16 @@ class RoomsInner extends Component {
     let id = this.props.match.params.id;
     try {
       //getting single post data
-      const response = await API.get("/rooms/" + id);
+      const activeLang = localStorage.getItem('lang');
+
+      const response = await API.get(`/rooms/${id}?lang=${activeLang}`);
       //making breadcrumbs dynamic, appending into last item
       breadcrumbItems[breadcrumbItems.length - 1].text =
-        response.data.post_name;
+        response.data.data?.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
-        "/rooms-inner/" + response.data.id;
+        "/rooms-inner/" + response.data.data?._id;
 
-      let singleRoom = response.data;
+      let singleRoom = response.data.data;
 
       singleRoom.roomCode = singleRoom?.post_url?.split("room=")[1];
 
@@ -204,12 +206,12 @@ class RoomsInner extends Component {
       this.setState({ singleRoom });
 
       //fetching others room data for
-      API.get("/rooms").then((othersResponse) => {
+      API.get(`/rooms?lang=${activeLang}`).then((othersResponse) => {
         // debugger;
         this.setState({
           othersData:
-            othersResponse.data.filter(
-              (x) => x.id !== this.state.singleRoom?.id
+            othersResponse.data?.data?.filter(
+              (x) => x._id !== this.state.singleRoom?._id
             ) || [],
         });
       });
@@ -222,15 +224,16 @@ class RoomsInner extends Component {
     if (this.props.match.params.id !== prevProps.match.params.id) {
       let id = this.props.match.params.id;
       try {
+        const activeLang = localStorage.getItem('lang');
         //getting single post data
-        const response = await API.get("/rooms/" + id);
+        const response = await API.get(`/rooms/${id}?lang=${activeLang}`);
         //making breadcrumbs dynamic, appending into last item
         breadcrumbItems[breadcrumbItems.length - 1].text =
-          response.data.post_name;
+          response.data.data.post_name;
         breadcrumbItems[breadcrumbItems.length - 1].link =
-          "/rooms-inner/" + response.data.id;
+          "/rooms-inner/" + response.data.data._id;
 
-        let singleRoom = response.data;
+        let singleRoom = response.data.data;
 
         singleRoom.roomCode = singleRoom?.post_url?.split("room=")[1];
 
@@ -242,11 +245,11 @@ class RoomsInner extends Component {
         this.setState({ singleRoom });
 
         //fetching others room data for
-        API.get("/rooms").then((othersResponse) => {
+        API.get(`/rooms?lang=${activeLang}`).then((othersResponse) => {
           this.setState({
             othersData:
-              othersResponse.data.filter(
-                (x) => x.id !== this.state.singleRoom?.id
+              othersResponse.data?.data.filter(
+                (x) => x._id !== this.state.singleRoom?._id
               ) || [],
           });
         });
@@ -265,7 +268,7 @@ class RoomsInner extends Component {
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{
             title: this.state.singleRoom?.post_name,
-            image: this.state.singleRoom?.banner_img,
+            image: this.state.singleRoom?.banner_imgPreview,
           }}
           breadCrumb={{ items: breadcrumbItems }}
           hideBooking
@@ -285,7 +288,7 @@ class RoomsInner extends Component {
                 {/*====== ROOM GRID END ======*/}
                 {/*====== ROOM 360 GRID START ======*/}
                 <RoomVR360
-                  image={this.state.singleRoom?.uploads?.find((x) => x["360_view"] === "1")?.avatar}
+                  image={this.state.singleRoom?.images_list && JSON.parse(this.state.singleRoom?.images_list)?.find((x) => x["360_view"] === "1")?.avatar}
                   activeLang={activeLang}
                 />
                 {/*====== ROOM 360 GRID END ======*/}

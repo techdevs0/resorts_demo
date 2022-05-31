@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import API from '../../utils/http';
+import API from '../../langapi/http';
 import Headertwo from '../layouts/Headertwo';
 import Footertwo from '../layouts/Footertwo';
 import Mainbanner from '../sections/homepage-two/Banner';
@@ -36,11 +36,13 @@ class OffersInner extends Component {
   async componentDidMount() {
     let id = this.props.match.params.id;
     try {
-      const response = await API.get("/offers/" + id);
+      const activeLang = localStorage.getItem('lang');
 
-      let offerData = response?.data?.offer_details;
-      offerData.uploads = response?.data?.uploads;
-      offerData.post_metas = response.data.metas;
+      const response = await API.get(`/offers/${id}?lang=${activeLang}`);
+
+      let offerData = response?.data?.data;
+      offerData.uploads = response?.data?.data?.uploads;
+      offerData.post_metas = response.data?.data?.metas;
 
       breadcrumbItems[breadcrumbItems.length - 1].text = offerData.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
@@ -67,7 +69,7 @@ class OffersInner extends Component {
         </Helmet>
         <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'offers-inner'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={this.state.offerData.banner_text} image={this.state.offerData.banner_img}
+        <Mainbanner title={this.state.offerData.banner_text} image={this.state.offerData.banner_imgPreview}
           activeLang={activeLang}
         />
         {/*====== BANNER PART ENDS ======*/}

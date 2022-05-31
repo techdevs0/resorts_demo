@@ -8,9 +8,10 @@ import Subscribe from "../sections/common/Subscribe";
 import OfferTitleBlock from "../sections/offers/main-text-block";
 import OfferGrid from "../sections/offers/offer-grid";
 import BreadCrumb from "../layouts/BreadCrumb";
-import API from "../../utils/http";
+import API from "../../langapi/http";
 import Helmet from "react-helmet";
 import { constants } from "../../utils/constants";
+
 
 const bannerImage = require("./../../assets/img/offers/stay.jpg");
 
@@ -21,9 +22,11 @@ class Offers extends Component {
   };
   async componentDidMount() {
     try {
-      const response = await API.get("/offers");
+      const activeLang = localStorage.getItem('lang');
+
+      const response = await API.get(`/offers?lang=${activeLang}`);
       // debugger;
-      this.setState({ offers: response.data || [] });
+      this.setState({ offers: response.data?.data || [] });
     } catch (error) {
       console.log(error);
     }

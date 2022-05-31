@@ -5,6 +5,8 @@ import API from '../../utils/http';
 import PageLayout from "../layouts/PageLayout";
 import SEOTags from "../sections/common/SEOTags";
 import { constants } from "../../utils/constants";
+import LangAPI from '../../langapi/http';
+
 
 const pageId = 79;
 class RoomSuites extends Component {
@@ -18,9 +20,11 @@ class RoomSuites extends Component {
 
   componentDidMount() {
     try {
-      API.get('/rooms').then(response => {
-        const roomsData = response.data.filter(x => x.room_type == 1);
-        const suitesData = response.data.filter(x => x.room_type == 2);
+      const activeLang = localStorage.getItem('lang');
+
+      LangAPI.get(`/rooms?lang=${activeLang}`).then(response => {
+        const roomsData = response.data?.data?.filter(x => x.room_type == 1);
+        const suitesData = response.data?.data?.filter(x => x.room_type == 2);
         // console.log(response.data);
         this.setState({ roomsData, suitesData });
 

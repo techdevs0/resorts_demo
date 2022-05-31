@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 
 const RoomsInnerTitleBlock = (props) => {
+
+
   return (
     <div className="rooms-inner-title-block">
       <div className="container">
@@ -18,8 +20,7 @@ const RoomsInnerTitleBlock = (props) => {
               emulateTouch={true}
               className="room-carousel"
             >
-              {props.room?.uploads
-                ?.filter((x) => x["360_view"] === "0")
+              {props.room?.images_list && JSON.parse(props.room?.images_list)?.filter((x) => x["360_view"] === "0")
                 ?.map((x, i) => (
                   <div key={x.id}>
                     <img src={x.avatar} alt="" />

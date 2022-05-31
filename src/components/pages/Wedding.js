@@ -7,6 +7,8 @@ import API from '../../utils/http';
 import SEOTags from '../sections/common/SEOTags';
 import PageLayout from '../layouts/PageLayout';
 import { constants } from "../../utils/constants";
+import LangAPI from '../../langapi/http';
+
 
 const pageId = 10;
 
@@ -21,9 +23,13 @@ class Wedding extends Component {
 
 
   componentDidMount() {
+    const activeLang = localStorage.getItem('lang');
 
-    API.get('/wedding').then(response => {
-      this.setState({ weddingData: response.data?.filter(x => x.post_type !== "page") });
+    LangAPI.get(`/weddings?lang=${activeLang}`).then(response => {
+      this.setState({
+        weddingData: response.data?.data
+        // ?.filter(x => x.post_type !== "page")
+      });
     })
       .then(() => {
         API.get(`/meta/${pageId}`).then(response => {
