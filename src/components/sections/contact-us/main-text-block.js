@@ -1,13 +1,18 @@
 import React from 'react';
+import { constants } from '../../../utils/constants';
 
 const ContactTitleBlock = (props) => {
   return (
     <div className="contact-title-block">
       <div className="container">
-        <h2 className="text-center">Contact Us</h2>
+        <h2 className="text-center">
+          {constants?.site_content?.contact_page?.bread_crumb?.title2[props?.activeLang]}
+        </h2>
         <div className="d-flex flex-wrap title-flex">
           <div className="contact-title-item">
-            <h4>Fishermans Cove Resort</h4>
+            <h4>
+              {constants?.site_content?.about_page?.bread_crumb?.title[props?.activeLang]}
+            </h4>
             <div className="row align-items-center py-1">
               <div className="col-1">
                 <i className="fas fa-map-marker-alt"></i>
@@ -57,7 +62,7 @@ const ContactTitleBlock = (props) => {
               </div>
               <div className="col-9">
                 <p>
-                  <a rel="nofollow" href={`https://wa.me/${props.data?.whatsapp?.replace('+',"").split(" ").join("")}`}>
+                  <a rel="nofollow" href={`https://wa.me/${props.data?.whatsapp?.replace('+', "").split(" ").join("")}`}>
                     {
                       props.data?.whatsapp
                     }

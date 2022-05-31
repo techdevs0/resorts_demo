@@ -1,30 +1,9 @@
 import React, { Component } from 'react'
-import Headertwo from '../layouts/Headertwo';
-import Footertwo from '../layouts/Footertwo';
-import Mainbanner from '../sections/homepage-two/Banner';
-import Bookingform from '../sections/homepage-two/Bookingform';
-import BottomNavigator from '../sections/homepage-two/BottomNavigator';
-import Subscribe from '../sections/common/Subscribe';
-import BreadCrumb from '../layouts/BreadCrumb';
 import FAQIntroBlock from '../sections/faq/intro-block';
-import Helmet from "react-helmet";
 import API from "../../utils/http";
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
-const bannerImage = require('./../../assets/img/banner/sunset.jpg');
-
-const breadcrumbItems = [
-  {
-    text: 'Fishermans Cove Resort',
-    link: '/',
-    isActive: false,
-  },
-  {
-    text: 'F.A.Qs',
-    link: '/faq',
-    isActive: true,
-  },
-]
+import { constants } from '../../utils/constants';
 
 const faqList = [
   {
@@ -140,6 +119,19 @@ class FAQ extends Component {
   }
   render() {
     const activeLang = localStorage.getItem('lang');
+
+    const breadcrumbItems = [
+      {
+        text: `${constants?.site_content?.about_page?.bread_crumb?.title[activeLang]}`,
+        link: '/',
+        isActive: false,
+      },
+      {
+        text: 'F.A.Qs',
+        link: '/faq',
+        isActive: true,
+      },
+    ]
     return (
       <div>
         <SEOTags meta={this.state.meta} />
@@ -154,14 +146,11 @@ class FAQ extends Component {
             <FAQIntroBlock
               // faqList={this.state.faqsData}
               faqList={faqList}
+              activeLang={activeLang}
             />
             {/*====== INTRO END ======*/}
           </div>
-          {/*<Subscribe />*/}
 
-          {/*<Footertwo />*/}
-
-          {/*<BottomNavigator />*/}
         </PageLayout>
       </div>
     );

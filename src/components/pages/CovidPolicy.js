@@ -1,30 +1,10 @@
 import React, { Component } from 'react'
-import Headertwo from '../layouts/Headertwo';
-import Footertwo from '../layouts/Footertwo';
-import Mainbanner from '../sections/homepage-two/Banner';
-import Bookingform from '../sections/homepage-two/Bookingform';
-import BottomNavigator from '../sections/homepage-two/BottomNavigator';
-import Subscribe from '../sections/common/Subscribe';
-import BreadCrumb from '../layouts/BreadCrumb';
 import CovidIntroBlock from '../sections/covid-policy/intro-block';
 import API from '../../utils/http';
-import Helmet from "react-helmet";
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
-const bannerImage = require('./../../assets/img/banner/sunset.jpg');
+import { constants } from '../../utils/constants';
 
-const breadcrumbItems = [
-  {
-    text: 'Fishermans Cove Resort',
-    link: '/',
-    isActive: false,
-  },
-  {
-    text: 'Covid Policy',
-    link: '/covid-policy',
-    isActive: true,
-  },
-]
 
 const pageId = 45;
 class CovidPolicy extends Component {
@@ -60,50 +40,32 @@ class CovidPolicy extends Component {
   }
   render() {
     const activeLang = localStorage.getItem('lang');
+
+    const breadcrumbItems = [
+      {
+        text: `${constants?.site_content?.about_page?.bread_crumb?.title[activeLang]}`,
+        link: '/',
+        isActive: false,
+      },
+      {
+        text: `${constants?.site_content?.covidPolicy_page?.bread_crumb?.title2[activeLang]}`,
+        link: '/covid-policy',
+        isActive: true,
+      },
+    ]
     return (
       <div className="bg-white covid-policy-wrapper">
         <SEOTags meta={this.state.meta} />
-
-        {/*<Helmet>*/}
-        {/*    <title>*/}
-        {/*        Covid Policy | Fishermans Cove Resort*/}
-        {/*    </title>*/}
-        {/*    <meta*/}
-        {/*        name="description"*/}
-        {/*        content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"*/}
-        {/*    />*/}
-        {/*</Helmet>*/}
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
           breadCrumb={{ items: breadcrumbItems }}
           activeLang={activeLang}
         >
-          {/*<Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'covid-policy'} />*/}
-          {/*/!*====== BANNER PART START ======*!/*/}
-          {/*<Mainbanner title={"COVID Policy"} image={bannerImage}/>*/}
-          {/*/!*====== BANNER PART ENDS ======*!/*/}
-          {/*/!*====== BOOKING FORM START ======*!/*/}
-          {/*<Bookingform />*/}
-          {/*/!*====== BOOKING FORM END ======*!/*/}
-          {/*/!* BREADCRUMBS START *!/*/}
-          {/*<BreadCrumb items={breadcrumbItems} />*/}
-          {/* BREADCRUMBS END */}
           {/*====== INTRO START ======*/}
           <CovidIntroBlock data={this.state.intro} />
           {/*====== INTRO END ======*/}
-          {/*====== PILLARS START ======*/}
-          {/* <CovidTravelSafetyBlock/> */}
-          {/*====== PILLARS END ======*/}
-          {/*====== PROJECTS SLIDER START ======*/}
-          {/* <CovidFlexibilityBlock /> */}
-          {/*====== PROJECTS SLIDER END ======*/}
 
-          {/*<Subscribe />*/}
-
-          {/*<Footertwo />*/}
-
-          {/*<BottomNavigator />*/}
         </PageLayout>
       </div>
     );

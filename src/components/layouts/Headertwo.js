@@ -5,6 +5,7 @@ import $ from "jquery";
 import { findDOMNode } from "react-dom";
 import API from "../../utils/http";
 import { Spinner } from "react-bootstrap";
+import { constants } from "../../utils/constants";
 import PopUp from "../popup/PopUp";
 
 let navigationmenu = [
@@ -456,7 +457,7 @@ class Headertwo extends Component {
                     <ul className="submenu" role="menu">
                       <li>
                         <Link to="#" onClick={() => this.toggleSubMenu("Language")}>
-                          Language &nbsp;{" "}
+                          {constants?.site_content?.header_content?.language[activeLang]} &nbsp;{" "}
                           <i
                             className={`far ${this.state["Language"] ? "fa-minus" : "fa-plus"
                               }`}
@@ -601,7 +602,9 @@ class Headertwo extends Component {
               </form>
             </div>
             <div className="widget nav-widget">
-              <h5 className="widget-title">Explore Fishermans Cove Resort</h5>
+              <h5 className="widget-title">
+                {constants?.site_content?.header_content?.explore[activeLang]}
+              </h5>
               <ul>
                 {/* <li><Link to="/about-us">About Us</Link></li>
                 <li>
@@ -682,7 +685,7 @@ class Headertwo extends Component {
                 <ul>
                   <li>
                     <Link to="#" onClick={() => this.toggleSubMenu("Language")}>
-                      Language &nbsp;{" "}
+                      {constants?.site_content?.header_content?.language[activeLang]} &nbsp;{" "}
                       <i
                         className={`far ${this.state["Language"] ? "fa-minus" : "fa-plus"
                           }`}
@@ -716,7 +719,9 @@ class Headertwo extends Component {
 
             {/* Social Link */}
             <div className="widget social-link">
-              <h5 className="widget-title">Follow us</h5>
+              <h5 className="widget-title">
+                {constants?.site_content?.header_content?.follow[activeLang]}
+              </h5>
               <ul>
                 <li>
                   <a href="https://www.facebook.com/fishermanscoveresort/">

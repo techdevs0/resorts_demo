@@ -921,6 +921,241 @@ export const constants = {
           de: "Galerie"
         }
       }
+    },
+    contact_page: {
+      bread_crumb: {
+        title2: {
+          en: "Contact Us",
+          fr: "Nous contacter",
+          de: "Kontaktiere uns"
+        }
+      },
+      contact_form: {
+        title: {
+          en: "Write to Us",
+          fr: "Écrivez-nous",
+          de: "Schreib uns"
+        },
+        name_error: {
+          en: "Please enter first name",
+          fr: "Veuillez entrer le prénom",
+          de: "Bitte geben Sie den Vornamen ein"
+        },
+        Last_name_error: {
+          en: "Please enter last name",
+          fr: "Veuillez entrer le nom de famille",
+          de: "Bitte geben Sie den Nachnamen ein"
+        },
+        email_error: {
+          en: "Please enter email address",
+          fr: "Veuillez saisir l'adresse e-mail",
+          de: "Bitte E-Mail-Adresse eingeben"
+        },
+        subject_error: {
+          en: "Please enter subject",
+          fr: "Veuillez entrer le sujet",
+          de: "Bitte Betreff eingeben"
+        },
+        msg_error: {
+          en: "Please enter message",
+          fr: "Veuillez entrer un message",
+          de: "Bitte Nachricht eingeben"
+        },
+        first_name: {
+          en: "First Name",
+          fr: "Prénom",
+          de: "Vorname"
+        },
+        last_name: {
+          en: "Last Name",
+          fr: "Nom de famille",
+          de: "Nachname"
+        },
+        email: {
+          en: "Email Address",
+          fr: "Adresse e-mail",
+          de: "E-Mail-Addresse"
+        },
+        choose_subject: {
+          en: "Choose a Subject",
+          fr: "Choisissez un sujet",
+          de: "Wählen Sie ein Thema"
+        },
+        choose_subject1: {
+          en: "Reservations Inquiry",
+          fr: "Demande de réservation",
+          de: "Reservierungsanfrage"
+        },
+        choose_subject2: {
+          en: "Refund Policy",
+          fr: "Politique de remboursement",
+          de: "Rückgaberecht"
+        },
+        choose_subject3: {
+          en: "Rooms and Suites Info",
+          fr: "Informations sur les chambres et les suites",
+          de: "Informationen zu Zimmern und Suiten"
+        },
+        msg: {
+          en: "Write Message...",
+          fr: "Écrire un message...",
+          de: "Nachricht schreiben..."
+        },
+        submit_text: {
+          en: "Message Submitted. We will get in touch shortly.",
+          fr: "Message envoyé. Nous vous contacterons sous peu",
+          de: "Nachricht übermittelt. Wir werden uns in Kürze bei Ihnen melden"
+        },
+        btn_text: {
+          en: "Submit",
+          fr: "Soumettre",
+          de: "Einreichen"
+        },
+      },
+      contact_offer: {
+        title: {
+          en: "Fishermans Cove Resort on Social Media",
+          fr: "Fishermans Cove Resort sur les réseaux sociaux",
+          de: "Fishermans Cove Resort in den sozialen Medien"
+        },
+        room1: {
+          en: "Paris Sychelles Restaurant",
+          fr: "Restaurant Paris Sychelles",
+          de: "Restaurant Paris Sychellen"
+        },
+        room2: {
+          en: "Le Cardinal Restaurant",
+          fr: "Restaurant Le Cardinal",
+          de: "Le Cardinal-Restaurant"
+        },
+        room3: {
+          en: "Superior Rooms",
+          fr: "Chambres supérieures",
+          de: "Superior-Zimmer"
+        }
+      }
+    },
+    blog_page: {
+      bread_crumb: {
+        title2: {
+          en: "Blogs",
+          fr: "Blogues",
+          de: "Blogs"
+        }
+      },
+      blog_grid: {
+        btn_text: {
+          en: "Read More",
+          fr: "Weiterlesen",
+          de: "Lire la suite"
+        },
+      },
+      recent_blog: {
+        title: {
+          en: "Recent Blogs",
+          fr: "Blogs récents",
+          de: "Aktuelle Blogs"
+        },
+      }
+    },
+    blogInner_page: {
+      related_post: {
+        title: {
+          en: "Related Post",
+          fr: "Article similaire",
+          de: "Verwandter Beitrag"
+        }
+      }
+    },
+    cancellationPolicy_page: {
+      bread_crumb: {
+        title2: {
+          en: "Cancellation Policy",
+          fr: "Politique d'annulation",
+          de: "Stornierungsbedingungen"
+        }
+      }
+    },
+    privacyPolicy_page: {
+      bread_crumb: {
+        title2: {
+          en: "Privacy Policy",
+          fr: "Politique de confidentialité",
+          de: "Datenschutz-Bestimmungen"
+        }
+      }
+    },
+    covidPolicy_page: {
+      bread_crumb: {
+        title2: {
+          en: "Covid Policy",
+          fr: "Politique Covid",
+          de: "Covid-Richtlinie"
+        }
+      }
+    },
+    terms_page: {
+      bread_crumb: {
+        title2: {
+          en: "Terms of Use",
+          fr: "Conditions d'utilisation",
+          de: "Nutzungsbedingungen"
+        }
+      }
+    },
+    footer_content: {
+      title1: {
+        en: "Services",
+        fr: "Prestations de service",
+        de: "Dienstleistungen"
+      },
+      title2: {
+        en: "Contact Us",
+        fr: "Nous contacter",
+        de: "Kontaktiere uns"
+      },
+      phone: {
+        en: "Phone Number",
+        fr: "Numéro de téléphone",
+        de: "Telefonnummer"
+      },
+      email: {
+        en: "Email Address",
+        fr: "Adresse e-mail",
+        de: "E-Mail-Addresse"
+      },
+      address: {
+        en: "Office Address",
+        fr: "Adresse de bureau",
+        de: "Büro adresse"
+      },
+      powered_by: {
+        en: "Powered By",
+        fr: "Propulsé par",
+        de: "Unterstützt von"
+      },
+      copyright_by: {
+        en: "Copyright By",
+        fr: "Droit d'auteur par",
+        de: "Urheberrecht von"
+      }
+    },
+    header_content: {
+      explore: {
+        en: "Explore Fishermans Cove Resort",
+        fr: "Explorez la station balnéaire de Fisherman's Cove",
+        de: "Erkunden Sie das Fishermans Cove Resort"
+      },
+      follow: {
+        en: "Follow us",
+        fr: "Suivez-nous",
+        de: "Folge uns"
+      },
+      language: {
+        en: "Language",
+        fr: "Langue",
+        de: "Sprache"
+      }
     }
   }
 };
