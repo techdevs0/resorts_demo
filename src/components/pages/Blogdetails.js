@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Blogsidebar from '../layouts/Blogsidebar';
 import { Link } from 'react-router-dom';
-import API from '../../utils/http';
+import API from '../../langapi/http';
 import { useParams } from "react-router-dom";
 import PageLayout from '../layouts/PageLayout';
 import { constants } from '../../utils/constants';
@@ -24,7 +24,7 @@ const Blogdetails = (props) => {
   const [singleBlogData, setSingleBlogData] = useState([]);
 
   const getSingleBlogData = () => {
-    API.get(`/blogs/${id}`).then(response => {
+    API.get(`/blogs/${id}?lang=${activeLang}`).then(response => {
       const singleData = response?.data?.data;
       setSingleBlogData(singleData);
     })
@@ -38,7 +38,7 @@ const Blogdetails = (props) => {
   const [blogData, setBlogData] = useState([]);
 
   const getBlogData = () => {
-    API.get(`/blogs`).then(response => {
+    API.get(`/blogs?lang=${activeLang}`).then(response => {
       const allData = response.data?.data.filter((x) => x.slug !== id);
       setBlogData(allData);
     })
@@ -52,7 +52,7 @@ const Blogdetails = (props) => {
   const [recentBlog, setRecentBlog] = useState([]);
 
   const getRecentData = () => {
-    API.get(`/blogs`).then(response => {
+    API.get(`/blogs?lang=${activeLang}`).then(response => {
       const recentData = response.data?.data.sort(
         (a, b) =>
           new Date(b.created_at).getTime() - new Date(a.created_at).getTime()

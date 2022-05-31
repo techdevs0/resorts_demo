@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Blogsidebar from '../layouts/Blogsidebar';
 import { Link } from 'react-router-dom';
-import API from '../../utils/http';
+import API from '../../langapi/http';
 import ReactPaginate from "react-paginate";
 import PageLayout from '../layouts/PageLayout';
 import bannerImg from "../../assets/img/blog/blogBanner.jpg"
@@ -16,7 +16,7 @@ const Blog = (props) => {
   const [blogData, setBlogData] = useState([]);
 
   const getBlogData = () => {
-    API.get(`/blogs`).then(response => {
+    API.get(`/blogs?lang=${activeLang}`).then(response => {
       const allData = response.data?.data;
       setBlogData(allData);
     })
@@ -30,7 +30,7 @@ const Blog = (props) => {
   const [recentBlog, setRecentBlog] = useState([]);
 
   const getRecentData = () => {
-    API.get(`/blogs`).then(response => {
+    API.get(`/blogs?lang=${activeLang}`).then(response => {
       const recentData = response.data?.data.sort(
         (a, b) =>
           new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
@@ -45,7 +45,7 @@ const Blog = (props) => {
   useEffect(() => {
     getBlogData();
     getRecentData();
-  }, []);
+  }, [activeLang]);
 
   // pagination code
 
@@ -76,7 +76,7 @@ const Blog = (props) => {
             </ul>
             <p
               dangerouslySetInnerHTML={{
-                __html: x?.short_description.substr(0, 200)
+                __html: x?.short_description?.substr(0, 200)
               }}
             >
             </p>
