@@ -6,6 +6,7 @@ import FAQSection from '../sections/common/FAQSection';
 import PageLayout from "../layouts/PageLayout";
 import SEOTags from "../sections/common/SEOTags";
 import { constants } from "../../utils/constants";
+import LangAPI from '../../langapi/http';
 
 
 const pageId = 119;
@@ -19,9 +20,10 @@ class Dining extends Component {
   }
 
   componentDidMount() {
+    const activeLang = localStorage.getItem('lang');
 
-    API.get('/dining').then(response => {
-      this.setState({ diningData: response.data });
+    LangAPI.get(`/dinings?lang=${activeLang}`).then(response => {
+      this.setState({ diningData: response.data?.data });
     })
       .then(() => {
         API.get(`/meta/${pageId}`).then(response => {

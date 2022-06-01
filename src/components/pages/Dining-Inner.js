@@ -14,6 +14,8 @@ import LeCardinalBreakfastMenu from '../../assets/img/dinning/Le Cardinal Breakf
 import FCRWineListUPDATED from '../../assets/img/dinning/FCR Wine List UPDATED.pdf';
 import FCRInRoomDiningMenuWITHPRICING from '../../assets/img/dinning/FCR In-Room Dining 03-24-2022.pdf';
 import { constants } from "../../utils/constants";
+import LangAPI from '../../langapi/http';
+
 
 
 const faqList = [
@@ -195,26 +197,54 @@ class DiningInner extends Component {
   async componentDidMount() {
     let id = this.props.match.params.id;
     try {
-      console.log(id);
-      const response = await API.get("/dining/" + id);
-      let singleHotel = response?.data?.category_details[0];
+      const activeLang = localStorage.getItem('lang');
+
+      const response = await LangAPI.get(`/dinings/${id}?lang=${activeLang}`);
+      let singleHotel = response?.data?.data;
       singleHotel.uploads = response?.data?.uploads;
       breadcrumbItems[breadcrumbItems.length - 1].text = singleHotel.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
-        "/dining/" + singleHotel.id;
+        "/dining/" + singleHotel._id;
       singleHotel.post_metas = response.data.metas;
       this.setState({ singleHotel });
 
       const sectionsResonse = await API.get("/all_sections/" + singleHotel?.id);
       this.setState({ pageSections: sectionsResonse?.data });
 
-      API.get("/dining").then((othersResponse) => {
-        this.setState({
-          othersData:
-            othersResponse.data.filter(
-              (x) => x.id !== this.state.singleHotel?.id
-            ) || [],
-        });
+      API.get(`/dinings/${id}?lang=${activeLang}`).then((othersResponse) => {
+        // if (othersResponse?.data?.data) {
+
+        //   const responseData = othersResponse?.data?.data;
+        //   // console.log("responseData", Object.entries(responseData));
+
+        //   this.setState({
+        //     othersData:
+        //       Object.entries(responseData)?.find(
+        //         (x) =>
+        //           // {
+        //           //   console.log("filterResponse", x)
+        //           // }
+        //           x._id !== this.state.singleHotel?._id
+        //       ) || [],
+        //   });
+        // }
+        if (othersResponse?.data?.data) {
+
+          const responseData = othersResponse?.data?.data;
+          // console.log("responseData", Object.entries(responseData));
+
+          this.setState({
+            othersData:
+              responseData?.find(
+                (x) =>
+                  // {
+                  //   console.log("filterResponse", x)
+                  // }
+                  x._id !== this.state.singleHotel?._id
+              ) || [],
+          });
+        }
+
       })
         .then(() => {
           API.get(`/all_sections/${pageId}`).then(response => {
@@ -238,13 +268,15 @@ class DiningInner extends Component {
     if (this.props.match.params.id !== prevProps.match.params.id) {
       let id = this.props.match.params.id;
       try {
-        const response = await API.get("/dining/" + id);
-        let singleHotel = response?.data?.category_details[0];
+        const activeLang = localStorage.getItem('lang');
+
+        const response = await LangAPI.get(`/dinings/${id}?lang=${activeLang}`);
+        let singleHotel = response?.data?.data;
         singleHotel.uploads = response?.data?.uploads;
         breadcrumbItems[breadcrumbItems.length - 1].text =
           singleHotel.post_name;
         breadcrumbItems[breadcrumbItems.length - 1].link =
-          "/dining/" + singleHotel.id;
+          "/dining/" + singleHotel._id;
         singleHotel.post_metas = response.data.metas;
         this.setState({ singleHotel });
 
@@ -253,13 +285,15 @@ class DiningInner extends Component {
         );
         this.setState({ pageSections: sectionsResonse?.data });
 
-        API.get("/dining").then((othersResponse) => {
-          this.setState({
-            othersData:
-              othersResponse.data.filter(
-                (x) => x.id !== this.state.singleHotel?.id
-              ) || [],
-          });
+        API.get(`/dinings/${id}?lang=${activeLang}`).then((othersResponse) => {
+          if (othersResponse?.data?.data) {
+            this.setState({
+              othersData:
+                othersResponse?.data?.data?.filter(
+                  (x) => x?._id !== this.state.singleHotel?._id
+                ) || [],
+            });
+          }
         });
       } catch (error) {
         console.log(error);
@@ -275,7 +309,7 @@ class DiningInner extends Component {
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{
             title: this.state.singleHotel?.post_name,
-            image: this.state.singleHotel?.banner_img,
+            image: this.state.singleHotel?.banner_imgPreview,
           }}
           breadCrumb={{ items: breadcrumbItems }}
           key={this.state.singleHotel?.post_name}

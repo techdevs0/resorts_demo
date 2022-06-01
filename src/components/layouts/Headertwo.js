@@ -6,84 +6,86 @@ import { findDOMNode } from "react-dom";
 import API from "../../utils/http";
 import { Spinner } from "react-bootstrap";
 import { constants } from "../../utils/constants";
-import PopUp from "../popup/PopUp";
+// import PopUp from "../popup/PopUp";
+import LangAPI from '../../langapi/http';
 
-let navigationmenu = [
-  {
-    id: 1,
-    linkText: "About Us",
-    child: false,
-    link: "/about",
-  },
-  {
-    id: 2,
-    linkText: "Dining",
-    child: true,
-    link: "/fine-dining-seychelles",
-    submenu: [],
-  },
-  {
-    id: 3,
-    linkText: "Rooms and Suites",
-    child: true,
-    link: "/rooms-suites-seychelles",
-    submenu: [],
-  },
-  {
-    id: 4,
-    link: "/seychelles-wedding-resort",
-    linkText: "Weddings",
-    child: false,
-  },
-  {
-    id: 5,
-    link: "/whats-on",
-    linkText: "Leisure Activities",
-    child: false,
-  },
-  {
-    id: 6,
-    link: "/seychelles-eco-resort",
-    linkText: "Sustainability",
-    child: false,
-  },
-  {
-    id: 7,
-    link: "/spa-resort-seychelles",
-    linkText: "Spa & Wellness",
-    child: false,
-  },
-  {
-    id: 8,
-    link: "/about-seychelles",
-    linkText: "About Seychelles",
-    child: false,
-  },
-  {
-    id: 9,
-    link: "/offers",
-    linkText: "Offers",
-    child: false,
-  },
-  {
-    id: 10,
-    link: "/gallery",
-    linkText: "Gallery",
-    child: false,
-  },
-  {
-    id: 11,
-    link: "/contact",
-    linkText: "Contact Us",
-    child: false,
-  },
-  {
-    id: 12,
-    link: "/blog",
-    linkText: "Blog",
-    child: false,
-  },
-];
+
+// let navigationmenu = [
+//   {
+//     id: 1,
+//     linkText: "About Us",
+//     child: false,
+//     link: "/about",
+//   },
+//   {
+//     id: 2,
+//     linkText: "Dining",
+//     child: true,
+//     link: "/fine-dining-seychelles",
+//     submenu: [],
+//   },
+//   {
+//     id: 3,
+//     linkText: "Rooms and Suites",
+//     child: true,
+//     link: "/rooms-suites-seychelles",
+//     submenu: [],
+//   },
+//   {
+//     id: 4,
+//     link: "/seychelles-wedding-resort",
+//     linkText: "Weddings",
+//     child: false,
+//   },
+//   {
+//     id: 5,
+//     link: "/whats-on",
+//     linkText: "Leisure Activities",
+//     child: false,
+//   },
+//   {
+//     id: 6,
+//     link: "/seychelles-eco-resort",
+//     linkText: "Sustainability",
+//     child: false,
+//   },
+//   {
+//     id: 7,
+//     link: "/spa-resort-seychelles",
+//     linkText: "Spa & Wellness",
+//     child: false,
+//   },
+//   {
+//     id: 8,
+//     link: "/about-seychelles",
+//     linkText: "About Seychelles",
+//     child: false,
+//   },
+//   {
+//     id: 9,
+//     link: "/offers",
+//     linkText: "Offers",
+//     child: false,
+//   },
+//   {
+//     id: 10,
+//     link: "/gallery",
+//     linkText: "Gallery",
+//     child: false,
+//   },
+//   {
+//     id: 11,
+//     link: "/contact",
+//     linkText: "Contact Us",
+//     child: false,
+//   },
+//   {
+//     id: 12,
+//     link: "/blog",
+//     linkText: "Blog",
+//     child: false,
+//   },
+// ];
 
 class Headertwo extends Component {
   constructor(props) {
@@ -171,6 +173,8 @@ class Headertwo extends Component {
     );
 
     try {
+      const activeLang = localStorage.getItem('lang');
+
       const menuResponse = await API.get("/get_widgets/header");
       let menuLinks = menuResponse.data.find(
         (x) => x.widget_name === "menuItems"
@@ -185,80 +189,75 @@ class Headertwo extends Component {
         this.setState({ contact: JSON.parse(contact) });
       }
 
-      const diningResponse = await API.get("/dining");
-      this.setState({ diningSubMenu: diningResponse.data });
+      // const diningResponse = await LangAPI.get(`/dinings?lang=${activeLang}`);
+      // this.setState({ diningSubMenu: diningResponse.data?.data });
 
-      let diningSubMenu = diningResponse?.data?.map((x) => ({
-        id: x.id,
-        link: "/dining/" + x.route,
-        linkText: x.post_name,
-      }));
-      navigationmenu = navigationmenu.map((x) => {
-        if (x.id == 2) {
-          return {
-            ...x,
-            submenu: [
-              { id: 101, link: "/fine-dining-seychelles", linkText: "All Dining" },
-              ...diningSubMenu,
-            ],
-          };
-        } else {
-          return x;
-        }
-      });
+      // let diningSubMenu = diningResponse?.data?.data?.map((x) => ({
+      //   id: x._id,
+      //   link: "/dining/" + x.slug,
+      //   linkText: x.post_name,
+      // }));
+      // navigationmenu = navigationmenu.map((x) => {
+      //   if (x.id == 2) {
+      //     return {
+      //       ...x,
+      //       submenu: [
+      //         { id: 101, link: "/fine-dining-seychelles", linkText: "All Dining" },
+      //         ...diningSubMenu,
+      //       ],
+      //     };
+      //   } else {
+      //     return x;
+      //   }
+      // });
 
-      const roomsResponse = await API.get("/rooms", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      this.setState({ roomSubMenu: roomsResponse.data });
+      // const roomsResponse = await LangAPI.get(`/rooms?lang=${activeLang}`, {
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+      // this.setState({ roomSubMenu: roomsResponse.data?.data });
 
-      let roomsSubMenu = roomsResponse?.data?.map((x) => ({
-        id: x.id,
-        link: "/rooms/" + x.id,
-        linkText: x.post_name,
-      }));
-      // debugger;
-      navigationmenu = navigationmenu.map((x) => {
-        if (x.id == 3) {
-          return {
-            ...x,
-            submenu: [
-              {
-                id: 101,
-                link: "/rooms-suites-seychelles",
-                linkText: "All Rooms & Suites",
-              },
-              ...roomsSubMenu,
-            ],
-          };
-        } else {
-          return x;
-        }
-      });
+      // let roomsSubMenu = roomsResponse?.data?.data?.map((x) => ({
+      //   id: x._id,
+      //   link: "/rooms/" + x.slug,
+      //   linkText: x.post_name,
+      // }));
+      // // debugger;
+      // navigationmenu = navigationmenu.map((x) => {
+      //   if (x.id == 3) {
+      //     return {
+      //       ...x,
+      //       submenu: [
+      //         {
+      //           id: 101,
+      //           link: "/rooms-suites-seychelles",
+      //           linkText: "All Rooms & Suites",
+      //         },
+      //         ...roomsSubMenu,
+      //       ],
+      //     };
+      //   } else {
+      //     return x;
+      //   }
+      // });
     } catch (error) {
       console.log(error);
     }
   }
 
-  handleClickCheck(value, e) {
-
-    console.log('--------------------helllooo---------------', value);
-  }
-
-  toggleDiningMenu = () => {
-    this.setState({
-      isDiningSubMenuOpen: !this.state.isDiningSubMenuOpen,
-      isRoomSubMenuOpen: false,
-    });
-  };
-  toggleRoomMenu = () => {
-    this.setState({
-      isRoomSubMenuOpen: !this.state.isRoomSubMenuOpen,
-      isDiningSubMenuOpen: false,
-    });
-  };
+  // toggleDiningMenu = () => {
+  //   this.setState({
+  //     isDiningSubMenuOpen: !this.state.isDiningSubMenuOpen,
+  //     isRoomSubMenuOpen: false,
+  //   });
+  // };
+  // toggleRoomMenu = () => {
+  //   this.setState({
+  //     isRoomSubMenuOpen: !this.state.isRoomSubMenuOpen,
+  //     isDiningSubMenuOpen: false,
+  //   });
+  // };
   toggleSubMenu = (text) => {
     this.setState({
       [text]: !this.state[text],
@@ -307,20 +306,20 @@ class Headertwo extends Component {
     }
   };
 
-  triggerChild = (e) => {
-    let subMenu = "";
+  // triggerChild = (e) => {
+  //   let subMenu = "";
 
-    subMenu =
-      this.getNextSibling(e.target, ".submenu") !== undefined
-        ? this.getNextSibling(e.target, ".submenu")
-        : null;
+  //   subMenu =
+  //     this.getNextSibling(e.target, ".submenu") !== undefined
+  //       ? this.getNextSibling(e.target, ".submenu")
+  //       : null;
 
-    if (subMenu !== null && subMenu !== undefined && subMenu !== "") {
-      subMenu.classList = subMenu.classList.contains("d-block")
-        ? "submenu"
-        : "submenu d-block";
-    }
-  };
+  //   if (subMenu !== null && subMenu !== undefined && subMenu !== "") {
+  //     subMenu.classList = subMenu.classList.contains("d-block")
+  //       ? "submenu"
+  //       : "submenu d-block";
+  //   }
+  // };
 
   render() {
     const className = this.props.isMobile ? "breakpoint-on" : "";
@@ -359,20 +358,51 @@ class Headertwo extends Component {
                 </div>
                 {/* Mneu Items */}
 
-                <div className="flags-row d-none d-md-flex">
-                  {/* <div>
-                    <img src={require('./../../assets/img/flags/flag1.png')} alt="flag" />
-                  </div> 
-                  <div>
-                    <img src={require('./../../assets/img/flags/flag2.png')} alt="flag" />
-                  </div>
-                  <div>
-                    <img src={require('./../../assets/img/flags/flag3.png')} alt="flag" />
-                  </div> */}
-                </div>
                 <div className="menu-items d-lg-none d-xl-none menuDisplay">
                   <ul>
-                    {navigationmenu.length > 0
+                    {this.state.widgetMenuLinks?.map((x) =>
+                      !x.subMenu?.length > 0 ? (
+                        <li className="text-capitalize">
+                          <Link to={`/${activeLang}/${x.address}`}>{x.text}</Link>
+                        </li>
+                      ) : (
+                        <li>
+                          <Link to="#" onClick={() => this.toggleSubMenu(x.text)}>
+                            {x.text} &nbsp;{" "}
+                            <i
+                              className={`far ${this.state[x.text] ? "fa-minus" : "fa-plus"
+                                }`}
+                            />
+                          </Link>
+                          <div
+                            className={"sidebar-submenu collapse" + (this.state[x.text] ? " show" : "")}
+                          >
+                            <ul>
+                              <li key={"all"}>
+                                <Link to={`/${activeLang}/${x.address}`}
+                                  style={{ padding: "0px 0px 0 30px" }}
+                                >{`All ${x.text}`}</Link>
+                              </li>
+                              {x.subMenu?.map((y) => (
+                                <li key={y.id}>
+                                  <Link to={`/${activeLang}/${y.base_url}/${y.address}`}
+                                    style={{ padding: "0px 0px 0 30px" }}
+                                  >
+                                    {y.text}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </li>
+                      )
+                    )}
+
+
+
+
+
+                    {/* {navigationmenu.length > 0
                       ? navigationmenu.map((item, i) => (
                         <li
                           key={i}
@@ -449,7 +479,7 @@ class Headertwo extends Component {
                           ) : null}
                         </li>
                       ))
-                      : null}
+                      : null} */}
                   </ul>
                   {/* Languages */}
 
@@ -575,75 +605,12 @@ class Headertwo extends Component {
             <Link to="#" className="offcanvas-close" onClick={this.removeClass}>
               <i className="fal fa-times" />
             </Link>
-            {/* Search Widget */}
-            <div className="widget search-widget d-none">
-              {/* <h5 className="widget-title">Search room</h5> */}
-              <form action="#">
-                <input
-                  type="text"
-                  value={this.state.searchResults}
-                  onChange={(e) =>
-                    this.setState({ searchResults: e.target.value })
-                  }
-                  placeholder="Search your keyword..."
-                />
-                <button type="submit">
-                  <i className="far fa-search" />
-                </button>
-                {this.state.searchResults?.length > 0 && (
-                  <div className="search-results">
-                    <Spinner
-                      className="search-spinner"
-                      animation="border"
-                      variant="danger"
-                    />
-                  </div>
-                )}
-              </form>
-            </div>
+
             <div className="widget nav-widget">
               <h5 className="widget-title">
                 {constants?.site_content?.header_content?.explore[activeLang]}
               </h5>
               <ul>
-                {/* <li><Link to="/about-us">About Us</Link></li>
-                <li>
-                  <Link to="#" onClick={this.toggleDiningMenu}>Dining &nbsp; <i className={`far ${this.state.isDiningSubMenuOpen ? 'fa-minus' : 'fa-plus'}`} /></Link>
-                  <div className={"sidebar-submenu collapse" + (this.state.isDiningSubMenuOpen ? ' show' : '')}>
-                    <ul>
-                      <li key={"all"}><Link to={`/dining`}>{"Restaurant & Bars"}</Link></li>
-                      {
-                        this.state.diningSubMenu?.map(x => (
-                          <li key={x.id}><Link to={`/dining-inner/${x.id}`}>{x.post_name}</Link></li>
-                        ))
-                      }
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <Link to="#" onClick={this.toggleRoomMenu}>Rooms &amp; Suites &nbsp; <i className={`far ${this.state.isRoomSubMenuOpen ? 'fa-minus' : 'fa-plus'}`} /></Link>
-                  <div className={"sidebar-submenu collapse" + (this.state.isRoomSubMenuOpen ? ' show' : '')}>
-                    <ul>
-                      <li key={"all"}><Link to={`/room-suites`}>{"Rooms & Suites Types"}</Link></li>
-                      {
-                        this.state.roomSubMenu?.map(x => (
-                          <li key={x.id}><Link to={`/rooms-inner/${x.id}`}>{x.post_name}</Link></li>
-                        ))
-                      }
-                    </ul>
-                  </div>
-                </li> */}
-
-                {/* <li><Link to="/offers">Offers</Link></li> */}
-
-                {/* <li><Link to="/wedding">Weddings</Link></li>
-                <li><Link to="/whats-on">Leisure Activities</Link></li>
-                <li><Link to="/sustainability">Sustainability</Link></li>
-                <li><Link to="/spa-wellness">Spa &amp; Wellness</Link></li>
-                <li><Link to="/about-seychelles">About Seychelles</Link></li>
-                <li><Link to="/gallery">Gallery</Link></li>
-                <li><Link to="/contact">Contact Us</Link></li> */}
-
                 {this.state.widgetMenuLinks?.map((x) =>
                   !x.subMenu?.length > 0 ? (
                     <li className="text-capitalize">
@@ -742,14 +709,6 @@ class Headertwo extends Component {
             </div>
           </div>
         </div>
-        {/*====== OFF CANVAS END ======*/}
-
-
-
-
-        {/* <button onClick={(e) => this.handleClickCheck(1,e)}>
-        click me
-      </button> */}
 
       </div >
 
