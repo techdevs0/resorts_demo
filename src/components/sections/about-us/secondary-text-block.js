@@ -16,7 +16,7 @@ class AboutSecondaryTextBlock extends Component {
               <div className="row align-items-center1 justify-content-space-between bg-div">
                 <div className="col-lg-6">
                   <div className="text-img text-center text-lg-left mb-3 image-wrapper">
-                    <img src={require('../../../assets/img/about/dine.jpg')} alt="" />
+                    <img src={this.props.data?.section_avatar?.avatar} alt="" />
                   </div>
                 </div>
                 <ReactWOW animation="fadeInRight" data-wow-delay=".5s">
@@ -24,11 +24,10 @@ class AboutSecondaryTextBlock extends Component {
                     <div className="block-text h-100 d-flex flex-column justify-content-between align-items-start">
                       <div className="section-title mb-10">
                         <h1>
-                          {constants?.site_content?.about_page?.sec_text_box?.subtitle[this.props?.activeLang]}
+                          {this.props.data?.section_name}
                         </h1>
                       </div>
-                      <p className="text-justify my-1">
-                        {constants?.site_content?.about_page?.sec_text_box?.detail[this.props?.activeLang]}
+                      <p className="text-justify my-1" dangerouslySetInnerHTML={{ __html: this.props.data?.section_content }}>
                       </p>
                       <Link to={`/${this.props?.activeLang}/fine-dining-seychelles`} className="main-btn btn-filled mt-40" style={{ background: '#183254', borderColor: '#183254' }}>
                         {constants?.site_content?.home_page?.banner?.btn2[this.props?.activeLang]}

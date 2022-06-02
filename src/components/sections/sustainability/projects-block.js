@@ -6,7 +6,6 @@ const SustainProjectsBlock = (props) => {
       <div className="container">
         <div className="d-flex flex-wrap title-flex">
           <div className="projects-item  pr-sm-4">
-            {/* <h3 className=" mr-sm-4">Sustainability Projects</h3> */}
             <h3 className="">
               {props.data?.section_name}
             </h3>
@@ -14,7 +13,7 @@ const SustainProjectsBlock = (props) => {
 
           </div>
           <div className="projects-item img-wrapper">
-            <img alt="" className="img-thumbnail" src={props.data?.section_avatar} />
+            <img alt="" className="img-thumbnail" src={props.data?.section_avatar?.avatar} />
           </div>
         </div>
       </div>

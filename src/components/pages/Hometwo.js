@@ -12,10 +12,10 @@ import GuestReviews from "../sections/homepage-two/GuestReviews";
 import ServiceTabs from "../sections/homepage-two/ServicesTabs";
 import BottomNavigator from "../sections/homepage-two/BottomNavigator";
 import API from "../../utils/http";
-// import bannerimg1 from '../../assets/img/banner/coral.avif';
 import bannerimg1 from "../../assets/img/banner/home.jpg";
 import SEOTags from "../sections/common/SEOTags";
 import PopUp from "../popup/PopUp";
+import LangAPI from '../../langapi/http';
 
 import { constants } from "../../utils/constants";
 
@@ -40,8 +40,10 @@ class Hometwo extends Component {
 
   componentDidMount() {
     try {
-      API.get("/premium_offers").then((response) => {
-        this.setState({ premiumOffers: response.data });
+      const activeLang = localStorage.getItem('lang');
+
+      LangAPI.get(`/premium?lang=${activeLang}`).then((response) => {
+        this.setState({ premiumOffers: response.data?.data });
       })
         .then(() => {
           API.get(`/meta/${pageId}`).then(response => {
@@ -51,20 +53,14 @@ class Hometwo extends Component {
         })
       // console.log(response.data);
 
-      API.get("/rooms").then((roomsResponse) => {
-        const roomsData = roomsResponse.data;
+      LangAPI.get(`/rooms?lang=${activeLang}`).then((response) => {
+        const roomsData = response.data?.data;
         this.setState({
-          roomsData: roomsData.filter((x) => x.post_type === "page"),
+          roomsData: roomsData
+          // .filter((x) => x.post_type === "page"),
         });
       });
 
-
-      // const roomsResponse = await API.get('/rooms', {
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   }
-      // });
-      // console.log(roomsResponse.data);
     } catch (error) {
       console.log(error);
     }

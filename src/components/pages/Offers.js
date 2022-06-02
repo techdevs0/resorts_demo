@@ -26,7 +26,7 @@ class Offers extends Component {
 
       const response = await API.get(`/offers?lang=${activeLang}`);
       // debugger;
-      this.setState({ offers: response.data?.data || [] });
+      this.setState({ offers: response.data?.data?.filter((x) => x.is_premium === 0) || [] });
     } catch (error) {
       console.log(error);
     }

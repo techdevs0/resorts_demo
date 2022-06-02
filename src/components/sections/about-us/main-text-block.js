@@ -11,7 +11,7 @@ const AboutTitleBlock = (props) => {
             </div>
           </div>
           <div className="about-title-item img-wrapper">
-            <img alt="" src={props.data?.section_avatar} />
+            <img alt="" src={props.data?.section_avatar?.avatar} />
           </div>
         </div>
       </div>

@@ -2,17 +2,16 @@ import React, { Component } from 'react'
 import LeisureContentBlocks from '../sections/leisure-inner/content-blocks';
 import FAQSection from '../sections/common/FAQSection';
 import PageLayout from '../layouts/PageLayout';
-import API from '../../utils/http';
-import Helmet from "react-helmet";
+import API from '../../langapi/http';
 import { constants } from '../../utils/constants';
+import SEOTags from "../sections/common/SEOTags";
 
 
-const pageId = 41;
+const pageId = `62970741f09c76219b3f3602`;
 
 class LeisureInner extends Component {
 
   state = {
-    lesiureData: [],
     activities: {},
     intro: {},
     banner: {},
@@ -20,27 +19,21 @@ class LeisureInner extends Component {
   }
 
   componentDidMount() {
-    API.get(`/all_sections/${pageId}`).then(response => {
+    const activeLang = localStorage.getItem('lang');
+
+    API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
       this.setState({
-        banner: response.data?.find(x => x.section_slug === "banner"),
+        banner: response?.data?.data[0]?.banner,
+        meta: response?.data?.data[0]?.meta,
         activities: {
-          lounge: response.data?.find(x => x.section_slug === "lounge"),
-          snorkeling: response.data?.find(x => x.section_slug === "snorkeling"),
-          kayaking: response.data?.find(x => x.section_slug === "kayaking"),
-          marine: response.data?.find(x => x.section_slug === "marine"),
-          others: response.data?.find(x => x.section_slug === "others"),
+          lounge: response?.data?.data[0]?.lounge,
+          snorkeling: response?.data?.data[0]?.snorkeling,
+          kayaking: response?.data?.data[0]?.kayaking,
+          marine: response?.data?.data[0]?.marine,
+          others: response?.data?.data[0]?.others,
         }
       });
     })
-      // .then(() => {
-      //   API.get(`/all_sections/${pageId}`).then(response => {
-
-      //     this.setState({
-      //       intro: response.data?.find(x => x.section_slug === "intro"),
-      //       banner: response.data?.find(x => x.section_slug === "banner"),
-      //     });
-      //   })
-      // })
       .catch(err => {
         console.log(err)
       })
@@ -85,20 +78,11 @@ class LeisureInner extends Component {
     return (
       <div className="bg-white leisure-inner-wrapper">
 
-        {/*<SEOTags meta={this.state.meta} />*/}
-        <Helmet>
-          <title>
-            {constants?.site_content?.leisureInner_page?.bread_crumb?.title3[activeLang]} | Fishermans Cove Resort
-            {/*Best Beach Resorts in Seychelles | Fishermans Cove Resort*/}
-          </title>
-          <meta
-            name="description"
-            content="Situated at Beau Vallon Beach, Fishermans Cove Resort is one of the best resorts in Seychelles offering countless unforgettable experiences throughout your discovery"
-          />
-        </Helmet>
+        <SEOTags meta={this.state.meta} />
+
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
           breadCrumb={{ items: breadcrumbItems }}
           activeLang={activeLang}
         >

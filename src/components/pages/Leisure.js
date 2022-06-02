@@ -3,15 +3,14 @@ import LeisureTitleBlock from '../sections/leisure/main-text-block';
 import LeisureGrid from '../sections/leisure/leisure-grid';
 import LeisureAwards from '../sections/leisure/leisure-awards';
 import PageLayout from "../layouts/PageLayout";
-import API from "../../utils/http";
+import API from "../../langapi/http";
 import SEOTags from "../sections/common/SEOTags";
 import { constants } from '../../utils/constants';
 
-const pageId = 8;
+const pageId = `629704001b6e34298e398993`;
 
 class Leisure extends Component {
   state = {
-    // activitiesData: [],
     activitiesData: {},
     awardData: {},
     banner: null,
@@ -20,45 +19,24 @@ class Leisure extends Component {
 
   async componentDidMount() {
     try {
-      // const response = await API.get('/offers');
-      // debugger;
+      const activeLang = localStorage.getItem('lang');
 
-      // this.setState({ premiumOffers: response.data })
-
-      API.get(`/all_sections/${pageId}`).then(response => {
+      API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
         this.setState({
-          banner: response.data?.find(x => x.section_slug === "banner"),
+          banner: response?.data?.data[0]?.banner,
           activitiesData: {
-            activities: response.data?.find(x => x.section_slug === "activities"),
-            Fishing: response.data?.find(x => x.section_slug === "Fishing"),
-            Unlock: response.data?.find(x => x.section_slug === "Unlock"),
-            Water: response.data?.find(x => x.section_slug === "Water"),
+            activities: response.data?.data[0].activities,
+            Fishing: response.data?.data[0].Fishing,
+            Unlock: response.data?.data[0].Unlock,
+            Water: response.data?.data[0].Water,
           },
           awardData: {
-            awards: response.data?.find(x => x.section_slug === "awards"),
-            excellence: response.data?.find(x => x.section_slug === "excellence")
+            awards: response.data?.data[0].awards,
+            excellence: response.data?.data[0].excellence
           },
-          // sections: {
-          //   intro: response.data?.find(x => x.section_slug === "intro"),
-          //   dine: response.data?.find(x => x.section_slug === "dine"),
-          // }
+          meta: response?.data?.data[0]?.meta
         });
       })
-        .then(() => {
-          API.get(`/meta/${pageId}`).then(response => {
-            this.setState({ meta: response.data });
-            console.log(response.data);
-          })
-        })
-        // .then(() => {
-        //   API.get(`/all_sections/${pageId}`).then(response => {
-
-        //     this.setState({
-        //       intro: response.data?.find(x => x.section_slug === "intro"),
-        //       banner: response.data?.find(x => x.section_slug === "banner"),
-        //     });
-        //   })
-        // })
         .catch(err => {
           console.log(err)
         })
@@ -87,7 +65,7 @@ class Leisure extends Component {
 
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
           breadCrumb={{ items: breadcrumbItems }}
           activeLang={activeLang}
         >

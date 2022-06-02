@@ -279,16 +279,6 @@ export const constants = {
           en: "Escape and Enjoy in your own little paradise",
           fr: "Évadez-vous et profitez de votre propre petit paradis",
           de: "Entfliehen und genießen Sie in Ihrem eigenen kleinen Paradies"
-        },
-        subtitle: {
-          en: "Dine Elegantly \n With Us",
-          fr: "Dînez élégamment \n avec nous",
-          de: "Dinieren Sie elegant \n bei uns"
-        },
-        detail: {
-          en: "The two of the best restaurants in Seychelles allow you to savor scrumptious flavors and aromas while sipping exotic cocktails to views of the Indian Ocean’s most spectacular sunset, offering countless experiences with outstanding services throughout your discovery. Enjoy the most toothsome mix of authentic Creole and International cuisine.  Paris Seychelles Restaurant allows you to dine under the stars with a picturesque setting while Le Cardinal  Restaurant offers a new perspective to the mornings with unmatched ambiance.",
-          fr: "Les deux des meilleurs restaurants des Seychelles vous permettent de savourer des saveurs et des arômes succulents tout en sirotant des cocktails exotiques face au coucher de soleil le plus spectaculaire de l'océan Indien, offrant d'innombrables expériences avec des services exceptionnels tout au long de votre découverte. Profitez du mélange le plus savoureux de cuisine créole authentique et internationale. Le restaurant Paris Seychelles vous permet de dîner sous les étoiles dans un cadre pittoresque tandis que le restaurant Le Cardinal offre une nouvelle perspective aux matins avec une ambiance inégalée.",
-          de: "Die zwei der besten Restaurants auf den Seychellen ermöglichen es Ihnen, köstliche Geschmacksrichtungen und Aromen zu genießen, während Sie exotische Cocktails mit Blick auf den spektakulärsten Sonnenuntergang des Indischen Ozeans schlürfen und während Ihrer Entdeckung unzählige Erlebnisse mit hervorragendem Service bieten. Genießen Sie die köstlichste Mischung aus authentischer kreolischer und internationaler Küche. Im Paris Seychelles Restaurant können Sie in malerischer Umgebung unter den Sternen speisen, während das Le Cardinal Restaurant mit einem unvergleichlichen Ambiente eine neue Perspektive auf den Morgen bietet."
         }
       },
       about_offer: {
@@ -635,56 +625,6 @@ export const constants = {
           en: "Write a Remark...",
           fr: "Ecrire une remarque...",
           de: "Schreiben Sie eine Bemerkung ..."
-        }
-      },
-      faq_sec: {
-        faq1: {
-          question: {
-            en: "How much does a wedding for 150 guests in Seychelles cost?",
-            fr: "Combien coûte un mariage pour 150 invités aux Seychelles?",
-            de: "Wie viel kostet eine Hochzeit für 150 Gäste auf den Seychellen?"
-          },
-          answer: {
-            en: "Depending on how much you plan to spend, a wedding in Seychelles will cost somewhere between $1200 to $10000. Seychelles is home to some of the best wedding resort venues.",
-            fr: "Selon le montant que vous prévoyez dépenser, un mariage aux Seychelles coûtera entre 1 200 $ et 10 000 $. Les Seychelles abritent certains des meilleurs lieux de mariage.",
-            de: "Je nachdem, wie viel Sie ausgeben möchten, kostet eine Hochzeit auf den Seychellen zwischen 1200 und 10000 US-Dollar. Auf den Seychellen befinden sich einige der besten Veranstaltungsorte für Hochzeiten."
-          }
-        },
-        faq2: {
-          question: {
-            en: "Can foreigners get married in Seychelles?",
-            fr: "Les étrangers peuvent-ils se marier aux Seychelles ?",
-            de: "Können Ausländer auf den Seychellen heiraten?"
-          },
-          answer: {
-            en: "Yes, foreigners can get married in Seychelles. The documents need to be submitted 30 days prior to the wedding for verification. It is not necessary for the couple to be present for verification, it can be arranged beforehand. All the documents must be in English or french. If any of the documents are not in English or French they will have to be translated into either language. These documents will then have to be stamped and signed by a solicitor stating that it is the true translation of the original.",
-            fr: "Oui, les étrangers peuvent se marier aux Seychelles. Les documents doivent être soumis 30 jours avant le mariage pour vérification. Il n'est pas nécessaire que le couple soit présent pour la vérification, cela peut être organisé au préalable. Tous les documents doivent être en anglais ou en français. Si l'un des documents n'est pas en anglais ou en français, il devra être traduit dans l'une ou l'autre langue. Ces documents devront ensuite être tamponnés et signés par un avocat indiquant qu'il s'agit de la traduction fidèle de l'original.",
-            de: "Ja, Ausländer können auf den Seychellen heiraten. Die Dokumente müssen 30 Tage vor der Hochzeit zur Überprüfung eingereicht werden. Es ist nicht erforderlich, dass das Paar zur Verifizierung anwesend ist, es kann vorher vereinbart werden. Alle Dokumente müssen in englischer oder französischer Sprache vorliegen. Wenn eines der Dokumente nicht in englischer oder französischer Sprache vorliegt, muss es in eine der beiden Sprachen übersetzt werden. Diese Dokumente müssen dann von einem Anwalt gestempelt und unterschrieben werden, der besagt, dass es sich um die wahre Übersetzung des Originals handelt."
-          }
-        },
-        faq3: {
-          question: {
-            en: "Can you get married in Seychelles?",
-            fr: "Peut-on se marier aux Seychelles ?",
-            de: "Kann man auf den Seychellen heiraten?"
-          },
-          answer: {
-            en: "Yes, you can. Seychelles has numerous luxury wedding venues. Couples marrying in Seychelles must have a valid passport and birth certificate. ... Ceremonies are conducted by the Registrar per Seychelles Law. The date selected is subject to the Registrar's availability and the ceremony can be arranged Monday - Friday. Additional cost will be incurred if you plan to organize the wedding ceremony over the weekend or public holidays depending on the availability.",
-            fr: "Oui, vous pouvez. Les Seychelles ont de nombreux lieux de mariage de luxe. Les couples qui se marient aux Seychelles doivent avoir un passeport valide et un certificat de naissance. ... Les cérémonies sont dirigées par le registraire conformément à la loi des Seychelles. La date choisie dépend de la disponibilité du registraire et la cérémonie peut être organisée du lundi au vendredi. Des frais supplémentaires seront encourus si vous prévoyez d'organiser la cérémonie de mariage le week-end ou les jours fériés en fonction des disponibilités.",
-            de: "Ja, du kannst. Die Seychellen haben zahlreiche luxuriöse Hochzeitslocations. Paare, die auf den Seychellen heiraten, müssen einen gültigen Reisepass und eine Geburtsurkunde haben. ... Zeremonien werden vom Standesbeamten gemäß dem Gesetz der Seychellen durchgeführt. Das ausgewählte Datum unterliegt der Verfügbarkeit des Standesbeamten und die Zeremonie kann von Montag bis Freitag arrangiert werden. Wenn Sie planen, die Trauung am Wochenende oder an Feiertagen zu organisieren, fallen je nach Verfügbarkeit zusätzliche Kosten an."
-          }
-        },
-        faq4: {
-          question: {
-            en: "Do the hotels have the facility to organize Couple Weddings? ",
-            fr: "Les hôtels ont-ils la possibilité d'organiser des mariages de couple ?",
-            de: "Haben die Hotels die Möglichkeit, Paarhochzeiten zu organisieren?"
-          },
-          answer: {
-            en: "Yes, hotels and resorts in Seychelles have the facility to organize couple weddings and the prices start from 850 Euros depending on the venue.",
-            fr: "Oui, les hôtels et complexes aux Seychelles ont la possibilité d'organiser des mariages de couple et les prix commencent à partir de 850 euros selon le lieu.",
-            de: "Ja, Hotels und Resorts auf den Seychellen haben die Möglichkeit, Paarhochzeiten zu organisieren, und die Preise beginnen je nach Veranstaltungsort bei 850 Euro."
-          }
         }
       }
     },

@@ -1,47 +1,36 @@
 import React, { Component } from 'react'
 import SpaWellnessTitleBlock from '../sections/spa-wellness/spa-title-block';
 import SpaWellnessRecommendations from '../sections/spa-wellness/spa-offers';
-import API from '../../utils/http';
+import API from "../../langapi/http";
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
 
-const pageId = 42;
+
+const pageId = `629707716acdd721ac47ee52`;
+
 class SpaWellness extends Component {
 
   state = {
     premiumOffers: [],
-    // pageSections: [],
     intro: null,
+    banner: null,
     meta: {}
   }
 
   componentDidMount() {
-    // const spaWellnessID = 42;
-    // let id = this.props.match.params.id;
-    // let id = spaWellnessID;
     try {
-      // const response = await API.get('/premium_offers');
-      // this.setState({premiumOffers: response.data})
-      API.get('/premium_offers').then(response => {
-        this.setState({ premiumOffers: response.data });
+      const activeLang = localStorage.getItem('lang');
+
+      API.get(`/premium?lang=${activeLang}`).then(response => {
+        this.setState({ premiumOffers: response.data?.data });
       })
-        // const sectionsResonse = await API.get('/all_sections/' + id);
-        // this.setState({pageSections: sectionsResonse?.data});
-        //
-        // const metaResponse = await API.get(`/meta/${id}`);
-        // this.setState({meta: response.data});
         .then(() => {
-          API.get(`/meta/${pageId}`).then(response => {
-            this.setState({ meta: response.data });
-            console.log(response.data);
-          })
-        })
-        .then(() => {
-          API.get(`/all_sections/${pageId}`).then(response => {
+          API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
             this.setState({
-              intro: response.data?.find(x => x.section_slug === "intro"),
-              banner: response.data?.find(x => x.section_slug === "banner"),
+              banner: response?.data?.data[0]?.banner,
+              intro: response?.data?.data[0]?.intro,
+              meta: response?.data?.data[0]?.meta
             }
             );
           })
@@ -73,7 +62,7 @@ class SpaWellness extends Component {
         <SEOTags meta={this.state.meta} />
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
           breadCrumb={{ items: breadcrumbItems }}
           activeLang={activeLang}
         >
@@ -84,7 +73,9 @@ class SpaWellness extends Component {
           {/*====== PROJECTS SLIDER END ======*/}
           {/*====== RECOOMENDATIONS START ======*/}
           <SpaWellnessRecommendations title={constants?.site_content?.spawellness_page?.offer_sec?.title[activeLang]}
-            data={this.state.premiumOffers} />
+            data={this.state.premiumOffers}
+            activeLang={activeLang}
+          />
           {/*====== RECOOMENDATIONS END ======*/}
         </PageLayout>
       </div>

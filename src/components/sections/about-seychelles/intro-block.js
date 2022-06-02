@@ -11,7 +11,6 @@ const SeychellesIntroBlock = (props) => {
         <div className="d-flex flex-wrap title-flex">
           <div className="intro-item">
             <h3 className=" mr-sm-4">
-              {/*Call of the Paradise*/}
               {props.data?.section_name}
             </h3>
             <div className="text-justify mr-sm-4" dangerouslySetInnerHTML={{ __html: props.data?.section_content }}>
@@ -19,7 +18,7 @@ const SeychellesIntroBlock = (props) => {
             </div>
           </div>
           <div className="intro-item img-wrapper">
-            <img alt="" src={props.data?.section_avatar} />
+            <img alt="" src={props.data?.section_avatar?.avatar} />
           </div>
         </div>
       </div>

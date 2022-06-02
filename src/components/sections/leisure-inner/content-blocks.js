@@ -17,7 +17,7 @@ const LeisureContentBlocks = (props) => {
                 <div dangerouslySetInnerHTML={{ __html: x.section_content }}></div>
               </div>
               <div className="image-item">
-                <img className="img-thumbnail" src={x.section_avatar} />
+                <img className="img-thumbnail" src={x.section_avatar?.avatar} />
               </div>
             </div>
           ))

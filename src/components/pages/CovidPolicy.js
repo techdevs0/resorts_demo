@@ -1,39 +1,30 @@
 import React, { Component } from 'react'
 import CovidIntroBlock from '../sections/covid-policy/intro-block';
-import API from '../../utils/http';
+import API from '../../langapi/http';
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
 
 
-const pageId = 45;
+const pageId = `62970800fa087469e42bfec3`;
 class CovidPolicy extends Component {
   state = {
-    pageSections: [],
     banner: null,
     intro: null,
     meta: {}
   }
 
   async componentDidMount() {
-    // const covidPolicyID = 45;
-    // // let id = this.props.match.params.id;
-    // let id = covidPolicyID;
     try {
-      // const sectionsResonse = await API.get('/all_sections/' + id);
-      // this.setState({ pageSections: sectionsResonse?.data });
-      API.get(`/all_sections/${pageId}`).then(response => {
+      const activeLang = localStorage.getItem('lang');
+
+      API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
         this.setState({
-          banner: response.data?.find(x => x.section_slug === "banner"),
-          intro: response.data?.find(x => x.section_slug === "intro"),
+          banner: response?.data?.data[0]?.banner,
+          intro: response?.data?.data[0]?.intro,
+          meta: response?.data?.data[0]?.meta
         });
       })
-        .then(() => {
-          API.get(`/meta/${pageId}`).then(response => {
-            this.setState({ meta: response.data });
-            console.log(response.data);
-          })
-        })
     } catch (error) {
       console.log(error)
     }
@@ -58,7 +49,7 @@ class CovidPolicy extends Component {
         <SEOTags meta={this.state.meta} />
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
           breadCrumb={{ items: breadcrumbItems }}
           activeLang={activeLang}
         >

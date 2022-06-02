@@ -104,16 +104,18 @@ const ServiceTabs = (props) => {
                                 <Grid container spacing={0}>
                                     <Grid item xs={12} sm={12} className="px-0 py-0">
                                         <div className="slider-image-wrapper-service">
-                                            <img src={x.thumbnail} alt={x.title || ""} />
+                                            <img src={x.thumbnailPreview} alt={x.title || ""} />
 
                                             <div className="hotel-title-wrapper">
                                                 <h4 className="hotel-tagline my-3">
                                                     {x.post_name}
                                                 </h4>
-                                                <h1 className="hotel-title my-4">
-                                                    {x.short_description}
+                                                <h1 className="hotel-title my-4"
+                                                    dangerouslySetInnerHTML={{ __html: x.short_description }}
+                                                >
+                                                    {/* {x.short_description} */}
                                                 </h1>
-                                                <a href={`/${props?.activeLang}/${x.route}`}>
+                                                <a href={`${x?.post_name === "Book Now" ? `${x.post_url}` : `/${props?.activeLang}/${x.post_url}`}`}>
                                                     <button className="main-btn btn-filled mt-4" >
                                                         {constants?.site_content?.home_page?.premium_offer?.btn_text[props?.activeLang]}
                                                     </button>

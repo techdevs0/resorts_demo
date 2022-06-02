@@ -66,17 +66,6 @@ const SeychellesPillarsBlock = ({ activeLang }) => {
               {constants?.site_content?.aboutSeychelles_page?.pillars_block_sec?.block_6?.detail[activeLang]}
             </p>
           </div>
-
-          {/* <div className="pillars-item img-wrapper">
-            <img alt="" src={require('./../../../assets/img/sustain/pillars.jpg')} />
-          </div>
-          <div className="pillars-item">
-            <h3 className="ml-sm-4">Market Street</h3>
-            <p className="text-justify ml-sm-4">
-            It is encouraged at Fisherman’s Cove to use recycled products. Strategies including ‘Reuse and Recycle’ of the paper, composting, segregation, Mobile app, ‘Refuse the straw’ have been strictly implemented to ensure the advancement towards a better and sustainable future.
-          </p>
-          
-        </div> */}
         </div>
       </div>
     </div>

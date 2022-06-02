@@ -12,7 +12,7 @@ const LeisureAwards = (props) => {
             Object.entries(props.award)?.map(([key, x]) => (
               <div className="col-6 col-md-3">
                 <div className="award-image-wrapper">
-                  <img src={x.section_avatar} alt="sustain" />
+                  <img src={x.section_avatar?.avatar} alt="sustain" />
                 </div>
               </div>
             ))

@@ -1,36 +1,30 @@
 import React, { Component } from 'react'
 import SeychellesIntroBlock from '../sections/about-seychelles/intro-block';
 import SeychellesPillarsBlock from '../sections/about-seychelles/pillars-block';
-import API from "../../utils/http";
+import API from "../../langapi/http";
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
 
-const pageId = 43;
+const pageId = `629707a57f20d344c2209512`;
 
 class AboutSeychelles extends Component {
   state = {
-    premiumOffers: [],
-    sections: null,
+    intro: null,
     banner: null,
     meta: {}
   }
   componentDidMount() {
     try {
-      API.get(`/all_sections/${pageId}`).then(response => {
+      const activeLang = localStorage.getItem('lang');
+
+      API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
         this.setState({
-          banner: response.data?.find(x => x.section_slug === "banner"),
-          sections: {
-            intro: response.data?.find(x => x.section_slug === "intro"),
-          }
+          banner: response?.data?.data[0]?.banner,
+          intro: response?.data?.data[0]?.intro,
+          meta: response?.data?.data[0]?.meta
         });
       })
-        .then(() => {
-          API.get(`/meta/${pageId}`).then(response => {
-            this.setState({ meta: response.data });
-            console.log(response.data);
-          })
-        })
     }
     catch (error) {
       console.log(error)
@@ -56,12 +50,12 @@ class AboutSeychelles extends Component {
         <SEOTags meta={this.state.meta} />
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
           breadCrumb={{ items: breadcrumbItems }}
           activeLang={activeLang}
         >
           {/*/!*====== INTRO START ======*!/*/}
-          <SeychellesIntroBlock data={this.state.sections?.intro}
+          <SeychellesIntroBlock data={this.state.intro}
             activeLang={activeLang}
           />
           {/*====== INTRO END ======*/}

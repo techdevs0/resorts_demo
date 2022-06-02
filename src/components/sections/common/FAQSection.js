@@ -7,11 +7,6 @@ import { constants } from "../../../utils/constants";
 function ContextAwareToggle({ children, eventKey, callback }) {
     const currentEventKey = useContext(AccordionContext);
 
-    // const decoratedOnClick = useAccordionToggle(
-    //   eventKey,
-    //   () => callback && callback(eventKey),
-    // );
-
     const isCurrentEventKey = currentEventKey === eventKey;
 
     return (
@@ -26,21 +21,13 @@ function ContextAwareToggle({ children, eventKey, callback }) {
 
 const FAQSection = (props) => {
 
-    // const [currentIndex, setIndex] = useState(0);
-
-    // const setCurrentIndex = (index) => {
-    //   setIndex(index);
-    // }
-
     return (
         <div className="faq-section-block my-3 my-sm-5">
             <div className="container">
                 <h4 className="text-center main-title mb-3 mb-sm-5">
                     {constants?.site_content?.dinning_page?.faq_sec?.title[props?.activeLang]}
                 </h4>
-                {/*{*/}
-                {/*    console.log(props)*/}
-                {/*}*/}
+
                 <Accordion>
                     {
                         props?.faqData?.map((x, i) => (

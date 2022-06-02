@@ -8,9 +8,9 @@ const LeisureGrid = (props) => {
       {/*  props.title && <h1 className="leisure-grid-title">{props.title}</h1>*/}
       {/*}*/}
       <div className='leisure-grid-wrapper'>
-          {
-              Object.entries(props.actData)?.map(([key, x]) => (
-                <RoomGridItem title={x.section_name} image={x.section_avatar}/>
+        {
+          Object.entries(props.actData)?.map(([key, x]) => (
+            <RoomGridItem title={x.section_name} image={x.section_avatar?.avatar} />
           ))
         }
       </div>

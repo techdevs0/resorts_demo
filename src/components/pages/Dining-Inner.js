@@ -211,40 +211,16 @@ class DiningInner extends Component {
       const sectionsResonse = await API.get("/all_sections/" + singleHotel?.id);
       this.setState({ pageSections: sectionsResonse?.data });
 
-      API.get(`/dinings/${id}?lang=${activeLang}`).then((othersResponse) => {
-        // if (othersResponse?.data?.data) {
 
-        //   const responseData = othersResponse?.data?.data;
-        //   // console.log("responseData", Object.entries(responseData));
 
-        //   this.setState({
-        //     othersData:
-        //       Object.entries(responseData)?.find(
-        //         (x) =>
-        //           // {
-        //           //   console.log("filterResponse", x)
-        //           // }
-        //           x._id !== this.state.singleHotel?._id
-        //       ) || [],
-        //   });
-        // }
-        if (othersResponse?.data?.data) {
-
-          const responseData = othersResponse?.data?.data;
-          // console.log("responseData", Object.entries(responseData));
-
-          this.setState({
-            othersData:
-              responseData?.find(
-                (x) =>
-                  // {
-                  //   console.log("filterResponse", x)
-                  // }
-                  x._id !== this.state.singleHotel?._id
-              ) || [],
-          });
-        }
-
+      LangAPI.get(`/dinings?lang=${activeLang}`).then((res) => {
+        this.setState({
+          othersData:
+            res?.data?.data?.filter(
+              (x) =>
+                x._id !== this.state.singleHotel?._id
+            ) || [],
+        });
       })
         .then(() => {
           API.get(`/all_sections/${pageId}`).then(response => {
@@ -285,15 +261,13 @@ class DiningInner extends Component {
         );
         this.setState({ pageSections: sectionsResonse?.data });
 
-        API.get(`/dinings/${id}?lang=${activeLang}`).then((othersResponse) => {
-          if (othersResponse?.data?.data) {
-            this.setState({
-              othersData:
-                othersResponse?.data?.data?.filter(
-                  (x) => x?._id !== this.state.singleHotel?._id
-                ) || [],
-            });
-          }
+        LangAPI.get(`/dinings?lang=${activeLang}`).then((othersResponse) => {
+          this.setState({
+            othersData:
+              othersResponse?.data?.data?.filter(
+                (x) => x._id !== this.state.singleHotel?._id
+              ) || [],
+          });
         });
       } catch (error) {
         console.log(error);

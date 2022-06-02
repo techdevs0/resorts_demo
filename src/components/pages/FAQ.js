@@ -4,6 +4,8 @@ import API from "../../utils/http";
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
+import LangAPI from '../../langapi/http';
+
 
 const faqList = [
   {
@@ -93,13 +95,15 @@ class FAQ extends Component {
 
   async componentDidMount() {
     try {
-      const response = await API.get('/faqs');
+      const activeLang = localStorage.getItem('lang');
+
+      const response = await LangAPI.get(`/faqs?lang=${activeLang}`);
       // debugger;
-      let faqRes = response?.data[0]?.section_content;
-      faqRes = faqRes.replace(/'/g, '"')
-      faqRes = JSON.parse(faqRes)
-      console.log("response", faqRes)
-      this.setState({ faqsData: faqRes });
+      // let faqRes = response?.data[0]?.section_content;
+      // faqRes = faqRes.replace(/'/g, '"')
+      // faqRes = JSON.parse(faqRes)
+      // console.log("response", faqRes)
+      this.setState({ faqsData: response?.data?.data });
 
       API.get(`/all_sections/${pageId}`).then(response => {
         this.setState({
@@ -144,8 +148,8 @@ class FAQ extends Component {
           {/*  /!*====== INTRO START ======*!/*/}
           <div className="bg-white faq-wrapper">
             <FAQIntroBlock
-              // faqList={this.state.faqsData}
-              faqList={faqList}
+              faqList={this.state.faqsData}
+              // faqList={faqList}
               activeLang={activeLang}
             />
             {/*====== INTRO END ======*/}
