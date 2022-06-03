@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import GalleryTitleBlock from '../sections/gallery/main-text-block';
 import GalleryGrid from '../sections/gallery/gallery-grid';
-import API from '../../utils/http';
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from "../../utils/constants";
-import LangAPI from '../../langapi/http';
+import API from '../../langapi/http';
 
 const pageId = `6297121cc333da05c64f27d2`;
 class GalleryMain extends Component {
@@ -19,10 +18,7 @@ class GalleryMain extends Component {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      const response = await API.get('/uploads');
-      this.setState({ galleryData: response.data });
-
-      LangAPI.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
+      API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
         this.setState({
           banner: response?.data?.data[0]?.banner,
           galleryData: response?.data?.data[0]?.imageGallery,
