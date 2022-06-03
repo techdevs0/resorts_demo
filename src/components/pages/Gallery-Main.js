@@ -25,6 +25,7 @@ class GalleryMain extends Component {
       LangAPI.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
         this.setState({
           banner: response?.data?.data[0]?.banner,
+          galleryData: response?.data?.data[0]?.imageGallery,
           meta: response?.data?.data[0]?.meta
         });
       })

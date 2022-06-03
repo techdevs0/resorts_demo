@@ -28,10 +28,10 @@ const GalleryGrid = (props) => {
           prevSrc={props.data[(photoIndex + props.data.length - 1) % props.data.length]?.avatar}
           onMovePrevRequest={() => {
             setPhotoIndex((photoIndex + props.data.length - 1) % props.data.length);
-            setMainSrc(props.data[(photoIndex + props.data.length - 1 ) % props.data.length]);
+            setMainSrc(props.data[(photoIndex + props.data.length - 1) % props.data.length]);
           }
           }
-          onMoveNextRequest={() =>{
+          onMoveNextRequest={() => {
             setPhotoIndex((photoIndex + 1) % props.data.length);
             setMainSrc(props.data[(photoIndex + 1) % props.data.length]);
           }
