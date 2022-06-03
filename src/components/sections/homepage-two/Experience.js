@@ -11,12 +11,12 @@ class Experience extends Component {
             {
                 image: require('../../../assets/img/experience/sustaniablity.webp'),
                 title: `${constants?.site_content?.home_page?.experience?.data_title1[this.props?.activeLang]}`,
-                link: '/seychelles-eco-resort'
+                link: '/sustainability'
             },
             {
                 image: require('../../../assets/img/experience/overview.webp'),
                 title: `${constants?.site_content?.home_page?.experience?.data_title2[this.props?.activeLang]}`,
-                link: '/about'
+                link: '/about-us'
             },
             {
                 image: require('../../../assets/img/experience/seychelles-min.webp'),

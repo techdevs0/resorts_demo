@@ -120,7 +120,7 @@ class FAQ extends Component {
       },
       {
         text: 'F.A.Qs',
-        link: '/faq',
+        link: '/faqs',
         isActive: true,
       },
     ]

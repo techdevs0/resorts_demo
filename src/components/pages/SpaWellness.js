@@ -52,7 +52,7 @@ class SpaWellness extends Component {
       },
       {
         text: `${constants?.site_content?.spawellness_page?.bread_crumb?.title2[activeLang]}`,
-        link: '/spa-resort-seychelles',
+        link: '/spa-wellness',
         isActive: true,
       },
     ]

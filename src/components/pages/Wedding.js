@@ -55,7 +55,7 @@ class Wedding extends Component {
       },
       {
         text: `${constants?.site_content?.weddings_page?.bread_crumb?.title2[activeLang]}`,
-        link: '/seychelles-wedding-resort',
+        link: '/wedding',
         isActive: true,
       },
     ];

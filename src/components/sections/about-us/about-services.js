@@ -17,7 +17,7 @@ const AboutServices = (props) => {
     {
       name: `${constants?.site_content?.about_page?.rooms_data?.title3[props?.activeLang]}`,
       icon: 'far fa-rings-wedding',
-      link: '/seychelles-wedding-resort'
+      link: '/wedding'
     },
     {
       name: `${constants?.site_content?.about_page?.rooms_data?.title4[props?.activeLang]}`,

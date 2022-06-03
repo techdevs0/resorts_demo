@@ -52,7 +52,7 @@ class AboutUs extends Component {
       },
       {
         text: `${constants?.site_content?.about_page?.bread_crumb?.title2[activeLang]}`,
-        link: '/about',
+        link: '/about-us',
         isActive: true,
       },
     ];

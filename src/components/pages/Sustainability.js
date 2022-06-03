@@ -50,7 +50,7 @@ class Sustainability extends Component {
       },
       {
         text: `${constants?.site_content?.sustainbility_page?.bread_crumb?.title2[activeLang]}`,
-        link: '/seychelles-eco-resort',
+        link: '/sustainability',
         isActive: true,
       },
     ]

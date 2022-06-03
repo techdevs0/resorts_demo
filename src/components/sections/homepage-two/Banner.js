@@ -31,7 +31,7 @@ class Banner extends Component {
         btn1url: '/gallery',
         btn2: `${constants?.site_content?.home_page?.banner?.btn2[this.props?.activeLang]}`,
         btn2animation: '1.3s',
-        btn2url: '/about',
+        btn2url: '/about-us',
         btn3: `${constants?.site_content?.home_page?.banner?.btn3[this.props?.activeLang]}`,
         btn3animation: '1.3s',
         btn3url: '/',

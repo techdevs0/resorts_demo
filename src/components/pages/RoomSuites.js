@@ -51,7 +51,7 @@ class RoomSuites extends Component {
       },
       {
         text: `${constants?.site_content?.rooms_page?.bread_crumb?.title2[activeLang]}`,
-        link: '/room-suites',
+        link: '/rooms-suites-seychelles',
         isActive: true,
       },
     ]
