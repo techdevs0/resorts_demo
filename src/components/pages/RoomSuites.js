@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import RoomTitleBlock from '../sections/room-suites/main-text-block';
 import RoomSuiteGrid from '../sections/room-suites/room-suites-grid';
-import API from '../../utils/http';
+import API from '../../langapi/http';
 import PageLayout from "../layouts/PageLayout";
 import SEOTags from "../sections/common/SEOTags";
 import { constants } from "../../utils/constants";
-import LangAPI from '../../langapi/http';
 
-
-const pageId = 79;
+const pageId = `62970893199be664df7a3a32`;
 class RoomSuites extends Component {
   state = {
     roomsData: [],
@@ -22,28 +20,21 @@ class RoomSuites extends Component {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      LangAPI.get(`/rooms?lang=${activeLang}`).then(response => {
+      API.get(`/rooms?lang=${activeLang}`).then(response => {
         const roomsData = response.data?.data?.filter(x => x.room_type == 1);
         const suitesData = response.data?.data?.filter(x => x.room_type == 2);
-        // console.log(response.data);
         this.setState({ roomsData, suitesData });
 
       })
         .then(() => {
-          API.get(`/all_sections/${pageId}`).then(response => {
+          API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
             this.setState({
-              banner: response.data?.find(x => x.section_slug === "banner"),
-              intro: response.data?.find(x => x.section_slug === "intro"),
+              banner: response?.data?.data[0]?.banner,
+              intro: response?.data?.data[0]?.intro,
+              meta: response?.data?.data[0]?.meta
             });
           })
         })
-        .then(() => {
-          API.get(`/meta/${pageId}`).then(response => {
-            this.setState({ meta: response.data });
-            console.log(response.data);
-          })
-        })
-      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -71,7 +62,7 @@ class RoomSuites extends Component {
 
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
           breadCrumb={{ items: breadcrumbItems }}
           activeLang={activeLang}
         >

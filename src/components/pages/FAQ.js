@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import FAQIntroBlock from '../sections/faq/intro-block';
-import API from "../../utils/http";
+import API from '../../langapi/http';
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
-import LangAPI from '../../langapi/http';
 
 
 const faqList = [
@@ -85,7 +84,7 @@ Constance Lemuria.
     category: 'policy'
   },
 ]
-const pageId = 147;
+const pageId = '6297124bb6801e339e7cb7c2';
 class FAQ extends Component {
   state = {
     banner: null,
@@ -97,26 +96,15 @@ class FAQ extends Component {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      const response = await LangAPI.get(`/faqs?lang=${activeLang}`);
-      // debugger;
-      // let faqRes = response?.data[0]?.section_content;
-      // faqRes = faqRes.replace(/'/g, '"')
-      // faqRes = JSON.parse(faqRes)
-      // console.log("response", faqRes)
+      const response = await API.get(`/faqs?lang=${activeLang}`);
       this.setState({ faqsData: response?.data?.data });
 
-      API.get(`/all_sections/${pageId}`).then(response => {
+      API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
         this.setState({
-          banner: response.data?.find(x => x.section_slug === "banner"),
-          intro: response.data?.find(x => x.section_slug === "intro"),
+          banner: response?.data?.data[0]?.banner,
+          meta: response?.data?.data[0]?.meta
         });
       })
-        .then(() => {
-          API.get(`/meta/${pageId}`).then(response => {
-            this.setState({ meta: response.data });
-            console.log(response.data);
-          })
-        })
     } catch (error) {
       console.log(error);
     }
@@ -141,7 +129,7 @@ class FAQ extends Component {
         <SEOTags meta={this.state.meta} />
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
           breadCrumb={{ items: breadcrumbItems }}
           activeLang={activeLang}
         >
@@ -149,7 +137,6 @@ class FAQ extends Component {
           <div className="bg-white faq-wrapper">
             <FAQIntroBlock
               faqList={this.state.faqsData}
-              // faqList={faqList}
               activeLang={activeLang}
             />
             {/*====== INTRO END ======*/}

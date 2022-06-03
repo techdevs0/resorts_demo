@@ -2,16 +2,10 @@ import React, { useContext, useState } from 'react';
 import { AccordionContext, Card } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 import { constants } from '../../../utils/constants';
-// import FAQCategories from './faq-categories';
 
 
 function ContextAwareToggle({ children, eventKey, callback }) {
   const currentEventKey = useContext(AccordionContext);
-
-  // const decoratedOnClick = useAccordionToggle(
-  //   eventKey,
-  //   () => callback && callback(eventKey),
-  // );
 
   const isCurrentEventKey = currentEventKey === eventKey;
 
@@ -36,7 +30,6 @@ const FAQIntroBlock = (props) => {
         <h2 className="text-center main-title">
           {constants?.site_content?.dinning_page?.faq_sec?.title[props?.activeLang]}
         </h2>
-        {/* <FAQCategories setCurrentIndex={setCurrentIndex} currentIndex={currentIndex} /> */}
         <Accordion>
           {
             props.faqList?.map((x, i) => (

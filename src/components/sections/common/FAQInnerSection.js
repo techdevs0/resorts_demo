@@ -36,6 +36,7 @@ const FAQInnerSection = (props) => {
         setIndex(index);
     }
 
+    console.log("faqList", props.faqList)
     return (
         <div className="faq-section-block my-3 my-sm-5">
             <div className="container">
@@ -45,7 +46,7 @@ const FAQInnerSection = (props) => {
                 <Accordion>
                     {
                         props?.faqList?.map((x, i) => (
-                            pageRout[3] === x.route &&
+                            // pageRout[3] === x.route &&
                             <Card>
                                 <Accordion.Toggle as={Card.Header} eventKey={`${i}`} style={{ cursor: 'pointer' }} >
                                     <ContextAwareToggle eventKey={`${i}`} >

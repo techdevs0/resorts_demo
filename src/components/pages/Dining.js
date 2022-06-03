@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import DiningTitleBlock from '../sections/dining/main-text-block';
 import DiningGrid from '../sections/dining/dining-grid';
-import API from '../../utils/http';
+import API from '../../langapi/http';
 import FAQSection from '../sections/common/FAQSection';
 import PageLayout from "../layouts/PageLayout";
 import SEOTags from "../sections/common/SEOTags";
 import { constants } from "../../utils/constants";
-import LangAPI from '../../langapi/http';
 
 
-const pageId = 119;
+const pageId = `62970a9b74ebe90925430da2`;
 class Dining extends Component {
   state = {
     diningData: [],
@@ -22,26 +21,16 @@ class Dining extends Component {
   componentDidMount() {
     const activeLang = localStorage.getItem('lang');
 
-    LangAPI.get(`/dinings?lang=${activeLang}`).then(response => {
+    API.get(`/dinings?lang=${activeLang}`).then(response => {
       this.setState({ diningData: response.data?.data });
     })
       .then(() => {
-        API.get(`/meta/${pageId}`).then(response => {
-          this.setState({ meta: response.data });
-        })
-      })
-      .then(() => {
-        API.get(`/all_sections/${pageId}`).then(response => {
-          // debugger;
-          let faqRes = response?.data[3]?.section_content;
-          faqRes = faqRes.replace(/'/g, '"')
-          faqRes = JSON.parse(faqRes)
-          console.log("response", faqRes)
+        API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
           this.setState({
-            intro: response.data?.find(x => x.section_slug === "intro"),
-            banner: response.data?.find(x => x.section_slug === "banner"),
-            // faq: response.data?.find(x => x.section_slug === "faq"),
-            faq: faqRes
+            banner: response?.data?.data[0]?.banner,
+            intro: response?.data?.data[0]?.intro,
+            meta: response?.data?.data[0]?.meta,
+            faq: response?.data?.data[0]?.faq?.section_content
           });
         })
       })
@@ -51,7 +40,6 @@ class Dining extends Component {
   }
 
   render() {
-    // console.log("Dining Response",this.state)
     const activeLang = localStorage.getItem('lang');
 
     const breadcrumbItems = [
@@ -71,7 +59,7 @@ class Dining extends Component {
         <SEOTags meta={this.state.meta} />
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
           breadCrumb={{ items: breadcrumbItems }}
           activeLang={activeLang}
         >
@@ -84,7 +72,6 @@ class Dining extends Component {
           <FAQSection
             faqData={this.state.faq}
             activeLang={activeLang}
-          // faqList={faqList}
           />
         </PageLayout>
       </div>

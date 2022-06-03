@@ -64,7 +64,7 @@ const Blog = (props) => {
           </div>
           <div className="post-desc">
             <h2>
-              <Link to={`/${activeLang}/blog-inner/${x?.slug}`}>
+              <Link to={`/${activeLang}/blogs/${x?.slug}`}>
                 {x?.title}
               </Link>
             </h2>
@@ -88,7 +88,7 @@ const Blog = (props) => {
                 </Link>
               </div>
               <div className="read-more">
-                <Link to={`/${activeLang}/blog-inner/${x?.slug}`}><i className="far fa-arrow-right" />
+                <Link to={`/${activeLang}/blogs/${x?.slug}`}><i className="far fa-arrow-right" />
                   {constants?.site_content?.blog_page?.blog_grid?.btn_text[activeLang]}
                 </Link>
               </div>

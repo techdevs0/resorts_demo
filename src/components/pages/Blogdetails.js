@@ -80,7 +80,7 @@ const Blogdetails = (props) => {
     },
     {
       text: `${singleBlogData?.title}`,
-      link: `/blog-inner/${singleBlogData?.slug}`,
+      link: `/blogs/${singleBlogData?.slug}`,
       isActive: true,
     },
   ]
@@ -149,10 +149,10 @@ const Blogdetails = (props) => {
                                 style={{ backgroundImage: `url( ${x?.img})` }} >
                               </div> */}
                                   <div className="desc">
-                                    <Link to={`/${activeLang}/blog-inner/${x?.slug}`} className="date"><i className="far fa-calendar-alt" />
+                                    <Link to={`/${activeLang}/blogs/${x?.slug}`} className="date"><i className="far fa-calendar-alt" />
                                       {new Date(x?.created_at).toLocaleDateString()}
                                     </Link>
-                                    <h4><Link to={`/${activeLang}/blog-inner/${x?.slug}`}>
+                                    <h4><Link to={`/${activeLang}/blogs/${x?.slug}`}>
                                       {x?.title}
                                     </Link></h4>
                                     <p

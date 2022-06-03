@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import DiningInnerTitleBlock from "../sections/dining-inner/main-text-block";
 import DiningInnerInfo from "../sections/dining-inner/dining-grid";
 import OtherRecommendations from "../sections/dining-inner/dining-inner-grid-item";
-import API from "../../utils/http";
 import PageLayout from "../layouts/PageLayout";
-import SEOTags from "../sections/common/SEOTags";
+// import SEOTags from "../sections/common/SEOTags";
 import FAQInnerSection from "../sections/common/FAQInnerSection";
 import SunsetBarBeverageMenu from '../../assets/img/dinning/FCR Wine List UPDATED.pdf';
 import ParisSeychellesMainMenu from '../../assets/img/dinning/Paris Seychelles Menu Updated.pdf';
@@ -14,7 +13,8 @@ import LeCardinalBreakfastMenu from '../../assets/img/dinning/Le Cardinal Breakf
 import FCRWineListUPDATED from '../../assets/img/dinning/FCR Wine List UPDATED.pdf';
 import FCRInRoomDiningMenuWITHPRICING from '../../assets/img/dinning/FCR In-Room Dining 03-24-2022.pdf';
 import { constants } from "../../utils/constants";
-import LangAPI from '../../langapi/http';
+import API from '../../langapi/http';
+import { Helmet } from "react-helmet";
 
 
 
@@ -185,35 +185,40 @@ let breadcrumbItems = [
     isActive: true,
   },
 ];
-const pageId = 137;
+
 class DiningInner extends Component {
   state = {
     singleHotel: {},
     othersData: [],
     sections: null,
     pageSections: [],
+    faqsData: []
   };
 
   async componentDidMount() {
     let id = this.props.match.params.id;
+
     try {
       const activeLang = localStorage.getItem('lang');
 
-      const response = await LangAPI.get(`/dinings/${id}?lang=${activeLang}`);
+      API.get(`/faqs?lang=${activeLang}`).then((faqresponse) => {
+        this.setState({
+          faqsData:
+            faqresponse?.data?.data?.filter(
+              (x) => x.page === "dining"
+            ) || [],
+        });
+      });
+
+      const response = await API.get(`/dinings/${id}?lang=${activeLang}`);
       let singleHotel = response?.data?.data;
-      singleHotel.uploads = response?.data?.uploads;
       breadcrumbItems[breadcrumbItems.length - 1].text = singleHotel.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
-        "/dining/" + singleHotel._id;
-      singleHotel.post_metas = response.data.metas;
+        "/dining/" + singleHotel.slug;
+
       this.setState({ singleHotel });
 
-      const sectionsResonse = await API.get("/all_sections/" + singleHotel?.id);
-      this.setState({ pageSections: sectionsResonse?.data });
-
-
-
-      LangAPI.get(`/dinings?lang=${activeLang}`).then((res) => {
+      API.get(`/dinings?lang=${activeLang}`).then((res) => {
         this.setState({
           othersData:
             res?.data?.data?.filter(
@@ -222,17 +227,6 @@ class DiningInner extends Component {
             ) || [],
         });
       })
-        .then(() => {
-          API.get(`/all_sections/${pageId}`).then(response => {
-            this.setState({
-              banner: response.data?.find(x => x.section_slug === "banner"),
-              sections: {
-                intro: response.data?.find(x => x.section_slug === "intro"),
-                dine: response.data?.find(x => x.section_slug === "dine"),
-              }
-            });
-          })
-        })
     } catch (error) {
       console.log(error);
     }
@@ -246,22 +240,25 @@ class DiningInner extends Component {
       try {
         const activeLang = localStorage.getItem('lang');
 
-        const response = await LangAPI.get(`/dinings/${id}?lang=${activeLang}`);
+        API.get(`/faqs?lang=${activeLang}`).then((faqresponse) => {
+          this.setState({
+            faqsData:
+              faqresponse?.data?.data?.filter(
+                (x) => x.page === "dining"
+              ) || [],
+          });
+        });
+
+        const response = await API.get(`/dinings/${id}?lang=${activeLang}`);
         let singleHotel = response?.data?.data;
-        singleHotel.uploads = response?.data?.uploads;
         breadcrumbItems[breadcrumbItems.length - 1].text =
           singleHotel.post_name;
         breadcrumbItems[breadcrumbItems.length - 1].link =
-          "/dining/" + singleHotel._id;
-        singleHotel.post_metas = response.data.metas;
+          "/dining/" + singleHotel.slug;
+
         this.setState({ singleHotel });
 
-        const sectionsResonse = await API.get(
-          "/all_sections/" + singleHotel?.id
-        );
-        this.setState({ pageSections: sectionsResonse?.data });
-
-        LangAPI.get(`/dinings?lang=${activeLang}`).then((othersResponse) => {
+        API.get(`/dinings?lang=${activeLang}`).then((othersResponse) => {
           this.setState({
             othersData:
               othersResponse?.data?.data?.filter(
@@ -278,7 +275,16 @@ class DiningInner extends Component {
     const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white dining-inner-wrapper">
-        <SEOTags meta={this.state.singleHotel?.post_metas?.[0]} />
+        {/* <SEOTags meta={this.state.singleHotel?.meta_title} /> */}
+        <Helmet>
+          <title>
+            {
+              this.state.singleHotel?.meta_title || "Fishermans Cove Resort"
+            }
+          </title>
+          <meta name="description" content={this.state.singleHotel?.meta_description} />
+
+        </Helmet>
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{
@@ -292,9 +298,6 @@ class DiningInner extends Component {
           {/*====== TITLE START ======*/}
           <DiningInnerTitleBlock
             dining={this.state.singleHotel}
-            introSection={this.state.pageSections?.find(
-              (x) => x.section_slug === "intro"
-            )}
           />
           {/*====== TITLE END ======*/}
           {/*====== ROOM GRID START ======*/}
@@ -304,13 +307,6 @@ class DiningInner extends Component {
             dress_code={this.state.singleHotel?.section_dress_code}
             menuPdf={menuPdf}
             activeLang={activeLang}
-
-          // timingSection={this.state.pageSections?.find(
-          //   (x) => x.section_slug === "timings"
-          // )}
-          // dressSection={this.state.pageSections?.find(
-          //   (x) => x.section_slug === "dress"
-          // )}
           />
 
           {/*====== OTHERS GRID START ======*/}
@@ -323,7 +319,7 @@ class DiningInner extends Component {
 
           <FAQInnerSection
             // faqList={faqList.filter((x) => x.route == this.state.singleHotel?.route)}
-            faqList={faqList}
+            faqList={this.state.faqsData}
             activeLang={activeLang}
           />
 

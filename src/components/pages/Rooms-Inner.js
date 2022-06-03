@@ -6,7 +6,8 @@ import RoomVR360 from "../sections/rooms-inner/room-360";
 import BookingFormVertical from "../sections/rooms-inner/BookingFormVertical";
 import API from '../../langapi/http';
 import PageLayout from "../layouts/PageLayout";
-import SEOTags from "../sections/common/SEOTags";
+// import SEOTags from "../sections/common/SEOTags";
+import { Helmet } from "react-helmet";
 import FAQInnerSection from "../sections/common/FAQInnerSection";
 import { constants } from "../../utils/constants";
 
@@ -169,7 +170,7 @@ let breadcrumbItems = [
   },
   {
     text: "",
-    link: "/rooms-inner",
+    link: "/rooms",
     isActive: true,
   },
 ];
@@ -179,6 +180,7 @@ class RoomsInner extends Component {
     singleRoom: {},
     meta: {},
     othersData: [],
+    faqsData: []
   };
 
   async componentDidMount() {
@@ -187,27 +189,30 @@ class RoomsInner extends Component {
       //getting single post data
       const activeLang = localStorage.getItem('lang');
 
+      API.get(`/faqs?lang=${activeLang}`).then((faqresponse) => {
+        this.setState({
+          faqsData:
+            faqresponse?.data?.data?.filter(
+              (x) => x.page === "rooms"
+            ) || [],
+        });
+      });
+
       const response = await API.get(`/rooms/${id}?lang=${activeLang}`);
       //making breadcrumbs dynamic, appending into last item
       breadcrumbItems[breadcrumbItems.length - 1].text =
         response.data.data?.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
-        "/rooms-inner/" + response.data.data?._id;
+        "/rooms/" + response.data.data?.slug;
 
       let singleRoom = response.data.data;
 
       singleRoom.roomCode = singleRoom?.post_url?.split("room=")[1];
 
-      //getting and appending images to single room data
-      // const imagesResponse = await API.get('/post_uploads/' + id);
-      // singleRoom.images = imagesResponse.data.filter(x => x["360_view"] == "");
-
-      // singleRoom.images360 = imagesResponse.data.filter(x => x["360_view"] == "1");
       this.setState({ singleRoom });
 
       //fetching others room data for
       API.get(`/rooms?lang=${activeLang}`).then((othersResponse) => {
-        // debugger;
         this.setState({
           othersData:
             othersResponse.data?.data?.filter(
@@ -225,23 +230,28 @@ class RoomsInner extends Component {
       let id = this.props.match.params.id;
       try {
         const activeLang = localStorage.getItem('lang');
+
+        API.get(`/faqs?lang=${activeLang}`).then((faqresponse) => {
+          this.setState({
+            faqsData:
+              faqresponse?.data?.data?.filter(
+                (x) => x.page === "rooms"
+              ) || [],
+          });
+        });
+
         //getting single post data
         const response = await API.get(`/rooms/${id}?lang=${activeLang}`);
         //making breadcrumbs dynamic, appending into last item
         breadcrumbItems[breadcrumbItems.length - 1].text =
           response.data.data.post_name;
         breadcrumbItems[breadcrumbItems.length - 1].link =
-          "/rooms-inner/" + response.data.data._id;
+          "/rooms/" + response.data.data.slug;
 
         let singleRoom = response.data.data;
 
         singleRoom.roomCode = singleRoom?.post_url?.split("room=")[1];
 
-        //getting and appending images to single room data
-        // const imagesResponse = await API.get('/post_uploads/' + id);
-        // singleRoom.images = imagesResponse.data.filter(x => x["360_view"] == "");
-
-        // singleRoom.images360 = imagesResponse.data.filter(x => x["360_view"] == "1");
         this.setState({ singleRoom });
 
         //fetching others room data for
@@ -263,7 +273,16 @@ class RoomsInner extends Component {
     const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white rooms-inner-wrapper">
-        <SEOTags meta={this.state.singleRoom?.post_metas?.[0]} />
+        {/* <SEOTags meta={this.state.singleRoom?.meta_title} /> */}
+        <Helmet>
+          <title>
+            {
+              this.state.singleRoom?.meta_title || "Fishermans Cove Resort"
+            }
+          </title>
+          <meta name="description" content={this.state.singleRoom?.meta_description} />
+
+        </Helmet>
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
           banner={{
@@ -288,7 +307,7 @@ class RoomsInner extends Component {
                 {/*====== ROOM GRID END ======*/}
                 {/*====== ROOM 360 GRID START ======*/}
                 <RoomVR360
-                  image={this.state.singleRoom?.images_list && JSON.parse(this.state.singleRoom?.images_list)?.find((x) => x["360_view"] === "1")?.avatar}
+                  image={this.state.singleRoom?.images_list && JSON.parse(this.state.singleRoom?.images_list)?.find((x) => x["is360"] === "true")?.avatar}
                   activeLang={activeLang}
                 />
                 {/*====== ROOM 360 GRID END ======*/}
@@ -309,7 +328,7 @@ class RoomsInner extends Component {
           </div>
           <FAQInnerSection
             // faqList={faqList.filter((x) => x.route === this.state.singleRoom?.route)}
-            faqList={faqList}
+            faqList={this.state.faqsData}
             activeLang={activeLang}
           />
         </PageLayout>

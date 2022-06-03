@@ -21,7 +21,7 @@ class Blogsidebar extends Component {
                     <img src={x?.img} alt="image" />
                   </div>
                   <div className="feed-desc">
-                    <h6><Link to={`/${this.props?.activeLang}/blog-inner/${x?.slug}`}>
+                    <h6><Link to={`/${this.props?.activeLang}/blogs/${x?.slug}`}>
                       {x?.title}
                     </Link></h6>
                     <span className="time"><i className="far fa-calendar-alt" />

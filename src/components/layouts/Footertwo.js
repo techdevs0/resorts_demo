@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import API from '../../utils/http';
+import API from '../../langapi/http';
 import { constants } from '../../utils/constants';
 
 class Footertwo extends Component {
@@ -12,18 +12,20 @@ class Footertwo extends Component {
     };
   }
   async componentDidMount() {
-    const response = await API.get('/get_widgets/footer');
+
+    const activeLang = localStorage.getItem('lang');
+    const response = await API.get(`/common?lang=${activeLang}`);
     if (response.status === 200) {
-      const { data } = response;
-      const first = data.find(x => x.widget_name === "first")?.items;
-      const second = data.find(x => x.widget_name === "second")?.items;
-      const third = data.find(x => x.widget_name === "third")?.items;
+      const data = response?.data?.data?.find((x) => x.type === "footer");
+      const first = data?.first;
+      const second = data?.second;
+      const third = data?.third;
       // const social = data.find(x => x.widget_name === "social");
       this.setState({
         footerData: {
-          first: JSON.parse(first),
-          second: JSON.parse(second),
-          third: JSON.parse(third),
+          first: first,
+          second: second,
+          third: third,
         }
       });
     }
@@ -52,30 +54,17 @@ class Footertwo extends Component {
         </Link>
         {/*====== FOOTER START ======*/}
         <div className="container-1">
-          {/* <div className="row">
-                <div className="col-md-12 alert-footer">
-
-                    <p>Kindly note, we will be undergoing some repair work around the Sea Wall and Executive Rooms at
-                    Fisherman’s Cove Resort from 22 November 2021 for 3 months. Hence there will be some noise and
-                    hoarding in that area. We do apologies for any inconvenience that this may cause during your 
-                    stay with us. The finished project will give our guests direct access to the Beau Vallon beach
-                    and they can also enjoy leisurely walks along our Sea Wall.
-                    </p>
-                </div>
-              </div> */}
         </div>
         <footer className="footer-two">
           <div className="footer-widget-area pt-30 pb-30">
             <div className="container">
               <div className="row">
                 <div className="col-lg-3 col-sm-6 order-1">
-                  {/* Site Info Widget */}
                   <div className="widget site-info-widget mb-50">
                     <div className="footer-logo mb-1">
                       <img src={require('./../../assets/img/logo-fisher.png')} alt="fishermancove footer logo" />
                     </div>
                     <p>
-                      {/* Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fishermans Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. */}
                       {
                         this.state.footerData?.first?.description
                       }
@@ -98,27 +87,11 @@ class Footertwo extends Component {
 
                         {
                           this.state.footerData?.second?.links?.map(x => (
-                            <li><Link to={`/${activeLang}/${x.address}`}>{x.text}</Link></li>
+                            <li><Link to={`/${activeLang}/${x.slug}`}>{x.text}</Link></li>
 
                           ))
                         }
-                        {/* <li><Link to="/about-us">About Us</Link></li>
 
-                        <li><Link to="/wedding">Weddings </Link></li>
-
-                        <li><Link to="/room-suites">Rooms &amp; Suites</Link></li>
-                        <li><Link to="/sustainability">Sustainability</Link></li>
-                        <li><Link to="/whats-on">Leisure Activities </Link></li>
-                        <li><Link to="/dining">Dining</Link></li>
-
-
-                        <li><Link to="/gallery">Media Center</Link></li>
-                        <li><Link to="/spa-wellness">Spa</Link></li>
-                        <li><Link to="/faq">FAQs</Link></li>
-                        <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                        <li><Link to="/cancellation-policy">Cancellation Policy</Link></li>
-
-                        <li><Link to="/covid-policy">COVID-19 Policy</Link></li> */}
                       </ul>
                     </div>
                   </div>
@@ -132,21 +105,14 @@ class Footertwo extends Component {
                     </h4>
                     <div className="contact-lists">
                       <div className="contact-box">
-                        {/* <div className="icon">
-                          <i className="flaticon-call" />
-                        </div> */}
                         <div className="desc">
                           <h6 className="title">
                             {constants?.site_content?.footer_content?.phone[activeLang]}
                           </h6>
-                          {/* <a href="tel:+2484677000">+248 467 7000</a> */}
                           <a href={`tel:${this.state.footerData?.third?.phone?.replace(/\s/g, '')}`}>{this.state.footerData?.third?.phone}</a>
                         </div>
                       </div>
                       <div className="contact-box">
-                        {/* <div className="icon">
-                          <i className="flaticon-message" />
-                        </div> */}
                         <div className="desc">
                           <h6 className="title">
                             {constants?.site_content?.footer_content?.email[activeLang]}
@@ -155,9 +121,6 @@ class Footertwo extends Component {
                         </div>
                       </div>
                       <div className="contact-box">
-                        {/* <div className="icon">
-                          <i className="flaticon-location-pin" />
-                        </div> */}
                         <div className="desc">
                           <h6 className="title">
                             {constants?.site_content?.footer_content?.address[activeLang]}
@@ -204,8 +167,6 @@ class Footertwo extends Component {
                   <div className="footer-menu text-center text-md-right">
                     <ul>
                       <p style={{ fontSize: '14px' }}> {constants?.site_content?.footer_content?.powered_by[activeLang]} <a href="https://prismdigital.ae" style={{ color: "white" }} >Prism Digital</a>.</p>
-                      {/* <li><Link to="#">Terms of use</Link></li>
-                      <li><Link to="#">Privacy Environmental Policy</Link></li> */}
                     </ul>
                   </div>
                 </div>

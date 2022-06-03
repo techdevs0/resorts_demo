@@ -4,6 +4,7 @@ import API from '../../langapi/http';
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 
@@ -52,17 +53,27 @@ class PrivacyPolicy extends Component {
     return (
       <div className="bg-white privacy-policy-wrapper">
         <SEOTags meta={this.state.meta} />
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
-          activeLang={activeLang}
-        >
 
-          {/*/!*====== INTRO START ======*!/*/}
-          <PrivacyIntroBlock data={this.state.intro} />
+        {
+          this.state.banner ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
 
-        </PageLayout>
+              {/*/!*====== INTRO START ======*!/*/}
+              <PrivacyIntroBlock data={this.state.intro} />
+
+            </PageLayout>
+            :
+            <div className='loadingDiv' style={{ display: 'flex', justifyContent: 'center', paddingTop: '40vh', paddingBottom: '50px', height: '100vh !important' }}>
+              <CircularProgress style={{ color: "#183254" }} disableShrink />
+            </div>
+
+        }
+
       </div>
     );
   }

@@ -2,51 +2,31 @@ import React, { Component } from 'react'
 import ContactTitleBlock from '../sections/contact-us/main-text-block';
 import ContactUsForm from '../sections/contact-us/contact-form';
 import ContactOfferSlider from '../sections/contact-us/contact-offer-slider';
-import API from '../../utils/http';
+import API from '../../langapi/http';
 import PageLayout from '../layouts/PageLayout';
 import SEOTags from "../sections/common/SEOTags";
 import { constants } from '../../utils/constants';
 
 
-const pageId = 78;
+const pageId = `6297085cfb78da3c7314e1d2`;
 
 class ContactUs extends Component {
   state = {
-    sections: null,
+    intro: null,
     banner: null,
     meta: {}
   }
 
   componentDidMount() {
     try {
-      // const response = await API.get('/premium_offers');
-      // console.log(response.data);
-      // this.setState({ premiumOffers: response.data })
-
-      API.get(`/all_sections/${pageId}`).then(response => {
-        // debugger;
+      const activeLang = localStorage.getItem('lang');
+      API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
         this.setState({
-          banner: response.data?.find(x => x.section_slug === "banner"),
-          sections: {
-            intro: response.data?.find(x => x.section_slug === "intro"),
-          }
+          banner: response?.data?.data[0]?.banner,
+          intro: response?.data?.data[0]?.intro,
+          meta: response?.data?.data[0]?.meta
         });
       })
-        .then(() => {
-          API.get(`/meta/${pageId}`).then(response => {
-            this.setState({ meta: response.data });
-            console.log(response.data);
-          })
-        })
-        // .then(() => {
-        //   API.get(`/all_sections/${pageId}`).then(response => {
-
-        //     this.setState({
-        //       intro: response.data?.find(x => x.section_slug === "intro"),
-        //       banner: response.data?.find(x => x.section_slug === "banner"),
-        //     });
-        //   })
-        // })
         .catch(err => {
           console.log(err)
         })
@@ -97,12 +77,12 @@ class ContactUs extends Component {
         <SEOTags meta={this.state.meta} />
         <PageLayout
           header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar }}
+          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
           breadCrumb={{ items: breadcrumbItems }}
           activeLang={activeLang}
         >
           {/*====== TITLE START ======*/}
-          <ContactTitleBlock data={this.state.sections?.intro ? JSON.parse(this.state.sections?.intro?.section_content) : null}
+          <ContactTitleBlock data={this.state?.intro ? this.state?.intro?.section_content : null}
             activeLang={activeLang}
           />
           {/*====== TITLE END ======*/}

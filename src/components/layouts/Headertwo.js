@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import classNames from "classnames";
 import $ from "jquery";
 import { findDOMNode } from "react-dom";
-import API from "../../utils/http";
-import { Spinner } from "react-bootstrap";
+import API from '../../langapi/http';
+import { Spinner, Dropdown } from "react-bootstrap";
 import { constants } from "../../utils/constants";
-// import PopUp from "../popup/PopUp";
-import LangAPI from '../../langapi/http';
 
+// import PopUp from "../popup/PopUp";
 
 // let navigationmenu = [
 //   {
@@ -175,18 +174,18 @@ class Headertwo extends Component {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      const menuResponse = await API.get("/get_widgets/header");
-      let menuLinks = menuResponse.data.find(
-        (x) => x.widget_name === "menuItems"
-      )?.items;
+      const menuResponse = await API.get(`/common?lang=${activeLang}`);
+
+      let menuLinks = menuResponse.data?.data.find(
+        (x) => x.type === "header"
+      )?.menuItems;
       // debugger;
-      let contact = menuResponse.data.find((x) => x.widget_name === "contact")
-        ?.items;
+      let contact = menuResponse.data?.data?.find((x) => x.type === "header")?.contact;
       if (menuLinks) {
-        this.setState({ widgetMenuLinks: JSON.parse(menuLinks) });
+        this.setState({ widgetMenuLinks: menuLinks });
       }
       if (contact) {
-        this.setState({ contact: JSON.parse(contact) });
+        this.setState({ contact: contact });
       }
 
       // const diningResponse = await LangAPI.get(`/dinings?lang=${activeLang}`);
@@ -356,6 +355,32 @@ class Headertwo extends Component {
                     <i className="fal fa-bars" />
                   </Link>
                 </div>
+
+                {/* Languages */}
+                <div className="languageDropDown">
+                  <Dropdown>
+                    <Dropdown.Toggle variant="light" id="dropdown-basic">
+                      {constants?.site_content?.header_content?.language[activeLang]}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item onClick={() => this.onChangeLocale('en')}
+                        className={`${activeLang === 'en' && 'active'}`}>
+                        EN
+                      </Dropdown.Item>
+                      <Dropdown.Item onClick={() => this.onChangeLocale('fr')}
+                        className={`${activeLang === 'fr' && 'active'}`}>
+                        FR
+                      </Dropdown.Item>
+                      <Dropdown.Item onClick={() => this.onChangeLocale('de')}
+                        className={`${activeLang === 'de' && 'active'}`}>
+                        DE
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+
+
                 {/* Mneu Items */}
 
                 <div className="menu-items d-lg-none d-xl-none menuDisplay">
@@ -363,7 +388,7 @@ class Headertwo extends Component {
                     {this.state.widgetMenuLinks?.map((x) =>
                       !x.subMenu?.length > 0 ? (
                         <li className="text-capitalize">
-                          <Link to={`/${activeLang}/${x.address}`}>{x.text}</Link>
+                          <Link to={`/${activeLang}/${x.slug}`}>{x.text}</Link>
                         </li>
                       ) : (
                         <li>
@@ -379,13 +404,13 @@ class Headertwo extends Component {
                           >
                             <ul>
                               <li key={"all"}>
-                                <Link to={`/${activeLang}/${x.address}`}
+                                <Link to={`/${activeLang}/${x.slug}`}
                                   style={{ padding: "0px 0px 0 30px" }}
                                 >{`All ${x.text}`}</Link>
                               </li>
                               {x.subMenu?.map((y) => (
                                 <li key={y.id}>
-                                  <Link to={`/${activeLang}/${y.base_url}/${y.address}`}
+                                  <Link to={`/${activeLang}/${y.base_url}/${y.slug}`}
                                     style={{ padding: "0px 0px 0 30px" }}
                                   >
                                     {y.text}
@@ -483,7 +508,7 @@ class Headertwo extends Component {
                   </ul>
                   {/* Languages */}
 
-                  <div>
+                  {/* <div>
                     <ul className="submenu" role="menu">
                       <li>
                         <Link to="#" onClick={() => this.toggleSubMenu("Language")}>
@@ -516,10 +541,33 @@ class Headertwo extends Component {
                         </div>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
                 {/* from pushed-item */}
                 <div className="nav-pushed-item" />
+              </div>
+              {/* Languages */}
+              <div className="languageDropDownMbl">
+                <Dropdown>
+                  <Dropdown.Toggle variant="light" id="dropdown-basic">
+                    {constants?.site_content?.header_content?.language[activeLang]}
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={() => this.onChangeLocale('en')}
+                      className={`${activeLang === 'en' && 'active'}`}>
+                      EN
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={() => this.onChangeLocale('fr')}
+                      className={`${activeLang === 'fr' && 'active'}`}>
+                      FR
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={() => this.onChangeLocale('de')}
+                      className={`${activeLang === 'de' && 'active'}`}>
+                      DE
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </div>
               {/* Site Logo */}
               <div className="site-logo">
@@ -575,6 +623,7 @@ class Headertwo extends Component {
                   </div>
                 </div>
               </div>
+
               {/* Navbar Toggler */}
               <div
                 className="navbar-toggler"
@@ -614,7 +663,7 @@ class Headertwo extends Component {
                 {this.state.widgetMenuLinks?.map((x) =>
                   !x.subMenu?.length > 0 ? (
                     <li className="text-capitalize">
-                      <Link to={`/${activeLang}/${x.address}`}>{x.text}</Link>
+                      <Link to={`/${activeLang}/${x.slug}`}>{x.text}</Link>
                     </li>
                   ) : (
                     <li>
@@ -630,11 +679,11 @@ class Headertwo extends Component {
                       >
                         <ul>
                           <li key={"all"}>
-                            <Link to={`/${activeLang}/${x.address}`}>{`All ${x.text}`}</Link>
+                            <Link to={`/${activeLang}/${x.slug}`}>{`All ${x.text}`}</Link>
                           </li>
                           {x.subMenu?.map((y) => (
                             <li key={y.id}>
-                              <Link to={`/${activeLang}/${y.base_url}/${y.address}`}>
+                              <Link to={`/${activeLang}/${y.base_url}/${y.slug}`}>
                                 {y.text}
                               </Link>
                             </li>
@@ -648,7 +697,7 @@ class Headertwo extends Component {
 
               {/* Languages */}
 
-              <div className="mt-2">
+              {/* <div className="mt-2">
                 <ul>
                   <li>
                     <Link to="#" onClick={() => this.toggleSubMenu("Language")}>
@@ -681,7 +730,7 @@ class Headertwo extends Component {
                     </div>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
 
             {/* Social Link */}
