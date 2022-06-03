@@ -2,18 +2,12 @@ import React, { useContext, useState } from 'react';
 import { AccordionContext, Card } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 import { constants } from '../../../utils/constants';
-import faqList from '../../pages/Rooms-Inner';
 
 const pageurl = window.location.pathname;
 const pageRout = pageurl.split('/');
 
 function ContextAwareToggle({ children, eventKey, callback }) {
     const currentEventKey = useContext(AccordionContext);
-
-    // const decoratedOnClick = useAccordionToggle(
-    //   eventKey,
-    //   () => callback && callback(eventKey),
-    // );
 
     const isCurrentEventKey = currentEventKey === eventKey;
 
@@ -36,7 +30,6 @@ const FAQInnerSection = (props) => {
         setIndex(index);
     }
 
-    console.log("faqList", props.faqList)
     return (
         <div className="faq-section-block my-3 my-sm-5">
             <div className="container">
