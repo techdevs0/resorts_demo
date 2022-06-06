@@ -63,8 +63,7 @@ header {
 				// transform: translate(50%, 0%);
 				@media #{$sm} {
 					position: absolute;
-					right: 50%;
-					left: 50%;
+					left: 37%;
 				}
 			}
 
@@ -450,6 +449,52 @@ header {
 		.languageDropDown {
 			display: block;
 
+			.hovertool {
+				position: relative;
+				display: inline-block;
+				cursor: pointer;
+
+				.hovertooltiptext {
+					visibility: hidden;
+					background-color: #be8a7d;
+					color: #fff;
+					text-align: center;
+					border-radius: 6px;
+					padding: 0.3rem 0.7rem;
+					font-size: 15px;
+
+					/* Position the tooltip */
+					position: absolute;
+					display: block;
+					z-index: 1;
+
+					&.active {
+						color: #11595c;
+						font-weight: bold;
+					}
+
+					&::after {
+						content: " ";
+						position: absolute;
+						bottom: 100%;
+						/* At the top of the tooltip */
+						left: 15%;
+						margin-left: -5px;
+						border-width: 5px;
+						border-style: solid;
+						border-color: transparent transparent #be8a7d transparent;
+					}
+				}
+
+				&:hover .hovertooltiptext {
+					visibility: visible;
+				}
+			}
+
+			img {
+				cursor: pointer;
+			}
+
 			@media (max-width:1019px) {
 				display: none;
 			}
@@ -463,6 +508,52 @@ header {
 
 		.languageDropDownMbl {
 			display: none;
+
+			.hovertool {
+				position: relative;
+				display: inline-block;
+				cursor: pointer;
+
+				.hovertooltiptext {
+					visibility: hidden;
+					background-color: #be8a7d;
+					color: #fff;
+					text-align: center;
+					border-radius: 6px;
+					padding: 0.3rem 0.7rem;
+					font-size: 15px;
+
+					/* Position the tooltip */
+					position: absolute;
+					display: block;
+					z-index: 1;
+
+					&.active {
+						color: #11595c;
+						font-weight: bold;
+					}
+
+					&::after {
+						content: " ";
+						position: absolute;
+						bottom: 100%;
+						/* At the top of the tooltip */
+						left: 15%;
+						margin-left: -5px;
+						border-width: 5px;
+						border-style: solid;
+						border-color: transparent transparent #be8a7d transparent;
+					}
+				}
+
+				&:hover .hovertooltiptext {
+					visibility: visible;
+				}
+			}
+
+			img {
+				cursor: pointer;
+			}
 
 			@media (max-width:1019px) {
 				display: block;

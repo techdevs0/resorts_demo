@@ -8,7 +8,7 @@ const OtherRecommendations = (props) => {
       <div className="container-fluid">
         <div className="row">
           {
-            props?.data
+            props?.data?.slice(0, 3)
               // ?.slice(0, props.data?.[2]?.id ? 3 : 2)
               ?.map((x, i) => (
                 <div className="col-12 col-md-4">

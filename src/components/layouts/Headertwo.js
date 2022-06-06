@@ -4,87 +4,11 @@ import classNames from "classnames";
 import $ from "jquery";
 import { findDOMNode } from "react-dom";
 import API from '../../langapi/http';
-import { Spinner, Dropdown } from "react-bootstrap";
 import { constants } from "../../utils/constants";
+import EnImg from "../../assets/img/icon/en.png"
+import FrImg from "../../assets/img/icon/fr.png"
+import DeImg from "../../assets/img/icon/de.png"
 
-// import PopUp from "../popup/PopUp";
-
-// let navigationmenu = [
-//   {
-//     id: 1,
-//     linkText: "About Us",
-//     child: false,
-//     link: "/about",
-//   },
-//   {
-//     id: 2,
-//     linkText: "Dining",
-//     child: true,
-//     link: "/fine-dining-seychelles",
-//     submenu: [],
-//   },
-//   {
-//     id: 3,
-//     linkText: "Rooms and Suites",
-//     child: true,
-//     link: "/rooms-suites-seychelles",
-//     submenu: [],
-//   },
-//   {
-//     id: 4,
-//     link: "/seychelles-wedding-resort",
-//     linkText: "Weddings",
-//     child: false,
-//   },
-//   {
-//     id: 5,
-//     link: "/whats-on",
-//     linkText: "Leisure Activities",
-//     child: false,
-//   },
-//   {
-//     id: 6,
-//     link: "/seychelles-eco-resort",
-//     linkText: "Sustainability",
-//     child: false,
-//   },
-//   {
-//     id: 7,
-//     link: "/spa-resort-seychelles",
-//     linkText: "Spa & Wellness",
-//     child: false,
-//   },
-//   {
-//     id: 8,
-//     link: "/about-seychelles",
-//     linkText: "About Seychelles",
-//     child: false,
-//   },
-//   {
-//     id: 9,
-//     link: "/offers",
-//     linkText: "Offers",
-//     child: false,
-//   },
-//   {
-//     id: 10,
-//     link: "/gallery",
-//     linkText: "Gallery",
-//     child: false,
-//   },
-//   {
-//     id: 11,
-//     link: "/contact",
-//     linkText: "Contact Us",
-//     child: false,
-//   },
-//   {
-//     id: 12,
-//     link: "/blog",
-//     linkText: "Blog",
-//     child: false,
-//   },
-// ];
 
 class Headertwo extends Component {
   constructor(props) {
@@ -93,15 +17,8 @@ class Headertwo extends Component {
       redText: false,
       isMobile: false,
       isTop: false,
-      isDiningSubMenuOpen: false,
-      isRoomSubMenuOpen: false,
-      diningSubMenu: [],
-      roomSubMenu: [],
-      searchResults: "",
-      navigationmenu: [],
       widgetMenuLinks: [],
       contact: null,
-      offerPopup: true,
     };
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
@@ -114,14 +31,10 @@ class Headertwo extends Component {
   //languagesssss
 
   onChangeLocale = (locale) => {
-    // console.log('lang', locale);
 
     const pathArray = window.location.pathname.split('/');
     const lang = 'en';
-    console.log('i am here', pathArray[1]);
     if (pathArray[1] && (pathArray[1] == 'en' || pathArray[1] == 'fr' || pathArray[1] == 'de')) {
-      console.log('i am here', pathArray[1]);
-
       if (pathArray[1] != locale) {
         let path = `/${locale}`;
         if (pathArray.length > 2) {
@@ -134,7 +47,6 @@ class Headertwo extends Component {
         }
         window.location.replace(path);
       }
-      // lang = pathArray[1]
     } else {
       window.location.replace(`/${locale}`);
     }
@@ -179,7 +91,6 @@ class Headertwo extends Component {
       let menuLinks = menuResponse.data?.data.find(
         (x) => x.type === "header"
       )?.menuItems;
-      // debugger;
       let contact = menuResponse.data?.data?.find((x) => x.type === "header")?.contact;
       if (menuLinks) {
         this.setState({ widgetMenuLinks: menuLinks });
@@ -187,76 +98,11 @@ class Headertwo extends Component {
       if (contact) {
         this.setState({ contact: contact });
       }
-
-      // const diningResponse = await LangAPI.get(`/dinings?lang=${activeLang}`);
-      // this.setState({ diningSubMenu: diningResponse.data?.data });
-
-      // let diningSubMenu = diningResponse?.data?.data?.map((x) => ({
-      //   id: x._id,
-      //   link: "/dining/" + x.slug,
-      //   linkText: x.post_name,
-      // }));
-      // navigationmenu = navigationmenu.map((x) => {
-      //   if (x.id == 2) {
-      //     return {
-      //       ...x,
-      //       submenu: [
-      //         { id: 101, link: "/fine-dining-seychelles", linkText: "All Dining" },
-      //         ...diningSubMenu,
-      //       ],
-      //     };
-      //   } else {
-      //     return x;
-      //   }
-      // });
-
-      // const roomsResponse = await LangAPI.get(`/rooms?lang=${activeLang}`, {
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      // });
-      // this.setState({ roomSubMenu: roomsResponse.data?.data });
-
-      // let roomsSubMenu = roomsResponse?.data?.data?.map((x) => ({
-      //   id: x._id,
-      //   link: "/rooms/" + x.slug,
-      //   linkText: x.post_name,
-      // }));
-      // // debugger;
-      // navigationmenu = navigationmenu.map((x) => {
-      //   if (x.id == 3) {
-      //     return {
-      //       ...x,
-      //       submenu: [
-      //         {
-      //           id: 101,
-      //           link: "/rooms-suites-seychelles",
-      //           linkText: "All Rooms & Suites",
-      //         },
-      //         ...roomsSubMenu,
-      //       ],
-      //     };
-      //   } else {
-      //     return x;
-      //   }
-      // });
     } catch (error) {
       console.log(error);
     }
   }
 
-  // toggleDiningMenu = () => {
-  //   this.setState({
-  //     isDiningSubMenuOpen: !this.state.isDiningSubMenuOpen,
-  //     isRoomSubMenuOpen: false,
-  //   });
-  // };
-  // toggleRoomMenu = () => {
-  //   this.setState({
-  //     isRoomSubMenuOpen: !this.state.isRoomSubMenuOpen,
-  //     isDiningSubMenuOpen: false,
-  //   });
-  // };
   toggleSubMenu = (text) => {
     this.setState({
       [text]: !this.state[text],
@@ -305,21 +151,6 @@ class Headertwo extends Component {
     }
   };
 
-  // triggerChild = (e) => {
-  //   let subMenu = "";
-
-  //   subMenu =
-  //     this.getNextSibling(e.target, ".submenu") !== undefined
-  //       ? this.getNextSibling(e.target, ".submenu")
-  //       : null;
-
-  //   if (subMenu !== null && subMenu !== undefined && subMenu !== "") {
-  //     subMenu.classList = subMenu.classList.contains("d-block")
-  //       ? "submenu"
-  //       : "submenu d-block";
-  //   }
-  // };
-
   render() {
     const className = this.props.isMobile ? "breakpoint-on" : "";
     const classNamess = this.props.isMobile ? "d-none" : "";
@@ -358,26 +189,41 @@ class Headertwo extends Component {
 
                 {/* Languages */}
                 <div className="languageDropDown">
-                  <Dropdown>
-                    <Dropdown.Toggle variant="light" id="dropdown-basic">
-                      {constants?.site_content?.header_content?.language[activeLang]}
-                    </Dropdown.Toggle>
+                  <div
+                    onClick={() => this.onChangeLocale('en')}
+                    className="hovertool"
+                  >
+                    <img src={EnImg} alt="en" className="mr-2"
+                      onClick={() => this.onChangeLocale('en')}
+                    />
+                    <span
+                      className={`hovertooltiptext ${activeLang === 'en' && 'active'}`}
+                    >English</span>
+                  </div>
+                  <div className="hovertool"
+                    onClick={() => this.onChangeLocale('fr')}
+                  >
+                    <img src={FrImg} alt="fr" className="mr-2"
+                      onClick={() => this.onChangeLocale('fr')}
+                    />
+                    <span
+                      className={`hovertooltiptext ${activeLang === 'fr' && 'active'}`}>
+                      French
+                    </span>
+                  </div>
 
-                    <Dropdown.Menu>
-                      <Dropdown.Item onClick={() => this.onChangeLocale('en')}
-                        className={`${activeLang === 'en' && 'active'}`}>
-                        EN
-                      </Dropdown.Item>
-                      <Dropdown.Item onClick={() => this.onChangeLocale('fr')}
-                        className={`${activeLang === 'fr' && 'active'}`}>
-                        FR
-                      </Dropdown.Item>
-                      <Dropdown.Item onClick={() => this.onChangeLocale('de')}
-                        className={`${activeLang === 'de' && 'active'}`}>
-                        DE
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                  <div
+                    className="hovertool"
+                    onClick={() => this.onChangeLocale('de')}
+                  >
+                    <img src={DeImg} alt="de" className="mr-2"
+                      onClick={() => this.onChangeLocale('de')}
+                    />
+                    <span
+                      className={`hovertooltiptext ${activeLang === 'de' && 'active'}`}>
+                      German
+                    </span>
+                  </div>
                 </div>
 
 
@@ -422,152 +268,48 @@ class Headertwo extends Component {
                         </li>
                       )
                     )}
-
-
-
-
-
-                    {/* {navigationmenu.length > 0
-                      ? navigationmenu.map((item, i) => (
-                        <li
-                          key={i}
-                          className={` ${item.child ? "menu-item-has-children" : ""
-                            } `}
-                          onClick={this.triggerChild}
-                        >
-                          {item.child ? (
-                            <Link
-                              onClick={(e) => {
-                                e.preventDefault();
-                                item.id === 2
-                                  ? this.toggleDiningMenu()
-                                  : this.toggleRoomMenu();
-                              }}
-                              to="#"
-                            >
-                              {" "}
-                              {item.linkText}{" "}
-                              <i
-                                className={`far ${(
-                                  item.id === 2
-                                    ? this.state.isDiningSubMenuOpen
-                                    : this.state.isRoomSubMenuOpen
-                                )
-                                  ? "fa-minus"
-                                  : "fa-plus"
-                                  }`}
-                              />{" "}
-                            </Link>
-                          ) : (
-                            <Link to={`/${activeLang}${item.link}`}> {item.linkText} </Link>
-                          )}
-                          {item.child ? (
-                            <ul className="submenu" role="menu">
-                              {item.submenu.map((sub_item, i) => (
-                                <li
-                                  key={i}
-                                  className={`${sub_item.child
-                                    ? "menu-item-has-child"
-                                    : ""
-                                    } `}
-                                >
-                                  {sub_item.child ? (
-                                    <Link
-                                      onClick={(e) => e.preventDefault()}
-                                      to="/"
-                                    >
-                                      {" "}
-                                      {sub_item.linkText}{" "}
-                                    </Link>
-                                  ) : (
-                                    <Link to={`/${activeLang}${sub_item.link}`}>
-                                      {" "}
-                                      {sub_item.linkText}{" "}
-                                    </Link>
-                                  )}
-                                  {sub_item.third_menu ? (
-                                    <ul className="submenu">
-                                      {sub_item.third_menu.map(
-                                        (third_item, i) => (
-                                          <li key={i}>
-                                            <Link to={`/${activeLang}${third_item.link}`}>
-                                              {third_item.linkText}
-                                            </Link>
-                                          </li>
-                                        )
-                                      )}
-                                    </ul>
-                                  ) : null}
-                                </li>
-                              ))}
-                            </ul>
-                          ) : null}
-                        </li>
-                      ))
-                      : null} */}
                   </ul>
-                  {/* Languages */}
-
-                  {/* <div>
-                    <ul className="submenu" role="menu">
-                      <li>
-                        <Link to="#" onClick={() => this.toggleSubMenu("Language")}>
-                          {constants?.site_content?.header_content?.language[activeLang]} &nbsp;{" "}
-                          <i
-                            className={`far ${this.state["Language"] ? "fa-minus" : "fa-plus"
-                              }`}
-                          />
-                        </Link>
-                        <div
-                          className={"sidebar-submenu collapse" + (this.state["Language"] ? " show" : "")}
-                        >
-                          <ul className="languageDropdown">
-                            <li onClick={() => this.onChangeLocale('en')}
-                              className={`${activeLang === 'en' && 'active'}`}
-                            >
-                              EN
-                            </li>
-                            <li onClick={() => this.onChangeLocale('fr')}
-                              className={`${activeLang === 'fr' && 'active'}`}
-                            >
-                              FR
-                            </li>
-                            <li onClick={() => this.onChangeLocale('de')}
-                              className={`${activeLang === 'de' && 'active'}`}
-                            >
-                              DE
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </div> */}
                 </div>
                 {/* from pushed-item */}
                 <div className="nav-pushed-item" />
               </div>
               {/* Languages */}
               <div className="languageDropDownMbl">
-                <Dropdown>
-                  <Dropdown.Toggle variant="light" id="dropdown-basic">
-                    {constants?.site_content?.header_content?.language[activeLang]}
-                  </Dropdown.Toggle>
+                <div
+                  onClick={() => this.onChangeLocale('en')}
+                  className="hovertool"
+                >
+                  <img src={EnImg} alt="en" className="mr-2"
+                    onClick={() => this.onChangeLocale('en')}
+                  />
+                  <span
+                    className={`hovertooltiptext ${activeLang === 'en' && 'active'}`}
+                  >English</span>
+                </div>
+                <div className="hovertool"
+                  onClick={() => this.onChangeLocale('fr')}
+                >
+                  <img src={FrImg} alt="fr" className="mr-2"
+                    onClick={() => this.onChangeLocale('fr')}
+                  />
+                  <span
+                    className={`hovertooltiptext ${activeLang === 'fr' && 'active'}`}>
+                    French
+                  </span>
+                </div>
 
-                  <Dropdown.Menu>
-                    <Dropdown.Item onClick={() => this.onChangeLocale('en')}
-                      className={`${activeLang === 'en' && 'active'}`}>
-                      EN
-                    </Dropdown.Item>
-                    <Dropdown.Item onClick={() => this.onChangeLocale('fr')}
-                      className={`${activeLang === 'fr' && 'active'}`}>
-                      FR
-                    </Dropdown.Item>
-                    <Dropdown.Item onClick={() => this.onChangeLocale('de')}
-                      className={`${activeLang === 'de' && 'active'}`}>
-                      DE
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
+                <div
+                  className="hovertool"
+                  onClick={() => this.onChangeLocale('de')}
+                >
+                  <img src={DeImg} alt="de" className="mr-2"
+                    onClick={() => this.onChangeLocale('de')}
+                  />
+                  <span
+                    className={`hovertooltiptext ${activeLang === 'de' && 'active'}`}>
+                    German
+                  </span>
+                </div>
               </div>
               {/* Site Logo */}
               <div className="site-logo">
@@ -694,43 +436,6 @@ class Headertwo extends Component {
                   )
                 )}
               </ul>
-
-              {/* Languages */}
-
-              {/* <div className="mt-2">
-                <ul>
-                  <li>
-                    <Link to="#" onClick={() => this.toggleSubMenu("Language")}>
-                      {constants?.site_content?.header_content?.language[activeLang]} &nbsp;{" "}
-                      <i
-                        className={`far ${this.state["Language"] ? "fa-minus" : "fa-plus"
-                          }`}
-                      />
-                    </Link>
-                    <div
-                      className={"sidebar-submenu collapse" + (this.state["Language"] ? " show" : "")}
-                    >
-                      <ul className="languageDropdown">
-                        <li onClick={() => this.onChangeLocale('en')}
-                          className={`${activeLang === 'en' && 'active'}`}
-                        >
-                          EN
-                        </li>
-                        <li onClick={() => this.onChangeLocale('fr')}
-                          className={`${activeLang === 'fr' && 'active'}`}
-                        >
-                          FR
-                        </li>
-                        <li onClick={() => this.onChangeLocale('de')}
-                          className={`${activeLang === 'de' && 'active'}`}
-                        >
-                          DE
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div> */}
             </div>
 
             {/* Social Link */}

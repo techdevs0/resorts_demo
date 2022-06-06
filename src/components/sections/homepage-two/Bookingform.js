@@ -15,7 +15,7 @@ const year2 = date.getFullYear();
 const month2 = (date.getMonth() + 1).toString().length === 1 ? `0${date.getMonth() + 1}` : date.getMonth() + 1
 const day2 = (date.getDate()).toString().length === 1 ? `0${date.getDate()}` : `${date.getDate()}`;
 
-console.log("============day============",year2,month2,day2)
+console.log("============day============", year2, month2, day2)
 class Bookingform extends Component {
     constructor(props) {
         super(props);
@@ -342,15 +342,8 @@ class Bookingform extends Component {
                                             </button>
                                             : activeLang === "de" ?
                                                 <button type="button" value={this.state.promo} onClick={this.handleSubmit}
-                                                    className="main-btn btn-eden"
-                                                    style={{ lineHeight: "normal" }}
-                                                >
-                                                    <p>
-                                                        buchen
-                                                    </p>
-                                                    <p>
-                                                        Sie jetzt
-                                                    </p>
+                                                    className="main-btn btn-eden">
+                                                    JETZT BUCHEN
                                                 </button> :
                                                 <button type="button" value={this.state.promo} onClick={this.handleSubmit}
                                                     className="main-btn btn-eden">

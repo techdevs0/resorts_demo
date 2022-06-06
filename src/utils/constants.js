@@ -4,8 +4,8 @@ export const constants = {
       banner: {
         title: {
           en: "The Perfect \n Destination for you",
-          fr: "La destination \n idéale pour vous",
-          de: "Das perfekte \n Ziel für Sie"
+          fr: "La destination \n parfaite pour vous",
+          de: "Das perfekte \n Reiseziel für Sie"
         },
         btn1: {
           en: "gallery",
@@ -14,13 +14,13 @@ export const constants = {
         },
         btn2: {
           en: "Learn More",
-          fr: "Apprendre encore plus",
-          de: "Lern mehr"
+          fr: "EN SAVOIR PLUS",
+          de: "MEHR ERFAHREN"
         },
         btn3: {
           en: "Book Now",
-          fr: "Reserve maintenant",
-          de: "buchen Sie jetzt"
+          fr: "RESERVER",
+          de: "JETZT BUCHEN"
         }
       },
       booking_form: {
@@ -52,7 +52,7 @@ export const constants = {
         rooms: {
           en: "Rooms",
           fr: "Pièces",
-          de: "Räume"
+          de: "Zimmer"
         },
         adults: {
           en: "Adults",
@@ -83,25 +83,25 @@ export const constants = {
       rooms_slider: {
         title: {
           en: "Breathtaking Tropical Paradise",
-          fr: "Paradis tropical à couper le souffle",
-          de: "Atemberaubendes tropisches Paradies"
+          fr: "Un paradis tropical incroyable",
+          de: "Atemberaubendes Tropisches Paradies"
         }
       },
       text_block: {
         title: {
           en: "Best Resort in Mahé Seychelles",
-          fr: "Meilleur complexe hôtelier de Mahé aux Seychelles",
+          fr: "Meilleur hôtel à Mahé, Seychelles",
           de: "Bestes Resort auf Mahé Seychellen"
         },
         subtitle: {
           en: "Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fishermans Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. This tropical escape sets the scene for explorers, romantic couples, and families to an inherited paradise.",
-          fr: "Situé sur la plage de Beau Vallon avec ses 3 km de sable ivoire scintillant, Fishermans Cove Resort est la promesse d'une véritable tranquillité et d'un plaisir éternel. Les chambres et suites sont situées au milieu de jardins tropicaux luxuriants, complétés par un environnement paisible. Cette escapade tropicale met en scène les explorateurs, les couples romantiques et les familles dans un paradis hérité.",
-          de: "Das Fishermans Cove Resort liegt am Beau Vallon Beach mit seinem 3 km langen, glitzernden elfenbeinfarbenen Sand und verspricht echte Ruhe und ewigen Genuss. Die Gästezimmer und Suiten liegen inmitten üppiger tropischer Gärten, ergänzt durch eine friedliche Umgebung. Diese tropische Flucht bietet Entdeckern, romantischen Paaren und Familien die Kulisse für ein ererbtes Paradies."
+          fr: "Situé à la plage de Beau Vallon, s’étendant sur 3km de sable étincelant d’ivoire, Fishermans Cove Resort est la promesse d’une sincère tranquillité et d’une joie éternelle. Les chambres et les suites se trouvent au milieu des jardins tropicaux luxuriants, accompagnées de la paix. Cette évasion tropicale permet aux aventuriers, aux couples et aux familles de découvrir ce paradis patrimonial.",
+          de: "Das Fishermans Cove Resort liegt am 3 km lang glitzernden weißen Sandstrand Beau Vallon und verspricht echte Ruhe und ewigen Genuss. Die Zimmer und Suiten befinden sich inmitten üppiger tropischer Gärten, die durch eine ruhige Umgebung ergänzt werden. Dieses tropische Refugium ist die Kulisse für Entdecker, romantische Paare und Familien in einem geerbten Paradies."
         },
         detail: {
           en: "Offering countless experiences with outstanding services throughout your discovery, Fishermans Cove Resort is one of the best resorts in Seychelles. Restaurants and Bars allow you to savor scrumptious flavors and aromas while sipping exotic cocktails and enjoying views of the Indian Ocean’s most spectacular sunset. It offers two restaurants and two bars giving guests ample options to choose from.",
-          fr: "Offrant d'innombrables expériences avec des services exceptionnels tout au long de votre découverte, Fishermans Cove Resort est l'un des meilleurs complexes hôteliers des Seychelles. Les restaurants et les bars vous permettent de savourer de délicieuses saveurs et arômes tout en sirotant des cocktails exotiques et en profitant de la vue sur le coucher de soleil le plus spectaculaire de l'océan Indien. Il propose deux restaurants et deux bars offrant aux clients un large choix.",
-          de: "Das Fishermans Cove Resort ist eines der besten Resorts auf den Seychellen und bietet unzählige Erlebnisse mit hervorragendem Service während Ihrer gesamten Entdeckungsreise. In Restaurants und Bars können Sie köstliche Geschmäcker und Aromen genießen, während Sie an exotischen Cocktails nippen und den Blick auf den spektakulärsten Sonnenuntergang des Indischen Ozeans genießen. Es bietet zwei Restaurants und zwei Bars, die den Gästen eine große Auswahl bieten."
+          fr: "Fishermans Cove Resort est l’un des meilleurs hôtels aux Seychelles qui vous offre des expériences innumérables avec d’excellents services tout au long de votre découverte. Les restaurants et les bars vous permettront de déguster les saveurs délicieuses et les aromes en sirotant des apéritifs exotiques, tout en s’amusant les couchers du soleil les plus magnifiques dans l’Océan Indien. L’hôtel vous propose deux restaurants et deux bars qui invitent leurs clients à choisir d’entre plusieurs options.",
+          de: "Das Fishermans Cove Resort bietet unzählige Erlebnisse mit hervorragendem Service während Ihrer Entdeckung und ist eines der besten Resorts auf den Seychellen. Die Restaurants und Bars lassen Sie köstliche Aromen und Geschmacksrichtungen auskosten und an exotischen Cocktails nippen, während Sie den spektakulärsten Sonnenuntergang des Indischen Ozeans genießen. Zwei Restaurants und zwei Bars stehen zur Verfügung, die den Gästen eine große Auswahl zum Essen und Trinken bieten."
         }
       },
       premium_offer: {
@@ -113,7 +113,7 @@ export const constants = {
         btn_text: {
           en: "KNOW MORE",
           fr: "SAVOIR PLUS",
-          de: "MEHR WISSEN"
+          de: "MEHR ERFAHREN"
         },
       },
       guest_review: {
@@ -183,7 +183,7 @@ export const constants = {
         title: {
           en: "Unlock the ultimate experience with us today",
           fr: "Débloquez l'expérience ultime avec nous aujourd'hui",
-          de: "Schalten Sie noch heute das ultimative Erlebnis mit uns frei"
+          de: "Machen Sie noch heutedie aufregendste Erfahrung mit uns!"
         },
         data_title1: {
           en: "Sustainability",
@@ -211,17 +211,17 @@ export const constants = {
       subscribe: {
         title: {
           en: "Subscribe to our newsletter",
-          fr: "Abonnez-vous à notre newsletter",
+          fr: "Abonnez-vous à notre bulletin d’information",
           de: "Abonnieren Sie unseren Newsletter"
         },
         subtitle: {
           en: "Be The First One to Know About The Happenings at Fishermans Cove Resort",
-          fr: "Soyez le premier à connaître les événements au Fishermans Cove Resort",
-          de: "Seien Sie der Erste, der von den Geschehnissen im Fishermans Cove Resort erfährt"
+          fr: "Soyez le premier à savoir des événements à Fishermans Cove Resort",
+          de: "Bleiben Sie zuallererst informiert über Aktuelles beim Fishermans Cove Resort."
         },
         btn_text: {
           en: "Subscribe",
-          fr: "S'abonner",
+          fr: "S’abonner",
           de: "Abonnieren"
         },
         email_error: {
@@ -256,22 +256,22 @@ export const constants = {
         title: {
           en: "rooms & suites",
           fr: "chambres & suites",
-          de: "Zimmer & Suiten"
+          de: "ZIMMER UND SUITEN"
         },
         title2: {
           en: "Dining",
           fr: "À manger",
-          de: "Essen"
+          de: "Gastronomie"
         },
         title3: {
           en: "weddings",
-          fr: "mariages",
-          de: "Hochzeiten"
+          fr: "MARIAGES",
+          de: "HOCHZEITEN"
         },
         title4: {
           en: "leisure activities",
-          fr: "loisirs",
-          de: "Freizeitaktivitäten"
+          fr: "Activités de détente",
+          de: "Freizeitbeschäftigung"
         }
       },
       sec_text_box: {
@@ -285,7 +285,7 @@ export const constants = {
         title: {
           en: "Explore Fishermans Cove Resort Premium Offerings",
           fr: "Découvrez les offres premium de Fishermans Cove Resort",
-          de: "Erkunden Sie die Premium-Angebote des Fishermans Cove Resort"
+          de: "Entdecken Sie die Premium-Angebote bei Fishermans Cove Resort"
         }
       }
     },
@@ -294,14 +294,14 @@ export const constants = {
         title2: {
           en: "Dining",
           fr: "À manger",
-          de: "Essen"
+          de: "Gastronomie"
         }
       },
       faq_sec: {
         title: {
           en: "Frequently Asked Questions (F.A.Q's)",
-          fr: "Foire aux questions (F.A.Q)",
-          de: "Häufig gestellte Fragen (F.A.Qs)"
+          fr: "Questions fréquentes (F.A.Q)",
+          de: "Häufig Gestellte Fragen (FAQs)"
         }
       }
     },
@@ -309,33 +309,33 @@ export const constants = {
       diningInner_Info: {
         dress_code: {
           en: "Dress Code",
-          fr: "Code vestimentaire",
-          de: "Kleiderordnung"
+          fr: "CODE VESTIMENTAIRE",
+          de: "DRESS CODE"
         },
         opening_hours: {
           en: "Opening Hours",
-          fr: "Horaires d'ouvertures",
-          de: "Öffnungszeiten"
+          fr: "HEURES D’OUVERTURE",
+          de: "ÖFFNUNGSZEITEN"
         },
         our_menu: {
           en: "Download our Menu",
-          fr: "Téléchargez notre carte",
-          de: "Laden Sie unsere Speisekarte herunter"
+          fr: "TÉLÉCHARGEZ NOTRE MENU",
+          de: "SPEISEKARTE HERUNTERLADEN"
         },
         beverage_menu: {
           en: "Download Beverage Menu",
-          fr: "Télécharger la carte des boissons",
-          de: "Getränkekarte herunterladen"
+          fr: "TÉLÉCHARGEZ LE MENU DES BOISSONS",
+          de: "GETRÄNKEKARTE HERUNTERLADEN"
         },
         Wine_list: {
           en: "Download wine list",
-          fr: "Télécharger la carte des vins",
-          de: "Weinkarte herunterladen"
+          fr: "TÉLÉCHARGEZ LA LISTE DES VINS",
+          de: "WEINKARTE HERUNTERLADEN"
         },
         room_dining: {
           en: "Download In Room Dining",
-          fr: "Télécharger Repas en chambre",
-          de: "Essen im Zimmer herunterladen"
+          fr: "TÉLÉCHARGEZ LE SERVICE D’ÉTAGE",
+          de: "SPEISEN IM ZIMMER HERUNTERLADEN"
         }
       },
       other_recom: {
@@ -351,14 +351,14 @@ export const constants = {
         title2: {
           en: "Rooms & Suites",
           fr: "Chambres & Suites",
-          de: "Zimmer & Suiten"
+          de: "ZIMMER UND SUITEN"
         }
       },
       room_grid: {
         title: {
           en: "Rooms",
           fr: "Pièces",
-          de: "Räume"
+          de: "Zimmer"
         },
         title2: {
           en: "Suites",
@@ -474,15 +474,15 @@ export const constants = {
       bread_crumb: {
         title2: {
           en: "Weddings",
-          fr: "Mariages",
-          de: "Hochzeiten"
+          fr: "MARIAGES",
+          de: "HOCHZEITEN"
         }
       },
       wedding_grid: {
         title: {
           en: "Wedding Services",
-          fr: "Services de mariage",
-          de: "Hochzeitsservice"
+          fr: "Prestations Mariages",
+          de: "Planen Sie die perfekte Hochzeit"
         }
       },
       wedding_booking_form: {
@@ -632,25 +632,25 @@ export const constants = {
       bread_crumb: {
         title2: {
           en: "Leisure Activities",
-          fr: "Loisirs",
-          de: "Freizeitaktivitäten"
+          fr: "Activités de détente",
+          de: "Freizeitbeschäftigung"
         }
       },
       text_block: {
         title: {
           en: "Leisure Activities",
-          fr: "Loisirs",
-          de: "Freizeitaktivitäten"
+          fr: "Activités de détente",
+          de: "Freizeitbeschäftigung"
         },
         detail: {
           en: "Recreational facilities are dotted throughout the resort with the stunning infinity pool taking centre stage.",
           fr: "Les installations de loisirs sont disséminées dans tout le complexe, la superbe piscine à débordement occupant le devant de la scène.",
-          de: "Freizeiteinrichtungen sind im gesamten Resort verteilt, wobei der atemberaubende Infinity-Pool im Mittelpunkt steht."
+          de: "Freizeiteinrichtungen sind im gesamten Resort zu finden, wobei der erstaunliche Infinitypool im Mittelpunkt steht."
         },
         btn_txt: {
           en: "Download Experience Guide",
-          fr: "Télécharger le guide de l'expérience",
-          de: "Laden Sie den Erfahrungsleitfaden herunter"
+          fr: "TÉLÉCHARGEZ LE GUIDE",
+          de: "ERFAHRUNGSHANDBUCH HERUNTERLADEN"
         }
       },
       award_sec: {
@@ -666,14 +666,14 @@ export const constants = {
         title3: {
           en: "Other Resort Activities",
           fr: "Autres activités du complexe",
-          de: "Andere Resort-Aktivitäten"
+          de: "Andere Resort Aktivitäten"
         }
       },
       text_block: {
         title: {
           en: "Other Resort Activities",
           fr: "Autres activités du complexe",
-          de: "Andere Resort-Aktivitäten"
+          de: "Andere Resort Aktivitäten"
         }
       },
       faq_sec: {
@@ -743,7 +743,7 @@ export const constants = {
         title: {
           en: "Offers",
           fr: "Des offres",
-          de: "Bietet an"
+          de: "Angebote"
         }
       }
     },
@@ -760,36 +760,36 @@ export const constants = {
           title: {
             en: "Market Street",
             fr: "Rue du Marché",
-            de: "Marktstraße"
+            de: "Markt Straße"
           },
           detail: {
             en: "It is encouraged at Fishermans Cove Resort to use recycled products. Strategies including ‘Reuse and Recycle’ of the paper, composting, segregation, Mobile app, ‘Refuse the straw’ have been strictly implemented to ensure the advancement towards a better and sustainable future.",
             fr: "Il est encouragé au Fishermans Cove Resort d'utiliser des produits recyclés. Des stratégies telles que « Réutiliser et recycler » du papier, le compostage, la séparation, l'application mobile, « Refuser la paille » ont été strictement mises en œuvre pour assurer l'avancement vers un avenir meilleur et durable.",
-            de: "Im Fishermans Cove Resort wird empfohlen, recycelte Produkte zu verwenden. Strategien wie „Wiederverwendung und Recycling“ des Papiers, Kompostierung, Trennung, mobile App und „Strohhalm ablehnen“ wurden strikt umgesetzt, um den Fortschritt in eine bessere und nachhaltige Zukunft sicherzustellen."
+            de: "Im Fishermans Cove Resort wird es befördert, recycelte Produkte zu verwenden. Strategien wie Wiederverwendung und Recyceln des Papiers, Kompostierung, Mülltrennung, Handy App und „Den Strohhalm zurückweisen“ wurden grundsätzlich umgesetzt, um eine bessere und nachhaltige Zukunft zu erreichen."
           }
         },
         block_2: {
           title: {
             en: "Botanical Gardens",
             fr: "jardins botaniques",
-            de: "botanische Gärten"
+            de: "Botanische Gärten"
           },
           detail: {
             en: "Established in 1901, this historical garden is under the government’s protection and it serves as a base for Seychelle’s efforts towards environmental education, landscape management, and plant conservation. Moreover, it’s a center of eco-tourism in Victoria.",
             fr: "Dieser historische Garten, der 1901 gegründet wurde, steht unter dem Schutz der Regierung und dient als Basis für die Bemühungen der Seychellen in den Bereichen Umwelterziehung, Landschaftspflege und Pflanzenschutz. Außerdem ist es ein Zentrum des Ökotourismus in Victoria.",
-            de: "Créé en 1901, ce jardin historique est sous la protection du gouvernement et sert de base aux efforts des Seychelles en matière d'éducation environnementale, de gestion du paysage et de conservation des plantes. De plus, c'est un centre d'écotourisme à Victoria."
+            de: "Dieser historische Garten, der 1901 gegründet wurde, steht unter dem Schutz der Regierung und dient als die Grundlage für die Bemühungen der Seychellen zur Umwelterziehung und Landschaftspflege und zum Pflanzenschutz. Darüber hinaus ist das ein Zentrum des Ökotourismus in Victoria."
           }
         },
         block_3: {
           title: {
             en: "Arul Mihu Navasakthi Vinayagar Temple",
             fr: "Temple Arul Mihu Navasakthi Vinayagar",
-            de: "Arul Mihu Navasakthi Vinayagar-Tempel"
+            de: "Arul Mihu Navasakthi Vinayagar Tempel"
           },
           detail: {
             en: "Arul Mihu Navasakthi Vinayagar Temple is the only Hindu temple in Seychelles and was built in 1992. This unique building is in Victoria and it is named after the Hindu God for safety and prosperity, Lord Vinayagar.",
             fr: "Le temple Arul Mihu Navasakthi Vinayagar est le seul temple hindou des Seychelles et a été construit en 1992. Ce bâtiment unique se trouve à Victoria et porte le nom du dieu hindou de la sécurité et de la prospérité, Lord Vinayagar.",
-            de: "Der Arul Mihu Navasakthi Vinayagar Tempel ist der einzige hinduistische Tempel auf den Seychellen und wurde 1992 erbaut. Dieses einzigartige Gebäude befindet sich in Victoria und ist nach dem hinduistischen Gott für Sicherheit und Wohlstand, Lord Vinayagar, benannt."
+            de: "Der Arul Mihu Navasakthi Vinayagar Tempel ist der einzige Hindu-Tempel auf den Seychellen und wurde 1992 erbaut. Dieses einzigartige Gebäude befindet sich in Victoria und ist nach dem hinduistischen Gott für Sicherheit und Wohlstand, Lord Vinayagar, benannt."
           }
         },
         block_4: {
@@ -801,14 +801,14 @@ export const constants = {
           detail: {
             en: "This iconic cathedral is considered to be the mother Church of the Catholic Diocese. Constructed in March 1851, it was devoted to the Virgin of Immaculate Conception. It is one of the first cathedrals in Seychelles",
             fr: "Cette cathédrale emblématique est considérée comme l'église mère du diocèse catholique. Construit en mars 1851, il était consacré à la Vierge de l'Immaculée Conception. C'est l'une des premières cathédrales des Seychelles",
-            de: "Diese ikonische Kathedrale gilt als die Mutterkirche der katholischen Diözese. Es wurde im März 1851 erbaut und war der Jungfrau der Unbefleckten Empfängnis gewidmet. Sie ist eine der ersten Kathedralen auf den Seychellen"
+            de: "Diese ikonische Kathedrale gilt als Mutterkirche der katholischen Diözese. Sie wurde im März 1851 erbaut und war der Jungfrau der Unbefleckten Empfängnis gewidmet. Sie ist eine der ersten Kathedralen auf den Seychellen."
           }
         },
         block_5: {
           title: {
             en: "National Museum of History",
             fr: "Musée national d'histoire",
-            de: "Nationalmuseum für Geschichte"
+            de: "Staatliches Museum für Naturgeschichte"
           },
           detail: {
             en: "This museum is home to some of the rare historical artifacts including one of the oldest maps which dated back to 1517. It was established in 1964 and is charged with the preservation, and exhibition of historical artifacts.",
@@ -820,12 +820,12 @@ export const constants = {
           title: {
             en: "Island hopping for a day",
             fr: "D'île en île pour une journée",
-            de: "Inselhüpfen für einen Tag"
+            de: "Inselhopping für einen Tag"
           },
           detail: {
             en: "Seychelles is home to numerous magical islands with infinite prepossessing sights. ‘Paradise on Earth’, Garden of Eden, and many more, each with its own unique character are calling, and a visit to Seychelles can ever be completed without a full day of island hopping.",
-            fr: "Les Seychelles abritent de nombreuses îles magiques aux vues infinies. 'Paradise on Earth', Garden of Eden et bien d'autres, chacun avec son propre caractère unique, appellent, et une visite aux Seychelles peut toujours être complétée sans une journée complète d'île en île.",
-            de: "Die Seychellen beherbergen zahlreiche magische Inseln mit unendlich vielen faszinierenden Sehenswürdigkeiten. Das „Paradies auf Erden“, der Garten Eden und viele mehr, jedes mit seinem eigenen einzigartigen Charakter, rufen, und ein Besuch auf den Seychellen kann immer ohne einen ganzen Tag Inselhüpfen abgeschlossen werden."
+            fr: "Les Seychelles abritent de nombreuses îles magiques aux vues infinies.'Paradise on Earth', Garden of Eden et bien d'autres, chacun avec son propre caractère unique, appellent, et une visite aux Seychelles peut toujours être complétée sans une journée complète d'île en île.",
+            de: "Auf den Seychellen gibt es zahlreiche magische Inseln mit unendlichen Sehenswürdigkeiten. 'Paradies auf Erden' ,Garten Eden“ und viele andere, jede mit ihrem eigenen einzigartigen Charakter,  laden ein. Ein Besuch auf den Seychellen kann nie ohne einen ganzen Tag Inselhopping abgeschlossen werden."
           }
         }
       }
@@ -835,7 +835,7 @@ export const constants = {
         title2: {
           en: "Offers",
           fr: "Des offres",
-          de: "Bietet an"
+          de: "Angebote"
         }
       }
     },
@@ -843,13 +843,13 @@ export const constants = {
       reservation: {
         title: {
           en: "For Reservations",
-          fr: "Pour les réservations",
+          fr: "Pour réserver",
           de: "Für Reservierungen"
         },
         btn_txt: {
           en: "Back to all offers",
-          fr: "Retour à toutes les offres",
-          de: "Zurück zu allen Angeboten"
+          fr: "RETOUR A TOUTES LES OFFRES",
+          de: "ZURÜCK ZU ALLEN ANGEBOTEN"
         }
       }
     },
@@ -867,14 +867,14 @@ export const constants = {
         title2: {
           en: "Contact Us",
           fr: "Nous contacter",
-          de: "Kontaktiere uns"
+          de: "Kontakt"
         }
       },
       contact_form: {
         title: {
           en: "Write to Us",
           fr: "Écrivez-nous",
-          de: "Schreib uns"
+          de: "Schreiben Sie an uns"
         },
         name_error: {
           en: "Please enter first name",
@@ -961,12 +961,12 @@ export const constants = {
         room1: {
           en: "Paris Sychelles Restaurant",
           fr: "Restaurant Paris Sychelles",
-          de: "Restaurant Paris Sychellen"
+          de: "Paris Seychelles Restaurant"
         },
         room2: {
           en: "Le Cardinal Restaurant",
           fr: "Restaurant Le Cardinal",
-          de: "Le Cardinal-Restaurant"
+          de: "Le Cardinal Restaurant"
         },
         room3: {
           en: "Superior Rooms",
@@ -1021,7 +1021,7 @@ export const constants = {
         title2: {
           en: "Privacy Policy",
           fr: "Politique de confidentialité",
-          de: "Datenschutz-Bestimmungen"
+          de: "Datenschutzrichtlinie"
         }
       }
     },
@@ -1030,7 +1030,7 @@ export const constants = {
         title2: {
           en: "Covid Policy",
           fr: "Politique Covid",
-          de: "Covid-Richtlinie"
+          de: "COVID RICHTLINIEN"
         }
       }
     },
@@ -1052,7 +1052,7 @@ export const constants = {
       title2: {
         en: "Contact Us",
         fr: "Nous contacter",
-        de: "Kontaktiere uns"
+        de: "Kontakt"
       },
       phone: {
         en: "Phone Number",
