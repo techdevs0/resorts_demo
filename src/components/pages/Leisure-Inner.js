@@ -15,11 +15,21 @@ class LeisureInner extends Component {
     activities: {},
     intro: {},
     banner: {},
+    faqsData: [],
     meta: {}
   }
 
   componentDidMount() {
     const activeLang = localStorage.getItem('lang');
+
+    API.get(`/faqs?lang=${activeLang}`).then((faqresponse) => {
+      this.setState({
+        faqsData:
+          faqresponse?.data?.data?.filter(
+            (x) => x.page === "resort_activities"
+          ) || [],
+      });
+    });
 
     API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
       this.setState({
@@ -57,24 +67,6 @@ class LeisureInner extends Component {
         isActive: true,
       },
     ];
-
-    const faqList = [
-      {
-        question: `${constants?.site_content?.leisureInner_page?.faq_sec?.faq1?.question[activeLang]}`,
-        answer: `${constants?.site_content?.leisureInner_page?.faq_sec?.faq1?.answer[activeLang]}`,
-        category: 'dining'
-      },
-      {
-        question: `${constants?.site_content?.leisureInner_page?.faq_sec?.faq2?.question[activeLang]}`,
-        answer: `${constants?.site_content?.leisureInner_page?.faq_sec?.faq2?.answer[activeLang]}`,
-        category: 'policy'
-      },
-      {
-        question: `${constants?.site_content?.leisureInner_page?.faq_sec?.faq3?.question[activeLang]}`,
-        answer: `${constants?.site_content?.leisureInner_page?.faq_sec?.faq3?.answer[activeLang]}`,
-        category: 'policy'
-      },
-    ]
     return (
       <div className="bg-white leisure-inner-wrapper">
 
@@ -94,7 +86,7 @@ class LeisureInner extends Component {
           {/*====== INTRO END ======*/}
 
           <FAQSection
-            faqData={faqList}
+            faqData={this.state.faqsData}
             activeLang={activeLang}
           />
 

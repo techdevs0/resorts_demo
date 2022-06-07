@@ -5,6 +5,9 @@ import { constants } from '../../../utils/constants';
 const currentPage = window.location.pathname.split("/");
 
 const DiningInnerInfo = (props) => {
+  {
+    console.log("currentpage", currentPage)
+  }
   return (
     <div className='dining-info-wrapper'>
       <div className='container'>
@@ -42,7 +45,7 @@ const DiningInnerInfo = (props) => {
 
           <div className="col-12 col-md-4">
             {props.menuPdf?.map((x, i) => (
-              x.route === currentPage[2] &&
+              x.route === currentPage[3] &&
               <div className="menu-buttons" key={i}>
                 <a href={x.ourMainMenu} className={x.ourMainMenu === "" ? "pdf_btn_hide" : ""} without rel="noopener noreferrer" target="_blank">
                   <button className="main-btn btn-filled">
