@@ -182,7 +182,7 @@ export const constants = {
       experience: {
         title: {
           en: "Unlock the ultimate experience with us today",
-          fr: "Débloquez l'expérience ultime avec nous aujourd'hui",
+          fr: "Vivez une expérience suprême avec nous aujourd’hui",
           de: "Machen Sie noch heutedie aufregendste Erfahrung mit uns!"
         },
         data_title1: {
@@ -197,7 +197,7 @@ export const constants = {
         },
         data_title3: {
           en: "About Seychelles",
-          fr: "À propos des Seychelles",
+          fr: "À propos de Seychelles",
           de: "Über die Seychellen"
         },
         data_title4: {
@@ -260,7 +260,7 @@ export const constants = {
         },
         title2: {
           en: "Dining",
-          fr: "À manger",
+          fr: "Restauration",
           de: "Gastronomie"
         },
         title3: {
@@ -277,14 +277,14 @@ export const constants = {
       sec_text_box: {
         title: {
           en: "Escape and Enjoy in your own little paradise",
-          fr: "Évadez-vous et profitez de votre propre petit paradis",
+          fr: "Echappez-vous pour vous amuser dans votre petit paradis",
           de: "Entfliehen und genießen Sie in Ihrem eigenen kleinen Paradies"
         }
       },
       about_offer: {
         title: {
           en: "Explore Fishermans Cove Resort Premium Offerings",
-          fr: "Découvrez les offres premium de Fishermans Cove Resort",
+          fr: "Explorez les offres haut de gamme de Fishermans Cove Resort",
           de: "Entdecken Sie die Premium-Angebote bei Fishermans Cove Resort"
         }
       }
@@ -293,7 +293,7 @@ export const constants = {
       bread_crumb: {
         title2: {
           en: "Dining",
-          fr: "À manger",
+          fr: "Restauration",
           de: "Gastronomie"
         }
       },
@@ -675,44 +675,6 @@ export const constants = {
           fr: "Autres activités du complexe",
           de: "Andere Resort Aktivitäten"
         }
-      },
-      faq_sec: {
-        faq1: {
-          question: {
-            en: "What are the fun activities to do in Seychelles?",
-            fr: "Quelles sont les activités amusantes à faire aux Seychelles ?",
-            de: "Welche unterhaltsamen Aktivitäten gibt es auf den Seychellen?"
-          },
-          answer: {
-            en: "There are numerous fun activities to do in Seychelles. Some of the best things to do in Seychelles are Island hopping, chilling on the beach, diving, snorkeling are some of the few activities to do in Seychelles",
-            fr: "Il existe de nombreuses activités amusantes à faire aux Seychelles. Certaines des meilleures choses à faire aux Seychelles sont le saut d'île en île, la détente sur la plage, la plongée, la plongée en apnée sont quelques-unes des rares activités à faire aux Seychelles.",
-            de: "Es gibt zahlreiche unterhaltsame Aktivitäten auf den Seychellen. Einige der besten Aktivitäten auf den Seychellen sind Inselhüpfen, Chillen am Strand, Tauchen, Schnorcheln und einige der wenigen Aktivitäten auf den Seychellen"
-          }
-        },
-        faq2: {
-          question: {
-            en: "What are the things to do with children?",
-            fr: "Quelles sont les activités à faire avec les enfants ?",
-            de: "Was ist mit Kindern zu tun?"
-          },
-          answer: {
-            en: "Seychelles is a fun place to be in and kids would love to visit Beau Vallon Beach, La Digue island. Moreover, you could take them to Botanical Gardens and Sainte Anne Marine National Park is also a nice place to visit.",
-            fr: "Les Seychelles sont un endroit amusant et les enfants adoreraient visiter la plage de Beau Vallon, sur l'île de La Digue. De plus, vous pouvez les emmener aux jardins botaniques et le parc national marin de Sainte Anne est également un endroit agréable à visiter.",
-            de: "Die Seychellen sind ein unterhaltsamer Ort und Kinder würden gerne Beau Vallon Beach auf der Insel La Digue besuchen. Außerdem können Sie sie zum Botanischen Garten bringen und der Sainte-Anne-Marine-Nationalpark ist ebenfalls ein schöner Ort für einen Besuch."
-          }
-        },
-        faq3: {
-          question: {
-            en: "What is Seychelles best known for?",
-            fr: "Pourquoi les Seychelles sont-elles les plus connues ?",
-            de: "Wofür sind die Seychellen am bekanntesten?"
-          },
-          answer: {
-            en: "Seychelles is best known for its crystal clear waters and its beautiful beaches. The place is filled with tropical forests and untouched wonderlands. It’s a place with a rich history and filled with opportunities for leisure activities.",
-            fr: "Les Seychelles sont surtout connues pour leurs eaux cristallines et leurs belles plages. L'endroit est rempli de forêts tropicales et de merveilles intactes. C'est un lieu avec une histoire riche et rempli de possibilités d'activités de loisirs.",
-            de: "Die Seychellen sind vor allem für ihr kristallklares Wasser und ihre wunderschönen Strände bekannt. Der Ort ist mit tropischen Wäldern und unberührten Wunderländern gefüllt. Es ist ein Ort mit einer reichen Geschichte und vielen Möglichkeiten für Freizeitaktivitäten."
-          }
-        }
       }
     },
     sustainbility_page: {
@@ -764,67 +726,67 @@ export const constants = {
           },
           detail: {
             en: "It is encouraged at Fishermans Cove Resort to use recycled products. Strategies including ‘Reuse and Recycle’ of the paper, composting, segregation, Mobile app, ‘Refuse the straw’ have been strictly implemented to ensure the advancement towards a better and sustainable future.",
-            fr: "Il est encouragé au Fishermans Cove Resort d'utiliser des produits recyclés. Des stratégies telles que « Réutiliser et recycler » du papier, le compostage, la séparation, l'application mobile, « Refuser la paille » ont été strictement mises en œuvre pour assurer l'avancement vers un avenir meilleur et durable.",
+            fr: "L’usage des produits recyclés est toujours encouragé à Fishermans Cove Resort. Les initiatives comme ‘Réutiliser et Recycler du papier’, composter, ségrégation, l’application smartphone, « Refuser la paille » sont mis à pratique pour assurer le progrès vers un avenir meilleur et durable.",
             de: "Im Fishermans Cove Resort wird es befördert, recycelte Produkte zu verwenden. Strategien wie Wiederverwendung und Recyceln des Papiers, Kompostierung, Mülltrennung, Handy App und „Den Strohhalm zurückweisen“ wurden grundsätzlich umgesetzt, um eine bessere und nachhaltige Zukunft zu erreichen."
           }
         },
         block_2: {
           title: {
             en: "Botanical Gardens",
-            fr: "jardins botaniques",
+            fr: "Les jardins botaniques",
             de: "Botanische Gärten"
           },
           detail: {
             en: "Established in 1901, this historical garden is under the government’s protection and it serves as a base for Seychelle’s efforts towards environmental education, landscape management, and plant conservation. Moreover, it’s a center of eco-tourism in Victoria.",
-            fr: "Dieser historische Garten, der 1901 gegründet wurde, steht unter dem Schutz der Regierung und dient als Basis für die Bemühungen der Seychellen in den Bereichen Umwelterziehung, Landschaftspflege und Pflanzenschutz. Außerdem ist es ein Zentrum des Ökotourismus in Victoria.",
+            fr: "Etabli en 1901, ce jardin historique est protégé par le gouvernement. Il se sert d’une fondation des efforts pris par les Seychelles vers une sensibilisation de l’environnement, l’aménagement paysager et la conservation végétale. De plus, ce jardin est connu pour l’éco-tourisme à Victoria.",
             de: "Dieser historische Garten, der 1901 gegründet wurde, steht unter dem Schutz der Regierung und dient als die Grundlage für die Bemühungen der Seychellen zur Umwelterziehung und Landschaftspflege und zum Pflanzenschutz. Darüber hinaus ist das ein Zentrum des Ökotourismus in Victoria."
           }
         },
         block_3: {
           title: {
             en: "Arul Mihu Navasakthi Vinayagar Temple",
-            fr: "Temple Arul Mihu Navasakthi Vinayagar",
+            fr: "Arul Mihu Navasakthi Vinayagar Temple",
             de: "Arul Mihu Navasakthi Vinayagar Tempel"
           },
           detail: {
             en: "Arul Mihu Navasakthi Vinayagar Temple is the only Hindu temple in Seychelles and was built in 1992. This unique building is in Victoria and it is named after the Hindu God for safety and prosperity, Lord Vinayagar.",
-            fr: "Le temple Arul Mihu Navasakthi Vinayagar est le seul temple hindou des Seychelles et a été construit en 1992. Ce bâtiment unique se trouve à Victoria et porte le nom du dieu hindou de la sécurité et de la prospérité, Lord Vinayagar.",
+            fr: "Construit en 1992, Arul Mihu Navasakthi Vinayagar Temple est le seul temple Hindou aux Seychelles. Nommé après le dieu Hindou de la sécurité et de la prospérité, « Dieu Vinayagar », cet unique temple se trouve à Victoria.",
             de: "Der Arul Mihu Navasakthi Vinayagar Tempel ist der einzige Hindu-Tempel auf den Seychellen und wurde 1992 erbaut. Dieses einzigartige Gebäude befindet sich in Victoria und ist nach dem hinduistischen Gott für Sicherheit und Wohlstand, Lord Vinayagar, benannt."
           }
         },
         block_4: {
           title: {
             en: "Cathedral of our Lady of Immaculate Conception",
-            fr: "Cathédrale Notre-Dame de l'Immaculée Conception",
+            fr: "Cathédrale de ‘Our Lady of Immaculate Conception",
             de: "Kathedrale Unserer Lieben Frau von der Unbefleckten Empfängnis"
           },
           detail: {
             en: "This iconic cathedral is considered to be the mother Church of the Catholic Diocese. Constructed in March 1851, it was devoted to the Virgin of Immaculate Conception. It is one of the first cathedrals in Seychelles",
-            fr: "Cette cathédrale emblématique est considérée comme l'église mère du diocèse catholique. Construit en mars 1851, il était consacré à la Vierge de l'Immaculée Conception. C'est l'une des premières cathédrales des Seychelles",
+            fr: "Cette cathédrale iconique est considérée l'église mère du diocèse catholique. Construite en Mars de 1851, elle est consacrée à la ‘Virgin of Immaculate Conception’. Cette cathédrale est l'une des premières cathédrales aux Seychelles.",
             de: "Diese ikonische Kathedrale gilt als Mutterkirche der katholischen Diözese. Sie wurde im März 1851 erbaut und war der Jungfrau der Unbefleckten Empfängnis gewidmet. Sie ist eine der ersten Kathedralen auf den Seychellen."
           }
         },
         block_5: {
           title: {
             en: "National Museum of History",
-            fr: "Musée national d'histoire",
+            fr: "National Museum of History",
             de: "Staatliches Museum für Naturgeschichte"
           },
           detail: {
             en: "This museum is home to some of the rare historical artifacts including one of the oldest maps which dated back to 1517. It was established in 1964 and is charged with the preservation, and exhibition of historical artifacts.",
-            fr: "Ce musée abrite certains des rares artefacts historiques, dont l'une des plus anciennes cartes datant de 1517. Il a été créé en 1964 et est chargé de la préservation et de l'exposition d'artefacts historiques.",
+            fr: "Fondé dans 1964, ce musée abrite quelques objets anciens qui sont rares tels qu’une carte qui date de 1517. Le musée est chargé de la préservation et l’exposition des objets historiques.",
             de: "Dieses Museum beherbergt einige der seltenen historischen Artefakte, darunter eine der ältesten Karten aus dem Jahr 1517. Es wurde 1964 gegründet und ist mit der Erhaltung und Ausstellung historischer Artefakte beauftragt."
           }
         },
         block_6: {
           title: {
             en: "Island hopping for a day",
-            fr: "D'île en île pour une journée",
+            fr: "Escapade d'île en île d’un jour",
             de: "Inselhopping für einen Tag"
           },
           detail: {
             en: "Seychelles is home to numerous magical islands with infinite prepossessing sights. ‘Paradise on Earth’, Garden of Eden, and many more, each with its own unique character are calling, and a visit to Seychelles can ever be completed without a full day of island hopping.",
-            fr: "Les Seychelles abritent de nombreuses îles magiques aux vues infinies.'Paradise on Earth', Garden of Eden et bien d'autres, chacun avec son propre caractère unique, appellent, et une visite aux Seychelles peut toujours être complétée sans une journée complète d'île en île.",
+            fr: "Les Seychelles abritent beaucoup d’îles féeriques avec des vues impressionnantes. ‘Paradis sur terre’, le jardin d’Eden, etc., chaque île nous attire avec sa beauté unique. La visite aux Seychelles est incomplète sans une journée entière d’une escapade d'île en île.",
             de: "Auf den Seychellen gibt es zahlreiche magische Inseln mit unendlichen Sehenswürdigkeiten. 'Paradies auf Erden' ,Garten Eden“ und viele andere, jede mit ihrem eigenen einzigartigen Charakter,  laden ein. Ein Besuch auf den Seychellen kann nie ohne einen ganzen Tag Inselhopping abgeschlossen werden."
           }
         }
@@ -866,14 +828,14 @@ export const constants = {
       bread_crumb: {
         title2: {
           en: "Contact Us",
-          fr: "Nous contacter",
+          fr: "Contactez-nous",
           de: "Kontakt"
         }
       },
       contact_form: {
         title: {
           en: "Write to Us",
-          fr: "Écrivez-nous",
+          fr: "Écrivez à nous",
           de: "Schreiben Sie an uns"
         },
         name_error: {
@@ -955,7 +917,7 @@ export const constants = {
       contact_offer: {
         title: {
           en: "Fishermans Cove Resort on Social Media",
-          fr: "Fishermans Cove Resort sur les réseaux sociaux",
+          fr: "Fishermans Cove Resort sur le media social",
           de: "Fishermans Cove Resort in den sozialen Medien"
         },
         room1: {
@@ -1051,7 +1013,7 @@ export const constants = {
       },
       title2: {
         en: "Contact Us",
-        fr: "Nous contacter",
+        fr: "Contactez-nous",
         de: "Kontakt"
       },
       phone: {
