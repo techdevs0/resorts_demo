@@ -20,7 +20,7 @@ const RoomsInnerTitleBlock = (props) => {
               emulateTouch={true}
               className="room-carousel"
             >
-              {props.room?.images_list && JSON.parse(props.room?.images_list)?.filter((x) => x["is360"] !== "true")
+              {props.room?.images_list && JSON.parse(props.room?.images_list)?.filter((x) => x["is360"] === "false")
                 ?.map((x, i) => (
                   <div key={x.id}>
                     <img src={x.avatar} alt="" />
