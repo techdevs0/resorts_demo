@@ -241,7 +241,7 @@ function App() {
       //     ]
       //   )
       default:
-        break;
+        // break;
         return (
           <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
         )
