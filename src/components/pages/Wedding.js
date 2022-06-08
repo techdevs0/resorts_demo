@@ -9,6 +9,7 @@ import PageLayout from '../layouts/PageLayout';
 import { constants } from "../../utils/constants";
 
 
+
 const pageId = `629706a2aae6f31e547b80c3`;
 
 class Wedding extends Component {
@@ -63,29 +64,37 @@ class Wedding extends Component {
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
+        {
+          this.state.banner ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
+              {/*====== TITLE START ======*/}
+              <WeddingTitleBlock intro={this.state.intro} />
+              {/*====== TITLE END ======*/}
+              {/*====== ROOM GRID START ======*/}
+              <WeddingGrid title={constants?.site_content?.weddings_page?.wedding_grid?.title[activeLang]}
+                data={this.state.weddingData} />
+              {/*====== ROOM GRID END ======*/}
+              <WeddingFormDialog
+                activeLang={activeLang}
+              />
 
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
-          activeLang={activeLang}
-        >
-          {/*====== TITLE START ======*/}
-          <WeddingTitleBlock intro={this.state.intro} />
-          {/*====== TITLE END ======*/}
-          {/*====== ROOM GRID START ======*/}
-          <WeddingGrid title={constants?.site_content?.weddings_page?.wedding_grid?.title[activeLang]}
-            data={this.state.weddingData} />
-          {/*====== ROOM GRID END ======*/}
-          <WeddingFormDialog
-            activeLang={activeLang}
-          />
-
-          <FAQSection
-            faqData={this.state.faq}
-            activeLang={activeLang}
-          />
-        </PageLayout>
+              <FAQSection
+                faqData={this.state.faq}
+                activeLang={activeLang}
+              />
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+        }
       </div>
     );
   }

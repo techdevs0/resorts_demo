@@ -62,31 +62,39 @@ class Leisure extends Component {
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
-
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
-          activeLang={activeLang}
-        >
-          {/*/!*====== TITLE START ======*!/*/}
-          <LeisureTitleBlock
-            activeLang={activeLang}
-          />
-          {/*====== TITLE END ======*/}
-          {/*====== ROOM GRID START ======*/}
-          <LeisureGrid
-            actData={this.state.activitiesData}
-          // data={roomsData}
-          />
-          {/*====== ROOM GRID END ======*/}
-          {/* ===== LEISURE AWARDS START */}
-          <LeisureAwards
-            award={this.state.awardData}
-            activeLang={activeLang}
-          />
-          {/* ===== LEISURE AWARDS END */}
-        </PageLayout>
+        {
+          this.state.banner ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
+              {/*/!*====== TITLE START ======*!/*/}
+              <LeisureTitleBlock
+                activeLang={activeLang}
+              />
+              {/*====== TITLE END ======*/}
+              {/*====== ROOM GRID START ======*/}
+              <LeisureGrid
+                actData={this.state.activitiesData}
+              // data={roomsData}
+              />
+              {/*====== ROOM GRID END ======*/}
+              {/* ===== LEISURE AWARDS START */}
+              <LeisureAwards
+                award={this.state.awardData}
+                activeLang={activeLang}
+              />
+              {/* ===== LEISURE AWARDS END */}
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+        }
       </div>
     );
   }

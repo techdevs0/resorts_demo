@@ -8,7 +8,6 @@ import PageLayout from '../layouts/PageLayout';
 import SEOTags from "../sections/common/SEOTags";
 import { constants } from "../../utils/constants";
 
-
 const pageId = `6297070d0da7c94b690c6cc3`;
 
 class AboutUs extends Component {
@@ -19,8 +18,9 @@ class AboutUs extends Component {
     meta: {}
   }
 
-  componentDidMount() {
+  componentDidMount(prevState) {
     try {
+
       const activeLang = localStorage.getItem('lang');
 
       API.get(`/premium?lang=${activeLang}`).then(response => {
@@ -60,32 +60,41 @@ class AboutUs extends Component {
     return (
       <div className="bg-white about-us-wrapper">
         <SEOTags meta={this.state.meta} />
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
-          activeLang={activeLang}
-        >
-          <AboutTitleBlock data={this.state.sections?.intro}
-          />
-          {/*====== TITLE END ======*/}
+        {
+          this.state.banner ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
+              <AboutTitleBlock data={this.state.sections?.intro}
+              />
+              {/*====== TITLE END ======*/}
 
-          {/*====== SERVICES START ======*/}
-          <AboutServices
-            activeLang={activeLang}
-          />
-          {/*====== SERVICES END ======*/}
-          {/*====== SECONDARY START ======*/}
-          <AboutSecondaryTextBlock data={this.state.sections?.dine}
-            activeLang={activeLang}
-          />
-          {/*====== SECONDARY END ======*/}
-          {/*====== ABOUT SLIDER START ======*/}
-          <AboutOfferSlider data={this.state.premiumOffers} title={constants?.site_content?.about_page?.about_offer?.title[activeLang]}
-            activeLang={activeLang}
-          />
+              {/*====== SERVICES START ======*/}
+              <AboutServices
+                activeLang={activeLang}
+              />
+              {/*====== SERVICES END ======*/}
+              {/*====== SECONDARY START ======*/}
+              <AboutSecondaryTextBlock data={this.state.sections?.dine}
+                activeLang={activeLang}
+              />
+              {/*====== SECONDARY END ======*/}
+              {/*====== ABOUT SLIDER START ======*/}
+              <AboutOfferSlider data={this.state.premiumOffers} title={constants?.site_content?.about_page?.about_offer?.title[activeLang]}
+                activeLang={activeLang}
+              />
 
-        </PageLayout>
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+        }
       </div>
     );
   }

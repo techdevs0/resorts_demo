@@ -1,15 +1,8 @@
 import React, { Component } from 'react'
 import API from '../../langapi/http';
-import Headertwo from '../layouts/Headertwo';
-import Footertwo from '../layouts/Footertwo';
-import Mainbanner from '../sections/homepage-two/Banner';
-import Bookingform from '../sections/homepage-two/Bookingform';
-import BottomNavigator from '../sections/homepage-two/BottomNavigator';
-import Subscribe from '../sections/common/Subscribe';
 import OffersInnerMainBlock from '../sections/offers-inner/offers-inner-block';
-import BreadCrumb from '../layouts/BreadCrumb';
 import Helmet from "react-helmet";
-
+import PageLayout from "../layouts/PageLayout";
 
 const breadcrumbItems = [
   {
@@ -59,43 +52,35 @@ class OffersInner extends Component {
       <div className="bg-white offers-inner-wrapper">
         <Helmet>
           <title>
-            Stay and Save With Fishermans Cove Resort + Dinner for Two |
-            Fishermans Cove Resort
+            {
+              this.state.offerData?.meta_title || "Fishermans Cove Resort"
+            }
           </title>
-          <meta
-            name="description"
-            content="Make your ordinary vacation, extra ordinary with 10% off at Fishermans Cove Resort. Book your stay now and get a complimentary dinner for two at Le Cardinal Restaurant."
-          />
+          <meta name="description" content={this.state.offerData?.meta_description} />
+
         </Helmet>
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'offers-inner'} />
-        {/*====== BANNER PART START ======*/}
-        <Mainbanner title={this.state.offerData.banner_text} image={this.state.offerData.banner_imgPreview}
-          activeLang={activeLang}
-        />
-        {/*====== BANNER PART ENDS ======*/}
-        {/*====== BOOKING FORM START ======*/}
-        <Bookingform
-          activeLang={activeLang}
-        />
-        {/*====== BOOKING FORM END ======*/}
-        {/* BREADCRUMBS START */}
-        <BreadCrumb items={breadcrumbItems}
-          activeLang={activeLang}
-        />
-        {/* BREADCRUMBS END */}
-        {/*====== INTRO START ======*/}
-        <OffersInnerMainBlock offerData={this.state.offerData}
-          activeLang={activeLang}
-        />
-        {/*====== INTRO END ======*/}
 
-        <Subscribe
-          activeLang={activeLang}
-        />
-
-        <Footertwo />
-
-        <BottomNavigator />
+        {
+          this.state.offerData?.banner_imgPreview ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.offerData?.banner_text, image: this.state.offerData?.banner_imgPreview }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
+              {/*====== INTRO START ======*/}
+              <OffersInnerMainBlock offerData={this.state.offerData}
+                activeLang={activeLang}
+              />
+              {/*====== INTRO END ======*/}
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+        }
       </div>
     );
   }

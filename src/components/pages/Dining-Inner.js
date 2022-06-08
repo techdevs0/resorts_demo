@@ -16,6 +16,7 @@ import { constants } from "../../utils/constants";
 import API from '../../langapi/http';
 import { Helmet } from "react-helmet";
 
+
 const menuPdf = [
   //sunset
   {
@@ -165,44 +166,53 @@ class DiningInner extends Component {
           <meta name="description" content={this.state.singleHotel?.meta_description} />
 
         </Helmet>
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{
-            title: this.state.singleHotel?.post_name,
-            image: this.state.singleHotel?.banner_imgPreview,
-          }}
-          breadCrumb={{ items: breadcrumbItems }}
-          key={this.state.singleHotel?.post_name}
-          activeLang={activeLang}
-        >
-          {/*====== TITLE START ======*/}
-          <DiningInnerTitleBlock
-            dining={this.state.singleHotel}
-          />
-          {/*====== TITLE END ======*/}
-          {/*====== ROOM GRID START ======*/}
-          <DiningInnerInfo
-            timingSection={this.state.sections?.timings}
-            opening_hours={this.state.singleHotel?.section_opening_hours}
-            dress_code={this.state.singleHotel?.section_dress_code}
-            menuPdf={menuPdf}
-            activeLang={activeLang}
-          />
+        {
+          this.state.singleHotel?.banner_imgPreview ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{
+                title: this.state.singleHotel?.post_name,
+                image: this.state.singleHotel?.banner_imgPreview,
+              }}
+              breadCrumb={{ items: breadcrumbItems }}
+              key={this.state.singleHotel?.post_name}
+              activeLang={activeLang}
+            >
+              {/*====== TITLE START ======*/}
+              <DiningInnerTitleBlock
+                dining={this.state.singleHotel}
+              />
+              {/*====== TITLE END ======*/}
+              {/*====== ROOM GRID START ======*/}
+              <DiningInnerInfo
+                timingSection={this.state.sections?.timings}
+                opening_hours={this.state.singleHotel?.section_opening_hours}
+                dress_code={this.state.singleHotel?.section_dress_code}
+                menuPdf={menuPdf}
+                activeLang={activeLang}
+              />
 
-          {/*====== OTHERS GRID START ======*/}
-          <OtherRecommendations
-            title={constants?.site_content?.dinningInner_page?.other_recom?.title[activeLang]}
-            data={this.state.othersData}
-            activeLang={activeLang}
-          />
-          {/*====== OTHERS GRID END ======*/}
+              {/*====== OTHERS GRID START ======*/}
+              <OtherRecommendations
+                title={constants?.site_content?.dinningInner_page?.other_recom?.title[activeLang]}
+                data={this.state.othersData}
+                activeLang={activeLang}
+              />
+              {/*====== OTHERS GRID END ======*/}
 
-          <FAQInnerSection
-            faqList={this.state.faqsData.filter((x) => x.innerpage == this.state.singleHotel?.slug)}
-            activeLang={activeLang}
-          />
+              <FAQInnerSection
+                faqList={this.state.faqsData.filter((x) => x.innerpage == this.state.singleHotel?.slug)}
+                activeLang={activeLang}
+              />
 
-        </PageLayout>
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+        }
       </div>
     );
   }

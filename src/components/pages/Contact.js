@@ -75,27 +75,37 @@ class ContactUs extends Component {
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
-          activeLang={activeLang}
-        >
-          {/*====== TITLE START ======*/}
-          <ContactTitleBlock data={this.state?.intro ? this.state?.intro?.section_content : null}
-            activeLang={activeLang}
-          />
-          {/*====== TITLE END ======*/}
-          {/*====== CONTACT FORM START ======*/}
-          <ContactUsForm
-            activeLang={activeLang}
-          />
-          {/*====== CONTACT FORM END ======*/}
-          {/*====== ABOUT SLIDER START ======*/}
-          <ContactOfferSlider data={roomsData} title={constants?.site_content?.contact_page?.contact_offer?.title[activeLang]} />
-          {/*====== ABOUT SLIDER END ======*/}
 
-        </PageLayout>
+        {
+          this.state.banner ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
+              {/*====== TITLE START ======*/}
+              <ContactTitleBlock data={this.state?.intro ? this.state?.intro?.section_content : null}
+                activeLang={activeLang}
+              />
+              {/*====== TITLE END ======*/}
+              {/*====== CONTACT FORM START ======*/}
+              <ContactUsForm
+                activeLang={activeLang}
+              />
+              {/*====== CONTACT FORM END ======*/}
+              {/*====== ABOUT SLIDER START ======*/}
+              <ContactOfferSlider data={roomsData} title={constants?.site_content?.contact_page?.contact_offer?.title[activeLang]} />
+              {/*====== ABOUT SLIDER END ======*/}
+
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+        }
       </div>
     );
   }

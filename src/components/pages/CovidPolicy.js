@@ -47,17 +47,27 @@ class CovidPolicy extends Component {
     return (
       <div className="bg-white covid-policy-wrapper">
         <SEOTags meta={this.state.meta} />
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
-          activeLang={activeLang}
-        >
-          {/*====== INTRO START ======*/}
-          <CovidIntroBlock data={this.state.intro} />
-          {/*====== INTRO END ======*/}
 
-        </PageLayout>
+        {
+          this.state.banner ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
+              {/*====== INTRO START ======*/}
+              <CovidIntroBlock data={this.state.intro} />
+              {/*====== INTRO END ======*/}
+
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+        }
       </div>
     );
   }

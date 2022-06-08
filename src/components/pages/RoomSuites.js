@@ -6,6 +6,7 @@ import PageLayout from "../layouts/PageLayout";
 import SEOTags from "../sections/common/SEOTags";
 import { constants } from "../../utils/constants";
 
+
 const pageId = `62970893199be664df7a3a32`;
 class RoomSuites extends Component {
   state = {
@@ -59,30 +60,38 @@ class RoomSuites extends Component {
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
+        {
+          this.state.banner ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
 
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
-          activeLang={activeLang}
-        >
-
-          {/*/!*====== TITLE START ======*!/*/}
-          <RoomTitleBlock data={this.state.intro} />
-          {/*====== TITLE END ======*/}
-          {/*====== ROOM GRID START ======*/}
-          <RoomSuiteGrid title={constants?.site_content?.rooms_page?.room_grid?.title[activeLang]}
-            data={this.state.roomsData}
-            activeLang={activeLang}
-          />
-          {/*====== ROOM GRID END ======*/}
-          {/*====== SUITES GRID START ======*/}
-          <RoomSuiteGrid title={constants?.site_content?.rooms_page?.room_grid?.title2[activeLang]}
-            data={this.state.suitesData}
-            activeLang={activeLang}
-          />
-          {/*====== SUITES GRID END ======*/}
-        </PageLayout>
+              {/*/!*====== TITLE START ======*!/*/}
+              <RoomTitleBlock data={this.state.intro} />
+              {/*====== TITLE END ======*/}
+              {/*====== ROOM GRID START ======*/}
+              <RoomSuiteGrid title={constants?.site_content?.rooms_page?.room_grid?.title[activeLang]}
+                data={this.state.roomsData}
+                activeLang={activeLang}
+              />
+              {/*====== ROOM GRID END ======*/}
+              {/*====== SUITES GRID START ======*/}
+              <RoomSuiteGrid title={constants?.site_content?.rooms_page?.room_grid?.title2[activeLang]}
+                data={this.state.suitesData}
+                activeLang={activeLang}
+              />
+              {/*====== SUITES GRID END ======*/}
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+        }
       </div>
     );
   }

@@ -138,54 +138,63 @@ class RoomsInner extends Component {
           <meta name="description" content={this.state.singleRoom?.meta_description} />
 
         </Helmet>
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{
-            title: this.state.singleRoom?.post_name,
-            image: this.state.singleRoom?.banner_imgPreview,
-          }}
-          breadCrumb={{ items: breadcrumbItems }}
-          hideBooking
-          key={this.state.singleRoom?.post_name}
-          activeLang={activeLang}
-        >
-          <div className="container">
-            <div className="row">
-              <div className="col-md-8 left-image-section">
-                {/*====== TITLE START ======*/}
-                <RoomsInnerTitleBlock room={this.state.singleRoom} />
-                {/*====== TITLE END ======*/}
-                {/*====== ROOM GRID START ======*/}
-                <RoomAmenities
+        {
+          this.state.singleRoom?.banner_imgPreview ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{
+                title: this.state.singleRoom?.post_name,
+                image: this.state.singleRoom?.banner_imgPreview,
+              }}
+              breadCrumb={{ items: breadcrumbItems }}
+              hideBooking
+              key={this.state.singleRoom?.post_name}
+              activeLang={activeLang}
+            >
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-8 left-image-section">
+                    {/*====== TITLE START ======*/}
+                    <RoomsInnerTitleBlock room={this.state.singleRoom} />
+                    {/*====== TITLE END ======*/}
+                    {/*====== ROOM GRID START ======*/}
+                    <RoomAmenities
+                      activeLang={activeLang}
+                    />
+                    {/*====== ROOM GRID END ======*/}
+                    {/*====== ROOM 360 GRID START ======*/}
+                    <RoomVR360
+                      image={this.state.singleRoom?.images_list && JSON.parse(this.state.singleRoom?.images_list)?.find((x) => x["is360"] === "true")?.avatar}
+                      activeLang={activeLang}
+                    />
+                    {/*====== ROOM 360 GRID END ======*/}
+                  </div>
+                  <div className="col-md-4 right-booking-section">
+                    <BookingFormVertical
+                      roomCode={this.state.singleRoom?.roomCode}
+                    />
+                  </div>
+                </div>
+                {/*====== OTHERS GRID START ======*/}
+                <OtherRecommendations
+                  title={constants?.site_content?.roomsInner_page?.other_recom?.title[activeLang]}
+                  data={this.state.othersData}
                   activeLang={activeLang}
                 />
-                {/*====== ROOM GRID END ======*/}
-                {/*====== ROOM 360 GRID START ======*/}
-                <RoomVR360
-                  image={this.state.singleRoom?.images_list && JSON.parse(this.state.singleRoom?.images_list)?.find((x) => x["is360"] === "true")?.avatar}
-                  activeLang={activeLang}
-                />
-                {/*====== ROOM 360 GRID END ======*/}
+                {/*====== OTHERS GRID END ======*/}
               </div>
-              <div className="col-md-4 right-booking-section">
-                <BookingFormVertical
-                  roomCode={this.state.singleRoom?.roomCode}
-                />
+              <FAQInnerSection
+                faqList={this.state.faqsData.filter((x) => x.innerpage === this.state.singleRoom?.slug)}
+                activeLang={activeLang}
+              />
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
               </div>
             </div>
-            {/*====== OTHERS GRID START ======*/}
-            <OtherRecommendations
-              title={constants?.site_content?.roomsInner_page?.other_recom?.title[activeLang]}
-              data={this.state.othersData}
-              activeLang={activeLang}
-            />
-            {/*====== OTHERS GRID END ======*/}
-          </div>
-          <FAQInnerSection
-            faqList={this.state.faqsData.filter((x) => x.innerpage === this.state.singleRoom?.slug)}
-            activeLang={activeLang}
-          />
-        </PageLayout>
+        }
       </div>
     );
   }

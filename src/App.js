@@ -85,7 +85,7 @@ function App() {
             <Route path={`/de/${slug}`} exact render={(props) => <Wedding {...props} isMobile={isMobile} isTop={isTop} />} />
           ]
         )
-      case "fine4-dining-seychelles":
+      case "fine-dining-seychelles":
         return (
           [
             <Route path={`/en/${slug}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />,
@@ -294,7 +294,7 @@ function App() {
           }
 
 
-          <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
+          {/* <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} /> */}
 
         </Switch>
       </Suspense>

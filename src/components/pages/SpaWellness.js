@@ -7,6 +7,7 @@ import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
 
 
+
 const pageId = `629707716acdd721ac47ee52`;
 
 class SpaWellness extends Component {
@@ -60,24 +61,33 @@ class SpaWellness extends Component {
     return (
       <div className="bg-white spa-wrapper">
         <SEOTags meta={this.state.meta} />
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
-          activeLang={activeLang}
-        >
-          {/*/!*====== PROJECTS SLIDER START ======*!/*/}
-          <SpaWellnessTitleBlock data={this.state.intro}
-            activeLang={activeLang}
-          />
-          {/*====== PROJECTS SLIDER END ======*/}
-          {/*====== RECOOMENDATIONS START ======*/}
-          <SpaWellnessRecommendations title={constants?.site_content?.spawellness_page?.offer_sec?.title[activeLang]}
-            data={this.state.premiumOffers}
-            activeLang={activeLang}
-          />
-          {/*====== RECOOMENDATIONS END ======*/}
-        </PageLayout>
+        {
+          this.state.banner ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
+              {/*/!*====== PROJECTS SLIDER START ======*!/*/}
+              <SpaWellnessTitleBlock data={this.state.intro}
+                activeLang={activeLang}
+              />
+              {/*====== PROJECTS SLIDER END ======*/}
+              {/*====== RECOOMENDATIONS START ======*/}
+              <SpaWellnessRecommendations title={constants?.site_content?.spawellness_page?.offer_sec?.title[activeLang]}
+                data={this.state.premiumOffers}
+                activeLang={activeLang}
+              />
+              {/*====== RECOOMENDATIONS END ======*/}
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+        }
       </div>
     );
   }

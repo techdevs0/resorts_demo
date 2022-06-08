@@ -6,6 +6,7 @@ import PageLayout from "../layouts/PageLayout";
 import { constants } from "../../utils/constants";
 import API from '../../langapi/http';
 
+
 const pageId = `6297121cc333da05c64f27d2`;
 class GalleryMain extends Component {
   state = {
@@ -49,21 +50,30 @@ class GalleryMain extends Component {
     return (
       <div className="bg-white">
         <SEOTags meta={this.state.meta} />
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
-          activeLang={activeLang}
-        >
-          {/*====== TITLE START ======*/}
-          <GalleryTitleBlock
-            activeLang={activeLang}
-          />
-          {/*====== TITLE END ======*/}
-          {/*====== GALLERY GRID START ======*/}
-          <GalleryGrid title={null} data={this.state.galleryData} />
-          {/*====== GALLERY GRID END ======*/}
-        </PageLayout>
+        {
+          this.state.banner ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
+              {/*====== TITLE START ======*/}
+              <GalleryTitleBlock
+                activeLang={activeLang}
+              />
+              {/*====== TITLE END ======*/}
+              {/*====== GALLERY GRID START ======*/}
+              <GalleryGrid title={null} data={this.state.galleryData} />
+              {/*====== GALLERY GRID END ======*/}
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+        }
       </div>
     );
   }

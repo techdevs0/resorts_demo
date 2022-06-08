@@ -6,6 +6,7 @@ import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
 
+
 const pageId = `629707a57f20d344c2209512`;
 
 class AboutSeychelles extends Component {
@@ -48,22 +49,33 @@ class AboutSeychelles extends Component {
     return (
       <div className="bg-white seychelles-wrapper">
         <SEOTags meta={this.state.meta} />
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
-          activeLang={activeLang}
-        >
-          {/*/!*====== INTRO START ======*!/*/}
-          <SeychellesIntroBlock data={this.state.intro}
-            activeLang={activeLang}
-          />
-          {/*====== INTRO END ======*/}
-          {/*====== PILLARS START ======*/}
-          <SeychellesPillarsBlock
-            activeLang={activeLang}
-          />
-        </PageLayout>
+
+        {
+          this.state.banner ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
+              {/*/!*====== INTRO START ======*!/*/}
+              <SeychellesIntroBlock data={this.state.intro}
+                activeLang={activeLang}
+              />
+              {/*====== INTRO END ======*/}
+              {/*====== PILLARS START ======*/}
+              <SeychellesPillarsBlock
+                activeLang={activeLang}
+              />
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+
+        }
       </div>
     );
   }

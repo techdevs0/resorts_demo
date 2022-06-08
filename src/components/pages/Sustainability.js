@@ -16,7 +16,7 @@ class Sustainability extends Component {
     lesiureData: [],
     activities: {},
     intro: {},
-    banner: {},
+    banner: null,
     meta: {}
   }
 
@@ -57,28 +57,36 @@ class Sustainability extends Component {
     return (
       <div className="bg-white sustainability-wrapper">
         <SEOTags meta={this.state.meta} />
+        {
+          this.state.banner ?
+            <PageLayout
+              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
+              breadCrumb={{ items: breadcrumbItems }}
+              activeLang={activeLang}
+            >
+              {/*====== INTRO START ======*/}
+              <SustainIntroBlock data={this.state.activities?.intro}
+                activeLang={activeLang}
+              />
+              {/*====== INTRO END ======*/}
+              {/*====== PILLARS START ======*/}
+              <SustainPillarsBlock data={this.state.activities?.pillars} />
+              {/*====== PILLARS END ======*/}
+              {/*====== PROJECTS SLIDER START ======*/}
+              <SustainProjectsBlock data={this.state.activities?.projects} />
+              {/*====== PROJECTS SLIDER END ======*/}
+              <SustainEngeryBlock data={this.state.activities?.energy} />
+              {/*====== PROJECTS SLIDER END ======*/}
 
-        <PageLayout
-          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-          banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-          breadCrumb={{ items: breadcrumbItems }}
-          activeLang={activeLang}
-        >
-          {/*====== INTRO START ======*/}
-          <SustainIntroBlock data={this.state.activities?.intro}
-            activeLang={activeLang}
-          />
-          {/*====== INTRO END ======*/}
-          {/*====== PILLARS START ======*/}
-          <SustainPillarsBlock data={this.state.activities?.pillars} />
-          {/*====== PILLARS END ======*/}
-          {/*====== PROJECTS SLIDER START ======*/}
-          <SustainProjectsBlock data={this.state.activities?.projects} />
-          {/*====== PROJECTS SLIDER END ======*/}
-          <SustainEngeryBlock data={this.state.activities?.energy} />
-          {/*====== PROJECTS SLIDER END ======*/}
-
-        </PageLayout>
+            </PageLayout>
+            :
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
+            </div>
+        }
       </div>
     );
   }

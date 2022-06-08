@@ -4,8 +4,7 @@ import API from '../../langapi/http';
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
-import CircularProgress from '@material-ui/core/CircularProgress';
-
+// import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 const pageId = `629707cc98454867af5ac8d2`;
@@ -68,9 +67,16 @@ class PrivacyPolicy extends Component {
 
             </PageLayout>
             :
-            <div className='loadingDiv' style={{ display: 'flex', justifyContent: 'center', paddingTop: '40vh', paddingBottom: '50px', height: '100vh !important' }}>
-              <CircularProgress style={{ color: "#183254" }} disableShrink />
+            <div className={"preloader align-items-center justify-content-center"}>
+              <div className="cssload-container">
+                <div className="cssload-loading"><i /><i /><i /><i /></div>
+              </div>
             </div>
+          // <div className='loadingDiv d-flex align-items-center justify-content-center'
+          //   style={{ paddingTop: '40vh', paddingBottom: '50px', height: '100vh !important' }}
+          // >
+          //   <CircularProgress style={{ color: "#183254" }} disableShrink />
+          // </div>
 
         }
 

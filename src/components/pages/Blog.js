@@ -6,6 +6,8 @@ import ReactPaginate from "react-paginate";
 import PageLayout from '../layouts/PageLayout';
 import bannerImg from "../../assets/img/blog/blogBanner.jpg"
 import { constants } from '../../utils/constants';
+import Helmet from "react-helmet";
+// import { createBrowserHistory } from 'history';
 
 
 const Blog = (props) => {
@@ -42,9 +44,23 @@ const Blog = (props) => {
       })
   }
 
+  // const history = createBrowserHistory();
+  // useEffect(() => {
+  //   const pathname = history.location.pathname;
+
+  //   console.log("pathname", history.location.pathname)
+
+  //   if (pathname) {
+  //     getBlogData();
+  //     getRecentData()
+  //   }
+  // }, [history.location.pathname]);
+
   useEffect(() => {
+
     getBlogData();
     getRecentData();
+
   }, [activeLang]);
 
   // pagination code
@@ -120,49 +136,66 @@ const Blog = (props) => {
 
   return (
     <div>
-      <PageLayout
-        header={{ isMobile: props.isMobile, isTop: props.isTop }}
-        banner={{ title: `${constants?.site_content?.blog_page?.bread_crumb?.title2[activeLang]}`, image: bannerImg }}
-        breadCrumb={{ items: breadcrumbItems }}
-        activeLang={activeLang}
-      >
-        {/*====== BLOG SECTION START ======*/}
-        <section className="blog-section pt-40 pb-100">
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-lg-8 col-md-10">
-                <div className="blog-loop">
+      <Helmet>
+        <title>
+          {constants?.site_content?.blog_page?.bread_crumb?.title2[activeLang]}
+        </title>
+        <meta name="description" content="blog" />
 
-                  {displayBlogs}
+      </Helmet>
+      {
+        blogData.length > 0 ?
+          <PageLayout
+            header={{ isMobile: props.isMobile, isTop: props.isTop }}
+            banner={{ title: `${constants?.site_content?.blog_page?.bread_crumb?.title2[activeLang]}`, image: bannerImg }}
+            breadCrumb={{ items: breadcrumbItems }}
+            activeLang={activeLang}
+          >
+            {/*====== BLOG SECTION START ======*/}
+            <section className="blog-section pt-40 pb-100">
+              <div className="container">
+                <div className="row justify-content-center">
+                  <div className="col-lg-8 col-md-10">
+                    <div className="blog-loop">
 
+                      {displayBlogs}
+
+                    </div>
+
+
+                    <ReactPaginate
+                      previousLabel={<i className="far fa-angle-double-left" />}
+                      nextLabel={<i className="far fa-angle-double-right" />}
+                      pageCount={pageCount}
+                      onPageChange={changePage}
+                      containerClassName={"paginationBttns"}
+                      previousLinkClassName={"previousBttn"}
+                      nextLinkClassName={"nextBttn"}
+                      disabledClassName={"paginationDisabled"}
+                      activeClassName={"paginationActive"}
+                    />
+
+                  </div>
+                  {/* Blog Sidebar */}
+                  <div className="col-lg-4 col-md-8 col-sm-10">
+                    <Blogsidebar
+                      recentBlog={recentBlog}
+                      activeLang={activeLang}
+                    />
+                  </div>
                 </div>
-
-
-                <ReactPaginate
-                  previousLabel={<i className="far fa-angle-double-left" />}
-                  nextLabel={<i className="far fa-angle-double-right" />}
-                  pageCount={pageCount}
-                  onPageChange={changePage}
-                  containerClassName={"paginationBttns"}
-                  previousLinkClassName={"previousBttn"}
-                  nextLinkClassName={"nextBttn"}
-                  disabledClassName={"paginationDisabled"}
-                  activeClassName={"paginationActive"}
-                />
-
               </div>
-              {/* Blog Sidebar */}
-              <div className="col-lg-4 col-md-8 col-sm-10">
-                <Blogsidebar
-                  recentBlog={recentBlog}
-                  activeLang={activeLang}
-                />
-              </div>
+            </section>
+
+          </PageLayout>
+          :
+          <div className={"preloader align-items-center justify-content-center"}>
+            <div className="cssload-container">
+              <div className="cssload-loading"><i /><i /><i /><i /></div>
             </div>
           </div>
-        </section>
 
-      </PageLayout>
+      }
     </div>
 
   );
