@@ -230,6 +230,14 @@ function App() {
             <Route path={`/de/${slug}`} exact render={(props) => <FAQ {...props} isMobile={isMobile} isTop={isTop} />} />
           ]
         )
+      case "gallery":
+        return (
+          [
+            <Route path={`/en/${slug}`} exact render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />,
+            <Route path={`/fr/${slug}`} exact render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />,
+            <Route path={`/de/${slug}`} exact render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
+          ]
+        )
       case "blog":
         return (
           [
@@ -247,7 +255,7 @@ function App() {
       //     ]
       //   )
       default:
-        break;
+        // break;
         return (
           <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
         )
@@ -282,9 +290,6 @@ function App() {
           <Route path={`/fr/blogs/:id`} exact render={(props) => <Blogdetails {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path={`/de/blogs/:id`} exact render={(props) => <Blogdetails {...props} isMobile={isMobile} isTop={isTop} />} />
 
-          <Route path='/en/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
-          <Route path='/fr/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
-          <Route path='/de/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
           {
 
             appRoutes?.map(x => (
@@ -292,7 +297,6 @@ function App() {
             ))
 
           }
-
 
           {/* <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} /> */}
 
