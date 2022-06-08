@@ -28,7 +28,9 @@ export default function PageLayout(props) {
                 activeLang={activeLang}
             />
             <Footertwo />
-            <BottomNavigator />
+            <BottomNavigator
+                activeLang={activeLang}
+            />
         </div>
     )
 }

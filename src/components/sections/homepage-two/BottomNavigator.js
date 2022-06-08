@@ -1,6 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
+import { constants } from '../../../utils/constants';
+
 // import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import {
   HomeRounded,
@@ -16,8 +18,8 @@ const useStyles = makeStyles({
   },
 });
 
-const BottomNavigator = () => {
-  
+const BottomNavigator = ({ activeLang }) => {
+
   const classes = useStyles();
   const [value, setValue] = React.useState("");
 
@@ -35,15 +37,18 @@ const BottomNavigator = () => {
         className={classes.root}
       >
         <Link className="main-btn btn-border" to={"#"}
-              style={{borderColor: "#be8a7d",
-                background: "#be8a7d",
-                color:"white"
-              }}
-              onClick={(e) => 
-            
-                window.gtag_report_conversion("https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB")
-              }
-        >Book Now</Link>
+          style={{
+            borderColor: "#be8a7d",
+            background: "#be8a7d",
+            color: "white"
+          }}
+          onClick={(e) =>
+
+            window.gtag_report_conversion("https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB")
+          }
+        >
+          {constants?.site_content?.home_page?.banner?.btn3[activeLang]}
+        </Link>
         <a href="tel:+2484677000">
           <PhoneRounded />
         </a>
