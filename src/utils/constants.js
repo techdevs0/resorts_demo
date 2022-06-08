@@ -36,7 +36,7 @@ export const constants = {
         },
         room: {
           en: "Room",
-          fr: "Salle",
+          fr: "Chambre",
           de: "Zimmer"
         },
         adult: {
@@ -51,7 +51,7 @@ export const constants = {
         },
         rooms: {
           en: "Rooms",
-          fr: "Pièces",
+          fr: "Chambres",
           de: "Zimmer"
         },
         adults: {
@@ -107,7 +107,7 @@ export const constants = {
       premium_offer: {
         title: {
           en: "Premium Offerings",
-          fr: "Offres Premium",
+          fr: "Des services de haut de gamme",
           de: "Premium-Angebote"
         },
         btn_text: {
@@ -192,7 +192,7 @@ export const constants = {
         },
         data_title2: {
           en: "Overview of the Resort",
-          fr: "Vue d'ensemble de la station",
+          fr: "Aperçu de l’hôtel",
           de: "Überblick über das Resort"
         },
         data_title3: {
@@ -255,7 +255,7 @@ export const constants = {
       rooms_data: {
         title: {
           en: "rooms & suites",
-          fr: "chambres & suites",
+          fr: "CHAMBRES ET SUITES",
           de: "ZIMMER UND SUITEN"
         },
         title2: {
@@ -350,7 +350,7 @@ export const constants = {
       bread_crumb: {
         title2: {
           en: "Rooms & Suites",
-          fr: "Chambres & Suites",
+          fr: "CHAMBRES ET SUITES",
           de: "ZIMMER UND SUITEN"
         }
       },
@@ -644,7 +644,7 @@ export const constants = {
         },
         detail: {
           en: "Recreational facilities are dotted throughout the resort with the stunning infinity pool taking centre stage.",
-          fr: "Les installations de loisirs sont disséminées dans tout le complexe, la superbe piscine à débordement occupant le devant de la scène.",
+          fr: "Des installations récréatives se trouvent partout dans l’hôtel avec une éblouissante piscine à débordement qui est au centre de l’attention.",
           de: "Freizeiteinrichtungen sind im gesamten Resort zu finden, wobei der erstaunliche Infinitypool im Mittelpunkt steht."
         },
         btn_txt: {
@@ -665,14 +665,14 @@ export const constants = {
       bread_crumb: {
         title3: {
           en: "Other Resort Activities",
-          fr: "Autres activités du complexe",
+          fr: "Autres activités à l’hôtel",
           de: "Andere Resort Aktivitäten"
         }
       },
       text_block: {
         title: {
           en: "Other Resort Activities",
-          fr: "Autres activités du complexe",
+          fr: "Autres activités à l’hôtel",
           de: "Andere Resort Aktivitäten"
         }
       }
@@ -697,14 +697,14 @@ export const constants = {
       text_block: {
         btn_txt: {
           en: "Download SPA Menu",
-          fr: "Télécharger la carte SPA",
+          fr: "TÉLÉCHARGEZ LA BROCHURE DE SPA",
           de: "SPA-Menü herunterladen"
         }
       },
       offer_sec: {
         title: {
           en: "Offers",
-          fr: "Des offres",
+          fr: "Offres",
           de: "Angebote"
         }
       }
@@ -796,7 +796,7 @@ export const constants = {
       bread_crumb: {
         title2: {
           en: "Offers",
-          fr: "Des offres",
+          fr: "Offres",
           de: "Angebote"
         }
       }
@@ -991,7 +991,7 @@ export const constants = {
       bread_crumb: {
         title2: {
           en: "Covid Policy",
-          fr: "Politique Covid",
+          fr: "POLITIQUE DE COVID",
           de: "COVID RICHTLINIEN"
         }
       }
