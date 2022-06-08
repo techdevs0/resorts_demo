@@ -85,18 +85,14 @@ function App() {
             <Route path={`/de/${slug}`} exact render={(props) => <Wedding {...props} isMobile={isMobile} isTop={isTop} />} />
           ]
         )
-      case "offers":
-        return [
-          <Route path={`/en/${slug}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />,
-          <Route path={`/fr/${slug}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />,
-          <Route path={`/de/${slug}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />
-        ]
-      case "fine-dining-seychelles":
-        return [
-          <Route path={`/en/${slug}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />,
-          <Route path={`/fr/${slug}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />,
-          <Route path={`/de/${slug}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
-        ]
+      case "fine4-dining-seychelles":
+        return (
+          [
+            <Route path={`/en/${slug}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />,
+            <Route path={`/fr/${slug}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />,
+            <Route path={`/de/${slug}`} exact render={(props) => <Dining {...props} isMobile={isMobile} isTop={isTop} />} />
+          ]
+        )
       // case "dining":
       //   return (
       //     [
@@ -130,11 +126,13 @@ function App() {
           ]
         )
       case "about-us":
-        return [
-          <Route path={`/en/${slug}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />,
-          <Route path={`/de/${slug}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />,
-          <Route path={`/fr/${slug}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />
-        ]
+        return (
+          [
+            <Route path={`/en/${slug}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />,
+            <Route path={`/de/${slug}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />,
+            <Route path={`/fr/${slug}`} exact render={(props) => <About {...props} isMobile={isMobile} isTop={isTop} />} />
+          ]
+        )
       case "contact":
         return (
           [
@@ -173,6 +171,14 @@ function App() {
             <Route path={`/en/${slug}`} exact render={(props) => <AboutSeychelles {...props} isMobile={isMobile} isTop={isTop} />} />,
             <Route path={`/fr/${slug}`} exact render={(props) => <AboutSeychelles {...props} isMobile={isMobile} isTop={isTop} />} />,
             <Route path={`/de/${slug}`} exact render={(props) => <AboutSeychelles {...props} isMobile={isMobile} isTop={isTop} />} />
+          ]
+        )
+      case "offers":
+        return (
+          [
+            <Route path={`/en/${slug}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />,
+            <Route path={`/fr/${slug}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />,
+            <Route path={`/de/${slug}`} exact render={(props) => <Offers {...props} isMobile={isMobile} isTop={isTop} />} />
           ]
         )
       case "privacy-policy":
@@ -241,7 +247,7 @@ function App() {
       //     ]
       //   )
       default:
-        // break;
+        break;
         return (
           <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
         )
@@ -275,6 +281,10 @@ function App() {
           <Route path={`/en/blogs/:id`} exact render={(props) => <Blogdetails {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path={`/fr/blogs/:id`} exact render={(props) => <Blogdetails {...props} isMobile={isMobile} isTop={isTop} />} />
           <Route path={`/de/blogs/:id`} exact render={(props) => <Blogdetails {...props} isMobile={isMobile} isTop={isTop} />} />
+
+          <Route path='/en/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path='/fr/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path='/de/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
           {
 
             appRoutes?.map(x => (
@@ -283,9 +293,8 @@ function App() {
 
           }
 
-          <Route path='/en/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
-          <Route path='/fr/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
-          <Route path='/de/gallery' render={(props) => <GalleryMain {...props} isMobile={isMobile} isTop={isTop} />} />
+
+          <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
 
         </Switch>
       </Suspense>
