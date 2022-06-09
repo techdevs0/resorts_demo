@@ -36,7 +36,6 @@ function App() {
   //language 
 
   useEffect(() => {
-    // callLoaderFn()
     const pathArray = window.location.pathname.split('/');
     let lang = 'en';
     if (pathArray[1] && (pathArray[1] == 'en' || pathArray[1] == 'fr' || pathArray[1] == 'de')) {
@@ -262,11 +261,6 @@ function App() {
         )
     }
   }
-
-  // const callLoaderFn = () => {
-  //   alert("caaaaaaaaaaaaaal");
-  //   return (<Preloader />)
-  // }
 
   return (
     <Router>
