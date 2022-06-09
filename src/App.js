@@ -255,9 +255,9 @@ function App() {
       //     ]
       //   )
       default:
-        // break;
+        break;
         return (
-          <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
+          <Route path='*' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
         )
     }
   }
@@ -298,7 +298,7 @@ function App() {
 
           }
 
-          {/* <Route path='/' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} /> */}
+          <Route path='*' component={(props) => <Error404 {...props} isMobile={isMobile} isTop={isTop} />} />
 
         </Switch>
       </Suspense>
