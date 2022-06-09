@@ -1,7 +1,18 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import Preloader from '../layouts/Preloader';
 
 export default function Error404(props) {
+    const [letsLoad, setLetsLoad] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setLetsLoad(false)
+        }, 2000);
+    }, []);
     return (
+        <>
+        {letsLoad ? 
+        <Preloader />
+        :
         <div className="error-wrapper">
             <span className='particle'>4</span>
             <span className='particle'>4</span>
@@ -123,5 +134,7 @@ export default function Error404(props) {
                 <button onClick={() => props.history.push('/')} className="main-btn btn-eden">Homepage</button>
             </div>
         </div>
+        }
+        </>
     );
 }
