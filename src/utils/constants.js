@@ -183,7 +183,7 @@ export const constants = {
         title: {
           en: "Unlock the ultimate experience with us today",
           fr: "Vivez une expérience suprême avec nous aujourd’hui",
-          de: "Machen Sie noch heutedie aufregendste Erfahrung mit uns!"
+          de: "Machen Sie noch heute die aufregendste Erfahrung mit uns!"
         },
         data_title1: {
           en: "Sustainability",
