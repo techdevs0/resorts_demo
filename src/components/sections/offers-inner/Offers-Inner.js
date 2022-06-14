@@ -11,20 +11,20 @@ import API from "../../utils/http";
 const bannerImage = require('./../../assets/img/banner/Leisure-inner.jpg');
 
 
-const breadcrumbItems=[
+const breadcrumbItems = [
   {
     text: 'Fishermans Cove Resort',
-    link:'/',
+    link: '/',
     isActive: false,
   },
   {
     text: 'Offers',
-    link:'/offers',
+    link: '/offers',
     isActive: true,
   },
   {
     text: 'Spa for Two',
-    link:'/offers-inner',
+    link: '/offers-inner',
     isActive: true,
   },
 ]
@@ -54,9 +54,9 @@ class OffersInner extends Component {
   render() {
     return (
       <div className="bg-white offers-inner-wrapper">
-        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop}  key={'offers-inner'} />
+        <Headertwo isMobile={this.props.isMobile} isTop={this.props.isTop} key={'offers-inner'} />
         {/*====== BANNER PART START ======*/}
-        <Mainbanner title={this.state.offerData.banner_text} image={this.state.offerData.banner_img}/>
+        <Mainbanner title={this.state.offerData.banner_text} image={this.state.offerData.banner_img} />
         {/*====== BANNER PART ENDS ======*/}
         {/*====== BOOKING FORM START ======*/}
         <Bookingform />
@@ -65,10 +65,10 @@ class OffersInner extends Component {
         <BreadCrumb items={breadcrumbItems} />
         {/* BREADCRUMBS END */}
         {/*====== INTRO START ======*/}
-        <OffersInnerMainBlock offerData = {this.state.offerData} />
+        <OffersInnerMainBlock offerData={this.state.offerData} />
         {/*====== INTRO END ======*/}
 
-        <Subscribe />
+        {/* <Subscribe /> */}
 
         <Footertwo />
 

@@ -24,9 +24,9 @@ export default function PageLayout(props) {
             {
                 props.children
             }
-            <Subscribe
+            {/* <Subscribe
                 activeLang={activeLang}
-            />
+            /> */}
             <Footertwo />
             <BottomNavigator
                 activeLang={activeLang}

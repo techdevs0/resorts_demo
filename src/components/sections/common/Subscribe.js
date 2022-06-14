@@ -31,32 +31,34 @@ const Subscribe = ({ activeLang }) => {
   }
 
   return (
-    <footer style={{ backgroundColor: '#f8f8f8' }}>
+    <footer
+    // style={{ backgroundColor: '#f8f8f8' }}
+    >
       <div className="footer-subscibe-area">
         <h1 className="subscribe-title">
           {constants?.site_content?.about_page?.subscribe?.title[activeLang]}
         </h1>
-        <div className="row justify-content-center">
-          <div className="col-lg-8">
-            <div className="subscribe-text text-center">
-              <p>
-                {constants?.site_content?.about_page?.subscribe?.subtitle[activeLang]}
-              </p>
-              <form action="#" className="subscribe-form mt-20">
-                {
-                  isLoading ? <CircularProgress /> :
-                    <>
-                      <input value={email} onChange={(e) => setEmail(e.target.value)} required="required" type="email"
-                        placeholder={constants?.site_content?.about_page?.subscribe?.place_holder[activeLang]} />
-                      <button type="button" onClick={handleSubmit}>
-                        {constants?.site_content?.about_page?.subscribe?.btn_text[activeLang]}
-                      </button>
-                    </>
-                }
-              </form>
-            </div>
-          </div>
+        {/* <div className="row justify-content-center"> */}
+        {/* <div className="col-lg-8"> */}
+        <div className="subscribe-text text-center">
+          <p>
+            {constants?.site_content?.about_page?.subscribe?.subtitle[activeLang]}
+          </p>
+          <form action="#" className="subscribe-form mt-20">
+            {
+              isLoading ? <CircularProgress style={{ color: "white" }} /> :
+                <>
+                  <input value={email} onChange={(e) => setEmail(e.target.value)} required="required" type="email"
+                    placeholder={constants?.site_content?.about_page?.subscribe?.place_holder[activeLang]} />
+                  <button type="button" onClick={handleSubmit}>
+                    {constants?.site_content?.about_page?.subscribe?.btn_text[activeLang]}
+                  </button>
+                </>
+            }
+          </form>
         </div>
+        {/* </div> */}
+        {/* </div> */}
       </div>
     </footer>
   );

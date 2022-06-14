@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import API from '../../langapi/http';
 import { constants } from '../../utils/constants';
+import Subscribe from '../sections/common/Subscribe';
 
 class Footertwo extends Component {
   constructor(props) {
@@ -55,13 +56,16 @@ class Footertwo extends Component {
         {/*====== FOOTER START ======*/}
         <div className="container-1">
         </div>
-        <footer className="footer-two">
+        <footer className={`footer-two ${window.location.pathname === "/" || window.location.pathname === "/en" || window.location.pathname === "/fr" || window.location.pathname === "/de" ? "" : " mt-5"}`}>
           <div className="footer-widget-area pt-30 pb-30">
             <div className="container">
               <div className="row">
-                <div className="col-lg-3 col-sm-6 order-1">
+                <div className="col-lg-6 order-1">
                   <div className="widget site-info-widget mb-50">
-                    <div className="footer-logo mb-1">
+                    <Subscribe
+                      activeLang={activeLang}
+                    />
+                    {/* <div className="footer-logo mb-1">
                       <img src={require('./../../assets/img/logo-fisher.png')} alt="fishermancove footer logo" />
                     </div>
                     <p>
@@ -73,16 +77,16 @@ class Footertwo extends Component {
                       <a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f" /></a>
                       <a href="https://twitter.com/fisherman_cove"><i className="fab fa-twitter" /></a>
                       <a href="https://www.instagram.com/fishermanscove.resort/"><i className="fab fa-instagram" /></a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
-                <div className="col-lg-6 order-3 order-lg-2">
+                <div className="col-lg-6 order-3 order-lg-2 d-flex justify-content-center align-items-center">
                   {/* Nav Widget */}
                   <div className="widget nav-widget mb-50">
                     <div>
-                      <h4 className="widget-title">
+                      {/* <h4 className="widget-title">
                         {constants?.site_content?.footer_content?.title1[activeLang]}
-                      </h4>
+                      </h4> */}
                       <ul>
 
                         {
@@ -97,8 +101,7 @@ class Footertwo extends Component {
                   </div>
                 </div>
 
-                <div className="col-lg-3 col-sm-6 order-2 order-lg-3">
-                  {/* Contact Widget */}
+                {/* <div className="col-lg-3 col-sm-6 order-2 order-lg-3">
                   <div className="widget contact-widget mb-50">
                     <h4 className="widget-title">
                       {constants?.site_content?.footer_content?.title2[activeLang]}
@@ -130,7 +133,7 @@ class Footertwo extends Component {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
