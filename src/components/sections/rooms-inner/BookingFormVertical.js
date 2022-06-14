@@ -202,7 +202,20 @@ class BookingFormVertical extends Component {
                 >
                   <div className="count-group">
                     <p>{`${rooms} ${constants?.site_content?.home_page?.booking_form?.room[activeLang]}${rooms > 1 ? "s" : ""}`}</p>
-                    <p>{`${adults} ${constants?.site_content?.home_page?.booking_form?.adult[activeLang]}${adults > 1 ? "s" : ""}`}</p>
+                    {
+
+                      activeLang === "de" ?
+                        adults === 1 ?
+                          <p>{`${adults} Adult`}</p>
+                          :
+                          <p>{`${adults} Erwachsene`}</p>
+                        : activeLang === "en" ?
+                          <p>{`${adults} ${constants?.site_content?.home_page?.booking_form?.adult['en']}${adults > 1 ? 's' : ''}`}</p>
+                          : activeLang === "fr" ?
+                            <p>{`${adults} ${constants?.site_content?.home_page?.booking_form?.adult['fr']}${adults > 1 ? 's' : ''}`}</p>
+                            : ""
+
+                    }
                     <p>{`${childs} ${constants?.site_content?.home_page?.booking_form?.child[activeLang]}${childs > 1 ? "s" : ""}`}</p>
                   </div>
                   <div
@@ -244,7 +257,25 @@ class BookingFormVertical extends Component {
                       </div>
                     </div>
                     <div className="room_item_box quantity">
-                      <label>{constants?.site_content?.home_page?.booking_form?.adults[activeLang]}</label>
+                      <label>
+                        {
+
+                          activeLang === "de" ?
+                            adults === 1 ?
+                              <p>{`${adults} Adult`}</p>
+                              :
+                              <p>{`${adults} Erwachsene`}</p>
+                            : activeLang === "en" ?
+                              <>
+                                {constants?.site_content?.home_page?.booking_form?.adults['en']}{adults > 1 ? 's' : ''}
+                              </>
+                              : activeLang === "fr" ?
+                                <>
+                                  {constants?.site_content?.home_page?.booking_form?.adults['fr']}{adults > 1 ? 's' : ''}
+                                </>
+                                : ""
+                        }
+                      </label>
                       <div className="quantity-box">
                         <div
                           className="quantity-button quantity-down minus empty"

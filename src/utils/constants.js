@@ -42,7 +42,7 @@ export const constants = {
         adult: {
           en: "Adult",
           fr: "Adulte",
-          de: "Erwachsene"
+          de: "Adult"
         },
         child: {
           en: "Child",
@@ -125,7 +125,7 @@ export const constants = {
         btn_text: {
           en: "Read More",
           fr: "Weiterlesen",
-          de: "Lire la suite"
+          de: "Mehr Lesen"
         },
         review1: {
           name: {
@@ -232,7 +232,7 @@ export const constants = {
         place_holder: {
           en: "Enter your email address",
           fr: "Entrez votre adresse email",
-          de: "Geben sie ihre E-Mailadresse ein"
+          de: "Geben Sie Ihre EMail-Adresse ein!"
         },
         submit_text: {
           en: "Successfully Subscribed !",
@@ -256,7 +256,7 @@ export const constants = {
         title: {
           en: "rooms & suites",
           fr: "CHAMBRES ET SUITES",
-          de: "ZIMMER UND SUITEN"
+          de: "Zimmer Und Suiten"
         },
         title2: {
           en: "Dining",
@@ -266,7 +266,7 @@ export const constants = {
         title3: {
           en: "weddings",
           fr: "MARIAGES",
-          de: "HOCHZEITEN"
+          de: "Hochzeiten"
         },
         title4: {
           en: "leisure activities",
@@ -351,7 +351,7 @@ export const constants = {
         title2: {
           en: "Rooms & Suites",
           fr: "CHAMBRES ET SUITES",
-          de: "ZIMMER UND SUITEN"
+          de: "Zimmer Und Suiten"
         }
       },
       room_grid: {
@@ -475,7 +475,7 @@ export const constants = {
         title2: {
           en: "Weddings",
           fr: "MARIAGES",
-          de: "HOCHZEITEN"
+          de: "Hochzeiten"
         }
       },
       wedding_grid: {
@@ -949,7 +949,7 @@ export const constants = {
         btn_text: {
           en: "Read More",
           fr: "Weiterlesen",
-          de: "Lire la suite"
+          de: "Mehr Lesen"
         },
       },
       recent_blog: {
@@ -1029,7 +1029,7 @@ export const constants = {
       address: {
         en: "Office Address",
         fr: "Adresse de bureau",
-        de: "Büro adresse"
+        de: "Büroadresse"
       },
       powered_by: {
         en: "Powered By",
@@ -1051,7 +1051,7 @@ export const constants = {
       follow: {
         en: "Follow us",
         fr: "Suivez-nous",
-        de: "Folge uns"
+        de: "Folgen Sie uns!"
       },
       language: {
         en: "Language",

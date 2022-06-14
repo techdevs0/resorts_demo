@@ -12,7 +12,7 @@ import FAQInnerSection from "../sections/common/FAQInnerSection";
 import { constants } from "../../utils/constants";
 
 
-let breadcrumbItems = [
+const breadcrumbItems = [
   {
     text: "Fishermans Cove Resort",
     link: "/",
@@ -20,7 +20,7 @@ let breadcrumbItems = [
   },
   {
     text: "Rooms & Suites",
-    link: "/room-suites",
+    link: "/rooms-suites-seychelles",
     isActive: false,
   },
   {
@@ -55,6 +55,8 @@ class RoomsInner extends Component {
 
       const response = await API.get(`/rooms/${id}?lang=${activeLang}`);
       //making breadcrumbs dynamic, appending into last item
+      breadcrumbItems[breadcrumbItems.length - 2].text =
+        constants?.site_content?.rooms_page?.bread_crumb?.title2[activeLang];
       breadcrumbItems[breadcrumbItems.length - 1].text =
         response.data.data?.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
@@ -98,6 +100,8 @@ class RoomsInner extends Component {
         //getting single post data
         const response = await API.get(`/rooms/${id}?lang=${activeLang}`);
         //making breadcrumbs dynamic, appending into last item
+        breadcrumbItems[breadcrumbItems.length - 2].text =
+          constants?.site_content?.rooms_page?.bread_crumb?.title2[activeLang];
         breadcrumbItems[breadcrumbItems.length - 1].text =
           response.data.data.post_name;
         breadcrumbItems[breadcrumbItems.length - 1].link =

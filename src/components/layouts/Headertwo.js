@@ -221,7 +221,7 @@ class Headertwo extends Component {
                     />
                     <span
                       className={`hovertooltiptext ${activeLang === 'de' && 'active'}`}>
-                      German
+                      Deutsch
                     </span>
                   </div>
                 </div>
@@ -252,7 +252,7 @@ class Headertwo extends Component {
                               <li key={"all"}>
                                 <Link to={`/${activeLang}/${x.slug}`}
                                   style={{ padding: "0px 0px 0 30px" }}
-                                >{`All ${x.text}`}</Link>
+                                >{`${x.text}`}</Link>
                               </li>
                               {x.subMenu?.map((y) => (
                                 <li key={y.id}>
@@ -307,7 +307,7 @@ class Headertwo extends Component {
                   />
                   <span
                     className={`hovertooltiptext ${activeLang === 'de' && 'active'}`}>
-                    German
+                    Deutsch
                   </span>
                 </div>
               </div>
@@ -421,7 +421,7 @@ class Headertwo extends Component {
                       >
                         <ul>
                           <li key={"all"}>
-                            <Link to={`/${activeLang}/${x.slug}`}>{`All ${x.text}`}</Link>
+                            <Link to={`/${activeLang}/${x.slug}`}>{`${x.text}`}</Link>
                           </li>
                           {x.subMenu?.map((y) => (
                             <li key={y.id}>

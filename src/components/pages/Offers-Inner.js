@@ -3,6 +3,7 @@ import API from '../../langapi/http';
 import OffersInnerMainBlock from '../sections/offers-inner/offers-inner-block';
 import Helmet from "react-helmet";
 import PageLayout from "../layouts/PageLayout";
+import { constants } from "../../utils/constants";
 
 const breadcrumbItems = [
   {
@@ -34,9 +35,8 @@ class OffersInner extends Component {
       const response = await API.get(`/offers/${id}?lang=${activeLang}`);
 
       let offerData = response?.data?.data;
-      offerData.uploads = response?.data?.data?.uploads;
-      offerData.post_metas = response.data?.data?.metas;
 
+      breadcrumbItems[breadcrumbItems.length - 2].text = constants?.site_content?.offers_page?.bread_crumb?.title2[activeLang];
       breadcrumbItems[breadcrumbItems.length - 1].text = offerData.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
         "/offer/" + offerData.route;
@@ -48,6 +48,7 @@ class OffersInner extends Component {
   }
   render() {
     const activeLang = localStorage.getItem('lang');
+
     return (
       <div className="bg-white offers-inner-wrapper">
         <Helmet>

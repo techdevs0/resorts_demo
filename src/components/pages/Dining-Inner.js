@@ -93,6 +93,7 @@ class DiningInner extends Component {
 
       const response = await API.get(`/dinings/${id}?lang=${activeLang}`);
       let singleHotel = response?.data?.data;
+      breadcrumbItems[breadcrumbItems.length - 2].text = constants?.site_content?.dinning_page?.bread_crumb?.title2[activeLang];
       breadcrumbItems[breadcrumbItems.length - 1].text = singleHotel.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
         "/dining/" + singleHotel.slug;
@@ -132,6 +133,7 @@ class DiningInner extends Component {
 
         const response = await API.get(`/dinings/${id}?lang=${activeLang}`);
         let singleHotel = response?.data?.data;
+        breadcrumbItems[breadcrumbItems.length - 2].text = constants?.site_content?.dinning_page?.bread_crumb?.title2[activeLang];
         breadcrumbItems[breadcrumbItems.length - 1].text =
           singleHotel.post_name;
         breadcrumbItems[breadcrumbItems.length - 1].link =
