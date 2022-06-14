@@ -56,7 +56,7 @@ const OffersInnerMainBlock = (props) => {
           </div>
         </div>
         <div className="back-to text-center mt-4">
-          <Link to={`${props?.activeLang}/offers`} className="btn btn-eden main-btn mx-auto d-inline-block">
+          <Link to={`/${props?.activeLang}/offers`} className="btn btn-eden main-btn mx-auto d-inline-block">
             {constants?.site_content?.offersInner_page?.reservation?.btn_txt[props?.activeLang]}
           </Link>
         </div>
