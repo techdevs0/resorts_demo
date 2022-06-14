@@ -80,7 +80,7 @@ class Footertwo extends Component {
                     </div> */}
                   </div>
                 </div>
-                <div className="col-lg-6 order-3 order-lg-2 d-flex justify-content-center align-items-center">
+                <div className="col-lg-6 order-3 order-lg-2  footerLinks">
                   {/* Nav Widget */}
                   <div className="widget nav-widget mb-50">
                     <div>
