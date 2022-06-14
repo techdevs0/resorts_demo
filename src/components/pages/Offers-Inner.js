@@ -39,7 +39,7 @@ class OffersInner extends Component {
       breadcrumbItems[breadcrumbItems.length - 2].text = constants?.site_content?.offers_page?.bread_crumb?.title2[activeLang];
       breadcrumbItems[breadcrumbItems.length - 1].text = offerData.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
-        "/offer/" + offerData.route;
+        "/offers/" + offerData.route;
       this.setState({ offerData });
 
     } catch (error) {
