@@ -232,7 +232,7 @@ export const constants = {
         place_holder: {
           en: "Enter your email address",
           fr: "Entrez votre adresse email",
-          de: "Geben Sie Ihre EMail-Adresse ein!"
+          de: "Geben Sie Ihre E-Mail-Adresse ein!"
         },
         submit_text: {
           en: "Successfully Subscribed !",
@@ -394,7 +394,7 @@ export const constants = {
         ammeniti2: {
           en: "Bathroom Amenities",
           fr: "Articles de salle de bain",
-          de: "Toilettenartikel"
+          de: "Badezimmer"
         },
         ammeniti3: {
           en: "Chrome Cast",
@@ -404,7 +404,7 @@ export const constants = {
         ammeniti4: {
           en: "Free Wifi",
           fr: "Wifi gratuit",
-          de: "Gratis Wifi"
+          de: "Gratis WLAN"
         },
         ammeniti5: {
           en: "In-room safe",
@@ -414,7 +414,7 @@ export const constants = {
         ammeniti6: {
           en: "Hairdryer",
           fr: "Sèche-cheveux",
-          de: "Fön"
+          de: "Föhn"
         },
         ammeniti7: {
           en: "High-Speed Internet (chargeable)",
@@ -424,7 +424,7 @@ export const constants = {
         ammeniti8: {
           en: "International direct telephone lines",
           fr: "Lignes téléphoniques directes internationales",
-          de: "Internationale direkte Telefonleitungen"
+          de: "Internationales Direktwahltelefon"
         },
         ammeniti9: {
           en: "Refreshment Center (chargeable)",
@@ -449,24 +449,24 @@ export const constants = {
         ammeniti13: {
           en: "Iron &amp; Ironing board",
           fr: "Fer &amp; Planche a repasser",
-          de: "Bügeleisen &amp; Bügelbrett"
+          de: "Bügeleisen und Bügelbrett"
         },
         ammeniti14: {
           en: "Room Entertainment Services",
           fr: "Services de divertissement en chambre",
-          de: "Zimmerunterhaltungsdienste"
+          de: "Zimmer Unterhaltungsmöglichkeiten"
         },
         ammeniti15: {
           en: "Tea &amp; Coffee-making facilities",
           fr: "Thé &amp; Cafetière",
-          de: "Tee &amp; Kaffeekocher"
+          de: "Tee- und KaffeeKocher"
         }
       },
       view_360: {
         title: {
           en: "View in 360° Panaroma",
           fr: "Voir en panorama 360°",
-          de: "Ansicht im 360°-Panorama"
+          de: "360-Grad-Panoramablick"
         }
       }
     },

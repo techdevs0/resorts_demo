@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { Modal, Button, Row, Col, Form, Container } from "react-bootstrap";
+import React from "react";
+import { Modal, Container } from "react-bootstrap";
 // import { MdClose } from "react-icons/md";
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+// import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import CancelIcon from '@material-ui/icons/Cancel';
-import popupimg from "../../assets/img/FCR-May-Family-Style-Holidays-Pop-Up-1080x1080.jpg";
+import popupimg from "../../assets/img/FCR-June-Seychelles-Pop-Up.0583449e.jpg";
 
 const PopUp = (props) => {
 
@@ -25,7 +25,7 @@ const PopUp = (props) => {
                 <div>
 
                     <Modal.Body>
-                        <a href="https://fishermanscove-resort.com/offer/10-percentage-off-dinner-for-two" >
+                        <a href={`/${props.activeLang}/offers/10-percentage-off-dinner-for-two`} >
                             <img
                                 src={popupimg}
                                 alt="popup fishermans cove resort"

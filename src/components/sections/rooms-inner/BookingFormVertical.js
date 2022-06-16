@@ -206,7 +206,7 @@ class BookingFormVertical extends Component {
 
                       activeLang === "de" ?
                         adults === 1 ?
-                          <p>{`${adults} Adult`}</p>
+                          <p>{`${adults} Person `}</p>
                           :
                           <p>{`${adults} Erwachsene`}</p>
                         : activeLang === "en" ?
@@ -262,7 +262,7 @@ class BookingFormVertical extends Component {
 
                           activeLang === "de" ?
                             adults === 1 ?
-                              <p>{`${adults} Adult`}</p>
+                              <p>{`${adults} Person `}</p>
                               :
                               <p>{`${adults} Erwachsene`}</p>
                             : activeLang === "en" ?

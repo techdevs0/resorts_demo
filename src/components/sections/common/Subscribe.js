@@ -48,7 +48,7 @@ const Subscribe = ({ activeLang }) => {
             {
               isLoading ? <CircularProgress style={{ color: "white" }} /> :
                 <>
-                  <input value={email} onChange={(e) => setEmail(e.target.value)} required="required" type="email"
+                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required
                     placeholder={constants?.site_content?.about_page?.subscribe?.place_holder[activeLang]} />
                   <button type="button" onClick={handleSubmit}>
                     {constants?.site_content?.about_page?.subscribe?.btn_text[activeLang]}

@@ -163,7 +163,9 @@ class Hometwo extends Component {
           </p>
         </div>
 
-        <PopUp show={this.state.offerPopup} onHide={this.handleShowOffer} />
+        <PopUp show={this.state.offerPopup} onHide={this.handleShowOffer}
+          activeLang={activeLang}
+        />
 
         <Footertwo />
 
