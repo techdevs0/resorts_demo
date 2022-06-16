@@ -3,8 +3,6 @@ import { AccordionContext, Card } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 import { constants } from '../../../utils/constants';
 
-const pageurl = window.location.pathname;
-const pageRout = pageurl.split('/');
 
 function ContextAwareToggle({ children, eventKey, callback }) {
     const currentEventKey = useContext(AccordionContext);
@@ -39,7 +37,6 @@ const FAQInnerSection = (props) => {
                 <Accordion>
                     {
                         props?.faqList?.map((x, i) => (
-                            // pageRout[3] === x.route &&
                             <Card>
                                 <Accordion.Toggle as={Card.Header} eventKey={`${i}`} style={{ cursor: 'pointer' }} >
                                     <ContextAwareToggle eventKey={`${i}`} >
