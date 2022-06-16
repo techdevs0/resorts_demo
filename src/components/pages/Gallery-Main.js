@@ -64,7 +64,11 @@ class GalleryMain extends Component {
               />
               {/*====== TITLE END ======*/}
               {/*====== GALLERY GRID START ======*/}
-              <GalleryGrid title={null} data={this.state.galleryData} />
+              <GalleryGrid title={null}
+                // data={this.state.galleryData}
+                data={this.state.galleryData}
+
+              />
               {/*====== GALLERY GRID END ======*/}
             </PageLayout>
             :

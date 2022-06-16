@@ -7,7 +7,7 @@ const GalleryGridItem = (props) => {
   return (
     <div className="gallery-grid-item-wrapper">
       <div className="grid-item" onClick={() => props.toggleLightBox(props?.index)}>
-        <div className="gallery-title" style={{ backgroundImage: `url(${props.image})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
+        <div className="gallery-title" style={{ backgroundImage: `url(${props?.image})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
           {/* <h4>{props.title}</h4> */}
           <div className="slide-hover-overlay"></div>
         </div>

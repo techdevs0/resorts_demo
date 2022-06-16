@@ -8,6 +8,7 @@ const GalleryGrid = (props) => {
   const [showLightBox, setShowLightBox] = useState(false)
   const [photoIndex, setPhotoIndex] = useState(0)
 
+  console.log("image gallery", props)
   return (
     <div className='container'>
       {
@@ -15,8 +16,8 @@ const GalleryGrid = (props) => {
       }
       <div className='gallery-grid-wrapper'>
         {
-          props.data?.map((x, i) => (
-            <RoomGridItem index={i} toggleLightBox={(index) => { setShowLightBox(!showLightBox); setPhotoIndex(index); setMainSrc(props.data?.[index]) }} title={x.title} image={x.avatar} link={x.link} linkText={x.linkText} description={x.description} />
+          Object.values(props.data)?.map((x, i) => (
+            <RoomGridItem index={i} toggleLightBox={(index) => { setShowLightBox(!showLightBox); setPhotoIndex(index); setMainSrc(props.data?.[index]) }} title={x?.title} image={x?.avatar} link={x?.link} linkText={x?.linkText} description={x?.description} />
           ))
         }
       </div>
