@@ -36,37 +36,37 @@ export const constants = {
         },
         room: {
           en: "Room",
-          fr: "Chambre",
+          fr: "chambre",
           de: "Zimmer"
         },
         adult: {
           en: "Adult",
-          fr: "Adulte",
+          fr: "adulte",
           de: "Adult"
         },
         child: {
           en: "Child",
-          fr: "Enfant",
+          fr: "enfant",
           de: "Kind"
         },
         rooms: {
           en: "Rooms",
-          fr: "Chambres",
+          fr: "chambre",
           de: "Zimmer"
         },
         adults: {
           en: "Adults",
-          fr: "Adultes",
+          fr: "adulte",
           de: "Erwachsene"
         },
         children: {
           en: "Children",
-          fr: "Enfants",
+          fr: "enfant",
           de: "Kinder"
         },
         promo_code: {
           en: "Promo Codes",
-          fr: "Code de promo",
+          fr: "Code promotionnel",
           de: "Promo-Codes"
         },
         group_code: {
@@ -357,7 +357,7 @@ export const constants = {
       room_grid: {
         title: {
           en: "Rooms",
-          fr: "Pièces",
+          fr: "chambres",
           de: "Zimmer"
         },
         title2: {
@@ -367,7 +367,7 @@ export const constants = {
         },
         btn_text: {
           en: "Check Availability",
-          fr: "Voir les disponibilités",
+          fr: "Voir Disponibilité",
           de: "Verfügbarkeit prüfen"
         }
       }
@@ -383,7 +383,7 @@ export const constants = {
       ammenities: {
         title: {
           en: "Amenities",
-          fr: "Agréments",
+          fr: "Services",
           de: "Ausstattung"
         },
         ammeniti1: {
@@ -393,22 +393,22 @@ export const constants = {
         },
         ammeniti2: {
           en: "Bathroom Amenities",
-          fr: "Articles de salle de bain",
+          fr: "Articles de toilette",
           de: "Badezimmer"
         },
         ammeniti3: {
           en: "Chrome Cast",
-          fr: "Chromecast",
+          fr: "Cast Chrome",
           de: "Chromecast"
         },
         ammeniti4: {
           en: "Free Wifi",
-          fr: "Wifi gratuit",
+          fr: "Wifi (gratuit)",
           de: "Gratis WLAN"
         },
         ammeniti5: {
           en: "In-room safe",
-          fr: "Coffre-fort dans la chambre",
+          fr: "Coffre-fort électronique",
           de: "Zimmersafe"
         },
         ammeniti6: {
@@ -418,7 +418,7 @@ export const constants = {
         },
         ammeniti7: {
           en: "High-Speed Internet (chargeable)",
-          fr: "Internet haut débit (payant)",
+          fr: "Accès Internet haut débit (payant)",
           de: "Highspeed-Internet (kostenpflichtig)"
         },
         ammeniti8: {
@@ -428,27 +428,27 @@ export const constants = {
         },
         ammeniti9: {
           en: "Refreshment Center (chargeable)",
-          fr: "Buvette (payante)",
+          fr: "Centre de rafraîchissement (payant)",
           de: "Erfrischungszentrum (kostenpflichtig)"
         },
         ammeniti10: {
           en: "42” / 48” LED TV",
-          fr: "Téléviseur LED 42 / 48",
+          fr: "Télévision LED 42’’/48’’",
           de: "42-Zoll-/48-Zoll-LED-Fernseher"
         },
         ammeniti11: {
           en: "Non-Smoking Rooms",
-          fr: "Chambres non-fumeurs",
+          fr: "Chambres non-fumeur",
           de: "Nichtraucherzimmer"
         },
         ammeniti12: {
           en: "Private Balcony or Terrace",
-          fr: "Balcon ou terrasse privé",
+          fr: "Balcon privé ou terrasse",
           de: "Privater Balkon oder Terrasse"
         },
         ammeniti13: {
           en: "Iron &amp; Ironing board",
-          fr: "Fer &amp; Planche a repasser",
+          fr: "Fer et planche à repasser",
           de: "Bügeleisen und Bügelbrett"
         },
         ammeniti14: {
@@ -458,14 +458,14 @@ export const constants = {
         },
         ammeniti15: {
           en: "Tea &amp; Coffee-making facilities",
-          fr: "Thé &amp; Cafetière",
+          fr: "Bouilloire électrique",
           de: "Tee- und KaffeeKocher"
         }
       },
       view_360: {
         title: {
           en: "View in 360° Panaroma",
-          fr: "Voir en panorama 360°",
+          fr: "Vue panoramique en 360°",
           de: "360-Grad-Panoramablick"
         }
       }
