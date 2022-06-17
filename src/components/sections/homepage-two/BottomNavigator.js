@@ -51,7 +51,13 @@ const BottomNavigator = ({ activeLang }) => {
               }`)
           }
         >
-          {constants?.site_content?.home_page?.banner?.btn3[activeLang]}
+          {
+            activeLang === "en" ? "Book Now"
+              : activeLang === "fr" ? "Réserver"
+                : activeLang === "de" ? "JETZT BUCHEN"
+                  : "Book Now"
+          }
+          {/* {constants?.site_content?.home_page?.banner?.btn3[activeLang]} */}
         </Link>
         <a href="tel:+2484677000">
           <PhoneRounded />

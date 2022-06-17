@@ -19,7 +19,7 @@ const Subscribe = ({ activeLang }) => {
         'Content-Type': 'application/json'
       }
     }).then(response => {
-      if (response.status === 200) {
+      if (response.status === 200 || response.status === 201) {
         setIsLoading(false);
         setEmail('');
         alert(`${constants?.site_content?.about_page?.subscribe?.submit_text[activeLang]}`);
