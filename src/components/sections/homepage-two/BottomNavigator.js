@@ -44,7 +44,11 @@ const BottomNavigator = ({ activeLang }) => {
           }}
           onClick={(e) =>
 
-            window.gtag_report_conversion("https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB")
+            window.gtag_report_conversion(`${activeLang === "en" ? 'https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB'
+              : activeLang === "fr" ? 'https://be.synxis.com/?Hotel=31842&Chain=27304&locale=fr-FR'
+                : activeLang === "de" ? 'https://be.synxis.com/?Hotel=31842&Chain=27304&locale=de-DE'
+                  : 'https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB'
+              }`)
           }
         >
           {constants?.site_content?.home_page?.banner?.btn3[activeLang]}
