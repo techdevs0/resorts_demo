@@ -257,7 +257,9 @@ class Bookingform extends Component {
                                             <div onClick={(e) => e.stopPropagation()} className="room-details-popup"
                                                 style={{ display: showCountPopup ? 'block' : 'none' }}>
                                                 <div className="room_item_box quantity">
-                                                    <label>{constants?.site_content?.home_page?.booking_form?.rooms[activeLang]}</label>
+                                                    <label>
+                                                        {constants?.site_content?.home_page?.booking_form?.rooms[activeLang]}{adults > 1 ? 's' : ''}
+                                                    </label>
                                                     <div className="quantity-box">
                                                         <div className="quantity-button quantity-down minus empty"
                                                             onClick={() => this.setState({ rooms: rooms - 1 < 1 ? 1 : rooms - 1 })}>-

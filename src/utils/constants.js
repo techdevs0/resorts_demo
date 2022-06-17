@@ -19,7 +19,7 @@ export const constants = {
         },
         btn3: {
           en: "Book Now",
-          fr: "RESERVER",
+          fr: "Réserver",
           de: "JETZT BUCHEN"
         }
       },
@@ -50,12 +50,12 @@ export const constants = {
           de: "Kind"
         },
         rooms: {
-          en: "Rooms",
+          en: "Room",
           fr: "chambre",
           de: "Zimmer"
         },
         adults: {
-          en: "Adults",
+          en: "Adult",
           fr: "adulte",
           de: "Erwachsene"
         },
@@ -112,7 +112,7 @@ export const constants = {
         },
         btn_text: {
           en: "KNOW MORE",
-          fr: "SAVOIR PLUS",
+          fr: "En Savoir Plus",
           de: "MEHR ERFAHREN"
         },
       },
@@ -248,7 +248,7 @@ export const constants = {
         },
         title2: {
           en: "About Us",
-          fr: "À propos de nous",
+          fr: "Aperçu de l’hôtel",
           de: "Über uns"
         }
       },
@@ -774,7 +774,7 @@ export const constants = {
           },
           detail: {
             en: "This museum is home to some of the rare historical artifacts including one of the oldest maps which dated back to 1517. It was established in 1964 and is charged with the preservation, and exhibition of historical artifacts.",
-            fr: "Fondé dans 1964, ce musée abrite quelques objets anciens qui sont rares tels qu’une carte qui date de 1517. Le musée est chargé de la préservation et l’exposition des objets historiques.",
+            fr: "Fondé en 1964, ce musée abrite quelques objets anciens rares tels qu’une carte qui date de 1517. Le musée est chargé de la préservation et l’exposition des objets historiques.",
             de: "Dieses Museum beherbergt einige der seltenen historischen Artefakte, darunter eine der ältesten Karten aus dem Jahr 1517. Es wurde 1964 gegründet und ist mit der Erhaltung und Ausstellung historischer Artefakte beauftragt."
           }
         },
@@ -1045,7 +1045,7 @@ export const constants = {
     header_content: {
       explore: {
         en: "Explore Fishermans Cove Resort",
-        fr: "Explorez la station balnéaire de Fisherman's Cove",
+        fr: "Explorez Fishermans Cove Resort",
         de: "Erkunden Sie das Fishermans Cove Resort"
       },
       follow: {

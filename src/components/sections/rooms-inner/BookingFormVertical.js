@@ -224,7 +224,7 @@ class BookingFormVertical extends Component {
                     style={{ display: showCountPopup ? "block" : "none" }}
                   >
                     <div className="room_item_box quantity">
-                      <label>{constants?.site_content?.home_page?.booking_form?.rooms[activeLang]}</label>
+                      <label>{constants?.site_content?.home_page?.booking_form?.rooms[activeLang]}{adults > 1 ? 's' : ''}</label>
                       <div className="quantity-box">
                         <div
                           className="quantity-button quantity-down minus empty"
