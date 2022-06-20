@@ -35,12 +35,25 @@ function App() {
 
   //language 
 
+
   useEffect(() => {
+    const activeLang = localStorage.getItem('lang');
     const pathArray = window.location.pathname.split('/');
     let lang = 'en';
     if (pathArray[1] && (pathArray[1] == 'en' || pathArray[1] == 'fr' || pathArray[1] == 'de')) {
       console.log('homelanguage', pathArray[1]);
       lang = pathArray[1];
+    } else {
+      let path = `/${activeLang}`;
+      if (pathArray.length > 1) {
+        for (let index = 1; index < pathArray.length; index++) {
+          path += `/${pathArray[index]}`;
+        }
+      }
+      if (window.location.search) {
+        path += window.location.search;
+      }
+      window.location.replace(path);
     }
     localStorage.setItem("lang", lang);
   }, []);
