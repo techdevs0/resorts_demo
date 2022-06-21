@@ -210,9 +210,9 @@ export const constants = {
     about_page: {
       subscribe: {
         title: {
-          en: "Subscribe to our newsletter",
-          fr: "Abonnez-vous à notre bulletin d’information",
-          de: "Abonnieren Sie unseren Newsletter"
+          en: "Subscribe To Our Newsletter",
+          fr: "Abonnez-Vous À Notre Bulletin d’Information",
+          de: "Abonnieren Sie Unseren Newsletter"
         },
         subtitle: {
           en: "Be The First One to Know About The Happenings at Fishermans Cove Resort",
@@ -300,7 +300,7 @@ export const constants = {
       faq_sec: {
         title: {
           en: "Frequently Asked Questions (F.A.Q's)",
-          fr: "Questions fréquentes (F.A.Q)",
+          fr: "Questions fréquentes (F.A.Q’s) ",
           de: "Häufig Gestellte Fragen (FAQs)"
         }
       }
@@ -810,7 +810,7 @@ export const constants = {
         },
         btn_txt: {
           en: "Back to all offers",
-          fr: "RETOUR A TOUTES LES OFFRES",
+          fr: "RETOUR À TOUTES LES OFFRES",
           de: "ZURÜCK ZU ALLEN ANGEBOTEN"
         }
       }
@@ -941,7 +941,7 @@ export const constants = {
       bread_crumb: {
         title2: {
           en: "Blogs",
-          fr: "Blogues",
+          fr: "Blogs",
           de: "Blogs"
         }
       },

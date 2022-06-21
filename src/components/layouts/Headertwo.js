@@ -208,7 +208,7 @@ class Headertwo extends Component {
                     />
                     <span
                       className={`hovertooltiptext ${activeLang === 'fr' && 'active'}`}>
-                      Francais
+                      Français
                     </span>
                   </div>
 
@@ -294,7 +294,7 @@ class Headertwo extends Component {
                   />
                   <span
                     className={`hovertooltiptext ${activeLang === 'fr' && 'active'}`}>
-                    Francais
+                    Français
                   </span>
                 </div>
 
