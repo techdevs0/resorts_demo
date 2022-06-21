@@ -588,7 +588,7 @@ export const constants = {
         },
         choose_pkg2: {
           en: "Fishermans Cove Resort Special",
-          fr: "Offre spéciale Fisherman's Cove Resort",
+          fr: "Offre spéciale Fishermans Cove Resort",
           de: "Fishermans Cove Resort Special"
         },
         choose_pkg3: {
