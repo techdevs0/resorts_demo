@@ -11,11 +11,10 @@ import Experience from "../sections/homepage-two/Experience";
 import GuestReviews from "../sections/homepage-two/GuestReviews";
 import ServiceTabs from "../sections/homepage-two/ServicesTabs";
 import BottomNavigator from "../sections/homepage-two/BottomNavigator";
-import API from "../../utils/http";
+import API from "../../langapi/http";
 import bannerimg1 from "../../assets/img/banner/home.jpg";
-import SEOTags from "../sections/common/SEOTags";
 import PopUp from "../popup/PopUp";
-import LangAPI from '../../langapi/http';
+import Helmet from "react-helmet";
 
 import { constants } from "../../utils/constants";
 
@@ -42,22 +41,14 @@ class Hometwo extends Component {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      LangAPI.get(`/premium?lang=${activeLang}`).then((response) => {
+      API.get(`/premium?lang=${activeLang}`).then((response) => {
         this.setState({ premiumOffers: response.data?.data });
       })
-        .then(() => {
-          API.get(`/meta/${pageId}`).then(response => {
-            this.setState({ meta: response.data });
-            // console.log(response.data);
-          })
-        })
-      // console.log(response.data);
 
-      LangAPI.get(`/rooms?lang=${activeLang}`).then((response) => {
+      API.get(`/rooms?lang=${activeLang}`).then((response) => {
         const roomsData = response.data?.data;
         this.setState({
           roomsData: roomsData
-          // .filter((x) => x.post_type === "page"),
         });
       });
 
@@ -70,7 +61,13 @@ class Hometwo extends Component {
 
     return (
       <div>
-        <SEOTags meta={this.state.meta} />
+        <Helmet>
+          <title>
+            Fishermans Cove Resort
+          </title>
+          <meta name="description" content="Fishermans Cove Resort" />
+
+        </Helmet>
         <Headertwo
           isMobile={this.props.isMobile}
           isTop={this.props.isTop}

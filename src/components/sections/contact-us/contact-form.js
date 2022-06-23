@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import API from '../../../utils/http';
+import API from '../../../langapi/http';
 import { constants } from '../../../utils/constants';
 
 

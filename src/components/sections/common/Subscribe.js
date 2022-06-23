@@ -1,6 +1,6 @@
 import { CircularProgress } from '@material-ui/core';
 import React, { useState } from 'react';
-import API from './../../../utils/http';
+import API from './../../../langapi/http';
 import { constants } from '../../../utils/constants';
 
 const Subscribe = ({ activeLang }) => {
