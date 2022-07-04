@@ -8,6 +8,8 @@ import { constants } from "../../utils/constants";
 import EnImg from "../../assets/img/icon/en.png"
 import FrImg from "../../assets/img/icon/fr.png"
 import DeImg from "../../assets/img/icon/de.png"
+import RuImg from "../../assets/img/icon/ru.png"
+
 
 
 class Headertwo extends Component {
@@ -34,7 +36,7 @@ class Headertwo extends Component {
 
     const pathArray = window.location.pathname.split('/');
     const lang = 'en';
-    if (pathArray[1] && (pathArray[1] == 'en' || pathArray[1] == 'fr' || pathArray[1] == 'de')) {
+    if (pathArray[1] && (pathArray[1] == 'en' || pathArray[1] == 'fr' || pathArray[1] == 'de' || pathArray[1] == 'ru')) {
       if (pathArray[1] != locale) {
         let path = `/${locale}`;
         if (pathArray.length > 2) {
@@ -224,6 +226,19 @@ class Headertwo extends Component {
                       Deutsch
                     </span>
                   </div>
+
+                  <div
+                    className="hovertool"
+                    onClick={() => this.onChangeLocale('ru')}
+                  >
+                    <img src={RuImg} alt="ru" className="mr-2"
+                      onClick={() => this.onChangeLocale('ru')}
+                    />
+                    <span
+                      className={`hovertooltiptext ${activeLang === 'ru' && 'active'}`}>
+                      Russian
+                    </span>
+                  </div>
                 </div>
 
 
@@ -308,6 +323,19 @@ class Headertwo extends Component {
                   <span
                     className={`hovertooltiptext ${activeLang === 'de' && 'active'}`}>
                     Deutsch
+                  </span>
+                </div>
+
+                <div
+                  className="hovertool"
+                  onClick={() => this.onChangeLocale('ru')}
+                >
+                  <img src={RuImg} alt="ru" className="mr-2"
+                    onClick={() => this.onChangeLocale('ru')}
+                  />
+                  <span
+                    className={`hovertooltiptext ${activeLang === 'ru' && 'active'}`}>
+                    Russian
                   </span>
                 </div>
               </div>
