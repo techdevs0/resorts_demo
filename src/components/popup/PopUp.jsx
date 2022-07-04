@@ -3,7 +3,7 @@ import { Modal, Container } from "react-bootstrap";
 // import { MdClose } from "react-icons/md";
 // import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import CancelIcon from '@material-ui/icons/Cancel';
-import popupimg from "../../assets/img/FCR-June-Seychelles-Pop-Up.0583449e.jpg";
+import popupimg from "../../assets/img/FCR-July-Seychelles-1080x1080-Pop-Up.jpg";
 
 const PopUp = (props) => {
 
