@@ -219,7 +219,9 @@ class BookingFormVertical extends Component {
                           <p>{`${adults} ${constants?.site_content?.home_page?.booking_form?.adult['en']}${adults > 1 ? 's' : ''}`}</p>
                           : activeLang === "fr" ?
                             <p>{`${adults} ${constants?.site_content?.home_page?.booking_form?.adult['fr']}${adults > 1 ? 's' : ''}`}</p>
-                            : ""
+                            : activeLang === "ru" ?
+                              <p>{`${adults} ${constants?.site_content?.home_page?.booking_form?.adult['ru']}${adults > 1 ? 's' : ''}`}</p>
+                              : ""
 
                     }
                     <p>{`${childs} ${constants?.site_content?.home_page?.booking_form?.child[activeLang]}${childs > 1 ? "s" : ""}`}</p>
@@ -279,7 +281,11 @@ class BookingFormVertical extends Component {
                                 <>
                                   {constants?.site_content?.home_page?.booking_form?.adults['fr']}{adults > 1 ? 's' : ''}
                                 </>
-                                : ""
+                                : activeLang === "ru" ?
+                                  <>
+                                    {constants?.site_content?.home_page?.booking_form?.adults['ru']}{adults > 1 ? 's' : ''}
+                                  </>
+                                  : ""
                         }
                       </label>
                       <div className="quantity-box">
