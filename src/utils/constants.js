@@ -18,13 +18,13 @@ export const constants = {
           en: "Learn More",
           fr: "EN SAVOIR PLUS",
           de: "MEHR ERFAHREN",
-          ru: "Учить больше"
+          ru: "ПОДРОБНЕЕ"
         },
         btn3: {
           en: "Book Now",
           fr: "Réserver",
           de: "JETZT BUCHEN",
-          ru: "Забронировать"
+          ru: "ЗАБРОНИРОВАТЬ"
         }
       },
       booking_form: {
@@ -108,20 +108,20 @@ export const constants = {
           en: "Best Resort in Mahé Seychelles",
           fr: "Meilleur hôtel à Mahé, Seychelles",
           de: "Bestes Resort auf Mahé Seychellen",
-          ru: "Лучший курорт на Маэ, Сейшельские острова"
+          ru: "Лучший курортный отель в городе Маэ, Сейшельские острова"
         },
         subtitle: {
           en: "Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fishermans Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. This tropical escape sets the scene for explorers, romantic couples, and families to an inherited paradise.",
           fr: "Situé à la plage de Beau Vallon, s’étendant sur 3km de sable étincelant d’ivoire, Fishermans Cove Resort est la promesse d’une sincère tranquillité et d’une joie éternelle. Les chambres et les suites se trouvent au milieu des jardins tropicaux luxuriants, accompagnées de la paix. Cette évasion tropicale permet aux aventuriers, aux couples et aux familles de découvrir ce paradis patrimonial.",
           de: "Das Fishermans Cove Resort liegt am 3 km lang glitzernden weißen Sandstrand Beau Vallon und verspricht echte Ruhe und ewigen Genuss. Die Zimmer und Suiten befinden sich inmitten üppiger tropischer Gärten, die durch eine ruhige Umgebung ergänzt werden. Dieses tropische Refugium ist die Kulisse für Entdecker, romantische Paare und Familien in einem geerbten Paradies.",
-          ru: "Курорт Fishermans Cove расположен на пляже Бо-Валлон с его 3-километровым сверкающим песком цвета слоновой кости. Это обещание подлинного спокойствия и вечного удовольствия. Номера и люксы расположены среди пышных тропических садов, где царит спокойная обстановка. Этот тропический побег открывает путь исследователям, романтическим парам и семьям в унаследованный рай."
+          ru: "Расположенный на пляже Бо Валлон, с его 3-километровым сверкающим песком цвета слоновой кости, курорт Fishermans Cove обещает подлинное спокойствие и вечное наслаждение. Номера и люксы расположены среди пышных тропических садов, в которых царит спокойная обстановка."
 
         },
         detail: {
           en: "Offering countless experiences with outstanding services throughout your discovery, Fishermans Cove Resort is one of the best resorts in Seychelles. Restaurants and Bars allow you to savor scrumptious flavors and aromas while sipping exotic cocktails and enjoying views of the Indian Ocean’s most spectacular sunset. It offers two restaurants and two bars giving guests ample options to choose from.",
           fr: "Fishermans Cove Resort est l’un des meilleurs hôtels aux Seychelles qui vous offre des expériences innumérables avec d’excellents services tout au long de votre découverte. Les restaurants et les bars vous permettront de déguster les saveurs délicieuses et les aromes en sirotant des apéritifs exotiques, tout en s’amusant les couchers du soleil les plus magnifiques dans l’Océan Indien. L’hôtel vous propose deux restaurants et deux bars qui invitent leurs clients à choisir d’entre plusieurs options.",
           de: "Das Fishermans Cove Resort bietet unzählige Erlebnisse mit hervorragendem Service während Ihrer Entdeckung und ist eines der besten Resorts auf den Seychellen. Die Restaurants und Bars lassen Sie köstliche Aromen und Geschmacksrichtungen auskosten und an exotischen Cocktails nippen, während Sie den spektakulärsten Sonnenuntergang des Indischen Ozeans genießen. Zwei Restaurants und zwei Bars stehen zur Verfügung, die den Gästen eine große Auswahl zum Essen und Trinken bieten.",
-          ru: "Курортный отель Fishermans Cove Resort, предлагающий бесчисленное количество впечатлений и выдающихся услуг на протяжении всего путешествия, является одним из лучших курортов на Сейшельских островах. В ресторанах и барах вы сможете насладиться восхитительными вкусами и ароматами, потягивая экзотические коктейли и любуясь видом на самый впечатляющий закат в Индийском океане. К услугам гостей два ресторана и два бара, что дает гостям широкий выбор вариантов."
+          ru: "Предлагая бесчисленное количество впечатлений и услуг на протяжении всего вашего путешествия, Fishermans Cove является одним из лучших курортов на Сейшельских островах. В ресторанах и барах вы сможете насладиться восхитительными блюдами. А потягивая экзотические коктейли, можете наслаждаться видом на самый захватывающий закат Индийского океана. К услугам гостей два ресторана и два бара, предоставляющих гостям широкий выбор напитков и блюд."
         }
       },
       premium_offer: {
@@ -129,7 +129,7 @@ export const constants = {
           en: "Premium Offerings",
           fr: "Des services de haut de gamme",
           de: "Premium-Angebote",
-          ru: "Премиум-предложения"
+          ru: "Премиум предложения"
         },
         btn_text: {
           en: "KNOW MORE",
@@ -251,13 +251,13 @@ export const constants = {
           en: "Subscribe To Our Newsletter",
           fr: "Abonnez-Vous À Notre Bulletin d’Information",
           de: "Abonnieren Sie Unseren Newsletter",
-          ru: "Подписывайтесь на нашу новостную рассылку"
+          ru: "Подпишитесь на нашу рассылку"
         },
         subtitle: {
           en: "Be The First One to Know About The Happenings at Fishermans Cove Resort",
           fr: "Soyez le premier à savoir des événements à Fishermans Cove Resort",
           de: "Bleiben Sie zuallererst informiert über Aktuelles beim Fishermans Cove Resort.",
-          ru: "Будьте первым, кто узнает о событиях на курорте Fishermans Cove Resort"
+          ru: "Будьте первым, кто узнает о событиях в Fishermans Cove Resort"
         },
         btn_text: {
           en: "Subscribe",
@@ -289,7 +289,7 @@ export const constants = {
           en: "Fishermans Cove Resort",
           fr: "Fishermans Cove Resort",
           de: "Fishermans Cove Resort",
-          ru: "Курорт Fishermans Cove"
+          ru: "Fishermans Cove Resort"
         },
         title2: {
           en: "About Us",
@@ -321,7 +321,7 @@ export const constants = {
           en: "leisure activities",
           fr: "Activités de détente",
           de: "Freizeitbeschäftigung",
-          ru: "досуг"
+          ru: "Досуг"
         }
       },
       sec_text_box: {
@@ -355,7 +355,7 @@ export const constants = {
           en: "Frequently Asked Questions (F.A.Q's)",
           fr: "Questions fréquentes (F.A.Q’s) ",
           de: "Häufig Gestellte Fragen (FAQs)",
-          ru: "Часто задаваемые вопросы "
+          ru: "Часто задаваемые вопросы"
         }
       }
     },
@@ -695,19 +695,19 @@ export const constants = {
           en: "Fishermans Cove Resort Special",
           fr: "Offre spéciale Fishermans Cove Resort",
           de: "Fishermans Cove Resort Special",
-          ru: "Специальное предложение на курорте Fishermans Cove"
+          ru: "Специальный Пакет от Fishermans Cove Resort"
         },
         choose_pkg3: {
           en: "Barefoot Wedding",
           fr: "Mariage pieds nus",
           de: "Barfuß Hochzeit",
-          ru: "босоногая свадьба"
+          ru: "Босоногая свадьба"
         },
         choose_pkg4: {
           en: "Renewal of your wedding vows",
           fr: "Renouvellement de vos vœux de mariage",
           de: "Erneuerung Ihres Eheversprechens",
-          ru: "Обновление ваших свадебных клятв"
+          ru: "Возобновление свадебных клятв"
         },
         numb_pax: {
           en: "Number of Pax",
@@ -761,13 +761,13 @@ export const constants = {
           en: "Recreational facilities are dotted throughout the resort with the stunning infinity pool taking centre stage.",
           fr: "Des installations récréatives se trouvent partout dans l’hôtel avec une éblouissante piscine à débordement qui est au centre de l’attention.",
           de: "Freizeiteinrichtungen sind im gesamten Resort zu finden, wobei der erstaunliche Infinitypool im Mittelpunkt steht.",
-          ru: "Рекреационные объекты разбросаны по всему курорту с потрясающим пейзажным бассейном, занимающим центральное место."
+          ru: "Рекреационные объекты расположены по всему курорту. Центральное место занимает потрясающий панорамный бассейн."
         },
         btn_txt: {
           en: "Download Experience Guide",
           fr: "TÉLÉCHARGEZ LE GUIDE",
           de: "ERFAHRUNGSHANDBUCH HERUNTERLADEN",
-          ru: "Скачать руководство по опыту"
+          ru: "ЗАГРУЗИТЬ РУКОВОДСТВО ПО ОПЫТУ"
         }
       },
       award_sec: {
@@ -821,7 +821,7 @@ export const constants = {
           en: "Download SPA Menu",
           fr: "TÉLÉCHARGEZ LA BROCHURE DE SPA",
           de: "SPA-Menü herunterladen",
-          ru: "Скачать СПА-меню"
+          ru: "СКАЧАТЬ СПА-МЕНЮ"
         }
       },
       offer_sec: {
@@ -945,13 +945,13 @@ export const constants = {
           en: "For Reservations",
           fr: "Pour réserver",
           de: "Für Reservierungen",
-          ru: "Для бронирования"
+          ru: "Для бронирования "
         },
         btn_txt: {
           en: "Back to all offers",
           fr: "RETOUR À TOUTES LES OFFRES",
           de: "ZURÜCK ZU ALLEN ANGEBOTEN",
-          ru: "Назад ко всем предложениям"
+          ru: "НАЗАД КО ВСЕМ ПРЕДЛОЖЕНИЯМ"
         }
       }
     },

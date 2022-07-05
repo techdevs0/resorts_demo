@@ -11,7 +11,6 @@ import DeImg from "../../assets/img/icon/de.png"
 import RuImg from "../../assets/img/icon/ru.png"
 
 
-
 class Headertwo extends Component {
   constructor(props) {
     super(props);
