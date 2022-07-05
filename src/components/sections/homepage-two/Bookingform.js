@@ -367,6 +367,7 @@ class Bookingform extends Component {
                             <div className="col-12 col-md-2">
 
                                 <button type="button" value={this.state.promo} onClick={this.handleSubmit}
+                                    style={{ padding: "initial" }}
                                     className="main-btn btn-eden">
                                     {constants?.site_content?.home_page?.banner?.btn3[activeLang]}
                                 </button>

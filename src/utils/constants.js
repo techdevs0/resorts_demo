@@ -295,7 +295,7 @@ export const constants = {
           en: "About Us",
           fr: "Aperçu de l’hôtel",
           de: "Über uns",
-          ru: "MEHR ERFAHREN"
+          ru: "О нас"
         }
       },
       rooms_data: {
@@ -303,7 +303,7 @@ export const constants = {
           en: "rooms & suites",
           fr: "CHAMBRES ET SUITES",
           de: "Zimmer Und Suiten",
-          ru: "MEHR ERFAHREN"
+          ru: "номера и люксы"
         },
         title2: {
           en: "Dining",
@@ -315,13 +315,13 @@ export const constants = {
           en: "weddings",
           fr: "MARIAGES",
           de: "Hochzeiten",
-          ru: "MEHR ERFAHREN"
+          ru: "свадьбы"
         },
         title4: {
           en: "leisure activities",
           fr: "Activités de détente",
           de: "Freizeitbeschäftigung",
-          ru: "MEHR ERFAHREN"
+          ru: "досуг"
         }
       },
       sec_text_box: {
@@ -329,7 +329,7 @@ export const constants = {
           en: "Escape and Enjoy in your own little paradise",
           fr: "Echappez-vous pour vous amuser dans votre petit paradis",
           de: "Entfliehen und genießen Sie in Ihrem eigenen kleinen Paradies",
-          ru: "MEHR ERFAHREN"
+          ru: "Сбегите и наслаждайтесь в своем собственном маленьком раю"
         }
       },
       about_offer: {
@@ -337,7 +337,7 @@ export const constants = {
           en: "Explore Fishermans Cove Resort Premium Offerings",
           fr: "Explorez les offres haut de gamme de Fishermans Cove Resort",
           de: "Entdecken Sie die Premium-Angebote bei Fishermans Cove Resort",
-          ru: "MEHR ERFAHREN"
+          ru: "Ознакомьтесь с премиальными предложениями курорта Fishermans Cove Resort"
         }
       }
     },
@@ -403,7 +403,7 @@ export const constants = {
           en: "Other Restaurants & Bars",
           fr: "Autres restaurants et bars",
           de: "Andere Restaurants und Bars",
-          ru: "MEHR ERFAHREN"
+          ru: "Другие рестораны и бары"
         }
       }
     },
@@ -413,7 +413,7 @@ export const constants = {
           en: "Rooms & Suites",
           fr: "CHAMBRES ET SUITES",
           de: "Zimmer Und Suiten",
-          ru: "MEHR ERFAHREN"
+          ru: "Номера и люксы"
         }
       },
       room_grid: {
@@ -421,13 +421,13 @@ export const constants = {
           en: "Rooms",
           fr: "chambres",
           de: "Zimmer",
-          ru: "MEHR ERFAHREN"
+          ru: "Номера"
         },
         title2: {
           en: "Suites",
           fr: "Suites",
           de: "Suiten",
-          ru: "MEHR ERFAHREN"
+          ru: "Люксы"
         },
         btn_text: {
           en: "Check Availability",
@@ -443,7 +443,7 @@ export const constants = {
           en: "Other Rooms & Suites",
           fr: "Autres chambres et suites",
           de: "Andere Zimmer & Suiten",
-          ru: "MEHR ERFAHREN"
+          ru: "Другие номера и люксы"
         }
       },
       ammenities: {
@@ -451,7 +451,7 @@ export const constants = {
           en: "Amenities",
           fr: "Services",
           de: "Ausstattung",
-          ru: "MEHR ERFAHREN"
+          ru: "Удобства"
         },
         ammeniti1: {
           en: "Air Conditioning",
@@ -559,7 +559,7 @@ export const constants = {
           en: "Weddings",
           fr: "MARIAGES",
           de: "Hochzeiten",
-          ru: "MEHR ERFAHREN"
+          ru: "Свадьбы"
         }
       },
       wedding_grid: {
@@ -567,7 +567,7 @@ export const constants = {
           en: "Wedding Services",
           fr: "Prestations Mariages",
           de: "Planen Sie die perfekte Hochzeit",
-          ru: "MEHR ERFAHREN"
+          ru: "Свадебные услуги"
         }
       },
       wedding_booking_form: {
@@ -575,169 +575,169 @@ export const constants = {
           en: "Please enter first name",
           fr: "Veuillez entrer le prénom",
           de: "Bitte geben Sie den Vornamen ein",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите имя"
         },
         Last_name_error: {
           en: "Please enter last name",
           fr: "Veuillez entrer le nom de famille",
           de: "Bitte geben Sie den Nachnamen ein",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите фамилию"
         },
         email_error: {
           en: "Please enter email address",
           fr: "Veuillez saisir l'adresse e-mail",
           de: "Bitte E-Mail-Adresse eingeben",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите адрес электронной почты"
         },
         address_error: {
           en: "Please enter address",
           fr: "Veuillez entrer l'adresse",
           de: "Bitte Adresse eingeben",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите адрес"
         },
         package_error: {
           en: "Please enter package_chosen",
           fr: "Veuillez entrer package_chosen",
           de: "Bitte geben Sie Paket_ausgewählt ein",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите package_chosen"
         },
         remark_error: {
           en: "Please enter remark",
           fr: "Veuillez entrer une remarque",
           de: "Bitte Bemerkung eingeben",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите примечание"
         },
         pax_error: {
           en: "Please enter number of Pax",
           fr: "Veuillez entrer le nombre de Pax",
           de: "Bitte geben Sie die Anzahl der Personen ein",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите количество пассажиров"
         },
         nationality_error: {
           en: "Please enter nationality",
           fr: "Veuillez entrer la nationalité",
           de: "Bitte geben Sie die Nationalität ein",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, укажите национальность"
         },
         numb_error: {
           en: "Please enter contact number",
           fr: "Veuillez entrer le numéro de contact",
           de: "Bitte geben Sie die Kontaktnummer ein",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите контактный номер"
         },
         submit_text: {
           en: "Message Submitted. We will get in touch shortly",
           fr: "Message envoyé. Nous vous contacterons sous peu",
           de: "Nachricht übermittelt. Wir werden uns in Kürze bei Ihnen melden",
-          ru: "MEHR ERFAHREN"
+          ru: "Сообщение отправлено. Мы свяжемся с вами в ближайшее время"
         },
         btn_text: {
           en: "Submit",
           fr: "Soumettre",
           de: "Einreichen",
-          ru: "MEHR ERFAHREN"
+          ru: "Представлять на рассмотрение"
         },
         form_title: {
           en: "Book Your Wedding Destination",
           fr: "Réservez votre destination de mariage",
           de: "Buchen Sie Ihr Hochzeitsziel",
-          ru: "MEHR ERFAHREN"
+          ru: "Забронируйте место для свадьбы"
         },
         first_name: {
           en: "First Name",
           fr: "Prénom",
           de: "Vorname",
-          ru: "MEHR ERFAHREN"
+          ru: "Имя"
         },
         last_name: {
           en: "Last Name",
           fr: "Nom de famille",
           de: "Nachname",
-          ru: "MEHR ERFAHREN"
+          ru: "Фамилия"
         },
         nationality: {
           en: "Nationality",
           fr: "Nationalité",
           de: "Staatsangehörigkeit",
-          ru: "MEHR ERFAHREN"
+          ru: "Национальность"
         },
         contact_numb: {
           en: "Contact Number",
           fr: "Numéro de contact",
           de: "Kontakt Nummer",
-          ru: "MEHR ERFAHREN"
+          ru: "Контактный номер"
         },
         email: {
           en: "Email",
           fr: "Email",
           de: "E-mail",
-          ru: "MEHR ERFAHREN"
+          ru: "Эл. адрес"
         },
         address: {
           en: "Current Address",
           fr: "Adresse actuelle",
           de: "Momentane Adresse",
-          ru: "MEHR ERFAHREN"
+          ru: "Текущий адрес"
         },
         choose_pkg: {
           en: "Choose a Package",
           fr: "Choisissez un forfait",
           de: "Wählen Sie ein Paket",
-          ru: "MEHR ERFAHREN"
+          ru: "Выберите пакет"
         },
         choose_pkg1: {
           en: "Seaside Pontoon Wedding",
           fr: "Mariage ponton bord de mer",
           de: "Ponton-Hochzeit am Meer",
-          ru: "MEHR ERFAHREN"
+          ru: "Свадьба на понтоне у моря"
         },
         choose_pkg2: {
           en: "Fishermans Cove Resort Special",
           fr: "Offre spéciale Fishermans Cove Resort",
           de: "Fishermans Cove Resort Special",
-          ru: "MEHR ERFAHREN"
+          ru: "Специальное предложение на курорте Fishermans Cove"
         },
         choose_pkg3: {
           en: "Barefoot Wedding",
           fr: "Mariage pieds nus",
           de: "Barfuß Hochzeit",
-          ru: "MEHR ERFAHREN"
+          ru: "босоногая свадьба"
         },
         choose_pkg4: {
           en: "Renewal of your wedding vows",
           fr: "Renouvellement de vos vœux de mariage",
           de: "Erneuerung Ihres Eheversprechens",
-          ru: "MEHR ERFAHREN"
+          ru: "Обновление ваших свадебных клятв"
         },
         numb_pax: {
           en: "Number of Pax",
           fr: "Nombre de personnes",
           de: "Anzahl der pax",
-          ru: "MEHR ERFAHREN"
+          ru: "Количество человек"
         },
         date1: {
           en: "Preferred Date 1",
           fr: "Date préférée 1",
           de: "Wunschtermin 1",
-          ru: "MEHR ERFAHREN"
+          ru: "Предпочтительная дата 1"
         },
         date2: {
           en: "Preferred Date 2",
           fr: "Date préférée 2",
           de: "Wunschtermin 2",
-          ru: "MEHR ERFAHREN"
+          ru: "Предпочтительная дата 2"
         },
         change_date: {
           en: "change date",
           fr: "date de modification",
           de: "Datum ändern",
-          ru: "MEHR ERFAHREN"
+          ru: "изменить дату"
         },
         remark: {
           en: "Write a Remark...",
           fr: "Ecrire une remarque...",
           de: "Schreiben Sie eine Bemerkung ...",
-          ru: "MEHR ERFAHREN"
+          ru: "Напишите замечание..."
         }
       }
     },
@@ -747,7 +747,7 @@ export const constants = {
           en: "Leisure Activities",
           fr: "Activités de détente",
           de: "Freizeitbeschäftigung",
-          ru: "MEHR ERFAHREN"
+          ru: "Досуг"
         }
       },
       text_block: {
@@ -755,19 +755,19 @@ export const constants = {
           en: "Leisure Activities",
           fr: "Activités de détente",
           de: "Freizeitbeschäftigung",
-          ru: "MEHR ERFAHREN"
+          ru: "Досуг"
         },
         detail: {
           en: "Recreational facilities are dotted throughout the resort with the stunning infinity pool taking centre stage.",
           fr: "Des installations récréatives se trouvent partout dans l’hôtel avec une éblouissante piscine à débordement qui est au centre de l’attention.",
           de: "Freizeiteinrichtungen sind im gesamten Resort zu finden, wobei der erstaunliche Infinitypool im Mittelpunkt steht.",
-          ru: "MEHR ERFAHREN"
+          ru: "Рекреационные объекты разбросаны по всему курорту с потрясающим пейзажным бассейном, занимающим центральное место."
         },
         btn_txt: {
           en: "Download Experience Guide",
           fr: "TÉLÉCHARGEZ LE GUIDE",
           de: "ERFAHRUNGSHANDBUCH HERUNTERLADEN",
-          ru: "MEHR ERFAHREN"
+          ru: "Скачать руководство по опыту"
         }
       },
       award_sec: {
@@ -775,7 +775,7 @@ export const constants = {
           en: "Awards and Certifications",
           fr: "Récompenses et certifications",
           de: "Auszeichnungen und Zertifizierungen",
-          ru: "MEHR ERFAHREN"
+          ru: "Награды и сертификаты"
         }
       }
     },
@@ -785,7 +785,7 @@ export const constants = {
           en: "Other Resort Activities",
           fr: "Autres activités à l’hôtel",
           de: "Andere Resort Aktivitäten",
-          ru: "MEHR ERFAHREN"
+          ru: "Другие развлечения на курорте"
         }
       },
       text_block: {
@@ -793,7 +793,7 @@ export const constants = {
           en: "Other Resort Activities",
           fr: "Autres activités à l’hôtel",
           de: "Andere Resort Aktivitäten",
-          ru: "MEHR ERFAHREN"
+          ru: "Другие развлечения на курорте"
         }
       }
     },
@@ -813,7 +813,7 @@ export const constants = {
           en: "Spa & Wellness",
           fr: "Spa & Bien-être",
           de: "Spa & Wellness",
-          ru: "MEHR ERFAHREN"
+          ru: "Спа и велнес"
         }
       },
       text_block: {
@@ -821,7 +821,7 @@ export const constants = {
           en: "Download SPA Menu",
           fr: "TÉLÉCHARGEZ LA BROCHURE DE SPA",
           de: "SPA-Menü herunterladen",
-          ru: "MEHR ERFAHREN"
+          ru: "Скачать СПА-меню"
         }
       },
       offer_sec: {
@@ -829,7 +829,7 @@ export const constants = {
           en: "Offers",
           fr: "Offres",
           de: "Angebote",
-          ru: "MEHR ERFAHREN"
+          ru: "Предложения"
         }
       }
     },
@@ -935,7 +935,7 @@ export const constants = {
           en: "Offers",
           fr: "Offres",
           de: "Angebote",
-          ru: "MEHR ERFAHREN"
+          ru: "Предложения"
         }
       }
     },
@@ -945,13 +945,13 @@ export const constants = {
           en: "For Reservations",
           fr: "Pour réserver",
           de: "Für Reservierungen",
-          ru: "MEHR ERFAHREN"
+          ru: "Для бронирования"
         },
         btn_txt: {
           en: "Back to all offers",
           fr: "RETOUR À TOUTES LES OFFRES",
           de: "ZURÜCK ZU ALLEN ANGEBOTEN",
-          ru: "MEHR ERFAHREN"
+          ru: "Назад ко всем предложениям"
         }
       }
     },
@@ -961,7 +961,7 @@ export const constants = {
           en: "Gallery",
           fr: "Galerie",
           de: "Galerie",
-          ru: "MEHR ERFAHREN"
+          ru: "Галерея"
         }
       }
     },
@@ -979,97 +979,97 @@ export const constants = {
           en: "Write to Us",
           fr: "Écrivez à nous",
           de: "Schreiben Sie an uns",
-          ru: "MEHR ERFAHREN"
+          ru: "Напишите нам"
         },
         name_error: {
           en: "Please enter first name",
           fr: "Veuillez entrer le prénom",
           de: "Bitte geben Sie den Vornamen ein",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите имя"
         },
         Last_name_error: {
           en: "Please enter last name",
           fr: "Veuillez entrer le nom de famille",
           de: "Bitte geben Sie den Nachnamen ein",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите фамилию"
         },
         email_error: {
           en: "Please enter email address",
           fr: "Veuillez saisir l'adresse e-mail",
           de: "Bitte E-Mail-Adresse eingeben",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите адрес электронной почты"
         },
         subject_error: {
           en: "Please enter subject",
           fr: "Veuillez entrer le sujet",
           de: "Bitte Betreff eingeben",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите тему"
         },
         msg_error: {
           en: "Please enter message",
           fr: "Veuillez entrer un message",
           de: "Bitte Nachricht eingeben",
-          ru: "MEHR ERFAHREN"
+          ru: "Пожалуйста, введите сообщение"
         },
         first_name: {
           en: "First Name",
           fr: "Prénom",
           de: "Vorname",
-          ru: "MEHR ERFAHREN"
+          ru: "Имя"
         },
         last_name: {
           en: "Last Name",
           fr: "Nom de famille",
           de: "Nachname",
-          ru: "MEHR ERFAHREN"
+          ru: "Фамилия"
         },
         email: {
           en: "Email Address",
           fr: "Adresse e-mail",
           de: "E-Mail-Addresse",
-          ru: "MEHR ERFAHREN"
+          ru: "Адрес электронной почты"
         },
         choose_subject: {
           en: "Choose a Subject",
           fr: "Choisissez un sujet",
           de: "Wählen Sie ein Thema",
-          ru: "MEHR ERFAHREN"
+          ru: "Выберите тему"
         },
         choose_subject1: {
           en: "Reservations Inquiry",
           fr: "Demande de réservation",
           de: "Reservierungsanfrage",
-          ru: "MEHR ERFAHREN"
+          ru: "Бронирование"
         },
         choose_subject2: {
           en: "Refund Policy",
           fr: "Politique de remboursement",
           de: "Rückgaberecht",
-          ru: "MEHR ERFAHREN"
+          ru: "Политика возврата"
         },
         choose_subject3: {
           en: "Rooms and Suites Info",
           fr: "Informations sur les chambres et les suites",
           de: "Informationen zu Zimmern und Suiten",
-          ru: "MEHR ERFAHREN"
+          ru: "Информация о номерах и люксах"
         },
         msg: {
           en: "Write Message...",
           fr: "Écrire un message...",
           de: "Nachricht schreiben...",
-          ru: "MEHR ERFAHREN"
+          ru: "Написать сообщение..."
         },
         submit_text: {
           en: "Message Submitted. We will get in touch shortly.",
           fr: "Message envoyé. Nous vous contacterons sous peu",
           de: "Nachricht übermittelt. Wir werden uns in Kürze bei Ihnen melden",
-          ru: "MEHR ERFAHREN"
+          ru: "Сообщение отправлено. Мы свяжемся с вами в ближайшее время."
         },
         btn_text: {
           en: "Submit",
           fr: "Soumettre",
           de: "Einreichen",
-          ru: "MEHR ERFAHREN"
+          ru: "Представлять на рассмотрение"
         },
       },
       contact_offer: {
@@ -1077,7 +1077,7 @@ export const constants = {
           en: "Fishermans Cove Resort on Social Media",
           fr: "Fishermans Cove Resort sur le media social",
           de: "Fishermans Cove Resort in den sozialen Medien",
-          ru: "MEHR ERFAHREN"
+          ru: "Fishermans Cove Resort в социальных сетях"
         },
         room1: {
           en: "Paris Sychelles Restaurant",
@@ -1105,7 +1105,7 @@ export const constants = {
           en: "Blogs",
           fr: "Blogs",
           de: "Blogs",
-          ru: "MEHR ERFAHREN"
+          ru: "Блоги"
         }
       },
       blog_grid: {
@@ -1113,7 +1113,7 @@ export const constants = {
           en: "Read More",
           fr: "Weiterlesen",
           de: "Mehr Lesen",
-          ru: "MEHR ERFAHREN"
+          ru: "Читать далее"
         },
       },
       recent_blog: {
@@ -1121,7 +1121,7 @@ export const constants = {
           en: "Recent Blogs",
           fr: "Blogs récents",
           de: "Aktuelle Blogs",
-          ru: "MEHR ERFAHREN"
+          ru: "Недавние блоги"
         },
       }
     },
@@ -1131,7 +1131,7 @@ export const constants = {
           en: "Related Post",
           fr: "Article similaire",
           de: "Verwandter Beitrag",
-          ru: "MEHR ERFAHREN"
+          ru: "Связанный пост"
         }
       }
     },
@@ -1141,7 +1141,7 @@ export const constants = {
           en: "Cancellation Policy",
           fr: "Politique d'annulation",
           de: "Stornierungsbedingungen",
-          ru: "MEHR ERFAHREN"
+          ru: "Политика отмены"
         }
       }
     },
@@ -1151,7 +1151,7 @@ export const constants = {
           en: "Privacy Policy",
           fr: "Politique de confidentialité",
           de: "Datenschutzrichtlinie",
-          ru: "MEHR ERFAHREN"
+          ru: "Политика конфиденциальности"
         }
       }
     },
@@ -1171,7 +1171,7 @@ export const constants = {
           en: "Terms of Use",
           fr: "Conditions d'utilisation",
           de: "Nutzungsbedingungen",
-          ru: "MEHR ERFAHREN"
+          ru: "Условия эксплуатации"
         }
       }
     },
@@ -1180,7 +1180,7 @@ export const constants = {
         en: "Services",
         fr: "Prestations de service",
         de: "Dienstleistungen",
-        ru: "MEHR ERFAHREN"
+        ru: "Услуги"
       },
       title2: {
         en: "Contact Us",
@@ -1192,19 +1192,19 @@ export const constants = {
         en: "Phone Number",
         fr: "Numéro de téléphone",
         de: "Telefonnummer",
-        ru: "MEHR ERFAHREN"
+        ru: "Номер телефона"
       },
       email: {
         en: "Email Address",
         fr: "Adresse e-mail",
         de: "E-Mail-Addresse",
-        ru: "MEHR ERFAHREN"
+        ru: "Адрес электронной почты"
       },
       address: {
         en: "Office Address",
         fr: "Adresse de bureau",
         de: "Büroadresse",
-        ru: "MEHR ERFAHREN"
+        ru: "Адрес офиса"
       },
       powered_by: {
         en: "Powered By",
