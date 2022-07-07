@@ -1171,7 +1171,7 @@ export const constants = {
           en: "Terms of Use",
           fr: "Conditions d'utilisation",
           de: "Nutzungsbedingungen",
-          ru: "Условия эксплуатации"
+          ru: "СРОКИ ИСПОЛЬЗОВАНИЯ"
         }
       }
     },
