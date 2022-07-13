@@ -6,12 +6,26 @@ import ReactPaginate from "react-paginate";
 import PageLayout from '../layouts/PageLayout';
 import bannerImg from "../../assets/img/blog/blogBanner.jpg"
 import { constants } from '../../utils/constants';
-import Helmet from "react-helmet";
-// import { createBrowserHistory } from 'history';
-
+import SEOTags from "../sections/common/SEOTags";
 
 const Blog = (props) => {
   const activeLang = localStorage.getItem('lang');
+
+  //blog page
+  const pageId = '629a0927f08f18452f364ba2';
+
+  const [banner, setBanner] = useState(null);
+  const [meta, setMeta] = useState({});
+
+  const getBlogPageData = () => {
+    API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
+      setBanner(response?.data?.data[0]?.banner);
+      setMeta(response?.data?.data[0]?.meta);
+    })
+      .catch(err => {
+        console.log(err)
+      })
+  }
 
   //  blog Data
 
@@ -44,22 +58,11 @@ const Blog = (props) => {
       })
   }
 
-  // const history = createBrowserHistory();
-  // useEffect(() => {
-  //   const pathname = history.location.pathname;
-
-  //   console.log("pathname", history.location.pathname)
-
-  //   if (pathname) {
-  //     getBlogData();
-  //     getRecentData()
-  //   }
-  // }, [history.location.pathname]);
-
   useEffect(() => {
 
     getBlogData();
     getRecentData();
+    getBlogPageData();
 
   }, [activeLang]);
 
@@ -136,18 +139,13 @@ const Blog = (props) => {
 
   return (
     <div>
-      <Helmet>
-        <title>
-          {constants?.site_content?.blog_page?.bread_crumb?.title2[activeLang]}
-        </title>
-        <meta name="description" content="blog" />
+      <SEOTags meta={meta} />
 
-      </Helmet>
       {
         blogData.length > 0 ?
           <PageLayout
             header={{ isMobile: props.isMobile, isTop: props.isTop }}
-            banner={{ title: `${constants?.site_content?.blog_page?.bread_crumb?.title2[activeLang]}`, image: bannerImg }}
+            banner={{ title: banner?.section_name, image: banner?.section_avatar?.avatar }}
             breadCrumb={{ items: breadcrumbItems }}
             activeLang={activeLang}
           >

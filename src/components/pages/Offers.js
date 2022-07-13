@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import OfferTitleBlock from "../sections/offers/main-text-block";
 import OfferGrid from "../sections/offers/offer-grid";
 import API from "../../langapi/http";
-import Helmet from "react-helmet";
+import SEOTags from "../sections/common/SEOTags";
 import { constants } from "../../utils/constants";
 import PageLayout from '../layouts/PageLayout';
 
 const bannerImage = require("./../../assets/img/offers/stay.jpg");
 
+const pageId = '629a08d1316b8e36e6367322';
 
 class Offers extends Component {
   state = {
     offers: [],
+    banner: null,
+    meta: {}
   };
   async componentDidMount() {
     try {
@@ -20,6 +23,14 @@ class Offers extends Component {
       const response = await API.get(`/offers?lang=${activeLang}`);
       // debugger;
       this.setState({ offers: response.data?.data?.filter((x) => x.is_premium === 0) || [] });
+
+      API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
+        this.setState({
+          banner: response?.data?.data[0]?.banner,
+          meta: response?.data?.data[0]?.meta
+        });
+      })
+
     } catch (error) {
       console.log(error);
     }
@@ -42,27 +53,18 @@ class Offers extends Component {
     ];
     return (
       <div className="bg-white">
-        {/* <SEOTags meta={this.state.meta} /> */}
-        <Helmet>
-          <title>
-            {constants?.site_content?.offers_page?.bread_crumb?.title2[activeLang]}
-          </title>
-          <meta
-            name="description"
-            content="Fishermans Cove Resort is a veritable paradise that offers countless amazing experiences throughout the journey with some of the best resort deals in Seychelles."
-          />
-        </Helmet>
+        <SEOTags meta={this.state.meta} />
         {
           this.state.offers.length > 0 ?
             <PageLayout
               header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-              banner={{ title: `${constants?.site_content?.offers_page?.bread_crumb?.title2[activeLang]}`, image: bannerImage }}
+              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
               breadCrumb={{ items: breadcrumbItems }}
               activeLang={activeLang}
             >
               {/*====== TITLE START ======*/}
               <OfferTitleBlock
-                activeLang={activeLang}
+                title={this.state.banner?.section_name}
               />
               {/*====== TITLE END ======*/}
               {/*====== ROOM GRID START ======*/}
