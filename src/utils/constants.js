@@ -18,7 +18,7 @@ export const constants = {
           en: "Learn More",
           fr: "EN SAVOIR PLUS",
           de: "MEHR ERFAHREN",
-          ru: "ПОДРОБНЕЕ"
+          ru: "Узнать больше"
         },
         btn3: {
           en: "Book Now",
@@ -329,7 +329,7 @@ export const constants = {
           en: "Escape and Enjoy in your own little paradise",
           fr: "Echappez-vous pour vous amuser dans votre petit paradis",
           de: "Entfliehen und genießen Sie in Ihrem eigenen kleinen Paradies",
-          ru: "Сбегите и наслаждайтесь в своем собственном маленьком раю"
+          ru: "Сбегите и наслаждайтесь в своем маленьком раю "
         }
       },
       about_offer: {
@@ -337,7 +337,7 @@ export const constants = {
           en: "Explore Fishermans Cove Resort Premium Offerings",
           fr: "Explorez les offres haut de gamme de Fishermans Cove Resort",
           de: "Entdecken Sie die Premium-Angebote bei Fishermans Cove Resort",
-          ru: "Ознакомьтесь с премиальными предложениями курорта Fishermans Cove Resort"
+          ru: "Ознакомьтесь с премиальными предложениями курорта Fishermans Cove"
         }
       }
     },
