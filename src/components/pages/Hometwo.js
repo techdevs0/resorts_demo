@@ -1,20 +1,17 @@
 import React, { Component } from "react";
 
 //components
-import Headertwo from "../layouts/Headertwo";
-import Footertwo from "../layouts/Footertwo";
-import Mainbanner from "../sections/homepage-two/Banner";
-import Bookingform from "../sections/homepage-two/Bookingform";
 import Textblock from "../sections/homepage-two/Textblock";
 import RoomSlider from "../sections/homepage-two/RoomSlider";
 import Experience from "../sections/homepage-two/Experience";
 import GuestReviews from "../sections/homepage-two/GuestReviews";
 import ServiceTabs from "../sections/homepage-two/ServicesTabs";
-import BottomNavigator from "../sections/homepage-two/BottomNavigator";
 import API from "../../langapi/http";
 import bannerimg1 from "../../assets/img/banner/home.jpg";
 import PopUp from "../popup/PopUp";
 import Helmet from "react-helmet";
+import PageLayout from '../layouts/PageLayout';
+
 
 import { constants } from "../../utils/constants";
 
@@ -41,11 +38,11 @@ class Hometwo extends Component {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      API.get(`/premium?lang=${activeLang}`).then((response) => {
+      API.get(`/get_offers?lang=${activeLang}`).then((response) => {
         this.setState({ premiumOffers: response.data?.data });
       })
 
-      API.get(`/rooms?lang=${activeLang}`).then((response) => {
+      API.get(`/get_rooms_list?lang=${activeLang}`).then((response) => {
         const roomsData = response.data?.data;
         this.setState({
           roomsData: roomsData
@@ -68,52 +65,45 @@ class Hometwo extends Component {
           <meta name="description" content="Fishermans Cove Resort" />
 
         </Helmet>
-        <Headertwo
-          isMobile={this.props.isMobile}
-          isTop={this.props.isTop}
-          key={"home"}
-        />
-        {/*====== BANNER PART START ======*/}
-        {/* <LazyLoad> */}
-        <Mainbanner
-          isMain={true}
-          title={constants?.site_content?.home_page?.banner?.title[activeLang]}
-          image={bannerimg1}
-          activeLang={activeLang}
-        />
-        {/* </LazyLoad> */}
-        {/*====== BANNER PART ENDS ======*/}
-        {/*====== BOOKING FORM START ======*/}
-        <Bookingform
-          activeLang={activeLang}
-        />
-        {/*====== BOOKING FORM END ======*/}
-        {/*====== ROOM SLIDER START ======*/}
-        <RoomSlider data={this.state.roomsData}
-          activeLang={activeLang}
-        />
 
-        {/*====== ROOM SLIDER END ======*/}
-        {/*====== TEXT BLOCK START ======*/}
-        <Textblock
+        <PageLayout
+          header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
+          banner={{ title: constants?.site_content?.home_page?.banner?.title[activeLang], image: bannerimg1 }}
+          // breadCrumb={{ items: breadcrumbItems }}
           activeLang={activeLang}
-        />
-        {/*====== TEXT BLOCK END ======*/}
-        {/*====== SERVICES TABS START ======*/}
-        <ServiceTabs data={this.state.premiumOffers}
-          activeLang={activeLang}
-        />
-        {/*====== SERVICES TABS END ======*/}
-        {/*====== TESTIMONIAL SLIDER START ======*/}
-        <GuestReviews
-          activeLang={activeLang}
-        />
-        {/*====== EXPERIENCE START ======*/}
-        <Experience
-          activeLang={activeLang}
-        />
-        {/*====== EXPERIENCE END ======*/}
-        <div style={{ display: "none" }}>
+          key={"home"}
+          isMain={true}
+        >
+          {/*====== ROOM SLIDER START ======*/}
+          <RoomSlider data={this.state.roomsData}
+            activeLang={activeLang}
+          />
+
+          {/*====== ROOM SLIDER END ======*/}
+          {/*====== TEXT BLOCK START ======*/}
+          <Textblock
+            activeLang={activeLang}
+          />
+          {/*====== TEXT BLOCK END ======*/}
+          {/*====== SERVICES TABS START ======*/}
+          <ServiceTabs data={this.state.premiumOffers}
+            activeLang={activeLang}
+          />
+          {/*====== SERVICES TABS END ======*/}
+          {/*====== TESTIMONIAL SLIDER START ======*/}
+          <GuestReviews
+            activeLang={activeLang}
+          />
+          {/*====== EXPERIENCE START ======*/}
+          <Experience
+            activeLang={activeLang}
+          />
+          {/*====== EXPERIENCE END ======*/}
+          <PopUp show={this.state.offerPopup} onHide={this.handleShowOffer}
+            activeLang={activeLang}
+          />
+        </PageLayout>
+        {/* <div style={{ display: "none" }}>
           <h3>
             What are the best luxury resorts for stays in Seychelles Victoria?{" "}
           </h3>
@@ -158,15 +148,7 @@ class Hometwo extends Component {
             the recommended ones because of romantic views and top of the line
             service.
           </p>
-        </div>
-
-        <PopUp show={this.state.offerPopup} onHide={this.handleShowOffer}
-          activeLang={activeLang}
-        />
-
-        <Footertwo />
-
-        <BottomNavigator />
+        </div> */}
       </div>
     );
   }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import Subscribe from '../sections/common/Subscribe'
 import Banner from '../sections/homepage-two/Banner'
 import Bookingform from '../sections/homepage-two/Bookingform'
 import BottomNavigator from '../sections/homepage-two/BottomNavigator'
@@ -9,18 +8,16 @@ import Headertwo from './Headertwo'
 import API from '../../langapi/http';
 
 export default function PageLayout(props) {
-    const { header, banner, hideBooking, bookingForm, breadCrumb, image, activeLang } = props;
+    const { header, banner, hideBooking, bookingForm, breadCrumb, image, activeLang, isMain } = props;
 
     useEffect(() => {
         getCommonData();
-        // localStorage.setItem('commonData', JSON.stringify(commonData));
-
-    }, []);
+    }, [activeLang]);
 
     const [commonData, setCommonData] = useState([]);
 
     const getCommonData = () => {
-        API.get(`/common?lang=${activeLang}`).then(response => {
+        API.get(`/get_header?lang=${activeLang}`).then(response => {
             const allData = response?.data?.data;
             setCommonData(allData);
         })
@@ -37,6 +34,7 @@ export default function PageLayout(props) {
             />
             <Banner {...banner}
                 activeLang={activeLang}
+                isMain={isMain}
             />
             {!hideBooking &&
                 <Bookingform />
@@ -47,9 +45,6 @@ export default function PageLayout(props) {
             {
                 props.children
             }
-            {/* <Subscribe
-                activeLang={activeLang}
-            /> */}
             <Footertwo
                 footerLinks={commonData}
             />

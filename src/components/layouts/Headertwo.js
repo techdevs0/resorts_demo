@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import classNames from "classnames";
 import $ from "jquery";
 import { findDOMNode } from "react-dom";
-// import API from '../../langapi/http';
 import { constants } from "../../utils/constants";
 import EnImg from "../../assets/img/icon/en.png"
 import FrImg from "../../assets/img/icon/fr.png"
@@ -84,12 +83,6 @@ class Headertwo extends Component {
 
 
     try {
-      // const headerData = JSON.parse(localStorage.getItem('commonData'));
-
-      // const menuResponse = await API.get(`/common?lang=${activeLang}`);
-
-      console.log("headerData", this.props?.headerData);
-
 
       let menuLinks = this.props.headerData.find(
         (x) => x.type === "header"
@@ -103,6 +96,25 @@ class Headertwo extends Component {
       }
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  async componentDidUpdate(prevProps) {
+    if (this.props.headerData !== prevProps.headerData) {
+      try {
+        let menuLinks = this.props.headerData.find(
+          (x) => x.type === "header"
+        )?.menuItems;
+        let contact = this.props.headerData?.find((x) => x.type === "header")?.contact;
+        if (menuLinks) {
+          this.setState({ widgetMenuLinks: menuLinks });
+        }
+        if (contact) {
+          this.setState({ contact: contact });
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
@@ -160,9 +172,6 @@ class Headertwo extends Component {
     const classNamess = this.props.isMobile ? "d-none" : "";
     const classNamesss = this.props.isTop ? "sticky-active" : "";
     const activeLang = localStorage.getItem('lang');
-
-    // console.log("headerData", this.props.headerData);
-
 
     return (
       <div>

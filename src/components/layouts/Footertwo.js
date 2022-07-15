@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import API from '../../langapi/http';
 import { constants } from '../../utils/constants';
 import Subscribe from '../sections/common/Subscribe';
 
@@ -14,26 +13,13 @@ class Footertwo extends Component {
   }
   async componentDidMount() {
 
-    // const activeLang = localStorage.getItem('lang');
-    // const response = await API.get(`/common?lang=${activeLang}`);
-    // const footerLinks = JSON.parse(localStorage.getItem('commonData'));
-
-    console.log("footerData", this.props.footerLinks)
-
-    // if (response.status === 200) {
     const data = this.props.footerLinks?.find((x) => x.type === "footer");
-    const first = data?.first;
     const second = data?.second;
-    const third = data?.third;
-    // const social = data.find(x => x.widget_name === "social");
     this.setState({
       footerData: {
-        first: first,
         second: second,
-        third: third,
       }
     });
-    // }
 
     window.addEventListener('scroll', () => {
       this.setState({
@@ -41,6 +27,26 @@ class Footertwo extends Component {
       });
     }, false);
   }
+
+  async componentDidUpdate(prevProps) {
+    if (this.props.footerLinks !== prevProps.footerLinks) {
+
+      const data = this.props.footerLinks?.find((x) => x.type === "footer");
+      const second = data?.second;
+      this.setState({
+        footerData: {
+          second: second,
+        }
+      });
+
+      window.addEventListener('scroll', () => {
+        this.setState({
+          isTop: window.scrollY > 300
+        });
+      }, false);
+    }
+  }
+
   scrollToTop() {
     window.scrollTo({
       top: 0,
@@ -69,28 +75,12 @@ class Footertwo extends Component {
                     <Subscribe
                       activeLang={activeLang}
                     />
-                    {/* <div className="footer-logo mb-1">
-                      <img src={require('./../../assets/img/logo-fisher.png')} alt="fishermancove footer logo" />
-                    </div>
-                    <p>
-                      {
-                        this.state.footerData?.first?.description
-                      }
-                    </p>
-                    <div className="social-links mt-40 d-none">
-                      <a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f" /></a>
-                      <a href="https://twitter.com/fisherman_cove"><i className="fab fa-twitter" /></a>
-                      <a href="https://www.instagram.com/fishermanscove.resort/"><i className="fab fa-instagram" /></a>
-                    </div> */}
                   </div>
                 </div>
                 <div className="col-lg-6 order-3 order-lg-2  footerLinks">
                   {/* Nav Widget */}
                   <div className="widget nav-widget mb-50">
                     <div>
-                      {/* <h4 className="widget-title">
-                        {constants?.site_content?.footer_content?.title1[activeLang]}
-                      </h4> */}
                       <ul>
 
                         {
@@ -104,40 +94,6 @@ class Footertwo extends Component {
                     </div>
                   </div>
                 </div>
-
-                {/* <div className="col-lg-3 col-sm-6 order-2 order-lg-3">
-                  <div className="widget contact-widget mb-50">
-                    <h4 className="widget-title">
-                      {constants?.site_content?.footer_content?.title2[activeLang]}
-                    </h4>
-                    <div className="contact-lists">
-                      <div className="contact-box">
-                        <div className="desc">
-                          <h6 className="title">
-                            {constants?.site_content?.footer_content?.phone[activeLang]}
-                          </h6>
-                          <a href={`tel:${this.state.footerData?.third?.phone?.replace(/\s/g, '')}`}>{this.state.footerData?.third?.phone}</a>
-                        </div>
-                      </div>
-                      <div className="contact-box">
-                        <div className="desc">
-                          <h6 className="title">
-                            {constants?.site_content?.footer_content?.email[activeLang]}
-                          </h6>
-                          <a href={`mailto:${this.state.footerData?.third?.email}`}>{this.state.footerData?.third?.email}</a>
-                        </div>
-                      </div>
-                      <div className="contact-box">
-                        <div className="desc">
-                          <h6 className="title">
-                            {constants?.site_content?.footer_content?.address[activeLang]}
-                          </h6>
-                          {this.state.footerData?.third?.address}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
 
