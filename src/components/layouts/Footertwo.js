@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import API from '../../langapi/http';
+// import API from '../../langapi/http';
 import { constants } from '../../utils/constants';
 import Subscribe from '../sections/common/Subscribe';
 
@@ -14,22 +14,26 @@ class Footertwo extends Component {
   }
   async componentDidMount() {
 
-    const activeLang = localStorage.getItem('lang');
-    const response = await API.get(`/common?lang=${activeLang}`);
-    if (response.status === 200) {
-      const data = response?.data?.data?.find((x) => x.type === "footer");
-      const first = data?.first;
-      const second = data?.second;
-      const third = data?.third;
-      // const social = data.find(x => x.widget_name === "social");
-      this.setState({
-        footerData: {
-          first: first,
-          second: second,
-          third: third,
-        }
-      });
-    }
+    // const activeLang = localStorage.getItem('lang');
+    // const response = await API.get(`/common?lang=${activeLang}`);
+    // const footerLinks = JSON.parse(localStorage.getItem('commonData'));
+
+    console.log("footerData", this.props.footerLinks)
+
+    // if (response.status === 200) {
+    const data = this.props.footerLinks?.find((x) => x.type === "footer");
+    const first = data?.first;
+    const second = data?.second;
+    const third = data?.third;
+    // const social = data.find(x => x.widget_name === "social");
+    this.setState({
+      footerData: {
+        first: first,
+        second: second,
+        third: third,
+      }
+    });
+    // }
 
     window.addEventListener('scroll', () => {
       this.setState({

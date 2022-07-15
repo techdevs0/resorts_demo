@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import classNames from "classnames";
 import $ from "jquery";
 import { findDOMNode } from "react-dom";
-import API from '../../langapi/http';
+// import API from '../../langapi/http';
 import { constants } from "../../utils/constants";
 import EnImg from "../../assets/img/icon/en.png"
 import FrImg from "../../assets/img/icon/fr.png"
@@ -24,9 +24,7 @@ class Headertwo extends Component {
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
     this.removeAll = this.removeAll.bind(this);
-
   }
-
 
 
   //languagesssss
@@ -84,15 +82,19 @@ class Headertwo extends Component {
       false
     );
 
+
     try {
-      const activeLang = localStorage.getItem('lang');
+      // const headerData = JSON.parse(localStorage.getItem('commonData'));
 
-      const menuResponse = await API.get(`/common?lang=${activeLang}`);
+      // const menuResponse = await API.get(`/common?lang=${activeLang}`);
 
-      let menuLinks = menuResponse.data?.data.find(
+      console.log("headerData", this.props?.headerData);
+
+
+      let menuLinks = this.props.headerData.find(
         (x) => x.type === "header"
       )?.menuItems;
-      let contact = menuResponse.data?.data?.find((x) => x.type === "header")?.contact;
+      let contact = this.props.headerData?.find((x) => x.type === "header")?.contact;
       if (menuLinks) {
         this.setState({ widgetMenuLinks: menuLinks });
       }
@@ -152,11 +154,14 @@ class Headertwo extends Component {
     }
   };
 
+
   render() {
     const className = this.props.isMobile ? "breakpoint-on" : "";
     const classNamess = this.props.isMobile ? "d-none" : "";
     const classNamesss = this.props.isTop ? "sticky-active" : "";
     const activeLang = localStorage.getItem('lang');
+
+    // console.log("headerData", this.props.headerData);
 
 
     return (
