@@ -4,8 +4,6 @@ import Slider from "react-slick";
 import ReactWOW from 'react-wow'
 import { Hidden } from "@material-ui/core";
 import { constants } from '../../../utils/constants';
-// import bannerimg1 from '../../../assets/img/banner/home.jpg';
-// import bannerimg2 from '../../../assets/img/banner/05.jpg';
 
 
 class Banner extends Component {
