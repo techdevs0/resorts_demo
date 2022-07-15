@@ -7,44 +7,8 @@ class Footertwo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      redText: false,
-      footerData: null,
+      redText: false
     };
-  }
-  async componentDidMount() {
-
-    const data = this.props.footerLinks?.find((x) => x.type === "footer");
-    const second = data?.second;
-    this.setState({
-      footerData: {
-        second: second,
-      }
-    });
-
-    window.addEventListener('scroll', () => {
-      this.setState({
-        isTop: window.scrollY > 300
-      });
-    }, false);
-  }
-
-  async componentDidUpdate(prevProps) {
-    if (this.props.footerLinks !== prevProps.footerLinks) {
-
-      const data = this.props.footerLinks?.find((x) => x.type === "footer");
-      const second = data?.second;
-      this.setState({
-        footerData: {
-          second: second,
-        }
-      });
-
-      window.addEventListener('scroll', () => {
-        this.setState({
-          isTop: window.scrollY > 300
-        });
-      }, false);
-    }
   }
 
   scrollToTop() {
@@ -53,6 +17,7 @@ class Footertwo extends Component {
       behavior: "smooth"
     });
   }
+
   render() {
     const className = this.state.isTop ? 'active' : '';
     const activeLang = localStorage.getItem('lang');
@@ -84,7 +49,7 @@ class Footertwo extends Component {
                       <ul>
 
                         {
-                          this.state.footerData?.second?.links?.map(x => (
+                          this.props.footerLinks?.find((x) => x.type === "footer")?.second?.links?.map(x => (
                             <li><Link to={`/${activeLang}/${x.slug}`}>{x.text}</Link></li>
 
                           ))
@@ -96,7 +61,6 @@ class Footertwo extends Component {
                 </div>
               </div>
             </div>
-
 
             <div className="footer-bottom-wrapper py-1">
               <div className="container d-flex flex-wrap justify-content-between align-items-center">
@@ -118,7 +82,6 @@ class Footertwo extends Component {
               </div>
             </div>
           </div>
-
 
           <div className="copyright-area py-2">
             <div className="container">

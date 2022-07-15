@@ -17,8 +17,6 @@ class Headertwo extends Component {
       redText: false,
       isMobile: false,
       isTop: false,
-      widgetMenuLinks: [],
-      contact: null,
     };
     this.addClass = this.addClass.bind(this);
     this.removeClass = this.removeClass.bind(this);
@@ -80,42 +78,6 @@ class Headertwo extends Component {
       },
       false
     );
-
-
-    try {
-
-      let menuLinks = this.props.headerData.find(
-        (x) => x.type === "header"
-      )?.menuItems;
-      let contact = this.props.headerData?.find((x) => x.type === "header")?.contact;
-      if (menuLinks) {
-        this.setState({ widgetMenuLinks: menuLinks });
-      }
-      if (contact) {
-        this.setState({ contact: contact });
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async componentDidUpdate(prevProps) {
-    if (this.props.headerData !== prevProps.headerData) {
-      try {
-        let menuLinks = this.props.headerData.find(
-          (x) => x.type === "header"
-        )?.menuItems;
-        let contact = this.props.headerData?.find((x) => x.type === "header")?.contact;
-        if (menuLinks) {
-          this.setState({ widgetMenuLinks: menuLinks });
-        }
-        if (contact) {
-          this.setState({ contact: contact });
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    }
   }
 
   toggleSubMenu = (text) => {
@@ -259,7 +221,7 @@ class Headertwo extends Component {
 
                 <div className="menu-items d-lg-none d-xl-none menuDisplay">
                   <ul>
-                    {this.state.widgetMenuLinks?.map((x) =>
+                    {this.props.headerData?.find((x) => x.type === "header")?.menuItems?.map((x) =>
                       !x.subMenu?.length > 0 ? (
                         <li className="text-capitalize">
                           <Link to={`/${activeLang}/${x.slug}`}>{x.text}</Link>
@@ -375,33 +337,33 @@ class Headertwo extends Component {
                     <>
                       <i className="fas fa-phone mr-2 d-inline-block" />
                       <a
-                        href={`tel:${this.state.contact?.phone?.replace(
+                        href={`tel:${this.props.headerData?.find((x) => x.type === "header")?.contact?.phone?.replace(
                           /\s+/g,
                           ""
                         )}`}
                       >
                         <span className="title">
-                          {this.state.contact?.phone}
+                          {this.props.headerData?.find((x) => x.type === "header")?.contact?.phone}
                         </span>
                       </a>
                     </>
                     <>
                       <i className="fab fa-whatsapp mx-2 d-inline-block" />
                       <a
-                        href={`https://wa.me/${this.state.contact?.phone
+                        href={`https://wa.me/${this.props.headerData?.find((x) => x.type === "header")?.contact?.phone
                           ?.replace("+", "")
                           .replace(/\s+/g, "")}`}
                       >
                         <span className="title">
-                          {this.state.contact?.whatsapp}
+                          {this.props.headerData?.find((x) => x.type === "header")?.contact?.whatsapp}
                         </span>
                       </a>
                     </>
                   </div>
                   <div className="item d-lg-flex align-items-center">
                     <i className="fas fa-envelope mr-2 d-inline-block" />
-                    <a href={`mailto:${this.state.contact?.email}`}>
-                      <span className="title">{this.state.contact?.email}</span>
+                    <a href={`mailto:${this.props.headerData?.find((x) => x.type === "header")?.contact?.email}`}>
+                      <span className="title">{this.props.headerData?.find((x) => x.type === "header")?.contact?.email}</span>
                     </a>
                   </div>
                 </div>
@@ -443,7 +405,7 @@ class Headertwo extends Component {
                 {constants?.site_content?.header_content?.explore[activeLang]}
               </h5>
               <ul>
-                {this.state.widgetMenuLinks?.map((x) =>
+                {this.props.headerData?.find((x) => x.type === "header")?.menuItems?.map((x) =>
                   !x.subMenu?.length > 0 ? (
                     <li className="text-capitalize">
                       <Link to={`/${activeLang}/${x.slug}`}>{x.text}</Link>
