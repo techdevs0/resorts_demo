@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import API from '../../langapi/http';
 import ReactPaginate from "react-paginate";
 import PageLayout from '../layouts/PageLayout';
-import bannerImg from "../../assets/img/blog/blogBanner.jpg"
 import { constants } from '../../utils/constants';
 import SEOTags from "../sections/common/SEOTags";
 

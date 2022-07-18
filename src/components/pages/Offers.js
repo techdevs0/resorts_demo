@@ -6,8 +6,6 @@ import SEOTags from "../sections/common/SEOTags";
 import { constants } from "../../utils/constants";
 import PageLayout from '../layouts/PageLayout';
 
-const bannerImage = require("./../../assets/img/offers/stay.jpg");
-
 const pageId = '629a08d1316b8e36e6367322';
 
 class Offers extends Component {

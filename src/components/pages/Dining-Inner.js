@@ -4,7 +4,7 @@ import DiningInnerInfo from "../sections/dining-inner/dining-grid";
 import OtherRecommendations from "../sections/dining-inner/dining-inner-grid-item";
 import PageLayout from "../layouts/PageLayout";
 import FAQInnerSection from "../sections/common/FAQInnerSection";
-import SunsetBarBeverageMenu from '../../assets/img/dinning/FCR Wine List UPDATED.pdf';
+import SunsetBarBeverageMenu from '../../assets/img/dinning/Sunset Bar Drink Menu.pdf';
 import ParisSeychellesMainMenu from '../../assets/img/dinning/Paris Seychelles Menu Updated.pdf';
 import LeCocolobaBarDrinksMenu from '../../assets/img/dinning/Le Cocoloba Bar Drinks Menu.pdf';
 import LeCocolobaFoodMenu from '../../assets/img/dinning/Le Cocoloba Food Menu.pdf';
