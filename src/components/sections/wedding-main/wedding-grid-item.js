@@ -10,14 +10,6 @@ const WeddingGridItem = (props) => {
         <div className="wedding-description">
           <h4 className="mb-2">{props.title}</h4>
           <div dangerouslySetInnerHTML={{ __html: props.description }}></div>
-          {/* <ul>
-            {
-              props.description?.map(x => (
-                // <span className="d-block w-50 float-left text-left">• {x}</span>
-                <li>{x}</li>
-              ))
-            }
-          </ul> */}
           <div className="clearfix"></div>
         </div>
       </div>

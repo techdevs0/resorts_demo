@@ -63,7 +63,6 @@ const GuestReviews = (props) => {
                             <ReactStars classNames="gt-rating" count={5} value={x.rating} edit={false} size={28} />
                             <h4 className="gt-title">{x.title}</h4>
                             <p className="gt-review">{x.review}</p>
-                            {/* <p className="gt-date">Date of Stay: {x.stayDate}</p> */}
                             <a href={x.link} class="mt-2">
                                 {constants?.site_content?.home_page?.guest_review?.btn_text[props?.activeLang]}
                             </a>

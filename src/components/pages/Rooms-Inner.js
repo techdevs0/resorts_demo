@@ -6,7 +6,6 @@ import RoomVR360 from "../sections/rooms-inner/room-360";
 import BookingFormVertical from "../sections/rooms-inner/BookingFormVertical";
 import API from '../../langapi/http';
 import PageLayout from "../layouts/PageLayout";
-// import SEOTags from "../sections/common/SEOTags";
 import { Helmet } from "react-helmet";
 import FAQInnerSection from "../sections/common/FAQInnerSection";
 import { constants } from "../../utils/constants";
@@ -132,7 +131,6 @@ class RoomsInner extends Component {
     const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white rooms-inner-wrapper">
-        {/* <SEOTags meta={this.state.singleRoom?.meta_title} /> */}
         <Helmet>
           <title>
             {

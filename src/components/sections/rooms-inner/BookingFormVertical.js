@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DatePickerComponent from "../../layouts/DatePickerComponent";
 import { constants } from '../../../utils/constants';
 
-import DateFnsUtils from '@date-io/date-fns';
 const year = `${new Date().getFullYear()}`;
 const month = (new Date().getMonth() + 1).toString().length === 1 ? `0${new Date().getMonth() + 1}` : `${new Date().getMonth() + 1}`;
 const day = (new Date().getDate()).toString().length === 1 ? `0${new Date().getDate()}` : `${new Date().getDate()}`;
@@ -33,8 +31,6 @@ class BookingFormVertical extends Component {
     }
     this.wrapperRef = React.createRef();
     this.propmoWrapperRef = React.createRef();
-
-    // this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
 
   }
@@ -44,57 +40,16 @@ class BookingFormVertical extends Component {
     let newDate = this.nextDate(cur);
     let checkOutMin = newDate;
 
-    // console.log(newDate);
-    this.setState({ checkOut: newDate, checkIn: cur, checkOutMin: checkOutMin });//
-    // this.setState(newDate);    //updating state for check-out date
-
+    this.setState({ checkOut: newDate, checkIn: cur, checkOutMin: checkOutMin });
 
   }
 
   nextDate = (cur) => {
     let currentdate = new Date(new Date(cur).getTime() + 24 * 60 * 60 * 1000);
-    // let currMonth  = currentdate.getMonth()+1;
-    // if(currMonth <= 9){
-    //     currMonth = '0' + currMonth;
-    // }
-    // console.log(currMonth);
-
-    // let currDate  = currentdate.getDate();
-    // if(currDate <= 9){
-    //     currDate = '0' + (currDate+1);
-    // }
-    // else{
-    //     currDate = currDate+1;
-    // }
-
-    // currDate = currDate.toString();
-    // console.log(currDate);
-
     let datetime = (currentdate.getFullYear() + "-" + (("0" + (currentdate.getMonth() + 1)).slice(-2)) + "-" + (("0" + currentdate.getDate()).slice(-2)))
-
-    // let datetime =
-    //     currentdate.getFullYear() +
-    //     "-" +
-    //     (currMonth) +
-    //     "-" +
-    //     (currDate)
-    // this.setState({checkOut: datetime });
-    // this.setState({  checkOut: datetime , checkIn: cur.target.value  });
-    // console.log("datetime", datetime);
     return datetime;
   }
 
-  // handleCheckInChange = (e) => {
-  //
-  //     let today = e.target.value;
-  //     let n = 1;
-  //     let fudate = new Date(new Date(today).setDate(new Date(today).getDate() + n));
-  //     fudate = fudate.getFullYear() +  '-' + (fudate.getMonth() + 1) + '-' + fudate.toDateString().substring(8, 10) ;
-  //     this.setState({checkOut: fudate });
-  //     this.setState({  checkOut: fudate , checkIn: e.target.value  });
-  //     // console.log(this.state.checkOut);
-  //     // debugger;
-  // }
   handleCheckOutChange = (date) => {
     this.setState({ checkOut: date, openCheckOut: false })
   }
@@ -111,7 +66,6 @@ class BookingFormVertical extends Component {
 
     window.gtag_report_conversion(finalURL);
     return;
-    // window.open(finalURL, '_blank') || window.location.replace(finalURL);
 
   }
 
@@ -190,9 +144,6 @@ class BookingFormVertical extends Component {
                     })}
                     onChange={(date => this.handleCheckOutChange(date))}
                   />
-                  {/* <input onChange={this.dateChange} type="date" value={this.state.checkIn} className="form-control" placeholder="Check In" min={new Date().toISOString().split('T')[0]}></input>
-                  <span className="d-none d-sm-block">-</span>
-                  <input onChange={this.handleCheckOutChange} type="date" value={this.state.checkOut} min={this.state.checkOutMin} className="form-control" placeholder="Check Out" ></input> */}
                 </div>
               </div>
               <div className="col-12 col-md-12">
@@ -402,7 +353,6 @@ class BookingFormVertical extends Component {
               </div>
             </div>
           </div>
-          {/* <button className="main-btn w-100 btn-eden d-block my-5 d-sm-none">Book Now</button> */}
         </div>
       </section>
     );

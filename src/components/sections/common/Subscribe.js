@@ -31,15 +31,11 @@ const Subscribe = ({ activeLang }) => {
   }
 
   return (
-    <footer
-    // style={{ backgroundColor: '#f8f8f8' }}
-    >
+    <footer>
       <div className="footer-subscibe-area">
         <h1 className="subscribe-title">
           {constants?.site_content?.about_page?.subscribe?.title[activeLang]}
         </h1>
-        {/* <div className="row justify-content-center"> */}
-        {/* <div className="col-lg-8"> */}
         <div className="subscribe-text text-center">
           <p>
             {constants?.site_content?.about_page?.subscribe?.subtitle[activeLang]}
@@ -57,8 +53,6 @@ const Subscribe = ({ activeLang }) => {
             }
           </form>
         </div>
-        {/* </div> */}
-        {/* </div> */}
       </div>
     </footer>
   );

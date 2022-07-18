@@ -4,7 +4,6 @@ import { constants } from '../../../utils/constants';
 
 const RoomGridItem = (props) => {
   return (
-    // {console.log(props)};
     <div className="room-grid-item-wrapper" >
       <div className="grid-item">
         <div className="room-title" onClick={() => props.history.push(`/${props?.activeLang}/rooms/${props.link}`)} style={{ backgroundImage: `url(${props.image})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>

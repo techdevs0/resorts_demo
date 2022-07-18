@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import RoomGridItem from './offer-grid-item';
 
 const OfferGrid = (props) => {

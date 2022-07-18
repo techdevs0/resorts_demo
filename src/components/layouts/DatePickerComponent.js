@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import DateFnsUtils from "@date-io/date-fns";
-import {KeyboardDatePicker, MuiPickersUtilsProvider} from "@material-ui/pickers";
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import $ from "jquery";
-import {ThemeProvider} from "@material-ui/styles";
-import {createMuiTheme, createStyles, IconButton, withStyles} from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/styles";
+import { createMuiTheme, createStyles, IconButton, withStyles } from "@material-ui/core";
 import clsx from "clsx";
 import format from "date-fns/format";
 import isBefore from "date-fns/isBefore";
@@ -90,7 +90,7 @@ const styles = createStyles(theme => ({
 
 // #be8a7d
 const DatePickerComponent = (props) => {
-    let {value, placeholder, minDate, onChange, open, disablePast, id, onOpen, onClose, dateRange, startDate} = props;
+    let { value, placeholder, minDate, onChange, open, disablePast, id, onOpen, onClose, dateRange, startDate } = props;
 
     useEffect(() => {
         $(document).ready(() => {
@@ -100,24 +100,13 @@ const DatePickerComponent = (props) => {
         })
     }, []);
     const renderWrappedMonthDays = (date, selectedDate, dayInCurrentMonth) => {
-        // console.log("renderWrappedWeekDay",date);
-        // console.log("renderWrappedWeekDay",selectedDate);
-        // console.log("renderWrappedWeekDay",startDate);
-        // console.log("renderWrappedWeekDay",value);
-        // console.log("renderWrappedWeekDay",dayInCurrentMonth)
-        // console.log("renderWrappedWeekDay",minDate)
-        // console.log("renderWrappedWeekDay",dayInCurrentMonth)
-        const {classes} = props;
+        const { classes } = props;
         let dateClone = new Date(date);
         let selectedDateClone = new Date(selectedDate);
         let disablePast = new Date(minDate);
-
         const start = !dateRange ? new Date(selectedDateClone.setHours(0, 0, 0, 0)) : new Date(new Date(startDate).setHours(0, 0, 0, 0));
         const end = !dateRange ? new Date(selectedDateClone.setHours(23, 59, 59, 999)) : new Date(new Date(value).setHours(23, 59, 59, 999));
-        // console.log("renderWrappedWeekDay", start)
-        // console.log("renderWrappedWeekDay", end)
-        // console.log("renderWrappedWeekDay", selectedDateClone)
-        const dayIsBetween = isWithinInterval(dateClone, {start, end});
+        const dayIsBetween = isWithinInterval(dateClone, { start, end });
         const isFirstDay = isSameDay(dateClone, start);
         const isLastDay = isSameDay(dateClone, end);
         const isBefore_ = isBefore(disablePast, dateClone);
@@ -166,9 +155,6 @@ const DatePickerComponent = (props) => {
                     animateYearScrolling={true}
                     autoOk={true}
                     onOpen={onOpen}
-                    // PopoverProps={{
-                    //     disableScrollLock: true,
-                    // }}
                     onClose={onClose}
                     disablePast={disablePast}
                     open={open}

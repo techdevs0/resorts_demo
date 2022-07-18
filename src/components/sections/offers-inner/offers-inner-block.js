@@ -15,19 +15,6 @@ const OffersInnerMainBlock = (props) => {
           </div>
           <div className="main-item pl-sm-4">
             <div dangerouslySetInnerHTML={{ __html: props.offerData?.post_content }} />
-            {/* <h6 className="mv">All for AED 4000/- only
-            <br />
-              <small>Terms &amp; Conditions applied.</small>
-            </h6> */}
-            {/* <div className="share-block">
-              <p>Share with friends and family</p>
-              <div className="share-social-links">
-                <a href="https://www.facebook.com/fishermanscoveresort/"><i className="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/fisherman_cove"><i className="fab fa-twitter"></i></a>
-                <a href="https://wa.me/2482816329"><i className="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/fishermanscove.resort/"><i className="fab fa-instagram"></i></a>
-              </div>
-            </div> */}
             <div className="reservations-block mt-3">
               <p>
                 {constants?.site_content?.offersInner_page?.reservation?.title[props?.activeLang]}

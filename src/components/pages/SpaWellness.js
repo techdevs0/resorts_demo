@@ -6,8 +6,6 @@ import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
 
-
-
 const pageId = `629707716acdd721ac47ee52`;
 
 class SpaWellness extends Component {

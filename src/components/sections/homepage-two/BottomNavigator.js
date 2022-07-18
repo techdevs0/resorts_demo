@@ -1,14 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
-import { constants } from '../../../utils/constants';
-
-// import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import {
-  HomeRounded,
   PhoneRounded,
   EmailRounded,
-  EventRounded,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
@@ -57,7 +52,6 @@ const BottomNavigator = ({ activeLang }) => {
                 : activeLang === "de" ? "JETZT BUCHEN"
                   : "Book Now"
           }
-          {/* {constants?.site_content?.home_page?.banner?.btn3[activeLang]} */}
         </Link>
         <a href="tel:+2484677000">
           <PhoneRounded />

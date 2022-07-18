@@ -1,5 +1,4 @@
 import React from 'react';
-import { constants } from '../../../utils/constants';
 
 const SustainIntroBlock = (props) => {
   return (

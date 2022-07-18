@@ -7,8 +7,6 @@ import PageLayout from '../layouts/PageLayout';
 import { constants } from '../../utils/constants';
 import Helmet from "react-helmet";
 
-
-
 const Blogdetails = (props) => {
 
   const activeLang = localStorage.getItem('lang');

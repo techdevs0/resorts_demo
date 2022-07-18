@@ -3,7 +3,6 @@ import DiningInnerTitleBlock from "../sections/dining-inner/main-text-block";
 import DiningInnerInfo from "../sections/dining-inner/dining-grid";
 import OtherRecommendations from "../sections/dining-inner/dining-inner-grid-item";
 import PageLayout from "../layouts/PageLayout";
-// import SEOTags from "../sections/common/SEOTags";
 import FAQInnerSection from "../sections/common/FAQInnerSection";
 import SunsetBarBeverageMenu from '../../assets/img/dinning/FCR Wine List UPDATED.pdf';
 import ParisSeychellesMainMenu from '../../assets/img/dinning/Paris Seychelles Menu Updated.pdf';
@@ -158,7 +157,6 @@ class DiningInner extends Component {
     const activeLang = localStorage.getItem('lang');
     return (
       <div className="bg-white dining-inner-wrapper">
-        {/* <SEOTags meta={this.state.singleHotel?.meta_title} /> */}
         <Helmet>
           <title>
             {

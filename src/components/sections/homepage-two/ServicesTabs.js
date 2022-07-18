@@ -8,22 +8,6 @@ import Box from '@material-ui/core/Box';
 import { Grid, Paper } from '@material-ui/core';
 import { constants } from '../../../utils/constants';
 
-
-const placeholderImage = require('./../../../assets/img/img-placeholder.png')
-
-
-const LazyImage = src => {
-    const [sourceLoaded, setSourceLoaded] = useState(null)
-
-    useEffect(() => {
-        const img = new Image()
-        img.src = src
-        img.onload = () => setSourceLoaded(src)
-    }, [src])
-
-    return sourceLoaded
-}
-
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -63,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         width: '100%',
         backgroundColor: theme.palette.background.paper,
-        // boxShadow: '0 0 8px #dadada'
     },
 }));
 
@@ -113,7 +96,6 @@ const ServiceTabs = (props) => {
                                                 <h1 className="hotel-title my-4"
                                                     dangerouslySetInnerHTML={{ __html: x.short_description }}
                                                 >
-                                                    {/* {x.short_description} */}
                                                 </h1>
                                                 <a href={`${x?.post_name === "Book Now" ? `${x.post_url}` : `/${props?.activeLang}/${x.post_url}`}`}>
                                                     <button className="main-btn btn-filled mt-4" >
