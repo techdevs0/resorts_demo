@@ -32,7 +32,6 @@ const breadcrumbItems = [
 class RoomsInner extends Component {
   state = {
     singleRoom: {},
-    meta: {},
     othersData: [],
     faqsData: []
   };
@@ -43,39 +42,29 @@ class RoomsInner extends Component {
       //getting single post data
       const activeLang = localStorage.getItem('lang');
 
-      API.get(`/faqs?lang=${activeLang}`).then((faqresponse) => {
-        this.setState({
-          faqsData:
-            faqresponse?.data?.data?.filter(
-              (x) => x.page === "rooms"
-            ) || [],
-        });
-      });
-
-      const response = await API.get(`/rooms/${id}?lang=${activeLang}`);
+      const response = await API.get(`/get_single_room/${id}?lang=${activeLang}`);
       //making breadcrumbs dynamic, appending into last item
       breadcrumbItems[breadcrumbItems.length - 2].text =
         constants?.site_content?.rooms_page?.bread_crumb?.title2[activeLang];
       breadcrumbItems[breadcrumbItems.length - 1].text =
-        response.data.data?.post_name;
+        response.data?.room?.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
-        "/rooms/" + response.data.data?.slug;
+        "/rooms/" + response.data?.room?.slug;
 
-      let singleRoom = response.data.data;
+      let singleRoom = response.data?.room;
 
       singleRoom.roomCode = singleRoom?.post_url?.split("room=")[1];
 
       this.setState({ singleRoom });
 
-      //fetching others room data for
-      API.get(`/rooms?lang=${activeLang}`).then((othersResponse) => {
-        this.setState({
-          othersData:
-            othersResponse.data?.data?.filter(
-              (x) => x._id !== this.state.singleRoom?._id
-            ) || [],
-        });
-      });
+      let faqsData = response.data?.faqs;
+
+      this.setState({ faqsData });
+
+      let othersData = response.data?.related;
+
+      this.setState({ othersData });
+
     } catch (error) {
       console.log(error);
     }
@@ -87,40 +76,30 @@ class RoomsInner extends Component {
       try {
         const activeLang = localStorage.getItem('lang');
 
-        API.get(`/faqs?lang=${activeLang}`).then((faqresponse) => {
-          this.setState({
-            faqsData:
-              faqresponse?.data?.data?.filter(
-                (x) => x.page === "rooms"
-              ) || [],
-          });
-        });
-
-        //getting single post data
-        const response = await API.get(`/rooms/${id}?lang=${activeLang}`);
+        //getting single room data
+        const response = await API.get(`/get_single_room/${id}?lang=${activeLang}`);
         //making breadcrumbs dynamic, appending into last item
         breadcrumbItems[breadcrumbItems.length - 2].text =
           constants?.site_content?.rooms_page?.bread_crumb?.title2[activeLang];
         breadcrumbItems[breadcrumbItems.length - 1].text =
-          response.data.data.post_name;
+          response.data.room.post_name;
         breadcrumbItems[breadcrumbItems.length - 1].link =
-          "/rooms/" + response.data.data.slug;
+          "/rooms/" + response.data.room.slug;
 
-        let singleRoom = response.data.data;
+        let singleRoom = response.data?.room;
 
         singleRoom.roomCode = singleRoom?.post_url?.split("room=")[1];
 
         this.setState({ singleRoom });
 
-        //fetching others room data for
-        API.get(`/rooms?lang=${activeLang}`).then((othersResponse) => {
-          this.setState({
-            othersData:
-              othersResponse.data?.data.filter(
-                (x) => x._id !== this.state.singleRoom?._id
-              ) || [],
-          });
-        });
+        let faqsData = response.data?.faqs;
+
+        this.setState({ faqsData });
+
+        let othersData = response.data?.related;
+
+        this.setState({ othersData });
+
       } catch (error) {
         console.log(error);
       }
@@ -186,7 +165,8 @@ class RoomsInner extends Component {
                 {/*====== OTHERS GRID END ======*/}
               </div>
               <FAQInnerSection
-                faqList={this.state.faqsData.filter((x) => x.innerpage === this.state.singleRoom?.slug)}
+                // faqList={this.state.faqsData.filter((x) => x.innerpage === this.state.singleRoom?.slug)}
+                faqList={this.state.faqsData}
                 activeLang={activeLang}
               />
             </PageLayout>

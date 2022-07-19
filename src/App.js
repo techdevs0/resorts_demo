@@ -84,7 +84,7 @@ function App() {
   useEffect(() => {
     const activeLang = localStorage.getItem('lang');
 
-    API.get(`/pages?lang=${activeLang}`).then(res => {
+    API.get(`/get_pages?lang=${activeLang}`).then(res => {
       if (res.status === 200) {
         const data = res?.data?.data;
         setAppRoutes(data);

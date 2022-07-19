@@ -21,7 +21,7 @@ class RoomSuites extends Component {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      API.get(`/rooms?lang=${activeLang}`).then(response => {
+      API.get(`/get_rooms_list?lang=${activeLang}`).then(response => {
         const roomsData = response.data?.data?.filter(x => x.room_type == 1);
         const suitesData = response.data?.data?.filter(x => x.room_type == 2);
         this.setState({ roomsData, suitesData });

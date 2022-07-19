@@ -31,7 +31,7 @@ class Footertwo extends Component {
         {/*====== FOOTER START ======*/}
         <div className="container-1">
         </div>
-        <footer className={`footer-two ${window.location.pathname === "/" || window.location.pathname === "/en" || window.location.pathname === "/fr" || window.location.pathname === "/de" ? "" : " mt-5"}`}>
+        <footer className={`footer-two ${window.location.pathname === "/" || window.location.pathname === "/en" || window.location.pathname === "/fr" || window.location.pathname === "/de" || window.location.pathname === "/ru" ? "" : " mt-5"}`}>
           <div className="footer-widget-area pt-30 pb-30">
             <div className="container">
               <div className="row">
