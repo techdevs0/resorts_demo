@@ -22,7 +22,7 @@ class Dining extends Component {
   componentDidMount() {
     const activeLang = localStorage.getItem('lang');
 
-    API.get(`/dinings?lang=${activeLang}`).then(response => {
+    API.get(`/get_dinings?lang=${activeLang}`).then(response => {
       this.setState({ diningData: response.data?.data });
     })
       .then(() => {

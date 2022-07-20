@@ -71,7 +71,6 @@ class DiningInner extends Component {
     singleHotel: {},
     othersData: [],
     sections: null,
-    pageSections: [],
     faqsData: []
   };
 
@@ -81,17 +80,8 @@ class DiningInner extends Component {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      API.get(`/faqs?lang=${activeLang}`).then((faqresponse) => {
-        this.setState({
-          faqsData:
-            faqresponse?.data?.data?.filter(
-              (x) => x.page === "dining"
-            ) || [],
-        });
-      });
-
-      const response = await API.get(`/dinings/${id}?lang=${activeLang}`);
-      let singleHotel = response?.data?.data;
+      const response = await API.get(`/get_single_dining/${id}?lang=${activeLang}`);
+      let singleHotel = response.data?.dining;
       breadcrumbItems[breadcrumbItems.length - 2].text = constants?.site_content?.dinning_page?.bread_crumb?.title2[activeLang];
       breadcrumbItems[breadcrumbItems.length - 1].text = singleHotel.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
@@ -99,15 +89,14 @@ class DiningInner extends Component {
 
       this.setState({ singleHotel });
 
-      API.get(`/dinings?lang=${activeLang}`).then((res) => {
-        this.setState({
-          othersData:
-            res?.data?.data?.filter(
-              (x) =>
-                x._id !== this.state.singleHotel?._id
-            ) || [],
-        });
-      })
+      let faqsData = response.data?.faqs;
+
+      this.setState({ faqsData });
+
+      let othersData = response.data?.related;
+
+      this.setState({ othersData });
+
     } catch (error) {
       console.log(error);
     }
@@ -121,17 +110,8 @@ class DiningInner extends Component {
       try {
         const activeLang = localStorage.getItem('lang');
 
-        API.get(`/faqs?lang=${activeLang}`).then((faqresponse) => {
-          this.setState({
-            faqsData:
-              faqresponse?.data?.data?.filter(
-                (x) => x.page === "dining"
-              ) || [],
-          });
-        });
-
-        const response = await API.get(`/dinings/${id}?lang=${activeLang}`);
-        let singleHotel = response?.data?.data;
+        const response = await API.get(`/get_single_dining/${id}?lang=${activeLang}`);
+        let singleHotel = response.data?.dining;
         breadcrumbItems[breadcrumbItems.length - 2].text = constants?.site_content?.dinning_page?.bread_crumb?.title2[activeLang];
         breadcrumbItems[breadcrumbItems.length - 1].text =
           singleHotel.post_name;
@@ -140,14 +120,14 @@ class DiningInner extends Component {
 
         this.setState({ singleHotel });
 
-        API.get(`/dinings?lang=${activeLang}`).then((othersResponse) => {
-          this.setState({
-            othersData:
-              othersResponse?.data?.data?.filter(
-                (x) => x._id !== this.state.singleHotel?._id
-              ) || [],
-          });
-        });
+        let faqsData = response.data?.faqs;
+
+        this.setState({ faqsData });
+
+        let othersData = response.data?.related;
+
+        this.setState({ othersData });
+
       } catch (error) {
         console.log(error);
       }
@@ -201,7 +181,8 @@ class DiningInner extends Component {
               {/*====== OTHERS GRID END ======*/}
 
               <FAQInnerSection
-                faqList={this.state.faqsData.filter((x) => x.innerpage == this.state.singleHotel?.slug)}
+                // faqList={this.state.faqsData.filter((x) => x.innerpage == this.state.singleHotel?.slug)}
+                faqList={this.state.faqsData}
                 activeLang={activeLang}
               />
 
