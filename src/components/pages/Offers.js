@@ -17,11 +17,8 @@ class Offers extends Component {
   async componentDidMount() {
     try {
       const activeLang = localStorage.getItem('lang');
-
-      const response = await API.get(`/offers?lang=${activeLang}`);
-      // debugger;
+      const response = await API.get(`/get_offers?lang=${activeLang}`);
       this.setState({ offers: response.data?.data?.filter((x) => x.is_premium === 0) || [] });
-
       API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
         this.setState({
           banner: response?.data?.data[0]?.banner,

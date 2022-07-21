@@ -32,14 +32,14 @@ class OffersInner extends Component {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      const response = await API.get(`/offers/${id}?lang=${activeLang}`);
+      const response = await API.get(`/get_single_offer/${id}?lang=${activeLang}`);
 
-      let offerData = response?.data?.data;
+      let offerData = response?.data?.offer;
 
       breadcrumbItems[breadcrumbItems.length - 2].text = constants?.site_content?.offers_page?.bread_crumb?.title2[activeLang];
-      breadcrumbItems[breadcrumbItems.length - 1].text = offerData.post_name;
+      breadcrumbItems[breadcrumbItems.length - 1].text = offerData?.post_name;
       breadcrumbItems[breadcrumbItems.length - 1].link =
-        "/offers/" + offerData.route;
+        "/offers/" + offerData?.route;
       this.setState({ offerData });
 
     } catch (error) {
