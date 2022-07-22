@@ -74,7 +74,8 @@ class Banner extends Component {
                                 window.gtag_report_conversion(`${this.props?.activeLang === "en" ? 'https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB'
                                   : this.props?.activeLang === "fr" ? 'https://be.synxis.com/?Hotel=31842&Chain=27304&locale=fr-FR'
                                     : this.props?.activeLang === "de" ? 'https://be.synxis.com/?Hotel=31842&Chain=27304&locale=de-DE'
-                                      : 'https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB'
+                                      : this.props?.activeLang === "ru" ? 'https://be.synxis.com/?Hotel=31842&Chain=27304&locale=ru-RU'
+                                        : 'https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB'
                                   }`)
                               }
                             >{item.btn3}</Link>

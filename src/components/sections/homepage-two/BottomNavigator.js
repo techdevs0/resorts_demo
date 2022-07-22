@@ -42,7 +42,8 @@ const BottomNavigator = ({ activeLang }) => {
             window.gtag_report_conversion(`${activeLang === "en" ? 'https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB'
               : activeLang === "fr" ? 'https://be.synxis.com/?Hotel=31842&Chain=27304&locale=fr-FR'
                 : activeLang === "de" ? 'https://be.synxis.com/?Hotel=31842&Chain=27304&locale=de-DE'
-                  : 'https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB'
+                  : this.props?.activeLang === "ru" ? 'https://be.synxis.com/?Hotel=31842&Chain=27304&locale=ru-RU'
+                    : 'https://be.synxis.com/?&chain=27304&hotel=31842&locale=en-GB'
               }`)
           }
         >
