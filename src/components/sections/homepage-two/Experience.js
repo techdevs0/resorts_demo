@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import ReactWOW from 'react-wow';
 import { constants } from '../../../utils/constants';
-
+import { LazyImage } from "react-lazy-images";
 
 
 class Experience extends Component {
@@ -40,7 +40,23 @@ class Experience extends Component {
                             data.map(x => (
                                 <div className="experience-item" onClick={() => this.props.history.push(`/${this.props?.activeLang}${x.link}`)}>
                                     <div className="background">
-                                        <img className="img-fluid w-100 h-100" src={x.image} alt="" />
+                                        <LazyImage
+                                            src={x.image}
+                                            alt={"demonstration"}
+                                            debounceDurationMs={800}
+                                            placeholder={({ imageProps, ref }) => (
+                                                <img
+                                                    ref={ref}
+                                                    src={x.image}
+                                                    alt={imageProps.alt}
+                                                    style={{ width: "100%" }}
+                                                />
+                                            )}
+                                            actual={({ imageProps }) => (
+                                                <img {...imageProps} style={{ width: "100%" }} className="img-fluid w-100 h-100" />
+                                            )}
+                                        />
+                                        {/* <img className="img-fluid w-100 h-100" src={x.image} alt="" /> */}
                                     </div>
                                     <div className="foreground">
                                         <h3>

@@ -21,7 +21,7 @@ class SpaWellness extends Component {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      API.get(`/get_offers?lang=${activeLang}`).then(response => {
+      API.get(`/get_premium_offers?lang=${activeLang}`).then(response => {
         this.setState({ premiumOffers: response.data?.data });
       })
         .then(() => {

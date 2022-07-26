@@ -2,6 +2,7 @@ import React from "react";
 import { Modal, Container } from "react-bootstrap";
 import CancelIcon from '@material-ui/icons/Cancel';
 import popupimg from "../../assets/img/FCR-July-Seychelles.jpg";
+import { LazyImage } from "react-lazy-images";
 
 const PopUp = (props) => {
 
@@ -24,7 +25,23 @@ const PopUp = (props) => {
 
                     <Modal.Body>
                         <a href={`/${props.activeLang}/offers/10-percentage-off-dinner-for-two`} >
-                            <img
+                            <LazyImage
+                                src={popupimg}
+                                alt={"demonstration"}
+                                debounceDurationMs={800}
+                                placeholder={({ imageProps, ref }) => (
+                                    <img
+                                        ref={ref}
+                                        src={popupimg}
+                                        alt={imageProps.alt}
+                                        style={{ width: "100%" }}
+                                    />
+                                )}
+                                actual={({ imageProps }) => (
+                                    <img {...imageProps} style={{ width: "100%" }} className="img-fluid" />
+                                )}
+                            />
+                            {/* <img
                                 src={popupimg}
                                 alt="popup fishermans cove resort"
                                 className="img-fluid"
@@ -33,7 +50,7 @@ const PopUp = (props) => {
                                     maxWidth: "600px",
                                     height: "auto"
                                 }}
-                            />
+                            /> */}
                         </a>
                     </Modal.Body>
                 </div>

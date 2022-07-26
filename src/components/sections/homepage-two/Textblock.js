@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ReactWOW from 'react-wow';
 import { constants } from '../../../utils/constants';
+import { LazyImage } from "react-lazy-images";
+
 
 
 class Textblock extends Component {
@@ -13,7 +15,23 @@ class Textblock extends Component {
                         <div className="row align-items-center1 justify-content-space-between">
                             <div className="col-lg-6">
                                 <div className="text-img text-center text-lg-left mb-3 image-wrapper">
-                                    <img src={require('../../../assets/img/text-block/hotel.webp')} alt="" />
+                                    <LazyImage
+                                        src={require('../../../assets/img/text-block/hotel.webp')}
+                                        alt={"demonstration"}
+                                        debounceDurationMs={800}
+                                        placeholder={({ imageProps, ref }) => (
+                                            <img
+                                                ref={ref}
+                                                src={require('../../../assets/img/text-block/hotel.webp')}
+                                                alt={imageProps.alt}
+                                                style={{ width: "100%" }}
+                                            />
+                                        )}
+                                        actual={({ imageProps }) => (
+                                            <img {...imageProps} style={{ width: "100%" }} />
+                                        )}
+                                    />
+                                    {/* <img src={require('../../../assets/img/text-block/hotel.webp')} alt="" /> */}
                                 </div>
                             </div>
                             <ReactWOW animation="fadeInRight" data-wow-delay=".5s">

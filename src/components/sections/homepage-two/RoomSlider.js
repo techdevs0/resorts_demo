@@ -2,6 +2,7 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { withRouter } from 'react-router-dom';
 import { constants } from '../../../utils/constants';
+import { LazyImage } from "react-lazy-images";
 
 const RoomSlider = (props) => {
 
@@ -28,7 +29,23 @@ const RoomSlider = (props) => {
                     props.data?.map(x => (
                         <div>
                             <div className="room-image-wrapper">
-                                <img src={x.thumbnailPreview} alt="" />
+                                <LazyImage
+                                    src={x.thumbnailPreview}
+                                    alt={"demonstration"}
+                                    debounceDurationMs={800}
+                                    placeholder={({ imageProps, ref }) => (
+                                        <img
+                                            ref={ref}
+                                            src={x.thumbnailPreview}
+                                            alt={imageProps.alt}
+                                            style={{ width: "100%" }}
+                                        />
+                                    )}
+                                    actual={({ imageProps }) => (
+                                        <img {...imageProps} style={{ width: "100%" }} />
+                                    )}
+                                />
+                                {/* <img src={x.thumbnailPreview} alt="" /> */}
                             </div>
                             <div className="slide-content py-3">
                                 <h1 style={{ cursor: 'pointer' }} onClick={() => props.history.push(`/${props?.activeLang}/rooms/${x.slug}`)}>{x.post_name}</h1>
