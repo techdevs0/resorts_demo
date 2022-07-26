@@ -223,7 +223,7 @@ class Headertwo extends Component {
                   <ul>
                     {this.props.headerData?.find((x) => x.type === "header")?.menuItems?.map((x) =>
                       !x.subMenu?.length > 0 ? (
-                        <li className="text-capitalize">
+                        <li className={`${activeLang === 'ru' ? '' : 'text-capitalize'}`}>
                           <Link to={`/${activeLang}/${x.slug}`}>{x.text}</Link>
                         </li>
                       ) : (
@@ -407,7 +407,7 @@ class Headertwo extends Component {
               <ul>
                 {this.props.headerData?.find((x) => x.type === "header")?.menuItems?.map((x) =>
                   !x.subMenu?.length > 0 ? (
-                    <li className="text-capitalize">
+                    <li className={`${activeLang === 'ru' ? '' : 'text-capitalize'}`}>
                       <Link to={`/${activeLang}/${x.slug}`}>{x.text}</Link>
                     </li>
                   ) : (

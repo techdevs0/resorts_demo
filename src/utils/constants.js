@@ -433,7 +433,7 @@ export const constants = {
           en: "Check Availability",
           fr: "Voir Disponibilité",
           de: "Verfügbarkeit prüfen",
-          ru: "роверить наличие"
+          ru: "Проверить наличие"
         }
       }
     },
@@ -635,7 +635,7 @@ export const constants = {
           en: "Submit",
           fr: "Soumettre",
           de: "Einreichen",
-          ru: "Представлять на рассмотрение"
+          ru: "Представить на рассмотрение"
         },
         form_title: {
           en: "Book Your Wedding Destination",
@@ -1069,7 +1069,7 @@ export const constants = {
           en: "Submit",
           fr: "Soumettre",
           de: "Einreichen",
-          ru: "Представлять на рассмотрение"
+          ru: "Представить на рассмотрение"
         },
       },
       contact_offer: {
@@ -1171,7 +1171,7 @@ export const constants = {
           en: "Terms of Use",
           fr: "Conditions d'utilisation",
           de: "Nutzungsbedingungen",
-          ru: "СРОКИ ИСПОЛЬЗОВАНИЯ"
+          ru: "Сроки использования"
         }
       }
     },
@@ -1210,7 +1210,7 @@ export const constants = {
         en: "Powered By",
         fr: "Propulsé par",
         de: "Unterstützt von",
-        ru: "Питаться от"
+        ru: "При поддержке"
       },
       copyright_by: {
         en: "Copyright By",
