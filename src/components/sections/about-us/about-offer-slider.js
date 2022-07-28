@@ -33,7 +33,7 @@ const AboutOfferSlider = (props) => {
           props.data?.map(x => (
             <a href={`${x?.post_name === "Book Now" ? `${x.post_url}` : `/${props?.activeLang}/${x.post_url}`}`}>
               <div>
-                <div className="about-slider-item" style={{ backgroundImage: `url(${x.thumbnailPreview})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                <div className="about-slider-item" style={{ backgroundImage: `url(${x.banner_imgPreview})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
                   <h3>{x.post_name}</h3>
                   <div className="slide-hover-overlay"></div>
                 </div>
