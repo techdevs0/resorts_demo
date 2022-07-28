@@ -562,6 +562,14 @@ export const constants = {
           ru: "Свадьбы"
         }
       },
+      text_block: {
+        btn_txt: {
+          en: "Download Wedding Brochure",
+          fr: "Télécharger la brochure de mariage",
+          de: "Hochzeitsbroschüre herunterladen",
+          ru: "Скачать свадебную брошюру"
+        }
+      },
       wedding_grid: {
         title: {
           en: "Wedding Services",
