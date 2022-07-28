@@ -8,17 +8,17 @@ class Experience extends Component {
     render() {
         const data = [
             {
-                image: require('../../../assets/img/experience/sustaniablity.webp'),
+                image: require('../../../assets/img/experience/sustaniablity.jpg'),
                 title: `${constants?.site_content?.home_page?.experience?.data_title1[this.props?.activeLang]}`,
                 link: '/sustainability'
             },
             {
-                image: require('../../../assets/img/experience/overview.webp'),
+                image: require('../../../assets/img/experience/overview.jpg'),
                 title: `${constants?.site_content?.home_page?.experience?.data_title2[this.props?.activeLang]}`,
                 link: '/about-us'
             },
             {
-                image: require('../../../assets/img/experience/seychelles-min.webp'),
+                image: require('../../../assets/img/experience/seychelles-min.jpg'),
                 title: `${constants?.site_content?.home_page?.experience?.data_title3[this.props?.activeLang]}`,
                 link: '/about-seychelles'
             },
