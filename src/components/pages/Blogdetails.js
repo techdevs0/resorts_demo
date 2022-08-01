@@ -52,7 +52,7 @@ const Blogdetails = (props) => {
 
   const getRecentData = () => {
     API.get(`/blogs?lang=${activeLang}`).then(response => {
-      const recentData = response.data?.data.sort(
+      const recentData = response.data?.data?.filter((x) => x.slug !== id)?.sort(
         (a, b) =>
           new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
       );

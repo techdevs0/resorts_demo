@@ -15,7 +15,7 @@ class Blogsidebar extends Component {
           <div className="popular-feed-loop">
 
             {
-              recentBlog.map((x, i) => (
+              recentBlog?.map((x, i) => (
                 <div className="single-popular-feed" key={i}>
                   <div className="feed-img">
                     <img src={x?.img} alt="image" />
