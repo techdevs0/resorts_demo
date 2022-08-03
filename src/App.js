@@ -5,6 +5,8 @@ import Preloader from './components/layouts/Preloader';
 import ScrollToTop from './components/layouts/ScrollToTop';
 import Error404 from './components/pages/Error404';
 import API from './langapi/http';
+import { useDispatch, useSelector } from "react-redux";
+import { setPages } from "./redux/actions/pagesActions";
 
 // ********* lazy loading componentes *******
 const Hometwo = lazy(() => import('./components/pages/Hometwo'));
@@ -30,6 +32,7 @@ const CovidPolicy = lazy(() => import('./components/pages/CovidPolicy'));
 const FAQ = lazy(() => import('./components/pages/FAQ'));
 const Blog = lazy(() => import('./components/pages/Blog'));
 const Blogdetails = lazy(() => import('./components/pages/Blogdetails'));
+
 
 function App() {
 
@@ -67,7 +70,6 @@ function App() {
 
   const [isMobile, setIsMobile] = useState(false);
   const [isTop, setIsTop] = useState(false);
-  const [appRoutes, setAppRoutes] = useState([]);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -81,16 +83,20 @@ function App() {
     }, false);
   })
 
-  useEffect(() => {
+  const pages = useSelector((state) => state.allPages.pages);
+  const dispatch = useDispatch();
+  const fetchPages = async () => {
     const activeLang = localStorage.getItem('lang');
+    const response = await API.get(`/get_pages?lang=${activeLang}`)
+      .catch((err) => {
+        console.log("Err: ", err);
+      });
+    dispatch(setPages(response?.data?.data));
+  };
 
-    API.get(`/get_pages?lang=${activeLang}`).then(res => {
-      if (res.status === 200) {
-        const data = res?.data?.data;
-        setAppRoutes(data);
-      }
-    })
-  }, [])
+  useEffect(() => {
+    fetchPages();
+  }, []);
 
   const mapRoute = (slug) => {
 
@@ -338,9 +344,9 @@ function App() {
           <Route path={`/ru/blogs/:id`} exact render={(props) => <Blogdetails {...props} isMobile={isMobile} isTop={isTop} />} />
 
 
-          {
-
-            appRoutes?.map(x => (
+          {pages &&
+            pages.length > 0 &&
+            pages?.map(x => (
               mapRoute(x.slug)
             ))
 
