@@ -1,124 +1,88 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import AboutTitleBlock from '../sections/about-us/main-text-block';
 import AboutServices from '../sections/about-us/about-services';
 import AboutSecondaryTextBlock from '../sections/about-us/secondary-text-block';
 import AboutOfferSlider from '../sections/about-us/about-offer-slider';
-import API from '../../langapi/http';
 import PageLayout from '../layouts/PageLayout';
 import SEOTags from "../sections/common/SEOTags";
 import { constants } from "../../utils/constants";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSections, removeSelectedSection } from '../../redux/actions/sectionsActions';
 
-const pageId = `6297070d0da7c94b690c6cc3`;
 
-class AboutUs extends Component {
-  state = {
-    premiumOffers: [],
-    sections: null,
-    banner: null,
-    meta: {}
-  }
+const AboutUs = (props) => {
 
-  async componentDidMount(prevState) {
-    try {
+  const dispatch = useDispatch();
+  const activeLang = localStorage.getItem('lang');
 
-      const activeLang = localStorage.getItem('lang');
+  //about page
+  const pageId = `6297070d0da7c94b690c6cc3`;
 
-      const { premiuimoffers } = this.props;
+  useEffect(() => {
+    if (activeLang && activeLang !== "" && pageId && pageId !== "") dispatch(fetchSections(pageId, activeLang));
+    return () => {
+      dispatch(removeSelectedSection());
+    };
+  }, [pageId]);
 
-      const premiumOffersData = await premiuimoffers;
+  const premiumOffers = useSelector((state) => state.allPremiuimOffers.premiuimoffers);
+  const banner = useSelector((state) => state.allSections.sections?.banner);
+  const sections = useSelector((state) => state.allSections.sections);
+  const meta = useSelector((state) => state.allSections.sections?.meta);
 
-      if (premiumOffersData && premiumOffersData.length > 0) {
-        this.setState({ premiumOffers: premiumOffersData })
-      }
+  const breadcrumbItems = [
+    {
+      text: `${constants?.site_content?.about_page?.bread_crumb?.title[activeLang]}`,
+      link: '/',
+      isActive: false,
+    },
+    {
+      text: `${constants?.site_content?.about_page?.bread_crumb?.title2[activeLang]}`,
+      link: '/about-us',
+      isActive: true,
+    },
+  ];
 
-      // API.get(`/get_premium_offers?lang=${activeLang}`).then(response => {
-      //   this.setState({ premiumOffers: response.data?.data })
-      // })
-      //   .then(() => {
-      const sectionResponse = await API.get(`/all-sections/${pageId}/${activeLang}`)
-      //  .then(response => {
-      this.setState({
-        banner: sectionResponse?.data?.data[0]?.banner,
-        sections: sectionResponse?.data?.data[0],
-        meta: sectionResponse?.data?.data[0]?.meta
-      });
-      // })
-      // })
-    }
-    catch (error) {
-      console.log(error)
-    }
-  }
-
-  render() {
-    const activeLang = localStorage.getItem('lang');
-
-    const breadcrumbItems = [
+  return (
+    <div className="bg-white about-us-wrapper">
+      <SEOTags meta={meta} />
       {
-        text: `${constants?.site_content?.about_page?.bread_crumb?.title[activeLang]}`,
-        link: '/',
-        isActive: false,
-      },
-      {
-        text: `${constants?.site_content?.about_page?.bread_crumb?.title2[activeLang]}`,
-        link: '/about-us',
-        isActive: true,
-      },
-    ];
+        banner ?
+          <PageLayout
+            header={{ isMobile: props.isMobile, isTop: props.isTop }}
+            banner={{ title: banner?.section_name, image: banner?.section_avatar?.avatar }}
+            breadCrumb={{ items: breadcrumbItems }}
+            activeLang={activeLang}
+          >
+            <AboutTitleBlock data={sections?.intro}
+            />
+            {/*====== TITLE END ======*/}
 
-    return (
-      <div className="bg-white about-us-wrapper">
-        <SEOTags meta={this.state.meta} />
-        {
-          this.state.banner ?
-            <PageLayout
-              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-              breadCrumb={{ items: breadcrumbItems }}
+            {/*====== SERVICES START ======*/}
+            <AboutServices
               activeLang={activeLang}
-            >
-              <AboutTitleBlock data={this.state.sections?.intro}
-              />
-              {/*====== TITLE END ======*/}
+            />
+            {/*====== SERVICES END ======*/}
+            {/*====== SECONDARY START ======*/}
+            <AboutSecondaryTextBlock data={sections?.dine}
+              activeLang={activeLang}
+            />
+            {/*====== SECONDARY END ======*/}
+            {/*====== ABOUT SLIDER START ======*/}
+            <AboutOfferSlider data={premiumOffers} title={constants?.site_content?.about_page?.about_offer?.title[activeLang]}
+              activeLang={activeLang}
+            />
 
-              {/*====== SERVICES START ======*/}
-              <AboutServices
-                activeLang={activeLang}
-              />
-              {/*====== SERVICES END ======*/}
-              {/*====== SECONDARY START ======*/}
-              <AboutSecondaryTextBlock data={this.state.sections?.dine}
-                activeLang={activeLang}
-              />
-              {/*====== SECONDARY END ======*/}
-              {/*====== ABOUT SLIDER START ======*/}
-              <AboutOfferSlider data={this.state.premiumOffers} title={constants?.site_content?.about_page?.about_offer?.title[activeLang]}
-                activeLang={activeLang}
-              />
-
-            </PageLayout>
-            :
-            <div className={"preloader align-items-center justify-content-center"}>
-              <div className="cssload-container">
-                <div className="cssload-loading"><i /><i /><i /><i /></div>
-              </div>
+          </PageLayout>
+          :
+          <div className={"preloader align-items-center justify-content-center"}>
+            <div className="cssload-container">
+              <div className="cssload-loading"><i /><i /><i /><i /></div>
             </div>
-        }
-      </div>
-    );
-  }
+          </div>
+      }
+    </div>
+  );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    premiuimoffers: state.allPremiuimOffers.premiuimoffers,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(AboutUs);
-// export default AboutUs;
+export default AboutUs;
