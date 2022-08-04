@@ -1,107 +1,77 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import SpaWellnessTitleBlock from '../sections/spa-wellness/spa-title-block';
 import SpaWellnessRecommendations from '../sections/spa-wellness/spa-offers';
-import API from "../../langapi/http";
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSections, removeSelectedSection, } from '../../redux/actions/sectionsActions';
 
-const pageId = `629707716acdd721ac47ee52`;
+const SpaWellness = (props) => {
 
-class SpaWellness extends Component {
+  const dispatch = useDispatch();
+  const activeLang = localStorage.getItem('lang');
 
-  state = {
-    premiumOffers: [],
-    intro: null,
-    banner: null,
-    meta: {}
-  }
+  //SpaWellness page
+  const pageId = `629707716acdd721ac47ee52`;
 
-  async componentDidMount() {
-    try {
-      const activeLang = localStorage.getItem('lang');
+  useEffect(() => {
+    if (activeLang && activeLang !== "" && pageId && pageId !== "") dispatch(fetchSections(pageId, activeLang));
+    return () => {
+      dispatch(removeSelectedSection());
+    };
+  }, [pageId]);
 
-      const { premiuimoffers } = this.props;
+  const premiumOffers = useSelector((state) => state.allPremiuimOffers.premiuimoffers);
+  const banner = useSelector((state) => state.allSections.sections?.banner);
+  const intro = useSelector((state) => state.allSections.sections?.intro);
+  const meta = useSelector((state) => state.allSections.sections?.meta);
 
-      const premiumOffersData = await premiuimoffers;
+  const breadcrumbItems = [
+    {
+      text: `${constants?.site_content?.about_page?.bread_crumb?.title[activeLang]}`,
+      link: '/',
+      isActive: false,
+    },
+    {
+      text: `${constants?.site_content?.spawellness_page?.bread_crumb?.title2[activeLang]}`,
+      link: '/spa-wellness',
+      isActive: true,
+    },
+  ]
 
-      if (premiumOffersData && premiumOffersData.length > 0) {
-        this.setState({ premiumOffers: premiumOffersData })
-      }
-
-      const sectionResponse = await API.get(`/all-sections/${pageId}/${activeLang}`);
-      this.setState({
-        banner: sectionResponse?.data?.data[0]?.banner,
-        intro: sectionResponse?.data?.data[0]?.intro,
-        meta: sectionResponse?.data?.data[0]?.meta
-      }
-      );
-    }
-    catch (error) {
-      console.log(error)
-    }
-  }
-
-  render() {
-    const activeLang = localStorage.getItem('lang');
-
-    const breadcrumbItems = [
+  return (
+    <div className="bg-white spa-wrapper">
+      <SEOTags meta={meta} />
       {
-        text: `${constants?.site_content?.about_page?.bread_crumb?.title[activeLang]}`,
-        link: '/',
-        isActive: false,
-      },
-      {
-        text: `${constants?.site_content?.spawellness_page?.bread_crumb?.title2[activeLang]}`,
-        link: '/spa-wellness',
-        isActive: true,
-      },
-    ]
-
-    return (
-      <div className="bg-white spa-wrapper">
-        <SEOTags meta={this.state.meta} />
-        {
-          this.state.banner ?
-            <PageLayout
-              header={{ isMobile: this.props.isMobile, isTop: this.props.isTop }}
-              banner={{ title: this.state.banner?.section_name, image: this.state.banner?.section_avatar?.avatar }}
-              breadCrumb={{ items: breadcrumbItems }}
+        banner ?
+          <PageLayout
+            header={{ isMobile: props.isMobile, isTop: props.isTop }}
+            banner={{ title: banner?.section_name, image: banner?.section_avatar?.avatar }}
+            breadCrumb={{ items: breadcrumbItems }}
+            activeLang={activeLang}
+          >
+            {/*/!*====== PROJECTS SLIDER START ======*!/*/}
+            <SpaWellnessTitleBlock data={intro}
               activeLang={activeLang}
-            >
-              {/*/!*====== PROJECTS SLIDER START ======*!/*/}
-              <SpaWellnessTitleBlock data={this.state.intro}
-                activeLang={activeLang}
-              />
-              {/*====== PROJECTS SLIDER END ======*/}
-              {/*====== RECOOMENDATIONS START ======*/}
-              <SpaWellnessRecommendations title={constants?.site_content?.spawellness_page?.offer_sec?.title[activeLang]}
-                data={this.state.premiumOffers}
-                activeLang={activeLang}
-              />
-              {/*====== RECOOMENDATIONS END ======*/}
-            </PageLayout>
-            :
-            <div className={"preloader align-items-center justify-content-center"}>
-              <div className="cssload-container">
-                <div className="cssload-loading"><i /><i /><i /><i /></div>
-              </div>
+            />
+            {/*====== PROJECTS SLIDER END ======*/}
+            {/*====== RECOOMENDATIONS START ======*/}
+            <SpaWellnessRecommendations title={constants?.site_content?.spawellness_page?.offer_sec?.title[activeLang]}
+              data={premiumOffers}
+              activeLang={activeLang}
+            />
+            {/*====== RECOOMENDATIONS END ======*/}
+          </PageLayout>
+          :
+          <div className={"preloader align-items-center justify-content-center"}>
+            <div className="cssload-container">
+              <div className="cssload-loading"><i /><i /><i /><i /></div>
             </div>
-        }
-      </div>
-    );
-  }
+          </div>
+      }
+    </div>
+  );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    premiuimoffers: state.allPremiuimOffers.premiuimoffers,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(SpaWellness);
+export default SpaWellness;
