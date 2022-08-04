@@ -5,6 +5,7 @@ import API from "../../langapi/http";
 import SEOTags from "../sections/common/SEOTags";
 import PageLayout from "../layouts/PageLayout";
 import { constants } from '../../utils/constants';
+import { connect } from "react-redux";
 
 const pageId = `629707716acdd721ac47ee52`;
 
@@ -17,23 +18,25 @@ class SpaWellness extends Component {
     meta: {}
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      API.get(`/get_premium_offers?lang=${activeLang}`).then(response => {
-        this.setState({ premiumOffers: response.data?.data });
-      })
-        .then(() => {
-          API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
-            this.setState({
-              banner: response?.data?.data[0]?.banner,
-              intro: response?.data?.data[0]?.intro,
-              meta: response?.data?.data[0]?.meta
-            }
-            );
-          })
-        })
+      const { premiuimoffers } = this.props;
+
+      const premiumOffersData = await premiuimoffers;
+
+      if (premiumOffersData && premiumOffersData.length > 0) {
+        this.setState({ premiumOffers: premiumOffersData })
+      }
+
+      const sectionResponse = await API.get(`/all-sections/${pageId}/${activeLang}`);
+      this.setState({
+        banner: sectionResponse?.data?.data[0]?.banner,
+        intro: sectionResponse?.data?.data[0]?.intro,
+        meta: sectionResponse?.data?.data[0]?.meta
+      }
+      );
     }
     catch (error) {
       console.log(error)
@@ -91,4 +94,14 @@ class SpaWellness extends Component {
   }
 }
 
-export default SpaWellness;
+const mapStateToProps = (state) => {
+  return {
+    premiuimoffers: state.allPremiuimOffers.premiuimoffers,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SpaWellness);

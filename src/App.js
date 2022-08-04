@@ -7,6 +7,9 @@ import Error404 from './components/pages/Error404';
 import API from './langapi/http';
 import { useDispatch, useSelector } from "react-redux";
 import { setPages } from "./redux/actions/pagesActions";
+import { setPremuiumOffers } from "./redux/actions/premiuimOffersActions";
+
+
 
 // ********* lazy loading componentes *******
 const Hometwo = lazy(() => import('./components/pages/Hometwo'));
@@ -34,7 +37,7 @@ const Blog = lazy(() => import('./components/pages/Blog'));
 const Blogdetails = lazy(() => import('./components/pages/Blogdetails'));
 
 
-function App() {
+function App(props) {
 
   //language 
 
@@ -42,8 +45,6 @@ function App() {
   useEffect(() => {
     const activeLang = localStorage.getItem('lang');
     const pathArray = window.location.pathname.split('/');
-    console.log('pathArray', pathArray);
-
 
     let lang = 'en';
     if (pathArray[1] && (pathArray[1] == 'en' || pathArray[1] == 'fr' || pathArray[1] == 'de' || pathArray[1] == 'ru')) {
@@ -83,18 +84,36 @@ function App() {
     }, false);
   })
 
+
   const pages = useSelector((state) => state.allPages.pages);
   const dispatch = useDispatch();
+
   const fetchPages = async () => {
     const activeLang = localStorage.getItem('lang');
-    const response = await API.get(`/get_pages?lang=${activeLang}`)
-      .catch((err) => {
-        console.log("Err: ", err);
-      });
-    dispatch(setPages(response?.data?.data));
+    if (pages && pages.length === 0) {
+      const response = await API.get(`/get_pages?lang=${activeLang}`)
+        .catch((err) => {
+          console.log("Err: ", err);
+        });
+      dispatch(setPages(response?.data?.data));
+    }
+  };
+
+  const premiumOffers = useSelector((state) => state.allPremiuimOffers.premiuimoffers);
+
+  const fetchPremiuimOffers = async () => {
+    const activeLang = localStorage.getItem('lang');
+    if (premiumOffers && premiumOffers.length === 0) {
+      const response = await API.get(`/get_premium_offers?lang=${activeLang}`)
+        .catch((err) => {
+          console.log("Err: ", err);
+        });
+      dispatch(setPremuiumOffers(response?.data?.data));
+    }
   };
 
   useEffect(() => {
+    fetchPremiuimOffers();
     fetchPages();
   }, []);
 

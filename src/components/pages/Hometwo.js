@@ -11,11 +11,12 @@ import bannerimg1 from "../../assets/img/banner/home.jpg";
 import PopUp from "../popup/PopUp";
 import Helmet from "react-helmet";
 import PageLayout from '../layouts/PageLayout';
+import { connect } from "react-redux";
 
 
 import { constants } from "../../utils/constants";
 
-const pageId = 93;
+// const pageId = 93;
 
 class Hometwo extends Component {
   constructor(props) {
@@ -34,19 +35,22 @@ class Hometwo extends Component {
     this.setState({ offerPopup: !this.state.offerPopup });
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     try {
       const activeLang = localStorage.getItem('lang');
 
-      API.get(`/get_premium_offers?lang=${activeLang}`).then((response) => {
-        this.setState({ premiumOffers: response.data?.data });
-      })
+      const { premiuimoffers } = this.props;
 
-      API.get(`/get_rooms_list?lang=${activeLang}`).then((response) => {
-        const roomsData = response.data?.data;
-        this.setState({
-          roomsData: roomsData
-        });
+      const premiumOffersData = await premiuimoffers;
+
+      if (premiumOffersData && premiumOffersData.length > 0) {
+        this.setState({ premiumOffers: premiumOffersData })
+      }
+
+      const roomsResponse = await API.get(`/get_rooms_list?lang=${activeLang}`);
+      const roomsData = roomsResponse.data?.data;
+      this.setState({
+        roomsData: roomsData
       });
 
     } catch (error) {
@@ -154,4 +158,14 @@ class Hometwo extends Component {
   }
 }
 
-export default Hometwo;
+const mapStateToProps = (state) => {
+  return {
+    premiuimoffers: state.allPremiuimOffers.premiuimoffers,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Hometwo);

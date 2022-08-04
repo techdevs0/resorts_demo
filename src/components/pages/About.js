@@ -7,6 +7,7 @@ import API from '../../langapi/http';
 import PageLayout from '../layouts/PageLayout';
 import SEOTags from "../sections/common/SEOTags";
 import { constants } from "../../utils/constants";
+import { connect } from "react-redux";
 
 const pageId = `6297070d0da7c94b690c6cc3`;
 
@@ -18,23 +19,32 @@ class AboutUs extends Component {
     meta: {}
   }
 
-  componentDidMount(prevState) {
+  async componentDidMount(prevState) {
     try {
 
       const activeLang = localStorage.getItem('lang');
 
-      API.get(`/get_premium_offers?lang=${activeLang}`).then(response => {
-        this.setState({ premiumOffers: response.data?.data })
-      })
-        .then(() => {
-          API.get(`/all-sections/${pageId}/${activeLang}`).then(response => {
-            this.setState({
-              banner: response?.data?.data[0]?.banner,
-              sections: response?.data?.data[0],
-              meta: response?.data?.data[0]?.meta
-            });
-          })
-        })
+      const { premiuimoffers } = this.props;
+
+      const premiumOffersData = await premiuimoffers;
+
+      if (premiumOffersData && premiumOffersData.length > 0) {
+        this.setState({ premiumOffers: premiumOffersData })
+      }
+
+      // API.get(`/get_premium_offers?lang=${activeLang}`).then(response => {
+      //   this.setState({ premiumOffers: response.data?.data })
+      // })
+      //   .then(() => {
+      const sectionResponse = await API.get(`/all-sections/${pageId}/${activeLang}`)
+      //  .then(response => {
+      this.setState({
+        banner: sectionResponse?.data?.data[0]?.banner,
+        sections: sectionResponse?.data?.data[0],
+        meta: sectionResponse?.data?.data[0]?.meta
+      });
+      // })
+      // })
     }
     catch (error) {
       console.log(error)
@@ -100,4 +110,15 @@ class AboutUs extends Component {
   }
 }
 
-export default AboutUs;
+const mapStateToProps = (state) => {
+  return {
+    premiuimoffers: state.allPremiuimOffers.premiuimoffers,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AboutUs);
+// export default AboutUs;
