@@ -1,6 +1,6 @@
 import React from 'react';
 import { constants } from '../../../utils/constants';
-const LeisureAwards = ({ activeLang, ...award }) => {
+const LeisureAwards = ({ activeLang, award }) => {
   return (
     <div className="leisure-awards-wrapper">
       <div className="container">

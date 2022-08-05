@@ -1,7 +1,7 @@
 import React from 'react';
 import RoomGridItem from './leisure-grid-item';
 
-const LeisureGrid = ({ ...actData }) => {
+const LeisureGrid = ({ actData }) => {
   return (
     <div className='container'>
       <div className='leisure-grid-wrapper'>

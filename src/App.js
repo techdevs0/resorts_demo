@@ -1,13 +1,9 @@
 import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 import Preloader from './components/layouts/Preloader';
 import ScrollToTop from './components/layouts/ScrollToTop';
 import Error404 from './components/pages/Error404';
-import API from './langapi/http';
 import { useDispatch, useSelector } from "react-redux";
-import { setPages } from "./redux/actions/pagesActions";
-import { setPremuiumOffers } from "./redux/actions/premiuimOffersActions";
 import { fetchPages } from "./redux/actions/pagesActions";
 
 
@@ -91,35 +87,6 @@ function App(props) {
   useEffect(() => {
     const activeLang = localStorage.getItem('lang');
     if (activeLang && activeLang !== "") dispatch(fetchPages(activeLang));
-  }, []);
-
-  // const fetchPages = async () => {
-  //   const activeLang = localStorage.getItem('lang');
-  //   if (pages && pages.length === 0) {
-  //     const response = await API.get(`/get_pages?lang=${activeLang}`)
-  //       .catch((err) => {
-  //         console.log("Err: ", err);
-  //       });
-  //     dispatch(setPages(response?.data?.data));
-  //   }
-  // };
-
-  // const premiumOffers = useSelector((state) => state.allPremiuimOffers.premiuimoffers);
-
-  const fetchPremiuimOffers = async () => {
-    const activeLang = localStorage.getItem('lang');
-    // if (premiumOffers && premiumOffers.length === 0) {
-    const response = await API.get(`/get_premium_offers?lang=${activeLang}`)
-      .catch((err) => {
-        console.log("Err: ", err);
-      });
-    dispatch(setPremuiumOffers(response?.data?.data));
-    // }
-  };
-
-  useEffect(() => {
-    fetchPremiuimOffers();
-    // fetchPages();
   }, []);
 
   const mapRoute = (slug) => {

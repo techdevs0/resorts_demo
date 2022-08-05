@@ -59,7 +59,7 @@ const Leisure = (props) => {
     <div className="bg-white">
       <SEOTags meta={meta} />
       {
-        banner ?
+        Fishing ?
           <PageLayout
             header={{ isMobile: props.isMobile, isTop: props.isTop }}
             banner={{ title: banner?.section_name, image: banner?.section_avatar?.avatar }}
@@ -74,12 +74,10 @@ const Leisure = (props) => {
             {/*====== ROOM GRID START ======*/}
             <LeisureGrid
               actData={{
-                activitiesData: {
-                  activities,
-                  Fishing,
-                  Unlock,
-                  Water
-                }
+                activities,
+                Fishing,
+                Unlock,
+                Water
               }}
             // data={roomsData}
             />
@@ -87,10 +85,8 @@ const Leisure = (props) => {
             {/* ===== LEISURE AWARDS START */}
             <LeisureAwards
               award={{
-                awardData: {
-                  awards,
-                  excellence
-                }
+                awards,
+                excellence
               }}
               activeLang={activeLang}
             />

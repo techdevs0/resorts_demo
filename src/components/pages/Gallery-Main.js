@@ -44,7 +44,7 @@ const GalleryMain = (props) => {
     <div className="bg-white">
       <SEOTags meta={meta} />
       {
-        banner ?
+        galleryData ?
           <PageLayout
             header={{ isMobile: props.isMobile, isTop: props.isTop }}
             banner={{ title: banner?.section_name, image: banner?.section_avatar?.avatar }}

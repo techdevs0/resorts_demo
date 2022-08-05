@@ -8,7 +8,7 @@ import SEOTags from "../sections/common/SEOTags";
 import { constants } from "../../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSections, removeSelectedSection } from '../../redux/actions/sectionsActions';
-
+import { fetchPremiuimOffers } from '../../redux/actions/premiuimOffersActions';
 
 const AboutUs = (props) => {
 
@@ -24,6 +24,13 @@ const AboutUs = (props) => {
       dispatch(removeSelectedSection());
     };
   }, [pageId]);
+
+  //Premiuim offers 
+
+  useEffect(() => {
+    const activeLang = localStorage.getItem('lang');
+    if (activeLang && activeLang !== "") dispatch(fetchPremiuimOffers(activeLang));
+  }, []);
 
   const premiumOffers = useSelector((state) => state.allPremiuimOffers.premiuimoffers);
   const banner = useSelector((state) => state.allSections.sections?.banner);
