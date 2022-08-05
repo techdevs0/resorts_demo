@@ -76,7 +76,7 @@ const Blog = (props) => {
     .slice(pagesVisited, pagesVisited + usersPerPage)
     .map((x, i) => {
       return (
-        <div className="post-box mb-40" key={i}>
+        <div className="post-box mb-40" key={x?._id}>
           <div className="post-media">
             <img src={x?.img} alt="image" />
           </div>
