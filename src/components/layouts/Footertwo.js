@@ -29,23 +29,38 @@ class Footertwo extends Component {
           <i className="fal fa-angle-double-up" />
         </Link>
         {/*====== FOOTER START ======*/}
-        <div className="container-1">
-        </div>
         <footer className={`footer-two ${window.location.pathname === "/" || window.location.pathname === "/en" || window.location.pathname === "/fr" || window.location.pathname === "/de" || window.location.pathname === "/ru" ? "" : " mt-5"}`}>
-          <div className="footer-widget-area pt-30 pb-30">
+          <div className="footer-widget-area">
             <div className="container">
               <div className="row">
-                <div className="col-lg-6 order-1">
-                  <div className="widget site-info-widget mb-50">
-                    <Subscribe
-                      activeLang={activeLang}
-                    />
+                <div className="col-lg-3 footerLinks">
+                  <div className="widget nav-widget">
+                    <div>
+                      <img
+                        src={require("./../../assets/img/logo/resort-logo.png")}
+                        style={{ filter: "brightness(0) invert(1)" }}
+                        alt="fishermans cove logo"
+                      />
+                      <h1>
+                        About us
+                      </h1>
+                      <p>
+                        Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et. Quisque euismod orci ut et lobortis.
+                      </p>
+                      <div className="social-icons pt-3">
+                        <a href="https://www.facebook.com/fishermanscoveresort/" target='_blank'><i className="fab fa-facebook-f" /></a>
+                        <a href="https://twitter.com/fisherman_cove" target='_blank'><i className="fab fa-twitter" /></a>
+                        <a href="https://www.instagram.com/fishermanscove.resort/" target='_blank'><i className="fab fa-instagram" /></a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="col-lg-6 order-3 order-lg-2  footerLinks">
-                  {/* Nav Widget */}
-                  <div className="widget nav-widget mb-50">
+                <div className="col-lg-3 footerLinks">
+                  <div className="widget nav-widget">
                     <div>
+                      <h1>
+                        Quick Links
+                      </h1>
                       <ul>
 
                         {
@@ -59,22 +74,12 @@ class Footertwo extends Component {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="footer-bottom-wrapper py-1">
-              <div className="container d-flex flex-wrap justify-content-between align-items-center">
-                <div className="py-2 footer-logos">
-                  <a href="https://story-hospitality.com/" target='_blank'><img className="px-2" src={require('./../../assets/img/footer/story-hospitality-footer.png')} alt="story-rabat hospitality footer" /></a>
-                  <a href="https://www.story-rabat.com/" target='_blank'><img className="px-2" src={require('./../../assets/img/footer/story-rabat-footer.png')} alt="sotry-rabat footer" /></a>
-                  <a href="https://www.cue-podgorica.com/" target='_blank'><img className="px-2" src={require('./../../assets/img/footer/cue-hotel-footer.png')} alt="cue hotel footer" /></a>
-                  <a href="https://www.hhoteldubai.com/" target='_blank'> <img className="px-2 hhotel-dubai-footer" src={require('./../../assets/img/footer/hhotel-footer.png')} alt="hhotel footer" /></a>
-                  <a href="/"><img className="px-2" src={require('./../../assets/img/footer/logo-fisher.png')} alt="fishermanscove footer" /></a>
-                </div>
-                <div className="social-icons py-2">
-                  <a href="https://www.facebook.com/fishermanscoveresort/" target='_blank'><i className="fab fa-facebook-f" /></a>
-                  <a href="https://twitter.com/fisherman_cove" target='_blank'><i className="fab fa-twitter" /></a>
-                  <a href="https://www.instagram.com/fishermanscove.resort/" target='_blank'><i className="fab fa-instagram" /></a>
+                <div className="col-lg-6">
+                  <div className="widget site-info-widget">
+                    <Subscribe
+                      activeLang={activeLang}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
