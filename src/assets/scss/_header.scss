@@ -1258,7 +1258,7 @@ header {
 		height: 100%;
 		width: 100%;
 		z-index: -1;
-		background-color: $heading-color;
+		background-color: $secondary-color;
 		content: "";
 		opacity: 0.7;
 	}
@@ -1338,7 +1338,7 @@ header {
 						top: 50%;
 						transform: translateY(-48%);
 						content: "|";
-						color: $heading-color;
+						color: $secondary-color;
 					}
 				}
 

@@ -72,9 +72,6 @@ class Footertwo extends Component {
                   <a href="/"><img className="px-2" src={require('./../../assets/img/footer/logo-fisher.png')} alt="fishermanscove footer" /></a>
                 </div>
                 <div className="social-icons py-2">
-                  <a href="https://www.tripadvisor.co.za/Hotel_Review-g1185571-d302667-Reviews-Fisherman_s_Cove_Resort-Beau_Vallon_Mahe_Island.html" target='_blank'>
-                    <img className="px-2" style={{ width: "80px" }} src={require('./../../assets/img/footer/tripadvisor.png')} alt="tripAdvisor" />
-                  </a>
                   <a href="https://www.facebook.com/fishermanscoveresort/" target='_blank'><i className="fab fa-facebook-f" /></a>
                   <a href="https://twitter.com/fisherman_cove" target='_blank'><i className="fab fa-twitter" /></a>
                   <a href="https://www.instagram.com/fishermanscove.resort/" target='_blank'><i className="fab fa-instagram" /></a>
@@ -85,16 +82,12 @@ class Footertwo extends Component {
 
           <div className="copyright-area py-2">
             <div className="container">
-              <div className="row align-items-center">
-                <div className="col-lg-6 col-md-5 order-2 order-md-1">
-                  <p className="copyright-text copyright-two">{constants?.site_content?.footer_content?.copyright_by[activeLang]} @<Link to="#">Resorts Demo</Link> - {new Date().getFullYear()}</p>
-                </div>
-                <div className="col-lg-6 col-md-7 order-1 order-md-2">
-                  <div className="footer-menu text-center text-md-right">
-                    <ul>
-                      <p style={{ fontSize: '14px' }}> {constants?.site_content?.footer_content?.powered_by[activeLang]} <a href="https://prismdigital.ae" style={{ color: "white" }} >Prism Digital</a>.</p>
-                    </ul>
-                  </div>
+              <div className="row align-items-center justify-content-center">
+                <div className="col-8">
+                  <p className="copyright-text copyright-two text-center">
+                    {/* {constants?.site_content?.footer_content?.copyright_by[activeLang]} */}
+                    Copyright &copy;{new Date().getFullYear()} All rights reserved | This template is made by <Link to="#">Resorts Demo</Link>
+                  </p>
                 </div>
               </div>
             </div>

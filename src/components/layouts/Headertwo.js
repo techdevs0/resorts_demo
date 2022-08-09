@@ -319,6 +319,7 @@ class Headertwo extends Component {
                 <Link to="/" className="main-logo">
                   <img
                     src={require("./../../assets/img/logo/resort-logo.png")}
+                    style={{ filter: "brightness(0) invert(1)" }}
                     alt="fishermans cove logo"
                   />
                 </Link>

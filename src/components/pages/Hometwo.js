@@ -7,7 +7,7 @@ import Experience from "../sections/homepage-two/Experience";
 import GuestReviews from "../sections/homepage-two/GuestReviews";
 import ServiceTabs from "../sections/homepage-two/ServicesTabs";
 import API from "../../langapi/http";
-import bannerimg1 from "../../assets/img/banner/home.jpg";
+import bannerimg1 from "../../assets/img/banner/home.webp";
 // import PopUp from "../popup/PopUp";
 import Helmet from "react-helmet";
 import PageLayout from '../layouts/PageLayout';

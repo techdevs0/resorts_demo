@@ -3,10 +3,10 @@ export const constants = {
     home_page: {
       banner: {
         title: {
-          en: "The Perfect \n Destination for you",
-          fr: "La destination \n parfaite pour vous",
-          de: "Das perfekte \n Reiseziel für Sie",
-          ru: "Идеальное \n место для вас"
+          en: "The Most Relaxing and Suitable \n Place for you",
+          fr: "L'endroit le plus relaxant et le plus \n approprié pour vous",
+          de: "Der entspannendste und geeignetste \n Ort für Sie",
+          ru: "Самое расслабляющее и подходящее \n место для вас"
         },
         btn1: {
           en: "gallery",
