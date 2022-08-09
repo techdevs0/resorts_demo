@@ -66,8 +66,8 @@ class Banner extends Component {
                           <li>
                             <Link className="main-btn btn-border" to={`/${this.props?.activeLang}${item.btn3url}`}
                               style={{
-                                borderColor: "#be8a7d",
-                                background: "#be8a7d"
+                                borderColor: "#1cc3b2",
+                                background: "#1cc3b2"
                               }}
                               onClick={(e) =>
 

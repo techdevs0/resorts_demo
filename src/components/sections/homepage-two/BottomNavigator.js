@@ -33,8 +33,8 @@ const BottomNavigator = ({ activeLang }) => {
       >
         <Link className="main-btn btn-border" to={"#"}
           style={{
-            borderColor: "#be8a7d",
-            background: "#be8a7d",
+            borderColor: "#1cc3b2",
+            background: "#1cc3b2",
             color: "white"
           }}
           onClick={(e) =>
