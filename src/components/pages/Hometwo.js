@@ -58,9 +58,9 @@ const Hometwo = (props) => {
     <div>
       <Helmet>
         <title>
-          Fishermans Cove Resort
+          Resorts Demo
         </title>
-        <meta name="description" content="Fishermans Cove Resort" />
+        <meta name="description" content="Resorts Demo" />
 
       </Helmet>
 

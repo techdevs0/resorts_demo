@@ -28,7 +28,7 @@ const PopUp = (props) => {
                             {/* <LazyLoad height={200} > */}
                             <img
                                 src={popupimg}
-                                alt="popup fishermans cove resort"
+                                alt="popup Resorts Demo"
                                 className="img-fluid"
                             // style={{
                             //     width: "100%",

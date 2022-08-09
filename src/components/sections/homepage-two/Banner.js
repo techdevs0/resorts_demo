@@ -40,9 +40,9 @@ class Banner extends Component {
         {bannerPosts.map((item, i) => (
           <div key={i} className={`single-banner d-flex align-items-center justify-content-center ${this.props.isMain ? '' : 'sub-banner'}`}>
             <div className="container">
-              <div className="row justify-content-left">
-                <div className="col-10 col-lg-6">
-                  <div className="banner-content text-left">
+              <div className="row justify-content-center align-items-center">
+                <div className="col-lg-6 col-10">
+                  <div className="banner-content text-center">
                     <ReactWOW animation="fadeInDown" data-delay={item.taganimation}>
                       <span className="promo-tag">{item.tag}</span></ReactWOW>
                     <ReactWOW animation="fadeInLeft" data-delay={item.titleanimation}>
@@ -83,17 +83,6 @@ class Banner extends Component {
                         </ReactWOW>
                       </Hidden>
                     </ul>
-                  </div>
-                </div>
-                <div className={`d-none ${this.props.isMain ? 'd-md-flex' : ''}`} style={{
-                  position: 'absolute', width: '50%', display: 'flex', marginTop: '2rem', alignItems: 'baseline', justifyContent: 'flex-end'
-                  , right: '60px', bottom: '68px'
-                }}>
-                  <div className="rounded-circle mx-2" style={{ width: '100px', height: '100px', overflow: 'hidden', backgroundColor: '#fff' }}>
-                    <img alt="" className="img-fluid" style={{ width: '100%', height: '100%', objectFit: 'cover' }} src={require('./../../../assets/img/banner/tc-winner.gif')} />
-                  </div>
-                  <div className="rounded-circle mx-2" style={{ width: '100px', height: '100px', overflow: 'hidden' }}>
-                    <img alt="" className="img-fluid" style={{ width: '100%', height: '100%', objectFit: 'fill' }} src={require('./../../../assets/img/banner/luxury.png')} />
                   </div>
                 </div>
               </div>

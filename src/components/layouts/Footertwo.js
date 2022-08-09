@@ -87,7 +87,7 @@ class Footertwo extends Component {
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-lg-6 col-md-5 order-2 order-md-1">
-                  <p className="copyright-text copyright-two">{constants?.site_content?.footer_content?.copyright_by[activeLang]} @<Link to="#">Fishermans Cove Resort</Link> - {new Date().getFullYear()}</p>
+                  <p className="copyright-text copyright-two">{constants?.site_content?.footer_content?.copyright_by[activeLang]} @<Link to="#">Resorts Demo</Link> - {new Date().getFullYear()}</p>
                 </div>
                 <div className="col-lg-6 col-md-7 order-1 order-md-2">
                   <div className="footer-menu text-center text-md-right">

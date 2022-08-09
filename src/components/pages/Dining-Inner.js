@@ -50,7 +50,7 @@ const menuPdf = [
 
 let breadcrumbItems = [
   {
-    text: "Fishermans Cove Resort",
+    text: "Resorts Demo",
     link: "/",
     isActive: false,
   },
@@ -140,7 +140,7 @@ class DiningInner extends Component {
         <Helmet>
           <title>
             {
-              this.state.singleHotel?.meta_title || "Fishermans Cove Resort"
+              this.state.singleHotel?.meta_title || "Resorts Demo"
             }
           </title>
           <meta name="description" content={this.state.singleHotel?.meta_description} />

@@ -13,7 +13,7 @@ import { constants } from "../../utils/constants";
 
 const breadcrumbItems = [
   {
-    text: "Fishermans Cove Resort",
+    text: "Resorts Demo",
     link: "/",
     isActive: false,
   },
@@ -113,7 +113,7 @@ class RoomsInner extends Component {
         <Helmet>
           <title>
             {
-              this.state.singleRoom?.meta_title || "Fishermans Cove Resort"
+              this.state.singleRoom?.meta_title || "Resorts Demo"
             }
           </title>
           <meta name="description" content={this.state.singleRoom?.meta_description} />

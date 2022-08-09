@@ -89,10 +89,10 @@ const Blogdetails = (props) => {
       <Helmet>
         <title>
           {
-            singleBlogData?.title || "Fishermans Cove Resort"
+            singleBlogData?.title || "Resorts Demo"
           }
         </title>
-        <meta name="description" content={"Fishermans Cove Resort"} />
+        <meta name="description" content={"Resorts Demo"} />
 
       </Helmet>
       {

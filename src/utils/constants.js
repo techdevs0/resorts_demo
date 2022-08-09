@@ -111,16 +111,16 @@ export const constants = {
           ru: "Лучший курортный отель в городе Маэ, Сейшельские острова"
         },
         subtitle: {
-          en: "Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Fishermans Cove Resort is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. This tropical escape sets the scene for explorers, romantic couples, and families to an inherited paradise.",
-          fr: "Situé à la plage de Beau Vallon, s’étendant sur 3km de sable étincelant d’ivoire, Fishermans Cove Resort est la promesse d’une sincère tranquillité et d’une joie éternelle. Les chambres et les suites se trouvent au milieu des jardins tropicaux luxuriants, accompagnées de la paix. Cette évasion tropicale permet aux aventuriers, aux couples et aux familles de découvrir ce paradis patrimonial.",
-          de: "Das Fishermans Cove Resort liegt am 3 km lang glitzernden weißen Sandstrand Beau Vallon und verspricht echte Ruhe und ewigen Genuss. Die Zimmer und Suiten befinden sich inmitten üppiger tropischer Gärten, die durch eine ruhige Umgebung ergänzt werden. Dieses tropische Refugium ist die Kulisse für Entdecker, romantische Paare und Familien in einem geerbten Paradies.",
+          en: "Situated at Beau Vallon Beach with its 3km sparkling ivory sand, Resorts Demo is the promise of genuine tranquility and eternal enjoyment. The guest rooms and suites are set amidst lush tropical gardens, complemented by a peaceful environment. This tropical escape sets the scene for explorers, romantic couples, and families to an inherited paradise.",
+          fr: "Situé à la plage de Beau Vallon, s’étendant sur 3km de sable étincelant d’ivoire, Resorts Demo est la promesse d’une sincère tranquillité et d’une joie éternelle. Les chambres et les suites se trouvent au milieu des jardins tropicaux luxuriants, accompagnées de la paix. Cette évasion tropicale permet aux aventuriers, aux couples et aux familles de découvrir ce paradis patrimonial.",
+          de: "Das Resorts Demo liegt am 3 km lang glitzernden weißen Sandstrand Beau Vallon und verspricht echte Ruhe und ewigen Genuss. Die Zimmer und Suiten befinden sich inmitten üppiger tropischer Gärten, die durch eine ruhige Umgebung ergänzt werden. Dieses tropische Refugium ist die Kulisse für Entdecker, romantische Paare und Familien in einem geerbten Paradies.",
           ru: "Расположенный на пляже Бо Валлон, с его 3-километровым сверкающим песком цвета слоновой кости, курорт Fishermans Cove обещает подлинное спокойствие и вечное наслаждение. Номера и люксы расположены среди пышных тропических садов, в которых царит спокойная обстановка."
 
         },
         detail: {
-          en: "Offering countless experiences with outstanding services throughout your discovery, Fishermans Cove Resort is one of the best resorts in Seychelles. Restaurants and Bars allow you to savor scrumptious flavors and aromas while sipping exotic cocktails and enjoying views of the Indian Ocean’s most spectacular sunset. It offers two restaurants and two bars giving guests ample options to choose from.",
-          fr: "Fishermans Cove Resort est l’un des meilleurs hôtels aux Seychelles qui vous offre des expériences innumérables avec d’excellents services tout au long de votre découverte. Les restaurants et les bars vous permettront de déguster les saveurs délicieuses et les aromes en sirotant des apéritifs exotiques, tout en s’amusant les couchers du soleil les plus magnifiques dans l’Océan Indien. L’hôtel vous propose deux restaurants et deux bars qui invitent leurs clients à choisir d’entre plusieurs options.",
-          de: "Das Fishermans Cove Resort bietet unzählige Erlebnisse mit hervorragendem Service während Ihrer Entdeckung und ist eines der besten Resorts auf den Seychellen. Die Restaurants und Bars lassen Sie köstliche Aromen und Geschmacksrichtungen auskosten und an exotischen Cocktails nippen, während Sie den spektakulärsten Sonnenuntergang des Indischen Ozeans genießen. Zwei Restaurants und zwei Bars stehen zur Verfügung, die den Gästen eine große Auswahl zum Essen und Trinken bieten.",
+          en: "Offering countless experiences with outstanding services throughout your discovery, Resorts Demo is one of the best resorts in Seychelles. Restaurants and Bars allow you to savor scrumptious flavors and aromas while sipping exotic cocktails and enjoying views of the Indian Ocean’s most spectacular sunset. It offers two restaurants and two bars giving guests ample options to choose from.",
+          fr: "Resorts Demo est l’un des meilleurs hôtels aux Seychelles qui vous offre des expériences innumérables avec d’excellents services tout au long de votre découverte. Les restaurants et les bars vous permettront de déguster les saveurs délicieuses et les aromes en sirotant des apéritifs exotiques, tout en s’amusant les couchers du soleil les plus magnifiques dans l’Océan Indien. L’hôtel vous propose deux restaurants et deux bars qui invitent leurs clients à choisir d’entre plusieurs options.",
+          de: "Das Resorts Demo bietet unzählige Erlebnisse mit hervorragendem Service während Ihrer Entdeckung und ist eines der besten Resorts auf den Seychellen. Die Restaurants und Bars lassen Sie köstliche Aromen und Geschmacksrichtungen auskosten und an exotischen Cocktails nippen, während Sie den spektakulärsten Sonnenuntergang des Indischen Ozeans genießen. Zwei Restaurants und zwei Bars stehen zur Verfügung, die den Gästen eine große Auswahl zum Essen und Trinken bieten.",
           ru: "Предлагая бесчисленное количество впечатлений и услуг на протяжении всего вашего путешествия, Fishermans Cove является одним из лучших курортов на Сейшельских островах. В ресторанах и барах вы сможете насладиться восхитительными блюдами. А потягивая экзотические коктейли, можете наслаждаться видом на самый захватывающий закат Индийского океана. К услугам гостей два ресторана и два бара, предоставляющих гостям широкий выбор напитков и блюд."
         }
       },
@@ -254,10 +254,10 @@ export const constants = {
           ru: "Подпишитесь на нашу рассылку"
         },
         subtitle: {
-          en: "Be The First One to Know About The Happenings at Fishermans Cove Resort",
-          fr: "Soyez le premier à savoir des événements à Fishermans Cove Resort",
-          de: "Bleiben Sie zuallererst informiert über Aktuelles beim Fishermans Cove Resort.",
-          ru: "Будьте первым, кто узнает о событиях в Fishermans Cove Resort"
+          en: "Be The First One to Know About The Happenings at Resorts Demo",
+          fr: "Soyez le premier à savoir des événements à Resorts Demo",
+          de: "Bleiben Sie zuallererst informiert über Aktuelles beim Resorts Demo.",
+          ru: "Будьте первым, кто узнает о событиях в Resorts Demo"
         },
         btn_text: {
           en: "Subscribe",
@@ -286,10 +286,10 @@ export const constants = {
       },
       bread_crumb: {
         title: {
-          en: "Fishermans Cove Resort",
-          fr: "Fishermans Cove Resort",
-          de: "Fishermans Cove Resort",
-          ru: "Fishermans Cove Resort"
+          en: "Resorts Demo",
+          fr: "Resorts Demo",
+          de: "Resorts Demo",
+          ru: "Resorts Demo"
         },
         title2: {
           en: "About Us",
@@ -334,9 +334,9 @@ export const constants = {
       },
       about_offer: {
         title: {
-          en: "Explore Fishermans Cove Resort Premium Offerings",
-          fr: "Explorez les offres haut de gamme de Fishermans Cove Resort",
-          de: "Entdecken Sie die Premium-Angebote bei Fishermans Cove Resort",
+          en: "Explore Resorts Demo Premium Offerings",
+          fr: "Explorez les offres haut de gamme de Resorts Demo",
+          de: "Entdecken Sie die Premium-Angebote bei Resorts Demo",
           ru: "Ознакомьтесь с премиальными предложениями курорта Fishermans Cove"
         }
       }
@@ -700,10 +700,10 @@ export const constants = {
           ru: "Свадьба на понтоне у моря"
         },
         choose_pkg2: {
-          en: "Fishermans Cove Resort Special",
-          fr: "Offre spéciale Fishermans Cove Resort",
-          de: "Fishermans Cove Resort Special",
-          ru: "Специальный Пакет от Fishermans Cove Resort"
+          en: "Resorts Demo Special",
+          fr: "Offre spéciale Resorts Demo",
+          de: "Resorts Demo Special",
+          ru: "Специальный Пакет от Resorts Demo"
         },
         choose_pkg3: {
           en: "Barefoot Wedding",
@@ -859,9 +859,9 @@ export const constants = {
             ru: "Торговая улица"
           },
           detail: {
-            en: "It is encouraged at Fishermans Cove Resort to use recycled products. Strategies including ‘Reuse and Recycle’ of the paper, composting, segregation, Mobile app, ‘Refuse the straw’ have been strictly implemented to ensure the advancement towards a better and sustainable future.",
-            fr: "L’usage des produits recyclés est toujours encouragé à Fishermans Cove Resort. Les initiatives comme ‘Réutiliser et Recycler du papier’, composter, ségrégation, l’application smartphone, « Refuser la paille » sont mis à pratique pour assurer le progrès vers un avenir meilleur et durable.",
-            de: "Im Fishermans Cove Resort wird es befördert, recycelte Produkte zu verwenden. Strategien wie Wiederverwendung und Recyceln des Papiers, Kompostierung, Mülltrennung, Handy App und „Den Strohhalm zurückweisen“ wurden grundsätzlich umgesetzt, um eine bessere und nachhaltige Zukunft zu erreichen.",
+            en: "It is encouraged at Resorts Demo to use recycled products. Strategies including ‘Reuse and Recycle’ of the paper, composting, segregation, Mobile app, ‘Refuse the straw’ have been strictly implemented to ensure the advancement towards a better and sustainable future.",
+            fr: "L’usage des produits recyclés est toujours encouragé à Resorts Demo. Les initiatives comme ‘Réutiliser et Recycler du papier’, composter, ségrégation, l’application smartphone, « Refuser la paille » sont mis à pratique pour assurer le progrès vers un avenir meilleur et durable.",
+            de: "Im Resorts Demo wird es befördert, recycelte Produkte zu verwenden. Strategien wie Wiederverwendung und Recyceln des Papiers, Kompostierung, Mülltrennung, Handy App und „Den Strohhalm zurückweisen“ wurden grundsätzlich umgesetzt, um eine bessere und nachhaltige Zukunft zu erreichen.",
             ru: "На курорте Fishermans Cove рекомендуется использовать переработанные продукты. Стратегии включают в себя: «Повторное использование и переработку» бумаги, компостирование, сегрегацию, мобильное приложение, замену пластмассовых коктейльных трубочек на экологические, что было строго реализовано для обеспечения продвижения к лучшему и устойчивому будущему.",
           }
         },
@@ -1082,10 +1082,10 @@ export const constants = {
       },
       contact_offer: {
         title: {
-          en: "Fishermans Cove Resort on Social Media",
-          fr: "Fishermans Cove Resort sur le media social",
-          de: "Fishermans Cove Resort in den sozialen Medien",
-          ru: "Fishermans Cove Resort в социальных сетях"
+          en: "Resorts Demo on Social Media",
+          fr: "Resorts Demo sur le media social",
+          de: "Resorts Demo in den sozialen Medien",
+          ru: "Resorts Demo в социальных сетях"
         },
         room1: {
           en: "Paris Sychelles Restaurant",
@@ -1229,10 +1229,10 @@ export const constants = {
     },
     header_content: {
       explore: {
-        en: "Explore Fishermans Cove Resort",
-        fr: "Explorez Fishermans Cove Resort",
-        de: "Erkunden Sie das Fishermans Cove Resort",
-        ru: "Откройте для себя курорт Fishermans Cove Resort"
+        en: "Explore Resorts Demo",
+        fr: "Explorez Resorts Demo",
+        de: "Erkunden Sie das Resorts Demo",
+        ru: "Откройте для себя курорт Resorts Demo"
       },
       follow: {
         en: "Follow us",
