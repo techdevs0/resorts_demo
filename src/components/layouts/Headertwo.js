@@ -318,13 +318,13 @@ class Headertwo extends Component {
               <div className="site-logo">
                 <Link to="/" className="main-logo">
                   <img
-                    src={require("./../../assets/img/logo/resort-logo.jpg")}
+                    src={require("./../../assets/img/logo/resort-logo.png")}
                     alt="fishermans cove logo"
                   />
                 </Link>
                 <Link to="/" className="sticky-logo mt-1">
                   <img
-                    src={require("./../../assets/img/logo/resort-logo.jpg")}
+                    src={require("./../../assets/img/logo/resort-logo.png")}
                     alt="fishermans cove logo"
                   />
                 </Link>
