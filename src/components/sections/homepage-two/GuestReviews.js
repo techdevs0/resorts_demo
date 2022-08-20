@@ -36,10 +36,7 @@ const GuestReviews = (props) => {
         }
     ]
     return (
-        <div className="guest-reviews-wrapper pt-4 pb-3 text-center">
-            <div className="trip-logo-wrapper d-inline-block mx-auto">
-                <img src={require('./../../../assets/img/travellers-choice-white.png')} alt="" />
-            </div>
+        <div className="guest-reviews-wrapper pt-5 pb-5 text-center">
             <h2>
                 {constants?.site_content?.home_page?.guest_review?.title[props?.activeLang]}
             </h2>

@@ -18,14 +18,14 @@ const materialUiTheme = createMuiTheme({
                 color: "white",
             },
             daySelected: {
-                backgroundColor: "#be8a7d",
+                backgroundColor: "#1cc3b2",
                 color: "white !important",
                 "&:hover": {
                     backgroundColor: "#deb3aa"
                 }
             },
             dayDisabled: {
-                color: "#f9ddd7 !important",
+                color: "#1cc3b26b!important",
             },
             current: {
                 color: "white",
@@ -34,7 +34,7 @@ const materialUiTheme = createMuiTheme({
         MuiInput: {
             underline: {
                 "&:after": {
-                    borderBottom: "2px solid #be8a7d"
+                    borderBottom: "2px solid #1cc3b2"
                 }
             }
         }
@@ -66,14 +66,14 @@ const styles = createStyles(theme => ({
         color: "#676767",
     },
     prevCurrentMonthDay: {
-        color: "#f9ddd7 !important",
+        color: "#1cc3b26b!important",
         // backgroundColor:"#f9ddd7"
     },
     highlightNonCurrentMonthDay: {
         color: "white !important",
     },
     highlight: {
-        background: `#be8a7d`,
+        background: `#1cc3b2`,
         color: "white !important",
     },
     firstHighlight: {
@@ -88,7 +88,7 @@ const styles = createStyles(theme => ({
     },
 }));
 
-// #be8a7d
+// #1cc3b2
 const DatePickerComponent = (props) => {
     let { value, placeholder, minDate, onChange, open, disablePast, id, onOpen, onClose, dateRange, startDate } = props;
 

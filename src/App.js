@@ -36,31 +36,11 @@ const Blogdetails = lazy(() => import('./components/pages/Blogdetails'));
 function App(props) {
 
   //language 
-
-
   useEffect(() => {
-    const activeLang = localStorage.getItem('lang');
     const pathArray = window.location.pathname.split('/');
-
     let lang = 'en';
     if (pathArray[1] && (pathArray[1] == 'en' || pathArray[1] == 'fr' || pathArray[1] == 'de' || pathArray[1] == 'ru')) {
-      // console.log('homelanguage', pathArray[1]);
       lang = pathArray[1];
-    }
-    else {
-      let path = `/${activeLang}`;
-      if (pathArray.length > 1) {
-        if (pathArray[1] && (pathArray[1] == 'en' || pathArray[1] == 'fr' || pathArray[1] == 'de' || pathArray[1] == 'ru' || pathArray[1] !== "null")) {
-          for (let index = 1; index < pathArray.length; index++) {
-            path += `/${pathArray[index]}`;
-          }
-        }
-      }
-
-      if (window.location.search) {
-        path += window.location.search;
-      }
-      window.location.replace(path);
     }
     localStorage.setItem("lang", lang);
   }, []);

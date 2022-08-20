@@ -10,8 +10,10 @@
         position: relative;
         min-width: 25%;
         max-width: 25%;
+
         .background {
             height: 100%;
+
             img {
                 object-fit: cover;
             }
@@ -25,6 +27,7 @@
             width: 100%;
             background: rgba(0, 0, 0, 0.3);
             display: flex;
+
             h3,
             h4 {
                 color: #fff;
@@ -36,12 +39,15 @@
                 margin-right: 1rem;
                 font-family: $lora;
             }
+
             transition: all 0.4s;
+
             &:hover {
                 cursor: pointer;
                 background: rgba(255, 255, 255, 0.7);
+
                 h3 {
-                    color: #146264;
+                    color: #0e2737;
                     transition: margin-bottom 0.4s;
                     margin-bottom: 6rem;
                 }
@@ -56,17 +62,20 @@
             height: 250px;
             min-width: 50%;
             max-width: 50%;
+
             .foreground {
                 h3 {
                     text-align: left;
                     font-size: 18px;
                     margin-left: 0.5rem;
                 }
+
                 &:hover {
                     cursor: pointer;
                     background: rgba(255, 255, 255, 0.7);
+
                     h3 {
-                        color: #146264;
+                        color: #0e2737;
                         transition: margin-bottom 0.4s;
                         margin-bottom: 6rem;
                     }

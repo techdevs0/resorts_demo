@@ -1,45 +1,83 @@
-import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { constants } from '../../../utils/constants';
+import Slider from "react-slick";
 
 const RoomSlider = (props) => {
+
+    var settings = {
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 5000,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 1600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
 
     return (
         <div className="room-slider-wrapper">
             <h2 className="section-heading text-muted">
                 {constants?.site_content?.home_page?.rooms_slider?.title[props?.activeLang]}
             </h2>
-            <Carousel
-                dynamicHeight={false}
-                showStatus={false}
-                showArrows={true}
-                showIndicators={false}
-                showThumbs={false}
-                infiniteLoop={true}
-                autoPlay={true}
-                centerMode
-                stopOnHover={false}
-                centerSlidePercentage={70}
-                className="room-carousel center"
-                interval={6000}
-            >
+            <Slider {...settings} >
                 {
                     props.data?.map(x => (
-                        <div>
+                        <div className="room-carousel">
                             <div className="room-image-wrapper">
-                                <img src={x.thumbnailPreview} alt="room image" />
+                                <img src={x.thumbnailPreview} alt="room image" loading="lazy" />
                             </div>
-                            <div className="slide-content py-3">
-                                <h1 style={{ cursor: 'pointer' }} onClick={() => props.history.push(`/${props?.activeLang}/rooms/${x.slug}`)}>{x.post_name}</h1>
+                            <div className="slide-content">
+                                <h1>{x.post_name}</h1>
                                 <div dangerouslySetInnerHTML={{ __html: x.short_description }}>
                                 </div>
                                 <button
                                     className="main-btn btn-eden my-4"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        window.gtag_report_conversion(x.post_url, true)
-                                    }}
+                                    onClick={() => props.history.push(`/${props?.activeLang}/rooms/${x.slug}`)}
                                 >
                                     {constants?.site_content?.home_page?.banner?.btn3[props?.activeLang]}
                                 </button>
@@ -47,7 +85,7 @@ const RoomSlider = (props) => {
                         </div>
                     ))
                 }
-            </Carousel>
+            </Slider>
         </div>
     );
 }
